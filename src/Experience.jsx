@@ -1,17 +1,43 @@
-import { createRoot } from 'react-dom/client'
-import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Stage } from '@react-three/drei'
+import Canmore from "./models/Canmore.jsx";
+import React, { useRef, useState } from "react";
+import { Environment, OrbitControls, Sky, Stage } from "@react-three/drei";
+import { useControls } from "leva";
+import { Perf } from "r3f-perf";
 
-import Canmore from './models/Canmore.jsx'
+const Experience = () => {
+  const { sunPosition } = useControls("sky", {
+    sunPosition: { value: [1, 2, 3] },
+  });
+  const { lightPosition, lightIntensity } = useControls("light", {
+    lightPosition: { value: [-3, 3, 0] },
+    lightIntensity: { value: 0.75, min: 0, max: 10 },
+  });
 
-createRoot(document.getElementById('root')).render(
-  <Canvas>
-    <ambientLight />
-    <pointLight position={[10, 10, 10]} />
-    <OrbitControls autoRotate={true} makeDefault={true} />
-    <Stage adjustCamera={true}>
-      <Canmore />
-    </Stage>
-  </Canvas>,
-)
+  return (
+    <>
+      <Sky distance={450000} sunPosition={sunPosition} />
+      <Perf position="top-left" />
+      <OrbitControls makeDefault={true} position={[0, 2, 0]} />
+      <Stage adjustCamera={true}>
+        <ambientLight />
+        <directionalLight
+          castShadow
+          intensity={lightIntensity}
+          position={sunPosition}
+          shadow-mapSize={[1024, 1024]}
+          shadow-camera-near={1}
+          shadow-camera-far={10}
+          shadow-camera-top={5}
+          shadow-camera-right={5}
+          shadow-camera-bottom={-5}
+          shadow-camera-left={-5}
+        >
+          <Environment background={false} files={"/env.hdr"} />
+          <Canmore castShadow receiveShadow />
+        </directionalLight>
+      </Stage>
+    </>
+  );
+};
+
+export default Experience;

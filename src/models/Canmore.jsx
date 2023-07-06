@@ -9,6 +9,10 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/glb/canmore-compressed.glb");
   const texture = materials["rastMat.001"];
   texture.specularIntensity = 0;
+  texture.envMapIntensity = 3.33;
+  const sideTexture = materials["Material.001"];
+  sideTexture.specularIntensity = 0;
+  sideTexture.envMapIntensity = 0.5;
 
   return (
     <group {...props} dispose={null}>
@@ -25,7 +29,7 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.EXPORT_GOOGLE_SAT_WM001_1.geometry}
-          material={materials["Material.001"]}
+          material={sideTexture}
         />
       </group>
     </group>

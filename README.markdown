@@ -1,0 +1,1 @@
+`docker run --rm -it -p 5173:5173 -v "$(pwd)":/usr/src/app -w /usr/src/app node:20.2-slim yarn vite --host`

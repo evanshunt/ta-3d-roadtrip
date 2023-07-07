@@ -1,13 +1,18 @@
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { createRoot } from "react-dom/client";
 import Experience from "./Experience.jsx";
+import React, { Suspense, useRef, useState } from "react";
+import studio from "@theatre/studio";
+import extension from "@theatre/r3f/dist/extension";
 
 const root = createRoot(document.querySelector("#root"));
 
+studio.extend(extension);
+studio.initialize();
+
 root.render(
-  <Canvas shadows>
-    <color args={["#111"]} attach={"background"} />
-    <Experience />
-  </Canvas>
+  <>
+    <Suspense fallback={null}>
+      <Experience />
+    </Suspense>
+  </>
 );

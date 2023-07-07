@@ -8,8 +8,7 @@ const Experience = () => {
   const { sunPosition } = useControls("sky", {
     sunPosition: { value: [1, 2, 3] },
   });
-  const { lightPosition, lightIntensity } = useControls("light", {
-    lightPosition: { value: [-3, 3, 0] },
+  const { lightIntensity } = useControls("light", {
     lightIntensity: { value: 0.75, min: 0, max: 10 },
   });
 
@@ -17,7 +16,7 @@ const Experience = () => {
     <>
       <Sky distance={450000} sunPosition={sunPosition} />
       <Perf position="top-left" />
-      <OrbitControls makeDefault={true} position={[0, 2, 0]} />
+      <OrbitControls makeDefault={true} />
       <Stage adjustCamera={true}>
         <ambientLight />
         <directionalLight

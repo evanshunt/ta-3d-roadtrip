@@ -7,6 +7,7 @@ const root = createRoot(document.querySelector("#root"));
 
 root.render(
   <Canvas shadows>
+    <color args={["#111"]} attach={"background"} />
     <Experience />
   </Canvas>
 );

@@ -9,14 +9,14 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF("/glb/canmore-compressed.glb");
   const texture = materials["rastMat.001"];
   texture.specularIntensity = 0;
-  texture.envMapIntensity = 3.33;
+  texture.envMapIntensity = 4.5;
   const sideTexture = materials["Material.001"];
   sideTexture.specularIntensity = 0;
   sideTexture.envMapIntensity = 0.5;
 
   return (
     <group {...props} dispose={null}>
-      <group scale={0.25}>
+      <group scale={0.0005}>
         {/* MAP */}
         <mesh
           castShadow

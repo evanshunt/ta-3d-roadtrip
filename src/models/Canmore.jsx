@@ -16,11 +16,6 @@ export default function Model(props) {
   sideTexture.envMapIntensity = 0.5;
 
   const model = useRef();
-  const data = useScroll();
-
-  useFrame(() => {
-    // console.log(data.offset);
-  });
 
   return (
     <group {...props} dispose={null}>

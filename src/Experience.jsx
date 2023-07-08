@@ -1,46 +1,33 @@
-import Canmore from "./models/Canmore.jsx";
 import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  CameraControls,
-  Environment,
-  OrbitControls,
-  PerspectiveCamera,
-  Scroll,
-  ScrollControls,
-  Sky,
-  Stage,
-  useScroll,
-} from "@react-three/drei";
-import { useControls } from "leva";
+import { Canvas } from "@react-three/fiber";
+import { ScrollControls } from "@react-three/drei";
+import Scene from "./Scene.jsx";
+// import { useControls } from "leva";
 import { Perf } from "r3f-perf";
 
+import { getProject } from "@theatre/core";
+import { SheetProvider } from "@theatre/r3f";
+
 const Experience = () => {
-  const cameraControls = useRef();
-
-  const { lightIntensity } = useControls("light", {
-    lightIntensity: { value: 0.75, min: 0, max: 10 },
-  });
-
-  const logCameraDetails = () => {
-    console.log(cameraControls.current);
-    console.log("asdasd");
-  };
+  const sheet = getProject("TA Fly Through").sheet("Scene");
 
   return (
     <Canvas
       shadows
-      camera={{ fov: 45, near: 0.1, far: 2000, position: [0, 4, 10] }}
+      gl={{
+        preserveDrawingBuffer: true,
+      }}
     >
       <color args={["#111"]} attach={"background"} />
-      <Perf position="top-left" />
+      <Perf position="bottom-left" />
       {/* <OrbitControls makeDefault={true} /> */}
-      <CameraControls ref={cameraControls} />
-      {/* <Stage adjustCamera={true} ref={stage}> */}
-      <ambientLight intensity={lightIntensity} />
-      <Environment background={false} files={"/env.hdr"} />
-      <Canmore castShadow receiveShadow />
-      {/* </Stage> */}
+      {/* <CameraControls ref={cameraControls} /> */}
+
+      <ScrollControls pages={3}>
+        <SheetProvider sheet={sheet}>
+          <Scene />
+        </SheetProvider>
+      </ScrollControls>
     </Canvas>
   );
 };

@@ -6,7 +6,7 @@ import Scene from "./Scene.jsx";
 import { Perf } from "r3f-perf";
 import { getProject } from "@theatre/core";
 import { SheetProvider } from "@theatre/r3f";
-import flyThroughState from "../public/ta-flythough-animation-data.json";
+import flyThroughState from "../public/simple-animation.json";
 
 const Experience = () => {
   const sheet = getProject("TA Fly Through", { state: flyThroughState }).sheet(

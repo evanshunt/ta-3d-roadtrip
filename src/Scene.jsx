@@ -1,5 +1,6 @@
 import Canmore from "./models/Canmore.jsx";
 import { Environment, useScroll } from "@react-three/drei";
+import LocationPin from "./models/LocationPin.jsx";
 import React from "react";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { useFrame } from "@react-three/fiber";
@@ -18,6 +19,7 @@ const Scene = () => {
     <>
       <ambientLight intensity={0.5} />
       <Environment background={false} files={"/env.hdr"} />
+      <LocationPin castShadow receiveShadow />
       <Canmore castShadow receiveShadow />
       <PerspectiveCamera
         theatreKey="Camera"

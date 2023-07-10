@@ -6,12 +6,14 @@ import Scene from "./Scene.jsx";
 import { Perf } from "r3f-perf";
 import { getProject } from "@theatre/core";
 import { SheetProvider } from "@theatre/r3f";
-import flyThroughState from "../public/simple-animation.json";
+import flyThroughState from "./animation-data.json";
 
 const Experience = () => {
   const sheet = getProject("TA Fly Through", { state: flyThroughState }).sheet(
     "Scene"
-  );
+  ); //uncomment to use saved data
+
+  // const sheet = getProject("TA Fly Through").sheet("Scene");
 
   return (
     <Canvas
@@ -20,7 +22,7 @@ const Experience = () => {
         preserveDrawingBuffer: true,
       }}
     >
-      <color args={["#111"]} attach={"background"} />
+      {/* <color args={["#111"]} attach={"background"} /> */}
       <Perf position="bottom-left" />
       {/* <OrbitControls makeDefault={true} /> */}
       {/* <CameraControls ref={cameraControls} /> */}

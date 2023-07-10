@@ -6,8 +6,18 @@ import extension from "@theatre/r3f/dist/extension";
 
 const root = createRoot(document.querySelector("#root"));
 
-// studio.extend(extension);
-// studio.initialize();
+const showStudio = () => {
+  studio.extend(extension);
+  studio.initialize();
+};
+
+const handleKeyDown = (e) => {
+  if (e.ctrlKey && e.key === "u") {
+    showStudio();
+  }
+};
+
+window.addEventListener("keydown", handleKeyDown);
 
 root.render(
   <>

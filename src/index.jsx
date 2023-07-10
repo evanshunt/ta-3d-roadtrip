@@ -3,6 +3,7 @@ import Experience from "./Experience.jsx";
 import React, { Suspense, useRef, useState } from "react";
 import studio from "@theatre/studio";
 import extension from "@theatre/r3f/dist/extension";
+import Loading from "./Loading.jsx";
 
 const root = createRoot(document.querySelector("#root"));
 
@@ -11,7 +12,7 @@ studio.initialize();
 
 root.render(
   <>
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loading />}>
       <Experience />
     </Suspense>
   </>

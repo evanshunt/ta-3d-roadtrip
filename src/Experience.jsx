@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls } from "@react-three/drei";
+import { OrbitControls, ScrollControls } from "@react-three/drei";
 import Scene from "./Scene.jsx";
 // import { useControls } from "leva";
 import { Perf } from "r3f-perf";
@@ -9,11 +9,11 @@ import { SheetProvider } from "@theatre/r3f";
 import flyThroughState from "./data/animation-data.json";
 
 const Experience = () => {
-  const sheet = getProject("TA Fly Through", { state: flyThroughState }).sheet(
-    "Scene"
-  ); //uncomment to use saved data
+  // const sheet = getProject("TA Fly Through", { state: flyThroughState }).sheet(
+  //   "Scene"
+  // ); //uncomment to use saved data
 
-  // const sheet = getProject("TA Fly Through").sheet("Scene");
+  const sheet = getProject("TA Fly Through").sheet("Scene");
 
   return (
     <Canvas
@@ -24,7 +24,7 @@ const Experience = () => {
     >
       {/* <color args={["#111"]} attach={"background"} /> */}
       <Perf position="bottom-left" />
-      {/* <OrbitControls makeDefault={true} /> */}
+      <OrbitControls makeDefault={true} />
       {/* <CameraControls ref={cameraControls} /> */}
 
       <ScrollControls pages={3}>

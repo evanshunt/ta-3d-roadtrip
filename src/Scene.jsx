@@ -1,14 +1,22 @@
 import Canmore from "./models/Canmore.jsx";
-import { Environment, useScroll } from "@react-three/drei";
+import {
+  Billboard,
+  Environment,
+  Image,
+  Text,
+  useScroll,
+} from "@react-three/drei";
 import LocationPin from "./models/LocationPin.jsx";
 import React from "react";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { useFrame } from "@react-three/fiber";
 import { val } from "@theatre/core";
+import imageSource from "/hover-icon.png";
 
 const Scene = () => {
   const sheet = useCurrentSheet();
   const scroll = useScroll();
+  const text = React.useRef();
 
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
@@ -19,6 +27,14 @@ const Scene = () => {
     <>
       <ambientLight intensity={0.5} />
       <Environment background={false} files={"/env.hdr"} />
+      <Billboard
+        ref={text}
+        position={[0, 1.5, 0]}
+        scale={[0.5, 0.5, 0.5]}
+        onPointerOver={(e) => console.log("hovered")}
+      >
+        <Image transparent url={imageSource} />
+      </Billboard>
       <LocationPin castShadow receiveShadow />
       <Canmore castShadow receiveShadow />
       <PerspectiveCamera

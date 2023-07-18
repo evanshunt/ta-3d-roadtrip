@@ -1,4 +1,4 @@
-import Canmore from "./models/Canmore.jsx";
+// import Canmore from "./models/Canmore.jsx";
 import {
   Billboard,
   Environment,
@@ -6,9 +6,11 @@ import {
   Text,
   useScroll,
 } from "@react-three/drei";
+import Drumheller from "./models/Drumheller.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import React, { useState } from "react";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
+// import Road from "./models/Road.jsx";
 import { useFrame } from "@react-three/fiber";
 import { val } from "@theatre/core";
 import imageSource from "/hover-icon.png";
@@ -25,17 +27,18 @@ const Scene = () => {
 
   return (
     <>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.05} />
       <Environment background={false} files={"/env.hdr"} />
-      <Billboard
+      {/* <Billboard
         position={active ? [0, 2, 0] : [0, 1.5, 0]}
         scale={active ? 1 : 0.5}
         onClick={(e) => setActive(!active)}
       >
         <Image transparent url={imageSource} />
-      </Billboard>
-      <LocationPin castShadow receiveShadow />
-      <Canmore castShadow receiveShadow />
+      </Billboard> */}
+      {/* <LocationPin castShadow receiveShadow /> */}
+      <Drumheller castShadow receiveShadow />
+      {/* <Canmore castShadow receiveShadow /> OLD CANMORE MESH */}
       <PerspectiveCamera
         theatreKey="Camera"
         makeDefault

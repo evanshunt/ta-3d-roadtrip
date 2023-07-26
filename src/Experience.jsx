@@ -10,27 +10,27 @@ import Canmore from "./models/Canmore.jsx";
 import LakeLouise from "./models/LakeLouise.jsx";
 
 const App = () => {
-  const { focusDistance, focalLength, bokehScale } = useControls({
-    focusDistance: {
-      min: 0,
-      max: 4,
-      value: 2,
-    },
-    focalLength: {
-      min: 0,
-      max: 1,
-      value: 0.1,
-    },
-    bokehScale: {
-      min: 0,
-      max: 10,
-      value: 2,
-    },
-  });
+  // const { focusDistance, focalLength, bokehScale } = useControls({
+  //   focusDistance: {
+  //     min: 0,
+  //     max: 4,
+  //     value: 2,
+  //   },
+  //   focalLength: {
+  //     min: 0,
+  //     max: 1,
+  //     value: 0.1,
+  //   },
+  //   bokehScale: {
+  //     min: 0,
+  //     max: 10,
+  //     value: 2,
+  //   },
+  // });
   return (
     <Canvas
       camera={{
-        position: [-3, 8, 15],
+        position: [-3, 7, 15],
         fov: 40,
       }}
     >

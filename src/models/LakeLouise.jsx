@@ -23,7 +23,7 @@ export default function LakeLouise(props) {
         position={[0, 0, 0]}
         scale={[1, 1, 1]}
       >
-        <meshStandardMaterial
+        <meshBasicMaterial
           map={mountainTexture}
           side={THREE.DoubleSide}
           // map-flipY={false}

@@ -104,12 +104,12 @@ const TiltShift = wrapEffect(TiltShiftEffect);
 
 function TiltShiftEffects() {
   // const blendFunction = BlendFunction.Normal,
-  const blur = 1.0, // [0, 1], can go beyond 1 for extra
+  const blur = 0.4, // [0, 1], can go beyond 1 for extra
     taper = 0.5, // [0, 1], can go beyond 1 for extra
-    start = [0.0, 0.0], // [0,1] percentage x,y of screenspace
-    end = [0.71, 0.66], // [0,1] percentage x,y of screenspace
-    sampleCount = 20.0, // number of blur samples
-    direction = [1, 0.07]; // direction of blur
+    start = [0.02, 0.82], // [0,1] percentage x,y of screenspace
+    end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
+    sampleCount = 30.0, // number of blur samples
+    direction = [0.37, 0.03]; // direction of blur
   // const { blur } = useControls({
   //   blur: {
   //     value: 1,

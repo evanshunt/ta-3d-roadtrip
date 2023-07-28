@@ -104,80 +104,80 @@ const TiltShift = wrapEffect(TiltShiftEffect);
 
 function TiltShiftEffects() {
   // const blendFunction = BlendFunction.Normal,
-  const blur = 0.4, // [0, 1], can go beyond 1 for extra
-    taper = 0.5, // [0, 1], can go beyond 1 for extra
-    start = [0.02, 0.82], // [0,1] percentage x,y of screenspace
-    end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
-    sampleCount = 30.0, // number of blur samples
-    direction = [0.37, 0.03]; // direction of blur
-  // const { blur } = useControls({
-  //   blur: {
-  //     value: 1,
-  //     min: 0.0,
-  //     max: 2.0,
-  //     label: "Blur",
-  //   },
-  // });
+  // let blur = 0.4, // [0, 1], can go beyond 1 for extra
+  //   taper = 0.5, // [0, 1], can go beyond 1 for extra
+  //   start = [0.02, 0.82], // [0,1] percentage x,y of screenspace
+  //   end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
+  //   sampleCount = 30.0, // number of blur samples
+  // direction = [0.37, 0.03]; // direction of blur
+  const { blur } = useControls({
+    blur: {
+      value: 1,
+      min: 0.0,
+      max: 2.0,
+      label: "Blur",
+    },
+  });
 
-  // const { taper } = useControls({
-  //   taper: {
-  //     value: 0.5,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     label: "Taper",
-  //   },
-  // });
+  const { taper } = useControls({
+    taper: {
+      value: 0.5,
+      min: 0.0,
+      max: 1.0,
+      label: "Taper",
+    },
+  });
 
-  // const { start } = useControls({
-  //   start: {
-  //     value: {
-  //       x: 0.0,
-  //       y: 0.0,
-  //     },
-  //     step: 0.01,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "Start Point",
-  //   },
-  // });
+  const { start } = useControls({
+    start: {
+      value: {
+        x: 0.0,
+        y: 0.0,
+      },
+      step: 0.01,
+      min: 0.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "Start Point",
+    },
+  });
 
-  // const { end } = useControls({
-  //   end: {
-  //     value: {
-  //       x: 0.71,
-  //       y: 0.66,
-  //     },
-  //     step: 0.01,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "End Point",
-  //   },
-  // });
+  const { end } = useControls({
+    end: {
+      value: {
+        x: 0.71,
+        y: 0.66,
+      },
+      step: 0.01,
+      min: 0.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "End Point",
+    },
+  });
 
-  // const { sampleCount } = useControls({
-  //   sampleCount: {
-  //     value: 40,
-  //     min: 3.0,
-  //     max: 100.0,
-  //     label: "Samples",
-  //   },
-  // });
+  const { sampleCount } = useControls({
+    sampleCount: {
+      value: 40,
+      min: 3.0,
+      max: 100.0,
+      label: "Samples",
+    },
+  });
 
-  // const { direction } = useControls({
-  //   direction: {
-  //     value: {
-  //       x: 1.0,
-  //       y: 0.07,
-  //     },
-  //     step: 0.01,
-  //     min: -1.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "Direction",
-  //   },
-  // });
+  const { direction } = useControls({
+    direction: {
+      value: {
+        x: 1.0,
+        y: 0.07,
+      },
+      step: 0.01,
+      min: -1.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "Direction",
+    },
+  });
 
   return (
     <EffectComposer>

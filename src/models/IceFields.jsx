@@ -6,26 +6,33 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFields(props) {
-  const iceFieldsTexture = useTexture("/textures/ice-fields.jpg");
+  const iceFieldsTexture = useTexture("/textures/ice-fields-plain.jpg");
   const { nodes, materials } = useGLTF("/glb/ice-fields.glb");
-  console.log(materials);
 
   return (
     <group {...props} dispose={null}>
       <mesh
-        receiveShadow
-        castShadow
+        // receiveShadow
+        // castShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
-        // material={nodes.EXPORT_GOOGLE_SAT_WM.material}
         scale={0.1}
       >
+        {/* <shadowMaterial color={0x000000} opacity={0.8} /> */}
         <meshStandardMaterial
-          // map={iceFieldsTexture}
-          color={0xcccccc}
-          // side={THREE.DoubleSide}
-          // map-flipY={false}
-
-          // map-transparent={false}
+          map={iceFieldsTexture}
+          side={THREE.DoubleSide}
+          map-flipY={false}
+          metalness={0.5}
+          map-transparent={true}
+          map-wrapS={THREE.RepeatWrapping}
+          map-wrapT={THREE.RepeatWrapping}
+          map-repeat={[1, 1]}
+          map-anisotropy={32}
+          map-shadowSide={THREE.FrontSide}
+          map-receiveShadow={true}
+          map-castShadow={true}
+          castShadow
+          receiveShadow
           // map-colorSpace={"sRGBEncoding"}
         />
       </mesh>

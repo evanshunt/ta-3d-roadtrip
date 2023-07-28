@@ -2,7 +2,11 @@ import * as THREE from "three";
 import { createRoot } from "react-dom/client";
 import React, { useEffect, useRef, useState } from "react";
 import { useControls } from "leva";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+import {
+  DepthOfField,
+  EffectComposer,
+  ToneMapping,
+} from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
@@ -76,7 +80,13 @@ const App = () => {
   // });
   return (
     <Canvas
-      shadows
+      shadows={"soft"}
+      shadowMap
+      gl={{
+        shadowMap: true,
+        // alpha: false,
+        // ToneMapping: THREE.FilmicToneMapping,
+      }}
       // camera={{
       //   position: [cameraX, cameraY, cameraZ],
       //   fov: 10,

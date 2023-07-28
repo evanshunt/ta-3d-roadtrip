@@ -24,7 +24,21 @@ const Lights = () => {
     },
   });
 
-  useHelper(spotLight, SpotLightHelper);
+  const { mapFar, mapNear } = useControls({
+    mapFar: {
+      min: 0,
+      max: 1000000,
+      value: 50,
+    },
+    mapNear: {
+      min: 0,
+      max: 100,
+      value: 0.01,
+      step: 0.001,
+    },
+  });
+
+  useHelper(spotLight, SpotLightHelper, 0x000000);
   return (
     <>
       <ambientLight intensity={3} />
@@ -32,8 +46,14 @@ const Lights = () => {
       <spotLight
         ref={spotLight}
         position={[posX, posY, posZ]}
-        intensity={1.5}
+        intensity={10.5}
+        castShadows
         castShadow
+        shadow-camera-visible={true}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={mapFar}
+        shadow-camera-near={mapNear}
       />
     </>
   );

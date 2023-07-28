@@ -24,10 +24,10 @@ const Lights = () => {
     },
   });
 
-  useHelper(spotLight, SpotLightHelper, "light");
+  useHelper(spotLight, SpotLightHelper);
   return (
     <>
-      <ambientLight intensity={0.7} />
+      <ambientLight intensity={3} />
 
       <spotLight
         ref={spotLight}

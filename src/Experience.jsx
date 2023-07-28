@@ -119,13 +119,14 @@ const App = () => {
       {/* <Billboard position={[0, 0.75, 0]} scale={0.4}>
         <Image transparent url={imageSource} />
       </Billboard> */}
-      {/* <IceFields /> */}
-      <Plane
+      <IceFields />
+      {/* <Plane
         receiveShadow
         rotation={[-Math.PI / 2, 0, 0]}
         scale={5}
+        material={new THREE.MeshStandardMaterial({ color: 0xff0033 })}
         position={[0, 0, 0]}
-      />
+      /> */}
       {/* <TiltShiftEffects /> */}
       {/* <EffectComposer>
         <DepthOfField

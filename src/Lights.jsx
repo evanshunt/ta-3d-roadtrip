@@ -1,26 +1,32 @@
 import React from "react";
 import { useRef } from "react";
-import { SpotLightHelper } from "three";
+import { DirectionalLightHelper, SpotLightHelper } from "three";
 import { useHelper } from "@react-three/drei";
 import { useControls } from "leva";
 
 const Lights = () => {
   const spotLight = useRef();
-  const { posX, posY, posZ } = useControls({
+  const { posX, posY, posZ, scale } = useControls({
     posX: {
       min: -30,
       max: 30,
-      value: 2,
+      value: -6.4,
     },
     posY: {
       min: -30,
       max: 30,
-      value: 2,
+      value: 8.6,
     },
     posZ: {
       min: -30,
       max: 30,
-      value: 2,
+      value: 26,
+    },
+    scale: {
+      min: 0,
+      max: 1,
+      value: 0.015,
+      step: 0.001,
     },
   });
 
@@ -38,16 +44,23 @@ const Lights = () => {
     },
   });
 
-  useHelper(spotLight, SpotLightHelper, 0x000000);
   return (
     <>
-      <ambientLight intensity={3} />
-
-      <spotLight
-        ref={spotLight}
+      <ambientLight intensity={0.4} color={0xffffff} />
+      {/* <directionalLight
+        ref={directionalLight}
         position={[posX, posY, posZ]}
-        intensity={10.5}
-        castShadows
+        intensity={1}
+        castShadow
+        shadow-camera-visible={true}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+      /> */}
+      <directionalLight
+        ref={spotLight}
+        position={[1, 30, 5]}
+        scale={scale}
+        intensity={0.7}
         castShadow
         shadow-camera-visible={true}
         shadow-mapSize-width={1024}

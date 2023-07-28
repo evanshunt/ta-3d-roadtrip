@@ -12,12 +12,12 @@ export default function LocationPin(props) {
     <group {...props} dispose={null} theatreKey="Pin">
       <mesh
         castShadow
-        receiveShadow
+        // receiveShadow
         geometry={nodes.Cylinder.geometry}
         material={materials["Pin Red"]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[0.05, 0.01, 0.05]}
-      />
+      ></mesh>
     </group>
   );
 }

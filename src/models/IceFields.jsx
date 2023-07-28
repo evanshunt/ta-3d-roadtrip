@@ -23,13 +23,14 @@ export default function IceFields(props) {
           map={iceFieldsTexture}
           side={THREE.DoubleSide}
           map-flipY={false}
+          color={0x303030}
           // metalness={0.5}
           // map-transparent={true}
           // map-wrapS={THREE.RepeatWrapping}
           // map-wrapT={THREE.RepeatWrapping}
           // map-repeat={[1, 1]}
           map-anisotropy={32}
-          map-colorSpace={"sRGBEncoding"}
+          // map-colorSpace={"sRGBEncoding"}
         />
       </mesh>
     </group>

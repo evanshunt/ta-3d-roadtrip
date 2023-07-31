@@ -16,8 +16,6 @@ import {
   Environment,
   Image,
   OrbitControls,
-  PerspectiveCamera,
-  Plane,
   Stage,
   TransformControls,
 } from "@react-three/drei";
@@ -25,6 +23,8 @@ import {
 import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";
 import imageSource from "/hover-icon.png";
+// import Path from "./models/Path.jsx";
+import Road from "./models/Road.jsx";
 
 const Camera = (props) => {
   const ref = useRef();
@@ -46,6 +46,23 @@ const Camera = (props) => {
 };
 
 const App = () => {
+  const { posX, posY, posZ } = useControls({
+    posX: {
+      min: -1000,
+      max: 30,
+      value: -700,
+    },
+    posY: {
+      min: -30,
+      max: 30,
+      value: 0,
+    },
+    posZ: {
+      min: -30,
+      max: 30,
+      value: 0,
+    },
+  });
   // const { cameraX, cameraY, cameraZ, fov } = useControls({
   //   cameraX: {
   //     min: -30,
@@ -122,10 +139,10 @@ const App = () => {
         name={"Banff Upper Hot Springs"}
         position={[-0.2333524591253359, 0.5, 1.3565714314121025]}
       />
-
+      <Road />
       <IceFields />
 
-      <TiltShiftEffects />
+      {/* <TiltShiftEffects /> */}
       {/* <EffectComposer>
         <DepthOfField
           focusDistance={focusDistance}

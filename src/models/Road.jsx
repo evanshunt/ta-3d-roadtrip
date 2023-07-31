@@ -25,7 +25,7 @@ const FillMaterial = shaderMaterial(
   uniform float time;
   varying vec2 vUv;
   varying vec3 vNormal;
-  
+  // This works backwards, flip x UVs in blender and re-export.
   void main() {
     // vec2 st = gl_FragCoord.xy/vUv.xy;
 
@@ -34,7 +34,7 @@ const FillMaterial = shaderMaterial(
     strength = step(time, strength);  
     // strength *= strength * time;   
     
-    gl_FragColor = vec4(strength, 0.0, 0.0, 1.0);
+    gl_FragColor = vec4(strength, strength, strength, 1.0);
     
   }
   `
@@ -51,7 +51,7 @@ const Road = (props) => {
       min: 0,
       max: 1,
       value: 0.5,
-      step: 0.01,
+      step: 0.001,
     },
   });
 

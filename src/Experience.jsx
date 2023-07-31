@@ -23,7 +23,6 @@ import {
 import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";
 import imageSource from "/hover-icon.png";
-// import Path from "./models/Path.jsx";
 import Road from "./models/Road.jsx";
 
 const Camera = (props) => {
@@ -46,45 +45,6 @@ const Camera = (props) => {
 };
 
 const App = () => {
-  const { posX, posY, posZ } = useControls({
-    posX: {
-      min: -1000,
-      max: 30,
-      value: -700,
-    },
-    posY: {
-      min: -30,
-      max: 30,
-      value: 0,
-    },
-    posZ: {
-      min: -30,
-      max: 30,
-      value: 0,
-    },
-  });
-  // const { cameraX, cameraY, cameraZ, fov } = useControls({
-  //   cameraX: {
-  //     min: -30,
-  //     max: 30,
-  //     value: 4.2,
-  //   },
-  //   cameraY: {
-  //     min: -30,
-  //     max: 30,
-  //     value: 9.0,
-  //   },
-  //   cameraZ: {
-  //     min: -30,
-  //     max: 30,
-  //     value: 8.4,
-  //   },
-  //   fov: {
-  //     min: 0,
-  //     max: 100,
-  //     value: 50,
-  //   },
-  // });
   // const { focusDistance, focalLength, bokehScale } = useControls({
   //   focusDistance: {
   //     min: 0,
@@ -102,9 +62,20 @@ const App = () => {
   //     value: 2,
   //   },
   // });
+  const positions = {
+    banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
+    caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
+    discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
+    gondola: [5.358368436662257, 0.33, 5.634275247444896],
+    minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+  };
   return (
     <Canvas
       shadows
+      camera={{
+        position: [5, 7, 9],
+        fov: 50,
+      }}
       gl={{
         antialias: true,
         shadowMapEnabled: true,
@@ -119,26 +90,42 @@ const App = () => {
       <Perf position="top-left" />
       {/* <Stage adjustCamera={true}> */}
 
-      {/* <TransformControls
-        onObjectChange={(e) => console.log(e.target.object.position)}
-        mode={"translate"}
-        position={[0, 0.75, 0]}
-      > */}
       <LocationPin
-        name={"Banff"}
-        position={[-0.38338213593290904, 0.5, 1.593643435102435]}
+        castShadow
+        name={"Banff Upper Hot Springs"}
+        position={positions.banffUpperHotSprings}
       />
 
       <LocationPin
+        name={"Cave and Basin National Historic Site"}
         castShadow
-        receiveShadow
-        name={"Banff Gondola"}
-        position={[-0.8333524591253359, 0.5, 1.3565714314121025]}
+        position={positions.caveAndBasin}
       />
+
+      {/* <TransformControls
+        onObjectChange={(e) => console.log(e.target.object.position)}
+        mode={"translate"}
+        position={positions.discoverBanffTours}
+      > */}
       <LocationPin
-        name={"Banff Upper Hot Springs"}
-        position={[-0.2333524591253359, 0.5, 1.3565714314121025]}
+        name={"Discover Banff Tours"}
+        castShadow
+        position={positions.discoverBanffTours}
       />
+      {/* </TransformControls> */}
+
+      <LocationPin
+        name={"Banff Gondola"}
+        castShadow
+        position={positions.gondola}
+      />
+
+      <LocationPin
+        name={"Lake Minnewanka Cruise"}
+        castShadow
+        position={positions.minnewankaCruise}
+      />
+
       <Road />
       <IceFields />
 

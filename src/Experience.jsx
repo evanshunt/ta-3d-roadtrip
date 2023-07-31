@@ -62,12 +62,39 @@ const App = () => {
   //     value: 2,
   //   },
   // });
+  const { posX, posY, posZ } = useControls({
+    posX: {
+      min: -10,
+      max: 10,
+      value: 0,
+    },
+    posY: {
+      min: 0,
+      max: 10,
+      value: 0,
+    },
+    posZ: {
+      min: -10,
+      max: 10,
+      value: 0,
+    },
+  });
+
   const positions = {
+    // Banff Pins:
     banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
     caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
     discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
     gondola: [5.358368436662257, 0.33, 5.634275247444896],
     minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+    // Lake Louise Pins:
+    moraineLake: [1.7, 0.4, 3.3],
+    lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
+    lakeLouiseSkiResort: [1.9, 0.4, 2.8],
+    fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+    // Icefields Pins:
+    columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
+    columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
   };
   return (
     <Canvas
@@ -124,6 +151,44 @@ const App = () => {
         name={"Lake Minnewanka Cruise"}
         castShadow
         position={positions.minnewankaCruise}
+      />
+
+      {/* Lake Louise Pins */}
+      <LocationPin
+        name={"Moraine Lake"}
+        castShadow
+        position={positions.moraineLake}
+      />
+
+      <LocationPin
+        name={"Lake Agnes Tea House"}
+        castShadow
+        position={positions.lakeAgnesTeaHouse}
+      />
+
+      <LocationPin
+        name={"Lake Louise Ski Resort"}
+        castShadow
+        position={positions.lakeLouiseSkiResort}
+      />
+
+      <LocationPin
+        name={"Fairmont Chateau Lake Louise"}
+        castShadow
+        position={positions.fairmontChateauLakeLouise}
+      />
+
+      {/* 3. Ice Fields Pins */}
+      <LocationPin
+        name={"Columbia Icefield Glacier Adventure"}
+        castShadow
+        position={positions.columbiaIcefieldGlacierAdventure}
+      />
+
+      <LocationPin
+        name={"Columbia Icefield Skywalk"}
+        castShadow
+        position={positions.columbiaIcefieldSkywalk}
       />
 
       <Road />

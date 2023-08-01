@@ -25,16 +25,21 @@ const FillMaterial = shaderMaterial(
   uniform float time;
   varying vec2 vUv;
   varying vec3 vNormal;
+
   // This works backwards, flip x UVs in blender and re-export.
   void main() {
     // vec2 st = gl_FragCoord.xy/vUv.xy;
 
     // float strength = mod(vUv.x * 1.0, 1.0);
     float strength = mod(1.0 - vUv.x * 1.0, 1.0);
+    float diff = gl_FragCoord.x - vUv.x;
     strength = step(time, strength);  
+    vec3 initialColor = vec3(0.0, 0.0, 0.0);
+    vec3 otherColor = vec3(0.0, 0.0, 0.0);
+    vec3 color = mix(otherColor, initialColor, step(time, 1.0 - vUv.x));
     // strength *= strength * time;   
     
-    gl_FragColor = vec4(strength, strength, strength, 1.0);
+    gl_FragColor = vec4(color, step(time, 1.0 - vUv.x));
     
   }
   `
@@ -50,15 +55,16 @@ const Road = (props) => {
     time: {
       min: 0,
       max: 1,
-      value: 0.5,
+      value: 0.0,
       step: 0.001,
     },
   });
 
   return (
     <group {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.Road.geometry} scale={0.1}>
-        <fillMaterial time={time} />
+      <mesh geometry={nodes.Road.geometry} scale={0.1}>
+        {/* UVs are backwards so i'm flipping time here */}
+        <fillMaterial transparent={true} time={1.0 - time} />
       </mesh>
     </group>
   );

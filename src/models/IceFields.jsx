@@ -11,9 +11,6 @@ export default function IceFields(props) {
 
   return (
     <group receiveShadow {...props} dispose={null}>
-      {/* <Plane receiveShadow scale={5} rotation={[-Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial receiveShadow color={0xff0099} />
-      </Plane> */}
       <mesh
         receiveShadow
         geometry={scene.nodes.EXPORT_GOOGLE_SAT_WM.geometry}
@@ -23,14 +20,9 @@ export default function IceFields(props) {
           map={iceFieldsTexture}
           side={THREE.DoubleSide}
           map-flipY={false}
-          color={0x303030}
-          // metalness={0.5}
-          // map-transparent={true}
-          // map-wrapS={THREE.RepeatWrapping}
-          // map-wrapT={THREE.RepeatWrapping}
-          // map-repeat={[1, 1]}
+          // color={0x303030}
+          // normalMap={iceFieldsTexture} // TODO: if needed
           map-anisotropy={32}
-          // map-colorSpace={"sRGBEncoding"}
         />
       </mesh>
     </group>

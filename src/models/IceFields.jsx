@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { Plane, useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFields(props) {
-  const iceFieldsTexture = useTexture("/textures/baked4-adjusted-ps.png");
+  const iceFieldsTexture = useTexture("/textures/baked4-adjusted-ps.jpg");
   const scene = useGLTF("/glb/ice-fields-normals.glb");
 
   return (

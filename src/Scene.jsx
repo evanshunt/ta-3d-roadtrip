@@ -94,7 +94,8 @@ const Scene = () => {
         theatreKey={"Camera"}
         near={-10}
         zoom={125}
-        position={[10, 2.5, 7]}
+        position={[-5.26, -1.65, 0.23]}
+        rotation={[-0.3, 1, 0.23]}
       />
 
       {/* <OrbitControls

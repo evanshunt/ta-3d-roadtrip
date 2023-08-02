@@ -16,7 +16,7 @@ export default function LocationPin(props) {
         geometry={nodes.Cylinder.geometry}
         material={
           new THREE.MeshStandardMaterial({
-            color: 0x000000,
+            color: 0xff0000,
             roughness: 1.0,
           })
         }

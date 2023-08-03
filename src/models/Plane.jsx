@@ -16,8 +16,8 @@ export default function Plane(props) {
         receiveShadow
         geometry={nodes.Plane.geometry}
         rotation={[0, 1.571, 0]}
-        position={[0, -0.75, 0]}
-        scale={-110.081}
+        position={[0, -0.7, 0]}
+        scale={-105}
       >
         <meshStandardMaterial
           map={planeTexture}

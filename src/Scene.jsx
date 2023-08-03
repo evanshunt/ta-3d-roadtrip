@@ -21,6 +21,7 @@ import {
 } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { OrthographicCamera, useCurrentSheet } from "@theatre/r3f";
+import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";
 import Plane from "./models/Plane.jsx";
@@ -181,6 +182,8 @@ const Scene = () => {
       <Road />
 
       <IceFields />
+
+      <Edges />
 
       <Plane />
 

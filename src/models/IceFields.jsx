@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { Plane, useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFields(props) {
-  const iceFieldsTexture = useTexture("/textures/baked4-adjusted-ps.jpg");
+  const iceFieldsTexture = useTexture("/textures/new-3d-texture.jpg");
   const scene = useGLTF("/glb/ice-fields-normals.glb");
 
   return (
@@ -29,4 +29,4 @@ export default function IceFields(props) {
   );
 }
 
-useGLTF.preload("/glb/ice-fields.glb");
+useGLTF.preload("/glb/ice-fields-normals.glb");

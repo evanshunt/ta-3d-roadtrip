@@ -23,6 +23,7 @@ import { val } from "@theatre/core";
 import { OrthographicCamera, useCurrentSheet } from "@theatre/r3f";
 import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";
+import Plane from "./models/Plane.jsx";
 import Road from "./models/Road.jsx";
 
 const positions = {
@@ -92,17 +93,17 @@ const Scene = () => {
       <OrthographicCamera
         makeDefault
         theatreKey={"Camera"}
-        near={-10}
-        zoom={125}
-        position={[-5.26, -1.65, 0.23]}
-        rotation={[-0.3, 1, 0.23]}
+        near={-100}
+        zoom={115}
+        position={[1.25, 0.35, 0.23]}
+        // rotation={[-0.3, 1, 0.23]}
       />
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
@@ -178,7 +179,10 @@ const Scene = () => {
       />
 
       <Road />
+
       <IceFields />
+
+      <Plane />
 
       <TiltShiftEffects />
       {/* <EffectComposer>

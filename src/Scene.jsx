@@ -11,6 +11,7 @@ import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import { useFrame } from "@react-three/fiber";
 import {
+  Cloud,
   // Billboard,
   // Environment,
   // Image,
@@ -26,6 +27,8 @@ import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";
 import Plane from "./models/Plane.jsx";
 import Road from "./models/Road.jsx";
+import FancyPin from "./models/FancyPin.jsx";
+import { useControls } from "leva";
 
 const positions = {
   // Banff Pins:
@@ -88,6 +91,33 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
   });
 
+  // const { scale, positionX, positionY, positionZ } = useControls({
+  //   scale: {
+  //     value: 0.2,
+  //     min: 0.1,
+  //     max: 1,
+  //     step: 0.1,
+  //   },
+  //   positionX: {
+  //     value: -2,
+  //     min: -5,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  //   positionY: {
+  //     value: 2.75,
+  //     min: 0,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  //   positionZ: {
+  //     value: 3,
+  //     min: -5,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  // });
+
   return (
     <>
       {/* Animating the terrain mesh may be the way to do this */}
@@ -96,8 +126,10 @@ const Scene = () => {
         theatreKey={"Camera"}
         near={-100}
         zoom={115}
-        position={[1.25, 0.35, 0.23]}
+        // position={[1.25, 0.35, 0.23]}
+        position={[0.9344612217659182, 0.3561940392504276, 0.8589575259686614]}
         // rotation={[-0.3, 1, 0.23]}
+        rotation={[-0.3930986676881526, 0.7878538812997019, 0.285891145681874]}
       />
 
       <OrbitControls
@@ -111,73 +143,82 @@ const Scene = () => {
       <Perf position="bottom-right" />
 
       {/* Banff Pins */}
-      <LocationPin
+      <FancyPin
         castShadow
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
       />
+      {/* <LocationPin
+        castShadow
+        name={"Banff Upper Hot Springs"}
+        position={positions.banffUpperHotSprings}
+      /> */}
 
-      <LocationPin
+      <FancyPin
         name={"Cave and Basin National Historic Site"}
         castShadow
         position={positions.caveAndBasin}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Discover Banff Tours"}
         castShadow
         position={positions.discoverBanffTours}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Banff Gondola"}
         castShadow
         position={positions.gondola}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Lake Minnewanka Cruise"}
         castShadow
         position={positions.minnewankaCruise}
       />
 
       {/* Lake Louise Pins */}
-      <LocationPin
+      <FancyPin
         name={"Moraine Lake"}
         castShadow
         position={positions.moraineLake}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Lake Agnes Tea House"}
         castShadow
         position={positions.lakeAgnesTeaHouse}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Lake Louise Ski Resort"}
         castShadow
         position={positions.lakeLouiseSkiResort}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Fairmont Chateau Lake Louise"}
         castShadow
         position={positions.fairmontChateauLakeLouise}
       />
 
       {/* 3. Ice Fields Pins */}
-      <LocationPin
+      <FancyPin
         name={"Columbia Icefield Glacier Adventure"}
         castShadow
         position={positions.columbiaIcefieldGlacierAdventure}
       />
 
-      <LocationPin
+      <FancyPin
         name={"Columbia Icefield Skywalk"}
         castShadow
         position={positions.columbiaIcefieldSkywalk}
       />
+
+      <Cloud scale={0.2} position={[-4, 2.75, -0.07]} />
+
+      <Cloud scale={0.15} position={[1.75, 2.25, -3.75]} />
 
       <Road />
 

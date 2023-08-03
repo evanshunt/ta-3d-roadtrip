@@ -39,8 +39,8 @@ const FillMaterial = shaderMaterial(
       float strength = mod(1.0 - vUv.x * 1.0, 1.0);
       strength = step(time, strength);  
       // strength *= strength * time;   
-      
-      gl_FragColor = vec4(strength, 0.0, 0.0, 1.0);
+      vec3 color = vec3(strength, strength, strength);
+      gl_FragColor = vec4(color, 1.0);
       
     }
   `,
@@ -66,7 +66,6 @@ export function Path(props) {
         castShadow
         receiveShadow
         geometry={nodes.Plane.geometry}
-        material={new THREE.MeshStandardMaterial({ color: 0x00ff00 })}
         position={[0, 0, 0]}
         scale={1}
       >

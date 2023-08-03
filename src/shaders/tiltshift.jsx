@@ -183,17 +183,17 @@ function TiltShiftEffects() {
     <EffectComposer>
       <TiltShift
         // blur={blur}
-        blur={0.18}
+        blur={0.34}
         // taper={taper}
-        taper={0.35}
+        taper={0.7}
         // start={start}
-        start={[0.0, 0.35]}
+        start={[0.0, 0.0]}
         // end={end}
-        end={[0.68, 0.5]}
+        end={[0.45, 0.45]}
         // sampleCount={sampleCount}
-        sampleCount={30.0}
+        // sampleCount={30.0}
         // direction={direction}
-        direction={[1, 0.25]}
+        direction={[1, 0.07]}
       />
     </EffectComposer>
   );

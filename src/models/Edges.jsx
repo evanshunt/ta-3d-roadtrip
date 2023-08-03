@@ -8,14 +8,6 @@ import { useGLTF } from "@react-three/drei";
 import { useControls } from "leva";
 
 export default function Edges(props) {
-  const { scale } = useControls({
-    scale: {
-      min: 0.00001,
-      max: 0.001,
-      value: 0.00005,
-      step: 0.00001,
-    },
-  });
   const { nodes, materials } = useGLTF("/glb/edges.glb");
   return (
     <group {...props} dispose={null}>
@@ -25,9 +17,9 @@ export default function Edges(props) {
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         // material={nodes.EXPORT_GOOGLE_SAT_WM.material}
         position={[0, 0.0, 0]}
-        scale={scale}
+        scale={0.00005}
       >
-        <meshStandardMaterial color={0xefefef} side={THREE.DoubleSide} />
+        <meshStandardMaterial color={0xafafaf} side={THREE.DoubleSide} />
       </mesh>
     </group>
   );

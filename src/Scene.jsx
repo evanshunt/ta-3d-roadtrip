@@ -11,7 +11,6 @@ import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import { useFrame } from "@react-three/fiber";
 import {
-  Cloud,
   // Billboard,
   // Environment,
   // Image,
@@ -22,6 +21,7 @@ import {
 } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { OrthographicCamera, useCurrentSheet } from "@theatre/r3f";
+import { Cloud } from "./Clouds.jsx";
 import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
 import IceFields from "./models/IceFields.jsx";

@@ -17,7 +17,7 @@ export default function Plane(props) {
         castShadow
         receiveShadow
         geometry={nodes.Plane.geometry}
-        rotation={[0, 1.571, 0]}
+        rotation={[0, -1.571, 0]}
         position={[0, -0.7, 0]}
         scale={105}
       >

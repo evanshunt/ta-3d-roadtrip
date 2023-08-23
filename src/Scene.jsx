@@ -1,6 +1,5 @@
-import * as THREE from "three";
-import React, { useEffect, useRef, useState } from "react";
-// import { useControls } from "leva";
+import React, { useRef } from "react";
+
 import { Perf } from "r3f-perf";
 // import {
 //   DepthOfField,
@@ -10,25 +9,17 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import { useFrame } from "@react-three/fiber";
-import {
-  // Billboard,
-  // Environment,
-  // Image,
-  OrbitControls,
-  Stage,
-  useScroll,
-  // TransformControls,
-} from "@react-three/drei";
+import { OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { OrthographicCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
 import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
-import IceFields from "./models/IceFields.jsx";
-import Plane from "./models/Plane.jsx";
+import IceFieldsDecimated from "./models/IceFieldsDecimated.jsx";
 import Road from "./models/Road.jsx";
 import FancyPin from "./models/FancyPin.jsx";
 import { useControls } from "leva";
+import PlaneDecimated from "./models/PlaneDecimated.jsx";
 
 const positions = {
   // Banff Pins:
@@ -148,11 +139,6 @@ const Scene = () => {
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
       />
-      {/* <LocationPin
-        castShadow
-        name={"Banff Upper Hot Springs"}
-        position={positions.banffUpperHotSprings}
-      /> */}
 
       <FancyPin
         name={"Cave and Basin National Historic Site"}
@@ -216,17 +202,17 @@ const Scene = () => {
         position={positions.columbiaIcefieldSkywalk}
       />
 
-      <Cloud scale={0.2} position={[-4, 2.75, -0.07]} />
+      <Cloud scale={0.2} position={[-4, 1.75, -0.07]} />
 
-      <Cloud scale={0.15} position={[1.75, 2.25, -3.75]} />
+      <Cloud scale={0.15} position={[1.75, 1.25, -3.75]} />
 
       <Road />
 
-      <IceFields />
+      <IceFieldsDecimated />
 
       <Edges />
 
-      <Plane />
+      <PlaneDecimated />
 
       <TiltShiftEffects />
       {/* <EffectComposer>
@@ -236,7 +222,6 @@ const Scene = () => {
           bokehScale={bokehScale}
         />
       </EffectComposer> */}
-      {/* </Stage> */}
     </>
   );
 };

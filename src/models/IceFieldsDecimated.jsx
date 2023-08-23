@@ -7,32 +7,30 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
-export default function Plane(props) {
-  const planeTexture = useTexture("/textures/baked-plane.jpg");
-  const { nodes } = useGLTF("/glb/plane.glb");
-
+export default function IceFieldsDecimated(props) {
+  const { nodes } = useGLTF("/glb/ice-fields-no-edges-decimated.glb");
+  const iceFieldsTexture = useTexture("/textures/baked-no-alpha.jpg");
   return (
     <group {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Plane.geometry}
-        rotation={[0, 0, 0]}
-        position={[-0.2, -1.2, 0]}
-        scale={55}
+        geometry={nodes.EXPORT_GOOGLE_SAT_WM002.geometry}
+        position={[0, 0.157, 0]}
+        scale={4}
       >
         <meshStandardMaterial
-          map={planeTexture}
-          side={THREE.DoubleSide}
+          map={iceFieldsTexture}
+          // side={THREE.DoubleSide}
           roughness={1}
           metalness={0}
           map-flipY={false}
           // normalMap={iceFieldsTexture} // TODO: if needed
-          map-anisotropy={32}
+          // map-anisotropy={32}
         />
       </mesh>
     </group>
   );
 }
 
-useGLTF.preload("/glb/plane.glb");
+useGLTF.preload("/glb/ice-fields-no-edges-decimated.glb");

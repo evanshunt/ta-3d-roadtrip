@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function FancyPin(props) {
-  const { nodes } = useGLTF("/glb/sivriloc.glb");
+  const { nodes } = useGLTF("/glb/location-pin-new.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -23,4 +23,4 @@ export default function FancyPin(props) {
   );
 }
 
-useGLTF.preload("/glb/sivriloc.glb");
+useGLTF.preload("/glb/location-pin-new.glb");

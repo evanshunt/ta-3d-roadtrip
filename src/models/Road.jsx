@@ -51,15 +51,15 @@ const Road = (props) => {
   const { nodes, materials } = useGLTF("/glb/road.glb");
 
   // Controls for testing
-  const { time } = useControls({
-    time: {
-      min: 0,
-      max: 1,
-      value: 0.0,
-      step: 0.001,
-    },
-  });
-
+  // const { time } = useControls({
+  //   time: {
+  //     min: 0,
+  //     max: 1,
+  //     value: 0.0,
+  //     step: 0.001,
+  //   },
+  // });
+  const time = 0;
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Road.geometry} scale={0.1}>

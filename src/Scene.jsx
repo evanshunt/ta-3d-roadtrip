@@ -171,9 +171,10 @@ const Scene = () => {
       <PerspectiveCamera
         makeDefault
         theatreKey={"Camera"}
-        position={[0.01, 23, 0]}
+        position={[0, 23, 0]}
         fov={55}
-        lookAt={lookAtRef}
+        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        // lookAt={lookAtRef}
         zoom={1}
       />
 
@@ -288,9 +289,13 @@ const Scene = () => {
         position={[cloudPositionX, cloudPositionY, cloudPositionZ]}
       /> */}
 
-        <Cloud scale={0.15} position={[4, 1.75, 3]} />
+        <e.group theatreKey="Banff Cloud 2">
+          <Cloud scale={0.15} position={[4, 1.75, 3]} />
+        </e.group>
 
-        <Cloud scale={0.08} position={[2, 1.5, 6]} />
+        <e.group theatreKey="Banff Cloud 1">
+          <Cloud scale={0.08} position={[2, 1.5, 6]} />
+        </e.group>
 
         <Road />
 

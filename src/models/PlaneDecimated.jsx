@@ -10,26 +10,26 @@ import { useGLTF, useTexture } from "@react-three/drei";
 export default function PlaneDecimated(props) {
   const { nodes, materials } = useGLTF("/glb/plane-decimated.glb");
   const planeTexture = useTexture("/textures/baked-plane.jpg");
-  const { positionX, positionY, positionZ } = useControls("Plane", {
-    positionX: {
-      value: 0,
-      min: -5,
-      max: 10,
-      step: 0.05,
-    },
-    positionY: {
-      value: -0.137,
-      min: 0,
-      max: 10,
-      step: 0.25,
-    },
-    positionZ: {
-      value: 0,
-      min: -5,
-      max: 10,
-      step: 0.05,
-    },
-  });
+  // const { positionX, positionY, positionZ } = useControls("Plane", {
+  //   positionX: {
+  //     value: 0,
+  //     min: -5,
+  //     max: 10,
+  //     step: 0.05,
+  //   },
+  //   positionY: {
+  //     value: -0.137,
+  //     min: 0,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  //   positionZ: {
+  //     value: 0,
+  //     min: -5,
+  //     max: 10,
+  //     step: 0.05,
+  //   },
+  // });
   return (
     <group {...props} dispose={null}>
       <mesh

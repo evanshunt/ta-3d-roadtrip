@@ -495,7 +495,7 @@
                 "keyframes": [
                   {
                     "id": "mdAzKP_Ycq",
-                    "position": 3.833,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -508,7 +508,7 @@
                   },
                   {
                     "id": "d7nlc8XZB-",
-                    "position": 4.833,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -527,7 +527,7 @@
                 "keyframes": [
                   {
                     "id": "-sMgAD5FCd",
-                    "position": 3.833,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -540,7 +540,7 @@
                   },
                   {
                     "id": "RWT7j7lZJf",
-                    "position": 4.833,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -559,7 +559,7 @@
                 "keyframes": [
                   {
                     "id": "a0fsSCedtA",
-                    "position": 3.833,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -572,7 +572,7 @@
                   },
                   {
                     "id": "JJBHfzFHnD",
-                    "position": 4.833,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -663,7 +663,7 @@
                 "keyframes": [
                   {
                     "id": "pMDTaLjLsW",
-                    "position": 4.5,
+                    "position": 4.167,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -676,7 +676,7 @@
                   },
                   {
                     "id": "NjiSLyJzlv",
-                    "position": 5.733,
+                    "position": 5.4,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -695,7 +695,7 @@
                 "keyframes": [
                   {
                     "id": "Gde16yYOD0",
-                    "position": 4.5,
+                    "position": 4.167,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -713,8 +713,8 @@
                 "__debugName": "Banff Cloud 2:[\"position\",\"z\"]",
                 "keyframes": [
                   {
-                    "id": "xguluDovJy",
-                    "position": 4.5,
+                    "id": "ldEWqhO_e6",
+                    "position": 4.167,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -723,7 +723,33 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0
+                    "value": -0.009490291134241729
+                  },
+                  {
+                    "id": "EFH9UjS77h",
+                    "position": 5.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.45000017676625703
+                  },
+                  {
+                    "id": "-ps8RYOwh3",
+                    "position": 5.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.09
                   }
                 ]
               },
@@ -758,6 +784,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "jM_tKaxCr1PfP81_",
     "ja-fOOBOe8Yfauzm",
     "X4GhOzbaLahuY4Fa",
     "pEqj_ZoBSN08QC6T",

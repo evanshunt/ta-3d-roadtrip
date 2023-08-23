@@ -276,7 +276,9 @@ const Scene = () => {
         position={[cloudPositionX, cloudPositionY, cloudPositionZ]}
       /> */}
 
-        <Cloud scale={0.15} position={[4, 1.75, 3]} />
+        <e.group theatreKey="Banff Cloud 2">
+          <Cloud scale={0.15} position={[4, 1.75, 3]} />
+        </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[2, 1.5, 6]} />

@@ -9,7 +9,7 @@ import { editable as e } from "@theatre/r3f";
 export default function FancyPin(props) {
   const { nodes } = useGLTF("/glb/location-pin-new.glb");
   return (
-    <group {...props} dispose={null} theatreKey={props.name}>
+    <e.group {...props} dispose={null} theatreKey={props.name}>
       <mesh
         castShadow
         receiveShadow
@@ -20,7 +20,7 @@ export default function FancyPin(props) {
       >
         <meshStandardMaterial color={0x9c0f00} metalness={0} roughness={1} />
       </mesh>
-    </group>
+    </e.group>
   );
 }
 

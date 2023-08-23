@@ -8,7 +8,7 @@ import Loading from "./Loading.jsx";
 const root = createRoot(document.querySelector("#root"));
 
 // studio.extend(extension);
-// studio.initialize();
+studio.initialize();
 
 root.render(
   <>

@@ -495,7 +495,7 @@
                 "keyframes": [
                   {
                     "id": "mdAzKP_Ycq",
-                    "position": 3,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -508,7 +508,7 @@
                   },
                   {
                     "id": "d7nlc8XZB-",
-                    "position": 4,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -527,7 +527,7 @@
                 "keyframes": [
                   {
                     "id": "-sMgAD5FCd",
-                    "position": 3,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -540,7 +540,7 @@
                   },
                   {
                     "id": "RWT7j7lZJf",
-                    "position": 4,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -559,7 +559,7 @@
                 "keyframes": [
                   {
                     "id": "a0fsSCedtA",
-                    "position": 3,
+                    "position": 4.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -572,7 +572,7 @@
                   },
                   {
                     "id": "JJBHfzFHnD",
-                    "position": 4,
+                    "position": 5.433,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -584,12 +584,198 @@
                     "value": 1
                   }
                 ]
+              },
+              "3sw2jshbJn": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"x\"]",
+                "keyframes": []
+              },
+              "bsq65LAANd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "NHr_RzTjOM",
+                    "position": 4.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "BSRGexD-HX",
+                    "position": 6.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -2.099999999999999
+                  }
+                ]
+              },
+              "MIuAdHs3wQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"z\"]",
+                "keyframes": []
+              },
+              "I7gqvkS5G8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "UK5jHu2wn7": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"y\"]",
+                "keyframes": []
+              },
+              "MqCT94gaRO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"z\"]",
+                "keyframes": []
               }
             },
             "trackIdByPropPath": {
               "[\"scale\",\"x\"]": "NX4PkbZBE7",
               "[\"scale\",\"y\"]": "TFs8gNTMii",
-              "[\"scale\",\"z\"]": "wn3RlSX_tP"
+              "[\"scale\",\"z\"]": "wn3RlSX_tP",
+              "[\"rotation\",\"x\"]": "3sw2jshbJn",
+              "[\"rotation\",\"y\"]": "bsq65LAANd",
+              "[\"rotation\",\"z\"]": "MIuAdHs3wQ",
+              "[\"position\",\"x\"]": "I7gqvkS5G8",
+              "[\"position\",\"y\"]": "UK5jHu2wn7",
+              "[\"position\",\"z\"]": "MqCT94gaRO"
+            }
+          },
+          "Banff Cloud 2": {
+            "trackData": {
+              "7avMhSoynT": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "pMDTaLjLsW",
+                    "position": 4.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "NjiSLyJzlv",
+                    "position": 5.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.8700000000000006
+                  }
+                ]
+              },
+              "Q62GCYe2-h": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "Gde16yYOD0",
+                    "position": 4.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "yVj8OKbsIn": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "ldEWqhO_e6",
+                    "position": 4.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.009490291134241729
+                  },
+                  {
+                    "id": "EFH9UjS77h",
+                    "position": 5.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.45000017676625703
+                  },
+                  {
+                    "id": "-ps8RYOwh3",
+                    "position": 5.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.09
+                  }
+                ]
+              },
+              "Om78LEflLJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"x\"]",
+                "keyframes": []
+              },
+              "dBCnD6ihKb": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"y\"]",
+                "keyframes": []
+              },
+              "PTG1L6zaOF": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "7avMhSoynT",
+              "[\"position\",\"y\"]": "Q62GCYe2-h",
+              "[\"position\",\"z\"]": "yVj8OKbsIn",
+              "[\"rotation\",\"x\"]": "Om78LEflLJ",
+              "[\"rotation\",\"y\"]": "dBCnD6ihKb",
+              "[\"rotation\",\"z\"]": "PTG1L6zaOF"
             }
           }
         }
@@ -598,6 +784,10 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "jM_tKaxCr1PfP81_",
+    "ja-fOOBOe8Yfauzm",
+    "X4GhOzbaLahuY4Fa",
+    "pEqj_ZoBSN08QC6T",
     "7UnVoKg39NPRWNjk",
     "VeASHCKXIjc30FRx"
   ]

@@ -178,19 +178,6 @@ const Scene = () => {
         zoom={1}
       />
 
-      {/* Move this to make the camera look at something else */}
-      <e.group
-        position={[0, 0, 0]}
-        ref={lookAtRef}
-        theatreKey={"Camera Focal Point"}
-      >
-        <mesh>
-          {/* uncomment when animating */}
-          {/* <boxGeometry args={[1, 1, 1]} /> */}
-          {/* <meshStandardMaterial color={0xff0099} wireframe={true} /> */}
-        </mesh>
-      </e.group>
-
       {/* <OrthographicCamera
         makeDefault
         theatreKey={"Camera"}

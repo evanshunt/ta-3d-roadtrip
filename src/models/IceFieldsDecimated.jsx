@@ -8,7 +8,8 @@ import { useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFieldsDecimated(props) {
   const { nodes } = useGLTF("/glb/ice-fields-no-edges-decimated.glb");
-  const iceFieldsTexture = useTexture("/textures/baked-no-alpha.jpg");
+  // const iceFieldsTexture = useTexture("/textures/baked-no-alpha.jpg");
+  const iceFieldsTexture = useTexture("/textures/baked-simple.jpg");
   return (
     <group {...props} dispose={null}>
       <mesh

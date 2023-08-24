@@ -9,7 +9,7 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import LocationPin from "./models/LocationPin.jsx";
 import { useFrame } from "@react-three/fiber";
-import { OrbitControls, useScroll } from "@react-three/drei";
+import { Billboard, Image, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -21,6 +21,7 @@ import FancyPin from "./models/FancyPin.jsx";
 import { useControls } from "leva";
 import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
+import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
 
 const positions = {
   // Banff Pins:
@@ -41,13 +42,18 @@ const positions = {
 };
 
 const Scene = () => {
+  const sceneRef = useRef();
+  const roadRef = useRef();
   const sheet = useCurrentSheet();
   const scroll = useScroll();
-  const lookAtRef = useRef();
 
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
     sheet.sequence.position = scroll.offset * sequenceLength;
+
+    sceneRef.current.roadAmount = scroll.offset;
+    // console.log(sceneRef.current.roadAmount);
+    roadRef.current.time = scroll.offset;
   });
 
   // const { scale, positionX, positionY, positionZ } = useControls({
@@ -200,14 +206,20 @@ const Scene = () => {
       <Lights />
 
       <Perf position="bottom-right" />
-      <e.group theatreKey="Scene">
+      <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Banff Pins */}
-        <FancyPin
+        {/* <FancyPin
           castShadow
           name={"Banff Upper Hot Springs"}
           position={positions.banffUpperHotSprings}
           // position={[positionX, positionY, positionZ]}
-        />
+        /> */}
+
+        <Billboard position={positions.banffUpperHotSprings}>
+          <e.group theatreKey="Banff Upper Hot Springs">
+            <Image transparent url={imageSrc} />
+          </e.group>
+        </Billboard>
 
         {/* <FancyPin
           name={"Cave and Basin National Historic Site"}
@@ -284,7 +296,9 @@ const Scene = () => {
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
         </e.group>
 
-        <Road />
+        <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">
+          <Road time={roadRef.current?.time} />
+        </e.group>
 
         <IceFieldsDecimated />
 

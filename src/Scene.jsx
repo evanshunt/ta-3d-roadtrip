@@ -29,7 +29,8 @@ const positions = {
   // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
   banffUpperHotSprings: [1.8, 0.475, 4.8],
   caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
-  discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
+  // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
+  discoverBanffTours: [1.8, 0.425, 4.22],
   // gondola: [5.358368436662257, 0.33, 5.634275247444896],
   gondola: [1.85, 0.475, 4.9],
   minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
@@ -199,11 +200,11 @@ const Scene = () => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      />
+      /> */}
 
       <Lights />
 
@@ -219,18 +220,23 @@ const Scene = () => {
 
         <ImagePin
           imageSrc={imageSrc}
-          // position={[positionX, positionY, positionZ]}
-          scale={0.25}
+          scale={0.1}
           name={"Banff Upper Hot Springs Position"}
           position={positions.banffUpperHotSprings}
         />
 
         <ImagePin
           imageSrc={"/images/banff-gondola-cropped.png"}
-          // position={[positionX, positionY, positionZ]}
-          scale={0.25}
+          scale={0.1}
           name={"Banff Gondola"}
           position={positions.gondola}
+        />
+
+        <ImagePin
+          imageSrc={"/images/discover-banff-tours-cropped.png"}
+          scale={0.1}
+          name={"Discover Banff Tours"}
+          position={positions.discoverBanffTours}
         />
 
         {/* <FancyPin

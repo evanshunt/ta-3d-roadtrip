@@ -28,14 +28,14 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={0.4} color={0xffffff} />
+      <ambientLight intensity={0.5} color={0xffffff} />
 
       <directionalLight
         ref={spotLight}
         position={[-7, 6.5, -5]}
         // position={[positionX, positionY, positionZ]}
         // 40, 71, 0
-        intensity={0.2}
+        intensity={0.3}
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}

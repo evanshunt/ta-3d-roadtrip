@@ -7,9 +7,9 @@ import { Perf } from "r3f-perf";
 //   ToneMapping,
 // } from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
-import LocationPin from "./models/LocationPin.jsx";
+
 import { useFrame } from "@react-three/fiber";
-import { Billboard, Image, OrbitControls, useScroll } from "@react-three/drei";
+import { OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -17,8 +17,7 @@ import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
 import IceFieldsDecimated from "./models/IceFieldsDecimated.jsx";
 import Road from "./models/Road.jsx";
-import FancyPin from "./models/FancyPin.jsx";
-import { useControls } from "leva";
+
 import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
@@ -62,7 +61,6 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
 
     sceneRef.current.roadAmount = scroll.offset;
-    // console.log(sceneRef.current.roadAmount);
     // roadRef.current.time = scroll.offset;
   });
 
@@ -207,11 +205,11 @@ const Scene = () => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      />
+      /> */}
 
       <Lights />
 
@@ -371,9 +369,9 @@ const Scene = () => {
           {/* zoomed out scale 0.175 */}
         </e.group>
 
-        {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">
-          <Road time={roadRef.current?.time} />
-        </e.group> */}
+        {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
+        <Road />
+        {/* </e.group> */}
 
         <IceFieldsDecimated />
 

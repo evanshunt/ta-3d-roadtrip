@@ -7,9 +7,9 @@ import { Perf } from "r3f-perf";
 //   ToneMapping,
 // } from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
-import LocationPin from "./models/LocationPin.jsx";
+
 import { useFrame } from "@react-three/fiber";
-import { Billboard, Image, OrbitControls, useScroll } from "@react-three/drei";
+import { OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -17,28 +17,37 @@ import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
 import IceFieldsDecimated from "./models/IceFieldsDecimated.jsx";
 import Road from "./models/Road.jsx";
-import FancyPin from "./models/FancyPin.jsx";
-import { useControls } from "leva";
+
 import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
+import ImagePin from "./models/ImagePin.jsx";
 
 const positions = {
   // Banff Pins:
   // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
-  banffUpperHotSprings: [1.8, 0.4, 4.8],
+  banffUpperHotSprings: [1.8, 0.475, 4.8],
   caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
-  discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
-  gondola: [5.358368436662257, 0.33, 5.634275247444896],
-  minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+  // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
+  discoverBanffTours: [1.8, 0.425, 4.22],
+  // gondola: [5.358368436662257, 0.33, 5.634275247444896],
+  gondola: [1.85, 0.475, 4.9],
+  // minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+  minnewankaCruise: [1.85, 0.38, 3.82],
   // Lake Louise Pins:
-  moraineLake: [1.7, 0.4, 3.3],
-  lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
-  lakeLouiseSkiResort: [1.9, 0.4, 2.8],
-  fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+  // moraineLake: [1.7, 0.4, 3.3],
+  moraineLake: [-1.7, 0.47, 2.82],
+  // lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
+  lakeAgnesTeaHouse: [-2.1, 0.47, 2.35],
+  // lakeLouiseSkiResort: [1.9, 0.4, 2.8],
+  lakeLouiseSkiResort: [-1.6, 0.475, 1.67],
+  // fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+  fairmontChateauLakeLouise: [-1.9, 0.42, 2.35],
   // Icefields Pins:
-  columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
-  columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
+  // columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
+  columbiaIcefieldGlacierAdventure: [-6.95, 0.425, -4.45],
+  // columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
+  columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
 };
 
 const Scene = () => {
@@ -52,8 +61,7 @@ const Scene = () => {
     sheet.sequence.position = scroll.offset * sequenceLength;
 
     sceneRef.current.roadAmount = scroll.offset;
-    // console.log(sceneRef.current.roadAmount);
-    roadRef.current.time = scroll.offset;
+    // roadRef.current.time = scroll.offset;
   });
 
   // const { scale, positionX, positionY, positionZ } = useControls({
@@ -215,11 +223,75 @@ const Scene = () => {
           // position={[positionX, positionY, positionZ]}
         /> */}
 
-        <Billboard position={positions.banffUpperHotSprings}>
-          <e.group theatreKey="Banff Upper Hot Springs">
-            <Image transparent url={imageSrc} />
-          </e.group>
-        </Billboard>
+        <ImagePin
+          imageSrc={imageSrc}
+          scale={0.2}
+          name={"Banff Upper Hot Springs Position"}
+          position={positions.banffUpperHotSprings}
+        />
+
+        <ImagePin
+          imageSrc={"/images/banff-gondola-cropped.png"}
+          scale={0.2}
+          name={"Banff Gondola"}
+          position={positions.gondola}
+        />
+
+        <ImagePin
+          imageSrc={"/images/discover-banff-tours-cropped.png"}
+          scale={0.2}
+          name={"Discover Banff Tours"}
+          position={positions.discoverBanffTours}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
+          scale={0.2}
+          name={"Lake Minnewanka Cruise"}
+          position={positions.minnewankaCruise}
+        />
+
+        <ImagePin
+          imageSrc={"/images/moraine-lake-cropped.png"}
+          scale={0.2}
+          name={"Moraine Lake"}
+          position={positions.minnewankaCruise}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
+          scale={0.2}
+          name={"Lake Agnes Tea House"}
+          position={positions.lakeAgnesTeaHouse}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-louise-ski-resort-cropped.png"}
+          scale={0.2}
+          name={"Lake Louise Ski Resort"}
+          position={positions.lakeLouiseSkiResort}
+        />
+
+        <ImagePin
+          imageSrc={"/images/fairmont-chateau-lake-louise-cropped.png"}
+          scale={0.2}
+          name={"Fairmont Chateau Lake Louise"}
+          position={positions.fairmontChateauLakeLouise}
+        />
+
+        {/* <ImagePin
+          imageSrc={"/images/columbia-icefield-glacier-adventure-cropped.png"}
+          scale={0.2}
+          name={"Columbia Icefield Glacier Adventure"}
+          position={positions.columbiaIcefieldGlacierAdventure}
+        /> */}
+
+        <ImagePin
+          imageSrc={"/images/columbia-icefield-skywalk-cropped.png"}
+          scale={0.2}
+          name={"Columbia Icefield Skywalk"}
+          position={positions.columbiaIcefieldSkywalk}
+        />
 
         {/* <FancyPin
           name={"Cave and Basin National Historic Site"}
@@ -283,22 +355,23 @@ const Scene = () => {
           position={positions.columbiaIcefieldSkywalk}
         /> */}
 
-        {/* <Cloud
-        scale={cloudScale}
-        position={[cloudPositionX, cloudPositionY, cloudPositionZ]}
-      /> */}
+        <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+
+        <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
 
         <e.group theatreKey="Banff Cloud 2">
           <Cloud scale={0.15} position={[4, 1.75, 3]} />
+          {/* zoomed out scale = 0.25 */}
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
+          {/* zoomed out scale 0.175 */}
         </e.group>
 
-        <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">
-          <Road time={roadRef.current?.time} />
-        </e.group>
+        {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
+        <Road />
+        {/* </e.group> */}
 
         <IceFieldsDecimated />
 

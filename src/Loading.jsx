@@ -12,7 +12,7 @@ const Loading = () => {
       >
         <circle cx="12.5" cy="12.5" r="12.5">
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="0s"
             dur="1s"
             values="1;.2;1"

@@ -36,7 +36,7 @@ const FillMaterial = shaderMaterial(
     float strength = mod(1.0 - vUv.x * 1.0, 1.0);
     float diff = gl_FragCoord.x - vUv.x;
     strength = step(time, strength);  
-    vec3 initialColor = vec3(0.0, 0.0, 0.0);
+    vec3 initialColor = vec3(1.0, 1.0, 1.0);
     vec3 otherColor = vec3(0.0, 0.0, 0.0);
     vec3 color = mix(otherColor, initialColor, step(time, 1.0 - vUv.x));
     // strength *= strength * time;   
@@ -61,6 +61,7 @@ const Road = (props) => {
 
     shaderRef.current.uniforms.time.value =
       1.0 - sheet.sequence.position / sequenceLength;
+    // 0;
   });
 
   // Controls for testing

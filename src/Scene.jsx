@@ -33,7 +33,8 @@ const positions = {
   discoverBanffTours: [1.8, 0.425, 4.22],
   // gondola: [5.358368436662257, 0.33, 5.634275247444896],
   gondola: [1.85, 0.475, 4.9],
-  minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+  // minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
+  minnewankaCruise: [1.85, 0.38, 3.82],
   // Lake Louise Pins:
   moraineLake: [1.7, 0.4, 3.3],
   lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
@@ -200,11 +201,11 @@ const Scene = () => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
@@ -227,16 +228,23 @@ const Scene = () => {
 
         <ImagePin
           imageSrc={"/images/banff-gondola-cropped.png"}
-          scale={0.1}
+          scale={0.15}
           name={"Banff Gondola"}
           position={positions.gondola}
         />
 
         <ImagePin
           imageSrc={"/images/discover-banff-tours-cropped.png"}
-          scale={0.1}
+          scale={0.15}
           name={"Discover Banff Tours"}
           position={positions.discoverBanffTours}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
+          scale={0.15}
+          name={"Lake Minnewanka Cruise"}
+          position={positions.minnewankaCruise}
         />
 
         {/* <FancyPin

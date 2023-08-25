@@ -12,7 +12,7 @@ function Cloud({
   depth = 1.5,
   segments = 20,
   texture = CLOUD_URL,
-  color = "#ffffff",
+  color = "#efefef",
   depthTest = true,
   ...props
 }) {

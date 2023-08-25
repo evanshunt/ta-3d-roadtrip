@@ -19,8 +19,8 @@ export default function PlaneDecimated(props) {
   //   },
   //   positionY: {
   //     value: -0.137,
-  //     min: 0,
-  //     max: 10,
+  //     min: -5,
+  //     max: 5,
   //     step: 0.25,
   //   },
   //   positionZ: {
@@ -37,7 +37,10 @@ export default function PlaneDecimated(props) {
         receiveShadow
         geometry={nodes.Plane.geometry}
         material={materials["Material.001"]}
-        position={[0.55, -1, 0.7]}
+        // position={[0.55, -1, 0.7]}
+        // position={[positionX, positionY, positionZ]}
+        position={[0.7, -1, -0.525]}
+        rotation={[0, Math.PI / 2, 0]}
         scale={13.15 * 4}
       >
         <meshStandardMaterial

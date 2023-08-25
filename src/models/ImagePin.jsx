@@ -10,7 +10,6 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
   //     min: -5,
   //     max: 5,
   //     step: 0.025,
-
   //   },
   //   positionY: {
   //     value: position[1],
@@ -23,7 +22,6 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
   //     min: -5,
   //     max: 5,
   //     step: 0.025,
-
   //   },
   // });
 

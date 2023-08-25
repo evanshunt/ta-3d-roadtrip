@@ -35,7 +35,7 @@ const Lights = () => {
         ref={spotLight}
         position={[15.5, 50, 18]}
         // 40, 71, 0
-        intensity={0.6}
+        intensity={0.2}
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}

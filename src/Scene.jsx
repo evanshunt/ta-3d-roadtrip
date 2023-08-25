@@ -22,14 +22,16 @@ import { useControls } from "leva";
 import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
+import ImagePin from "./models/ImagePin.jsx";
 
 const positions = {
   // Banff Pins:
   // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
-  banffUpperHotSprings: [1.8, 0.4, 4.8],
+  banffUpperHotSprings: [1.8, 0.475, 4.8],
   caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
   discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
-  gondola: [5.358368436662257, 0.33, 5.634275247444896],
+  // gondola: [5.358368436662257, 0.33, 5.634275247444896],
+  gondola: [1.85, 0.475, 4.9],
   minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
   // Lake Louise Pins:
   moraineLake: [1.7, 0.4, 3.3],
@@ -53,7 +55,7 @@ const Scene = () => {
 
     sceneRef.current.roadAmount = scroll.offset;
     // console.log(sceneRef.current.roadAmount);
-    roadRef.current.time = scroll.offset;
+    // roadRef.current.time = scroll.offset;
   });
 
   // const { scale, positionX, positionY, positionZ } = useControls({
@@ -197,11 +199,11 @@ const Scene = () => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
@@ -215,11 +217,21 @@ const Scene = () => {
           // position={[positionX, positionY, positionZ]}
         /> */}
 
-        <Billboard position={positions.banffUpperHotSprings}>
-          <e.group theatreKey="Banff Upper Hot Springs">
-            <Image transparent url={imageSrc} />
-          </e.group>
-        </Billboard>
+        <ImagePin
+          imageSrc={imageSrc}
+          // position={[positionX, positionY, positionZ]}
+          scale={0.25}
+          name={"Banff Upper Hot Springs Position"}
+          position={positions.banffUpperHotSprings}
+        />
+
+        <ImagePin
+          imageSrc={"/images/banff-gondola-cropped.png"}
+          // position={[positionX, positionY, positionZ]}
+          scale={0.25}
+          name={"Banff Gondola"}
+          position={positions.gondola}
+        />
 
         {/* <FancyPin
           name={"Cave and Basin National Historic Site"}
@@ -296,9 +308,9 @@ const Scene = () => {
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
         </e.group>
 
-        <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">
+        {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">
           <Road time={roadRef.current?.time} />
-        </e.group>
+        </e.group> */}
 
         <IceFieldsDecimated />
 

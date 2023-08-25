@@ -36,13 +36,19 @@ const positions = {
   // minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
   minnewankaCruise: [1.85, 0.38, 3.82],
   // Lake Louise Pins:
-  moraineLake: [1.7, 0.4, 3.3],
-  lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
-  lakeLouiseSkiResort: [1.9, 0.4, 2.8],
-  fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+  // moraineLake: [1.7, 0.4, 3.3],
+  moraineLake: [-1.7, 0.47, 2.82],
+  // lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
+  lakeAgnesTeaHouse: [-2.1, 0.47, 2.35],
+  // lakeLouiseSkiResort: [1.9, 0.4, 2.8],
+  lakeLouiseSkiResort: [-1.6, 0.475, 1.67],
+  // fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+  fairmontChateauLakeLouise: [-1.9, 0.42, 2.35],
   // Icefields Pins:
-  columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
-  columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
+  // columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
+  columbiaIcefieldGlacierAdventure: [-6.95, 0.425, -4.45],
+  // columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
+  columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
 };
 
 const Scene = () => {
@@ -221,30 +227,72 @@ const Scene = () => {
 
         <ImagePin
           imageSrc={imageSrc}
-          scale={0.1}
+          scale={0.2}
           name={"Banff Upper Hot Springs Position"}
           position={positions.banffUpperHotSprings}
         />
 
         <ImagePin
           imageSrc={"/images/banff-gondola-cropped.png"}
-          scale={0.15}
+          scale={0.2}
           name={"Banff Gondola"}
           position={positions.gondola}
         />
 
         <ImagePin
           imageSrc={"/images/discover-banff-tours-cropped.png"}
-          scale={0.15}
+          scale={0.2}
           name={"Discover Banff Tours"}
           position={positions.discoverBanffTours}
         />
 
         <ImagePin
           imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
-          scale={0.15}
+          scale={0.2}
           name={"Lake Minnewanka Cruise"}
           position={positions.minnewankaCruise}
+        />
+
+        <ImagePin
+          imageSrc={"/images/moraine-lake-cropped.png"}
+          scale={0.2}
+          name={"Moraine Lake"}
+          position={positions.minnewankaCruise}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
+          scale={0.2}
+          name={"Lake Agnes Tea House"}
+          position={positions.lakeAgnesTeaHouse}
+        />
+
+        <ImagePin
+          imageSrc={"/images/lake-louise-ski-resort-cropped.png"}
+          scale={0.2}
+          name={"Lake Louise Ski Resort"}
+          position={positions.lakeLouiseSkiResort}
+        />
+
+        <ImagePin
+          imageSrc={"/images/fairmont-chateau-lake-louise-cropped.png"}
+          scale={0.2}
+          name={"Fairmont Chateau Lake Louise"}
+          position={positions.fairmontChateauLakeLouise}
+        />
+
+        {/* <ImagePin
+          imageSrc={"/images/columbia-icefield-glacier-adventure-cropped.png"}
+          scale={0.2}
+          name={"Columbia Icefield Glacier Adventure"}
+          position={positions.columbiaIcefieldGlacierAdventure}
+        /> */}
+
+        <ImagePin
+          imageSrc={"/images/columbia-icefield-skywalk-cropped.png"}
+          scale={0.2}
+          name={"Columbia Icefield Skywalk"}
+          position={positions.columbiaIcefieldSkywalk}
         />
 
         {/* <FancyPin
@@ -309,17 +357,18 @@ const Scene = () => {
           position={positions.columbiaIcefieldSkywalk}
         /> */}
 
-        {/* <Cloud
-        scale={cloudScale}
-        position={[cloudPositionX, cloudPositionY, cloudPositionZ]}
-      /> */}
+        <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+
+        <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
 
         <e.group theatreKey="Banff Cloud 2">
           <Cloud scale={0.15} position={[4, 1.75, 3]} />
+          {/* zoomed out scale = 0.25 */}
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
+          {/* zoomed out scale 0.175 */}
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST">

@@ -1,7 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-
-// import { useControls } from "leva";
+import { useControls } from "leva";
 
 const Lights = () => {
   const spotLight = useRef();
@@ -33,7 +32,8 @@ const Lights = () => {
 
       <directionalLight
         ref={spotLight}
-        position={[15.5, 50, 18]}
+        position={[-7, 6.5, -5]}
+        // position={[positionX, positionY, positionZ]}
         // 40, 71, 0
         intensity={0.2}
         castShadow

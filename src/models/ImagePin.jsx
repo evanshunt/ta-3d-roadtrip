@@ -7,7 +7,7 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
   // const { positionX, positionY, positionZ } = useControls({
   //   positionX: {
   //     value: position[0],
-  //     min: -5,
+  //     min: -8,
   //     max: 5,
   //     step: 0.025,
   //   },

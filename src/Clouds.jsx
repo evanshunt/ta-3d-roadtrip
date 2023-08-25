@@ -6,13 +6,13 @@ import { useTexture } from "@react-three/drei";
 
 const CLOUD_URL = "/textures/cloud.png";
 function Cloud({
-  opacity = 0.5,
+  opacity = 0.9,
   speed = 0.4,
   width = 10,
   depth = 1.5,
   segments = 20,
   texture = CLOUD_URL,
-  color = "#efefef",
+  color = "#ffffff",
   depthTest = true,
   ...props
 }) {

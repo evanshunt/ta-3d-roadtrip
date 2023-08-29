@@ -41,7 +41,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 3.849729282106035
@@ -52,12 +52,77 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 3.8397290863731786
+                  },
+                  {
+                    "id": "4UZHYNsPmI",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 3.8397290863731786
+                  },
+                  {
+                    "id": "SSeFlRncHy",
+                    "position": 6.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 2.989729086373195
+                  },
+                  {
+                    "id": "vzhDY8JtnH",
+                    "position": 6.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 2.1697290863732093
+                  },
+                  {
+                    "id": "c6O1u1QWbr",
+                    "position": 7.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.7697290863732125
+                  },
+                  {
+                    "id": "qPeeefhzfT",
+                    "position": 7.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 3.8397290863731786
+                    "value": 0.7197290863732115
                   }
                 ]
               },
@@ -86,10 +151,10 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
-                    "value": 2.5907976590173503
+                    "value": 3.35
                   },
                   {
                     "id": "eya1EoiJ5y",
@@ -97,12 +162,25 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 3.35
+                  },
+                  {
+                    "id": "nBFln5C7ce",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 2.2507978656241807
+                    "value": 3.35
                   }
                 ]
               },
@@ -131,7 +209,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 7.056087763843319
@@ -142,12 +220,38 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 4.896089144847252
+                  },
+                  {
+                    "id": "-h-kFX5uO6",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 4.896089144847252
+                  },
+                  {
+                    "id": "jp8K8AeDkP",
+                    "position": 7.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 4.896089144847252
+                    "value": 4.456089144847258
                   }
                 ]
               },
@@ -176,7 +280,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": -0.8129012492110479
@@ -187,12 +291,38 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": -1.4928995093668316
+                  },
+                  {
+                    "id": "1nytDx0QQV",
+                    "position": 7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": -1.2128995093668313
+                  },
+                  {
+                    "id": "_1TCMxHYn9",
+                    "position": 7.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": -1.4928995093668316
+                    "value": -1.0628940578658543
                   }
                 ]
               },
@@ -221,7 +351,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 0.5082178907689429
@@ -232,7 +362,7 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
                       0.5,
                       0
                     ],
@@ -266,7 +396,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 0.6248447777662556
@@ -277,12 +407,38 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.5648408848670257
+                  },
+                  {
+                    "id": "JspftV-ujA",
+                    "position": 7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.3248408848670254
+                  },
+                  {
+                    "id": "lOHk5Qrb4y",
+                    "position": 7.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 1.5648408848670257
+                    "value": 1.0948381591165368
                   }
                 ]
               },
@@ -298,7 +454,7 @@
                       0.5,
                       1,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 55
@@ -309,7 +465,7 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
                       0.5,
                       0
                     ],
@@ -495,7 +651,7 @@
                 "keyframes": [
                   {
                     "id": "mdAzKP_Ycq",
-                    "position": 4.433,
+                    "position": 4.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -508,7 +664,7 @@
                   },
                   {
                     "id": "d7nlc8XZB-",
-                    "position": 5.433,
+                    "position": 5.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -527,7 +683,7 @@
                 "keyframes": [
                   {
                     "id": "-sMgAD5FCd",
-                    "position": 4.433,
+                    "position": 4.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -540,7 +696,7 @@
                   },
                   {
                     "id": "RWT7j7lZJf",
-                    "position": 5.433,
+                    "position": 5.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -559,7 +715,7 @@
                 "keyframes": [
                   {
                     "id": "a0fsSCedtA",
-                    "position": 4.433,
+                    "position": 4.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -572,7 +728,7 @@
                   },
                   {
                     "id": "JJBHfzFHnD",
-                    "position": 5.433,
+                    "position": 5.2,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -593,34 +749,7 @@
               "bsq65LAANd": {
                 "type": "BasicKeyframedTrack",
                 "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"y\"]",
-                "keyframes": [
-                  {
-                    "id": "NHr_RzTjOM",
-                    "position": 4.833,
-                    "connectedRight": true,
-                    "handles": [
-                      0.5,
-                      1,
-                      0.5,
-                      0.5
-                    ],
-                    "type": "bezier",
-                    "value": 0
-                  },
-                  {
-                    "id": "BSRGexD-HX",
-                    "position": 6.567,
-                    "connectedRight": true,
-                    "handles": [
-                      0.5,
-                      0.5,
-                      0.5,
-                      0
-                    ],
-                    "type": "bezier",
-                    "value": -2.099999999999999
-                  }
-                ]
+                "keyframes": []
               },
               "MIuAdHs3wQ": {
                 "type": "BasicKeyframedTrack",
@@ -777,6 +906,216 @@
               "[\"rotation\",\"y\"]": "dBCnD6ihKb",
               "[\"rotation\",\"z\"]": "PTG1L6zaOF"
             }
+          },
+          "Lake Minnewanka Cruise": {
+            "trackData": {
+              "GQHnBrxn5s": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "kt96XtjQV6",
+                    "position": 5.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "ikZ7tJhzsM",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "WT68wyaw0c": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "tlxKW4GY9z",
+                    "position": 5.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "w_jOz8wQAf",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "N1Jvp5BjjA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "JE3x9V6J2S",
+                    "position": 5.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "weKTG-R1Zo",
+                    "position": 6.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "GQHnBrxn5s",
+              "[\"scale\",\"y\"]": "WT68wyaw0c",
+              "[\"scale\",\"z\"]": "N1Jvp5BjjA"
+            }
+          },
+          "Lake Louise Cloud": {
+            "trackData": {
+              "NcdRx00NzD": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "IybSEohZTb",
+                    "position": 5.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "woAGqMGDTG",
+                    "position": 8.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 6.839999999999998
+                  }
+                ]
+              },
+              "Or5XVqsNGr": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "cqEIdr9VuP",
+                    "position": 5.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "T4xsXkU2JG",
+                    "position": 8.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.5
+                  }
+                ]
+              },
+              "ZivvXfbec9": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "IH7cZwxVPL",
+                    "position": 5.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "kgsLHh9R5B",
+                    "position": 8.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 12
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "NcdRx00NzD",
+              "[\"position\",\"y\"]": "Or5XVqsNGr",
+              "[\"position\",\"z\"]": "ZivvXfbec9"
+            }
           }
         }
       }
@@ -784,6 +1123,9 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "G2MMYeYmI2L1gBov",
+    "Eg8yV7OXwfWRGYrm",
+    "pD3wQAp0bukRJ6m-",
     "jM_tKaxCr1PfP81_",
     "ja-fOOBOe8Yfauzm",
     "X4GhOzbaLahuY4Fa",

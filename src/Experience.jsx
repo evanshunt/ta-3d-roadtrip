@@ -17,6 +17,11 @@ const Experience = () => {
   // const sheet = null;
   // uncomment to use saved data
 
+  const pauses = [0.35, 0.875];
+
+  const pauseDuration = 0.25;
+  let scrollDirection = "down";
+
   return (
     <Canvas
       shadows
@@ -28,9 +33,14 @@ const Experience = () => {
         shadowMapType: THREE.PCFSoftShadowMap,
       }}
     >
-      <ScrollControls pages={3}>
+      <ScrollControls pages={5}>
         <SheetProvider sheet={sheet}>
-          <Scene />
+          <Scene
+            pauses={pauses}
+            pauseDuration={pauseDuration}
+            onScroll={(e) => (scrollDirection = wheelDelta > 0 ? "down" : "up")}
+            scrollDirection
+          />
         </SheetProvider>
       </ScrollControls>
     </Canvas>

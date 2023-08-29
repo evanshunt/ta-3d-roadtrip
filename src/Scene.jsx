@@ -50,13 +50,14 @@ const positions = {
   columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
 };
 
-const Scene = () => {
+const Scene = (props) => {
   const sceneRef = useRef();
   const roadRef = useRef();
   const sheet = useCurrentSheet();
   const scroll = useScroll();
 
   useFrame(({ clock }) => {
+    // console.log(props.onScroll("asdasd"));
     const sequenceLength = val(sheet.sequence.pointer.length);
     sheet.sequence.position = scroll.offset * sequenceLength;
 
@@ -226,7 +227,7 @@ const Scene = () => {
         <ImagePin
           imageSrc={imageSrc}
           scale={0.2}
-          name={"Banff Upper Hot Springs Position"}
+          name={"Banff Upper Hot Springs"}
           position={positions.banffUpperHotSprings}
         />
 
@@ -357,7 +358,9 @@ const Scene = () => {
 
         <Cloud scale={0.2} position={[-2, 2.75, 3]} />
 
-        <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
+        <e.group theatreKey="Lake Louise Cloud">
+          <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
+        </e.group>
 
         <e.group theatreKey="Banff Cloud 2">
           <Cloud scale={0.15} position={[4, 1.75, 3]} />
@@ -370,7 +373,11 @@ const Scene = () => {
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road />
+        <Road
+          pauses={props.pauses}
+          pauseDuration={props.pauseDuration}
+          scrollDirection={props.scrollDirection}
+        />
         {/* </e.group> */}
 
         <IceFieldsDecimated />

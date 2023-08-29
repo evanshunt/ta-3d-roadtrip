@@ -179,21 +179,51 @@ function TiltShiftEffects() {
   //   },
   // });
 
+  const farValues = {
+    blur: 0.34,
+    taper: 0.7,
+    start: [0.0, 0.0],
+    end: [0.45, 0.45],
+    direction: [0.37, 0.03],
+  };
+
+  const closeValues = {
+    blur: 0.6,
+    taper: 0.48,
+    start: [0.52, 0.48],
+    end: [0.79, 0.7],
+    direction: [0.07, -0.02],
+  };
+
+  const vals = useControls({
+    distance: {
+      value: farValues,
+      options: {
+        far: farValues,
+        close: closeValues,
+      },
+    },
+  });
+
   return (
     <EffectComposer>
       <TiltShift
         // blur={blur}
-        blur={0.34}
-        // taper={taper}
-        taper={0.7}
-        // start={start}
-        start={[0.0, 0.0]}
-        // end={end}
-        end={[0.45, 0.45]}
-        // sampleCount={sampleCount}
-        // sampleCount={30.0}
-        // direction={direction}
-        direction={[1, 0.07]}
+        // blur={0.34}
+        blur={0.6}
+        // // taper={taper}
+        // // taper={0.7}
+        taper={0.48}
+        // // start={start}
+        // // start={[0.0, 0.0]}
+        start={[0.52, 0.48]}
+        // // end={end}
+        // // end={[0.45, 0.45]}
+        end={[0.79, 0.7]}
+        // // sampleCount={sampleCount}
+        // // sampleCount={30.0}
+        // // direction={direction}
+        direction={[0.07, -0.02]}
       />
     </EffectComposer>
   );

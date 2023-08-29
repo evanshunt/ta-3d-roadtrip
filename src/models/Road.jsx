@@ -54,14 +54,41 @@ const Road = (props) => {
   const shaderRef = useRef();
   const sheet = useCurrentSheet();
   const scroll = useScroll();
+  let pauseIndex = 0;
+  let cachedPos = 0;
+  let direction = "down";
+
+  const checkPaused = (scrolled) => {
+    if (scrolled < props.pauses[pauseIndex]) {
+      return false;
+    } else if (
+      scrolled >= props.pauses[pauseIndex] &&
+      scrolled < props.pauses[pauseIndex] + props.pauseDuration
+    ) {
+      return true;
+    } else if (scrolled > props.pauses[pauseIndex] + props.pauseDuration) {
+      cachedPos = props.pauses[pauseIndex];
+      props.scrollDirection === "down" ? pauseIndex++ : pauseIndex--;
+      return false;
+    }
+  };
 
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
+    // console.log(sheet.sequence.pointer, sheet.sequence.position);
     sheet.sequence.position = scroll.offset * sequenceLength;
 
-    shaderRef.current.uniforms.time.value =
-      1.0 - sheet.sequence.position / sequenceLength;
-    // 0;
+    // this is a mess. rethink/rewrite. leaving for now as it works in one direction.
+    const isPaused = checkPaused(scroll.offset);
+    if (!isPaused) {
+      if (cachedPos !== 0) {
+        shaderRef.current.uniforms.time.value =
+          1.0 - (scroll.offset - props.pauseDuration);
+      } else {
+        shaderRef.current.uniforms.time.value = 1.0 - scroll.offset;
+      }
+    }
+    console.log(isPaused);
   });
 
   // Controls for testing
@@ -73,38 +100,40 @@ const Road = (props) => {
   //     step: 0.001,
   //   },
   // });
-  const { positionX, positionY, positionZ, scale } = useControls({
-    positionX: {
-      value: -3.6,
-      min: -5,
-      max: 5,
-      step: 0.001,
-    },
-    positionY: {
-      value: 0.01,
-      min: 0,
-      max: 1,
-      step: 0.025,
-    },
-    positionZ: {
-      value: -0.7,
-      min: -5,
-      max: 5,
-      step: 0.001,
-    },
-    scale: {
-      value: 0.1,
-      min: 0.005,
-      max: 1,
-      step: 0.01,
-    },
-  });
+  // const { positionX, positionY, positionZ, scale } = useControls({
+  //   positionX: {
+  //     value: -3.6,
+  //     min: -5,
+  //     max: 5,
+  //     step: 0.001,
+  //   },
+  //   positionY: {
+  //     value: 0.01,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.025,
+  //   },
+  //   positionZ: {
+  //     value: -0.7,
+  //     min: -5,
+  //     max: 5,
+  //     step: 0.001,
+  //   },
+  //   scale: {
+  //     value: 0.1,
+  //     min: 0.005,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  // });
+
+  checkPaused();
 
   // const time = 0;
   // if (!shaderRef.current) return null;
   return (
     <group {...props} dispose={null} position={[-3.6, 0.01, -0.7]}>
-      <mesh geometry={nodes.Road.geometry} scale={scale}>
+      <mesh geometry={nodes.Road.geometry} scale={0.1}>
         {/* UVs are backwards so i'm flipping time here */}
         <fillMaterial transparent={true} time={0.0} ref={shaderRef} />
       </mesh>

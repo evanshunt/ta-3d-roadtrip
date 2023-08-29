@@ -35,7 +35,7 @@ const Lights = () => {
         position={[-7, 6.5, -5]}
         // position={[positionX, positionY, positionZ]}
         // 40, 71, 0
-        intensity={0.3}
+        intensity={0.4}
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}

@@ -28,20 +28,21 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
   return (
     <Billboard position={position} scale={scale}>
       {/* // <Billboard position={[positionX, positionY, positionZ]} scale={scale}> */}
-      <e.group theatreKey={name}>
+      <e.group theatreKey={name} scale={[0]}>
         <mesh position-z={-0.01} castShadow>
           <circleGeometry args={[0.525, 32]} />
           <meshStandardMaterial color="white" metalness={0} roughness={1} />
         </mesh>
         <Image castShadow transparent url={imageSrc} />
-        <mesh position-z={-0.05} receiveShadow>
+        <mesh position-z={-0.02} receiveShadow>
           <circleGeometry args={[0.75, 32]} />
           <meshBasicMaterial
             // castShadow
-            opacity={0.5}
+            opacity={0.75}
             transparent
             // receiveShadow
-            color={0x00a79a}
+            // color={0x00a79a}
+            color={0x9c0f00}
             // metalness={0}
             // roughness={1}
           />

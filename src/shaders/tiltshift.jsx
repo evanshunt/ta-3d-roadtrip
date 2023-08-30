@@ -110,74 +110,74 @@ function TiltShiftEffects() {
   //   end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
   //   sampleCount = 30.0, // number of blur samples
   // direction = [0.37, 0.03]; // direction of blur
-  const { blur } = useControls({
-    blur: {
-      value: 1,
-      min: 0.0,
-      max: 2.0,
-      label: "Blur",
-    },
-  });
+  // const { blur } = useControls({
+  //   blur: {
+  //     value: 1,
+  //     min: 0.0,
+  //     max: 2.0,
+  //     label: "Blur",
+  //   },
+  // });
 
-  const { taper } = useControls({
-    taper: {
-      value: 0.5,
-      min: 0.0,
-      max: 1.0,
-      label: "Taper",
-    },
-  });
+  // const { taper } = useControls({
+  //   taper: {
+  //     value: 0.5,
+  //     min: 0.0,
+  //     max: 1.0,
+  //     label: "Taper",
+  //   },
+  // });
 
-  const { start } = useControls({
-    start: {
-      value: {
-        x: 0.0,
-        y: 0.0,
-      },
-      step: 0.01,
-      min: 0.0,
-      max: 1.0,
-      joystick: "invertY",
-      label: "Start Point",
-    },
-  });
+  // const { start } = useControls({
+  //   start: {
+  //     value: {
+  //       x: 0.0,
+  //       y: 0.0,
+  //     },
+  //     step: 0.01,
+  //     min: 0.0,
+  //     max: 1.0,
+  //     joystick: "invertY",
+  //     label: "Start Point",
+  //   },
+  // });
 
-  const { end } = useControls({
-    end: {
-      value: {
-        x: 0.71,
-        y: 0.66,
-      },
-      step: 0.01,
-      min: 0.0,
-      max: 1.0,
-      joystick: "invertY",
-      label: "End Point",
-    },
-  });
+  // const { end } = useControls({
+  //   end: {
+  //     value: {
+  //       x: 0.71,
+  //       y: 0.66,
+  //     },
+  //     step: 0.01,
+  //     min: 0.0,
+  //     max: 1.0,
+  //     joystick: "invertY",
+  //     label: "End Point",
+  //   },
+  // });
 
-  const { sampleCount } = useControls({
-    sampleCount: {
-      value: 40,
-      min: 3.0,
-      max: 100.0,
-      label: "Samples",
-    },
-  });
+  // const { sampleCount } = useControls({
+  //   sampleCount: {
+  //     value: 40,
+  //     min: 3.0,
+  //     max: 100.0,
+  //     label: "Samples",
+  //   },
+  // });
 
-  const { direction } = useControls({
-    direction: {
-      value: {
-        x: 1.0,
-        y: 0.07,
-      },
-      step: 0.01,
-      min: -1.0,
-      max: 1.0,
-      joystick: "invertY",
-      label: "Direction",
-    },
-  });
+  // const { direction } = useControls({
+  //   direction: {
+  //     value: {
+  //       x: 1.0,
+  //       y: 0.07,
+  //     },
+  //     step: 0.01,
+  //     min: -1.0,
+  //     max: 1.0,
+  //     joystick: "invertY",
+  //     label: "Direction",
+  //   },
+  // });
 
   // const farValues = {
   //   blur: 0.34,
@@ -208,22 +208,27 @@ function TiltShiftEffects() {
   return (
     <EffectComposer>
       <TiltShift
-        blur={blur}
+        // blur={blur}
         // blur={0.34}
         // blur={0.6}
-        taper={taper}
+        blur={0.35}
+        // taper={taper}
         // // taper={0.7}
         // taper={0.48}
-        start={start}
+        taper={0.5}
+        // start={start}
         // // start={[0.0, 0.0]}
         // start={[0.52, 0.48]}
-        end={end}
+        start={[0.99, 0.49]}
+        // end={end}
         // // end={[0.45, 0.45]}
         // end={[0.79, 0.7]}
+        end={[0.45, 0.51]}
         // // sampleCount={sampleCount}
-        // sampleCount={30.0}
-        direction={direction}
+        sampleCount={30.0}
+        // direction={direction}
         // direction={[0.07, -0.02]}
+        direction={[-0.2, 1.0]}
       />
     </EffectComposer>
   );

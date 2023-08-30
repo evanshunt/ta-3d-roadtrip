@@ -27,7 +27,8 @@ const positions = {
   // Banff Pins:
   // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
   banffUpperHotSprings: [1.8, 0.475, 4.8],
-  caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
+  // caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
+  caveAndBasin: [1.35, 0.38, 4.5],
   // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
   discoverBanffTours: [1.8, 0.425, 4.22],
   // gondola: [5.358368436662257, 0.33, 5.634275247444896],
@@ -205,15 +206,15 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
-      <Perf position="bottom-right" />
+      {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Banff Pins */}
         {/* <FancyPin
@@ -224,6 +225,13 @@ const Scene = (props) => {
         /> */}
 
         <ImagePin
+          imageSrc={"/images/cave-and-basin-national-historic-site-cropped.png"}
+          scale={0.2}
+          name={"Cave and Basin"}
+          position={positions.caveAndBasin}
+        />
+
+        {/* <ImagePin
           imageSrc={imageSrc}
           scale={0.2}
           name={"Banff Upper Hot Springs"}
@@ -249,14 +257,14 @@ const Scene = (props) => {
           scale={0.2}
           name={"Lake Minnewanka Cruise"}
           position={positions.minnewankaCruise}
-        />
-
+        /> */}
+        {/* 
         <ImagePin
           imageSrc={"/images/moraine-lake-cropped.png"}
           scale={0.2}
           name={"Moraine Lake"}
           position={positions.minnewankaCruise}
-        />
+        /> */}
 
         <ImagePin
           imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
@@ -265,7 +273,7 @@ const Scene = (props) => {
           position={positions.lakeAgnesTeaHouse}
         />
 
-        <ImagePin
+        {/* <ImagePin
           imageSrc={"/images/lake-louise-ski-resort-cropped.png"}
           scale={0.2}
           name={"Lake Louise Ski Resort"}
@@ -277,7 +285,7 @@ const Scene = (props) => {
           scale={0.2}
           name={"Fairmont Chateau Lake Louise"}
           position={positions.fairmontChateauLakeLouise}
-        />
+        /> */}
 
         {/* <ImagePin
           imageSrc={"/images/columbia-icefield-glacier-adventure-cropped.png"}
@@ -292,68 +300,6 @@ const Scene = (props) => {
           name={"Columbia Icefield Skywalk"}
           position={positions.columbiaIcefieldSkywalk}
         />
-
-        {/* <FancyPin
-          name={"Cave and Basin National Historic Site"}
-          castShadow
-          position={positions.caveAndBasin}
-        />
-
-        <FancyPin
-          name={"Discover Banff Tours"}
-          castShadow
-          position={positions.discoverBanffTours}
-        />
-
-        <FancyPin
-          name={"Banff Gondola"}
-          castShadow
-          position={positions.gondola}
-        />
-
-        <FancyPin
-          name={"Lake Minnewanka Cruise"}
-          castShadow
-          position={positions.minnewankaCruise}
-        /> */}
-
-        {/* Lake Louise Pins */}
-        {/* <FancyPin
-          name={"Moraine Lake"}
-          castShadow
-          position={positions.moraineLake}
-        />
-
-        <FancyPin
-          name={"Lake Agnes Tea House"}
-          castShadow
-          position={positions.lakeAgnesTeaHouse}
-        />
-
-        <FancyPin
-          name={"Lake Louise Ski Resort"}
-          castShadow
-          position={positions.lakeLouiseSkiResort}
-        />
-
-        <FancyPin
-          name={"Fairmont Chateau Lake Louise"}
-          castShadow
-          position={positions.fairmontChateauLakeLouise}
-        /> */}
-
-        {/* 3. Ice Fields Pins */}
-        {/* <FancyPin
-          name={"Columbia Icefield Glacier Adventure"}
-          castShadow
-          position={positions.columbiaIcefieldGlacierAdventure}
-        />
-
-        <FancyPin
-          name={"Columbia Icefield Skywalk"}
-          castShadow
-          position={positions.columbiaIcefieldSkywalk}
-        /> */}
 
         <Cloud scale={0.2} position={[-2, 2.75, 3]} />
 

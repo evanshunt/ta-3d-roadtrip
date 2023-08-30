@@ -11,9 +11,7 @@ import animation from "./animation-data/animation.json";
 // const animation = null;
 
 const Experience = () => {
-  const sheet = getProject("TA Fly Through", { state: animation }).sheet(
-    "Scene"
-  );
+  const sheet = getProject("TA Fly Through", { state: null }).sheet("Scene");
   // const sheet = null;
   // uncomment to use saved data
 

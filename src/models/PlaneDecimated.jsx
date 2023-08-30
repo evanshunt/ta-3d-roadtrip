@@ -33,8 +33,8 @@ export default function PlaneDecimated(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
+        // castShadow
+        // receiveShadow
         geometry={nodes.Plane.geometry}
         material={materials["Material.001"]}
         // position={[0.55, -1, 0.7]}

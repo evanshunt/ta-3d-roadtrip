@@ -57,7 +57,6 @@ const Scene = (props) => {
   const scroll = useScroll();
 
   useFrame(({ clock }) => {
-    // console.log(props.onScroll("asdasd"));
     const sequenceLength = val(sheet.sequence.pointer.length);
     sheet.sequence.position = scroll.offset * sequenceLength;
 
@@ -373,11 +372,7 @@ const Scene = (props) => {
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road
-          pauses={props.pauses}
-          pauseDuration={props.pauseDuration}
-          scrollDirection={props.scrollDirection}
-        />
+        <Road pauses={props.pauses} pauseDuration={props.pauseDuration} />
         {/* </e.group> */}
 
         <IceFieldsDecimated />

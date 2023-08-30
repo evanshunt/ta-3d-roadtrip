@@ -179,31 +179,31 @@ function TiltShiftEffects() {
   //   },
   // });
 
-  const farValues = {
-    blur: 0.34,
-    taper: 0.7,
-    start: [0.0, 0.0],
-    end: [0.45, 0.45],
-    direction: [0.37, 0.03],
-  };
+  // const farValues = {
+  //   blur: 0.34,
+  //   taper: 0.7,
+  //   start: [0.0, 0.0],
+  //   end: [0.45, 0.45],
+  //   direction: [0.37, 0.03],
+  // };
 
-  const closeValues = {
-    blur: 0.6,
-    taper: 0.48,
-    start: [0.52, 0.48],
-    end: [0.79, 0.7],
-    direction: [0.07, -0.02],
-  };
+  // const closeValues = {
+  //   blur: 0.6,
+  //   taper: 0.48,
+  //   start: [0.52, 0.48],
+  //   end: [0.79, 0.7],
+  //   direction: [0.07, -0.02],
+  // };
 
-  const vals = useControls({
-    distance: {
-      value: farValues,
-      options: {
-        far: farValues,
-        close: closeValues,
-      },
-    },
-  });
+  // const vals = useControls({
+  //   distance: {
+  //     value: farValues,
+  //     options: {
+  //       far: farValues,
+  //       close: closeValues,
+  //     },
+  //   },
+  // });
 
   return (
     <EffectComposer>

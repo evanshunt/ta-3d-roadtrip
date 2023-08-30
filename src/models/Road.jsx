@@ -88,7 +88,7 @@ const Road = (props) => {
         shaderRef.current.uniforms.time.value = 1.0 - scroll.offset;
       }
     }
-    console.log(isPaused);
+    // console.log(isPaused);
   });
 
   // Controls for testing

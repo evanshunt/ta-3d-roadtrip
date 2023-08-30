@@ -20,7 +20,7 @@ const Experience = () => {
   const pauses = [0.35, 0.875];
 
   const pauseDuration = 0.25;
-  let scrollDirection = "down";
+  // let scrollDirection = "down";
 
   return (
     <Canvas
@@ -35,12 +35,7 @@ const Experience = () => {
     >
       <ScrollControls pages={5}>
         <SheetProvider sheet={sheet}>
-          <Scene
-            pauses={pauses}
-            pauseDuration={pauseDuration}
-            onScroll={(e) => (scrollDirection = wheelDelta > 0 ? "down" : "up")}
-            scrollDirection
-          />
+          <Scene pauses={pauses} pauseDuration={pauseDuration} />
         </SheetProvider>
       </ScrollControls>
     </Canvas>

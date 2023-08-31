@@ -148,20 +148,6 @@ function TiltShiftEffects() {
   //   },
   // });
 
-  // attempt to animate the tilt shift
-  // useEffect(() => {
-  //   const test = sheet.object("Tilt Shift", {
-  //     blur: types.number(effectRef.current.uniforms.get("blur").value, {
-  //       range: [0, 2],
-  //     }),
-  //   });
-  //   onChange(test.props.blur, (value) => {
-  //     effectRef.current.uniforms.set("blur", value);
-
-  //     console.log(effectRef.current.uniforms);
-  //   });
-  // }, []);
-
   // const { end } = useControls({
   //   end: {
   //     value: {
@@ -199,6 +185,20 @@ function TiltShiftEffects() {
   //   },
   // });
 
+  // attempt to animate the tilt shift
+  // useEffect(() => {
+  //   const test = sheet.object("Tilt Shift", {
+  //     blur: types.number(effectRef.current.uniforms.get("blur").value, {
+  //       range: [0, 2],
+  //     }),
+  //   });
+  //   onChange(test.props.blur, (value) => {
+  //     effectRef.current.uniforms.set("blur", value);
+
+  //     console.log(effectRef.current.uniforms);
+  //   });
+  // }, []);
+
   // const farValues = {
   //   blur: 0.34,
   //   taper: 0.7,
@@ -233,20 +233,20 @@ function TiltShiftEffects() {
         ref={effectRef}
         // blur={blur}
         // blur={0.34}
-        blur={0.6}
-        // // taper={taper}
+        blur={0.5}
+        // taper={taper}
         // // taper={0.7}
-        taper={0.48}
-        // // start={start}
+        taper={0.525}
+        // start={start}
         // // start={[0.0, 0.0]}
-        start={[0.52, 0.48]}
-        // // end={end}
+        start={[0.0, 0.4]}
+        // end={end}
         // // end={[0.45, 0.45]}
-        end={[0.79, 0.7]}
-        // // sampleCount={sampleCount}
-        // // sampleCount={30.0}
-        // // direction={direction}
-        direction={[0.07, -0.02]}
+        end={[0.47, 0.45]}
+        // sampleCount={sampleCount}
+        sampleCount={25.0}
+        // direction={direction}
+        direction={[0.96, 0.03]}
       />
     </EffectComposer>
   );

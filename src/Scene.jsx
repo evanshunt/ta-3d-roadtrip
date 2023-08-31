@@ -239,7 +239,7 @@ const Scene = (props) => {
 
       <Lights />
 
-      <Perf position="bottom-right" />
+      {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Banff Pins */}
         {/* <FancyPin
@@ -403,7 +403,7 @@ const Scene = (props) => {
           position={positions.columbiaIcefieldSkywalk}
         /> */}
 
-        {/* <e.group theatreKey="Lake Louise Cloud 2">
+        <e.group theatreKey="Lake Louise Cloud 2">
           <Cloud scale={0.2} position={[-2, 2.75, 3]} />
         </e.group>
 
@@ -417,7 +417,7 @@ const Scene = (props) => {
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
-        </e.group> */}
+        </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         <Road pauses={props.pauses} pauseDuration={props.pauseDuration} />

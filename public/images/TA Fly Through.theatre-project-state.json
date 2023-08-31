@@ -1756,7 +1756,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": 0
+                    "value": -0.24999999999999867
                   },
                   {
                     "id": "T4xsXkU2JG",
@@ -1769,7 +1769,7 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.5
+                    "value": -0.24999999999999867
                   }
                 ]
               },
@@ -1829,7 +1829,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": -1.797109064605474
+                    "value": -3.0371090646054673
                   },
                   {
                     "id": "qq-gwDYs6w",
@@ -2825,6 +2825,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "dkbXzBDlRugKNHYP",
     "Vv3BTB69ODh67B4j",
     "hlAFeK1RpOJjZp54",
     "AvKZPb8l46OxFCV9",

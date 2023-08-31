@@ -79,7 +79,7 @@ const Road = (props) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
     // console.log(sheet.sequence.pointer, sheet.sequence.position);
     sheet.sequence.position = scroll.offset * sequenceLength;
-    console.log(scroll.offset);
+    // console.log(scroll.offset);
 
     // this is a mess. rethink/rewrite. leaving for now as it works in one direction.
     const isPaused = checkPaused(scroll.offset);

@@ -4,30 +4,30 @@ import { editable as e } from "@theatre/r3f";
 import { useControls } from "leva";
 
 const ImagePin = ({ imageSrc, position, name, scale }) => {
-  // const { positionX, positionY, positionZ } = useControls({
-  //   positionX: {
-  //     value: position[0],
-  //     min: -8,
-  //     max: 5,
-  //     step: 0.025,
-  //   },
-  //   positionY: {
-  //     value: position[1],
-  //     min: 0,
-  //     max: 5,
-  //     step: 0.025,
-  //   },
-  //   positionZ: {
-  //     value: position[2],
-  //     min: -5,
-  //     max: 5,
-  //     step: 0.025,
-  //   },
-  // });
+  //   const { positionX, positionY, positionZ } = useControls({
+  //     positionX: {
+  //       value: position[0],
+  //       min: -8,
+  //       max: 5,
+  //       step: 0.025,
+  //     },
+  //     positionY: {
+  //       value: position[1],
+  //       min: 0,
+  //       max: 5,
+  //       step: 0.025,
+  //     },
+  //     positionZ: {
+  //       value: position[2],
+  //       min: -5,
+  //       max: 5,
+  //       step: 0.025,
+  //     },
+  //   });
 
   return (
     <Billboard position={position} scale={scale}>
-      {/* // <Billboard position={[positionX, positionY, positionZ]} scale={scale}> */}
+      {/* <Billboard position={[positionX, positionY, positionZ]} scale={scale}> */}
       <e.group theatreKey={name} scale={[0]}>
         <mesh position-z={-0.01} castShadow>
           <circleGeometry args={[0.525, 32]} />

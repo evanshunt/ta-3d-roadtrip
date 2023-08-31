@@ -9,7 +9,7 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 import { useFrame } from "@react-three/fiber";
-import { OrbitControls, useScroll } from "@react-three/drei";
+import { Billboard, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -22,12 +22,15 @@ import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
 import ImagePin from "./models/ImagePin.jsx";
+import { useControls } from "leva";
 
 const positions = {
   // Banff Pins:
   // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
   banffUpperHotSprings: [1.8, 0.475, 4.8],
-  caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
+  // caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
+  caveAndBasin: [1.35, 0.38, 4.5],
+  fairmontBanffSpringsHotel: [1.63, 0.4, 4.55],
   // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
   discoverBanffTours: [1.8, 0.425, 4.22],
   // gondola: [5.358368436662257, 0.33, 5.634275247444896],
@@ -55,6 +58,7 @@ const Scene = (props) => {
   const roadRef = useRef();
   const sheet = useCurrentSheet();
   const scroll = useScroll();
+  const cameraRef = useRef();
 
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
@@ -63,6 +67,27 @@ const Scene = (props) => {
     sceneRef.current.roadAmount = scroll.offset;
     // roadRef.current.time = scroll.offset;
   });
+
+  // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
+  //   cameraPositionX: {
+  //     value: -1.5,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  //   cameraPositionY: {
+  //     value: 3.5,
+  //     min: 0,
+  //     max: 25,
+  //     step: 0.25,
+  //   },
+  //   cameraPositionZ: {
+  //     value: -3.5,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.25,
+  //   },
+  // });
 
   // const { scale, positionX, positionY, positionZ } = useControls({
   //   scale: {
@@ -184,6 +209,7 @@ const Scene = (props) => {
       {/* Animating the terrain mesh may be the way to do this. E: NOPE */}
       <PerspectiveCamera
         makeDefault
+        ref={cameraRef}
         theatreKey={"Camera"}
         position={[0, 23, 0]}
         fov={55}
@@ -222,9 +248,16 @@ const Scene = (props) => {
           position={positions.banffUpperHotSprings}
           // position={[positionX, positionY, positionZ]}
         /> */}
+        {/* <Billboard follow={true}> */}
+        {/* <axesHelper
+          args={[5]}
+          setColors={["black", "black", "black"]}
+          position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
+        /> */}
+        {/* </Billboard> */}
 
         <ImagePin
-          imageSrc={imageSrc}
+          imageSrc={"/images/banff-upper-hot-springs-cropped.png"}
           scale={0.2}
           name={"Banff Upper Hot Springs"}
           position={positions.banffUpperHotSprings}
@@ -238,25 +271,40 @@ const Scene = (props) => {
         />
 
         <ImagePin
+          imageSrc={"/images/cave-and-basin-national-historic-site-cropped.png"}
+          scale={0.2}
+          name={"Cave and Basin National Historic Site"}
+          position={positions.caveAndBasin}
+        />
+
+        {/* 
+        <ImagePin
+          imageSrc={"/images/the-fairmont-banff-springs-hotel-cropped.png"}
+          scale={0.2}
+          name={"The Fairmont Banff Springs Hotel"}
+          position={positions.fairmontBanffSpringsHotel}
+        /> */}
+
+        {/* <ImagePin
           imageSrc={"/images/discover-banff-tours-cropped.png"}
           scale={0.2}
           name={"Discover Banff Tours"}
           position={positions.discoverBanffTours}
-        />
+        /> */}
 
-        <ImagePin
+        {/* <ImagePin
           imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
           scale={0.2}
           name={"Lake Minnewanka Cruise"}
           position={positions.minnewankaCruise}
-        />
+        /> */}
 
-        <ImagePin
+        {/* <ImagePin
           imageSrc={"/images/moraine-lake-cropped.png"}
           scale={0.2}
           name={"Moraine Lake"}
           position={positions.minnewankaCruise}
-        />
+        /> */}
 
         <ImagePin
           imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
@@ -355,7 +403,9 @@ const Scene = (props) => {
           position={positions.columbiaIcefieldSkywalk}
         /> */}
 
-        <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+        {/* <e.group theatreKey="Lake Louise Cloud 2">
+          <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+        </e.group>
 
         <e.group theatreKey="Lake Louise Cloud">
           <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
@@ -363,13 +413,11 @@ const Scene = (props) => {
 
         <e.group theatreKey="Banff Cloud 2">
           <Cloud scale={0.15} position={[4, 1.75, 3]} />
-          {/* zoomed out scale = 0.25 */}
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[2, 1.5, 6]} />
-          {/* zoomed out scale 0.175 */}
-        </e.group>
+        </e.group> */}
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         <Road pauses={props.pauses} pauseDuration={props.pauseDuration} />

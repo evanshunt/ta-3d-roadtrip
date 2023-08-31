@@ -49,8 +49,6 @@ export default function PlaneDecimated(props) {
           roughness={1}
           metalness={0}
           map-flipY={false}
-          // normalMap={iceFieldsTexture} // TODO: if needed
-          map-anisotropy={32}
         />
       </mesh>
     </group>

@@ -17,9 +17,9 @@ const Experience = () => {
   // const sheet = null;
   // uncomment to use saved data
 
-  const pauses = [0.35, 0.875];
+  const pauses = [0.385, 0.775];
 
-  const pauseDuration = 0.25;
+  const pauseDuration = 0.15;
   // let scrollDirection = "down";
 
   return (
@@ -33,7 +33,7 @@ const Experience = () => {
         shadowMapType: THREE.PCFSoftShadowMap,
       }}
     >
-      <ScrollControls pages={5}>
+      <ScrollControls pages={3}>
         <SheetProvider sheet={sheet}>
           <Scene pauses={pauses} pauseDuration={pauseDuration} />
         </SheetProvider>

@@ -68,15 +68,18 @@ const Road = (props) => {
       return true;
     } else if (scrolled > props.pauses[pauseIndex] + props.pauseDuration) {
       cachedPos = props.pauses[pauseIndex];
-      props.scrollDirection === "down" ? pauseIndex++ : pauseIndex--;
+      // props.scrollDirection === "down" ? pauseIndex++ : pauseIndex--;
+      pauseIndex++;
       return false;
     }
+    console.log(pauseIndex);
   };
 
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
     // console.log(sheet.sequence.pointer, sheet.sequence.position);
     sheet.sequence.position = scroll.offset * sequenceLength;
+    console.log(scroll.offset);
 
     // this is a mess. rethink/rewrite. leaving for now as it works in one direction.
     const isPaused = checkPaused(scroll.offset);
@@ -127,7 +130,7 @@ const Road = (props) => {
   //   },
   // });
 
-  checkPaused();
+  // checkPaused();
 
   // const time = 0;
   // if (!shaderRef.current) return null;

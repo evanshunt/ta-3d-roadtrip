@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Uniform } from "three";
 import { BlendFunction, Effect, EffectAttribute } from "postprocessing";
 import { wrapEffect } from "./util.tsx";
 import { EffectComposer } from "@react-three/postprocessing";
 import { useControls } from "leva";
+import { editable as e } from "@theatre/r3f";
+import { useCurrentSheet } from "@theatre/r3f";
+import { types, onChange } from "@theatre/core";
 
 const TiltShiftShader = {
   fragmentShader: `
@@ -103,6 +106,9 @@ export class TiltShiftEffect extends Effect {
 const TiltShift = wrapEffect(TiltShiftEffect);
 
 function TiltShiftEffects() {
+  const effectRef = React.createRef();
+  const sheet = useCurrentSheet();
+
   // const blendFunction = BlendFunction.Normal,
   // let blur = 0.4, // [0, 1], can go beyond 1 for extra
   //   taper = 0.5, // [0, 1], can go beyond 1 for extra
@@ -141,6 +147,20 @@ function TiltShiftEffects() {
   //     label: "Start Point",
   //   },
   // });
+
+  // attempt to animate the tilt shift
+  // useEffect(() => {
+  //   const test = sheet.object("Tilt Shift", {
+  //     blur: types.number(effectRef.current.uniforms.get("blur").value, {
+  //       range: [0, 2],
+  //     }),
+  //   });
+  //   onChange(test.props.blur, (value) => {
+  //     effectRef.current.uniforms.set("blur", value);
+
+  //     console.log(effectRef.current.uniforms);
+  //   });
+  // }, []);
 
   // const { end } = useControls({
   //   end: {
@@ -205,9 +225,12 @@ function TiltShiftEffects() {
   //   },
   // });
 
+  // let test = 2;
+
   return (
     <EffectComposer>
       <TiltShift
+        ref={effectRef}
         // blur={blur}
         // blur={0.34}
         blur={0.6}

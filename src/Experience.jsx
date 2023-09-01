@@ -46,24 +46,46 @@ const Experience = () => {
     },
   ];
 
-  const maxLength = destinations.length - 1;
+  const maxLength = destinations.length - 1; // don't include start
 
   const pauseDuration = 0.15;
   // let scrollDirection = "down";
 
   useEffect(() => {
     project.ready.then(() => {
-      if (index > 0) {
-        console.log(index);
+      // reverse animation
+      // sheet.sequence.play({ direction: 'reverse' })
+      // plays the sequence from the current position to sequence.length
+      // sequence.play
+
+      if (index > 0 && index <= maxLength) {
+        // if (sheet.sequence.position > destinations[index].position) {
+        //   //handle reverse
+        //   handleReverse();
+        // } else {
         sheet.sequence.play({
-          range: [sheet.sequence.position, destinations[index].position],
+          range:
+            sheet.sequence.position > destinations[index].position
+              ? [destinations[index].position, sheet.sequence.position]
+              : [sheet.sequence.position, destinations[index].position],
+          direction:
+            sheet.sequence.position > destinations[index].position
+              ? "reverse"
+              : "normal",
         });
+        // }
       }
     });
-    console.log(index);
 
     return () => {};
   }, [index]);
+
+  const handleReverse = () => {
+    sheet.sequence.play({
+      direction: "reverse",
+      range: [destinations[index].position, sheet.sequence.position],
+    });
+  };
 
   return (
     <>
@@ -91,15 +113,17 @@ const Experience = () => {
       </Canvas>
       <div className="controls">
         <button
+          disabled={index <= 1}
           onClick={() => {
-            setIndex(index - 1);
+            index === 0 ? setIndex(0) : setIndex(index - 1);
           }}
         >
           Prev
         </button>
         <button
+          disabled={index === maxLength}
           onClick={() => {
-            setIndex(index + 1);
+            index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
           }}
         >
           Next

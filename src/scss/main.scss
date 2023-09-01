@@ -26,6 +26,7 @@ body {
   height: 100vh;
   position: relative;
   // height: 100vh;
+  z-index: 1;
 
   @media (min-width: 625px) {
     width: 100vw;
@@ -46,4 +47,12 @@ body {
   //   pointer-events: none;
   //   z-index: 2;
   // }
+}
+
+.controls {
+  display: flex;
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 3;
 }

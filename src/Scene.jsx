@@ -60,13 +60,13 @@ const Scene = (props) => {
   const scroll = useScroll();
   const cameraRef = useRef();
 
-  useFrame(({ clock }) => {
-    const sequenceLength = val(sheet.sequence.pointer.length);
-    sheet.sequence.position = scroll.offset * sequenceLength;
+  // useFrame(({ clock }) => {
+  //   const sequenceLength = val(sheet.sequence.pointer.length);
+  //   sheet.sequence.position = scroll.offset * sequenceLength;
 
-    sceneRef.current.roadAmount = scroll.offset;
-    // roadRef.current.time = scroll.offset;
-  });
+  //   sceneRef.current.roadAmount = scroll.offset;
+  //   // roadRef.current.time = scroll.offset;
+  // });
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {
@@ -420,7 +420,12 @@ const Scene = (props) => {
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road pauses={props.pauses} pauseDuration={props.pauseDuration} />
+        <Road
+          pauses={props.pauses}
+          pauseDuration={props.pauseDuration}
+          destinations={props.destinations}
+          project={props.project}
+        />
         {/* </e.group> */}
 
         <IceFieldsDecimated />

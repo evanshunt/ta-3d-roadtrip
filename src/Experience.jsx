@@ -2,7 +2,11 @@ import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { useEffect, useState } from "react";
 import Scene from "./Scene";
-import { ScrollControls, SoftShadows } from "@react-three/drei";
+import {
+  PerformanceMonitor,
+  ScrollControls,
+  SoftShadows,
+} from "@react-three/drei";
 import { SheetProvider } from "@theatre/r3f";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
@@ -103,6 +107,10 @@ const Experience = () => {
         }}
         frameloop="demand"
       >
+        <PerformanceMonitor
+          onIncline={() => setDpr(2)}
+          onDecline={() => setDpr(1)}
+        />
         <SoftShadows size={2.5} focus={0.8} samples={10} />
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>

@@ -3,9 +3,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFieldsDecimated(props) {
   const { nodes } = useGLTF("/glb/ice-fields-no-edges-decimated.glb");
-  const green4Redux = useTexture(
-    "/textures/green/baked-green-4-redux-compressed.jpg"
-  );
+  const green4Redux = useTexture("/textures/green/baked-sarahs.jpg");
 
   return (
     <group {...props} dispose={null}>

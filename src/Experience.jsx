@@ -101,6 +101,7 @@ const Experience = () => {
           shadowMapEnabled: true,
           shadowMapType: THREE.PCFSoftShadowMap,
         }}
+        frameloop="demand"
       >
         <SoftShadows size={2.5} focus={0.8} samples={10} />
         {/* <ScrollControls pages={3}> */}

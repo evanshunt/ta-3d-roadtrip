@@ -6,9 +6,7 @@ import { ScrollControls, SoftShadows } from "@react-three/drei";
 import { SheetProvider } from "@theatre/r3f";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
-
-// import saved json if wanted
-// const animation = null;
+import { useSwipeable } from "react-swipeable";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -17,7 +15,7 @@ const Experience = () => {
   // const sheet = null;
   // uncomment to use saved data
 
-  const pauses = [0.385, 0.775];
+  const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
 
   const destinations = [
     {
@@ -51,45 +49,56 @@ const Experience = () => {
   const pauseDuration = 0.15;
   // let scrollDirection = "down";
 
+  const controlAnimation = () => {
+    if (index > 0 && index <= maxLength) {
+      sheet.sequence.play({
+        range:
+          sheet.sequence.position > destinations[index].position
+            ? [destinations[index].position, sheet.sequence.position]
+            : [sheet.sequence.position, destinations[index].position],
+        direction:
+          sheet.sequence.position > destinations[index].position
+            ? "reverse"
+            : "normal",
+      });
+    }
+  };
+
   useEffect(() => {
     project.ready.then(() => {
-      // reverse animation
-      // sheet.sequence.play({ direction: 'reverse' })
-      // plays the sequence from the current position to sequence.length
-      // sequence.play
-
-      if (index > 0 && index <= maxLength) {
-        // if (sheet.sequence.position > destinations[index].position) {
-        //   //handle reverse
-        //   handleReverse();
-        // } else {
-        sheet.sequence.play({
-          range:
-            sheet.sequence.position > destinations[index].position
-              ? [destinations[index].position, sheet.sequence.position]
-              : [sheet.sequence.position, destinations[index].position],
-          direction:
-            sheet.sequence.position > destinations[index].position
-              ? "reverse"
-              : "normal",
-        });
-        // }
-      }
+      controlAnimation();
     });
 
     return () => {};
   }, [index]);
 
-  const handleReverse = () => {
-    sheet.sequence.play({
-      direction: "reverse",
-      range: [destinations[index].position, sheet.sequence.position],
-    });
+  const handleIndex = (dir) => {
+    if (dir === "next") {
+      index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+    } else {
+      index === 0 ? setIndex(0) : setIndex(index - 1);
+    }
   };
+
+  const config = null;
+
+  const handlers = useSwipeable({
+    onSwiped: (eventData) => {
+      console.log(eventData.dir);
+      const dir = eventData.dir.toLowerCase();
+      if (dir === "left") {
+        handleIndex("next");
+      } else {
+        handleIndex("prev");
+      }
+    },
+    ...config,
+  });
 
   return (
     <>
       <Canvas
+        {...handlers}
         shadows
         orthographic
         gl={{
@@ -115,7 +124,7 @@ const Experience = () => {
         <button
           disabled={index <= 1}
           onClick={() => {
-            index === 0 ? setIndex(0) : setIndex(index - 1);
+            handleIndex("prev");
           }}
         >
           Prev
@@ -123,7 +132,7 @@ const Experience = () => {
         <button
           disabled={index === maxLength}
           onClick={() => {
-            index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+            handleIndex("next");
           }}
         >
           Next

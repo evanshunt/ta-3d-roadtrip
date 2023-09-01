@@ -74,7 +74,7 @@
                 "keyframes": [
                   {
                     "id": "OsjdYDPzer",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -249,7 +249,7 @@
                 "keyframes": [
                   {
                     "id": "FjQaQMcixh",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -258,7 +258,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": 23
+                    "value": 32
                   },
                   {
                     "id": "N0V3--1xse",
@@ -294,7 +294,7 @@
                 "keyframes": [
                   {
                     "id": "npb4TVjrty",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -443,7 +443,7 @@
                 "keyframes": [
                   {
                     "id": "1zl7viEjUm",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -452,7 +452,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": -1.56
+                    "value": -1.57
                   },
                   {
                     "id": "h9-cIRqlQv",
@@ -579,7 +579,7 @@
                 "keyframes": [
                   {
                     "id": "Q7YCktDyNt",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -715,7 +715,7 @@
                 "keyframes": [
                   {
                     "id": "8jFxUby8N7",
-                    "position": 3.067,
+                    "position": 0,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -724,7 +724,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": 1.56
+                    "value": 1.57
                   },
                   {
                     "id": "RI65mrA-MU",
@@ -2838,6 +2838,9 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "7cMgk5f922sPA4ze",
+    "J6nil9itC5hvWwFf",
+    "VQY1gqtvklnYE6xH",
     "5t49waSwALBMA_JL",
     "17VuuFSWPxWTg1Kn",
     "vOMeoKftMQGPDi5d",

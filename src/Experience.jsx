@@ -12,7 +12,6 @@ const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
-  // const sheet = null;
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
@@ -46,8 +45,7 @@ const Experience = () => {
 
   const maxLength = destinations.length - 1; // don't include start
 
-  const pauseDuration = 0.15;
-  // let scrollDirection = "down";
+  const pauseDuration = 0.15; // not needed with destinations array
 
   const controlAnimation = () => {
     if (index > 0 && index <= maxLength) {
@@ -68,7 +66,6 @@ const Experience = () => {
     project.ready.then(() => {
       controlAnimation();
     });
-
     return () => {};
   }, [index]);
 
@@ -80,11 +77,8 @@ const Experience = () => {
     }
   };
 
-  const config = null;
-
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
-      console.log(eventData.dir);
       const dir = eventData.dir.toLowerCase();
       if (dir === "left") {
         handleIndex("next");
@@ -92,7 +86,7 @@ const Experience = () => {
         handleIndex("prev");
       }
     },
-    ...config,
+    // ...config
   });
 
   return (

@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React from "react";
 import Scene from "./Scene";
-import { ScrollControls } from "@react-three/drei";
+import { ScrollControls, SoftShadows } from "@react-three/drei";
 import { SheetProvider } from "@theatre/r3f";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
@@ -33,6 +33,7 @@ const Experience = () => {
         shadowMapType: THREE.PCFSoftShadowMap,
       }}
     >
+      <SoftShadows size={2.5} focus={0.8} samples={10} />
       <ScrollControls pages={3}>
         <SheetProvider sheet={sheet}>
           <Scene pauses={pauses} pauseDuration={pauseDuration} />

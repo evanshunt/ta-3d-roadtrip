@@ -75,6 +75,8 @@ const Road = (props) => {
     console.log(pauseIndex);
   };
 
+  const offset = 0.0;
+
   useFrame(({ clock }) => {
     const sequenceLength = val(sheet.sequence.pointer.length);
     // console.log(sheet.sequence.pointer, sheet.sequence.position);
@@ -86,9 +88,9 @@ const Road = (props) => {
     if (!isPaused) {
       if (cachedPos !== 0) {
         shaderRef.current.uniforms.time.value =
-          1.0 - (scroll.offset - props.pauseDuration);
+          1.0 - (scroll.offset - offset + -props.pauseDuration);
       } else {
-        shaderRef.current.uniforms.time.value = 1.0 - scroll.offset;
+        shaderRef.current.uniforms.time.value = 1.0 - scroll.offset - offset;
       }
     }
     // console.log(isPaused);

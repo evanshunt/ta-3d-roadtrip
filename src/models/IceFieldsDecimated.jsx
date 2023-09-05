@@ -3,7 +3,9 @@ import { useGLTF, useTexture } from "@react-three/drei";
 
 export default function IceFieldsDecimated(props) {
   const { nodes } = useGLTF("/glb/ice-fields-no-edges-decimated.glb");
-  const green4Redux = useTexture("/textures/green/baked-sarahs.jpg");
+  const green4Redux = useTexture(
+    "/textures/green/baked-green-4-redux-compressed.jpg"
+  );
 
   return (
     <group {...props} dispose={null}>
@@ -12,7 +14,7 @@ export default function IceFieldsDecimated(props) {
         receiveShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM002.geometry}
         position={[0, 0.157, 0]}
-        scale={[4, 4, 4]}
+        scale={[4, 5, 4]}
       >
         <meshStandardMaterial
           map={green4Redux}

@@ -233,7 +233,7 @@ function TiltShiftEffects() {
         ref={effectRef}
         // blur={blur}
         // blur={0.34}
-        blur={0.5}
+        blur={0.35}
         // taper={taper}
         // // taper={0.7}
         taper={0.525}
@@ -244,7 +244,7 @@ function TiltShiftEffects() {
         // // end={[0.45, 0.45]}
         end={[0.47, 0.45]}
         // sampleCount={sampleCount}
-        sampleCount={25.0}
+        sampleCount={5.0}
         // direction={direction}
         direction={[0.96, 0.03]}
       />

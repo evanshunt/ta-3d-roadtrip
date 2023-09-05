@@ -33,7 +33,7 @@ export default function PlaneDecimated(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
+        // castShadow
         receiveShadow
         geometry={nodes.Plane.geometry}
         material={materials["Material.001"]}
@@ -46,8 +46,8 @@ export default function PlaneDecimated(props) {
         <meshStandardMaterial
           map={planeTexture}
           // side={THREE.DoubleSide}
-          roughness={1}
-          metalness={0}
+          // roughness={1}
+          // metalness={0}
           map-flipY={false}
         />
       </mesh>

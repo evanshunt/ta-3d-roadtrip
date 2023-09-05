@@ -16,6 +16,7 @@ const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
+  const [dpr, setDpr] = useState(1.5);
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
@@ -24,26 +25,38 @@ const Experience = () => {
     {
       name: "start",
       position: 0,
+      day: 1,
+      stop: "Calgary",
     },
     {
       name: "gondola",
       position: 8.75,
+      stop: "Banff",
+      day: 1,
     },
     {
       name: "banffUpperHotSprings",
       position: 10.35,
+      stop: "Banff",
+      day: 1,
     },
     {
       name: "caveAndBasin",
       position: 12.25,
+      stop: "Banff",
+      day: 1,
     },
     {
       name: "lakeAgnesTeaHouse",
       position: 19.45,
+      stop: "Lake Louise",
+      day: 2,
     },
     {
       name: "lakeLouise",
       position: 23.2,
+      stop: "Lake Louise",
+      day: 2,
     },
   ];
 
@@ -99,6 +112,7 @@ const Experience = () => {
         {...handlers}
         shadows
         orthographic
+        pixelRatio={dpr}
         gl={{
           antialias: true,
           preserveDrawingBuffer: true,

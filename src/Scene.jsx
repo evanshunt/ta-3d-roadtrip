@@ -231,31 +231,16 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
-      {/* <Perf position="bottom-right" /> */}
+      <Perf position="bottom-right" />
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* Banff Pins */}
-        {/* <FancyPin
-          castShadow
-          name={"Banff Upper Hot Springs"}
-          position={positions.banffUpperHotSprings}
-          // position={[positionX, positionY, positionZ]}
-        /> */}
-        {/* <Billboard follow={true}> */}
-        {/* <axesHelper
-          args={[5]}
-          setColors={["black", "black", "black"]}
-          position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        /> */}
-        {/* </Billboard> */}
-
         <ImagePin
           imageSrc={"/images/banff-upper-hot-springs-cropped.png"}
           scale={0.2}
@@ -428,7 +413,11 @@ const Scene = (props) => {
         />
         {/* </e.group> */}
 
-        <IceFieldsDecimated />
+        {/* <IceFieldsDecimated /> */}
+        <mesh>
+          <boxGeometry scale={4} />
+          <meshNormalMaterial />
+        </mesh>
 
         <Edges />
 

@@ -7,6 +7,7 @@ import {
   ScrollControls,
   SoftShadows,
 } from "@react-three/drei";
+import ItineraryOutline from "./ItineraryOutline";
 import { SheetProvider } from "@theatre/r3f";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
@@ -24,26 +25,62 @@ const Experience = () => {
     {
       name: "start",
       position: 0,
+      day: 0,
+      name: null,
     },
     {
       name: "gondola",
       position: 8.75,
+      day: 1,
+      name: "Banff",
+      details: {
+        title: "Banff Gondola",
+        description:
+          "The Banff Gondola is a gondola lift in the town of Banff, Alberta, Canada, which takes passengers up to the summit of Sulphur Mountain in the Banff National Park. The summit is home to several radio and television transmitters.",
+      },
     },
     {
       name: "banffUpperHotSprings",
       position: 10.35,
+      day: 1,
+      name: "Banff",
+      details: {
+        title: "Banff Upper Hot Springs",
+        description:
+          "Banff Upper Hot Springs is a historic site of health and wellness for travelers to Banff National Park. The hot pool's water flows from Sulphur Mountain.",
+      },
     },
     {
       name: "caveAndBasin",
       position: 12.25,
+      day: 1,
+      name: "Banff",
+      details: {
+        title: "Cave and Basin National Historic Site",
+        description:
+          "Cave and Basin National Historic Site of Canada is located in the town of Banff, Alberta, within the Canadian Rocky Mountains, at the site of natural thermal mineral springs around which Canada's first national park, Banff National Park, was established.",
+      },
     },
     {
       name: "lakeAgnesTeaHouse",
       position: 19.45,
+      day: 2,
+      name: "Lake Louise",
+      details: {
+        title: "Lake Agnes Tea House",
+        description:
+          "The Lake Agnes Tea House is a tea house located in Lake Louise, Alberta, Canada. The tea house is situated on the eastern shore of Lake Agnes, at an elevation of 2,135 metres, in the Canadian Rockies.",
+      },
     },
     {
       name: "lakeLouise",
       position: 23.2,
+      day: 2,
+      name: "Lake Louise",
+      details: {
+        title: "Lake Louise",
+        description: "Lake Louise is a ski resort. Whatever.",
+      },
     },
   ];
 
@@ -95,6 +132,7 @@ const Experience = () => {
 
   return (
     <>
+      <ItineraryOutline destinations={destinations} />
       <Canvas
         {...handlers}
         shadows

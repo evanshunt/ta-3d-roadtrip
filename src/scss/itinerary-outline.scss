@@ -1,0 +1,26 @@
+.itinerary-outline {
+  background: #ffffff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  transform: translate(0, calc(100% - 2rem));
+  width: 100%;
+  z-index: 3;
+
+  button {
+    all: unset;
+    // background-color: transparent;
+    // border: none;
+    height: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--open {
+    transform: translate(0, 0);
+  }
+}

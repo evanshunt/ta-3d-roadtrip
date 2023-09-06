@@ -1,0 +1,26 @@
+.attraction {
+  background-color: #ffffff;
+  border-radius: 1rem 1rem 0rem 0rem;
+  bottom: 0;
+  padding: 1.4rem 1.75rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.attraction__name {
+  color: #000000;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Futura PT;
+  font-size: 1.3125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4375rem; /* 109.524% */
+  display: flex;
+  justify-content: center;
+
+  &--disabled {
+    color: #787878;
+  }
+}

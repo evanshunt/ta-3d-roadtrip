@@ -4,19 +4,25 @@ import React, { useEffect, useState } from "react";
 import Scene from "./Scene";
 import {
   PerformanceMonitor,
-  ScrollControls,
+  // ScrollControls,
   SoftShadows,
 } from "@react-three/drei";
-import ItineraryOutline from "./ItineraryOutline";
+import "core-js/actual/object/group-by";
 import { SheetProvider } from "@theatre/r3f";
+import Day from "./components/Day";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
 import { useSwipeable } from "react-swipeable";
+
+import "./scss/attraction.scss";
+import Itinerary from "./components/Itinerary";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
+  const [currDay, setCurrDay] = useState(0);
+  const [currDestination, setCurrDestination] = useState(null);
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
@@ -33,8 +39,11 @@ const Experience = () => {
       position: 8.75,
       day: 1,
       name: "Banff",
+      description:
+        "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
       details: {
         title: "Banff Gondola",
+        image: "/images/banff-gondola-cropped.png",
         description:
           "The Banff Gondola is a gondola lift in the town of Banff, Alberta, Canada, which takes passengers up to the summit of Sulphur Mountain in the Banff National Park. The summit is home to several radio and television transmitters.",
       },
@@ -46,6 +55,7 @@ const Experience = () => {
       name: "Banff",
       details: {
         title: "Banff Upper Hot Springs",
+        image: "/images/banff-upper-hot-springs-cropped.png",
         description:
           "Banff Upper Hot Springs is a historic site of health and wellness for travelers to Banff National Park. The hot pool's water flows from Sulphur Mountain.",
       },
@@ -57,6 +67,7 @@ const Experience = () => {
       name: "Banff",
       details: {
         title: "Cave and Basin National Historic Site",
+        image: "/images/cave-and-basin-national-historic-site-cropped.png",
         description:
           "Cave and Basin National Historic Site of Canada is located in the town of Banff, Alberta, within the Canadian Rocky Mountains, at the site of natural thermal mineral springs around which Canada's first national park, Banff National Park, was established.",
       },
@@ -66,10 +77,13 @@ const Experience = () => {
       position: 19.45,
       day: 2,
       name: "Lake Louise",
+      description:
+        "Head to Lake Louise, with a stop to learn about the beautiful Rockies that will soon surround you.",
       details: {
         title: "Lake Agnes Tea House",
+        image: "/images/lake-agnes-tea-house-cropped.png",
         description:
-          "The Lake Agnes Tea House is a tea house located in Lake Louise, Alberta, Canada. The tea house is situated on the eastern shore of Lake Agnes, at an elevation of 2,135 metres, in the Canadian Rockies.",
+          "The Lake Agnes Tea House is a tea house located in Lake Louise, Alberta, Canada. The tea house is situated on the eastern shore of Lake Agnes, at an elevation of 2,135 metres, in the Canadian Rockies. The Lake Agnes Tea House is a tea house located in Lake Louise, Alberta, Canada. The tea house is situated on the eastern shore of Lake Agnes, at an elevation of 2,135 metres, in the Canadian Rockies.",
       },
     },
     {
@@ -79,7 +93,9 @@ const Experience = () => {
       name: "Lake Louise",
       details: {
         title: "Lake Louise",
-        description: "Lake Louise is a ski resort. Whatever.",
+        image: "/images/lake-louise-ski-resort-cropped.png",
+        description:
+          "Lake Louise is a ski resort. Whatever. The Lake Agnes Tea House is a tea house located in Lake Louise, Alberta, Canada. The tea house is situated on the eastern shore of Lake Agnes, at an elevation of 2,135 metres, in the Canadian Rockies.",
       },
     },
   ];
@@ -107,6 +123,9 @@ const Experience = () => {
     project.ready.then(() => {
       controlAnimation();
     });
+
+    setCurrDay(determineDay(index));
+    setCurrDestination(destinations[index]);
     return () => {};
   }, [index]);
 
@@ -130,9 +149,36 @@ const Experience = () => {
     // ...config
   });
 
+  const determineDay = (index) => {
+    // get the length of the stops in each day and if beyond that, update the day
+    const days = Object.groupBy(destinations, (destination) => destination.day);
+
+    const daysParsed = dayKeys.filter((day) => {
+      return day;
+    });
+
+    const stops = [];
+    daysParsed.forEach((day) => {
+      const stop = days[day];
+      stops.push(...stop);
+    });
+
+    const currentDay = stops[index].day;
+
+    return currentDay;
+  };
+
+  const days = Object.groupBy(destinations, (destination) => destination.day);
+  const dayKeys = Object.keys(days);
+  const daysParsed = dayKeys.filter((day) => {
+    return day !== "0";
+  });
+
   return (
     <>
-      <ItineraryOutline destinations={destinations} />
+      {days[1] && (
+        <Itinerary currDay={currDay} days={days} grouped={daysParsed} />
+      )}
       <Canvas
         {...handlers}
         shadows
@@ -161,6 +207,20 @@ const Experience = () => {
         </SheetProvider>
         {/* </ScrollControls> */}
       </Canvas>
+      {console.log(currDestination)}
+      <div className="attraction">
+        <span
+          className={`${
+            currDestination?.details?.title
+              ? "attraction__name"
+              : "attraction__name attraction__name--disabled"
+          }`}
+        >
+          {currDestination?.details?.title ||
+            "Swipe left to explore the attractions"}
+        </span>
+      </div>
+
       <div className="controls">
         <button
           disabled={index <= 1}

@@ -1,9 +1,14 @@
 import React from "react";
 
-const Stop = ({ stop }) => {
-  // console.log(stop);
+const Stop = ({ currDestination, stop }) => {
   return (
-    <li className="itinerary__stop">
+    <li
+      className={`${
+        currDestination?.details?.title === stop.details.title
+          ? "itinerary__stop itinerary__stop--active"
+          : "itinerary__stop"
+      }`}
+    >
       <img
         className="itinerary__stop__image"
         src={stop.details.image || "https://via.placeholder.com/150"}

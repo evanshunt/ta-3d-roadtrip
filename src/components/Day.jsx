@@ -3,7 +3,7 @@ import React from "react";
 import { DrivingInfo } from "./DrivingInfo";
 import Stop from "./Stop";
 
-const Day = ({ description, name, number, stops }) => {
+const Day = ({ currDestination, description, name, number, stops }) => {
   return (
     <li className="itinerary__day">
       <span>
@@ -16,7 +16,7 @@ const Day = ({ description, name, number, stops }) => {
       <ul className="itinerary__day__stops">
         {stops.map((stop) => (
           <>
-            <Stop stop={stop} />
+            <Stop currDestination={currDestination} stop={stop} />
           </>
         ))}
       </ul>

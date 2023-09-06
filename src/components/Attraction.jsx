@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import arrowUp from "../images/arrow-up.svg";
 
-const Attraction = ({ currDestination }) => {
+const Attraction = ({ currDestination, ref }) => {
   const [open, setOpen] = useState(false);
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
       const dir = eventData.dir.toLowerCase();
-
       if (!currDestination?.details?.title) return;
 
       setOpen(dir === "up" ? true : false);
     },
     // ...config
   });
+
   return (
     <div
       className={`${open ? "attraction attraction--open" : "attraction"}

@@ -116,8 +116,19 @@
 }
 
 .itinerary__stop__image {
+  border: 0.25rem solid #9c0f00;
+  border-radius: 50%;
   margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
   width: 3.5rem;
+  margin-left: 0.75rem;
+
+  .itinerary__stop--active & {
+    width: 5rem;
+    margin-left: 0;
+    border-width: 0;
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
 }
 
 .itinerary__stop__name {

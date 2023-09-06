@@ -1,17 +1,16 @@
+import * as THREE from "three";
+import animation from "./animation-data/animation.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
-import React, { useEffect, useState } from "react";
+import "core-js/actual/object/group-by";
+import React, { createRef, useEffect, useState } from "react";
 import Scene from "./Scene";
+import { SheetProvider } from "@theatre/r3f";
 import {
   PerformanceMonitor,
   // ScrollControls,
   SoftShadows,
 } from "@react-three/drei";
-import "core-js/actual/object/group-by";
-import { SheetProvider } from "@theatre/r3f";
-import Day from "./components/Day";
-import * as THREE from "three";
-import animation from "./animation-data/animation.json";
 import { useSwipeable } from "react-swipeable";
 import "./scss/attraction.scss";
 import Attraction from "./components/Attraction";
@@ -177,7 +176,12 @@ const Experience = () => {
   return (
     <>
       {days[1] && (
-        <Itinerary currDay={currDay} days={days} grouped={daysParsed} />
+        <Itinerary
+          currDestination={currDestination}
+          currDay={currDay}
+          days={days}
+          grouped={daysParsed}
+        />
       )}
       <Canvas
         {...handlers}

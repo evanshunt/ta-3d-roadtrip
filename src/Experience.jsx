@@ -13,8 +13,8 @@ import Day from "./components/Day";
 import * as THREE from "three";
 import animation from "./animation-data/animation.json";
 import { useSwipeable } from "react-swipeable";
-
 import "./scss/attraction.scss";
+import Attraction from "./components/Attraction";
 import Itinerary from "./components/Itinerary";
 
 const Experience = () => {
@@ -207,21 +207,10 @@ const Experience = () => {
         </SheetProvider>
         {/* </ScrollControls> */}
       </Canvas>
-      {console.log(currDestination)}
-      <div className="attraction">
-        <span
-          className={`${
-            currDestination?.details?.title
-              ? "attraction__name"
-              : "attraction__name attraction__name--disabled"
-          }`}
-        >
-          {currDestination?.details?.title ||
-            "Swipe left to explore the attractions"}
-        </span>
-      </div>
 
-      <div className="controls">
+      <Attraction currDestination={currDestination} />
+
+      {/* <div className="controls">
         <button
           disabled={index <= 1}
           onClick={() => {
@@ -238,7 +227,7 @@ const Experience = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -4,23 +4,58 @@
   bottom: 0;
   padding: 1.4rem 1.75rem;
   position: fixed;
+  transform: translate(0, calc(100% - 5rem));
+  transition: transform 0.5s ease-in-out;
   width: 100%;
   z-index: 2;
+
+  &--open {
+    transform: translate(0, 0);
+  }
+}
+
+.attraction__header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attraction__meta {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.attraction__image {
+  transition: width 0.3s ease-in-out;
+  width: 0;
+  .attraction--open & {
+    width: 6.5rem;
+  }
 }
 
 .attraction__name {
   color: #000000;
-  text-align: center;
-  font-feature-settings: "clig" off, "liga" off;
   font-family: Futura PT;
+  font-feature-settings: "clig" off, "liga" off;
   font-size: 1.3125rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.4375rem; /* 109.524% */
-  display: flex;
-  justify-content: center;
 
+  .attraction--open & {
+    margin-left: 1rem;
+  }
   &--disabled {
     color: #787878;
+  }
+}
+
+.attraction__arrow {
+  width: 1.575rem;
+  &--open {
+    transform: rotateZ(180deg);
   }
 }

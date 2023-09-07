@@ -8,8 +8,8 @@ import styles from "./scss/main.scss";
 
 const root = createRoot(document.querySelector("#root"));
 
-studio.extend(extension);
-studio.initialize();
+// studio.extend(extension);
+// studio.initialize();
 
 root.render(
   <div className="road-trip">

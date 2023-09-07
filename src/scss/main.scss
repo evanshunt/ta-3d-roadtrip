@@ -8,55 +8,56 @@
 }
 
 body {
+  align-items: center;
   background-color: #b0b1b8;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
+  width: 100%;
 }
 
 .loading {
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .road-trip {
-  width: 100vw;
-  // height: 100vw;
+  --black: #000000;
+  --grey: #787878;
+  --white: #ffffff;
+  --red: #9c0f00;
+  --turquoise: #00a79a;
   height: 100vh;
   position: relative;
-  // height: 100vh;
+  width: 100vw;
+
   z-index: 1;
 
   @media (min-width: 625px) {
     width: 100vw;
   }
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   background: linear-gradient(
-  //     180deg,
-  //     rgba(0, 0, 0, 0.5) 12.5%,
-  //     rgba(255, 255, 255, 0) 25%
-  //   );
-  //   pointer-events: none;
-  //   z-index: 2;
-  // }
+  &::before {
+    background: linear-gradient(0deg, rgba(26, 43, 55, 0) 76.04%, #1a2b37 100%);
+    bottom: 0;
+    content: "";
+    left: 0;
+
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
 }
 
 .controls {
+  bottom: 5vh;
   display: flex;
   position: absolute;
-  bottom: 5vh;
   right: 5vw;
   z-index: 3;
 }

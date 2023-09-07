@@ -52,6 +52,39 @@ const Attraction = ({ currDestination, ref }) => {
         <p className="attraction__description">
           {currDestination?.details?.description}
         </p>
+        {/* @TODO:  */}
+        {currDestination?.details?.title && (
+          <div className="attraction__info__images">
+            <img
+              src={
+                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-1.jpeg"
+              }
+              alt=""
+              className="attraction__info__image"
+            />
+            <img
+              src={
+                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-2.jpeg"
+              }
+              alt=""
+              className="attraction__info__image"
+            />
+            <img
+              src={
+                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-3.jpeg"
+              }
+              alt=""
+              className="attraction__info__image"
+            />
+            <img
+              src={
+                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-4.jpeg"
+              }
+              alt=""
+              className="attraction__info__image"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

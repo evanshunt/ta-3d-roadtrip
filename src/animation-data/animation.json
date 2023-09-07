@@ -258,7 +258,7 @@
                       0.5
                     ],
                     "type": "bezier",
-                    "value": 32
+                    "value": 40
                   },
                   {
                     "id": "N0V3--1xse",
@@ -2838,6 +2838,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "kIyMSRUlchHFS_mI",
     "7cMgk5f922sPA4ze",
     "J6nil9itC5hvWwFf",
     "VQY1gqtvklnYE6xH",

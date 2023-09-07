@@ -1,7 +1,10 @@
 .attraction {
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 1rem 1rem 0rem 0rem;
   bottom: 0;
+  height: calc(100vh - 5rem);
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 1.4rem 1.75rem;
   position: fixed;
   transform: translate(0, calc(100% - 5rem));
@@ -32,12 +35,26 @@
   transition: width 0.3s ease-in-out;
   width: 0;
   .attraction--open & {
+    margin-right: 1rem;
     width: 6.5rem;
   }
 }
 
 .attraction__name {
-  color: #000000;
+  .attraction--open & {
+    margin-right: auto;
+  }
+}
+
+.attraction__arrow {
+  width: 1.575rem;
+  &--open {
+    transform: rotateZ(180deg);
+  }
+}
+
+.attraction__name {
+  color: var(--black);
   font-family: Futura PT;
   font-feature-settings: "clig" off, "liga" off;
   font-size: 1.3125rem;
@@ -49,13 +66,22 @@
     margin-left: 1rem;
   }
   &--disabled {
-    color: #787878;
+    color: var(--grey);
   }
 }
 
-.attraction__arrow {
-  width: 1.575rem;
-  &--open {
-    transform: rotateZ(180deg);
+.attraction__info__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0 -1.75rem;
+}
+
+.attraction__info__image {
+  max-width: 100%;
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    width: calc(50% - 1px); // half gap
   }
 }

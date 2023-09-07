@@ -421,9 +421,10 @@ const Scene = (props) => {
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         <Road
-          pauses={props.pauses}
-          pauseDuration={props.pauseDuration}
-          destinations={props.destinations}
+          currDay={props.currDay}
+          // pauses={props.pauses}
+          // pauseDuration={props.pauseDuration}
+          // destinations={props.destinations}
           project={props.project}
         />
         {/* </e.group> */}

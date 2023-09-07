@@ -203,6 +203,7 @@ const Experience = () => {
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene
+            currDay={currDay}
             pauses={pauses}
             destinations={destinations}
             pauseDuration={pauseDuration}
@@ -214,7 +215,7 @@ const Experience = () => {
 
       <Attraction currDestination={currDestination} />
 
-      {/* <div className="controls">
+      <div className="controls">
         <button
           disabled={index <= 1}
           onClick={() => {
@@ -231,7 +232,7 @@ const Experience = () => {
         >
           Next
         </button>
-      </div> */}
+      </div>
     </>
   );
 };

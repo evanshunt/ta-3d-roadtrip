@@ -6,9 +6,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { useCurrentSheet } from "@theatre/r3f";
 import { extend, useFrame } from "@react-three/fiber";
 import { shaderMaterial, useGLTF, useScroll } from "@react-three/drei";
-import { getProject, val } from "@theatre/core";
+import { getProject, types, val } from "@theatre/core";
 import { useControls } from "leva";
 import "../utils/map";
+import { editable as e } from "@theatre/r3f";
 
 // Shader that fills the road with a color
 const FillMaterial = shaderMaterial(
@@ -53,7 +54,15 @@ extend({ FillMaterial });
 const Road = (props) => {
   const { nodes, materials } = useGLTF("/glb/road.glb");
   const [time, setTime] = useState(0.0);
+  const [
+    // The Theatre.js object that represents our THREE.js object. It'll be initially `null`.
+    theatreObject,
+    setTheatreObject,
+  ] =
+    // Let's use `useState()` so our `useEffect()` will re-run when `theatreObject` changes
+    useState(null);
   const shaderRef = useRef();
+  const meshRef = useRef();
   const sheet = useCurrentSheet();
 
   const stops = [0.38, 0.63];
@@ -70,22 +79,44 @@ const Road = (props) => {
   //   });
   // }, []);
 
+  // // This `useEffect()` will run when `theatreObject` changes
+  // useEffect(
+  //   () => {
+  //     // if `theatreObject` is `null`, we don't need to do anything
+  //     if (!theatreObject) return;
+
+  //     const unsubscribe = theatreObject.onValuesChange((newValues) => {
+  //       // Apply the new offset to our THREE.js object
+  //       console.log(newValues.time);
+  //     });
+  //     // unsubscribe from the listener when the component unmounts
+  //     return unsubscribe;
+  //   },
+  //   // We only want to run this `useEffect()` when `theatreObject` changes
+  //   [theatreObject]
+  // );
+
   // console.log(sheet.sequence.pointer.length);
   useFrame(({ clock }) => {
     const pos = sheet.sequence.position;
 
-    if (
-      pos.map(0, val(sheet.sequence.pointer.length), 0, 1) <=
-      stops[props.currDay - 1]
-    ) {
-      console.log(
-        "current pos: ",
-        pos.map(0, val(sheet.sequence.pointer.length), 0, 1),
-        "current stop: ",
-        stops[props.currDay - 1]
-      );
-      setTime(pos.map(0, val(sheet.sequence.pointer.length), 0, 1));
-    }
+    theatreObject.onValuesChange((newValues) => {
+      // Apply the new offset to our THREE.js object
+      setTime(newValues.time);
+    });
+
+    // if (
+    //   pos.map(0, val(sheet.sequence.pointer.length), 0, 1) <=
+    //   stops[props.currDay - 1]
+    // ) {
+    //   console.log(
+    //     "current pos: ",
+    //     pos.map(0, val(sheet.sequence.pointer.length), 0, 1),
+    //     "current stop: ",
+    //     stops[props.currDay - 1]
+    //   );
+    //   setTime(pos.map(0, val(sheet.sequence.pointer.length), 0, 1));
+    // }
   });
 
   // Controls for testing
@@ -130,10 +161,19 @@ const Road = (props) => {
   // if (!shaderRef.current) return null;
   return (
     <group {...props} dispose={null} position={[-3.6, 0.01, -0.7]}>
-      <mesh geometry={nodes.Road.geometry} scale={0.1}>
+      <e.mesh
+        theatreKey={"Road"}
+        geometry={nodes.Road.geometry}
+        scale={0.1}
+        ref={meshRef}
+        objRef={setTheatreObject}
+        additionalProps={{
+          time: types.number(0.5, { range: [0, 1.0] }),
+        }}
+      >
         {/* UVs are backwards so i'm flipping time here */}
         <fillMaterial transparent={true} time={1.0 - time} ref={shaderRef} />
-      </mesh>
+      </e.mesh>
     </group>
   );
 };

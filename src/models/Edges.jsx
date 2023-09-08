@@ -16,7 +16,6 @@ export default function Edges(props) {
           // side={THREE.DoubleSide}
           roughness={1}
           metalness={0}
-
           // normalMap={iceFieldsTexture} // TODO: if needed
           // map-anisotropy={32}
         />

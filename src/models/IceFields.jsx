@@ -22,7 +22,7 @@ export default function IceFields(props) {
           map-flipY={false}
           // color={0x303030}
           // normalMap={iceFieldsTexture} // TODO: if needed
-          map-anisotropy={32}
+          map-anisotropy={1}
         />
       </mesh>
     </group>

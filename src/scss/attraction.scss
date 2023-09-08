@@ -17,6 +17,7 @@
   &--open {
     transform: translate(0, 0);
     overflow: scroll;
+    z-index: 3;
   }
 
   &--bounce {

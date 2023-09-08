@@ -16,9 +16,12 @@ import "./scss/attraction.scss";
 import Attraction from "./components/Attraction";
 import Itinerary from "./components/Itinerary";
 import Onboarding from "./components/OnBoarding";
+import "./scss/controls.scss";
+import Arrow from "./components/Arrow";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
+  const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
   const [currDay, setCurrDay] = useState(0);
@@ -190,18 +193,24 @@ const Experience = () => {
       <Canvas
         {...handlers}
         shadows
-        orthographic
+        dpr={dpr}
         gl={{
-          antialias: true,
+          // antialias: true,
           preserveDrawingBuffer: true,
           shadowMapEnabled: true,
-          shadowMapType: THREE.PCFSoftShadowMap,
+          // shadowMapType: THREE.PCFSoftShadowMap,
         }}
         frameloop="demand"
       >
         <PerformanceMonitor
-          onIncline={() => setDpr(2)}
-          onDecline={() => setDpr(1)}
+          onIncline={() => {
+            setDpr(2);
+            console.log("perf increase");
+          }}
+          onDecline={() => {
+            setDpr(1);
+            console.log("perf decrease");
+          }}
         />
         <SoftShadows size={2.5} focus={0.8} samples={10} />
         {/* <ScrollControls pages={3}> */}
@@ -219,24 +228,55 @@ const Experience = () => {
 
       <Attraction currDestination={currDestination} />
 
-      {/* <div className="controls">
+      <div className="controls">
         <button
           disabled={index <= 1}
+          className="controls__button controls__button--prev"
           onClick={() => {
             handleIndex("prev");
           }}
         >
-          Prev
+          <Arrow dir={"prev"} active={index >= 1} />
         </button>
+
+        <ul className="controls__list">
+          {Object.keys(days).map((day, i) => {
+            if (day === "0") return;
+            return (
+              <ul className="controls__list__list">
+                {destinations.map((destination, i) => {
+                  if (destination.day === parseInt(day)) {
+                    return (
+                      <li
+                        key={i}
+                        className={
+                          i === index
+                            ? "controls__pip controls__pip--active"
+                            : "controls__pip"
+                        }
+                        onClick={() => {
+                          setIndex(i);
+                        }}
+                      >
+                        o
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+            );
+          })}
+        </ul>
         <button
           disabled={index === maxLength}
+          className="controls__button controls__button--next"
           onClick={() => {
             handleIndex("next");
           }}
         >
-          Next
+          <Arrow dir={"next"} active={index !== maxLength} />
         </button>
-      </div> */}
+      </div>
     </>
   );
 };

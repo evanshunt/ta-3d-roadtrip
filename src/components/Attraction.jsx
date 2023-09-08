@@ -13,7 +13,7 @@ const Attraction = ({ currDestination, ref }) => {
       if (!currDestination.name) return;
       console.log(eventData);
       const { velocity, dir } = eventData;
-      if (velocity < 0.45) {
+      if (velocity < 0.8) {
         attractionRef.current.classList.add("attraction--bounce");
         setTimeout(() => {
           attractionRef.current.classList.remove("attraction--bounce");

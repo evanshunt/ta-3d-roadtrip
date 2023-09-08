@@ -15,6 +15,7 @@ import { useSwipeable } from "react-swipeable";
 import "./scss/attraction.scss";
 import Attraction from "./components/Attraction";
 import Itinerary from "./components/Itinerary";
+import Onboarding from "./components/OnBoarding";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -129,10 +130,12 @@ const Experience = () => {
   }, [index]);
 
   const handleIndex = (dir) => {
+    if (dir === "up" || dir === "down") return;
+
     if (dir === "next") {
       index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
     } else {
-      index === 0 ? setIndex(0) : setIndex(index - 1);
+      index <= 1 ? setIndex(1) : setIndex(index - 1);
     }
   };
 
@@ -183,6 +186,7 @@ const Experience = () => {
           grouped={daysParsed}
         />
       )}
+      <Onboarding />
       <Canvas
         {...handlers}
         shadows
@@ -215,7 +219,7 @@ const Experience = () => {
 
       <Attraction currDestination={currDestination} />
 
-      <div className="controls">
+      {/* <div className="controls">
         <button
           disabled={index <= 1}
           onClick={() => {
@@ -232,7 +236,7 @@ const Experience = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

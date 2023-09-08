@@ -34,7 +34,7 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={0.5} color={0xffffff} />
+      <ambientLight intensity={0.8} color={0xffffff} />
 
       <directionalLight
         ref={spotLight}
@@ -42,7 +42,7 @@ const Lights = () => {
         position={[-15.98, 12.2, 0.43]}
         // position={[positionX, positionY, positionZ]}
         // 40, 71, 0
-        intensity={0.6}
+        intensity={0.2}
         // intensity={intensity}
         lookAt={[0, 0, 0]}
         castShadow

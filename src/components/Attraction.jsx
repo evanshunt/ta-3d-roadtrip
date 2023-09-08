@@ -1,21 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import arrowUp from "../images/arrow-up.svg";
 
 const Attraction = ({ currDestination, ref }) => {
   const [open, setOpen] = useState(false);
+  const attractionRef = useRef();
   const handlers = useSwipeable({
-    onSwiped: (eventData) => {
-      const dir = eventData.dir.toLowerCase();
-      if (!currDestination?.details?.title) return;
-
-      setOpen(dir === "up" ? true : false);
+    onSwiping: (eventData) => {
+      if (!currDestination.name) return;
     },
+    onSwiped: (eventData) => {
+      if (!currDestination.name) return;
+      console.log(eventData);
+      const { velocity, dir } = eventData;
+      if (velocity < 0.45) {
+        attractionRef.current.classList.add("attraction--bounce");
+        setTimeout(() => {
+          attractionRef.current.classList.remove("attraction--bounce");
+        }, 500);
+        return;
+      }
+      setOpen(dir === "Up" ? true : false);
+    },
+
     // ...config
+    preventDefaultTouchmoveEvent: true,
   });
 
   return (
     <div
+      ref={attractionRef}
       className={`${open ? "attraction attraction--open" : "attraction"}
 `}
     >
@@ -27,6 +41,7 @@ const Attraction = ({ currDestination, ref }) => {
               ? "attraction__arrow attraction__arrow--open"
               : "attraction__arrow"
           }`}
+          {...handlers}
           src={arrowUp}
         />
 

@@ -1,0 +1,65 @@
+.onboarding {
+  align-items: center;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  left: 0;
+  opacity: 1;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.25s ease-out;
+  z-index: 2;
+}
+
+.onboarding__top,
+.onboarding__blur {
+  grid-column: 1;
+  grid-row: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  width: 6.75rem;
+}
+
+.onboarding__top {
+  animation: swipe 1.5s 0.25s ease-out 2;
+  z-index: 3;
+}
+
+.onboarding__blur {
+  animation: swipe 1.5s 0.26s ease-out 2;
+  z-index: 2;
+}
+
+@keyframes swipe {
+  0% {
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.9) translate(-25%);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(0.9) translate(0%);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(0.9) translate(0%);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: scale(1) translate(0%);
+  }
+}

@@ -1,5 +1,5 @@
 // canvas {
-//   height: 100vh;
+//   height: 100dvh;
 //   width: 100%;
 // }
 
@@ -12,8 +12,9 @@ body {
   background-color: #b0b1b8;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -30,7 +31,7 @@ body {
   --white: #ffffff;
   --red: #9c0f00;
   --turquoise: #00a79a;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   width: 100vw;
 
@@ -41,7 +42,11 @@ body {
   }
 
   &::before {
-    background: linear-gradient(0deg, rgba(26, 43, 55, 0) 76.04%, #1a2b37 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(26, 43, 55, 0) 76.04%,
+      rgba(26, 43, 55, 0.7) 100%
+    );
     bottom: 0;
     content: "";
     left: 0;
@@ -55,7 +60,7 @@ body {
 }
 
 .controls {
-  bottom: 5vh;
+  bottom: 5dvh;
   display: flex;
   position: absolute;
   right: 5vw;

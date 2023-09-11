@@ -59,7 +59,7 @@ const Scene = (props) => {
 
   return (
     <>
-    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.4} />
+      <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.8} />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -92,7 +92,7 @@ const Scene = (props) => {
 
       <Lights />
 
-      {/* <Perf position="bottom-right" /> */}
+      <Perf position="bottom-right" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Banff Pins */}
         {/* <FancyPin
@@ -273,13 +273,13 @@ const Scene = (props) => {
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road
+        {/* <Road
           currDay={props.currDay}
           // pauses={props.pauses}
           // pauseDuration={props.pauseDuration}
           // destinations={props.destinations}
           project={props.project}
-        />
+        /> */}
         {/* </e.group> */}
 
         <IceFieldsDecimated />

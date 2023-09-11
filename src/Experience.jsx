@@ -1,6 +1,8 @@
 import * as THREE from "three";
+import { useLayoutEffect } from "react";
+import { useFrame } from "@react-three/fiber";
 import animation from "./animation-data/animation.json";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import "core-js/actual/object/group-by";
 import React, { createRef, useEffect, useState } from "react";
@@ -18,6 +20,7 @@ import Itinerary from "./components/Itinerary";
 import Onboarding from "./components/OnBoarding";
 import "./scss/controls.scss";
 import Arrow from "./components/Arrow";
+
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -179,8 +182,66 @@ const Experience = () => {
     return day !== "0";
   });
 
+  const FrameLimiter =  ({limit = 30}) => {
+    const {invalidate, clock, advance} = useThree();
+    useEffect(() => {
+        let delta = 0;
+        const interval = 1/limit;
+        const update = () => {
+          
+            requestAnimationFrame(update);
+            delta += clock.getDelta();
+
+            if (delta > interval) {
+                invalidate();
+                delta = delta % interval;
+            }
+        }
+
+        update();
+    }, [])
+
+    return null;
+}
+
+function FPSLimiter({ fps }) {
+  const set = useThree((state) => state.set);
+  const get = useThree((state) => state.get);
+  const advance = useThree((state) => state.advance);
+  const frameloop = useThree((state) => state.frameloop);
+
+  useLayoutEffect(() => {
+      const initFrameloop = get().frameloop;
+
+      return () => {
+          set({ frameloop: initFrameloop });
+      };
+  }, []);
+
+  useFrame((state) => {
+      if (state.get().blocked) return;
+      state.set({ blocked: true });
+
+      setTimeout(() => {
+          state.set({ blocked: false });
+
+          state.advance();
+      }, Math.max(0, 1000 / fps - state.clock.getDelta()));
+  });
+
+  useEffect(() => {
+      if (frameloop !== 'never') {
+          set({ frameloop: 'never' });
+          advance();
+      }
+  }, [frameloop]);
+
+  return null;
+}
+
   return (
     <>
+    
       {days[1] && (
         <Itinerary
           currDestination={currDestination}
@@ -193,15 +254,17 @@ const Experience = () => {
       <Canvas
         {...handlers}
         shadows
-        dpr={dpr}
+        // dpr={dpr}
         gl={{
           antialias: false,
           preserveDrawingBuffer: true,
-          shadowMapEnabled: true,
-          shadowMapType: THREE.PCFSoftShadowMap,
+          // shadowMapEnabled: true,
+          // shadowMapType: THREE.PCFSoftShadowMap,
+          pixelRatio: 1,
         }}
         frameloop="demand"
       >
+        <FPSLimiter fps={30} />
         <PerformanceMonitor
           onIncline={() => {
             setDpr(2);
@@ -223,6 +286,7 @@ const Experience = () => {
             project={project}
           />
         </SheetProvider>
+        
         {/* </ScrollControls> */}
       </Canvas>
 

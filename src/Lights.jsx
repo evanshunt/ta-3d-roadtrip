@@ -34,8 +34,8 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={0.8} color={0xffffff} />
-
+      <ambientLight intensity={0.6} color={0xffffff} />
+{/* 
       <directionalLight
         ref={spotLight}
         // position={[-7, 6.5, -5]}
@@ -48,7 +48,7 @@ const Lights = () => {
         castShadow
         // shadow-mapSize-width={1024}
         // shadow-mapSize-height={1024}
-      />
+      /> */}
     </>
   );
 };

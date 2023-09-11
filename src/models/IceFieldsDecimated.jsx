@@ -7,6 +7,8 @@ export default function IceFieldsDecimated(props) {
     "/textures/green/baked-green-4-redux-compressed.jpg"
   );
 
+
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -21,6 +23,7 @@ export default function IceFieldsDecimated(props) {
           roughness={1}
           metalness={0}
           map-flipY={false}
+          map-generateMipmaps={true}
         />
       </mesh>
     </group>

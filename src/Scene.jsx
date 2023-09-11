@@ -9,7 +9,7 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 import { useFrame } from "@react-three/fiber";
-import { Billboard, OrbitControls, useScroll } from "@react-three/drei";
+import { Billboard, Environment, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -59,6 +59,7 @@ const Scene = (props) => {
 
   return (
     <>
+    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.4} />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}

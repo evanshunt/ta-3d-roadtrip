@@ -195,10 +195,10 @@ const Experience = () => {
         shadows
         dpr={dpr}
         gl={{
-          // antialias: true,
+          antialias: false,
           preserveDrawingBuffer: true,
           shadowMapEnabled: true,
-          // shadowMapType: THREE.PCFSoftShadowMap,
+          shadowMapType: THREE.PCFSoftShadowMap,
         }}
         frameloop="demand"
       >
@@ -212,7 +212,7 @@ const Experience = () => {
             console.log("perf decrease");
           }}
         />
-        <SoftShadows size={2.5} focus={0.8} samples={10} />
+        <SoftShadows size={2.5} focus={0.8} samples={4} />
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene

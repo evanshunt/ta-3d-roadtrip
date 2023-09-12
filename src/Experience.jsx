@@ -212,7 +212,7 @@ const Experience = () => {
             console.log("perf decrease");
           }}
         />
-        <SoftShadows size={2.5} focus={0.8} samples={4} />
+        <SoftShadows size={2.5} focus={0.8} samples={12} />
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene

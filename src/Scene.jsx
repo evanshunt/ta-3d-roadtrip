@@ -59,7 +59,7 @@ const Scene = (props) => {
 
   return (
     <>
-    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.4} />
+    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.6} />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}

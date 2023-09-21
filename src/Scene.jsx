@@ -23,6 +23,7 @@ import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
 import ImagePin from "./models/ImagePin.jsx";
 import { useControls } from "leva";
+import { Top } from "./models/Top.jsx";
 
 const positions = {
   // Banff Pins:
@@ -84,11 +85,11 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         makeDefault={false}
         onUpdate={(e) => console.log(e)}
-      /> */}
+      />
 
       <Lights />
 
@@ -282,7 +283,8 @@ const Scene = (props) => {
         />
         {/* </e.group> */}
 
-        <IceFieldsDecimated />
+        {/* <IceFieldsDecimated /> */}
+        <Top />
 
         <Edges />
 

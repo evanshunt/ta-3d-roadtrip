@@ -4,6 +4,7 @@ import { editable as e } from "@theatre/r3f";
 import { useControls } from "leva";
 
 const ImagePin = ({ imageSrc, position, name, scale }) => {
+  console.log(imageSrc, position, name, scale);
   //   const { positionX, positionY, positionZ } = useControls({
   //     positionX: {
   //       value: position[0],
@@ -28,12 +29,13 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
   return (
     <Billboard position={position} scale={scale}>
       {/* <Billboard position={[positionX, positionY, positionZ]} scale={scale}> */}
-      <e.group theatreKey={name} scale={[0]}>
+      <group>
         {/* <mesh position-z={-0.02}>
           <circleGeometry args={[0.525, 32]} />
           <meshStandardMaterial color="white" metalness={0} roughness={1} />
         </mesh> */}
         <Image transparent url={imageSrc} scale={1.33} />
+        <boxGeometry args={[0.8, 0.8, 0.1]} />
         <mesh position-z={-0.02} castShadow>
           <circleGeometry args={[0.8, 32]} />
           <meshBasicMaterial
@@ -46,7 +48,7 @@ const ImagePin = ({ imageSrc, position, name, scale }) => {
             // roughness={1}
           />
         </mesh>
-      </e.group>
+      </group>
     </Billboard>
   );
 };

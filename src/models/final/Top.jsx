@@ -30,6 +30,7 @@ export function Top(props) {
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
+          map-anisotropy={16}
         />
       </mesh>
     </group>

@@ -13,6 +13,7 @@ import { Environment, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
+import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
 import Road from "./models/Road.jsx";
 import { editable as e } from "@theatre/r3f";
@@ -21,46 +22,56 @@ import { useControls } from "leva";
 import { Top } from "./models/final/Top.jsx";
 import { Sides } from "./models/final/Sides.jsx";
 import { Plane } from "./models/final/Plane.jsx";
+import FancyPin from "./models/final/FancyPin.jsx";
 
 const positions = {
-  // Banff Pins:
-  // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
-  banffUpperHotSprings: [1.8, 0.475, 4.8],
-  // caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
-  caveAndBasin: [1.35, 0.38, 4.5],
-  fairmontBanffSpringsHotel: [1.63, 0.4, 4.55],
-  // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
-  discoverBanffTours: [1.8, 0.425, 4.22],
-  // gondola: [5.358368436662257, 0.33, 5.634275247444896],
-  gondola: [1.85, 0.475, 4.9],
-  // minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
-  minnewankaCruise: [1.85, 0.38, 3.82],
-  // Lake Louise Pins:
-  // moraineLake: [1.7, 0.4, 3.3],
-  moraineLake: [-1.7, 0.47, 2.82],
-  // lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
-  lakeAgnesTeaHouse: [-2.1, 0.47, 2.35],
-  // lakeLouiseSkiResort: [1.9, 0.4, 2.8],
-  lakeLouiseSkiResort: [-1.6, 0.475, 1.67],
-  // fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
+  // Day 1:
+  caveAndBasin: [-4.4, 1.18, 2.75],
+  gondola: [-4.7, 1.2, 2.88],
+  skyBistro: [-4.7, 1.2, 2.88],
+  banffUpperHotSprings: [-4.6, 1.2, 2.98],
+  fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
+
+  // Day 2:
+  carterRyanGallery: [3.85, 0.475, 4.9],
+  johnstonCanyon: [3.85, 0.475, 4.9],
+  lakeLouiseGondola: [3.85, 0.475, 4.9],
   fairmontChateauLakeLouise: [-1.9, 0.42, 2.35],
-  // Icefields Pins:
-  // columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
-  columbiaIcefieldGlacierAdventure: [-6.95, 0.425, -4.45],
-  // columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
+  fairview: [3.85, 0.475, 4.9],
+
+  // Day 3:
   columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
+  maligneCanyon: [-7.1, 0.475, -4.45],
+  jasperSkyTram: [-7.1, 0.475, -4.45],
+  fairmontJasperParkLodge: [-7.1, 0.475, -4.45],
+  jasperPlanetarium: [-7.1, 0.475, -4.45],
 };
 
 const Scene = (props) => {
   const sceneRef = useRef();
   const cameraRef = useRef();
 
+  // const { cloudPosX, cloudPosY, cloudPosZ } = useControls({
+  //   cloudPosX: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   cloudPosY: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   cloudPosZ: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  // });
+
   return (
     <>
-      <Environment
-        files={"/textures/table_mountain_2_4k.hdr"}
-        intensity={0.6}
-      />
+      <Environment files={"/textures/table_mountain_2_4k.hdr"} intensity={2} />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -95,182 +106,26 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* Banff Pins */}
-        {/* <FancyPin
-          castShadow
-          name={"Banff Upper Hot Springs"}
-          position={positions.banffUpperHotSprings}
-          // position={[positionX, positionY, positionZ]}
-        /> */}
-        {/* <Billboard follow={true}> */}
-        {/* <axesHelper
-          args={[5]}
-          setColors={["black", "black", "black"]}
-          position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        /> */}
-        {/* </Billboard> */}
+        {/* Day 1 */}
+        <Day1 positions={positions} />
 
-        <ImagePin
-          imageSrc={"/images/banff-upper-hot-springs-cropped.png"}
-          scale={0.2}
-          name={"Banff Upper Hot Springs"}
-          position={positions.banffUpperHotSprings}
-        />
-
-        <ImagePin
-          imageSrc={"/images/banff-gondola-cropped.png"}
-          scale={0.2}
-          name={"Banff Gondola"}
-          position={positions.gondola}
-        />
-
-        <ImagePin
-          imageSrc={"/images/cave-and-basin-national-historic-site-cropped.png"}
-          scale={0.2}
-          name={"Cave and Basin National Historic Site"}
-          position={positions.caveAndBasin}
-        />
-
-        {/* 
-        <ImagePin
-          imageSrc={"/images/the-fairmont-banff-springs-hotel-cropped.png"}
-          scale={0.2}
-          name={"The Fairmont Banff Springs Hotel"}
-          position={positions.fairmontBanffSpringsHotel}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/discover-banff-tours-cropped.png"}
-          scale={0.2}
-          name={"Discover Banff Tours"}
-          position={positions.discoverBanffTours}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
-          scale={0.2}
-          name={"Lake Minnewanka Cruise"}
-          position={positions.minnewankaCruise}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/moraine-lake-cropped.png"}
-          scale={0.2}
-          name={"Moraine Lake"}
-          position={positions.minnewankaCruise}
-        /> */}
-
-        <ImagePin
-          imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
-          scale={0.2}
-          name={"Lake Agnes Tea House"}
-          position={positions.lakeAgnesTeaHouse}
-        />
-
-        <ImagePin
-          imageSrc={"/images/lake-louise-ski-resort-cropped.png"}
-          scale={0.2}
-          name={"Lake Louise Ski Resort"}
-          position={positions.lakeLouiseSkiResort}
-        />
-
-        <ImagePin
-          imageSrc={"/images/fairmont-chateau-lake-louise-cropped.png"}
-          scale={0.2}
-          name={"Fairmont Chateau Lake Louise"}
-          position={positions.fairmontChateauLakeLouise}
-        />
-
-        {/* <ImagePin
-          imageSrc={"/images/columbia-icefield-glacier-adventure-cropped.png"}
-          scale={0.2}
-          name={"Columbia Icefield Glacier Adventure"}
-          position={positions.columbiaIcefieldGlacierAdventure}
-        /> */}
-
-        <ImagePin
-          imageSrc={"/images/columbia-icefield-skywalk-cropped.png"}
-          scale={0.2}
-          name={"Columbia Icefield Skywalk"}
-          position={positions.columbiaIcefieldSkywalk}
-        />
-
-        {/* <FancyPin
-          name={"Cave and Basin National Historic Site"}
-          castShadow
-          position={positions.caveAndBasin}
-        />
-
-        <FancyPin
-          name={"Discover Banff Tours"}
-          castShadow
-          position={positions.discoverBanffTours}
-        />
-
-        <FancyPin
-          name={"Banff Gondola"}
-          castShadow
-          position={positions.gondola}
-        />
-
-        <FancyPin
-          name={"Lake Minnewanka Cruise"}
-          castShadow
-          position={positions.minnewankaCruise}
-        /> */}
-
-        {/* Lake Louise Pins */}
-        {/* <FancyPin
-          name={"Moraine Lake"}
-          castShadow
-          position={positions.moraineLake}
-        />
-
-        <FancyPin
-          name={"Lake Agnes Tea House"}
-          castShadow
-          position={positions.lakeAgnesTeaHouse}
-        />
-
-        <FancyPin
-          name={"Lake Louise Ski Resort"}
-          castShadow
-          position={positions.lakeLouiseSkiResort}
-        />
-
-        <FancyPin
-          name={"Fairmont Chateau Lake Louise"}
-          castShadow
-          position={positions.fairmontChateauLakeLouise}
-        /> */}
-
-        {/* 3. Ice Fields Pins */}
-        {/* <FancyPin
-          name={"Columbia Icefield Glacier Adventure"}
-          castShadow
-          position={positions.columbiaIcefieldGlacierAdventure}
-        />
-
-        <FancyPin
-          name={"Columbia Icefield Skywalk"}
-          castShadow
-          position={positions.columbiaIcefieldSkywalk}
-        /> */}
+        {/* Day 2 */}
 
         <e.group theatreKey="Lake Louise Cloud 2">
-          <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+          {/* <Cloud scale={0.2} position={[-2, 3.1, 3]} /> */}
         </e.group>
 
         <e.group theatreKey="Lake Louise Cloud">
-          <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
+          {/* <Cloud scale={0.3} position={[2, 3, -4.75]} /> */}
         </e.group>
 
         <e.group theatreKey="Banff Cloud 2">
-          <Cloud scale={0.15} position={[4, 1.75, 3]} />
+          {/* <Cloud scale={0.1} position={[-0.8, 1.5, 2.6]} /> */}
+          {/* <Cloud scale={0.1} position={[cloudPosX, cloudPosY, cloudPosZ]} /> */}
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
-          <Cloud scale={0.08} position={[2, 1.5, 6]} />
+          {/* <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} /> */}
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}

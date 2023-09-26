@@ -8,24 +8,14 @@ import { Perf } from "r3f-perf";
 // } from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
-import { useFrame } from "@react-three/fiber";
-import {
-  Billboard,
-  Environment,
-  OrbitControls,
-  useScroll,
-} from "@react-three/drei";
+// import { useFrame } from "@react-three/fiber";
+import { Environment, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
-import Edges from "./models/Edges.jsx";
 import Lights from "./Lights.jsx";
-import IceFieldsDecimated from "./models/IceFieldsDecimated.jsx";
 import Road from "./models/Road.jsx";
-
-import PlaneDecimated from "./models/PlaneDecimated.jsx";
 import { editable as e } from "@theatre/r3f";
-import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
 import ImagePin from "./models/ImagePin.jsx";
 import { useControls } from "leva";
 import { Top } from "./models/final/Top.jsx";
@@ -298,7 +288,7 @@ const Scene = (props) => {
         <Plane />
       </e.group>
 
-      <TiltShiftEffects />
+      {/* <TiltShiftEffects /> */}
       {/* <EffectComposer>
         <DepthOfField
           focusDistance={focusDistance}

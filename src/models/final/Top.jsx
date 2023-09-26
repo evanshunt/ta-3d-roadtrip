@@ -8,15 +8,15 @@ import { useControls } from "leva";
 
 export function Top(props) {
   const { nodes } = useGLTF("/glb/final/top-new.glb");
-  const texture = useTexture("/textures/final/baked-combined-4k.jpg");
-  const { scale } = useControls({
-    scale: {
-      value: 0.25,
-      min: 0,
-      max: 2,
-      step: 0.1,
-    },
-  });
+  const texture = useTexture("/textures/final/baked-combined-8k.jpg");
+  // const { scale } = useControls({
+  //   scale: {
+  //     value: 0.25,
+  //     min: 0,
+  //     max: 2,
+  //     step: 0.1,
+  //   },
+  // });
 
   return (
     <group {...props} dispose={null}>

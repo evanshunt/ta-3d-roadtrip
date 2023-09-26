@@ -34,7 +34,7 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight intensity={0.2} color={0xffffff} />
+      <ambientLight intensity={0.4} color={0xffffff} />
 
       <directionalLight
         ref={spotLight}

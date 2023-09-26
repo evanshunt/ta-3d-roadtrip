@@ -9,7 +9,12 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 import { useFrame } from "@react-three/fiber";
-import { Billboard, Environment, OrbitControls, useScroll } from "@react-three/drei";
+import {
+  Billboard,
+  Environment,
+  OrbitControls,
+  useScroll,
+} from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 import { Cloud } from "./Clouds.jsx";
@@ -23,7 +28,9 @@ import { editable as e } from "@theatre/r3f";
 import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
 import ImagePin from "./models/ImagePin.jsx";
 import { useControls } from "leva";
-import { Top } from "./models/Top.jsx";
+import { Top } from "./models/final/Top.jsx";
+import { Sides } from "./models/final/Sides.jsx";
+import { Plane } from "./models/final/Plane.jsx";
 
 const positions = {
   // Banff Pins:
@@ -60,7 +67,10 @@ const Scene = (props) => {
 
   return (
     <>
-    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.6} />
+      <Environment
+        files={"/textures/table_mountain_2_4k.hdr"}
+        intensity={0.6}
+      />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -283,12 +293,9 @@ const Scene = (props) => {
         />
         {/* </e.group> */}
 
-        {/* <IceFieldsDecimated /> */}
         <Top />
-
-        <Edges />
-
-        <PlaneDecimated />
+        <Sides />
+        <Plane />
       </e.group>
 
       <TiltShiftEffects />

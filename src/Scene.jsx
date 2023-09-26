@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 // import {
 //   DepthOfField,
 //   EffectComposer,
@@ -106,7 +106,7 @@ const Scene = (props) => {
 
       <Lights />
 
-      <Perf position="bottom-right" />
+      {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
         <Day1 positions={positions} />

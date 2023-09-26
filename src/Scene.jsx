@@ -23,6 +23,8 @@ import { Top } from "./models/final/Top.jsx";
 import { Sides } from "./models/final/Sides.jsx";
 import { Plane } from "./models/final/Plane.jsx";
 import FancyPin from "./models/final/FancyPin.jsx";
+import Day2 from "./days/Day2.jsx";
+import Day3 from "./days/Day3.jsx";
 
 const positions = {
   // Day 1:
@@ -33,18 +35,18 @@ const positions = {
   fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
 
   // Day 2:
-  carterRyanGallery: [3.85, 0.475, 4.9],
-  johnstonCanyon: [3.85, 0.475, 4.9],
-  lakeLouiseGondola: [3.85, 0.475, 4.9],
-  fairmontChateauLakeLouise: [-1.9, 0.42, 2.35],
-  fairview: [3.85, 0.475, 4.9],
+  carterRyanGallery: [-4.3, 1.16, 2.88],
+  johnstonCanyon: [-4.0, 1.16, 1.88],
+  lakeLouiseGondola: [-2.9, 1.2, 0.73],
+  fairmontChateauLakeLouise: [-3.1, 1.18, 0.57],
+  fairview: [-3.1, 1.18, 0.57],
 
   // Day 3:
-  columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
-  maligneCanyon: [-7.1, 0.475, -4.45],
-  jasperSkyTram: [-7.1, 0.475, -4.45],
-  fairmontJasperParkLodge: [-7.1, 0.475, -4.45],
-  jasperPlanetarium: [-7.1, 0.475, -4.45],
+  columbiaIcefieldSkywalk: [1.63, 1.25, -2.9],
+  maligneCanyon: [5.3, 1.14, -5.5],
+  jasperSkyTram: [5.18, 1.13, -6.1],
+  fairmontJasperParkLodge: [5.4, 1.15, -5.6],
+  jasperPlanetarium: [5.4, 1.15, -5.6],
 };
 
 const Scene = (props) => {
@@ -104,12 +106,16 @@ const Scene = (props) => {
 
       <Lights />
 
-      {/* <Perf position="bottom-right" /> */}
+      <Perf position="bottom-right" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
         <Day1 positions={positions} />
 
         {/* Day 2 */}
+        <Day2 positions={positions} />
+
+        {/* Day 3 */}
+        <Day3 positions={positions} />
 
         <e.group theatreKey="Lake Louise Cloud 2">
           {/* <Cloud scale={0.2} position={[-2, 3.1, 3]} /> */}

@@ -73,7 +73,11 @@ const Scene = (props) => {
 
   return (
     <>
-      <Environment files={"/textures/table_mountain_2_4k.hdr"} intensity={2} />
+      <Environment
+        background
+        files={"/textures/drackenstein_quarry_puresky_4k.hdr"}
+        intensity={2}
+      />
       <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -146,7 +150,7 @@ const Scene = (props) => {
 
         <Top />
         <Sides />
-        <Plane />
+        {/* <Plane /> */}
       </e.group>
 
       {/* <TiltShiftEffects /> */}

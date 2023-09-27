@@ -41,20 +41,20 @@ body {
     width: 100vw;
   }
 
-  &::before {
-    background: linear-gradient(
-      0deg,
-      rgba(26, 43, 55, 0) 76.04%,
-      rgba(26, 43, 55, 0.7) 100%
-    );
-    bottom: 0;
-    content: "";
-    left: 0;
+  // &::before {
+  //   background: linear-gradient(
+  //     0deg,
+  //     rgba(26, 43, 55, 0) 76.04%,
+  //     rgba(26, 43, 55, 0.7) 100%
+  //   );
+  //   bottom: 0;
+  //   content: "";
+  //   left: 0;
 
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
-  }
+  //   pointer-events: none;
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   z-index: 2;
+  // }
 }

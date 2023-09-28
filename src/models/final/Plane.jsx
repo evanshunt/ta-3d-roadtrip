@@ -10,7 +10,7 @@ export function Plane(props) {
   const texture = useTexture("/textures/final/plane-baked.jpg");
   return (
     <group {...props} dispose={null}>
-      <mesh scale={0.25} geometry={nodes.Plane.geometry}>
+      <mesh scale={[10.25, 0.25, 10.25]} geometry={nodes.Plane.geometry}>
         <meshStandardMaterial
           map={texture}
           map-flipY={false}

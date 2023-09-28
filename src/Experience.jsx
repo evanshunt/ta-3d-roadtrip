@@ -18,6 +18,7 @@ import Itinerary from "./components/Itinerary";
 import Onboarding from "./components/OnBoarding";
 import "./scss/controls.scss";
 import Arrow from "./components/Arrow";
+import Intro from "./Intro";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -26,6 +27,7 @@ const Experience = () => {
   const [index, setIndex] = useState(0);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
+  const [hasStarted, setHasStarted] = useState(false);
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
@@ -248,6 +250,9 @@ const Experience = () => {
 
     if (dir === "next") {
       index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+      if (!hasStarted) {
+        setHasStarted(true);
+      }
     } else {
       index <= 1 ? setIndex(1) : setIndex(index - 1);
     }
@@ -291,7 +296,9 @@ const Experience = () => {
   });
 
   return (
-    <>
+    <div {...handlers} className="wrapper">
+      <Intro hasStarted={hasStarted} />
+
       {days[1] && (
         <Itinerary
           currDestination={currDestination}
@@ -300,9 +307,8 @@ const Experience = () => {
           grouped={daysParsed}
         />
       )}
-      <Onboarding />
+      {/* <Onboarding /> */}
       <Canvas
-        {...handlers}
         shadows
         dpr={dpr}
         gl={{
@@ -388,7 +394,7 @@ const Experience = () => {
           <Arrow dir={"next"} active={index !== maxLength} />
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

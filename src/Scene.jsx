@@ -16,6 +16,7 @@ import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
 import Road from "./models/Road.jsx";
+import RoadThicc from "./models/final/Road.jsx"
 import { editable as e } from "@theatre/r3f";
 import ImagePin from "./models/ImagePin.jsx";
 import { useControls } from "leva";
@@ -78,22 +79,29 @@ const Scene = (props) => {
         files={"/textures/drackenstein_quarry_puresky_4k.hdr"}
         intensity={2}
       />
-      <PerspectiveCamera
-        makeDefault
-        ref={cameraRef}
-        theatreKey={"Camera"}
-        position={[0, 23, 0]}
-        fov={55}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-        // lookAt={lookAtRef}
-        zoom={1}
-      />
+      <OrbitControls
+        autoRotate={false}
+        makeDefault={false}
+        onUpdate={(e) => console.log(e)}
+      >
+        <PerspectiveCamera
+          makeDefault
+          ref={cameraRef}
+          theatreKey={"Camera"}
+          position={[0, 23, 0]}
+          fov={55}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+          // lookAt={lookAtRef}
+          zoom={1}
+        />
+      </OrbitControls>
 
       {/* <OrthographicCamera
         makeDefault
         theatreKey={"Camera"}
         near={-100}
         zoom={162}
+        ref={cameraRef}
         // position={[1.25, 0.35, 0.23]}
         // position={[0.9344612217659182, 0.3561940392504276, 0.8589575259686614]}
         position={[0.95, -2, 0.85]}
@@ -102,11 +110,7 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <OrbitControls
-        autoRotate={false}
-        makeDefault={false}
-        onUpdate={(e) => console.log(e)}
-      />
+
 
       <Lights />
 
@@ -139,21 +143,21 @@ const Scene = (props) => {
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road
+        {/* <Road
           currDay={props.currDay}
           // pauses={props.pauses}
           // pauseDuration={props.pauseDuration}
           // destinations={props.destinations}
           project={props.project}
-        />
+        /> */}
         {/* </e.group> */}
-
+        <RoadThicc />
         <Top />
         <Sides />
         {/* <Plane /> */}
       </e.group>
 
-      {/* <TiltShiftEffects /> */}
+      <TiltShiftEffects />
       {/* <EffectComposer>
         <DepthOfField
           focusDistance={focusDistance}

@@ -2,7 +2,6 @@ import * as THREE from "three";
 import animation from "./animation-data/animation.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
-import "core-js/actual/object/group-by";
 import React, { createRef, useEffect, useState } from "react";
 import Scene from "./Scene";
 import { SheetProvider } from "@theatre/r3f";
@@ -242,7 +241,7 @@ const Experience = () => {
 
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-    return () => {};
+    return () => { };
   }, [index]);
 
   const handleIndex = (dir) => {
@@ -319,7 +318,7 @@ const Experience = () => {
         }}
         frameloop="demand"
       >
-        <PerformanceMonitor
+        {/* <PerformanceMonitor
           onIncline={() => {
             setDpr(2);
             console.log("perf increase");
@@ -328,7 +327,7 @@ const Experience = () => {
             setDpr(1);
             console.log("perf decrease");
           }}
-        />
+        /> */}
         <SoftShadows size={2.5} focus={0.8} samples={12} />
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>

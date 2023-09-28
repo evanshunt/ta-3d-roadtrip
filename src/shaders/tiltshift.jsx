@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Uniform } from "three";
 import { BlendFunction, Effect, EffectAttribute } from "postprocessing";
 import { wrapEffect } from "./util.tsx";
 import { EffectComposer } from "@react-three/postprocessing";
-import { useControls } from "leva";
 import { editable as e } from "@theatre/r3f";
+import { types } from "@theatre/core";
 import { useCurrentSheet } from "@theatre/r3f";
-import { types, onChange } from "@theatre/core";
+import { useFrame } from "@react-three/fiber";
 
 const TiltShiftShader = {
   fragmentShader: `
@@ -108,6 +108,27 @@ const TiltShift = wrapEffect(TiltShiftEffect);
 function TiltShiftEffects() {
   const effectRef = React.createRef();
   const sheet = useCurrentSheet();
+  const [blur, setBlur] = React.useState(0.5);
+  const [taper, setTaper] = React.useState(0.525);
+  const [start, setStart] = React.useState([0.0, 0.4]);
+  const [end, setEnd] = React.useState([0.47, 0.45]);
+  const [
+    // The Theatre.js object that represents our THREE.js object. It'll be initially `null`.
+    theatreObject,
+    setTheatreObject,
+  ] =
+    // Let's use `useState()` so our `useEffect()` will re-run when `theatreObject` changes
+    useState(null);
+
+  useFrame(({ clock }) => {
+    theatreObject.onValuesChange((newValues) => {
+      // Apply the new offset to our THREE.js object
+      setBlur(newValues.blur);
+      setTaper(newValues.taper);
+      setStart([newValues.start.x, newValues.start.y]);
+      setEnd([newValues.end.x, newValues.end.y]);
+    });
+  });
 
   // const blendFunction = BlendFunction.Normal,
   // let blur = 0.4, // [0, 1], can go beyond 1 for extra
@@ -228,27 +249,45 @@ function TiltShiftEffects() {
   // let test = 2;
 
   return (
-    <EffectComposer>
-      <TiltShift
-        ref={effectRef}
-        // blur={blur}
-        // blur={0.34}
-        blur={0.5}
-        // taper={taper}
-        // // taper={0.7}
-        taper={0.525}
-        // start={start}
-        // // start={[0.0, 0.0]}
-        start={[0.0, 0.4]}
-        // end={end}
-        // // end={[0.45, 0.45]}
-        end={[0.47, 0.45]}
-        // sampleCount={sampleCount}
-        sampleCount={25.0}
-        // direction={direction}
-        direction={[0.96, 0.03]}
-      />
-    </EffectComposer>
+    <e.group
+      theatreKey="Tilt Shift"
+      objRef={setTheatreObject}
+      additionalProps={{
+        blur: types.number(0.5, { range: [0, 1.0] }),
+        taper: types.number(0.525, { range: [0, 1.0] }),
+        start: types.compound({
+          x: types.number(0.0, { range: [0, 1.0] }),
+          y: types.number(0.4, { range: [0, 1.0] }),
+        }),
+        end: types.compound({
+          x: types.number(0.47, { range: [0, 1.0] }),
+          y: types.number(0.45, { range: [0, 1.0] }),
+        }),
+      }}
+    >
+      <EffectComposer>
+        <TiltShift
+          theatreKey={"TiltShift"}
+          ref={effectRef}
+          // blur={blur}
+          // blur={0.34}
+          blur={blur}
+          // taper={taper}
+          // // taper={0.7}
+          taper={taper}
+          // start={start}
+          // // start={[0.0, 0.0]}
+          start={start}
+          // end={end}
+          // // end={[0.45, 0.45]}
+          // end={}
+          // sampleCount={sampleCount}
+          sampleCount={25.0}
+          // direction={direction}
+          direction={[0.96, 0.03]}
+        />
+      </EffectComposer>
+    </e.group>
   );
 }
 

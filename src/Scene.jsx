@@ -12,6 +12,7 @@ import TiltShiftEffects from "./shaders/tiltshift.jsx";
 import { Environment, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
+// import { OrthographicCamera } from "@react-three/drei";
 import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
@@ -98,7 +99,7 @@ const Scene = (props) => {
 
       {/* <OrthographicCamera
         makeDefault
-        theatreKey={"Camera"}
+        // theatreKey={"Camera"}
         near={-100}
         zoom={162}
         ref={cameraRef}
@@ -120,27 +121,26 @@ const Scene = (props) => {
         <Day1 positions={positions} />
 
         {/* Day 2 */}
-        <Day2 positions={positions} />
+        {/* <Day2 positions={positions} /> */}
 
         {/* Day 3 */}
-        <Day3 positions={positions} />
+        {/* <Day3 positions={positions} /> */}
 
-        <e.group theatreKey="Lake Louise Cloud 2">
-          {/* <Cloud scale={0.2} position={[-2, 3.1, 3]} /> */}
+        {/* <e.group theatreKey="Lake Louise Cloud 2">
+          <Cloud scale={0.2} position={[-2, 3.1, 3]} />
         </e.group>
 
         <e.group theatreKey="Lake Louise Cloud">
-          {/* <Cloud scale={0.3} position={[2, 3, -4.75]} /> */}
+          <Cloud scale={0.3} position={[2, 3, -4.75]} />
         </e.group>
 
         <e.group theatreKey="Banff Cloud 2">
-          {/* <Cloud scale={0.1} position={[-0.8, 1.5, 2.6]} /> */}
-          {/* <Cloud scale={0.1} position={[cloudPosX, cloudPosY, cloudPosZ]} /> */}
+          <Cloud scale={0.1} position={[-0.8, 1.5, 2.6]} />
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
-          {/* <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} /> */}
-        </e.group>
+          <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} />
+        </e.group> */}
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road
@@ -154,7 +154,7 @@ const Scene = (props) => {
         <RoadThicc />
         <Top />
         <Sides />
-        {/* <Plane /> */}
+        <Plane />
       </e.group>
 
       <TiltShiftEffects />

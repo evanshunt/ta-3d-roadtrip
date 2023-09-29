@@ -295,8 +295,8 @@ const Experience = () => {
   });
 
   return (
-    <div {...handlers} className="wrapper">
-      <Intro hasStarted={hasStarted} />
+    <div className="wrapper">
+      {/* <Intro hasStarted={hasStarted} /> */}
 
       {days[1] && (
         <Itinerary

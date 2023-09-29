@@ -27,6 +27,7 @@ import { Plane } from "./models/final/Plane.jsx";
 import FancyPin from "./models/final/FancyPin.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
+import LocationPin from "./models/final/LocationPin.jsx";
 
 const positions = {
   // Day 1:
@@ -77,7 +78,7 @@ const Scene = (props) => {
     <>
       <Environment
         background
-        files={"/textures/drackenstein_quarry_puresky_4k.hdr"}
+        files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
       <OrbitControls
@@ -151,10 +152,11 @@ const Scene = (props) => {
           project={props.project}
         /> */}
         {/* </e.group> */}
+        <LocationPin />
         <RoadThicc />
         <Top />
-        <Sides />
-        <Plane />
+        {/* <Sides /> */}
+        {/* <Plane /> */}
       </e.group>
 
       <TiltShiftEffects />

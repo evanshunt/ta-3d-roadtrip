@@ -278,7 +278,7 @@ function TiltShiftEffects() {
           // start={start}
           // // start={[0.0, 0.0]}
           start={start}
-          // end={end}
+          end={end}
           // // end={[0.45, 0.45]}
           // end={}
           // sampleCount={sampleCount}

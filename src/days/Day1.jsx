@@ -1,10 +1,17 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
+import LocationPin from "../models/final/LocationPin";
 
 const Day1 = ({ positions }) => {
   return (
     <>
-      <ImagePin
+      <LocationPin
+        imageSrc={"/images/cave-and-basin-national-historic-site.png"}
+        scale={0.2}
+        name={"Cave and Basin National Historic Site"}
+        position={positions.caveAndBasin}
+      />
+      {/* <ImagePin
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
         scale={0.2}
         name={"Cave and Basin National Historic Site"}
@@ -33,7 +40,7 @@ const Day1 = ({ positions }) => {
         scale={0.2}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
-      />
+      /> */}
     </>
   );
 };

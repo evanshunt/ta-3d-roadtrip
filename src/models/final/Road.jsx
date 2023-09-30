@@ -10,24 +10,24 @@ import { useControls } from "leva";
 function RoadThicc(props) {
     const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
     const texture = useTexture('/textures/final/road-baked-test.jpg');
-    const { posX, posY, posZ } = useControls({
-        posX: {
-            min: -8,
-            max: 8,
-            value: 0,
-        },
-        posY: {
-            min: -8,
-            max: 8,
-            step: 0.01,
-            value: 0,
-        },
-        posZ: {
-            min: -8,
-            max: 8,
-            value: 0,
-        }
-    })
+    // const { posX, posY, posZ } = useControls({
+    //     posX: {
+    //         min: -8,
+    //         max: 8,
+    //         value: 0,
+    //     },
+    //     posY: {
+    //         min: -8,
+    //         max: 8,
+    //         step: 0.01,
+    //         value: 0,
+    //     },
+    //     posZ: {
+    //         min: -8,
+    //         max: 8,
+    //         value: 0,
+    //     }
+    // })
     return (
         <group {...props} dispose={null}>
             <mesh

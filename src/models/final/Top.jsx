@@ -21,7 +21,7 @@ export function Top(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        scale={[0.25, 0.15, 0.25]}
+        scale={0.25}
         castShadow
         receiveShadow
         geometry={nodes.top.geometry}

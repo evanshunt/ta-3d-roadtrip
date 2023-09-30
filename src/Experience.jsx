@@ -3,6 +3,7 @@ import animation from "./animation-data/animation.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
+import "core-js/actual/object/group-by";
 import Scene from "./Scene";
 import { SheetProvider } from "@theatre/r3f";
 import {
@@ -241,7 +242,7 @@ const Experience = () => {
 
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-    return () => { };
+    return () => {};
   }, [index]);
 
   const handleIndex = (dir) => {

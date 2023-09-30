@@ -155,8 +155,8 @@ const Scene = (props) => {
         <LocationPin />
         <RoadThicc />
         <Top />
-        {/* <Sides /> */}
-        {/* <Plane /> */}
+        <Sides />
+        <Plane />
       </e.group>
 
       <TiltShiftEffects />

@@ -6,15 +6,19 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 export function Plane(props) {
-  const { nodes } = useGLTF("/glb/final/plane.glb");
-  const texture = useTexture("/textures/final/plane-baked.jpg");
+  const { nodes } = useGLTF("/glb/final/plane-large.glb");
+  const texture = useTexture("/textures/final/plane-baked-large.jpg");
+  const alphaMap = useTexture("/textures/final/plane-baked-large-alpha.jpg");
   return (
-    <group {...props} dispose={null}>
-      <mesh scale={[10.25, 0.25, 10.25]} geometry={nodes.Plane.geometry}>
+    <group {...props} dispose={null} position={[0, -10, 0]} >
+      <mesh scale={0.25} geometry={nodes.Plane.geometry}>
         <meshStandardMaterial
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
+          // map-alphaMap={alphaMap}
+          opacity={0.3}
+          transparent={true}
         />
       </mesh>
     </group>

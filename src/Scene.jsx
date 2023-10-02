@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-// import { Perf } from "r3f-perf";
+import { Perf } from "r3f-perf";
 // import {
 //   DepthOfField,
 //   EffectComposer,
@@ -17,7 +17,7 @@ import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
 import Road from "./models/Road.jsx";
-import RoadThicc from "./models/final/Road.jsx"
+import RoadThicc from "./models/final/Road.jsx";
 import { editable as e } from "@theatre/r3f";
 import ImagePin from "./models/ImagePin.jsx";
 import { useControls } from "leva";
@@ -53,6 +53,9 @@ const positions = {
 };
 
 const Scene = (props) => {
+  const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
+  const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
+
   const sceneRef = useRef();
   const cameraRef = useRef();
 
@@ -74,29 +77,43 @@ const Scene = (props) => {
   //   },
   // });
 
+  /*
+  camera stop 1
+  position: -4.76148947700402, 4.028310067018445, 9.902280289701652
+  rotation: -0.8278370080610934, -0.2551005789449138, -0.35099999999999976
+  
+  */
+
   return (
     <>
       <Environment
         background
-        files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
+        files={"/textures/evening_road_01_puresky_4k.hdr"}
         intensity={2}
       />
       <OrbitControls
         autoRotate={false}
         makeDefault={false}
-        onUpdate={(e) => console.log(e)}
-      >
-        <PerspectiveCamera
-          makeDefault
-          ref={cameraRef}
-          theatreKey={"Camera"}
-          position={[0, 23, 0]}
-          fov={55}
-          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-          // lookAt={lookAtRef}
-          zoom={1}
-        />
-      </OrbitControls>
+        onChange={(e) => {
+          const camera = e.target?.object;
+          if (!camera) return;
+
+          setCameraPosition(camera.position.toArray());
+          setCameraRotation(camera.rotation.toArray());
+          console.log(cameraPosition, cameraRotation);
+        }}
+        // onUpdate={(e) => console.log(e)}
+      ></OrbitControls>
+      {/* <PerspectiveCamera
+        makeDefault
+        ref={cameraRef}
+        theatreKey={"Camera"}
+        position={cameraPosition}
+        fov={55}
+        rotation={cameraRotation}
+        // lookAt={lookAtRef}
+        zoom={1}
+      /> */}
 
       {/* <OrthographicCamera
         makeDefault
@@ -111,8 +128,6 @@ const Scene = (props) => {
         // rotation={[-0.3930986676881526, 0.7878538812997019, 0.285891145681874]}
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
-
-
 
       <Lights />
 

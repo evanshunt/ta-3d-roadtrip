@@ -10,14 +10,14 @@ export function Plane(props) {
   const texture = useTexture("/textures/final/plane-baked-large.jpg");
   const alphaMap = useTexture("/textures/final/plane-baked-large-alpha.jpg");
   return (
-    <group {...props} dispose={null} position={[0, -10, 0]} >
+    <group {...props} dispose={null} position={[0, -9.25, 0]}>
       <mesh scale={0.25} geometry={nodes.Plane.geometry}>
         <meshStandardMaterial
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
           // map-alphaMap={alphaMap}
-          opacity={0.3}
+          opacity={0.7}
           transparent={true}
         />
       </mesh>

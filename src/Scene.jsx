@@ -77,6 +77,14 @@ const Scene = (props) => {
   //   },
   // });
 
+  const { fov } = useControls({
+    fov: {
+      value: 55,
+      min: 0,
+      max: 100,
+    },
+  });
+
   /*
   camera stop 1
   position: -4.76148947700402, 4.028310067018445, 9.902280289701652
@@ -88,7 +96,7 @@ const Scene = (props) => {
     <>
       <Environment
         background
-        files={"/textures/evening_road_01_puresky_4k.hdr"}
+        files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
       <OrbitControls
@@ -102,14 +110,13 @@ const Scene = (props) => {
           setCameraRotation(camera.rotation.toArray());
           console.log(cameraPosition, cameraRotation);
         }}
-        // onUpdate={(e) => console.log(e)}
-      ></OrbitControls>
+      />
       {/* <PerspectiveCamera
-        makeDefault
+        makeDefault={true}
         ref={cameraRef}
         theatreKey={"Camera"}
         position={cameraPosition}
-        fov={55}
+        fov={fov}
         rotation={cameraRotation}
         // lookAt={lookAtRef}
         zoom={1}

@@ -1,6 +1,7 @@
 .controls {
   bottom: 6.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   left: 0;
   padding: 0 1.25rem;
@@ -8,11 +9,23 @@
   right: 0;
   width: 100%;
   z-index: 3;
+
+  @media screen and (min-width: 1024px) {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 24vw;
+  }
+}
+
+.controls__buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .controls__button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
   height: 1.8125rem;
   padding: 0;
   width: 1.8125rem;
@@ -22,7 +35,7 @@
   }
 
   .arrow {
-    transition: transform 0.3s ease-in;
+    transition: transform 0.1s ease-in;
 
     &:active,
     &:hover {
@@ -32,7 +45,7 @@
     circle {
       fill: var(--grey);
     }
-    
+
     &--active {
       circle {
         fill: (var(--red));
@@ -46,6 +59,25 @@
         transform: rotate(180deg) scale(1.1);
       }
     }
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 2.8125rem;
+    width: 2.8125rem;
+
+    svg {
+      width: 2.8125rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .controls__button--next {
+    margin-right: 2.8125rem;
+  }
+
+  .controls__button--prev {
+    margin-left: 2.8125rem;
   }
 }
 

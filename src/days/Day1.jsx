@@ -1,17 +1,22 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
 import LocationPin from "../models/final/LocationPin";
+import InfoPanel from "../models/final/InfoPanel";
 
 const Day1 = ({ positions }) => {
   return (
     <>
-      <LocationPin
+      {/* <LocationPin
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
         scale={0.2}
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
-      />
-      {/* <ImagePin
+      /> */}
+      {/* <InfoPanel
+        // imageSrc={"/images/cave-and-basin-national-historic-site.png"}
+        position={positions.gondola}
+      /> */}
+      <ImagePin
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
         scale={0.2}
         name={"Cave and Basin National Historic Site"}
@@ -23,11 +28,12 @@ const Day1 = ({ positions }) => {
         name={"Banff Gondola"}
         position={positions.gondola}
       />
+
       <ImagePin
         imageSrc={"/images/sky-bistro.png"}
         scale={0.2}
         name={"Sky Bistro"}
-        position={positions.gondola}
+        position={positions.skyBistro}
       />
       <ImagePin
         imageSrc={"/images/banff-upper-hot-springs.png"}
@@ -40,7 +46,7 @@ const Day1 = ({ positions }) => {
         scale={0.2}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
-      /> */}
+      />
     </>
   );
 };

@@ -95,13 +95,13 @@ const Scene = (props) => {
   //   },
   // });
 
-  const { fov } = useControls({
-    fov: {
-      value: 55,
-      min: 0,
-      max: 100,
-    },
-  });
+  // const { fov } = useControls({
+  //   fov: {
+  //     value: 55,
+  //     min: 0,
+  //     max: 100,
+  //   },
+  // });
 
   /*
   camera stop 1
@@ -117,31 +117,31 @@ const Scene = (props) => {
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         position={cameraPosition}
         rotation={cameraRotation}
         makeDefault={true}
-        // onChange={(e) => {
-        //   const camera = e.target?.object;
-        //   if (!camera) return;
+        onChange={(e) => {
+          const camera = e.target?.object;
+          if (!camera) return;
 
-        //   setCameraPosition(camera.position.toArray());
-        //   setCameraRotation(camera.rotation.toArray());
-        //   console.log(cameraPosition, cameraRotation);
-        // }}
-      />
-      {/* <PerspectiveCamera
+          // setCameraPosition(camera.position.toArray());
+          // setCameraRotation(camera.rotation.toArray());
+          console.log(cameraPosition, cameraRotation);
+        }}
+      /> */}
+      <PerspectiveCamera
         makeDefault={true}
         // ref={cameraRef}
         theatreKey={"Camera"}
         position={cameraPosition}
         // position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        fov={fov}
         rotation={cameraRotation}
         // lookAt={lookAtRef}
+
         zoom={1}
-      /> */}
+      />
 
       {/* <OrthographicCamera
         makeDefault

@@ -28,6 +28,8 @@ const Experience = () => {
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
   const [hasStarted, setHasStarted] = useState(false);
+  // the below is only really used on desktop
+  const [attractionsOpen, setAttractionsOpen] = useState(false);
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
@@ -40,7 +42,7 @@ const Experience = () => {
       name: null,
     },
     {
-      name: "caveAndBasin",
+      name: "Banff",
       position: 12.25,
       day: 1,
 
@@ -52,7 +54,7 @@ const Experience = () => {
       },
     },
     {
-      name: "banffGondola",
+      name: "Banff",
       position: 8.75,
       day: 1,
       // name: "Banff",
@@ -66,7 +68,7 @@ const Experience = () => {
       },
     },
     {
-      name: "skyBistro",
+      name: "Banff",
       position: 8.75,
       day: 1,
       // name: "Sky Bistro",
@@ -79,7 +81,7 @@ const Experience = () => {
       },
     },
     {
-      name: "banffUpperHotSprings",
+      name: "Banff",
       position: 10.35,
       day: 1,
       // name: "Banff Upper Hot Springs",
@@ -91,7 +93,7 @@ const Experience = () => {
       },
     },
     {
-      name: "fairmontBanffSpringsHotel",
+      name: "Banff",
       position: 10.35,
       day: 1,
       // name: "Fairmont Banff Springs Hotel",
@@ -103,7 +105,7 @@ const Experience = () => {
       },
     },
     {
-      name: "carterRyanGallery",
+      name: "Lake Louise",
       position: 19.45,
       day: 2,
       // name: "Carter-Ryan Gallery and Live Art Venue",
@@ -115,7 +117,7 @@ const Experience = () => {
       },
     },
     {
-      name: "johnstonCanyon",
+      name: "Lake Louise",
       position: 19.45,
       day: 2,
       // name: "Johnston Canyon",
@@ -127,7 +129,7 @@ const Experience = () => {
       },
     },
     {
-      name: "lakeLouiseGondola",
+      name: "Lake Louise",
       position: 23.2,
       day: 2,
       details: {
@@ -138,7 +140,7 @@ const Experience = () => {
       },
     },
     {
-      name: "fairmontChateauLakeLouise",
+      name: "Lake Louise",
       position: 23.2,
       day: 2,
       details: {
@@ -149,7 +151,7 @@ const Experience = () => {
       },
     },
     {
-      name: "fairview",
+      name: "Lake Louise",
       position: 23.2,
       day: 2,
       details: {
@@ -160,18 +162,18 @@ const Experience = () => {
       },
     },
     {
-      name: "columbiaIcefieldSkywalk",
+      name: "Jasper",
       position: 23.2,
       day: 3,
       details: {
-        title: "Colombia Icefield Skywalk",
+        title: "Columbia Icefield Skywalk",
         image: "/images/columbia-icefield-skywalk.png",
         description:
           "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
       },
     },
     {
-      name: "maligneCanyon",
+      name: "Jasper",
       position: 23.2,
       day: 3,
       details: {
@@ -182,7 +184,7 @@ const Experience = () => {
       },
     },
     {
-      name: "jasperSkytram",
+      name: "Jasper",
       position: 23.2,
       day: 3,
       details: {
@@ -193,7 +195,7 @@ const Experience = () => {
       },
     },
     {
-      name: "fairmontJasperParkLodge",
+      name: "Jasper",
       position: 23.2,
       day: 3,
       details: {
@@ -204,7 +206,7 @@ const Experience = () => {
       },
     },
     {
-      name: "jasperPlanetarium",
+      name: "Jasper",
       position: 23.2,
       day: 3,
       details: {
@@ -270,6 +272,10 @@ const Experience = () => {
     // ...config
   });
 
+  const showInfo = () => {
+    setAttractionsOpen(!attractionsOpen);
+  };
+
   const determineDay = (index) => {
     // get the length of the stops in each day and if beyond that, update the day
     const days = Object.groupBy(destinations, (destination) => destination.day);
@@ -297,7 +303,7 @@ const Experience = () => {
 
   return (
     <div className="wrapper">
-      <Intro hasStarted={hasStarted} />
+      {/* <Intro hasStarted={hasStarted} /> */}
 
       {days[1] && (
         <Itinerary
@@ -305,6 +311,7 @@ const Experience = () => {
           currDay={currDay}
           days={days}
           grouped={daysParsed}
+          showInfo={showInfo}
         />
       )}
       {/* <Onboarding /> */}
@@ -343,18 +350,36 @@ const Experience = () => {
         {/* </ScrollControls> */}
       </Canvas>
 
-      <Attraction currDestination={currDestination} />
+      <Attraction
+        attractionsOpen={attractionsOpen}
+        currDestination={currDestination}
+        handleIndex={handleIndex}
+        index={index}
+        maxLength={maxLength}
+        showInfo={showInfo}
+      />
 
       <div className="controls">
-        <button
-          disabled={index <= 1}
-          className="controls__button controls__button--prev"
-          onClick={() => {
-            handleIndex("prev");
-          }}
-        >
-          <Arrow dir={"prev"} active={index >= 1} />
-        </button>
+        <div className="controls__buttons">
+          <button
+            disabled={index <= 1}
+            className="controls__button controls__button--prev"
+            onClick={() => {
+              handleIndex("prev");
+            }}
+          >
+            <Arrow dir={"prev"} active={index >= 1} />
+          </button>
+          <button
+            disabled={index === maxLength}
+            className="controls__button controls__button--next"
+            onClick={() => {
+              handleIndex("next");
+            }}
+          >
+            <Arrow dir={"next"} active={index !== maxLength} />
+          </button>
+        </div>
 
         <ul className="controls__list">
           {Object.keys(days).map((day, i) => {
@@ -384,15 +409,6 @@ const Experience = () => {
             );
           })}
         </ul>
-        <button
-          disabled={index === maxLength}
-          className="controls__button controls__button--next"
-          onClick={() => {
-            handleIndex("next");
-          }}
-        >
-          <Arrow dir={"next"} active={index !== maxLength} />
-        </button>
       </div>
     </div>
   );

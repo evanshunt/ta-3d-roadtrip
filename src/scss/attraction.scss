@@ -1,3 +1,6 @@
+// This is the sidebar on desktop with attraction info,
+// on mobile it pulls up with a swipe
+
 .attraction {
   --offset: 100%;
 
@@ -22,6 +25,20 @@
 
   &--bounce {
     animation: bounce 0.25s ease-in-out;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 23vw;
+    height: 100vh;
+    border-radius: 0;
+    right: 0;
+    top: 0;
+    transform: translate(0, 0);
+    z-index: 2;
+
+    &--open {
+      z-index: 4;
+    }
   }
 }
 
@@ -58,6 +75,10 @@
   width: 1.575rem;
   &--open {
     transform: rotateZ(180deg);
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
   }
 }
 

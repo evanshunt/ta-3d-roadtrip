@@ -1,9 +1,19 @@
-import React, { useState, useRef } from "react";
-import { useSwipeable } from "react-swipeable";
+import React, { useState, useRef, useEffect } from "react";
+import Arrow from "./Arrow";
 import arrowUp from "../images/arrow-up.svg";
+import arrowLeft from "../images/arrow-left.svg";
+import { useSwipeable } from "react-swipeable";
 
-const Attraction = ({ currDestination, ref }) => {
+const Attraction = ({
+  attractionsOpen,
+  currDestination,
+  handleIndex,
+  index,
+  maxLength,
+  showInfo,
+}) => {
   const [open, setOpen] = useState(false);
+
   const attractionRef = useRef();
   const handlers = useSwipeable({
     onSwiping: (eventData) => {
@@ -11,7 +21,7 @@ const Attraction = ({ currDestination, ref }) => {
     },
     onSwiped: (eventData) => {
       if (!currDestination.name) return;
-      console.log(eventData);
+
       const { velocity, dir } = eventData;
       if (velocity < 0.8) {
         attractionRef.current.classList.add("attraction--bounce");
@@ -27,12 +37,46 @@ const Attraction = ({ currDestination, ref }) => {
     preventDefaultTouchmoveEvent: true,
   });
 
+  useEffect(() => {
+    setOpen(attractionsOpen);
+  }, [attractionsOpen]);
+
   return (
     <div
       ref={attractionRef}
       className={`${open ? "attraction attraction--open" : "attraction"}
 `}
     >
+      <div className="attraction__buttons">
+        <button
+          label={"Back to itinerary"}
+          onClick={() => {
+            showInfo();
+            setOpen(false);
+          }}
+        >
+          <img src={arrowLeft} alt="" />
+          Back to itinerary
+        </button>
+        <button
+          disabled={index <= 1}
+          className="controls__button controls__button--prev"
+          onClick={() => {
+            handleIndex("prev");
+          }}
+        >
+          <Arrow dir={"prev"} active={index >= 1} />
+        </button>
+        <button
+          disabled={index === maxLength}
+          className="controls__button controls__button--next"
+          onClick={() => {
+            handleIndex("next");
+          }}
+        >
+          <Arrow dir={"next"} active={index !== maxLength} />
+        </button>
+      </div>
       <div className="attraction__header" {...handlers}>
         <img
           hidden={currDestination?.details?.title ? false : true}
@@ -72,28 +116,28 @@ const Attraction = ({ currDestination, ref }) => {
           <div className="attraction__info__images">
             <img
               src={
-                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-1.jpeg"
+                "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-1.jpeg"
               }
               alt=""
               className="attraction__info__image"
             />
             <img
               src={
-                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-2.jpeg"
+                "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-2.jpeg"
               }
               alt=""
               className="attraction__info__image"
             />
             <img
               src={
-                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-3.jpeg"
+                "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-3.jpeg"
               }
               alt=""
               className="attraction__info__image"
             />
             <img
               src={
-                "images/cave-and-basin-national-hsitoric-site/cave-and-basin-national-historic-site-4.jpeg"
+                "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-4.jpeg"
               }
               alt=""
               className="attraction__info__image"

@@ -12,11 +12,11 @@
   }
 
   &--calgary {
-    transform-origin: 39% 69%;
+    transform-origin: 39% 69% !important;
   }
 
   &--banff {
-    transform-origin: 34% 69%;
+    transform-origin: 34% 69% !important;
   }
 }
 
@@ -41,5 +41,9 @@
 
 //square grows to 2.6x the size
 .square {
-  transform-origin: 35%;
+  transform-origin: 35% !important;
+}
+
+.alberta {
+  // this grows to 3x its size
 }

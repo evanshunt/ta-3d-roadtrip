@@ -34,6 +34,11 @@ body {
   transform: translate(-50%, -50%);
 }
 
+// .attraction,
+// .itinerary {
+//   transform: translate(100%, 0);
+// }
+
 .road-trip {
   --black: #000000;
   --grey: #787878;
@@ -48,6 +53,11 @@ body {
 
   @media (min-width: 625px) {
     width: 100vw;
+  }
+
+  .itinerary,
+  .attraction {
+    transform: translate(100%, 0);
   }
 
   // @media (min-width: 1024px) {

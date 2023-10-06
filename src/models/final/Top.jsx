@@ -8,7 +8,9 @@ import { useControls } from "leva";
 
 export function Top(props) {
   const { nodes } = useGLTF("/glb/final/top-new.glb");
-  const texture = useTexture("/textures/final/baked-combined-8k.jpg");
+  const texture = useTexture(
+    "/textures/final/baked-combined-8k-with-overlay.jpg"
+  );
   // const { scale } = useControls({
   //   scale: {
   //     value: 0.25,

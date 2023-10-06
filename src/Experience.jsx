@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/animation.json";
+import animation from "./animation-data/animation-oct-3-2.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -22,6 +22,7 @@ import Intro from "./Intro";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
+  // const project = getProject("TA Fly Through");
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
@@ -43,7 +44,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 12.25,
+      position: 6.24,
       day: 1,
 
       details: {
@@ -55,7 +56,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 8.75,
+      position: 10.33,
       day: 1,
       // name: "Banff",
       description:
@@ -69,7 +70,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 8.75,
+      position: 15.1,
       day: 1,
       // name: "Sky Bistro",
       description: "Description here",
@@ -82,7 +83,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 10.35,
+      position: 17.16,
       day: 1,
       // name: "Banff Upper Hot Springs",
       details: {
@@ -94,7 +95,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 10.35,
+      position: 19.1,
       day: 1,
       // name: "Fairmont Banff Springs Hotel",
       details: {
@@ -239,6 +240,7 @@ const Experience = () => {
 
   useEffect(() => {
     project.ready.then(() => {
+      console.log("animation is ready");
       controlAnimation();
     });
 
@@ -303,7 +305,7 @@ const Experience = () => {
 
   return (
     <div className="wrapper">
-      {/* <Intro hasStarted={hasStarted} /> */}
+      <Intro hasStarted={hasStarted} />
 
       {days[1] && (
         <Itinerary
@@ -341,6 +343,7 @@ const Experience = () => {
         <SheetProvider sheet={sheet}>
           <Scene
             currDay={currDay}
+            index={index}
             pauses={pauses}
             destinations={destinations}
             pauseDuration={pauseDuration}
@@ -359,7 +362,7 @@ const Experience = () => {
         showInfo={showInfo}
       />
 
-      <div className="controls">
+      {/* <div className="controls">
         <div className="controls__buttons">
           <button
             disabled={index <= 1}
@@ -409,7 +412,7 @@ const Experience = () => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

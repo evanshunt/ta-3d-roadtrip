@@ -9,12 +9,12 @@ import styles from "./scss/main.scss";
 const root = createRoot(document.querySelector("#root"));
 
 // studio.extend(extension);
-// studio.initialize();
+studio.initialize();
 
 root.render(
   <div className="road-trip">
-    <Suspense fallback={<Loading />}>
-      <Experience />
-    </Suspense>
+    {/* <Suspense fallback={<Loading />}> */}
+    <Experience />
+    {/* </Suspense> */}
   </div>
 );

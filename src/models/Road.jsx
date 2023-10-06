@@ -65,6 +65,8 @@ const Road = (props) => {
   const meshRef = useRef();
   const sheet = useCurrentSheet();
 
+  const stops = [0.38, 0.63];
+
   // sheet.sequence.position = 4.
   // useEffect(() => {
   //   const { project } = props;

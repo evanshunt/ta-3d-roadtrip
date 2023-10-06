@@ -13,7 +13,7 @@ import { Environment, OrbitControls, useScroll } from "@react-three/drei";
 import { val } from "@theatre/core";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 // import { OrthographicCamera } from "@react-three/drei";
-import { Cloud } from "./Clouds.jsx";
+// import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
 import Road from "./models/Road.jsx";
@@ -31,7 +31,8 @@ import LocationPin from "./models/final/LocationPin.jsx";
 
 const positions = {
   // Day 1:
-  caveAndBasin: [-4.4, 1.18, 2.75],
+  // caveAndBasin: [-4.4, 1.18, 2.75],
+  caveAndBasin: [-4.575, 1.2, 2.775],
   gondola: [-4.7, 1.2, 2.88],
   skyBistro: [-4.7, 1.2, 2.88],
   banffUpperHotSprings: [-4.6, 1.2, 2.98],
@@ -117,7 +118,7 @@ const Scene = (props) => {
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         position={cameraPosition}
         rotation={cameraRotation}
@@ -128,9 +129,9 @@ const Scene = (props) => {
 
           // setCameraPosition(camera.position.toArray());
           // setCameraRotation(camera.rotation.toArray());
-          console.log(cameraPosition, cameraRotation);
+          // console.log(cameraPosition, cameraRotation);
         }}
-      /> */}
+      />
       <PerspectiveCamera
         makeDefault={true}
         // ref={cameraRef}
@@ -162,7 +163,7 @@ const Scene = (props) => {
       {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
-        <Day1 positions={positions} />
+        {/* <Day1 positions={positions} index={props.index} /> */}
 
         {/* Day 2 */}
         {/* <Day2 positions={positions} /> */}

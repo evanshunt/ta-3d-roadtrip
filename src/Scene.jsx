@@ -119,25 +119,32 @@ const Scene = (props) => {
       />
       {/* <OrbitControls
         autoRotate={false}
-        position={cameraPosition}
-        rotation={cameraRotation}
+        // position={cameraPosition}
+        position={[0, 93, 5]}
+        // rotation={cameraRotation}
+        rotation={[-1.5707963267948966, 0, 0]}
         makeDefault={true}
         onChange={(e) => {
           const camera = e.target?.object;
           if (!camera) return;
-
+          console.log(camera.position.toArray());
+          console.log(camera.rotation.toArray());
           // setCameraPosition(camera.position.toArray());
           // setCameraRotation(camera.rotation.toArray());
-          console.log(cameraPosition, cameraRotation);
+          // console.log(cameraPosition, cameraRotation);
         }}
       /> */}
       <PerspectiveCamera
         makeDefault={true}
         // ref={cameraRef}
         theatreKey={"Camera"}
-        position={cameraPosition}
+        // position={cameraPosition}
+        position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
+        rotation={[
+          -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
+        ]}
         // position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        rotation={cameraRotation}
+        // rotation={cameraRotation}
         // lookAt={lookAtRef}
 
         zoom={1}
@@ -162,7 +169,7 @@ const Scene = (props) => {
       {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
-        <Day1 positions={positions} />
+        <Day1 positions={positions} sceneIndex={props.index} />
 
         {/* Day 2 */}
         {/* <Day2 positions={positions} /> */}
@@ -195,7 +202,7 @@ const Scene = (props) => {
           project={props.project}
         /> */}
         {/* </e.group> */}
-        <LocationPin />
+        {/* <LocationPin index={index} /> */}
         <RoadThicc />
         <Top />
         <Sides />

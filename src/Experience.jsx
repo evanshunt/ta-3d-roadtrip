@@ -21,7 +21,8 @@ import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 
 const Experience = () => {
-  const project = getProject("TA Fly Through", { state: animation });
+  // const project = getProject("TA Fly Through", { state: animation });
+  const project = getProject("TA Fly Through");
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
@@ -340,6 +341,7 @@ const Experience = () => {
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene
+            index={index}
             currDay={currDay}
             pauses={pauses}
             destinations={destinations}

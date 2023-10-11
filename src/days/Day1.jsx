@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ImagePin from "../models/ImagePin";
-import LocationPin from "../models/final/LocationPin";
 import InfoPanel from "../models/final/InfoPanel";
 
 const Day1 = ({ positions, sceneIndex }) => {
@@ -23,7 +22,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
       />
-      <ImagePin
+      {/* <ImagePin
         active={sceneIndex === 1}
         imageSrc={"/images/banff-gondola.png"}
         scale={0.2}
@@ -51,7 +50,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         scale={0.2}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
-      />
+      /> */}
     </>
   );
 };

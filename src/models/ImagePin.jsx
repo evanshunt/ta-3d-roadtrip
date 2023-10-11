@@ -1,56 +1,87 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React, { useRef } from "react";
 import { Billboard, Image } from "@react-three/drei";
+import { editable as e } from "@theatre/r3f";
 
 const ImagePin = ({ active, imageSrc, position, name, scale }) => {
   const imageRef = useRef();
   const stemRef = useRef();
+  const backgroundHaloRef = useRef();
   const backgroundRef = useRef();
+  // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({ repeat: -1, yoyo: true });
-      tl.to(imageRef.current.rotation, {
-        duration: 1,
-        ease: "none",
-        // repeatRefresh: true,
-      });
-      tl.play();
-    }, imageRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+  // useEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     tl.to(imageRef.current.rotation, {
+  //       y: Math.PI / 2,
+  //       duration: 1,
+  //       ease: "none",
+  //       onUpdate: () => {
+  //         // console.log(imageRef.current.rotation.y);
+  //       },
+  //       // repeatRefresh: true,
+  //     });
+  //     tl.play();
+  //   }, imageRef); // <- scopes all selector text inside the context to this component (optional, default is document)
 
-    return () => ctx.revert(); // cleanup!
-  }, []);
+  //   return () => ctx.revert(); // cleanup!
+  // }, []);
   return (
     // <Billboard position={position} scale={scale}>
     // Clean up this nastiness
     <Billboard
-      position={[position[0], position[1] - 0.02, position[2]]}
-      scale={scale}
+      position={[position[0], position[1], position[2]]}
+      // scale={scale}
     >
-      <group>
+      <e.group ref={imageRef} theatreKey={`Pins / ${name} / Pin ${name}`}>
         <Image
-          ref={imageRef}
           transparent
           position-y={position[1] + 0.05}
           url={imageSrc}
-          scale={1.33}
+          // scale={1.33}
+          scale={0}
+          opacity={0}
         />
 
-        <mesh castShadow position-y={position[1] - 1.4} ref={stemRef}>
+        <e.mesh
+          castShadow
+          // position-y={position[1] - 1.4}
+          // position-y={1.18}
+          ref={stemRef}
+          theatreKey={`Pins / ${name} / Stem ${name}`}
+        >
           {/* <planeGeometry args={[0.05, 2]} position={[0, -3, -0.02]} /> */}
           <cylinderGeometry args={[0.02, 0.02, 1.5, 6]} />
           <meshBasicMaterial color={0x9c0f00} />
-        </mesh>
-        <mesh
+        </e.mesh>
+        <e.mesh
           ref={backgroundRef}
           position-z={-0.02}
-          position-y={position[1] + 0.05}
+          // position-y={position[1] + 0.05}
+          // position-y={1.25}
           castShadow
+          theatreKey={`Pins / ${name} / Background ${name}`}
+          scale={0.02}
         >
           <circleGeometry args={[0.8, 32]} />
           <meshBasicMaterial color={0x9c0f00} />
-        </mesh>
-      </group>
+        </e.mesh>
+        <e.mesh
+          ref={backgroundHaloRef}
+          position-z={-0.03}
+          // position-y={position[1] + 0.05}
+          // position-y={1.25}
+          castShadow
+          theatreKey={`Pins / ${name} / Background Halo ${name}`}
+          scale={0.03}
+        >
+          <circleGeometry args={[0.8, 32]} />
+          <meshStandardMaterial
+            transparent={true}
+            color={0x9c0f00}
+            opacity={0.4}
+          />
+        </e.mesh>
+      </e.group>
     </Billboard>
   );
 };

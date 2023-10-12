@@ -32,16 +32,23 @@ const Lights = () => {
   //   },
   // });
 
+  // const { color } = useControls({
+  //   color: {
+  //     value: "#ffffff",
+  //     label: "Color",
+  //   },
+  // });
+
   return (
     <>
       <ambientLight intensity={0.4} color={0xffffff} />
 
       <directionalLight
         ref={spotLight}
-        // position={[-7, 6.5, -5]}
         position={[-15.98, 12.2, 0.43]}
         // position={[positionX, positionY, positionZ]}
-        // 40, 71, 0
+
+        // color={color}
         intensity={0.5}
         // intensity={intensity}
         lookAt={[0, 0, 0]}

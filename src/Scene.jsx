@@ -32,14 +32,18 @@ import LocationPin from "./models/final/LocationPin.jsx";
 // cam pos
 // [-4.95, 3.216, 10.292]
 
+const sequencePositions = {
+  caveAndBasin: "3.16f",
+};
+
 const positions = {
   // Day 1:
   // caveAndBasin: [-4.4, 1.18, 2.75],
-  caveAndBasin: [-4.55, 1.05, 2.73],
+  caveAndBasin: [-4.5575, 1.05, 2.63],
   // gondola: [-4.7, 1.2, 2.88],
-  gondola: [-4.69, 1.08, 2.86],
+  gondola: [-4.69, 1.08, 2.859],
   // skyBistro: [-4.69, 1.13, 2.88],
-  skyBistro: [-4.72, 1.13, 2.8],
+  skyBistro: [-4.72, 1.13, 2.759],
   // banffUpperHotSprings: [-4.6, 1.2, 2.98],
   banffUpperHotSprings: [-4.69, 1.08, 2.86],
   // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],

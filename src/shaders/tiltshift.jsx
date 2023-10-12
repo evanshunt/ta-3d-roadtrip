@@ -109,10 +109,10 @@ const TiltShift = wrapEffect(TiltShiftEffect);
 function TiltShiftEffects() {
   const effectRef = React.createRef();
   const sheet = useCurrentSheet();
-  // const [blur, setBlur] = React.useState(0.5);
-  // const [taper, setTaper] = React.useState(0.525);
-  // const [start, setStart] = React.useState([0.0, 0.4]);
-  // const [end, setEnd] = React.useState([0.47, 0.45]);
+  const [blur, setBlur] = React.useState(0.5);
+  const [taper, setTaper] = React.useState(0.525);
+  const [start, setStart] = React.useState([0.0, 0.4]);
+  const [end, setEnd] = React.useState([0.47, 0.45]);
   const [
     // The Theatre.js object that represents our THREE.js object. It'll be initially `null`.
     theatreObject,
@@ -124,19 +124,19 @@ function TiltShiftEffects() {
   useFrame(({ clock }) => {
     theatreObject.onValuesChange((newValues) => {
       // Apply the new offset to our THREE.js object
-      // setBlur(newValues.blur);
-      // setTaper(newValues.taper);
-      // setStart([newValues.start.x, newValues.start.y]);
-      // setEnd([newValues.end.x, newValues.end.y]);
+      setBlur(newValues.blur);
+      setTaper(newValues.taper);
+      setStart([newValues.start.x, newValues.start.y]);
+      setEnd([newValues.end.x, newValues.end.y]);
     });
   });
 
   // const blendFunction = BlendFunction.Normal,
-  let blur = 0.4, // [0, 1], can go beyond 1 for extra
-    taper = 0.45, // [0, 1], can go beyond 1 for extra
-    start = [0.26, 0.53],
-    end = [1, 0.54],
-    direction = [0.96, 0.03]; // direction of blur
+  // let blur = 0.4, // [0, 1], can go beyond 1 for extra
+  // taper = 0.45, // [0, 1], can go beyond 1 for extra
+  // start = [0.26, 0.53],
+  // end = [1, 0.54],
+  let direction = [0.96, 0.03]; // direction of blur
   //   start = [0.02, 0.82], // [0,1] percentage x,y of screenspace
   //   end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
   //   sampleCount = 30.0, // number of blur samples

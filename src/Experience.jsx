@@ -1,6 +1,6 @@
 import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
-import animation from "./animation-data/TA Fly Through.theatre-project-state (40).json";
+import animation from "./animation-data/animation-pins-c-b-b-g.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -45,7 +45,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 12.25,
+      position: 3.533,
       day: 1,
 
       details: {
@@ -57,7 +57,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 8.75,
+      position: 5.433,
       day: 1,
       // name: "Banff",
       description:

@@ -6,16 +6,6 @@ import ImagePin from "../models/ImagePin";
 const Day1 = ({ positions, sceneIndex }) => {
   return (
     <>
-      {/* <LocationPin
-        imageSrc={"/images/cave-and-basin-national-historic-site.png"}
-        scale={0.2}
-        name={"Cave and Basin National Historic Site"}
-        position={positions.caveAndBasin}
-      /> */}
-      {/* <InfoPanel
-        // imageSrc={"/images/cave-and-basin-national-historic-site.png"}
-        position={positions.gondola}
-      /> */}
       <ImagePin
         active={sceneIndex === 0}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
@@ -39,7 +29,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Sky Bistro"}
         position={positions.skyBistro}
       />
-
+      {/* 
       <ImagePin
         active={sceneIndex === 3}
         imageSrc={"/images/banff-upper-hot-springs.png"}
@@ -54,7 +44,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         scale={0.2}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
-      />
+      /> */}
     </>
   );
 };

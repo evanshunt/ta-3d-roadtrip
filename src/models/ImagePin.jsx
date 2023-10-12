@@ -1,14 +1,24 @@
 import React, { useRef } from "react";
 import { Billboard, Image } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
+import { types } from "@theatre/core";
+import { useFrame } from "@react-three/fiber";
 // import { useControls } from "leva";
 
 const ImagePin = ({ active, imageSrc, position, name, scale }) => {
+  const [imageOpacity, setImageOpacity] = React.useState(0);
+  const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
   const backgroundRef = useRef();
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
+
+  useFrame(({ clock }) => {
+    theatreObject.onValuesChange((newValues) => {
+      setImageOpacity(newValues.opacity);
+    });
+  });
 
   // useEffect(() => {
   //   let ctx = gsap.context(() => {
@@ -35,27 +45,32 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
     >
       <e.group
         ref={imageRef}
+        objRef={setTheatreObject}
         theatreKey={`Pins / ${name} / Pin ${name}`}
         scale={0}
+        additionalProps={{
+          opacity: types.number(0.5, { range: [0, 1.0] }),
+        }}
       >
         <Image
           ref={imageRef}
           transparent
-          position-y={position[1] + 0.05}
           url={imageSrc}
+          opacity={imageOpacity}
+          // opacity={0}
           // scale={1.33}
         />
       </e.group>
 
       <e.mesh
         castShadow
-        position={[0, -0.14, -0.0305]}
+        position={[0, -1.14, -0.0305]}
         ref={stemRef}
         theatreKey={`Pins / ${name} / Stem ${name}`}
         scale={[0.075, 0.2, 0.075]}
       >
         {/* <planeGeometry args={[0.05, 2]} position={[0, -3, -0.02]} /> */}
-        <cylinderGeometry args={[0.02, 0.02, 1.5, 6]} />
+        <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
         <meshBasicMaterial color={0x9c0f00} />
       </e.mesh>
       <e.mesh

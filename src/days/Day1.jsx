@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ImagePin from "../models/ImagePin";
-import InfoPanel from "../models/final/InfoPanel";
+// import InfoPanel from "../models/final/InfoPanel";
+// import { useControls } from "leva";
 
 const Day1 = ({ positions, sceneIndex }) => {
   return (
@@ -22,7 +23,8 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
       />
-      {/* <ImagePin
+
+      <ImagePin
         active={sceneIndex === 1}
         imageSrc={"/images/banff-gondola.png"}
         scale={0.2}
@@ -37,6 +39,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Sky Bistro"}
         position={positions.skyBistro}
       />
+
       <ImagePin
         active={sceneIndex === 3}
         imageSrc={"/images/banff-upper-hot-springs.png"}
@@ -44,13 +47,14 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
       />
+
       <ImagePin
         active={sceneIndex === 4}
         imageSrc={"/images/fairmont-banff-springs-hotel.png"}
         scale={0.2}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
-      /> */}
+      />
     </>
   );
 };

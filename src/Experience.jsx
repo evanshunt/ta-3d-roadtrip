@@ -1,5 +1,6 @@
 import * as THREE from "three";
-import animation from "./animation-data/animation.json";
+// import animation from "./animation-data/animation.json";
+import animation from "./animation-data/TA Fly Through.theatre-project-state (40).json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -21,8 +22,8 @@ import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 
 const Experience = () => {
-  // const project = getProject("TA Fly Through", { state: animation });
-  const project = getProject("TA Fly Through");
+  const project = getProject("TA Fly Through", { state: animation });
+  // const project = getProject("TA Fly Through");
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);

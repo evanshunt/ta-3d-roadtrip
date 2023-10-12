@@ -29,13 +29,21 @@ import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 import LocationPin from "./models/final/LocationPin.jsx";
 
+// cam pos
+// [-4.95, 3.216, 10.292]
+
 const positions = {
   // Day 1:
-  caveAndBasin: [-4.4, 1.18, 2.75],
-  gondola: [-4.7, 1.2, 2.88],
-  skyBistro: [-4.7, 1.2, 2.88],
-  banffUpperHotSprings: [-4.6, 1.2, 2.98],
-  fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
+  // caveAndBasin: [-4.4, 1.18, 2.75],
+  caveAndBasin: [-4.55, 1.05, 2.73],
+  // gondola: [-4.7, 1.2, 2.88],
+  gondola: [-4.69, 1.08, 2.86],
+  // skyBistro: [-4.69, 1.13, 2.88],
+  skyBistro: [-4.72, 1.13, 2.8],
+  // banffUpperHotSprings: [-4.6, 1.2, 2.98],
+  banffUpperHotSprings: [-4.69, 1.08, 2.86],
+  // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
+  fairmontBanffSpringsHotel: [-4.58, 1.05, 2.83],
 
   // Day 2:
   carterRyanGallery: [-4.3, 1.16, 2.88],
@@ -107,6 +115,8 @@ const Scene = (props) => {
   camera stop 1
   position: -4.76148947700402, 4.028310067018445, 9.902280289701652
   rotation: -0.8278370080610934, -0.2551005789449138, -0.35099999999999976
+  -4.949944894060301, 3.2146815523137304, 10.292633697035237
+  -0.6078282406989428, -0.3810426971585241, 0.025860845931176678
   
   */
 
@@ -129,9 +139,6 @@ const Scene = (props) => {
           if (!camera) return;
           console.log(camera.position.toArray());
           console.log(camera.rotation.toArray());
-          // setCameraPosition(camera.position.toArray());
-          // setCameraRotation(camera.rotation.toArray());
-          // console.log(cameraPosition, cameraRotation);
         }}
       /> */}
       <PerspectiveCamera
@@ -139,10 +146,15 @@ const Scene = (props) => {
         // ref={cameraRef}
         theatreKey={"Camera"}
         // position={cameraPosition}
-        position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
+        // position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
+
+        position={[-5.163108645819346, 1.8345992465293988, 3.97]}
         rotation={[
-          -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
+          -0.7210839965680563, -0.5792947129698445, -0.448484711027097,
         ]}
+        // rotation={[
+        //   -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
+        // ]}
         // position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
         // rotation={cameraRotation}
         // lookAt={lookAtRef}

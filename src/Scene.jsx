@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Perf } from "r3f-perf";
 // import {
@@ -10,30 +10,53 @@ import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 // import { useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, useScroll } from "@react-three/drei";
-import { val } from "@theatre/core";
+import { gsap } from "gsap";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 // import { OrthographicCamera } from "@react-three/drei";
 import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
-import Road from "./models/Road.jsx";
+
 import RoadThicc from "./models/final/Road.jsx";
 import { editable as e } from "@theatre/r3f";
-import ImagePin from "./models/ImagePin.jsx";
+
 import { useControls } from "leva";
 import { Top } from "./models/final/Top.jsx";
 import { Sides } from "./models/final/Sides.jsx";
 import { Plane } from "./models/final/Plane.jsx";
-import FancyPin from "./models/final/FancyPin.jsx";
+
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
-import LocationPin from "./models/final/LocationPin.jsx";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
 
 const sequencePositions = {
   caveAndBasin: "3.16f",
+};
+
+const tl = gsap.timeline({
+  repeat: -1,
+});
+
+const animateCloud = (cloudRef, tl, cloudIndex) => {
+  const info = {
+    // Cloud 1
+    1: {
+      x: 1.7,
+      y: 0.85,
+      z: 1.3,
+      duration: 35,
+    },
+  };
+
+  tl.to(cloudRef.current.position, {
+    x: info[cloudIndex].x,
+    y: info[cloudIndex].y,
+    z: info[cloudIndex].z,
+    duration: info[cloudIndex].duration,
+    ease: "none",
+  });
 };
 
 const positions = {
@@ -67,9 +90,18 @@ const positions = {
 const Scene = (props) => {
   const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
   const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
-
+  const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
+
+  useEffect(() => {
+    console.log(props.index);
+    if (props.index === 1) {
+      setTimeout(() => {
+        animateCloud(cloudRef, tl, props.index);
+      }, 1500);
+    }
+  }, [props.index]);
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {
@@ -94,16 +126,28 @@ const Scene = (props) => {
   //     value: 0,
   //     min: -10,
   //     max: 10,
+  //     step: 0.01,
   //   },
   //   cloudPosY: {
   //     value: 0,
   //     min: -10,
   //     max: 10,
+  //     step: 0.01,
   //   },
   //   cloudPosZ: {
   //     value: 0,
   //     min: -10,
   //     max: 10,
+  //     step: 0.01,
+  //   },
+  // });
+
+  // const { cloudScale } = useControls({
+  //   cloudScale: {
+  //     value: 0.1,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
   //   },
   // });
 
@@ -200,14 +244,24 @@ const Scene = (props) => {
         <e.group theatreKey="Lake Louise Cloud">
           <Cloud scale={0.3} position={[2, 3, -4.75]} />
         </e.group>
+        */}
 
-        <e.group theatreKey="Banff Cloud 2">
-          <Cloud scale={0.1} position={[-0.8, 1.5, 2.6]} />
+        <e.group theatreKey="Banff Cloud 2" ref={cloudRef}>
+          <Cloud
+            // works scale = -0.03
+            // works position = [-2.7, 0.85, 2.30]
+            //
+            scale={0.03}
+            // scale={cloudScale}
+            //  position={[-0.8, 1.5, 2.6]}
+            position={[-2.7, 0.85, 2.3]}
+            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+          />
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} />
-        </e.group> 
+        </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

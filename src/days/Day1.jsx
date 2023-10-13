@@ -6,7 +6,7 @@ import ImagePin from "../models/ImagePin";
 const Day1 = ({ positions, sceneIndex }) => {
   return (
     <>
-      <ImagePin
+      {/* <ImagePin
         active={sceneIndex === 0}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
         scale={0.2}
@@ -29,7 +29,7 @@ const Day1 = ({ positions, sceneIndex }) => {
         name={"Sky Bistro"}
         position={positions.skyBistro}
       />
-      {/* 
+
       <ImagePin
         active={sceneIndex === 3}
         imageSrc={"/images/banff-upper-hot-springs.png"}

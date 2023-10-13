@@ -45,7 +45,7 @@ const positions = {
   // skyBistro: [-4.69, 1.13, 2.88],
   skyBistro: [-4.72, 1.13, 2.759],
   // banffUpperHotSprings: [-4.6, 1.2, 2.98],
-  banffUpperHotSprings: [-4.69, 1.08, 2.86],
+  banffUpperHotSprings: [-4.69, 1.08, 2.859],
   // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
   fairmontBanffSpringsHotel: [-4.58, 1.05, 2.83],
 
@@ -207,7 +207,7 @@ const Scene = (props) => {
 
         <e.group theatreKey="Banff Cloud 1">
           <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} />
-        </e.group> */}
+        </e.group> 
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

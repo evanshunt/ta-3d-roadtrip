@@ -224,7 +224,7 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <Lights />
+      <Lights index={props.index} />
 
       {/* <Perf position="bottom-right" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>

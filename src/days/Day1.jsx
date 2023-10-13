@@ -1,11 +1,38 @@
 import React, { useEffect } from "react";
 import ImagePin from "../models/ImagePin";
 // import InfoPanel from "../models/final/InfoPanel";
-// import { useControls } from "leva";
+import { useControls } from "leva";
+import InfoBox from "../components/InfoBox";
 
 const Day1 = ({ positions, sceneIndex }) => {
+  const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
+    sunshineVillageX: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+    sunshineVillageY: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+    sunshineVillageZ: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+  });
   return (
     <>
+      <InfoBox
+        position={[-5.2, 1.2, 2.4]}
+        imageSrc={"/images/info-boxes/sunshine-village.png"}
+      />
+      <InfoBox
+        position={[-4.3, 1.2, 2.7]}
+        name="Cascade Mountain"
+        imageSrc={"/images/info-boxes/cascade-mountain.png"}
+      />
       <ImagePin
         active={sceneIndex === 0}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}

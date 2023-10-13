@@ -90,7 +90,6 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
         position-z={-0.02}
         // position-y={position[1] + 0.05}
         // position-y={1.25}
-        castShadow
         theatreKey={`Pins / ${name} / Background Halo ${name}`}
         scale={0.03}
       >

@@ -324,7 +324,7 @@ const Experience = () => {
 
   return (
     <div className="wrapper">
-      {/* <Intro hasStarted={hasStarted} /> */}
+      <Intro hasStarted={hasStarted} />
 
       {days[1] && (
         <Itinerary
@@ -335,7 +335,7 @@ const Experience = () => {
           showInfo={showInfo}
         />
       )}
-      {/* <Onboarding /> */}
+
       <Canvas
         shadows
         dpr={dpr}

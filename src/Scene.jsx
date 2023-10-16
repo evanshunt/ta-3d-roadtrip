@@ -273,13 +273,13 @@ const Scene = (props) => {
         /> */}
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
-        <Road />
+        {/* <Road />
         <Top />
         <Sides />
-        <Plane />
+        <Plane /> */}
       </e.group>
 
-      <TiltShiftEffects />
+      {/* <TiltShiftEffects /> */}
     </>
   );
 };

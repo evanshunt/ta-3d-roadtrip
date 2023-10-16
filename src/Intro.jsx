@@ -1,7 +1,9 @@
-import React from "react";
-import { editable as e } from "@theatre/r3f";
-import "./scss/intro.scss";
+import { Map } from "./Map";
+import { IntroClouds } from "./IntroClouds";
 import Onboarding from "./components/OnBoarding";
+import React from "react";
+
+import "./scss/intro.scss";
 
 const Intro = ({ hasStarted }) => {
   const playIntro = () => {
@@ -14,36 +16,13 @@ const Intro = ({ hasStarted }) => {
   }
 
   return (
-    <>
+    <div className="intro">
       <Onboarding />
-      <div className="cloud-intro" onClick={playIntro}>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud04.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud05.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud06.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud04.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud05.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud06.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud04.webp" alt="" />
-        </div>
-        <div className="cloud-intro__image">
-          <img src="/images/cloud05.webp" alt="" />
-        </div>
-        <div className="cloud-intro__background"></div>
+      <div className="intro__map">
+        <Map undefined />
       </div>
-    </>
+      {/* <IntroClouds playIntro={playIntro} /> */}
+    </div>
   );
 };
 

@@ -280,13 +280,6 @@ const Scene = (props) => {
       </e.group>
 
       <TiltShiftEffects />
-      {/* <EffectComposer>
-        <DepthOfField
-          focusDistance={focusDistance}
-          focalLength={focalLength}
-          bokehScale={bokehScale}
-        />
-      </EffectComposer> */}
     </>
   );
 };

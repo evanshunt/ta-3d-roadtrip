@@ -17,7 +17,7 @@ import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
 
-import RoadThicc from "./models/final/Road.jsx";
+import Road from "./models/final/Road.jsx";
 import { editable as e } from "@theatre/r3f";
 
 import { useControls } from "leva";
@@ -226,7 +226,7 @@ const Scene = (props) => {
 
       <Lights index={props.index} />
 
-      {/* <Perf position="bottom-right" /> */}
+      <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
         <Day1 positions={positions} sceneIndex={props.index} />
@@ -273,7 +273,7 @@ const Scene = (props) => {
         /> */}
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
-        <RoadThicc />
+        <Road />
         <Top />
         <Sides />
         <Plane />

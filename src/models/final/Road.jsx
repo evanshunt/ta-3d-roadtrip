@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
-function RoadThicc(props) {
+function Road(props) {
   const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
   const texture = useTexture("/textures/final/road-baked-test.jpg");
   // const { posX, posY, posZ } = useControls({
@@ -31,7 +31,6 @@ function RoadThicc(props) {
     <group {...props} dispose={null}>
       <mesh
         castShadow
-        receiveShadow
         scale={0.25}
         geometry={nodes.BezierCurve.geometry}
         position={[0, -1.025, 0]}
@@ -49,4 +48,4 @@ function RoadThicc(props) {
 
 useGLTF.preload("/glb/road.glb");
 
-export default RoadThicc;
+export default Road;

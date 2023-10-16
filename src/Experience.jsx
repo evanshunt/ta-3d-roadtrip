@@ -1,6 +1,7 @@
 import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
-import animation from "./animation-data/animation-new-pins.json";
+// import animation from "./animation-data/animation-new-pins.json";
+import animation from "./animation-data/animation-new-pins-left-offset.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -20,6 +21,7 @@ import Onboarding from "./components/OnBoarding";
 import "./scss/controls.scss";
 import Arrow from "./components/Arrow";
 import Intro from "./Intro";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -51,6 +53,8 @@ const Experience = () => {
       details: {
         title: "Cave and Basin National Historic Site",
         image: "/images/cave-and-basin-national-historic-site.png",
+        blurb:
+          "Your trip begins at the birthplace of the national parks in Canada",
         description:
           "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
       },
@@ -65,6 +69,7 @@ const Experience = () => {
       details: {
         title: "Banff Gondola",
         image: "/images/banff-gondola.png",
+        blurb: "Gondole your bowl.",
         description:
           "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
       },
@@ -77,6 +82,7 @@ const Experience = () => {
       description: "Description here",
       details: {
         title: "Lunch at Sky Bistro",
+        blurb: "Grab some lunch at the top.",
         image: "/images/sky-bistro.png",
         description:
           "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
@@ -90,6 +96,7 @@ const Experience = () => {
       details: {
         title: "Banff Upper Hot Springs",
         image: "/images/banff-upper-hot-springs.png",
+        blurb: "Bubble, bubble no toil no trouble.",
         description:
           "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
       },
@@ -101,6 +108,7 @@ const Experience = () => {
       // name: "Fairmont Banff Springs Hotel",
       details: {
         title: "Fairmont Banff Springs Hotel",
+        blurb: "I stayed here once and it smelled of cheese.",
         image: "/images/fairmont-banff-springs-hotel.png",
         description:
           'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
@@ -303,6 +311,17 @@ const Experience = () => {
     return day !== "0";
   });
 
+  const inBetweens = [0, 5];
+
+  useEffect(() => {
+    if (inBetweens.includes(index)) return;
+
+    //@TODO: this will have to close it out as well
+    setTimeout(() => {
+      setAttractionsOpen(true);
+    }, 4233);
+  }, [index]);
+
   return (
     <div className="wrapper">
       {/* <Intro hasStarted={hasStarted} /> */}
@@ -363,6 +382,15 @@ const Experience = () => {
       />
 
       <div className="controls">
+        {index > 0 && (
+          <SwitchTransition>
+            <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
+              <div className="day-info">
+                <span>{destinations[index].details.blurb}</span>
+              </div>
+            </CSSTransition>
+          </SwitchTransition>
+        )}
         <div className="controls__buttons">
           <button
             disabled={index <= 1}

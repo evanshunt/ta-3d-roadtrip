@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 100dvh;
   overflow: scroll;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   padding: 1.85rem 1.55rem;
   padding-bottom: 5rem;
@@ -78,6 +79,7 @@
   align-items: center;
   display: flex;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .itinerary__stop__image {
@@ -94,6 +96,12 @@
     margin-left: 0;
     width: 5rem;
   }
+}
+
+.itinerary__stop__button {
+  background: transparent;
+  border: none;
+  margin-left: auto;
 }
 
 .itinerary__stop__name {

@@ -39,7 +39,7 @@ const TiltShiftShader = {
         float maxScreenDistance = distance(vec2(0.0), resolution); // diagonal distance
 
         float gradientRadius = taper * (maxScreenDistance);
-        float blurRadius = blur * (maxScreenDistance / 16.0);
+        float blurRadius = blur * (maxScreenDistance / 25.0);
 
         /* randomize the lookup values to hide the fixed number of samples */
         float offset = random(vec3(12.9898, 78.233, 151.7182), 0.0);

@@ -6,5 +6,9 @@ export const DrivingInfo = () => (
     <img src={car} alt="" />
     {/* @TODO: switch to SVGR? */}
     <span>1 hr 23 min drive from Calgary</span>
+    <p>
+      Head from Calgary to Banff, the birthplace of Canada’s national parks
+      system.
+    </p>
   </div>
 );

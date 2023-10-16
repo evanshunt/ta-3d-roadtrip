@@ -1,27 +1,26 @@
 import React, { useEffect } from "react";
 import ImagePin from "../models/ImagePin";
-// import InfoPanel from "../models/final/InfoPanel";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 import InfoBox from "../components/InfoBox";
 
 const Day1 = ({ positions, sceneIndex }) => {
-  const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
-    sunshineVillageX: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    sunshineVillageY: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    sunshineVillageZ: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-  });
+  // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
+  //   sunshineVillageX: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   sunshineVillageY: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   sunshineVillageZ: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  // });
   return (
     <>
       <InfoBox
@@ -33,6 +32,12 @@ const Day1 = ({ positions, sceneIndex }) => {
         name="Cascade Mountain"
         imageSrc={"/images/info-boxes/cascade-mountain.png"}
       />
+      <InfoBox
+        position={[-4.2, 1.15, 3]}
+        name="Lake Minnewanka"
+        imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+      />
+
       <ImagePin
         active={sceneIndex === 0}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}

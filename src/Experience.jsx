@@ -1,6 +1,6 @@
 import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
-import animation from "./animation-data/animation-pins-c-b-b-g.json";
+import animation from "./animation-data/animation-new-pins.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -45,7 +45,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 3.533,
+      position: 4.7333,
       day: 1,
 
       details: {
@@ -57,7 +57,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 5.433,
+      position: 7,
       day: 1,
       // name: "Banff",
       description:
@@ -71,7 +71,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 8.75,
+      position: 9.233,
       day: 1,
       // name: "Sky Bistro",
       description: "Description here",
@@ -84,7 +84,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 10.35,
+      position: 11.233,
       day: 1,
       // name: "Banff Upper Hot Springs",
       details: {
@@ -96,7 +96,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 10.35,
+      position: 13.1,
       day: 1,
       // name: "Fairmont Banff Springs Hotel",
       details: {

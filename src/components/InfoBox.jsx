@@ -3,23 +3,23 @@ import { Billboard, Image } from "@react-three/drei";
 import { useControls } from "leva";
 
 const InfoBox = ({ imageSrc, position }) => {
-  const { posX, posY, posZ } = useControls({
-    posX: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    posY: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    posZ: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-  });
+  // const { posX, posY, posZ } = useControls({
+  //   posX: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   posY: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   posZ: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  // });
   // const { scaleX, scaleY, scaleZ } = useControls({
   //   scaleX: {
   //     value: 0.5,

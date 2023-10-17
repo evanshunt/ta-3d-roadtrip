@@ -326,7 +326,7 @@ const Experience = () => {
     <div className="wrapper">
       <Intro hasStarted={hasStarted} />
 
-      {days[1] && (
+      {/* {days[1] && (
         <Itinerary
           currDestination={currDestination}
           currDay={currDay}
@@ -334,7 +334,7 @@ const Experience = () => {
           grouped={daysParsed}
           showInfo={showInfo}
         />
-      )}
+      )} */}
 
       <Canvas
         shadows
@@ -372,7 +372,7 @@ const Experience = () => {
         {/* </ScrollControls> */}
       </Canvas>
 
-      <Attraction
+      {/* <Attraction
         attractionsOpen={attractionsOpen}
         currDestination={currDestination}
         handleIndex={handleIndex}
@@ -440,7 +440,7 @@ const Experience = () => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,3 +1,14 @@
+.map-wrap {
+  pointer-events: none;
+  position: relative;
+  transition: opacity 2s linear;
+  z-index: 2;
+
+  &--complete {
+    opacity: 0;
+  }
+}
+
 .bubble,
 .bubble-text,
 .bubble-icon,
@@ -31,23 +42,22 @@
 //map grows to 3.16x the size
 
 // line grows to 2.91x the size
-#roadMask,
-#road {
-  // transform-origin: 35.25% 66% !important;
-  transform-origin: 35.25% 51% !important;
-  // transform: scale(0.4);
 
-  #road {
-    stroke-dasharray: 0.3vw 0.3vw !important;
-  }
+#road,
+#roadMask {
+  stroke-dasharray: 0.3vw 0.3vw !important;
+  // transform-origin: 35.25% 66% !important;
+  transform: scale(1) translate(10%, 16.9%);
 }
 
 //square grows to 2.6x the size
 .square {
-  // transform-origin: 35% !important;
+  transform-origin: 34% 45% !important;
   // transform-origin: 35% 450% !important;
 }
 
-.alberta {
-  // this grows to 3x its size
+.map-cutout,
+.map-cutout-border {
+  transform: translate(0.85%, -2%);
+  transform-origin: 0.66% 2% !important;
 }

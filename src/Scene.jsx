@@ -95,7 +95,6 @@ const Scene = (props) => {
   const cameraRef = useRef();
 
   useEffect(() => {
-    console.log(props.index);
     if (props.index === 1) {
       setTimeout(() => {
         animateCloud(cloudRef, tl, props.index);

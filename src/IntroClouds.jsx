@@ -1,6 +1,5 @@
 import React from "react";
-import { editable as e } from "@theatre/r3f";
-//
+
 export const IntroClouds = ({ playIntro }) => (
   <div className="cloud-intro" onClick={playIntro}>
     <div className="cloud-intro__image">

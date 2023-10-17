@@ -9,7 +9,7 @@ import { Perf } from "r3f-perf";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 // import { useFrame } from "@react-three/fiber";
-import { Environment, OrbitControls, useScroll } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { gsap } from "gsap";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
 // import { OrthographicCamera } from "@react-three/drei";
@@ -35,7 +35,7 @@ const sequencePositions = {
   caveAndBasin: "3.16f",
 };
 
-const tl = gsap.timeline({
+const cloudTimeline = gsap.timeline({
   repeat: -1,
 });
 
@@ -97,7 +97,7 @@ const Scene = (props) => {
   useEffect(() => {
     if (props.index === 1) {
       setTimeout(() => {
-        animateCloud(cloudRef, tl, props.index);
+        animateCloud(cloudRef, cloudTimeline, props.index);
       }, 1500);
     }
   }, [props.index]);
@@ -272,13 +272,13 @@ const Scene = (props) => {
         /> */}
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
-        {/* <Road />
+        <Road />
         <Top />
         <Sides />
-        <Plane /> */}
+        <Plane />
       </e.group>
 
-      {/* <TiltShiftEffects /> */}
+      <TiltShiftEffects />
     </>
   );
 };

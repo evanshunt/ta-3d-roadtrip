@@ -1,8 +1,9 @@
 .map-wrap {
+  background: #ffffff;
   pointer-events: none;
-  position: relative;
+  position: fixed;
   transition: opacity 2s linear;
-  z-index: 2;
+  z-index: 3;
 
   &--complete {
     opacity: 0;

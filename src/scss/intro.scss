@@ -6,8 +6,9 @@ $duration: 4s;
   height: 100vh;
   margin: 0;
   padding: 0;
-  position: relative;
+  position: fixed;
   width: 100%;
+  z-index: 5;
 }
 
 .intro__map {

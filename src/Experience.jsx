@@ -1,7 +1,8 @@
 import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
 // import animation from "./animation-data/animation-new-pins.json";
-import animation from "./animation-data/animation-new-pins-left-offset.json";
+// import animation from "./animation-data/animation-new-pins-left-offset.json";
+import animation from "./animation-data/new-camera.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -37,6 +38,7 @@ const Experience = () => {
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
+  const animDuration = 10.333;
 
   const destinations = [
     {
@@ -257,6 +259,18 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
+  useEffect(() => {
+    // @TODO: determine how this gets wired up
+    if (index === 0) {
+      setTimeout(() => {
+        sheet.sequence.play({
+          range: [0, 6.1],
+          direction: "normal",
+        });
+      }, animDuration * 1000);
+    }
+  }, []);
+
   const handleIndex = (dir) => {
     if (dir === "up" || dir === "down") return;
 
@@ -326,7 +340,7 @@ const Experience = () => {
     <div className="wrapper">
       <Intro hasStarted={hasStarted} />
 
-      {/* {days[1] && (
+      {days[1] && (
         <Itinerary
           currDestination={currDestination}
           currDay={currDay}
@@ -334,7 +348,7 @@ const Experience = () => {
           grouped={daysParsed}
           showInfo={showInfo}
         />
-      )} */}
+      )}
 
       <Canvas
         shadows
@@ -372,7 +386,7 @@ const Experience = () => {
         {/* </ScrollControls> */}
       </Canvas>
 
-      {/* <Attraction
+      <Attraction
         attractionsOpen={attractionsOpen}
         currDestination={currDestination}
         handleIndex={handleIndex}
@@ -440,7 +454,7 @@ const Experience = () => {
             );
           })}
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };

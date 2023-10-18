@@ -129,7 +129,7 @@ export const Map = ({ start }) => {
         {
           scale: 4,
           duration: duration * 6,
-          ease: "power2.in",
+          ease: "power1.in",
           onUpdate: (e) => {
             if (tl._time >= duration * 4.25) {
               // onStart: () => {

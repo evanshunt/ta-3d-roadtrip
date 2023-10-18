@@ -2,7 +2,7 @@ import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
 // import animation from "./animation-data/animation-new-pins.json";
 // import animation from "./animation-data/animation-new-pins-left-offset.json";
-import animation from "./animation-data/new-camera-with-pauses.json";
+import animation from "./animation-data/new-animation-t-s.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";

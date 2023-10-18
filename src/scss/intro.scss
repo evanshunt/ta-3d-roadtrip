@@ -1,6 +1,6 @@
 @use "./map-animation/map-animation.scss";
 
-$duration: 4s;
+$duration: 2s;
 
 .intro {
   height: 100vh;
@@ -58,7 +58,8 @@ $duration: 4s;
 }
 
 .cloud-intro__background {
-  background-color: #efefef;
+  // background-color: #efefef;
+  background-color: #e4e4e2;
   height: 100vh;
   left: 0;
   pointer-events: none;
@@ -75,7 +76,7 @@ $duration: 4s;
 
   .cloud-intro--play--in & {
     opacity: 1;
-    transition-duration: 3s;
+    transition-duration: 1.5s;
     transition-delay: 0s;
   }
 }
@@ -210,8 +211,8 @@ $duration: 4s;
 }
 
 .cloud-intro__image:nth-child(3) img {
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.1.5s;
+  animation-delay: 0.1.5s;
 }
 
 .cloud-intro__image:nth-child(4) img {

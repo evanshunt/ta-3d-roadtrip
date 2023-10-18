@@ -225,7 +225,7 @@ const Scene = (props) => {
 
       <Lights index={props.index} />
 
-      {/* <Perf position="bottom-left" /> */}
+      <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
         <Day1 positions={positions} sceneIndex={props.index} />

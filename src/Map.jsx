@@ -5,7 +5,7 @@ import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 gsap.registerPlugin(DrawSVGPlugin);
 
 export const Map = ({ start }) => {
-  const duration = 1;
+  const duration = 0.75;
 
   useEffect(() => {
     const animateScene = () => {
@@ -22,7 +22,6 @@ export const Map = ({ start }) => {
       animateMaps(tl);
 
       if (start) {
-        console.log("play it");
         tl.play();
       }
     };
@@ -54,45 +53,24 @@ export const Map = ({ start }) => {
         "<"
       );
 
-      tl.to(
-        edges,
-        {
-          scale: 3,
-          duration: duration * 4,
-          onStart: () => {
-            const intro = document.querySelector(".intro");
-            const clouds = document.querySelector(".cloud-intro");
-            const mapWrap = document.querySelector(".map-wrap");
-            clouds.classList.remove("cloud-intro--play");
+      // tl.to(
+      //   edges,
+      //   {
+      //     scale: 3,
+      //     duration: duration * 4,
 
-            // setTimeout(() => {
-            clouds.classList.add("cloud-intro--play--back");
-            clouds.classList.add("cloud-intro--play--in");
-            // }, 4000);
+      //   },
+      //   "<+50%"
+      // );
 
-            setTimeout(() => {
-              clouds.classList.remove("cloud-intro--play--in");
-              // clouds.classList.remove("cloud-intro--play--back");
-              clouds.classList.add("cloud-intro--play");
-            }, 4000);
-
-            setTimeout(() => {
-              intro.classList.add("intro--complete");
-              mapWrap.classList.add("map-wrap--complete");
-            }, 2000);
-          },
-        },
-        "<+50%"
-      );
-
-      tl.to(
-        image,
-        {
-          scale: 3,
-          duration: duration * 4,
-        },
-        "<"
-      );
+      // tl.to(
+      //   image,
+      //   {
+      //     scale: 3,
+      //     duration: duration * 4,
+      //   },
+      //   "<"
+      // );
 
       tl.to(
         image,
@@ -144,13 +122,41 @@ export const Map = ({ start }) => {
 
     const animateMaps = (tl) => {
       gsap.set(".whole-scene", {
-        transformOrigin: "33% 65%",
+        transformOrigin: "36% 65%",
       });
       tl.to(
         ".whole-scene",
         {
-          scale: 1.5,
-          duration: duration * 12,
+          scale: 4,
+          duration: duration * 6.5,
+          ease: "power3.in",
+          onUpdate: (e) => {
+            console.log(gsap.ticker, duration);
+            if (gsap.ticker.time >= duration * 6.5) {
+              // onStart: () => {
+              const intro = document.querySelector(".intro");
+              const clouds = document.querySelector(".cloud-intro");
+              const mapWrap = document.querySelector(".map-wrap");
+              clouds.classList.remove("cloud-intro--play");
+
+              // setTimeout(() => {
+              clouds.classList.add("cloud-intro--play--back");
+              clouds.classList.add("cloud-intro--play--in");
+              // }, 4000);
+
+              setTimeout(() => {
+                clouds.classList.remove("cloud-intro--play--in");
+                // clouds.classList.remove("cloud-intro--play--back");
+                clouds.classList.add("cloud-intro--play");
+              }, 2000);
+
+              setTimeout(() => {
+                intro.classList.add("intro--complete");
+                mapWrap.classList.add("map-wrap--complete");
+              }, 1000);
+              // },
+            }
+          },
         },
         0
       );
@@ -180,7 +186,7 @@ export const Map = ({ start }) => {
         "#roadPath",
         {
           drawSVG: "100% 0%",
-          duration: duration * 2,
+          duration: duration,
           ease: "none",
         },
         "<"
@@ -210,7 +216,7 @@ export const Map = ({ start }) => {
       tl.to(
         bubbleEls,
         {
-          duration: duration * 2,
+          duration: duration,
           ease: "power2.out",
           scale: 0.8,
           opacity: 0,
@@ -369,7 +375,7 @@ export const Map = ({ start }) => {
               y="500"
               fill="none"
               stroke="#9C0F00"
-              strokeWidth="2"
+              strokeWidth="5"
               width="111"
               height="148"
               className="map-cutout-border"

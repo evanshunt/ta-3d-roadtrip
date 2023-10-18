@@ -39,7 +39,7 @@ const Experience = () => {
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
-  const animDuration = 7.5;
+  const animDuration = 3.5;
 
   const destinations = [
     {
@@ -269,7 +269,7 @@ const Experience = () => {
     if (index === 0 && clicked) {
       setTimeout(() => {
         sheet.sequence.play({
-          range: [0, 6.1],
+          range: [0, 6.2],
           direction: "normal",
         });
       }, animDuration * 1000);
@@ -407,15 +407,15 @@ const Experience = () => {
       />
 
       <div className="controls">
-        {index > 0 && (
-          <SwitchTransition>
-            <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
-              <div className="day-info">
-                <span>{destinations[index].details.blurb}</span>
-              </div>
-            </CSSTransition>
-          </SwitchTransition>
-        )}
+        {/* {index > 0 && ( */}
+        <SwitchTransition>
+          <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
+            <div className="day-info">
+              <span>{destinations[index].details.blurb}</span>
+            </div>
+          </CSSTransition>
+        </SwitchTransition>
+        {/* )} */}
         <div className="controls__buttons">
           <button
             disabled={index <= 1}

@@ -128,11 +128,10 @@ export const Map = ({ start }) => {
         ".whole-scene",
         {
           scale: 4,
-          duration: duration * 6.5,
-          ease: "power3.in",
+          duration: duration * 6,
+          ease: "power2.in",
           onUpdate: (e) => {
-            console.log(gsap.ticker, duration);
-            if (gsap.ticker.time >= duration * 6.5) {
+            if (tl._time >= duration * 4.25) {
               // onStart: () => {
               const intro = document.querySelector(".intro");
               const clouds = document.querySelector(".cloud-intro");

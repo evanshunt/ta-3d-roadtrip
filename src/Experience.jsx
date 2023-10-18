@@ -38,8 +38,7 @@ const Experience = () => {
   const [attractionsOpen, setAttractionsOpen] = useState(false);
   // uncomment to use saved data
 
-  const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
-  const animDuration = 3.5;
+  const animDuration = 3;
 
   const destinations = [
     {
@@ -269,7 +268,7 @@ const Experience = () => {
     if (index === 0 && clicked) {
       setTimeout(() => {
         sheet.sequence.play({
-          range: [0, 6.2],
+          range: [0, 6.15],
           direction: "normal",
         });
       }, animDuration * 1000);

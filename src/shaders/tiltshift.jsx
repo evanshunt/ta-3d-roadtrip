@@ -104,15 +104,22 @@ export class TiltShiftEffect extends Effect {
   }
 }
 
+let newBlur = 0.5,
+  newTaper = 0.525,
+  newStart = [0.0, 0.4],
+  newEnd = [0.47, 0.45];
+
 const TiltShift = wrapEffect(TiltShiftEffect);
 
 function TiltShiftEffects() {
   const effectRef = React.createRef();
   const sheet = useCurrentSheet();
   const [blur, setBlur] = React.useState(0.5);
+  const [direction, setDirection] = React.useState([0.96, 0.03]);
   const [taper, setTaper] = React.useState(0.525);
   const [start, setStart] = React.useState([0.0, 0.4]);
   const [end, setEnd] = React.useState([0.47, 0.45]);
+
   const [
     // The Theatre.js object that represents our THREE.js object. It'll be initially `null`.
     theatreObject,
@@ -123,11 +130,16 @@ function TiltShiftEffects() {
 
   useFrame(({ clock }) => {
     theatreObject.onValuesChange((newValues) => {
-      // Apply the new offset to our THREE.js object
-      setBlur(newValues.blur);
-      setTaper(newValues.taper);
-      setStart([newValues.start.x, newValues.start.y]);
-      setEnd([newValues.end.x, newValues.end.y]);
+      newBlur = newValues.blur;
+      newTaper = newValues.taper;
+      newStart = [newValues.start.x, newValues.start.y];
+      newEnd = [newValues.end.x, newValues.end.y];
+      setDirection([newValues.direction.x, newValues.direction.y]);
+      // console.log("i anm changing?");
+      //   // Apply the new offset to our THREE.js object
+      //   setTaper(newValues.taper);
+      //   setStart([newValues.start.x, newValues.start.y]);
+      //   setEnd([newValues.end.x, newValues.end.y]);
     });
   });
 
@@ -136,7 +148,7 @@ function TiltShiftEffects() {
   // taper = 0.45, // [0, 1], can go beyond 1 for extra
   // start = [0.26, 0.53],
   // end = [1, 0.54],
-  let direction = [0.96, 0.03]; // direction of blur
+  // let direction = [0.96, 0.03]; // direction of blur
   //   start = [0.02, 0.82], // [0,1] percentage x,y of screenspace
   //   end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
   //   sampleCount = 30.0, // number of blur samples
@@ -267,6 +279,10 @@ function TiltShiftEffects() {
           x: types.number(0.47, { range: [0, 1.0] }),
           y: types.number(0.45, { range: [0, 1.0] }),
         }),
+        direction: types.compound({
+          x: types.number(0.96, { range: [0, 1.0] }),
+          y: types.number(0.03, { range: [0, 1.0] }),
+        }),
       }}
     >
       <EffectComposer>
@@ -275,14 +291,14 @@ function TiltShiftEffects() {
           ref={effectRef}
           // blur={blur}
           // blur={0.34}
-          blur={blur}
+          blur={newBlur}
           // taper={taper}
           // // taper={0.7}
-          taper={taper}
+          taper={newTaper}
           // start={start}
           // // start={[0.0, 0.0]}
-          start={start}
-          end={end}
+          start={newStart}
+          end={newEnd}
           // // end={[0.45, 0.45]}
           // end={}
           // sampleCount={sampleCount}

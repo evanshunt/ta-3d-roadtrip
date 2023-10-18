@@ -2,7 +2,7 @@ import * as THREE from "three";
 // import animation from "./animation-data/animation.json";
 // import animation from "./animation-data/animation-new-pins.json";
 // import animation from "./animation-data/animation-new-pins-left-offset.json";
-import animation from "./animation-data/new-camera.json";
+import animation from "./animation-data/new-camera-with-pauses.json";
 import { Canvas } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -27,6 +27,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   // const project = getProject("TA Fly Through");
+  const [clicked, setClicked] = useState(false);
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
@@ -38,7 +39,7 @@ const Experience = () => {
   // uncomment to use saved data
 
   const pauses = [0.385, 0.775]; // this will not be needed with the destination array provided
-  const animDuration = 10.333;
+  const animDuration = 7.5;
 
   const destinations = [
     {
@@ -46,10 +47,14 @@ const Experience = () => {
       position: 0,
       day: 0,
       name: null,
+      details: {
+        blurb:
+          "Use left and right arrows to start and move between attractions",
+      },
     },
     {
       name: "Banff",
-      position: 4.7333,
+      position: 7.866,
       day: 1,
 
       details: {
@@ -63,7 +68,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 7,
+      position: 10.133,
       day: 1,
       // name: "Banff",
       description:
@@ -78,7 +83,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 9.233,
+      position: 12.333,
       day: 1,
       // name: "Sky Bistro",
       description: "Description here",
@@ -92,7 +97,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 11.233,
+      position: 14.333,
       day: 1,
       // name: "Banff Upper Hot Springs",
       details: {
@@ -105,7 +110,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 13.1,
+      position: 16.233,
       day: 1,
       // name: "Fairmont Banff Springs Hotel",
       details: {
@@ -261,7 +266,7 @@ const Experience = () => {
 
   useEffect(() => {
     // @TODO: determine how this gets wired up
-    if (index === 0) {
+    if (index === 0 && clicked) {
       setTimeout(() => {
         sheet.sequence.play({
           range: [0, 6.1],
@@ -269,7 +274,7 @@ const Experience = () => {
         });
       }, animDuration * 1000);
     }
-  }, []);
+  }, [clicked]);
 
   const handleIndex = (dir) => {
     if (dir === "up" || dir === "down") return;
@@ -282,6 +287,11 @@ const Experience = () => {
     } else {
       index <= 1 ? setIndex(1) : setIndex(index - 1);
     }
+  };
+
+  const start = () => {
+    console.log("start!!");
+    setClicked(true);
   };
 
   const handlers = useSwipeable({
@@ -329,16 +339,17 @@ const Experience = () => {
 
   useEffect(() => {
     if (inBetweens.includes(index)) return;
-
     //@TODO: this will have to close it out as well
     setTimeout(() => {
       setAttractionsOpen(true);
-    }, 4233);
+    }, 250);
   }, [index]);
 
   return (
     <div className="wrapper">
-      <Intro hasStarted={hasStarted} />
+      <div onClick={start}>
+        <Intro hasStarted={hasStarted} />
+      </div>
 
       {days[1] && (
         <Itinerary
@@ -375,11 +386,11 @@ const Experience = () => {
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene
+            animDuration={animDuration}
             index={index}
             currDay={currDay}
-            pauses={pauses}
             destinations={destinations}
-            pauseDuration={pauseDuration}
+            started={start}
             project={project}
           />
         </SheetProvider>

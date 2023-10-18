@@ -60,6 +60,7 @@ export const Map = ({ start }) => {
           scale: 3,
           duration: duration * 4,
           onStart: () => {
+            const intro = document.querySelector(".intro");
             const clouds = document.querySelector(".cloud-intro");
             const mapWrap = document.querySelector(".map-wrap");
             clouds.classList.remove("cloud-intro--play");
@@ -76,6 +77,7 @@ export const Map = ({ start }) => {
             }, 4000);
 
             setTimeout(() => {
+              intro.classList.add("intro--complete");
               mapWrap.classList.add("map-wrap--complete");
             }, 2000);
           },

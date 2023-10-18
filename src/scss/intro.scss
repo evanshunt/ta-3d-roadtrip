@@ -9,6 +9,10 @@ $duration: 4s;
   position: fixed;
   width: 100%;
   z-index: 5;
+
+  &--complete {
+    pointer-events: none;
+  }
 }
 
 .intro__map {
@@ -16,11 +20,11 @@ $duration: 4s;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  pointer-events: none;
   width: 100%;
 
   img {
     height: 100vh;
-
     object-fit: cover;
   }
 }
@@ -43,10 +47,11 @@ $duration: 4s;
   z-index: 3;
 
   &.cloud-intro--play {
-    z-index: -1;
+    // z-index: -1;
   }
 
   &.cloud-intro--play--back {
+    pointer-events: none;
     transition-duration: 0s;
     z-index: 3;
   }

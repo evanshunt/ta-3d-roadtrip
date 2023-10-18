@@ -95,12 +95,12 @@ const Scene = (props) => {
   const cameraRef = useRef();
 
   useEffect(() => {
-    if (props.index === 1) {
+    if (props.index === 0 && props.started) {
       setTimeout(() => {
-        animateCloud(cloudRef, cloudTimeline, props.index);
-      }, 1500);
+        animateCloud(cloudRef, cloudTimeline, 1);
+      }, props.animDuration + 4 * 1000);
     }
-  }, [props.index]);
+  }, [props.index, props.started]);
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {
@@ -225,7 +225,7 @@ const Scene = (props) => {
 
       <Lights index={props.index} />
 
-      <Perf position="bottom-left" />
+      {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
         <Day1 positions={positions} sceneIndex={props.index} />

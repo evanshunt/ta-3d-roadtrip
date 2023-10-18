@@ -1,0 +1,5082 @@
+{
+  "sheetsById": {
+    "Scene": {
+      "staticOverrides": {
+        "byObject": {
+          "Camera": {
+            "far": 1997.0000000000005,
+            "near": 0.1,
+            "zoom": 2.5000000000000027
+          },
+          "Tilt Shift": {
+            "position": {
+              "x": 4.087617278036152,
+              "y": 0,
+              "z": 0.0003798556281837673
+            },
+            "scale": {
+              "x": 1.5400000000000003
+            },
+            "rotation": {
+              "y": 0.41000000000000003
+            },
+            "blur": 0.7215189873417719,
+            "taper": 0.3477848101265823
+          },
+          "asdasdasd": {
+            "blur": 0.5822784810126581
+          },
+          "Cave and Basin National Historic Site": {
+            "scale": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          },
+          "The Fairmont Banff Springs Hotel": {
+            "scale": {
+              "y": 0,
+              "z": 0
+            }
+          },
+          "Banff Cloud 2": {
+            "scale": {
+              "x": 2,
+              "y": 2,
+              "z": 2
+            }
+          },
+          "Banff Cloud 1": {
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "rotation": {
+              "x": 0.019999999999999997
+            }
+          },
+          "Lake Louise Cloud 2": {
+            "scale": {
+              "x": 0.5,
+              "y": 0.5,
+              "z": 0.5
+            }
+          },
+          "Road": {
+            "time": 0
+          },
+          "Scene": {
+            "position": {
+              "x": 0.6949055925338259,
+              "y": 0,
+              "z": 4.370262890235873
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site": {
+            "scale": {
+              "x": 0.1,
+              "y": 0.1,
+              "z": 0.1
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site": {
+            "scale": {
+              "x": 0.02,
+              "y": 0.02,
+              "z": 0.02
+            },
+            "position": {
+              "y": -1.4199999999999857
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site": {
+            "scale": {
+              "x": 0.04,
+              "y": 0.04,
+              "z": 0.04
+            },
+            "position": {
+              "y": -0.9800000000000011
+            }
+          },
+          "Pins / Banff Gondola / Stem Banff Gondola": {
+            "scale": {
+              "x": 0.075,
+              "y": 0.2,
+              "z": 0.075
+            }
+          }
+        }
+      },
+      "sequence": {
+        "subUnitsPerUnit": 30,
+        "length": 24,
+        "type": "PositionalSequence",
+        "tracksByObject": {
+          "Camera": {
+            "trackData": {
+              "zBTFPTuyjP": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "QwXsll6thq",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "mw546YNawt",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": -4.243981486359008
+                  },
+                  {
+                    "id": "FdB2hqECHW",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.798976705621499
+                  }
+                ]
+              },
+              "OrCNGlUTQ-": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "Czoge89fxj",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 93
+                  },
+                  {
+                    "id": "0BtZXChWQw",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 9.77797347187122
+                  },
+                  {
+                    "id": "9o5WyD3rGL",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 3.354681552313728
+                  }
+                ]
+              },
+              "EYyTfcXrXv": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "_usRegJAb5",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 5
+                  },
+                  {
+                    "id": "UOQpVGrkQo",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 9.20451736601444
+                  },
+                  {
+                    "id": "SgKvhejRd-",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 10.222633697035238
+                  }
+                ]
+              },
+              "52SpIdgZ2K": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"rotation\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "EXio1hWrom",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": -1.5707963267948966
+                  },
+                  {
+                    "id": "Q5pPmwXmqQ",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.6113387018423626
+                  }
+                ]
+              },
+              "OTJVom3qs2": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"rotation\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "gM6DhJXVLT",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "AZ6rGRCBNa",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.24913457409225773
+                  }
+                ]
+              },
+              "B5GAfA8jt0": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"rotation\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "QEUVPtvRAq",
+                    "position": 1.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "dBbradjSkj",
+                    "position": 3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.024770579964701812
+                  }
+                ]
+              },
+              "dctwPbjWCN": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"fov\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "zBTFPTuyjP",
+              "[\"position\",\"y\"]": "OrCNGlUTQ-",
+              "[\"position\",\"z\"]": "EYyTfcXrXv",
+              "[\"rotation\",\"x\"]": "52SpIdgZ2K",
+              "[\"rotation\",\"y\"]": "OTJVom3qs2",
+              "[\"rotation\",\"z\"]": "B5GAfA8jt0",
+              "[\"fov\"]": "dctwPbjWCN"
+            }
+          },
+          "Banff Clouds": {
+            "trackData": {
+              "YqOc32LSuA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Clouds:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "YsXBEu8B1f",
+                    "position": 3.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "fsTYfZeFSS",
+                    "position": 4.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.3199999999999945
+                  }
+                ]
+              },
+              "W1_hQewvf8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Clouds:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "dnpleusSxq",
+                    "position": 3.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "jGx4s7FDdd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Clouds:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "K-8sFBDpnO",
+                    "position": 3.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "YqOc32LSuA",
+              "[\"position\",\"y\"]": "W1_hQewvf8",
+              "[\"position\",\"z\"]": "jGx4s7FDdd"
+            }
+          },
+          "Banff Cloud 1": {
+            "trackData": {
+              "4UexcBMBj1": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 1:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "bOrW8NTLcK": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 1:[\"position\",\"y\"]",
+                "keyframes": []
+              },
+              "A-PfocwU-X": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 1:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "4UexcBMBj1",
+              "[\"position\",\"y\"]": "bOrW8NTLcK",
+              "[\"position\",\"z\"]": "A-PfocwU-X"
+            }
+          },
+          "Banff Upper Hot Springs": {
+            "trackData": {
+              "NX4PkbZBE7": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "GavQr0Ph66",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "6DYZG2vcFq",
+                    "position": 17.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "L0TCsIumfo",
+                    "position": 18.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "TFs8gNTMii": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "vrlqs7EnpL",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "S49LDEQ-Ur",
+                    "position": 17.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "LOZUoDVxOt",
+                    "position": 18.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "wn3RlSX_tP": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "yIX95LUpDk",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "0E5d1A4Eme",
+                    "position": 17.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "lBz5IAn2co",
+                    "position": 18.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "3sw2jshbJn": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"x\"]",
+                "keyframes": []
+              },
+              "bsq65LAANd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"y\"]",
+                "keyframes": []
+              },
+              "MIuAdHs3wQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"rotation\",\"z\"]",
+                "keyframes": []
+              },
+              "I7gqvkS5G8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "9gZ_tZUv1e",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.6
+                  }
+                ]
+              },
+              "UK5jHu2wn7": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "ErCiXdeqHg",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.0999999999999999
+                  },
+                  {
+                    "id": "F3lQeIuAEQ",
+                    "position": 17.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  },
+                  {
+                    "id": "j_wYt-5gzI",
+                    "position": 18.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.1
+                  }
+                ]
+              },
+              "MqCT94gaRO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Upper Hot Springs:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "h_DtLRfOCL",
+                    "position": 16.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.98
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "NX4PkbZBE7",
+              "[\"scale\",\"y\"]": "TFs8gNTMii",
+              "[\"scale\",\"z\"]": "wn3RlSX_tP",
+              "[\"rotation\",\"x\"]": "3sw2jshbJn",
+              "[\"rotation\",\"y\"]": "bsq65LAANd",
+              "[\"rotation\",\"z\"]": "MIuAdHs3wQ",
+              "[\"position\",\"x\"]": "I7gqvkS5G8",
+              "[\"position\",\"y\"]": "UK5jHu2wn7",
+              "[\"position\",\"z\"]": "MqCT94gaRO"
+            }
+          },
+          "Banff Cloud 2": {
+            "trackData": {
+              "7avMhSoynT": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "Q62GCYe2-h": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"y\"]",
+                "keyframes": []
+              },
+              "yVj8OKbsIn": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "Om78LEflLJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"x\"]",
+                "keyframes": []
+              },
+              "dBCnD6ihKb": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"y\"]",
+                "keyframes": []
+              },
+              "PTG1L6zaOF": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Cloud 2:[\"rotation\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "7avMhSoynT",
+              "[\"position\",\"y\"]": "Q62GCYe2-h",
+              "[\"position\",\"z\"]": "yVj8OKbsIn",
+              "[\"rotation\",\"x\"]": "Om78LEflLJ",
+              "[\"rotation\",\"y\"]": "dBCnD6ihKb",
+              "[\"rotation\",\"z\"]": "PTG1L6zaOF"
+            }
+          },
+          "Lake Minnewanka Cruise": {
+            "trackData": {
+              "GQHnBrxn5s": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "kt96XtjQV6",
+                    "position": 10.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "ikZ7tJhzsM",
+                    "position": 10.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "jzr3o_Ay6P",
+                    "position": 11.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "gXfOiTR73c",
+                    "position": 12.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "WT68wyaw0c": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "tlxKW4GY9z",
+                    "position": 10.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "w_jOz8wQAf",
+                    "position": 10.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "mZ7tBnk4K3",
+                    "position": 11.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "xe5li6cDzY",
+                    "position": 12.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "N1Jvp5BjjA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "JE3x9V6J2S",
+                    "position": 10.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "weKTG-R1Zo",
+                    "position": 10.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "5v5ISvfI_T",
+                    "position": 11.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "Lb0qZMHgAH",
+                    "position": 12.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "UrZnzYRN4n": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"rotation\",\"x\"]",
+                "keyframes": []
+              },
+              "vjvggM8-vD": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"rotation\",\"y\"]",
+                "keyframes": []
+              },
+              "-AYNgcokRt": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Minnewanka Cruise:[\"rotation\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "GQHnBrxn5s",
+              "[\"scale\",\"y\"]": "WT68wyaw0c",
+              "[\"scale\",\"z\"]": "N1Jvp5BjjA",
+              "[\"rotation\",\"x\"]": "UrZnzYRN4n",
+              "[\"rotation\",\"y\"]": "vjvggM8-vD",
+              "[\"rotation\",\"z\"]": "-AYNgcokRt"
+            }
+          },
+          "Lake Louise Cloud": {
+            "trackData": {
+              "NcdRx00NzD": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "Or5XVqsNGr": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"y\"]",
+                "keyframes": []
+              },
+              "ZivvXfbec9": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "NcdRx00NzD",
+              "[\"position\",\"y\"]": "Or5XVqsNGr",
+              "[\"position\",\"z\"]": "ZivvXfbec9"
+            }
+          },
+          "Lake Louise Cloud 2": {
+            "trackData": {
+              "pztShVWWpg": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud 2:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "3MfTRsGVsC": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud 2:[\"position\",\"y\"]",
+                "keyframes": []
+              },
+              "Mz_5Af_xGk": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Cloud 2:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "pztShVWWpg",
+              "[\"position\",\"y\"]": "3MfTRsGVsC",
+              "[\"position\",\"z\"]": "Mz_5Af_xGk"
+            }
+          },
+          "Lake Agnes Tea House": {
+            "trackData": {
+              "Q26k13vIoQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Agnes Tea House:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "xOtPwTqvMq",
+                    "position": 17,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "O8Bi4FTdVj",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "6pAGCia1Ln",
+                    "position": 20.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "H70jXg6tPb",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "FfAHkRttZa": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Agnes Tea House:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "o37M6Vzhyv",
+                    "position": 17,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "B8bTI2dJqU",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "92OM45yuer",
+                    "position": 20.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "m3Nc06Y4L5",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "yDEUckIA0J": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Agnes Tea House:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "HtHqOLqWP2",
+                    "position": 17,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "nSt5eT4LE9",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "2PCPzTAIA3",
+                    "position": 20.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "NH_DATVAcR",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "Q26k13vIoQ",
+              "[\"scale\",\"y\"]": "FfAHkRttZa",
+              "[\"scale\",\"z\"]": "yDEUckIA0J"
+            }
+          },
+          "Lake Louise Ski Resort": {
+            "trackData": {
+              "kar1lHtGDV": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Ski Resort:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "RRq5lGPwEy",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "zUHuh1zaP8",
+                    "position": 22.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "DSXN1OIixX": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Ski Resort:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "ur_vDT_l8o",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "1SE4IxZqVF",
+                    "position": 22.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "wKBMAglK4F": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Lake Louise Ski Resort:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "kPV33n5Wuj",
+                    "position": 21,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "CVfrCDmJsw",
+                    "position": 22.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "kar1lHtGDV",
+              "[\"scale\",\"y\"]": "DSXN1OIixX",
+              "[\"scale\",\"z\"]": "wKBMAglK4F"
+            }
+          },
+          "Tilt Shift": {
+            "trackData": {
+              "eCsvZn3bxV": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Tilt Shift:[\"blur\"]",
+                "keyframes": [
+                  {
+                    "id": "PkfQ8xcizQ",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.1582278481012655
+                  },
+                  {
+                    "id": "6Ip2z1CgoR",
+                    "position": 1.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.5126582278481008
+                  },
+                  {
+                    "id": "LqvZzz1TJv",
+                    "position": 2.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.055
+                    ],
+                    "type": "bezier",
+                    "value": 0.5126582278481008
+                  },
+                  {
+                    "id": "DyGeml0PZk",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.675,
+                      0.19,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.12658227848101233
+                  }
+                ]
+              },
+              "WQjMqHZ-YT": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Tilt Shift:[\"taper\"]",
+                "keyframes": [
+                  {
+                    "id": "U-ixqwZOfn",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.803481012658228
+                  },
+                  {
+                    "id": "OWjXzlGdhK",
+                    "position": 1.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.5808628107863539
+                  },
+                  {
+                    "id": "x8BN_ghHTw",
+                    "position": 2.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.055
+                    ],
+                    "type": "bezier",
+                    "value": 0.3477848101265823
+                  },
+                  {
+                    "id": "22sNmePaRC",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.675,
+                      0.19,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.626582278481013
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"blur\"]": "eCsvZn3bxV",
+              "[\"taper\"]": "WQjMqHZ-YT"
+            }
+          },
+          "Cave and Basin National Historic Site": {
+            "trackData": {
+              "9OLE1xblQL": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "hukp2QRzcf",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "UHjA2RdsID",
+                    "position": 6.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "MhPj34emcq",
+                    "position": 7.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "HIYYZJM0Cs",
+                    "position": 8.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "hxITOOISHI": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "LdlgqodnY3",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "uWrDkRRCzL",
+                    "position": 6.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "rekBKv8oQL",
+                    "position": 7.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "y6vpxIcpHY",
+                    "position": 8.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "n8Xp3x5-Ms": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "6RQ2lpN7At",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "rpR_XGS3KM",
+                    "position": 6.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "tfq0rUunvM",
+                    "position": 7.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "sAiYea8QTj",
+                    "position": 8.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "AQvd1fEh6c": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "sx77lkaT9w",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.575
+                  }
+                ]
+              },
+              "6Twz3BmSW_": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "rDSLH3-sM6",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.18
+                  },
+                  {
+                    "id": "T7VyzOLHuk",
+                    "position": 6.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  },
+                  {
+                    "id": "zgsmU7L6he",
+                    "position": 8.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.1
+                  }
+                ]
+              },
+              "xrPvxOnFyO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "-8CPTJMonQ",
+                    "position": 5.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.775
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "9OLE1xblQL",
+              "[\"scale\",\"y\"]": "hxITOOISHI",
+              "[\"scale\",\"z\"]": "n8Xp3x5-Ms",
+              "[\"position\",\"x\"]": "AQvd1fEh6c",
+              "[\"position\",\"y\"]": "6Twz3BmSW_",
+              "[\"position\",\"z\"]": "xrPvxOnFyO"
+            }
+          },
+          "The Fairmont Banff Springs Hotel": {
+            "trackData": {
+              "B9cxjD5Ugr": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "The Fairmont Banff Springs Hotel:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "EWdA83epua",
+                    "position": 9.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "nFTcYPLUm9",
+                    "position": 9.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "-708xI-1rF",
+                    "position": 10.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "v-MzGTN2Lo",
+                    "position": 11.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "-C3iAfdDy2": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "The Fairmont Banff Springs Hotel:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "q3L6NjIMGj",
+                    "position": 9.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "iaAGvj-CD7",
+                    "position": 9.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "5Ih1ZB6aj6",
+                    "position": 10.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "TwtuXrKSRK",
+                    "position": 11.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "IjrCdYT4Fr": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "The Fairmont Banff Springs Hotel:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "enVH_1yzkS",
+                    "position": 9.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "KRAqa6QKzw",
+                    "position": 9.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "Zt3OGSPOJr",
+                    "position": 10.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "CyOhhSbkrX",
+                    "position": 11.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "B9cxjD5Ugr",
+              "[\"scale\",\"y\"]": "-C3iAfdDy2",
+              "[\"scale\",\"z\"]": "IjrCdYT4Fr"
+            }
+          },
+          "Banff Gondola": {
+            "trackData": {
+              "6BPLoriEa2": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "IuxPpR_wEz",
+                    "position": 9.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "DpXZqaPfud",
+                    "position": 10.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "2Ndo-eNfnx",
+                    "position": 11.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "CQxC6SEXKs",
+                    "position": 12.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "3Hhfe__aWi": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "YDhxIBZWEA",
+                    "position": 9.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "FYrz5m694B",
+                    "position": 10.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "XYyH-IKp6H",
+                    "position": 11.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "b_T4II_k5K",
+                    "position": 12.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "od4Ki6n3gd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "dCW-EkuEtL",
+                    "position": 9.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "fGTPrOw4uJ",
+                    "position": 10.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "6ryFfUi5nj",
+                    "position": 11.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "URfG9YN9yZ",
+                    "position": 12.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "eAbcqQSDSK": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "gYiqfDUSvT",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.7
+                  }
+                ]
+              },
+              "eZZMm1DbvR": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "73RvqDb4q1",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.0999999999999999
+                  },
+                  {
+                    "id": "AjdYyLohC6",
+                    "position": 10.267,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  },
+                  {
+                    "id": "LIHh-H-rSu",
+                    "position": 11.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  },
+                  {
+                    "id": "GwA2JwhXIj",
+                    "position": 12.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.1
+                  }
+                ]
+              },
+              "swyUtm2v-c": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Banff Gondola:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "uHkN3L-Chv",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.88
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "6BPLoriEa2",
+              "[\"scale\",\"y\"]": "3Hhfe__aWi",
+              "[\"scale\",\"z\"]": "od4Ki6n3gd",
+              "[\"position\",\"x\"]": "eAbcqQSDSK",
+              "[\"position\",\"y\"]": "eZZMm1DbvR",
+              "[\"position\",\"z\"]": "swyUtm2v-c"
+            }
+          },
+          "Road": {
+            "trackData": {
+              "2lyfGnJzX8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Road:[\"time\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"time\"]": "2lyfGnJzX8"
+            }
+          },
+          "Cave and Basin National Historic Site: line": {
+            "trackData": {
+              "SrdCG5Dqes": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site: line:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "MSV9woVvmJ",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.575
+                  },
+                  {
+                    "id": "4SnP6Mo-qT",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": -4.575
+                  },
+                  {
+                    "id": "49l9kHnvCN",
+                    "position": 9.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.575
+                  }
+                ]
+              },
+              "AbayeUTmXi": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site: line:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "OWGOYTSlWl",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.5
+                  },
+                  {
+                    "id": "5IVla7zoBL",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.5
+                  },
+                  {
+                    "id": "7KtsSqt3wX",
+                    "position": 9.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.025
+                  }
+                ]
+              },
+              "1jC98SXdK1": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cave and Basin National Historic Site: line:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "C6T2I0t35L",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.755
+                  },
+                  {
+                    "id": "wa1WC7k9Uj",
+                    "position": 7.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 2.755
+                  },
+                  {
+                    "id": "3Snkp-faYM",
+                    "position": 9.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.755
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "SrdCG5Dqes",
+              "[\"position\",\"y\"]": "AbayeUTmXi",
+              "[\"position\",\"z\"]": "1jC98SXdK1"
+            }
+          },
+          "Sky Bistro": {
+            "trackData": {
+              "vcW6ghvoZB": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "Br6WwkTcYH",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.7
+                  }
+                ]
+              },
+              "9kmxPaw6YJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "yayhBKLMxL",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.0999999999999999
+                  },
+                  {
+                    "id": "ahZy-zMBvH",
+                    "position": 15.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  },
+                  {
+                    "id": "DB-7B7fJDQ",
+                    "position": 16,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.1
+                  }
+                ]
+              },
+              "ZTz3PjRP3f": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "ZtquzzuJJo",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.88
+                  }
+                ]
+              },
+              "9TV6r1Gl9F": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "X9sIY4QlwX",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "wpZkKy2sqA",
+                    "position": 15.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "qtdXNFBYes",
+                    "position": 16,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "BhdDYaKamx": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "2awJ8OYeIB",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "XWTe07xeLw",
+                    "position": 15.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "YR_8NfFAXs",
+                    "position": 16,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              },
+              "iQzqWz2U0K": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Sky Bistro:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "7DcNKy6bZo",
+                    "position": 13.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "jIpXztu4zp",
+                    "position": 15.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "ma17GTkriT",
+                    "position": 16,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "vcW6ghvoZB",
+              "[\"position\",\"y\"]": "9kmxPaw6YJ",
+              "[\"position\",\"z\"]": "ZTz3PjRP3f",
+              "[\"scale\",\"x\"]": "9TV6r1Gl9F",
+              "[\"scale\",\"y\"]": "BhdDYaKamx",
+              "[\"scale\",\"z\"]": "iQzqWz2U0K"
+            }
+          },
+          "Fairmont Banff Springs Hotel": {
+            "trackData": {
+              "0HBWIKF9YE": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "7yQSbrxBiq",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.5
+                  }
+                ]
+              },
+              "kMrF8IktWO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "m_C2ghiWr9",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 1.0799999999999998
+                  },
+                  {
+                    "id": "RJtDk83EnL",
+                    "position": 19.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.25
+                  }
+                ]
+              },
+              "D-hh0-oMQA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "ejPPE0ISWE",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.8
+                  }
+                ]
+              },
+              "m3-PQ0sZro": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "mucKaYJfCB",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "7-1_kEkyB-",
+                    "position": 19.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  }
+                ]
+              },
+              "dP6rSVnbH1": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "w2U5tyonKt",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "J0PYMVAaA1",
+                    "position": 19.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  }
+                ]
+              },
+              "hVMgT2Cj-z": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Fairmont Banff Springs Hotel:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "QWgMbqhX_E",
+                    "position": 18,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 0.075
+                  },
+                  {
+                    "id": "85p2QNnWDQ",
+                    "position": 19.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "0HBWIKF9YE",
+              "[\"position\",\"y\"]": "kMrF8IktWO",
+              "[\"position\",\"z\"]": "D-hh0-oMQA",
+              "[\"scale\",\"x\"]": "m3-PQ0sZro",
+              "[\"scale\",\"y\"]": "dP6rSVnbH1",
+              "[\"scale\",\"z\"]": "hVMgT2Cj-z"
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site": {
+            "trackData": {
+              "B0XDi4z2w1": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "1KsiAeVvrN",
+                    "position": 2.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "Wq9tvruTLJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "PE1STPLXdx",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "N7X1jC-X7T",
+                    "position": 2.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "fEOxGJ_xaC",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.185
+                  },
+                  {
+                    "id": "Qq7CzxdBnt",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.30500000000000005
+                  },
+                  {
+                    "id": "QJ6NQEszv6",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.30500000000000005
+                  },
+                  {
+                    "id": "2MFvQN7vIg",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "K2aQQ_aiB2": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "kJzIONzA2y",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "vLItC_Xx2g",
+                    "position": 2.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "MT2wsbY-0B": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "Ewgq-ETqB5",
+                    "position": 2.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "I01rqJS3_x",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "d1p1Ig8gLL",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "8cgdtPG1iS",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "WOMajnFTrZ",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "pyrkgBPCG9": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "QW3RCImxpp",
+                    "position": 2.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "jtDBYZKhz9",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "zXF4jMhqrk",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "zAjWGOw6-V",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "-6uE6pRaZm",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "b4jTGdG-HQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Cave and Basin National Historic Site:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "QtzrQ1zkHx",
+                    "position": 2.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "HuLRCVE7JA",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "mOgfFXb-FH",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "Xq3Kze-LMd",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "A4l4Eaui1X",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "B0XDi4z2w1",
+              "[\"position\",\"y\"]": "Wq9tvruTLJ",
+              "[\"position\",\"z\"]": "K2aQQ_aiB2",
+              "[\"scale\",\"x\"]": "MT2wsbY-0B",
+              "[\"scale\",\"y\"]": "pyrkgBPCG9",
+              "[\"scale\",\"z\"]": "b4jTGdG-HQ"
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site": {
+            "trackData": {
+              "RxWBVH94TC": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "obQAtNkB3p": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "JzGqzmfuD7",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.13
+                  },
+                  {
+                    "id": "cRSV89Wjxe",
+                    "position": 2.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.13
+                  },
+                  {
+                    "id": "14hKFYAwas",
+                    "position": 2.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": -0.08
+                  },
+                  {
+                    "id": "DgkZBo_B1a",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "tlnO4w1pwy",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "A5bo4piJf1",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.13
+                  }
+                ]
+              },
+              "K8Ti7im7eJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "gb046nK5BX",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "bF5eRTFGXg": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"scale\",\"x\"]",
+                "keyframes": []
+              },
+              "uaN4cIQ3vO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"scale\",\"y\"]",
+                "keyframes": []
+              },
+              "TpFbC6_VVX": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Stem Cave and Basin National Historic Site:[\"scale\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "RxWBVH94TC",
+              "[\"position\",\"y\"]": "obQAtNkB3p",
+              "[\"position\",\"z\"]": "K8Ti7im7eJ",
+              "[\"scale\",\"x\"]": "bF5eRTFGXg",
+              "[\"scale\",\"y\"]": "uaN4cIQ3vO",
+              "[\"scale\",\"z\"]": "TpFbC6_VVX"
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site": {
+            "trackData": {
+              "XYZ8jjL5zo": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "u8qor3HDzn",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "HNHl2xQYZ_": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "GCdqpW3S3n",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "vYhSggO3eU",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "0NUnisMvDK",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.185
+                  },
+                  {
+                    "id": "tllRjOKI4U",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.305
+                  },
+                  {
+                    "id": "V_EWIXP1Cl",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.305
+                  },
+                  {
+                    "id": "EpUyRtdVrS",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "BoJGLPxfYA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "adQyrwzizX",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.02
+                  },
+                  {
+                    "id": "uMNzmIa7vJ",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.02
+                  }
+                ]
+              },
+              "fwEkPZ6ze8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "GNNdWV0QuB",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "HfEby862kO",
+                    "position": 2.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "Sr9v5g5b6Y",
+                    "position": 2.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "vN0dZk-a8n",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.035
+                  },
+                  {
+                    "id": "tQYA3jjMzR",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "d4jE3i9eIe",
+                    "position": 3.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "qlK6iBOmPg",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "DE8LfeyI1o",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "TVEEqieeEE",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "NQAaZfwj6i": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "7yevQKWDO7",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "GsbDt_WE5y",
+                    "position": 2.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "uF-ea_6k1a",
+                    "position": 2.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "bNYSatuzkl",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.035
+                  },
+                  {
+                    "id": "t-ePd1vhZd",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "U95mJS7Zr8",
+                    "position": 3.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "GpSmAjs9B6",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "FlSBMJEagq",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "gfopNv01am",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "1Yv75OFm2W": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Background Halo Cave and Basin National Historic Site:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "z6JySSHWv_",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "jP0Hb9FKw2",
+                    "position": 2.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "mQ2-6TgK3x",
+                    "position": 2.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "0bu-UH4L36",
+                    "position": 2.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.035
+                  },
+                  {
+                    "id": "qRGiFxda-p",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "qpg_g3Ulcq",
+                    "position": 3.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "6MLrlAFUxc",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "I8cCHunMNu",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "sPLqEPR_vY",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "XYZ8jjL5zo",
+              "[\"position\",\"y\"]": "HNHl2xQYZ_",
+              "[\"position\",\"z\"]": "BoJGLPxfYA",
+              "[\"scale\",\"x\"]": "fwEkPZ6ze8",
+              "[\"scale\",\"y\"]": "NQAaZfwj6i",
+              "[\"scale\",\"z\"]": "1Yv75OFm2W"
+            }
+          },
+          "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site": {
+            "trackData": {
+              "_mS6fTSMxX": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "v-QFFoD0H4",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "u8R7Oeip--",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "wdWifvZQKO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "OiLWAsgoa6",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "TUmSeBZ0wH",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "quPDkfLPuf": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "LzCEJRrbQ9",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "pRd3BH2UAu",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "TOLFrPgM48": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "n4sBFRqVHv",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "N0gLtwIj05": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "ks1QFKvHvz",
+                    "position": 2.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "n0J--14RI8",
+                    "position": 2.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "ClBNhpw1p5",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  },
+                  {
+                    "id": "qk7OIFtHHy",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  },
+                  {
+                    "id": "ZB1ZFZYpTF",
+                    "position": 3.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  }
+                ]
+              },
+              "NkXNF1Q8U3": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "fLUNPKCtgI",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "EAj0bqs-74": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Cave and Basin National Historic Site / Pin Cave and Basin National Historic Site:[\"opacity\"]",
+                "keyframes": [
+                  {
+                    "id": "s76ZwuyPgN",
+                    "position": 3.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "IQLZotIIKy",
+                    "position": 3.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "EO1tpqW8W6",
+                    "position": 3.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.27
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "_mS6fTSMxX",
+              "[\"scale\",\"y\"]": "wdWifvZQKO",
+              "[\"scale\",\"z\"]": "quPDkfLPuf",
+              "[\"position\",\"x\"]": "TOLFrPgM48",
+              "[\"position\",\"y\"]": "N0gLtwIj05",
+              "[\"position\",\"z\"]": "NkXNF1Q8U3",
+              "[\"opacity\"]": "EAj0bqs-74"
+            }
+          },
+          "Pins / Banff Gondola / Pin Banff Gondola": {
+            "trackData": {
+              "eBfrXTHJSB": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"opacity\"]",
+                "keyframes": [
+                  {
+                    "id": "YjHtlKUXKw",
+                    "position": 4.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "zOYzmRMVfV",
+                    "position": 5.167,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "2g4ZMGAxps",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "4cW4BfCevU",
+                    "position": 5.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.27
+                  }
+                ]
+              },
+              "51NtvmwtkH": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "-vxa4SK0Jc",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "iLOUVbIcTg",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "HkppobA9OJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "8aRQN4jxFG",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "bfmd0oRNXd",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "XBo0UIthPG": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "B3fd4cPD4y",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.2
+                  },
+                  {
+                    "id": "dAQZILP3_q",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "_WPUxCuezW": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "OSCbG5fCac",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "4bP7BHWln1": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "cNrAx-nJbz",
+                    "position": 4.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "tcpocGx_PN",
+                    "position": 4.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "40F1Fv7fUA",
+                    "position": 5.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  },
+                  {
+                    "id": "-IUCLZH1ue",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  },
+                  {
+                    "id": "5UUFKx7W6u",
+                    "position": 5.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.3050000000000001
+                  }
+                ]
+              },
+              "eoKWXlssXZ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Pin Banff Gondola:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "8932O6cKAR",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"opacity\"]": "eBfrXTHJSB",
+              "[\"scale\",\"x\"]": "51NtvmwtkH",
+              "[\"scale\",\"y\"]": "HkppobA9OJ",
+              "[\"scale\",\"z\"]": "XBo0UIthPG",
+              "[\"position\",\"x\"]": "_WPUxCuezW",
+              "[\"position\",\"y\"]": "4bP7BHWln1",
+              "[\"position\",\"z\"]": "eoKWXlssXZ"
+            }
+          },
+          "Pins / Banff Gondola / Stem Banff Gondola": {
+            "trackData": {
+              "96ygRRBqNT": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Stem Banff Gondola:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "OWRqRGfN-S": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Stem Banff Gondola:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "vHVgDDyDxv",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.27
+                  },
+                  {
+                    "id": "ILSV-lwecx",
+                    "position": 3.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.27
+                  },
+                  {
+                    "id": "YqRzXDw5jm",
+                    "position": 4.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "JCMZg71kTC",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "dKNQlGiVrc",
+                    "position": 5.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.27
+                  }
+                ]
+              },
+              "hyj-Cq9xcl": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Stem Banff Gondola:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "96ygRRBqNT",
+              "[\"position\",\"y\"]": "OWRqRGfN-S",
+              "[\"position\",\"z\"]": "hyj-Cq9xcl"
+            }
+          },
+          "Pins / Banff Gondola / Background Banff Gondola": {
+            "trackData": {
+              "T-N4rcxJv4": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "qZ_EePK45I",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "2Fl6lXlirm": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "Kw3h8NwjxI",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "tULgkELqOz",
+                    "position": 4.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.30500000000000005
+                  },
+                  {
+                    "id": "w3JNV39U_o",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.30500000000000005
+                  },
+                  {
+                    "id": "CZE7fcYnQ3",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "Y3WEyBFCLh": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "lGg-hh8tgw",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.02
+                  }
+                ]
+              },
+              "EH92QMHQHp": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "CA2hyqPbC5",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "D0DcuU2cDJ",
+                    "position": 4.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "_Vked13uBD",
+                    "position": 5.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "8FzjbDbDG_",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "qkbvGH-i6d",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "jFe_ShBvWv": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "BIwBQUTEPw",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "v81SEvmyfS",
+                    "position": 4.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "__nAVUlH8L",
+                    "position": 5.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "B1gKo3TizR",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "HmgjSLPE4k",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "z6rTcnBHZ0": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Banff Gondola:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "1Q18NSZVqp",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "OwB72UTxOu",
+                    "position": 4.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "v-po6VFMmn",
+                    "position": 5.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "_LQ0MJG90E",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "y7cVFbbCH7",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "T-N4rcxJv4",
+              "[\"position\",\"y\"]": "2Fl6lXlirm",
+              "[\"position\",\"z\"]": "Y3WEyBFCLh",
+              "[\"scale\",\"x\"]": "EH92QMHQHp",
+              "[\"scale\",\"y\"]": "jFe_ShBvWv",
+              "[\"scale\",\"z\"]": "z6rTcnBHZ0"
+            }
+          },
+          "Pins / Banff Gondola / Background Halo Banff Gondola": {
+            "trackData": {
+              "2cD9_1M3BB": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "8-u_LIus1B": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "014lYC2wHd",
+                    "position": 3.867,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "MyBtBHcHRH",
+                    "position": 4.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.305
+                  },
+                  {
+                    "id": "BcEHzcZ_UQ",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.305
+                  },
+                  {
+                    "id": "rKY__52Oa_",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "ij5fjUFn5o": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "0HZGylnwOJ",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.03
+                  }
+                ]
+              },
+              "Y52YgP4ivm": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "xzEWLpmrSE",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "8wgsarpq1a",
+                    "position": 4.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "OxypNaJ3YP",
+                    "position": 4.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "NcfabudCV2",
+                    "position": 5.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "cZerYCoIn_",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "P6X2yTINzy",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "l_9DXE9ALU": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "PQ6iI3io8-",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "Y8hc-lf_zK",
+                    "position": 4.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "H2YQxgVTqc",
+                    "position": 4.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "IsKBkOAXVC",
+                    "position": 5.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "CUxrfcmb-v",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "xKIF_fC_jl",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "-fLIvb6NJV": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Banff Gondola / Background Halo Banff Gondola:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "MZwTuhylR2",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "9fxa2RZffZ",
+                    "position": 4.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "iz1oC--tya",
+                    "position": 4.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "y5DtkPcQHO",
+                    "position": 5.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.215,
+                      0.61
+                    ],
+                    "type": "bezier",
+                    "value": 0.195
+                  },
+                  {
+                    "id": "cs5Fxc6bXl",
+                    "position": 5.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.355,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "RSGd9VLitA",
+                    "position": 5.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "2cD9_1M3BB",
+              "[\"position\",\"y\"]": "8-u_LIus1B",
+              "[\"position\",\"z\"]": "ij5fjUFn5o",
+              "[\"scale\",\"x\"]": "Y52YgP4ivm",
+              "[\"scale\",\"y\"]": "l_9DXE9ALU",
+              "[\"scale\",\"z\"]": "-fLIvb6NJV"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": [
+    "JWKM_qOn331DMGVH",
+    "t5tiZE0GDu1ZJDE4",
+    "EfYFNGLPvo8dnyk3",
+    "oElAtrHo8WOlaoBf",
+    "av7oHtpAzKyKTg4C",
+    "q5h25tE8i-T4JMq9",
+    "g9ZPkgMhtClQh9PC",
+    "jez3cRPsBcUmuZhR",
+    "NrY4fDaVHchJDiNU",
+    "iTrX9ccuzRvOhxqW",
+    "RUdkFtZglLkDGBoa",
+    "SilFEX2K2NTmwgZJ",
+    "uEpO7kePcjki0qTO",
+    "sVW9XARRHuP7ZTcr",
+    "ZoXV6unfl6wGbiKz",
+    "vUVo-P9eg3jZJprj",
+    "3up_8AQDfNcRbYbg",
+    "ITunT6bw58hdXlBx",
+    "6-EJYRjaKKjSznvM",
+    "aegVIALHx8cFgvqh",
+    "EOQfowc725GIk4bo",
+    "1Y9M4ZHz57u_Su5N",
+    "KWyX-Z0TXfA6tM7U",
+    "Oec9KLuLaKsv_CbR",
+    "m8FsV2GVRxgNcIeg",
+    "MaHzfCa0s2Gtk4h3",
+    "3skoz1stScceXfGW",
+    "SLCfe8RSA5Qvp5L9",
+    "nmU5YJRsFrD96qOP",
+    "CsQHSv_LqY6iU1Gs",
+    "-6l3q5-mFRVrUuYQ",
+    "oWCSShnNFc9BM5qi",
+    "ZVAVw3y7WKXfQ7Ma",
+    "YjGlcfd6DYiDBpxt",
+    "kIyMSRUlchHFS_mI",
+    "7cMgk5f922sPA4ze",
+    "J6nil9itC5hvWwFf",
+    "VQY1gqtvklnYE6xH",
+    "5t49waSwALBMA_JL",
+    "17VuuFSWPxWTg1Kn",
+    "vOMeoKftMQGPDi5d",
+    "Vv3BTB69ODh67B4j",
+    "hlAFeK1RpOJjZp54",
+    "AvKZPb8l46OxFCV9",
+    "CS0BC5itPH_zpr_1",
+    "9PuLxBbVRMBz8c6h",
+    "s_6c9lGy7uJY-u8T",
+    "og1gyqnoyeWhsbJB",
+    "N4UZtSegRBRYuSPn",
+    "Kxz2X7tJ41_luujV"
+  ]
+}

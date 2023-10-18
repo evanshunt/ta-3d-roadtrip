@@ -1,6 +1,7 @@
 import React from "react";
+import caretImage from "../images/caret-right.svg";
 
-const Stop = ({ currDestination, stop }) => {
+const Stop = ({ currDestination, showInfo, stop }) => {
   return (
     <li
       className={`${
@@ -15,6 +16,13 @@ const Stop = ({ currDestination, stop }) => {
         alt=""
       />
       <strong className="itinerary__stop__name">{stop.details.title} </strong>
+      <button
+        label={"View stop details"}
+        className="itinerary__stop__button"
+        onClick={showInfo}
+      >
+        <img src={caretImage} alt="" />
+      </button>
     </li>
   );
 };

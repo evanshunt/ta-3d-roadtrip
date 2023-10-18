@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Perf } from "r3f-perf";
 // import {
@@ -8,74 +8,213 @@ import { Perf } from "r3f-perf";
 // } from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
-import { useFrame } from "@react-three/fiber";
-import { Billboard, Environment, OrbitControls, useScroll } from "@react-three/drei";
-import { val } from "@theatre/core";
+// import { useFrame } from "@react-three/fiber";
+import { Environment, OrbitControls } from "@react-three/drei";
+import { gsap } from "gsap";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
+// import { OrthographicCamera } from "@react-three/drei";
 import { Cloud } from "./Clouds.jsx";
-import Edges from "./models/Edges.jsx";
+import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
-import IceFieldsDecimated from "./models/IceFieldsDecimated.jsx";
-import Road from "./models/Road.jsx";
 
-import PlaneDecimated from "./models/PlaneDecimated.jsx";
+import Road from "./models/final/Road.jsx";
 import { editable as e } from "@theatre/r3f";
-import imageSrc from "/images/banff-upper-hot-springs-cropped.png";
-import ImagePin from "./models/ImagePin.jsx";
+
 import { useControls } from "leva";
+import { Top } from "./models/final/Top.jsx";
+import { Sides } from "./models/final/Sides.jsx";
+import { Plane } from "./models/final/Plane.jsx";
+
+import Day2 from "./days/Day2.jsx";
+import Day3 from "./days/Day3.jsx";
+
+// cam pos
+// [-4.95, 3.216, 10.292]
+
+const sequencePositions = {
+  caveAndBasin: "3.16f",
+};
+
+const cloudTimeline = gsap.timeline({
+  repeat: -1,
+});
+
+const animateCloud = (cloudRef, tl, cloudIndex) => {
+  const info = {
+    // Cloud 1
+    1: {
+      x: 1.7,
+      y: 0.85,
+      z: 1.3,
+      duration: 35,
+    },
+  };
+
+  tl.to(cloudRef.current.position, {
+    x: info[cloudIndex].x,
+    y: info[cloudIndex].y,
+    z: info[cloudIndex].z,
+    duration: info[cloudIndex].duration,
+    ease: "none",
+  });
+};
 
 const positions = {
-  // Banff Pins:
-  // banffUpperHotSprings: [5.3, 0.45, 5.81261631018495],
-  banffUpperHotSprings: [1.8, 0.475, 4.8],
-  // caveAndBasin: [4.803562672316764, 0.38, 5.51583179169875],
-  caveAndBasin: [1.35, 0.38, 4.5],
-  fairmontBanffSpringsHotel: [1.63, 0.4, 4.55],
-  // discoverBanffTours: [4.957273213327903, 0.25, 5.254568637726107],
-  discoverBanffTours: [1.8, 0.425, 4.22],
-  // gondola: [5.358368436662257, 0.33, 5.634275247444896],
-  gondola: [1.85, 0.475, 4.9],
-  // minnewankaCruise: [5.499478426406048, 0.33, 4.519515423876151],
-  minnewankaCruise: [1.85, 0.38, 3.82],
-  // Lake Louise Pins:
-  // moraineLake: [1.7, 0.4, 3.3],
-  moraineLake: [-1.7, 0.47, 2.82],
-  // lakeAgnesTeaHouse: [1.4, 0.5, 3.1],
-  lakeAgnesTeaHouse: [-2.1, 0.47, 2.35],
-  // lakeLouiseSkiResort: [1.9, 0.4, 2.8],
-  lakeLouiseSkiResort: [-1.6, 0.475, 1.67],
-  // fairmontChateauLakeLouise: [1.5, 0.4, 3.15],
-  fairmontChateauLakeLouise: [-1.9, 0.42, 2.35],
-  // Icefields Pins:
-  // columbiaIcefieldGlacierAdventure: [-2.8, 0.4, -3.2],
-  columbiaIcefieldGlacierAdventure: [-6.95, 0.425, -4.45],
-  // columbiaIcefieldSkywalk: [-2.75, 0.35, -3.25],
-  columbiaIcefieldSkywalk: [-7.1, 0.475, -4.45],
+  // Day 1:
+  // caveAndBasin: [-4.4, 1.18, 2.75],
+  caveAndBasin: [-4.5575, 1.05, 2.63],
+  // gondola: [-4.7, 1.2, 2.88],
+  gondola: [-4.69, 1.08, 2.859],
+  // skyBistro: [-4.69, 1.13, 2.88],
+  skyBistro: [-4.72, 1.13, 2.759],
+  // banffUpperHotSprings: [-4.6, 1.2, 2.98],
+  banffUpperHotSprings: [-4.69, 1.08, 2.859],
+  // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
+  fairmontBanffSpringsHotel: [-4.58, 1.05, 2.83],
+
+  // Day 2:
+  carterRyanGallery: [-4.3, 1.16, 2.88],
+  johnstonCanyon: [-4.0, 1.16, 1.88],
+  lakeLouiseGondola: [-2.9, 1.2, 0.73],
+  fairmontChateauLakeLouise: [-3.1, 1.18, 0.57],
+  fairview: [-3.1, 1.18, 0.57],
+
+  // Day 3:
+  columbiaIcefieldSkywalk: [1.63, 1.25, -2.9],
+  maligneCanyon: [5.3, 1.14, -5.5],
+  jasperSkyTram: [5.18, 1.13, -6.1],
+  fairmontJasperParkLodge: [5.4, 1.15, -5.6],
+  jasperPlanetarium: [5.4, 1.15, -5.6],
 };
 
 const Scene = (props) => {
+  const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
+  const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
+  const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
 
+  useEffect(() => {
+    if (props.index === 0 && props.started) {
+      setTimeout(() => {
+        animateCloud(cloudRef, cloudTimeline, 1);
+      }, props.animDuration + 4 * 1000);
+    }
+  }, [props.index, props.started]);
+
+  // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
+  //   cameraPositionX: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   cameraPositionY: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   cameraPositionZ: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  // });
+
+  // const { cloudPosX, cloudPosY, cloudPosZ } = useControls({
+  //   cloudPosX: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.01,
+  //   },
+  //   cloudPosY: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.01,
+  //   },
+  //   cloudPosZ: {
+  //     value: 0,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.01,
+  //   },
+  // });
+
+  // const { cloudScale } = useControls({
+  //   cloudScale: {
+  //     value: 0.1,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  // });
+
+  // const { fov } = useControls({
+  //   fov: {
+  //     value: 55,
+  //     min: 0,
+  //     max: 100,
+  //   },
+  // });
+
+  /*
+  camera stop 1
+  position: -4.76148947700402, 4.028310067018445, 9.902280289701652
+  rotation: -0.8278370080610934, -0.2551005789449138, -0.35099999999999976
+  -4.949944894060301, 3.2146815523137304, 10.292633697035237
+  -0.6078282406989428, -0.3810426971585241, 0.025860845931176678
+  
+  */
+
   return (
     <>
-    <Environment files={'/textures/table_mountain_2_4k.hdr'} intensity={0.6} />
+      <Environment
+        background
+        files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
+        intensity={2}
+      />
+      {/* <OrbitControls
+        autoRotate={false}
+        // position={cameraPosition}
+        position={[0, 93, 5]}
+        // rotation={cameraRotation}
+        rotation={[-1.5707963267948966, 0, 0]}
+        makeDefault={true}
+        onChange={(e) => {
+          const camera = e.target?.object;
+          if (!camera) return;
+          console.log(camera.position.toArray());
+          console.log(camera.rotation.toArray());
+        }}
+      /> */}
       <PerspectiveCamera
-        makeDefault
-        ref={cameraRef}
+        makeDefault={true}
+        // ref={cameraRef}
         theatreKey={"Camera"}
-        position={[0, 23, 0]}
-        fov={55}
-        rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        // position={cameraPosition}
+        // position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
+
+        position={[-5.163108645819346, 1.8345992465293988, 3.97]}
+        rotation={[
+          -0.7210839965680563, -0.5792947129698445, -0.448484711027097,
+        ]}
+        // rotation={[
+        //   -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
+        // ]}
+        // position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
+        // rotation={cameraRotation}
         // lookAt={lookAtRef}
+
         zoom={1}
       />
 
       {/* <OrthographicCamera
         makeDefault
-        theatreKey={"Camera"}
+        // theatreKey={"Camera"}
         near={-100}
         zoom={162}
+        ref={cameraRef}
         // position={[1.25, 0.35, 0.23]}
         // position={[0.9344612217659182, 0.3561940392504276, 0.8589575259686614]}
         position={[0.95, -2, 0.85]}
@@ -84,219 +223,62 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      {/* <OrbitControls
-        autoRotate={false}
-        makeDefault={false}
-        onUpdate={(e) => console.log(e)}
-      /> */}
+      <Lights index={props.index} />
 
-      <Lights />
-
-      {/* <Perf position="bottom-right" /> */}
+      <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* Banff Pins */}
-        {/* <FancyPin
-          castShadow
-          name={"Banff Upper Hot Springs"}
-          position={positions.banffUpperHotSprings}
-          // position={[positionX, positionY, positionZ]}
-        /> */}
-        {/* <Billboard follow={true}> */}
-        {/* <axesHelper
-          args={[5]}
-          setColors={["black", "black", "black"]}
-          position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        /> */}
-        {/* </Billboard> */}
+        {/* Day 1 */}
+        <Day1 positions={positions} sceneIndex={props.index} />
 
-        <ImagePin
-          imageSrc={"/images/banff-upper-hot-springs-cropped.png"}
-          scale={0.2}
-          name={"Banff Upper Hot Springs"}
-          position={positions.banffUpperHotSprings}
-        />
+        {/* Day 2 */}
+        {/* <Day2 positions={positions} /> */}
 
-        <ImagePin
-          imageSrc={"/images/banff-gondola-cropped.png"}
-          scale={0.2}
-          name={"Banff Gondola"}
-          position={positions.gondola}
-        />
+        {/* Day 3 */}
+        {/* <Day3 positions={positions} /> */}
 
-        <ImagePin
-          imageSrc={"/images/cave-and-basin-national-historic-site-cropped.png"}
-          scale={0.2}
-          name={"Cave and Basin National Historic Site"}
-          position={positions.caveAndBasin}
-        />
-
-        {/* 
-        <ImagePin
-          imageSrc={"/images/the-fairmont-banff-springs-hotel-cropped.png"}
-          scale={0.2}
-          name={"The Fairmont Banff Springs Hotel"}
-          position={positions.fairmontBanffSpringsHotel}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/discover-banff-tours-cropped.png"}
-          scale={0.2}
-          name={"Discover Banff Tours"}
-          position={positions.discoverBanffTours}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/lake-minnewanka-cruise-cropped.png"}
-          scale={0.2}
-          name={"Lake Minnewanka Cruise"}
-          position={positions.minnewankaCruise}
-        /> */}
-
-        {/* <ImagePin
-          imageSrc={"/images/moraine-lake-cropped.png"}
-          scale={0.2}
-          name={"Moraine Lake"}
-          position={positions.minnewankaCruise}
-        /> */}
-
-        <ImagePin
-          imageSrc={"/images/lake-agnes-tea-house-cropped.png"}
-          scale={0.2}
-          name={"Lake Agnes Tea House"}
-          position={positions.lakeAgnesTeaHouse}
-        />
-
-        <ImagePin
-          imageSrc={"/images/lake-louise-ski-resort-cropped.png"}
-          scale={0.2}
-          name={"Lake Louise Ski Resort"}
-          position={positions.lakeLouiseSkiResort}
-        />
-
-        <ImagePin
-          imageSrc={"/images/fairmont-chateau-lake-louise-cropped.png"}
-          scale={0.2}
-          name={"Fairmont Chateau Lake Louise"}
-          position={positions.fairmontChateauLakeLouise}
-        />
-
-        {/* <ImagePin
-          imageSrc={"/images/columbia-icefield-glacier-adventure-cropped.png"}
-          scale={0.2}
-          name={"Columbia Icefield Glacier Adventure"}
-          position={positions.columbiaIcefieldGlacierAdventure}
-        /> */}
-
-        <ImagePin
-          imageSrc={"/images/columbia-icefield-skywalk-cropped.png"}
-          scale={0.2}
-          name={"Columbia Icefield Skywalk"}
-          position={positions.columbiaIcefieldSkywalk}
-        />
-
-        {/* <FancyPin
-          name={"Cave and Basin National Historic Site"}
-          castShadow
-          position={positions.caveAndBasin}
-        />
-
-        <FancyPin
-          name={"Discover Banff Tours"}
-          castShadow
-          position={positions.discoverBanffTours}
-        />
-
-        <FancyPin
-          name={"Banff Gondola"}
-          castShadow
-          position={positions.gondola}
-        />
-
-        <FancyPin
-          name={"Lake Minnewanka Cruise"}
-          castShadow
-          position={positions.minnewankaCruise}
-        /> */}
-
-        {/* Lake Louise Pins */}
-        {/* <FancyPin
-          name={"Moraine Lake"}
-          castShadow
-          position={positions.moraineLake}
-        />
-
-        <FancyPin
-          name={"Lake Agnes Tea House"}
-          castShadow
-          position={positions.lakeAgnesTeaHouse}
-        />
-
-        <FancyPin
-          name={"Lake Louise Ski Resort"}
-          castShadow
-          position={positions.lakeLouiseSkiResort}
-        />
-
-        <FancyPin
-          name={"Fairmont Chateau Lake Louise"}
-          castShadow
-          position={positions.fairmontChateauLakeLouise}
-        /> */}
-
-        {/* 3. Ice Fields Pins */}
-        {/* <FancyPin
-          name={"Columbia Icefield Glacier Adventure"}
-          castShadow
-          position={positions.columbiaIcefieldGlacierAdventure}
-        />
-
-        <FancyPin
-          name={"Columbia Icefield Skywalk"}
-          castShadow
-          position={positions.columbiaIcefieldSkywalk}
-        /> */}
-
-        <e.group theatreKey="Lake Louise Cloud 2">
-          <Cloud scale={0.2} position={[-2, 2.75, 3]} />
+        {/* <e.group theatreKey="Lake Louise Cloud 2">
+          <Cloud scale={0.2} position={[-2, 3.1, 3]} />
         </e.group>
 
         <e.group theatreKey="Lake Louise Cloud">
-          <Cloud scale={0.3} position={[-5, 2.75, -4.75]} />
+          <Cloud scale={0.3} position={[2, 3, -4.75]} />
         </e.group>
+        */}
 
-        <e.group theatreKey="Banff Cloud 2">
-          <Cloud scale={0.15} position={[4, 1.75, 3]} />
+        <e.group theatreKey="Banff Cloud 2" ref={cloudRef}>
+          <Cloud
+            // works scale = -0.03
+            // works position = [-2.7, 0.85, 2.30]
+            //
+            scale={0.03}
+            // scale={cloudScale}
+            //  position={[-0.8, 1.5, 2.6]}
+            position={[-2.7, 0.85, 2.3]}
+            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+          />
         </e.group>
 
         <e.group theatreKey="Banff Cloud 1">
-          <Cloud scale={0.08} position={[2, 1.5, 6]} />
+          <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} />
         </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        <Road
+        {/* <Road
           currDay={props.currDay}
           // pauses={props.pauses}
           // pauseDuration={props.pauseDuration}
           // destinations={props.destinations}
           project={props.project}
-        />
+        /> */}
         {/* </e.group> */}
-
-        <IceFieldsDecimated />
-
-        <Edges />
-
-        <PlaneDecimated />
+        {/* <LocationPin index={index} /> */}
+        <Road />
+        <Top />
+        <Sides />
+        <Plane />
       </e.group>
 
       <TiltShiftEffects />
-      {/* <EffectComposer>
-        <DepthOfField
-          focusDistance={focusDistance}
-          focalLength={focalLength}
-          bokehScale={bokehScale}
-        />
-      </EffectComposer> */}
     </>
   );
 };

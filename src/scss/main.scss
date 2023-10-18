@@ -12,9 +12,19 @@ body {
   background-color: #b0b1b8;
   display: flex;
   flex-direction: column;
+  font-family: "Futura PT", Myriad Pro, sans-serif;
   height: 100dvh;
   justify-content: center;
   overflow: hidden;
+  width: 100%;
+}
+
+.wrapper {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 
@@ -27,6 +37,7 @@ body {
 
 .road-trip {
   --black: #000000;
+  --blue: #073142;
   --grey: #787878;
   --white: #ffffff;
   --red: #9c0f00;
@@ -41,11 +52,15 @@ body {
     width: 100vw;
   }
 
+  // @media (min-width: 1024px) {
+  //   width: 77vw;
+  // }
+
   &::before {
     background: linear-gradient(
       0deg,
-      rgba(26, 43, 55, 0) 76.04%,
-      rgba(26, 43, 55, 0.7) 100%
+      rgba(91, 149, 193, 0) 76.04%,
+      rgba(38, 86, 116, 0.5) 100%
     );
     bottom: 0;
     content: "";
@@ -56,5 +71,80 @@ body {
     right: 0;
     top: 0;
     z-index: 2;
+  }
+}
+
+.day-info {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, calc(-100% - 1.4rem));
+  padding: 0.7rem 1.25rem;
+  color: var(--white);
+  background-color: var(--blue);
+  border-radius: 1.6875rem;
+  width: auto;
+  text-align: center;
+  width: 100%;
+  transition: all 0.25s ease-in-out;
+
+  span {
+    // display: inline-block;
+    transition: all 0.25s linear;
+  }
+}
+
+.day-info-anim-enter {
+  // opacity: 0;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+
+  span {
+    opacity: 0;
+    transform: translate(0, -66%);
+  }
+}
+
+.day-info-anim-enter-active {
+  // opacity: 0;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+}
+
+.day-info-anim-enter-done {
+  // opacity: 1;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+
+  span {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.day-info-anim-exit {
+  // opacity: 1;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+
+  span {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.day-info-anim-exit-active {
+  // opacity: 0;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+
+  span {
+    opacity: 0;
+    transform: translate(0, 66%);
+  }
+}
+
+.day-info-anim-exit-done {
+  // opacity: 0;
+  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+
+  span {
+    opacity: 0;
+    transform: translate(0, 66%);
   }
 }

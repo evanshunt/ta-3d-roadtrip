@@ -5,6 +5,7 @@ import arrowUp from "../images/arrow-up.svg";
 import arrowLeft from "../images/arrow-left.svg";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useSwipeable } from "react-swipeable";
+import slugify from "../utils/slugify";
 
 const Attraction = ({
   attractionsOpen,
@@ -15,7 +16,7 @@ const Attraction = ({
   showInfo,
 }) => {
   const [open, setOpen] = useState(false);
-
+  const slug = slugify(currDestination?.details?.title);
   const attractionRef = useRef();
   const handlers = useSwipeable({
     onSwiping: (eventData) => {
@@ -123,30 +124,25 @@ const Attraction = ({
               {currDestination?.details?.title && (
                 <div className="attraction__info__images">
                   <img
-                    src={
-                      "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-1.jpeg"
-                    }
+                    src={`images/${slug}/${slug}-1.jpg`}
                     alt=""
                     className="attraction__info__image"
                   />
+
                   <img
-                    src={
-                      "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-2.jpeg"
-                    }
+                    src={`images/${slug}/${slug}-2.jpg`}
                     alt=""
                     className="attraction__info__image"
                   />
+
                   <img
-                    src={
-                      "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-3.jpeg"
-                    }
+                    src={`images/${slug}/${slug}-3.jpg`}
                     alt=""
                     className="attraction__info__image"
                   />
+
                   <img
-                    src={
-                      "images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-4.jpeg"
-                    }
+                    src={`images/${slug}/${slug}-4.jpg`}
                     alt=""
                     className="attraction__info__image"
                   />

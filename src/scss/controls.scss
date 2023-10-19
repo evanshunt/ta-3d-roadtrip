@@ -93,8 +93,8 @@
 }
 
 .controls__list__progress {
-  -webkit-appearance: none !important;
-  appearance: none !important;
+  -webkit-appearance: none;
+  appearance: none;
   display: block;
   height: 0.25rem;
   left: 0;
@@ -110,6 +110,7 @@
 
   &::-webkit-progress-value {
     background: var(--red);
+    transition: all 0.25s linear;
   }
 }
 

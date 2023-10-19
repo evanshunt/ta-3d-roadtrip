@@ -359,7 +359,7 @@ const Experience = () => {
 
       <Canvas
         shadows
-        dpr={window.devicePixelRatio}
+        dpr={1.5}
         gl={{
           antialias: true,
           preserveDrawingBuffer: true,
@@ -444,7 +444,7 @@ const Experience = () => {
         <ul className="controls__list">
           <progress
             className="controls__list__progress"
-            value={(index / (destinations.length - 1)) * 100 + 1}
+            value={(index / (destinations.length - 1)) * 100 - 5}
             max="100"
           />
 
@@ -466,9 +466,7 @@ const Experience = () => {
                         onClick={() => {
                           setIndex(i);
                         }}
-                      >
-                        o
-                      </li>
+                      ></li>
                     );
                   }
                 })}

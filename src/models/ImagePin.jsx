@@ -6,17 +6,18 @@ import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 
 const ImagePin = ({ active, imageSrc, position, name, scale }) => {
-  const [imageOpacity, setImageOpacity] = React.useState(0);
+  // const [imageOpacity, setImageOpacity] = React.useState(0);
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
   const backgroundRef = useRef();
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
+  let opacity = 0;
 
-  useFrame(({ clock }) => {
+  useFrame(({ state, delta }) => {
     theatreObject.onValuesChange((newValues) => {
-      setImageOpacity(newValues.opacity);
+      imageRef.current.children[0].material.opacity = newValues.opacity;
     });
   });
 
@@ -78,7 +79,7 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
           ref={imageRef}
           transparent
           url={imageSrc}
-          opacity={imageOpacity}
+          opacity={opacity}
           // opacity={0}
           // scale={1.33}
         />

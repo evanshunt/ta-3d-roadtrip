@@ -75,18 +75,16 @@ body {
 }
 
 .day-info {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, calc(-100% - 1.4rem));
-  padding: 0.7rem 1.25rem;
-  color: var(--white);
+  align-items: center;
   background-color: var(--blue);
   border-radius: 1.6875rem;
-  width: auto;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem 1.25rem;
   text-align: center;
-  width: 100%;
   transition: all 0.25s ease-in-out;
+  width: auto;
 
   span {
     // display: inline-block;
@@ -96,32 +94,30 @@ body {
 
 .day-info-anim-enter {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+  transform: scale(0.66);
 
   span {
     opacity: 0;
-    transform: translate(0, -66%);
   }
 }
 
 .day-info-anim-enter-active {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 }
 
 .day-info-anim-enter-done {
   // opacity: 1;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 1;
-    transform: translate(0, 0);
   }
 }
 
 .day-info-anim-exit {
   // opacity: 1;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 1;
@@ -131,7 +127,7 @@ body {
 
 .day-info-anim-exit-active {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 0;
@@ -141,10 +137,9 @@ body {
 
 .day-info-anim-exit-done {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+  transform: scale(0.66);
 
   span {
     opacity: 0;
-    transform: translate(0, 66%);
   }
 }

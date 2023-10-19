@@ -404,13 +404,7 @@ const Experience = () => {
 
       <div className="controls">
         {/* {index > 0 && ( */}
-        <SwitchTransition>
-          <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
-            <div className="day-info">
-              <span>{destinations[index].details.blurb}</span>
-            </div>
-          </CSSTransition>
-        </SwitchTransition>
+
         {/* )} */}
         <div className="controls__buttons">
           <button
@@ -422,6 +416,13 @@ const Experience = () => {
           >
             <Arrow dir={"prev"} active={index >= 1} />
           </button>
+          <SwitchTransition>
+            <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
+              <div className="day-info">
+                <span>{destinations[index].details.blurb}</span>
+              </div>
+            </CSSTransition>
+          </SwitchTransition>
           <button
             disabled={index === maxLength}
             className="controls__button controls__button--next"
@@ -436,14 +437,13 @@ const Experience = () => {
         <ul className="controls__list">
           <progress
             className="controls__list__progress"
-            value={(index / (destinations.length - 1)) * 88.1 - 6} // adjustments due to resizing of bar in css
-            // @TODO: this needs to be adjusted between days as the distance is larger
+            value={(index / (destinations.length - 1)) * 100 + 1}
             max="100"
           />
           {Object.keys(days).map((day, i) => {
             if (day === "0") return;
             return (
-              <ul className="controls__list__list">
+              <>
                 {destinations.map((destination, i) => {
                   if (destination.day === parseInt(day)) {
                     return (
@@ -463,7 +463,7 @@ const Experience = () => {
                     );
                   }
                 })}
-              </ul>
+              </>
             );
           })}
         </ul>

@@ -3,7 +3,7 @@ import ImagePin from "../models/ImagePin";
 // import { useControls } from "leva";
 import InfoBox from "../components/InfoBox";
 
-const Day1 = ({ positions, sceneIndex }) => {
+const Day1 = ({ positions, sceneIndex, visible }) => {
   // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
   //   sunshineVillageX: {
   //     value: 0,
@@ -21,6 +21,7 @@ const Day1 = ({ positions, sceneIndex }) => {
   //     max: 10,
   //   },
   // });
+  if (!visible) return null;
   return (
     <>
       <InfoBox

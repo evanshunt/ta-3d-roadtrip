@@ -229,7 +229,12 @@ const Scene = (props) => {
       <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
-        <Day1 positions={positions} sceneIndex={props.index} />
+
+        <Day1
+          positions={positions}
+          sceneIndex={props.index}
+          visible={props.currDay === 1}
+        />
 
         {/* Day 2 */}
         {/* <Day2 positions={positions} /> */}

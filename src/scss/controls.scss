@@ -149,8 +149,8 @@
 
 .controls__list__days {
   display: flex;
-  justify-content: space-between;
   padding-left: 0;
+  transform: translate(-1rem, 0);
   width: 100%;
 }
 
@@ -162,4 +162,9 @@
   font-weight: 500;
   line-height: 1.125rem; /* 120% */
   text-align: center;
+  margin-right: 30.25%;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

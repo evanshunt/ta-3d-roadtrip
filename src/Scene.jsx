@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { Perf } from "r3f-perf";
-// import {
-//   DepthOfField,
-//   EffectComposer,
-//   ToneMapping,
-// } from "@react-three/postprocessing";
+import {
+  DepthOfField,
+  EffectComposer,
+  ToneMapping,
+} from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 // import { useFrame } from "@react-three/fiber";
@@ -93,6 +93,27 @@ const Scene = (props) => {
   const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
+
+  const { focusDistance, focalLength, bokehScale } = useControls({
+    focusDistance: {
+      value: 0.0019,
+      min: 0,
+      max: 0.004,
+      step: 0.0001,
+    },
+    focalLength: {
+      value: 0.0013,
+      min: 0,
+      max: 0.004,
+      step: 0.0001,
+    },
+    bokehScale: {
+      value: 10,
+      min: 0,
+      max: 10,
+      step: 0.1,
+    },
+  });
 
   useEffect(() => {
     if (props.index === 0 && props.started) {
@@ -277,8 +298,13 @@ const Scene = (props) => {
         <Sides />
         <Plane />
       </e.group>
-
-      <TiltShiftEffects />
+      <EffectComposer>
+        <DepthOfField
+          focusDistance={focusDistance} // where to focus
+          focalLength={focalLength} // focal length
+          bokehScale={bokehScale} // bokeh size
+        />
+      </EffectComposer>
     </>
   );
 };

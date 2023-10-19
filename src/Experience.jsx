@@ -434,6 +434,13 @@ const Experience = () => {
           </button>
         </div>
 
+        <ul className="controls__list__days">
+          {Object.keys(days).map((day, i) => {
+            if (i === 0) return null;
+            return <span className="controls__list__day">Day {i}</span>;
+          })}
+        </ul>
+
         <ul className="controls__list">
           <progress
             className="controls__list__progress"
@@ -446,7 +453,6 @@ const Experience = () => {
 
             return (
               <>
-                <span className="controls__list__day">Day {i}</span>
                 {destinations.map((destination, i) => {
                   if (destination.day === parseInt(day)) {
                     return (

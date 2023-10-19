@@ -279,7 +279,7 @@ const Scene = (props) => {
         <Plane />
       </e.group>
 
-      {/* @TODO: figure out a way to use this in a less intrusive way. NOTE: the useframe in here is the only way that gsap animations play during pauses. there is also an issue with that loop causing a frame rate decrease due to the state being reset. */}
+      {/* @TODO: figure out a way to use this in a less intrusive way. */}
       {/* <TiltShiftEffects /> */}
     </>
   );

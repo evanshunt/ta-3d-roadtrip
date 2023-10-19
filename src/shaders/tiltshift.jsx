@@ -134,7 +134,7 @@ function TiltShiftEffects() {
       newTaper = newValues.taper;
       newStart = [newValues.start.x, newValues.start.y];
       newEnd = [newValues.end.x, newValues.end.y];
-      setDirection([newValues.direction.x, newValues.direction.y]);
+      // setDirection([newValues.direction.x, newValues.direction.y]);
       // console.log("i anm changing?");
       //   // Apply the new offset to our THREE.js object
       //   setTaper(newValues.taper);

@@ -362,9 +362,9 @@ const Experience = () => {
 
       <Canvas
         shadows
-        dpr={dpr}
+        dpr={window.devicePixelRatio}
         gl={{
-          antialias: false,
+          antialias: true,
           preserveDrawingBuffer: true,
           shadowMapEnabled: true,
           shadowMapType: THREE.PCFSoftShadowMap,

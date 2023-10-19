@@ -58,7 +58,7 @@ const Experience = () => {
 
       details: {
         title: "Cave and Basin National Historic Site",
-        image: "/images/cave-and-basin-national-historic-site.png",
+        image: "/images/cave-and-basin-national-historic-site.jpg",
         blurb:
           "Your trip begins at the birthplace of the national parks in Canada",
         description:
@@ -74,7 +74,7 @@ const Experience = () => {
         "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
       details: {
         title: "Banff Gondola",
-        image: "/images/banff-gondola.png",
+        image: "/images/banff-gondola.jpg",
         blurb: "Gondole your bowl.",
         description:
           "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
@@ -89,7 +89,7 @@ const Experience = () => {
       details: {
         title: "Lunch at Sky Bistro",
         blurb: "Grab some lunch at the top.",
-        image: "/images/sky-bistro.png",
+        image: "/images/lunch-at-sky-bistro.jpg",
         description:
           "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
       },
@@ -101,7 +101,7 @@ const Experience = () => {
       // name: "Banff Upper Hot Springs",
       details: {
         title: "Banff Upper Hot Springs",
-        image: "/images/banff-upper-hot-springs.png",
+        image: "/images/banff-upper-hot-springs.jpg",
         blurb: "Bubble, bubble no toil no trouble.",
         description:
           "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
@@ -115,7 +115,7 @@ const Experience = () => {
       details: {
         title: "Fairmont Banff Springs Hotel",
         blurb: "I stayed here once and it smelled of cheese.",
-        image: "/images/fairmont-banff-springs-hotel.png",
+        image: "/images/fairmont-banff-springs-hotel.jpg",
         description:
           'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
       },

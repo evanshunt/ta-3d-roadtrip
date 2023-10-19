@@ -14,7 +14,7 @@ const Day = ({
   return (
     <li className="itinerary__day">
       <span>
-        <strong>
+        <strong className="itinerary__day__text">
           Day {number} <span>{name}</span>
         </strong>
       </span>

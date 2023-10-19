@@ -97,7 +97,7 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
       </e.mesh>
       <e.mesh
         ref={backgroundRef}
-        position-z={-0.02}
+        position-z={-0.03}
         // position-y={position[1] + 0.05}
         // position-y={1.25}
         castShadow

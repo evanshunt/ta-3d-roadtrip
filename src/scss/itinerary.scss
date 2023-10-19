@@ -4,8 +4,8 @@
   flex-direction: column;
   height: 100dvh;
   overflow: scroll;
-  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
   padding: 1.85rem 1.55rem;
   padding-bottom: 5rem;
   position: fixed;
@@ -21,12 +21,12 @@
   }
 
   @media screen and (min-width: 1024px) {
-    width: 23vw;
-    height: 100vh;
     border-radius: 0;
-    transform: translate(0, 0);
+    height: 100vh;
     right: 0;
     top: 0;
+    transform: translate(0, 0);
+    width: 23vw;
     z-index: 3;
   }
 }
@@ -59,6 +59,30 @@
   width: 100%;
 }
 
+.itinerary__day__text {
+  font-size: 1.3125rem;
+  font-weight: 700;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.itinerary-days__day__info {
+  margin-bottom: 1rem;
+
+  p,
+  span {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4375rem; /* 143.75% */
+  }
+
+  img {
+    margin-right: 0.45rem;
+  }
+}
+
 .itinerary__day__description {
   font-family: "Futura PT Multilingual W01", "Myriad Pro", sans-serif;
   font-feature-settings: "clig" off, "liga" off;
@@ -70,7 +94,8 @@
 }
 
 .itinerary__day__stops {
-  background: transparent url("../images/itinerary-line.svg") 2.25rem 0 repeat-y;
+  background: transparent url("../images/line.svg") 2.33rem 2.25rem no-repeat;
+  background-size: auto 100%;
   list-style: none;
   padding-left: 0;
 }
@@ -83,19 +108,29 @@
 }
 
 .itinerary__stop__image {
-  border: 0.25rem solid var(--red);
+  border: 0.1875rem solid var(--grey-light);
   border-radius: 50%;
+  height: 3.25rem;
   margin-left: 0.75rem;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out;
-  width: 3.5rem;
+  width: 3.25rem;
 
   .itinerary__stop--active & {
-    border-width: 0;
-    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
-    margin-left: 0;
-    width: 5rem;
+    border: 0.1875rem solid var(--red);
+    box-shadow: 0px 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
+    height: 4.23163rem;
+    // margin-left: 1.5rem;
+    margin-left: 0.375rem;
+    width: 4.23163rem;
   }
+}
+
+.itinerary__stop__name {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.34375rem;
 }
 
 .itinerary__stop__button {

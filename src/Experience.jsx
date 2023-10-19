@@ -346,9 +346,9 @@ const Experience = () => {
 
   return (
     <div className="wrapper">
-      <div onClick={start}>
+      {/* <div onClick={start}>
         <Intro hasStarted={hasStarted} />
-      </div>
+      </div> */}
 
       {days[1] && (
         <Itinerary

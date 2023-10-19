@@ -64,13 +64,14 @@ const positions = {
   // caveAndBasin: [-4.4, 1.18, 2.75],
   caveAndBasin: [-4.5575, 1.05, 2.63],
   // gondola: [-4.7, 1.2, 2.88],
-  gondola: [-4.69, 1.08, 2.859],
+  gondola: [-4.69, 1.085, 2.859],
   // skyBistro: [-4.69, 1.13, 2.88],
-  skyBistro: [-4.72, 1.13, 2.759],
+  skyBistro: [-4.69, 1.13, 2.759],
   // banffUpperHotSprings: [-4.6, 1.2, 2.98],
-  banffUpperHotSprings: [-4.69, 1.08, 2.859],
+  // banffUpperHotSprings: [-4.69, 1.08, 2.859],
+  banffUpperHotSprings: [-4.63, 1.075, 2.83],
   // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
-  fairmontBanffSpringsHotel: [-4.58, 1.05, 2.83],
+  fairmontBanffSpringsHotel: [-4.58, 1.075, 2.83],
 
   // Day 2:
   carterRyanGallery: [-4.3, 1.16, 2.88],

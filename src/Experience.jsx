@@ -440,10 +440,13 @@ const Experience = () => {
             value={(index / (destinations.length - 1)) * 100 + 1}
             max="100"
           />
+
           {Object.keys(days).map((day, i) => {
             if (day === "0") return;
+
             return (
               <>
+                <span className="controls__list__day">Day {i}</span>
                 {destinations.map((destination, i) => {
                   if (destination.day === parseInt(day)) {
                     return (

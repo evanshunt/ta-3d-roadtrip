@@ -144,3 +144,13 @@
     transform: scale(1.25);
   }
 }
+
+.controls__list__day {
+  color: var(--white);
+  text-align: center;
+  font-family: "Futura PT Multilingual W01", "Myriad Pro", sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.125rem; /* 120% */
+}

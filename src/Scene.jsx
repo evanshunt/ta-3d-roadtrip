@@ -298,13 +298,14 @@ const Scene = (props) => {
         <Sides />
         <Plane />
       </e.group>
+
       <EffectComposer>
         <DepthOfField
           focusDistance={focusDistance} // where to focus
           focalLength={focalLength} // focal length
           bokehScale={bokehScale} // bokeh size
         />
-      </EffectComposer>
+
     </>
   );
 };

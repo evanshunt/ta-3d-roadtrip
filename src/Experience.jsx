@@ -358,15 +358,13 @@ const Experience = () => {
       )}
 
       <Canvas
-        shadows
-        dpr={1.5}
+        shadows={true}
+        dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
         gl={{
           antialias: true,
           preserveDrawingBuffer: true,
-          shadowMapEnabled: false,
-          // shadowMapType: THREE.PCFSoftShadowMap,
         }}
-        frameloop="demand"
+        // frameloop="demand"
       >
         {/* <PerformanceMonitor
           onIncline={() => {

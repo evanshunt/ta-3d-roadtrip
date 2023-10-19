@@ -236,8 +236,6 @@ const Experience = () => {
 
   const maxLength = destinations.length - 1; // don't include start
 
-  const pauseDuration = 0.15; // not needed with destinations array
-
   const controlAnimation = () => {
     if (index > 0 && index <= maxLength) {
       sheet.sequence.play({
@@ -289,7 +287,6 @@ const Experience = () => {
   };
 
   const start = () => {
-    console.log("start!!");
     setClicked(true);
   };
 
@@ -366,8 +363,8 @@ const Experience = () => {
         gl={{
           antialias: true,
           preserveDrawingBuffer: true,
-          shadowMapEnabled: true,
-          shadowMapType: THREE.PCFSoftShadowMap,
+          shadowMapEnabled: false,
+          // shadowMapType: THREE.PCFSoftShadowMap,
         }}
         frameloop="demand"
       >
@@ -437,6 +434,12 @@ const Experience = () => {
         </div>
 
         <ul className="controls__list">
+          <progress
+            className="controls__list__progress"
+            value={(index / (destinations.length - 1)) * 88.1 - 6} // adjustments due to resizing of bar in css
+            // @TODO: this needs to be adjusted between days as the distance is larger
+            max="100"
+          />
           {Object.keys(days).map((day, i) => {
             if (day === "0") return;
             return (
@@ -447,7 +450,7 @@ const Experience = () => {
                       <li
                         key={i}
                         className={
-                          i === index
+                          i <= index
                             ? "controls__pip controls__pip--active"
                             : "controls__pip"
                         }

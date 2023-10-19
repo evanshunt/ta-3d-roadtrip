@@ -63,6 +63,25 @@ const Experience = () => {
           "Your trip begins at the birthplace of the national parks in Canada",
         description:
           "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
+        duration: "1 - 3 hr",
+        price: "Free - $8.50 CAD",
+        type: "Self-guided tour",
+        links: [
+          {
+            text: "Cave and Basin National Historic Site",
+            image: "/images/info/cave-and-basin-national-historic-site.jpg",
+            url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
+            linkText: "View More Details",
+            external: false,
+          },
+          {
+            text: "View on Google Maps",
+            image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+            url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
+            linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
+            external: true,
+          },
+        ],
       },
     },
     {

@@ -6,6 +6,10 @@ import arrowLeft from "../images/arrow-left.svg";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useSwipeable } from "react-swipeable";
 import slugify from "../utils/slugify";
+import selfGuidedTour from "../images/types/self-guided-tour.svg";
+import clock from "../images/clock.svg";
+import price from "../images/price.svg";
+import external from "../images/external-link.svg";
 
 const Attraction = ({
   attractionsOpen,
@@ -96,6 +100,10 @@ const Attraction = ({
                 src={arrowUp}
               />
 
+              <strong className="attraction__day">
+                Day {currDestination?.day}
+              </strong>
+
               <div className="attraction__meta">
                 <img
                   width="105"
@@ -120,6 +128,31 @@ const Attraction = ({
               <p className="attraction__description">
                 {currDestination?.details?.description}
               </p>
+
+              <div className="attraction__info__details">
+                {currDestination?.details?.type && (
+                  <>
+                    <span className="attraction__type">
+                      <img src={selfGuidedTour} />{" "}
+                      {currDestination.details.type}
+                    </span>
+                  </>
+                )}
+                {currDestination?.details?.price && (
+                  <>
+                    <span className="attraction__price">
+                      <img src={price} /> {currDestination.details.price}
+                    </span>
+                  </>
+                )}
+                {currDestination?.details?.duration && (
+                  <>
+                    <span className="attraction__duration">
+                      <img src={clock} /> {currDestination.details.duration}
+                    </span>
+                  </>
+                )}
+              </div>
               {/* @TODO:  */}
               {currDestination?.details?.title && (
                 <div className="attraction__info__images">
@@ -149,6 +182,45 @@ const Attraction = ({
                 </div>
               )}
             </div>
+
+            <div className="attraction__links">
+              {currDestination?.details?.links && (
+                <strong className="attraction__links__title">
+                  Learn more about this attraction
+                </strong>
+              )}
+            </div>
+            <ul className="attraction__links__links">
+              {currDestination?.details?.links && (
+                <>
+                  {currDestination.details.links.map((link, index) => {
+                    return (
+                      <li key={index}>
+                        <img src={link.image} alt={link.title} />
+                        <div className="attraction__links__link-wrapper">
+                          <strong>{link.text}</strong>
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`attraction__links__link ${
+                              link.external
+                                ? "attraction__links__link--external"
+                                : ""
+                            }`}
+                          >
+                            {link.linkText}
+                            {link.external && (
+                              <img src={external} alt="External link" />
+                            )}
+                          </a>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </>
+              )}
+            </ul>
           </div>
         </CSSTransition>
       </SwitchTransition>

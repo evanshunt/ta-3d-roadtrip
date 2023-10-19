@@ -12,7 +12,7 @@ const Day = ({
   stops,
 }) => {
   return (
-    <li className="itinerary__day">
+    <li className="itinerary__day" key={name}>
       <span>
         <strong className="itinerary__day__text">
           Day {number} <span>{name}</span>
@@ -21,9 +21,10 @@ const Day = ({
       <p className="itinerary__day__description">{description}</p>
       <DrivingInfo />
       <ul className="itinerary__day__stops">
-        {stops.map((stop) => (
+        {stops.map((stop, index) => (
           <>
             <Stop
+              key={index}
               currDestination={currDestination}
               stop={stop}
               showInfo={showInfo}

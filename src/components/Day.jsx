@@ -13,11 +13,10 @@ const Day = ({
 }) => {
   return (
     <li className="itinerary__day" key={name}>
-      <span>
-        <strong className="itinerary__day__text">
-          Day {number} <span>{name}</span>
-        </strong>
-      </span>
+      <strong className="itinerary__day__text">
+        Day {number} <span>{name}</span>
+      </strong>
+
       <p className="itinerary__day__description">{description}</p>
       <DrivingInfo />
       <ul className="itinerary__day__stops">

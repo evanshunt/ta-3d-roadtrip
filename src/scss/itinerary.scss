@@ -60,11 +60,17 @@
 }
 
 .itinerary__day__text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
   font-size: 1.3125rem;
   font-weight: 700;
 
   span {
+    display: inline-block;
     font-weight: 600;
+    height: 100%;
+    margin-left: 0.55rem;
   }
 }
 

@@ -8,7 +8,7 @@ import { Perf } from "r3f-perf";
 // } from "@react-three/postprocessing";
 import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
-// import { useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { gsap } from "gsap";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
@@ -91,17 +91,20 @@ const positions = {
 const Scene = (props) => {
   const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
   const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
+  const [hasStarted, setHasStarted] = useState(false);
   const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
 
-  useEffect(() => {
+  useFrame(() => {
     if (props.index === 0 && props.started) {
       setTimeout(() => {
+        if (hasStarted) return;
         animateCloud(cloudRef, cloudTimeline, 1);
+        setHasStarted(true);
       }, props.animDuration + 4 * 1000);
     }
-  }, [props.index, props.started]);
+  });
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {

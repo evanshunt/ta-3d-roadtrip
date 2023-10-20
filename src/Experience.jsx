@@ -3,7 +3,7 @@ import * as THREE from "three";
 // import animation from "./animation-data/animation-new-pins.json";
 // import animation from "./animation-data/animation-new-pins-left-offset.json";
 import animation from "./animation-data/new-animation-t-s.json";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
 import "core-js/actual/object/group-by";
@@ -280,17 +280,29 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
-  useEffect(() => {
-    // @TODO: determine how this gets wired up
-    if (index === 0 && clicked) {
-      setTimeout(() => {
-        sheet.sequence.play({
-          range: [0, 6.15],
-          direction: "normal",
-        });
-      }, animDuration * 1000);
-    }
-  }, [clicked]);
+  // useFrame(() => {
+  //   if (index !== 0) return;
+  //   if (index === 0 && clicked) {
+  //     setTimeout(() => {
+  //       sheet.sequence.play({
+  //         range: [0, 6.15],
+  //         direction: "normal",
+  //       });
+  //     }, animDuration * 1000);
+  //   }
+  // });
+
+  // useEffect(() => {
+  //   // @TODO: do not timeout in loop
+  //   if (index === 0 && clicked) {
+  //     setTimeout(() => {
+  //       sheet.sequence.play({
+  //         range: [0, 6.15],
+  //         direction: "normal",
+  //       });
+  //     }, animDuration * 1000);
+  //   }
+  // }, [clicked]);
 
   const handleIndex = (dir) => {
     if (dir === "up" || dir === "down") return;

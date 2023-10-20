@@ -28,12 +28,14 @@ const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   // const project = getProject("TA Fly Through");
   const [clicked, setClicked] = useState(false);
+  const [debug, setDebug] = useState(false);
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const [lastIndex, setLastIndex] = useState(0);
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
   // uncomment to use saved data
@@ -268,7 +270,16 @@ const Experience = () => {
             : "normal",
       });
     }
+    console.log({ index, lastIndex });
+    if (index - lastIndex > 1) {
+      console.log("big jump");
+    }
   };
+
+  useEffect(() => {
+    const debug = window.location.search.includes("debug");
+    setDebug(debug);
+  });
 
   useEffect(() => {
     project.ready.then(() => {
@@ -306,6 +317,7 @@ const Experience = () => {
 
   const handleIndex = (dir) => {
     if (dir === "up" || dir === "down") return;
+    setLastIndex(index);
 
     if (dir === "next") {
       index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
@@ -384,16 +396,18 @@ const Experience = () => {
           currDay={currDay}
           days={days}
           grouped={daysParsed}
+          setIndex={setIndex}
           showInfo={showInfo}
         />
       )}
 
       <Canvas
-        shadows={true}
         dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+        shadows={true}
         gl={{
           antialias: true,
           preserveDrawingBuffer: false,
+          shadowMapType: THREE.PCFSoftShadowMap,
         }}
         // frameloop="demand"
       >
@@ -407,17 +421,18 @@ const Experience = () => {
             console.log("perf decrease");
           }}
         /> */}
-        <SoftShadows size={2.5} focus={0.8} samples={12} />
+        <SoftShadows size={1} focus={1.12} samples={6} />
         {/* <ScrollControls pages={3}> */}
         <SheetProvider sheet={sheet}>
           <Scene
             animDuration={animDuration}
-            index={index}
             currDay={currDay}
+            debug={debug}
             destinations={destinations}
-            started={start}
+            index={index}
             project={project}
             setIndex={setIndex}
+            started={start}
           />
         </SheetProvider>
         {/* </ScrollControls> */}

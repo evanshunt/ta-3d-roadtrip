@@ -30,7 +30,7 @@ function Road(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
+        castShadow={false}
         scale={0.25}
         geometry={nodes.BezierCurve.geometry}
         position={[0, -1.025, 0]}
@@ -38,8 +38,8 @@ function Road(props) {
         <meshStandardMaterial
           map={texture}
           map-flipY={false}
-          // map-generateMipmaps={true}
-          map-anisotropy={32}
+          map-generateMipmaps={true}
+          map-anisotropy={8}
         />
       </mesh>
     </group>

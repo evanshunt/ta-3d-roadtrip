@@ -8,6 +8,7 @@ const Day = ({
   description,
   name,
   number,
+  setIndex,
   showInfo,
   stops,
 }) => {
@@ -25,12 +26,14 @@ const Day = ({
             <Stop
               key={index}
               currDestination={currDestination}
+              setIndex={setIndex}
               stop={stop}
               showInfo={showInfo}
             />
           </>
         ))}
       </ul>
+      <hr className="itinerary__divider" />
     </li>
   );
 };

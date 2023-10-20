@@ -97,9 +97,9 @@ const Scene = (props) => {
   const cameraRef = useRef();
 
   useFrame(() => {
+    if (hasStarted) return;
     if (props.index === 0 && props.started) {
       setTimeout(() => {
-        if (hasStarted) return;
         animateCloud(cloudRef, cloudTimeline, 1);
         setHasStarted(true);
       }, props.animDuration + 4 * 1000);
@@ -227,7 +227,7 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <Lights index={props.index} />
+      <Lights index={props.index} debug={props.debug} />
 
       <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>

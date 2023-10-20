@@ -2,9 +2,9 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-// import { useControls } from "leva";
+import { useControls } from "leva";
 
-const Lights = ({ index }) => {
+const Lights = ({ debug, index }) => {
   const spotLight = useRef();
   const tl = gsap.timeline({});
 
@@ -117,32 +117,37 @@ const Lights = ({ index }) => {
     animateSpotlight(spotLight, tl, index);
   }, [index]);
 
-  // const { positionX, positionY, positionZ, intensity } = useControls({
-  //   positionX: {
-  //     value: 0,
-  //     min: -20,
-  //     max: 20,
-  //     step: 0.025,
-  //   },
-  //   positionY: {
-  //     value: 15,
-  //     min: 0,
-  //     max: 25,
-  //     step: 0.025,
-  //   },
-  //   positionZ: {
-  //     value: 0,
-  //     min: -20,
-  //     max: 20,
-  //     step: 0.025,
-  //   },
-  //   intensity: {
-  //     value: 0.3,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.025,
-  //   },
-  // });
+  if (debug) {
+    const { positionX, positionY, positionZ, intensity } = useControls({
+      positionX: {
+        // value: 0,
+        value: 15,
+        min: -20,
+        max: 20,
+        step: 0.025,
+      },
+      positionY: {
+        // value: 15,
+        value: 4,
+        min: 0,
+        max: 25,
+        step: 0.025,
+      },
+      positionZ: {
+        value: -7.5,
+        min: -20,
+        max: 20,
+        step: 0.025,
+      },
+      intensity: {
+        // value: 0.3,
+        value: 6,
+        min: 0,
+        max: 10,
+        step: 0.025,
+      },
+    });
+  }
 
   return (
     <>
@@ -150,11 +155,11 @@ const Lights = ({ index }) => {
 
       <directionalLight
         ref={spotLight}
-        position={[-35.98, 12.2, 0.43]}
-        // position={[positionX, positionY, positionZ]}
-
+        position={
+          debug ? [positionX, positionY, positionZ] : [-35.98, 3.2, 0.43]
+        }
         // intensity={0.5}
-        intensity={1.75}
+        intensity={debug ? intensity : 1.75}
         // intensity={intensity}
         lookAt={[0, 0, 0]}
         castShadow

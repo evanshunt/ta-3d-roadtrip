@@ -91,6 +91,7 @@ const ImagePin = ({
   return (
     // <Billboard position={position} scale={scale}>
     // Clean up this nastiness
+
     <Billboard
       position={[position[0], position[1], position[2]]}
       // position={[posX, posY, posZ]}
@@ -117,7 +118,7 @@ const ImagePin = ({
       </e.group>
 
       <e.mesh
-        castShadow
+        castShadow={true}
         position={[0, -1.15, -0.0305]}
         ref={stemRef}
         theatreKey={`Pins / ${name} / Stem ${name}`}
@@ -128,6 +129,7 @@ const ImagePin = ({
         <meshBasicMaterial color={0x9c0f00} />
       </e.mesh>
       <e.mesh
+        castShadow
         ref={backgroundRef}
         name={name}
         onPointerEnter={() => {
@@ -142,7 +144,7 @@ const ImagePin = ({
         position-z={-0.02}
         // position-y={position[1] + 0.05}
         // position-y={1.25}
-        castShadow
+
         theatreKey={`Pins / ${name} / Background ${name}`}
         scale={0.02}
       >
@@ -151,6 +153,7 @@ const ImagePin = ({
       </e.mesh>
       <e.mesh
         ref={backgroundHaloRef}
+        castShadow
         position-z={-0.03}
         // position-y={position[1] + 0.05}
         // position-y={1.25}

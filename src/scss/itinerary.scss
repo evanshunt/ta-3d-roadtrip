@@ -64,9 +64,9 @@
 }
 
 .itinerary__day__text {
+  align-items: flex-end;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   font-size: 1.3125rem;
   font-weight: 700;
 
@@ -117,6 +117,11 @@
   width: 100%;
 }
 
+.itinerary__stop__wrap {
+  align-items: center;
+  display: flex;
+}
+
 .itinerary__stop__image {
   border: 0.1875rem solid var(--grey-light);
   border-radius: 50%;
@@ -136,13 +141,6 @@
   }
 }
 
-.itinerary__stop__name {
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.34375rem;
-}
-
 .itinerary__stop__button {
   background: transparent;
   border: none;
@@ -151,5 +149,16 @@
 
 .itinerary__stop__name {
   display: inline-block;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.34375rem;
   max-width: 11.75rem;
+}
+
+.itinerary__divider {
+  background: #c4c4c4;
+  border: none;
+  height: 1px;
+  margin-bottom: 1.38rem;
 }

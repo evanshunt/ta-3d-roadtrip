@@ -3,7 +3,14 @@ import React, { useState } from "react";
 import Day from "./Day";
 import "../scss/itinerary.scss";
 
-const Itinerary = ({ currDay, currDestination, days, grouped, showInfo }) => {
+const Itinerary = ({
+  currDay,
+  currDestination,
+  days,
+  grouped,
+  showInfo,
+  setIndex,
+}) => {
   const [open, setOpen] = useState(false);
   const listText = () => {
     if (currDay === 0) return "List";
@@ -34,6 +41,7 @@ const Itinerary = ({ currDay, currDestination, days, grouped, showInfo }) => {
                 name={days[day][0].name}
                 number={days[day][0].day}
                 stops={days[day]}
+                setIndex={setIndex}
                 showInfo={showInfo}
               />
             );

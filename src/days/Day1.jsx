@@ -25,17 +25,18 @@ const Day1 = ({ positions, sceneIndex }) => {
     <>
       <InfoBox
         position={[-5.2, 1.2, 2.4]}
-        imageSrc={"/images/info-boxes/sunshine-village.png"}
+        name="Sunshine Village"
+        description="Ski resort with year-round activities"
       />
       <InfoBox
         position={[-4.3, 1.2, 2.7]}
         name="Cascade Mountain"
-        imageSrc={"/images/info-boxes/cascade-mountain.png"}
+        description="Elevation 2998 m (9836 ft)"
       />
       <InfoBox
         position={[-4.2, 1.15, 3]}
         name="Lake Minnewanka"
-        imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+        description="Teal glacier lake with boat cruise"
       />
 
       <ImagePin

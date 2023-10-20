@@ -393,7 +393,7 @@ const Experience = () => {
         dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
         gl={{
           antialias: true,
-          preserveDrawingBuffer: true,
+          preserveDrawingBuffer: false,
         }}
         // frameloop="demand"
       >
@@ -417,6 +417,7 @@ const Experience = () => {
             destinations={destinations}
             started={start}
             project={project}
+            setIndex={setIndex}
           />
         </SheetProvider>
         {/* </ScrollControls> */}

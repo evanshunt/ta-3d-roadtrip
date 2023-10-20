@@ -45,6 +45,10 @@
   position: fixed;
   top: 2.5rem;
   z-index: 3;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .itinerary__icon {

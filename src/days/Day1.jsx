@@ -3,7 +3,7 @@ import ImagePin from "../models/ImagePin";
 // import { useControls } from "leva";
 import InfoBox from "../components/InfoBox";
 
-const Day1 = ({ positions, sceneIndex, visible }) => {
+const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
   // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
   //   sunshineVillageX: {
   //     value: 0,
@@ -43,6 +43,8 @@ const Day1 = ({ positions, sceneIndex, visible }) => {
         active={sceneIndex === 0}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
         scale={0.2}
+        setIndex={setIndex}
+        index={1}
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
       />
@@ -51,6 +53,8 @@ const Day1 = ({ positions, sceneIndex, visible }) => {
         active={sceneIndex === 1}
         imageSrc={"/images/banff-gondola.png"}
         scale={0.2}
+        setIndex={setIndex}
+        index={2}
         name={"Banff Gondola"}
         position={positions.gondola}
       />
@@ -59,6 +63,8 @@ const Day1 = ({ positions, sceneIndex, visible }) => {
         active={sceneIndex === 2}
         imageSrc={"/images/sky-bistro.png"}
         scale={0.2}
+        setIndex={setIndex}
+        index={3}
         name={"Sky Bistro"}
         position={positions.skyBistro}
       />
@@ -67,6 +73,8 @@ const Day1 = ({ positions, sceneIndex, visible }) => {
         active={sceneIndex === 3}
         imageSrc={"/images/banff-upper-hot-springs.png"}
         scale={0.2}
+        setIndex={setIndex}
+        index={4}
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
       />
@@ -75,6 +83,8 @@ const Day1 = ({ positions, sceneIndex, visible }) => {
         active={sceneIndex === 4}
         imageSrc={"/images/fairmont-banff-springs-hotel.png"}
         scale={0.2}
+        setIndex={setIndex}
+        index={5}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
       />

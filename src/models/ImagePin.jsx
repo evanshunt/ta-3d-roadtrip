@@ -1,11 +1,20 @@
 import React, { useRef } from "react";
-import { Billboard, Image } from "@react-three/drei";
+import { Billboard, Image, useCursor } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
+import { gsap } from "gsap";
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 
-const ImagePin = ({ active, imageSrc, position, name, scale }) => {
+const ImagePin = ({
+  active,
+  imageSrc,
+  index,
+  position,
+  name,
+  scale,
+  setIndex,
+}) => {
   // const [imageOpacity, setImageOpacity] = React.useState(0);
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
@@ -14,12 +23,33 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
   const backgroundRef = useRef();
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
   let opacity = 0;
+  const tl = gsap.timeline();
 
   useFrame(({ state, delta }) => {
     theatreObject.onValuesChange((newValues) => {
       imageRef.current.children[0].material.opacity = newValues.opacity;
     });
   });
+
+  const animateHover = () => {
+    tl.to(backgroundHaloRef.current.scale, {
+      x: 0.04,
+      y: 0.04,
+      z: 0.04,
+      duration: 0.3,
+      ease: "power2.in",
+    });
+  };
+
+  const animateOut = () => {
+    tl.to(backgroundHaloRef.current.scale, {
+      x: 0.03,
+      y: 0.03,
+      z: 0.03,
+      duration: 0.25,
+      ease: "power2.out",
+    });
+  };
 
   // const { posX, posY, posZ } = useControls({
   //   posX: {
@@ -77,6 +107,7 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
       >
         <Image
           ref={imageRef}
+          position={[0, 0, 0.1]}
           transparent
           url={imageSrc}
           opacity={opacity}
@@ -87,7 +118,7 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
 
       <e.mesh
         castShadow
-        position={[0, -1.14, -0.0305]}
+        position={[0, -1.15, -0.0305]}
         ref={stemRef}
         theatreKey={`Pins / ${name} / Stem ${name}`}
         scale={[0.075, 0.2, 0.075]}
@@ -98,7 +129,17 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
       </e.mesh>
       <e.mesh
         ref={backgroundRef}
-        position-z={-0.03}
+        name={name}
+        onPointerEnter={() => {
+          animateHover();
+        }}
+        onPointerLeave={() => {
+          animateOut();
+        }}
+        onClick={(e) => {
+          setIndex(index);
+        }}
+        position-z={-0.02}
         // position-y={position[1] + 0.05}
         // position-y={1.25}
         castShadow
@@ -110,7 +151,7 @@ const ImagePin = ({ active, imageSrc, position, name, scale }) => {
       </e.mesh>
       <e.mesh
         ref={backgroundHaloRef}
-        position-z={-0.02}
+        position-z={-0.03}
         // position-y={position[1] + 0.05}
         // position-y={1.25}
         theatreKey={`Pins / ${name} / Background Halo ${name}`}

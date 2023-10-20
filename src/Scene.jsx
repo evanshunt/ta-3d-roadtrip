@@ -236,6 +236,7 @@ const Scene = (props) => {
         <Day1
           positions={positions}
           sceneIndex={props.index}
+          setIndex={props.setIndex}
           visible={props.currDay === 1}
         />
 

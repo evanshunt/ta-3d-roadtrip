@@ -3,8 +3,8 @@
 
 .attraction {
   --offset: 100%;
-
-  background-color: var(--white);
+  // background-color: var(--white);
+  background-color: #f6f6f6;
   border-radius: 1rem 1rem 0rem 0rem;
   bottom: 0;
   height: calc(100dvh - 5rem);
@@ -33,8 +33,10 @@
     height: 100vh;
     right: 0;
     top: 0;
+    top: 100px;
     transform: translate(0, 0);
     width: 23vw;
+    padding-bottom: 7.25rem;
     z-index: 2;
 
     &--open {

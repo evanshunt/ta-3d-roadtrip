@@ -386,7 +386,7 @@ const Experience = () => {
   }, [index]);
 
   return (
-    <>
+    <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
         {/* <div onClick={start}>
@@ -533,7 +533,7 @@ const Experience = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

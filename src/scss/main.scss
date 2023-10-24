@@ -31,6 +31,9 @@ body {
 .main-nav-image {
   width: 100%;
   height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
 .loading {
@@ -161,11 +164,15 @@ body {
   cursor: pointer;
   padding: 0.625rem 1rem;
   position: fixed;
-  top: 1rem;
+  top: 7.25rem;
   left: 1.875rem;
   z-index: 3;
 
   img {
     padding-right: 0.625rem;
   }
+}
+
+.experience {
+  padding-top: 100px;
 }

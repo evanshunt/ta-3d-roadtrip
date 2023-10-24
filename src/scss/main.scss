@@ -96,6 +96,10 @@ body {
     // display: inline-block;
     transition: all 0.25s linear;
   }
+
+  @media (min-width: 1024px) {
+    width: 445px;
+  }
 }
 
 .day-info-anim-enter {

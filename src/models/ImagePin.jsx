@@ -90,7 +90,6 @@ const ImagePin = ({
   // }, []);
   return (
     // <Billboard position={position} scale={scale}>
-    // Clean up this nastiness
 
     <Billboard
       position={[position[0], position[1], position[2]]}
@@ -128,6 +127,7 @@ const ImagePin = ({
         <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
         <meshBasicMaterial color={0x9c0f00} />
       </e.mesh>
+
       <e.mesh
         castShadow
         ref={backgroundRef}

@@ -23,6 +23,8 @@ import "./scss/controls.scss";
 import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import closeImage from "./images/close.svg";
+import mainNavImage from "/images/main-nav-mock.jpg";
 
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
@@ -270,13 +272,10 @@ const Experience = () => {
             : "normal",
       });
     }
-    console.log({ index, lastIndex });
-    if (index - lastIndex > 1) {
-      console.log("big jump");
-    }
   };
 
   useEffect(() => {
+    setClicked(true); // comment out when the intro is added back in
     const debug = window.location.search.includes("debug");
     setDebug(debug);
   });
@@ -291,7 +290,7 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
-  // useFrame(() => {
+  // useEffect(() => {
   //   if (index !== 0) return;
   //   if (index === 0 && clicked) {
   //     setTimeout(() => {
@@ -303,17 +302,17 @@ const Experience = () => {
   //   }
   // });
 
-  // useEffect(() => {
-  //   // @TODO: do not timeout in loop
-  //   if (index === 0 && clicked) {
-  //     setTimeout(() => {
-  //       sheet.sequence.play({
-  //         range: [0, 6.15],
-  //         direction: "normal",
-  //       });
-  //     }, animDuration * 1000);
-  //   }
-  // }, [clicked]);
+  useEffect(() => {
+    // @TODO: determine how this gets wired up
+    if (index === 0 && clicked) {
+      setTimeout(() => {
+        sheet.sequence.play({
+          range: [0, 6.15],
+          direction: "normal",
+        });
+      }, animDuration * 1000);
+    }
+  }, [clicked]);
 
   const handleIndex = (dir) => {
     if (dir === "up" || dir === "down") return;
@@ -385,33 +384,40 @@ const Experience = () => {
   }, [index]);
 
   return (
-    <div className="wrapper">
-      {/* <div onClick={start}>
+    <>
+      <img src={mainNavImage} alt="" className="main-nav-image" />
+      <div className="wrapper">
+        {/* <div onClick={start}>
         <Intro hasStarted={hasStarted} />
       </div> */}
 
-      {days[1] && (
-        <Itinerary
-          currDestination={currDestination}
-          currDay={currDay}
-          days={days}
-          grouped={daysParsed}
-          setIndex={setIndex}
-          showInfo={showInfo}
-        />
-      )}
+        {days[1] && (
+          <Itinerary
+            currDestination={currDestination}
+            currDay={currDay}
+            days={days}
+            grouped={daysParsed}
+            setIndex={setIndex}
+            showInfo={showInfo}
+          />
+        )}
 
-      <Canvas
-        dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
-        shadows={true}
-        gl={{
-          antialias: true,
-          preserveDrawingBuffer: false,
-          shadowMapType: THREE.PCFSoftShadowMap,
-        }}
-        // frameloop="demand"
-      >
-        {/* <PerformanceMonitor
+        <button className="close-tour">
+          <img src={closeImage} alt="" />
+          Close the 3D Tour
+        </button>
+
+        <Canvas
+          dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+          shadows={true}
+          gl={{
+            antialias: true,
+            preserveDrawingBuffer: false,
+            shadowMapType: THREE.PCFSoftShadowMap,
+          }}
+          // frameloop="demand"
+        >
+          {/* <PerformanceMonitor
           onIncline={() => {
             setDpr(2);
             console.log("perf increase");
@@ -421,106 +427,111 @@ const Experience = () => {
             console.log("perf decrease");
           }}
         /> */}
-        <SoftShadows size={1} focus={1.12} samples={6} />
-        {/* <ScrollControls pages={3}> */}
-        <SheetProvider sheet={sheet}>
-          <Scene
-            animDuration={animDuration}
-            currDay={currDay}
-            debug={debug}
-            destinations={destinations}
-            index={index}
-            project={project}
-            setIndex={setIndex}
-            started={start}
-          />
-        </SheetProvider>
-        {/* </ScrollControls> */}
-      </Canvas>
+          <SoftShadows size={1} focus={1.12} samples={6} />
+          {/* <ScrollControls pages={3}> */}
+          <SheetProvider sheet={sheet}>
+            <Scene
+              animDuration={animDuration}
+              currDay={currDay}
+              debug={debug}
+              destinations={destinations}
+              index={index}
+              project={project}
+              setIndex={setIndex}
+              started={start}
+            />
+          </SheetProvider>
+          {/* </ScrollControls> */}
+        </Canvas>
 
-      <Attraction
-        attractionsOpen={attractionsOpen}
-        currDestination={currDestination}
-        handleIndex={handleIndex}
-        index={index}
-        maxLength={maxLength}
-        showInfo={showInfo}
-      />
+        <Attraction
+          attractionsOpen={attractionsOpen}
+          currDestination={currDestination}
+          handleIndex={handleIndex}
+          index={index}
+          maxLength={maxLength}
+          showInfo={showInfo}
+        />
 
-      <div className="controls">
-        {/* {index > 0 && ( */}
+        <div className="controls">
+          {/* {index > 0 && ( */}
 
-        {/* )} */}
-        <div className="controls__buttons">
-          <button
-            disabled={index <= 1}
-            className="controls__button controls__button--prev"
-            onClick={() => {
-              handleIndex("prev");
-            }}
-          >
-            <Arrow dir={"prev"} active={index >= 1} />
-          </button>
-          <SwitchTransition>
-            <CSSTransition classNames="day-info-anim" timeout={250} key={index}>
-              <div className="day-info">
-                <span>{destinations[index].details.blurb}</span>
-              </div>
-            </CSSTransition>
-          </SwitchTransition>
-          <button
-            disabled={index === maxLength}
-            className="controls__button controls__button--next"
-            onClick={() => {
-              handleIndex("next");
-            }}
-          >
-            <Arrow dir={"next"} active={index !== maxLength} />
-          </button>
+          {/* )} */}
+          <div className="controls__buttons">
+            <button
+              disabled={index <= 1}
+              className="controls__button controls__button--prev"
+              onClick={() => {
+                handleIndex("prev");
+              }}
+            >
+              <Arrow dir={"prev"} active={index >= 1} />
+            </button>
+            <SwitchTransition>
+              <CSSTransition
+                classNames="day-info-anim"
+                timeout={250}
+                key={index}
+              >
+                <div className="day-info">
+                  <span>{destinations[index].details.blurb}</span>
+                </div>
+              </CSSTransition>
+            </SwitchTransition>
+            <button
+              disabled={index === maxLength}
+              className="controls__button controls__button--next"
+              onClick={() => {
+                handleIndex("next");
+              }}
+            >
+              <Arrow dir={"next"} active={index !== maxLength} />
+            </button>
+          </div>
+
+          <ul className="controls__list__days">
+            {Object.keys(days).map((day, i) => {
+              if (i === 0) return null;
+              return <span className="controls__list__day">Day {i}</span>;
+            })}
+          </ul>
+
+          <ul className="controls__list">
+            <progress
+              className="controls__list__progress"
+              value={(index / (destinations.length - 1)) * 100 - 5}
+              max="100"
+            />
+
+            {Object.keys(days).map((day, i) => {
+              if (day === "0") return;
+
+              return (
+                <>
+                  {destinations.map((destination, i) => {
+                    if (destination.day === parseInt(day)) {
+                      return (
+                        <li
+                          key={i}
+                          className={
+                            i <= index
+                              ? "controls__pip controls__pip--active"
+                              : "controls__pip"
+                          }
+                          onClick={() => {
+                            setIndex(i);
+                          }}
+                        ></li>
+                      );
+                    }
+                  })}
+                </>
+              );
+            })}
+          </ul>
         </div>
-
-        <ul className="controls__list__days">
-          {Object.keys(days).map((day, i) => {
-            if (i === 0) return null;
-            return <span className="controls__list__day">Day {i}</span>;
-          })}
-        </ul>
-
-        <ul className="controls__list">
-          <progress
-            className="controls__list__progress"
-            value={(index / (destinations.length - 1)) * 100 - 5}
-            max="100"
-          />
-
-          {Object.keys(days).map((day, i) => {
-            if (day === "0") return;
-
-            return (
-              <>
-                {destinations.map((destination, i) => {
-                  if (destination.day === parseInt(day)) {
-                    return (
-                      <li
-                        key={i}
-                        className={
-                          i <= index
-                            ? "controls__pip controls__pip--active"
-                            : "controls__pip"
-                        }
-                        onClick={() => {
-                          setIndex(i);
-                        }}
-                      ></li>
-                    );
-                  }
-                })}
-              </>
-            );
-          })}
-        </ul>
       </div>
-    </div>
+    </>
   );
 };
 

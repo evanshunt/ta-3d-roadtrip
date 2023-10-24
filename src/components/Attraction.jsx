@@ -101,7 +101,7 @@ const Attraction = ({
               />
 
               <strong className="attraction__day">
-                Day {currDestination?.day}
+                Day {currDestination?.day} - {currDestination?.name}
               </strong>
 
               <div className="attraction__meta">

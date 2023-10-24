@@ -21,7 +21,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
   //     max: 10,
   //   },
   // });
+  console.log({ visible });
   if (!visible) return null;
+
   return (
     <>
       <InfoBox

@@ -399,6 +399,7 @@ const Experience = () => {
             currDay={currDay}
             days={days}
             grouped={daysParsed}
+            handleIndex={handleIndex}
             setIndex={setIndex}
             showInfo={showInfo}
           />
@@ -416,7 +417,9 @@ const Experience = () => {
             antialias: true,
             preserveDrawingBuffer: false,
             shadowMapType: THREE.PCFSoftShadowMap,
+            shadowMapEnabled: true,
           }}
+
           // frameloop="demand"
         >
           {/* <PerformanceMonitor
@@ -429,7 +432,7 @@ const Experience = () => {
             console.log("perf decrease");
           }}
         /> */}
-          <SoftShadows size={1} focus={1.12} samples={6} />
+          {/* <SoftShadows size={1.3} focus={9} samples={6} /> */}
           {/* <ScrollControls pages={3}> */}
           <SheetProvider sheet={sheet}>
             <Scene
@@ -476,6 +479,7 @@ const Experience = () => {
                 key={index}
               > */}
             <div className="day-info">
+              {console.log(index)}
               <span>{destinations[index].details.blurb}</span>
             </div>
             {/* </CSSTransition>

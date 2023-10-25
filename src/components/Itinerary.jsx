@@ -32,17 +32,18 @@ const Itinerary = ({
       </button>
       <div className={`${open ? "itinerary itinerary--open" : "itinerary"}`}>
         <ul className="itinerary__list">
-          {grouped.map((day) => {
+          {grouped.map((day, index) => {
             return (
               <Day
-                key={day}
                 currDestination={currDestination}
                 description={days[day][0].description}
+                index={index}
+                key={day}
                 name={days[day][0].name}
                 number={days[day][0].day}
-                stops={days[day]}
                 setIndex={setIndex}
                 showInfo={showInfo}
+                stops={days[day]}
               />
             );
           })}

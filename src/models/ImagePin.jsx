@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
+import shadowImage from "../images/shadow.svg";
 
 const ImagePin = ({
   active,
@@ -60,9 +61,9 @@ const ImagePin = ({
   //   },
   //   posY: {
   //     value: position[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.05,
+  //     min: -2,
+  //     max: 2,
+  //     step: 0.005,
   //   },
   //   posZ: {
   //     value: position[2],
@@ -128,6 +129,13 @@ const ImagePin = ({
         <meshBasicMaterial color={0x9c0f00} />
       </e.mesh>
 
+      <mesh position={[0, 0, -0.0305]} castShadow>
+        <sphereGeometry args={[0.03, 16, 16]} transparent opacity={0} />
+        <meshBasicMaterial colorWrite={false} depthWrite={false} />
+        {/* <Image url={shadowImage} scale={0.02} /> */}
+        {/* <meshStandardMaterial color={0x9c0f00} roughness={1} metalness={0} /> */}
+      </mesh>
+
       <e.mesh
         castShadow
         ref={backgroundRef}
@@ -149,7 +157,7 @@ const ImagePin = ({
         scale={0.02}
       >
         <circleGeometry args={[0.8, 32]} />
-        <meshBasicMaterial color={0x9c0f00} />
+        <meshBasicMaterial color={0x9c0f00} metalness={0} roughness={1} />
       </e.mesh>
       <e.mesh
         ref={backgroundHaloRef}
@@ -163,6 +171,8 @@ const ImagePin = ({
         <circleGeometry args={[0.8, 32]} />
         <meshStandardMaterial
           transparent={true}
+          metalness={0}
+          roughness={1}
           color={0x9c0f00}
           opacity={0.4}
         />

@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useControls } from "leva";
 
-const Lights = ({ debug, index }) => {
+const Lights = ({ debug, index, positions }) => {
   const spotLight = useRef();
   const tl = gsap.timeline({});
 
@@ -14,17 +14,29 @@ const Lights = ({ debug, index }) => {
     white: new THREE.Color().setHex(0xffffff),
   };
 
+  const sunPositions = {
+    sunrise: [-15, 10, 8],
+    morning: [-8.5, 11.5, 4],
+    noon: [-6.5, 10.5, 12.5],
+    afternoon: [1, 8, -12.5],
+    sunset: [7, 8, -14],
+  };
+
   const animateSpotlight = (spotLight, tl, index) => {
     switch (index) {
       case 0:
         tl.to(spotLight.current.position, {
-          x: -10,
+          x: sunPositions.sunrise[0],
+          y: sunPositions.sunrise[1],
+          z: sunPositions.sunrise[2],
           duration: 4,
         });
         break;
       case 1:
         tl.to(spotLight.current.position, {
-          x: -5,
+          x: sunPositions.morning[0],
+          y: sunPositions.morning[1],
+          z: sunPositions.morning[2],
           duration: 4,
         });
         tl.to(
@@ -40,7 +52,9 @@ const Lights = ({ debug, index }) => {
         break;
       case 2:
         tl.to(spotLight.current.position, {
-          x: 0,
+          x: sunPositions.noon[0],
+          y: sunPositions.noon[1],
+          z: sunPositions.noon[2],
           duration: 4,
         });
         tl.to(
@@ -56,7 +70,9 @@ const Lights = ({ debug, index }) => {
         break;
       case 3:
         tl.to(spotLight.current.position, {
-          x: 5,
+          x: sunPositions.noon[0],
+          y: sunPositions.noon[1],
+          z: sunPositions.noon[2],
           duration: 4,
         });
         tl.to(
@@ -72,7 +88,9 @@ const Lights = ({ debug, index }) => {
         break;
       case 4:
         tl.to(spotLight.current.position, {
-          x: 10,
+          x: sunPositions.afternoon[0],
+          y: sunPositions.afternoon[1],
+          z: sunPositions.afternoon[2],
           duration: 4,
         });
         tl.to(
@@ -88,7 +106,9 @@ const Lights = ({ debug, index }) => {
         break;
       case 5:
         tl.to(spotLight.current.position, {
-          x: 35,
+          x: sunPositions.sunset[0],
+          y: sunPositions.sunset[1],
+          z: sunPositions.sunset[2],
           duration: 4,
         });
         tl.to(
@@ -111,60 +131,64 @@ const Lights = ({ debug, index }) => {
       g: colors.orange.g,
       b: colors.orange.b,
     });
+    gsap.set(spotLight.current.position, {
+      x: sunPositions.sunrise[0],
+      y: sunPositions.sunrise[1],
+      z: sunPositions.sunrise[2],
+    });
   }, []);
 
   useEffect(() => {
     animateSpotlight(spotLight, tl, index);
   }, [index]);
 
-  if (debug) {
-    const { positionX, positionY, positionZ, intensity } = useControls({
-      positionX: {
-        // value: 0,
-        value: 15,
-        min: -20,
-        max: 20,
-        step: 0.025,
-      },
-      positionY: {
-        // value: 15,
-        value: 4,
-        min: 0,
-        max: 25,
-        step: 0.025,
-      },
-      positionZ: {
-        value: -7.5,
-        min: -20,
-        max: 20,
-        step: 0.025,
-      },
-      intensity: {
-        // value: 0.3,
-        value: 6,
-        min: 0,
-        max: 10,
-        step: 0.025,
-      },
-    });
-  }
+  // if (debug) {
+  // const { positionX, positionY, positionZ, intensity } = useControls({
+  //   positionX: {
+  //     // value: 0,
+  //     value: sunPositions.sunrise[0],
+  //     min: -20,
+  //     max: 20,
+  //     step: 0.025,
+  //   },
+  //   positionY: {
+  //     // value: 15,
+  //     value: sunPositions.sunrise[1],
+  //     min: 0,
+  //     max: 25,
+  //     step: 0.025,
+  //   },
+  //   positionZ: {
+  //     value: sunPositions.sunrise[2],
+  //     min: -20,
+  //     max: 20,
+  //     step: 0.025,
+  //   },
+  //   intensity: {
+  //     // value: 0.3,
+  //     value: 8.6,
+  //     min: 0,
+  //     max: 10,
+  //     step: 0.025,
+  //   },
+  // });
+  // }
+  // oldpos [-35.98, 3.2, 0.43]
 
   return (
     <>
-      <ambientLight intensity={0.2} color={0xffffff} />
+      {/* <ambientLight intensity={0.2} color={0xffffff} /> */}
 
       <directionalLight
         ref={spotLight}
-        position={
-          debug ? [positionX, positionY, positionZ] : [-35.98, 3.2, 0.43]
-        }
+        position={debug ? [positionX, positionY, positionZ] : [-15, 10, 8]}
         // intensity={0.5}
-        intensity={debug ? intensity : 1.75}
+        intensity={debug ? intensity : 2.5}
         // intensity={intensity}
-        lookAt={[0, 0, 0]}
+        lookAt={positions[0]}
         castShadow
-        // shadow-mapSize-width={1024}
-        // shadow-mapSize-height={1024}
+        shadow-mapSize-width={1024 * 4}
+        shadow-mapSize-height={1024 * 4}
       />
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import caretImage from "../images/caret-right.svg";
 
-const Stop = ({ currDestination, setIndex, showInfo, stop }) => {
+const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
   return (
     <li
       className={`${
@@ -12,7 +12,7 @@ const Stop = ({ currDestination, setIndex, showInfo, stop }) => {
     >
       <div
         onClick={() => {
-          console.log("hello");
+          setIndex(index + 1);
         }}
         className="itinerary__stop__wrap"
       >

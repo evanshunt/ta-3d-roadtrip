@@ -24,6 +24,7 @@ const Day = ({
         {stops.map((stop, index) => (
           <>
             <Stop
+              index={index}
               key={index}
               currDestination={currDestination}
               setIndex={setIndex}

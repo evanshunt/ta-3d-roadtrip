@@ -1,18 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { Perf } from "r3f-perf";
-// import {
-//   DepthOfField,
-//   EffectComposer,
-//   ToneMapping,
-// } from "@react-three/postprocessing";
-import TiltShiftEffects from "./shaders/tiltshift.jsx";
+import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+// import TiltShiftEffects from "./shaders/tiltshift.jsx";
 
 import { useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { gsap } from "gsap";
 import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
-// import { OrthographicCamera } from "@react-three/drei";
+import EditableCamera from "./EditableCamera.jsx";
 import { Cloud } from "./Clouds.jsx";
 import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
@@ -30,10 +26,6 @@ import Day3 from "./days/Day3.jsx";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
-
-const sequencePositions = {
-  caveAndBasin: "3.16f",
-};
 
 const cloudTimeline = gsap.timeline({
   repeat: -1,
@@ -95,6 +87,27 @@ const Scene = (props) => {
   const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
+
+  // const { focusDistance, focalLength, bokehScale } = useControls({
+  //   focusDistance: {
+  //     value: 0.16,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   focalLength: {
+  //     value: 0.13,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   bokehScale: {
+  //     value: 1,
+  //     min: 0,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  // });
 
   useFrame(() => {
     if (hasStarted) return;
@@ -192,17 +205,18 @@ const Scene = (props) => {
           console.log(camera.rotation.toArray());
         }}
       /> */}
-      <PerspectiveCamera
-        makeDefault={true}
-        // ref={cameraRef}
+      <EditableCamera ref={cameraRef} theatreKey={"Camera"} />
+      {/* <PerspectiveCamera
+        makeDefault
+        ref={cameraRef}
         theatreKey={"Camera"}
         // position={cameraPosition}
         // position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
 
-        position={[-5.163108645819346, 1.8345992465293988, 3.97]}
-        rotation={[
-          -0.7210839965680563, -0.5792947129698445, -0.448484711027097,
-        ]}
+        // position={[-5.163108645819346, 1.8345992465293988, 3.97]}
+        // rotation={[
+        //   -0.7210839965680563, -0.5792947129698445, -0.448484711027097,
+        // ]}
         // rotation={[
         //   -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
         // ]}
@@ -211,7 +225,7 @@ const Scene = (props) => {
         // lookAt={lookAtRef}
 
         zoom={1}
-      />
+      /> */}
 
       {/* <OrthographicCamera
         makeDefault
@@ -227,9 +241,9 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <Lights index={props.index} debug={props.debug} />
+      <Lights index={props.index} debug={props.debug} positions={positions} />
 
-      <Perf position="bottom-left" />
+      {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
 
@@ -289,6 +303,13 @@ const Scene = (props) => {
       </e.group>
 
       {/* @TODO: figure out a way to use this in a less intrusive way. */}
+      {/* <EffectComposer>
+        <DepthOfField
+          focusDistance={focusDistance} // where to focus
+          focalLength={focalLength} // focal length
+          bokehScale={bokehScale} // bokeh size
+        />
+      </EffectComposer> */}
       {/* <TiltShiftEffects /> */}
     </>
   );

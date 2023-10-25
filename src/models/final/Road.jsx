@@ -30,16 +30,20 @@ function Road(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow={false}
+        castShadow={true}
+        receiveShadow={false}
         scale={0.25}
         geometry={nodes.BezierCurve.geometry}
         position={[0, -1.025, 0]}
       >
         <meshStandardMaterial
-          map={texture}
-          map-flipY={false}
-          map-generateMipmaps={true}
-          map-anisotropy={8}
+          // map={texture}
+          color={0x9c0f00}
+          roughness={1}
+          metalness={0}
+          // map-flipY={false}
+          // map-generateMipmaps={true}
+          // map-anisotropy={8}
         />
       </mesh>
     </group>

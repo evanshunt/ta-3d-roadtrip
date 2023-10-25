@@ -14,12 +14,12 @@ export const Map = ({ start }) => {
       });
 
       tl.pause();
-
-      animateCalgary(tl);
-      animateEdmonton(tl);
-      animateRoad(tl);
-      animateSquare(tl);
+      animatePins(tl);
       animateMaps(tl);
+      // animateCalgary(tl);
+      // animateEdmonton(tl);
+      // animateRoad(tl);
+      // animateSquare(tl);
 
       if (start) {
         tl.play();
@@ -111,7 +111,7 @@ export const Map = ({ start }) => {
       tl.to(
         bubbleEls,
         {
-          opacity: 0,
+          // opacity: 0,
           scale: 0.75,
           delay: duration,
           duration: duration * 3,
@@ -120,7 +120,62 @@ export const Map = ({ start }) => {
       );
     };
 
+    const animatePins = (tl) => {
+      gsap.set(".pin", {
+        opacity: 0,
+        transformOrigin: "50% 50%",
+        scale: 0.7,
+      });
+
+      tl.to(".pin--banff", {
+        opacity: 1,
+        scale: 1,
+        ease: "bounce.out",
+        duration: duration * 1.25,
+        delay: duration * 0.5,
+      });
+
+      tl.to(
+        ".pin--lake-louise",
+        {
+          opacity: 1,
+          scale: 1,
+          ease: "bounce.out",
+          duration: duration * 1.25,
+        },
+        "-=50%"
+      );
+
+      tl.to(
+        ".pin--jasper",
+        {
+          opacity: 1,
+          scale: 1,
+          ease: "elastic.out",
+          duration: duration * 1.25,
+        },
+        "-=50%"
+      );
+
+      gsap.set(".route", {
+        drawSVG: "0% 0%",
+      });
+
+      tl.to(
+        ".route",
+        {
+          drawSVG: "0% 100%",
+          duration: duration * 4,
+          ease: "linear",
+        },
+        "<"
+      );
+    };
+
     const animateMaps = (tl) => {
+      const intro = document.querySelector(".intro");
+      const clouds = document.querySelector(".cloud-intro");
+      const mapWrap = document.querySelector(".map-wrap");
       gsap.set(".whole-scene", {
         transformOrigin: "36% 65%",
       });
@@ -128,27 +183,22 @@ export const Map = ({ start }) => {
         ".whole-scene",
         {
           scale: 4,
-          duration: duration * 6,
+          duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
-            if (tl._time >= duration * 4.25) {
+            if (tl._time >= duration * 10) {
               // onStart: () => {
-              const intro = document.querySelector(".intro");
-              const clouds = document.querySelector(".cloud-intro");
-              const mapWrap = document.querySelector(".map-wrap");
-              clouds.classList.remove("cloud-intro--play");
 
+              clouds.classList.remove("cloud-intro--play");
               // setTimeout(() => {
               clouds.classList.add("cloud-intro--play--back");
               clouds.classList.add("cloud-intro--play--in");
               // }, 4000);
-
               setTimeout(() => {
                 clouds.classList.remove("cloud-intro--play--in");
                 // clouds.classList.remove("cloud-intro--play--back");
                 clouds.classList.add("cloud-intro--play");
-              }, 2000);
-
+              }, 1350);
               setTimeout(() => {
                 intro.classList.add("intro--complete");
                 mapWrap.classList.add("map-wrap--complete");
@@ -157,7 +207,7 @@ export const Map = ({ start }) => {
             }
           },
         },
-        0
+        "<"
       );
     };
 
@@ -353,22 +403,64 @@ export const Map = ({ start }) => {
               className="islands islands--canada"
             /> */}
             <g transform="translate(140, 211)">
-              <path
+              {/* <path
                 d="M753.971 122.971c-1.353 14.865-45.982 368.918-48.687 391.891-2.705 22.972-37.868 262.161-37.868 262.161s-131.86-19.595-157.556-25c.392-1.176.811-4.595-.271-5.676l-1.081-1.081-5.41-8.108-2.705-2.703v-5.405l-4.057-2.703v-2.702l1.352-4.054 1.353-2.703-4.058-1.352-2.704-4.054s5.409-2.702 5.409-4.054c0-1.351 1.353-5.405 1.353-5.405l1.352-4.054-1.352-2.703v-2.702l2.704-5.406v-2.702l-2.704-5.406v-10.811l-2.705-2.702s-1.353-1.352-1.353-2.703v-4.054l-1.352-4.054-1.352-1.351h-5.41l-1.352-1.352-1.353-4.054v-4.054l-5.41-5.405-1.352-2.703-1.352-1.351-1.353-2.703 1.353-2.703v-5.405l-2.705-2.703-1.353-2.702-1.352-1.352-5.41-2.702-1.352-1.352v-2.703l1.352-2.702-1.352-1.352-3.381-1.824-.676-2.23-2.705-1.351-1.353-2.703s-1.352-.175 0-2.108l1.353-1.946 1.352-2.702c-1.352-2.703-3.3-3.744-3.3-3.744s.744-2.162 0-1.919c-.757.257-2.109-2.445-2.109-2.445l-1.353-4.054-2.705-5.406v-2.973l-1.352-2.432h-2.705l-1.352 1.351s0 1.351-1.353 1.351c-1.352 0-2.705 1.352-2.705 1.352-1.352-1.352-2.704-4.054-2.704-4.054v-8.054l-1.353-2.757-1.352-2.703-4.057-4.054v-9.189l-4.058-.27h-5.409l-8.115-8.108 1.353-2.703 1.352-1.351 2.705-1.352v-4.054s0-1.351-1.353-1.351c-1.352 0-2.704-1.351-2.704-1.351l-1.353-1.581-2.705-1.122-1.352 1.351-2.705 1.352h-2.705l-1.352-1.352v-7.486l-1.353-1.973v-4.892c1.353-3.216 1.353-1.865 1.353-3.216v-2.703l-1.353-2.284v-1.905s1.353-1.216 1.353-2.568c0-1.351-1.353-2.202-1.353-2.202l-2.704-1.852-2.705-2.702-1.353-2.703v-5.338s-4.057-1.419-2.704-1.419c1.352 0 1.352-1.351 1.352-1.351v-2.703l-1.623-1.784-1.082-2.27-2.705-2.703-2.705 1.352-1.352 2.702-4.057-2.702-2.705-2.703s-1.352 0-1.352-1.351v-7c-.203-.284-1.285-3.135-1.285-3.135h-2.489l-2.989-.676-4.057-1.351-1.352-1.352-1.353-2.702V437.7l1.353-.541 2.705-1.351s1.352 0 1.352-1.352c0-1.351-1.352-1.351-1.352-2.702 0-1.352-1.001-1.352-1.177-2.027-.176-.676-1.528-3.379-1.528-3.379-1.353-1.351-2.678-4.729-2.678-4.729l31.079-112.838 33.81-120.27 35.839-123.6477S574.1 93.0389 613.32 99.9037c39.22 6.8513 123.069 21.7163 140.651 23.0673Z"
                 fill="#fff"
                 stroke="#9C0F00"
                 strokeWidth="2"
                 strokeMiterlimit="10"
                 className="border border--alberta"
+              /> */}
+
+              <image
+                transform="translate(275, 95)"
+                preserveAspectRatio="none"
+                href="/images/maps/alberta-topography.png"
+                className="alberta-topography"
               />
+              <g transform="translate(395, 465)">
+                <svg width="88" height="139" fill="none">
+                  <path
+                    stroke="#9C0F00"
+                    stroke-linecap="round"
+                    stroke-width="6"
+                    className="route"
+                    d="m79.543 131.461-22.116-21.986.814-12.474C54.376 92.24 46.71 81.72 46.97 77.727c.26-3.992-4.758-8.995-7.3-10.998l-2.939-8.71-6.128-5.911-3.644-13.266-13.591-14.415.39-5.987-5.802-10.9"
+                  />
+                  {/* <circle cx="8" cy="7" r="7" fill="#9C0F00" /> */}
+                  <circle
+                    cx="8"
+                    cy="7"
+                    r="7"
+                    fill="#fff"
+                    className="pin pin--jasper"
+                  />
+                  {/* <circle cx="59" cy="109" r="7" fill="#9C0F00" /> */}
+                  <circle
+                    cx="59"
+                    cy="109"
+                    r="7"
+                    fill="#fff"
+                    className="pin pin--lake-louise"
+                  />
+                  {/* <circle cx="80" cy="132" r="7" fill="#9C0F00" /> */}
+                  <circle
+                    cx="80"
+                    cy="132"
+                    r="7"
+                    fill="#fff"
+                    className="pin pin--banff"
+                  />
+                </svg>
+              </g>
               <path
                 d="m471.599 324.604-1.68-3.864h-6.84l-1.752 3.864h-2.64l7.968-16.944 7.584 16.944h-2.64Zm-7.512-6.168h4.848l-2.376-5.424-2.472 5.424Zm24.174-9.84h2.448V322.3h4.704v2.304h-7.152v-16.008Zm21.445 0h2.424c2.064 0 3.36.264 4.416 1.248.864.816 1.272 1.848 1.272 3.168 0 .624-.096 1.272-.48 1.896-.36.624-.84.936-1.2 1.104.288.072 1.272.336 2.064 1.152.864.912 1.056 2.016 1.056 3 0 1.152-.288 2.064-1.056 2.88-1.272 1.344-3.264 1.56-4.488 1.56h-4.008v-16.008Zm2.448 2.304v4.584h.744c.6 0 1.416-.072 1.992-.624.552-.528.624-1.272.624-1.824 0-.48-.072-1.056-.576-1.536-.552-.528-1.248-.6-1.944-.6h-.84Zm0 6.6v4.8h1.488c.696 0 1.8-.12 2.424-.624.48-.384.792-1.056.792-1.776 0-.648-.24-1.272-.648-1.68-.672-.648-1.656-.72-2.52-.72h-1.536Zm31.017-8.904v2.304h-6.384v4.056h6.192v2.304h-6.192v5.04h6.384v2.304h-8.832v-16.008h8.832Zm15.168 0h2.856c1.944 0 3.192.24 4.224.936 1.752 1.176 1.896 3.072 1.896 3.768 0 2.304-1.416 3.984-3.552 4.464l4.992 6.84h-2.952l-4.584-6.552h-.432v6.552h-2.448v-16.008Zm2.448 2.256v5.088h.768c.672 0 3.408-.072 3.408-2.616 0-2.256-2.136-2.472-3.336-2.472h-.84Zm30.484.048h-3.672v13.704h-2.448V310.9h-3.672v-2.304h9.792v2.304Zm24.281 13.704-1.68-3.864h-6.84l-1.752 3.864h-2.64l7.968-16.944 7.584 16.944h-2.64Zm-7.512-6.168h4.848l-2.376-5.424-2.472 5.424Z"
-                fill="#9C0F00"
+                fill="#ffffff"
                 className="text text--alberta"
               />
             </g>
           </g>
-          <g transform="translate(140, 213)">
+          {/* <g transform="translate(140, 213)">
             <rect
               x="400"
               y="500"
@@ -407,9 +499,9 @@ export const Map = ({ start }) => {
               fill="#9C0F00"
               className="dot-inner"
             />
-          </g>
+          </g> */}
 
-          <mask id="roadMask" maskUnits="userSpaceOnUse">
+          {/* <mask id="roadMask" maskUnits="userSpaceOnUse">
             <path
               id="roadPath"
               d="M544 590c-8.045-16.822-53.876 14.164-65-12"
@@ -456,7 +548,7 @@ export const Map = ({ start }) => {
               fill="#fff"
               className="bubble-icon bubble-icon--banff"
             />
-          </g>
+          </g> */}
         </g>
         <g transform="translate(140, 211)">
           <ellipse
@@ -464,19 +556,19 @@ export const Map = ({ start }) => {
             cy="497"
             rx="6"
             ry="1"
-            fill="#C9C9C9"
+            fill="#000000"
             className="shadow shadow--edmonton"
           />
           <path
             d="m590 496-6.062-10.5h12.124L590 496Z"
-            fill="#073142"
+            fill="#9C0F00"
             className="triangle triangle--edmonton"
           />
           <circle
             cx="589.5"
             cy="449.5"
             r="36.5"
-            fill="#073142"
+            fill="#9C0F00"
             className="bubble bubble--edmonton"
           />
 
@@ -500,19 +592,19 @@ export const Map = ({ start }) => {
             cy="633"
             rx="6"
             ry="1"
-            fill="#C9C9C9"
+            fill="#000000"
             className="shadow shadow--calgary"
           />
           <path
             d="m540 632-6.062-10.5h12.124L540 632Z"
-            fill="#073142"
+            fill="#9C0F00"
             className="triangle triangle--calgary"
           />
           <circle
             cx="539.5"
             cy="585.5"
             r="36.5"
-            fill="#073142"
+            fill="#9C0F00"
             className="bubble bubble--calgary"
           />
 

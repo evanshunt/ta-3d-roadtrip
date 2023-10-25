@@ -320,11 +320,10 @@ const Experience = () => {
 
     if (dir === "next") {
       if (!hasStarted) {
-        setClicked(true); // comment out when the intro is added back in
         setHasStarted(true);
-      } else {
-        index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+        // setClicked(true); // comment out when the intro is added back in
       }
+      index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
     } else {
       index <= 1 ? setIndex(1) : setIndex(index - 1);
     }
@@ -389,9 +388,9 @@ const Experience = () => {
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        {/* <div onClick={start}>
-        <Intro hasStarted={hasStarted} />
-      </div> */}
+        <div onClick={start}>
+          <Intro hasStarted={hasStarted} />
+        </div>
 
         {days[1] && (
           <Itinerary
@@ -472,18 +471,11 @@ const Experience = () => {
             >
               <Arrow dir={"prev"} active={index >= 1} />
             </button>
-            {/* <SwitchTransition>
-              <CSSTransition
-                classNames="day-info-anim"
-                timeout={250}
-                key={index}
-              > */}
+
             <div className="day-info">
-              {console.log(index)}
               <span>{destinations[index].details.blurb}</span>
             </div>
-            {/* </CSSTransition>
-            </SwitchTransition> */}
+
             <button
               disabled={index === maxLength}
               className="controls__button controls__button--next"

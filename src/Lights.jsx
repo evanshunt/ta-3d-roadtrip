@@ -9,7 +9,7 @@ const Lights = ({ debug, index, positions }) => {
   const tl = gsap.timeline({});
 
   const colors = {
-    blue: new THREE.Color().setHex(0x70b2f5),
+    blue: new THREE.Color().setHex(0xafd3f8),
     orange: new THREE.Color().setHex(0xf5b170),
     white: new THREE.Color().setHex(0xffffff),
   };
@@ -187,8 +187,8 @@ const Lights = ({ debug, index, positions }) => {
         // intensity={intensity}
         lookAt={positions[0]}
         castShadow
-        shadow-mapSize-width={1024 * 4}
-        shadow-mapSize-height={1024 * 4}
+        shadow-mapSize-width={1024 * 6}
+        shadow-mapSize-height={1024 * 6}
       />
     </>
   );

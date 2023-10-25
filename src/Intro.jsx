@@ -18,7 +18,7 @@ const Intro = ({ hasStarted }) => {
   };
 
   if (hasStarted) {
-    playIntro();
+    // playIntro();
   }
 
   return (

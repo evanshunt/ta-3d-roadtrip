@@ -13,6 +13,7 @@ const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
       <div
         onClick={() => {
           setIndex(index + 1);
+          showInfo();
         }}
         className="itinerary__stop__wrap"
       >
@@ -23,13 +24,8 @@ const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
         />
         <strong className="itinerary__stop__name">{stop.details.title} </strong>
       </div>
-      <button
-        label={"View stop details"}
-        className="itinerary__stop__button"
-        onClick={showInfo}
-      >
-        <img src={caretImage} alt="" />
-      </button>
+
+      <img src={caretImage} alt="" />
     </li>
   );
 };

@@ -5,7 +5,7 @@ import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 gsap.registerPlugin(DrawSVGPlugin);
 
 export const Map = ({ start }) => {
-  const duration = 0.75;
+  const duration = 0.66;
 
   useEffect(() => {
     const animateScene = () => {
@@ -182,7 +182,7 @@ export const Map = ({ start }) => {
       tl.to(
         ".whole-scene",
         {
-          scale: 4,
+          scale: 3,
           duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
@@ -198,11 +198,11 @@ export const Map = ({ start }) => {
                 clouds.classList.remove("cloud-intro--play--in");
                 // clouds.classList.remove("cloud-intro--play--back");
                 clouds.classList.add("cloud-intro--play");
-              }, 1350);
+              }, duration * 2000);
               setTimeout(() => {
                 intro.classList.add("intro--complete");
                 mapWrap.classList.add("map-wrap--complete");
-              }, 1000);
+              }, duration * 1333);
               // },
             }
           },

@@ -22,13 +22,13 @@
     // height: 33vh;
     // left: 0;
     // position: fixed;
-    // transform: translate(-25%, -10vh);
+    // transform: translate(-25%, -10vh);controls__buttons
     // width: 78vw;
     // z-index: -2;
   }
 
   @media screen and (min-width: 1024px) {
-    bottom: 2rem;
+    bottom: 1.33rem;
     left: 38.5vw;
     min-width: 700px;
     transform: translate(-35%, 0);
@@ -92,11 +92,11 @@
 
 @media screen and (min-width: 1024px) {
   .controls__button--next {
-    margin-right: 2.8125rem;
+    // margin-right: 2.8125rem;
   }
 
   .controls__button--prev {
-    margin-left: 2.8125rem;
+    // margin-left: 2.8125rem;
   }
 }
 

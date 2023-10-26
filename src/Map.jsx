@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
@@ -8,6 +8,8 @@ export const Map = ({ start }) => {
   const duration = 0.66;
 
   useEffect(() => {
+    let startedOut = false;
+
     const animateScene = () => {
       const tl = new gsap.timeline({
         // repeat: -1,
@@ -143,7 +145,7 @@ export const Map = ({ start }) => {
           ease: "bounce.out",
           duration: duration * 1.25,
         },
-        "-=50%"
+        "-=25%"
       );
 
       tl.to(
@@ -154,7 +156,7 @@ export const Map = ({ start }) => {
           ease: "elastic.out",
           duration: duration * 1.25,
         },
-        "-=50%"
+        "-=25%"
       );
 
       gsap.set(".route", {
@@ -186,7 +188,9 @@ export const Map = ({ start }) => {
           duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
-            if (tl._time >= duration * 10) {
+            if (tl._time >= duration * 10 && !startedOut) {
+              startedOut = true;
+              console.log({ startedOut });
               // onStart: () => {
 
               clouds.classList.remove("cloud-intro--play");
@@ -198,11 +202,13 @@ export const Map = ({ start }) => {
                 clouds.classList.remove("cloud-intro--play--in");
                 // clouds.classList.remove("cloud-intro--play--back");
                 clouds.classList.add("cloud-intro--play");
+                props.removeIntro();
               }, duration * 2000);
               setTimeout(() => {
                 intro.classList.add("intro--complete");
                 mapWrap.classList.add("map-wrap--complete");
               }, duration * 1333);
+
               // },
             }
           },

@@ -7,6 +7,7 @@ import "./scss/intro.scss";
 
 const Intro = ({ hasStarted }) => {
   const [hasPlayed, setHasPlayed] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const playIntro = () => {
     const intro = document.querySelector(".cloud-intro");
@@ -21,12 +22,20 @@ const Intro = ({ hasStarted }) => {
     // playIntro();
   }
 
+  const removeIntro = () => {
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+
   return (
     <div className="intro">
       <Onboarding />
+      {/* @TODO: remove map after done playing */}
       <div className="intro__map">
-        <Map start={hasPlayed} />
+        <Map removeIntro={removeIntro} start={hasPlayed} />
       </div>
+      {/* @TODO: remove clouds after done playing */}
       <IntroClouds playIntro={playIntro} />
     </div>
   );

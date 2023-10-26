@@ -1,9 +1,5 @@
 import * as THREE from "three";
-// import animation from "./animation-data/animation.json";
-// import animation from "./animation-data/animation-new-pins.json";
-// import animation from "./animation-data/animation-new-pins-left-offset.json";
-// import animation from "./animation-data/new-animation-t-s.json";
-import animation from "./animation-data/animation-higher-pin.json";
+import animation from "./animation-data/new-pins.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -43,7 +39,7 @@ const Experience = () => {
   const [attractionsOpen, setAttractionsOpen] = useState(false);
   // uncomment to use saved data
 
-  const animDuration = 3;
+  const animDuration = 8.8;
 
   const destinations = [
     {
@@ -58,7 +54,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 7.866,
+      position: 11.066,
       day: 1,
 
       details: {
@@ -91,7 +87,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 10.133,
+      position: 13.033,
       day: 1,
       // name: "Banff",
       description:
@@ -106,7 +102,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 12.333,
+      position: 15.033,
       day: 1,
       // name: "Sky Bistro",
       description: "Description here",
@@ -133,7 +129,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 16.233,
+      position: 18.933,
       day: 1,
       // name: "Fairmont Banff Springs Hotel",
       details: {
@@ -305,12 +301,13 @@ const Experience = () => {
   useEffect(() => {
     // @TODO: determine how this gets wired up
     if (index === 0 && clicked) {
-      // setTimeout(() => {
-      sheet.sequence.play({
-        range: [0, 6.15],
-        direction: "normal",
-      });
-      // }, animDuration * 1000);
+      setTimeout(() => {
+        sheet.sequence.play({
+          // range: [3.36, 6.15],
+          range: [5.8, 9.5],
+          direction: "normal",
+        });
+      }, animDuration * 1000);
     }
   }, [clicked]);
 
@@ -415,8 +412,8 @@ const Experience = () => {
           gl={{
             antialias: true,
             preserveDrawingBuffer: false,
-            shadowMapType: THREE.PCFSoftShadowMap,
-            shadowMapEnabled: true,
+            // shadowMapType: THREE.PCFSoftShadowMap,
+            // shadowMapEnabled: true,
           }}
 
           // frameloop="demand"

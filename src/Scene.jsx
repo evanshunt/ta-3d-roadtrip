@@ -84,9 +84,14 @@ const Scene = (props) => {
   const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
   const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
   const [hasStarted, setHasStarted] = useState(false);
+  const [addEffect, setAddEffect] = useState(false);
   const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
+
+  useEffect(() => {
+    console.log(addEffect);
+  }, [addEffect]);
 
   // const { focusDistance, focalLength, bokehScale } = useControls({
   //   focusDistance: {
@@ -109,8 +114,12 @@ const Scene = (props) => {
   //   },
   // });
 
-  useFrame(() => {
+  useFrame((e) => {
+    // if (e.clock.elapsedTime > props.animDuration) {
+    //   setAddEffect(true);
+    // }
     if (hasStarted) return;
+    //@TODO: use e.clock.elapsedTime to start the animation
     if (props.index === 0 && props.started) {
       setTimeout(() => {
         animateCloud(cloudRef, cloudTimeline, 1);
@@ -303,13 +312,15 @@ const Scene = (props) => {
       </e.group>
 
       {/* @TODO: figure out a way to use this in a less intrusive way. */}
-      {/* <EffectComposer>
-        <DepthOfField
-          focusDistance={focusDistance} // where to focus
-          focalLength={focalLength} // focal length
-          bokehScale={bokehScale} // bokeh size
-        />
-      </EffectComposer> */}
+      {/* {addEffect && (
+        <EffectComposer>
+          <DepthOfField
+            focusDistance={0.0325} // where to focus
+            focalLength={0.065} // focal length
+            bokehScale={10} // bokeh size
+          />
+        </EffectComposer>
+      )} */}
       {/* <TiltShiftEffects /> */}
     </>
   );

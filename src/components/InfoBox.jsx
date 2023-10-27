@@ -50,7 +50,8 @@ const InfoBox = ({ imageSrc, position }) => {
         <boxGeometry args={[1.75, 0.25, 0.001]} position={[0, 0, 0]} />
         <meshBasicMaterial
           color={0x000000}
-          opacity={0.75}
+          // opacity={0.75}
+          alphaTest={0.75}
           transparent={true}
           colorWrite={false}
           depthWrite={false}

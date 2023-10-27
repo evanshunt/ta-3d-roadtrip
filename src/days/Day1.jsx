@@ -3,7 +3,14 @@ import ImagePin from "../models/ImagePin";
 // import { useControls } from "leva";
 import InfoBox from "../components/InfoBox";
 
-const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
+const Day1 = ({
+  geometry,
+  material,
+  positions,
+  sceneIndex,
+  setIndex,
+  visible,
+}) => {
   // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
   //   sunshineVillageX: {
   //     value: 0,
@@ -43,7 +50,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
 
       <ImagePin
         active={sceneIndex === 0}
+        geometry={geometry}
         imageSrc={"/images/cave-and-basin-national-historic-site.png"}
+        material={material}
         scale={0.2}
         setIndex={setIndex}
         index={1}
@@ -53,7 +62,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
 
       <ImagePin
         active={sceneIndex === 1}
+        geometry={geometry}
         imageSrc={"/images/banff-gondola.png"}
+        material={material}
         scale={0.2}
         setIndex={setIndex}
         index={2}
@@ -63,7 +74,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
 
       <ImagePin
         active={sceneIndex === 2}
+        geometry={geometry}
         imageSrc={"/images/sky-bistro.png"}
+        material={material}
         scale={0.2}
         setIndex={setIndex}
         index={3}
@@ -73,7 +86,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
 
       <ImagePin
         active={sceneIndex === 3}
+        geometry={geometry}
         imageSrc={"/images/banff-upper-hot-springs.png"}
+        material={material}
         scale={0.2}
         setIndex={setIndex}
         index={4}
@@ -83,7 +98,9 @@ const Day1 = ({ positions, sceneIndex, setIndex, visible }) => {
 
       <ImagePin
         active={sceneIndex === 4}
+        geometry={geometry}
         imageSrc={"/images/fairmont-banff-springs-hotel.png"}
+        material={material}
         scale={0.2}
         setIndex={setIndex}
         index={5}

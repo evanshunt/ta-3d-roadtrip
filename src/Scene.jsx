@@ -1,26 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { Perf } from "r3f-perf";
+import * as THREE from "three";
+import { Cloud } from "./Clouds.jsx";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
-// import TiltShiftEffects from "./shaders/tiltshift.jsx";
-
-import { useFrame } from "@react-three/fiber";
+import { editable as e } from "@theatre/r3f";
+import EditableCamera from "./EditableCamera.jsx";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { gsap } from "gsap";
-import { PerspectiveCamera, useCurrentSheet } from "@theatre/r3f";
-import EditableCamera from "./EditableCamera.jsx";
-import { Cloud } from "./Clouds.jsx";
-import Day1 from "./days/Day1.jsx";
 import Lights from "./Lights.jsx";
-
+import { Perf } from "r3f-perf";
 import Road from "./models/final/Road.jsx";
-import { editable as e } from "@theatre/r3f";
-
+import { types } from "@theatre/core";
+import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
+
 import { Top } from "./models/final/Top.jsx";
 import { Sides } from "./models/final/Sides.jsx";
 import { Plane } from "./models/final/Plane.jsx";
 
+import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 
@@ -48,6 +46,12 @@ const animateCloud = (cloudRef, tl, cloudIndex) => {
     z: info[cloudIndex].z,
     duration: info[cloudIndex].duration,
     ease: "none",
+    // onStart: () => {
+    //   invalidate();
+    // },
+    // onComplete: () => {
+    //   invalidate();
+    // },
   });
 };
 
@@ -80,53 +84,77 @@ const positions = {
   jasperPlanetarium: [5.4, 1.15, -5.6],
 };
 
+const circleGeom = new THREE.CircleGeometry(0.8, 32);
+
+THREE.ColorManagement.legacyMode = false;
+const redMaterial = new THREE.MeshBasicMaterial({
+  color: 0x9c0f00,
+});
+
 const Scene = (props) => {
-  const [cameraPosition, setCameraPosition] = useState([0, 93, 5]);
-  const [cameraRotation, setCameraRotation] = useState([-Math.PI / 2, 0, 0]);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [addEffect, setAddEffect] = useState(false);
-  const cloudRef = useRef();
+  // const bokehRef = useRef();
+  // const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
 
-  useEffect(() => {
-    console.log(addEffect);
-  }, [addEffect]);
-
   // const { focusDistance, focalLength, bokehScale } = useControls({
   //   focusDistance: {
-  //     value: 0.16,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
+  //     value: 0.12,
+  //     min: 0.08,
+  //     max: 0.15,
+  //     step: 0.001,
   //   },
   //   focalLength: {
-  //     value: 0.13,
+  //     value: 0.085,
   //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
+  //     max: 0.15,
+  //     step: 0.001,
   //   },
   //   bokehScale: {
-  //     value: 1,
+  //     value: 10,
   //     min: 0,
   //     max: 10,
   //     step: 0.1,
   //   },
   // });
 
-  useFrame((e) => {
-    // if (e.clock.elapsedTime > props.animDuration) {
-    //   setAddEffect(true);
-    // }
-    if (hasStarted) return;
-    //@TODO: use e.clock.elapsedTime to start the animation
-    if (props.index === 0 && props.started) {
-      setTimeout(() => {
-        animateCloud(cloudRef, cloudTimeline, 1);
-        setHasStarted(true);
-      }, props.animDuration + 4 * 1000);
-    }
-  });
+  // useFrame((e) => {
+  //   if (e.clock.elapsedTime > props.animDuration - 0.75) {
+  //     setAddEffect(true);
+  //   }
+  // });
+
+  // useEffect(() => {
+  //   if (addEffect) return;
+
+  //   setTimeout(() => {
+  //     setAddEffect(true);
+  //     gsap.to(dofProps, {
+  //       bokehScale: 6,
+  //       duration: 6,
+  //     });
+  //     console.log("hickup here?");
+  //   }, props.animDuration + 4 * 1000);
+  // }, [hasStarted]);
+
+  // useFrame((e) => {
+  //   // if (e.clock.elapsedTime > props.animDuration) {
+  //   //   setAddEffect(true);
+  //   // }
+  //   if (hasStarted) return;
+
+  //   if (e.clock.elapsedTime > props.animDuration - 1) {
+  //     setHasStarted(true);
+  //     animateCloud(cloudRef, cloudTimeline, 1);
+  //   }
+  //   //@TODO: use e.clock.elapsedTime to start the animation
+  //   // if (props.index === 0 && props.started) {
+  //   //   setTimeout(() => {
+  //   //     console.log("im firing the cloud timeout");
+
+  //   //   }, props.animDuration + 4 * 1000);
+  //   // }
+  // });
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {
@@ -146,21 +174,23 @@ const Scene = (props) => {
   //   },
   // });
 
+  //-4.8, 1.6, 5.4]
+
   // const { cloudPosX, cloudPosY, cloudPosZ } = useControls({
   //   cloudPosX: {
-  //     value: 0,
+  //     value: -4.8,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
   //   },
   //   cloudPosY: {
-  //     value: 0,
+  //     value: 1.6,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
   //   },
   //   cloudPosZ: {
-  //     value: 0,
+  //     value: 5.4,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
@@ -252,7 +282,7 @@ const Scene = (props) => {
 
       <Lights index={props.index} debug={props.debug} positions={positions} />
 
-      {/* <Perf position="bottom-left" /> */}
+      <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
 
@@ -261,6 +291,8 @@ const Scene = (props) => {
           sceneIndex={props.index}
           setIndex={props.setIndex}
           visible={props.currDay === 0 || props.currDay === 1}
+          geometry={circleGeom}
+          material={redMaterial}
         />
 
         {/* Day 2 */}
@@ -278,7 +310,7 @@ const Scene = (props) => {
         </e.group>
         */}
 
-        <e.group theatreKey="Banff Cloud 2" ref={cloudRef}>
+        <group theatreKey="Banff Cloud 2">
           <Cloud
             // works scale = -0.03
             // works position = [-2.7, 0.85, 2.30]
@@ -289,11 +321,12 @@ const Scene = (props) => {
             position={[-2.7, 0.85, 2.3]}
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
           />
-        </e.group>
+        </group>
 
-        <e.group theatreKey="Banff Cloud 1">
-          <Cloud scale={0.08} position={[-4.8, 1.6, 5.4]} />
-        </e.group>
+        <group>
+          <Cloud scale={0.08} position={[-4.8, 1.6, 5.66]} />
+          {/* <Cloud scale={0.08} position={[cloudPosX, cloudPosY, cloudPosZ]} /> */}
+        </group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road
@@ -311,17 +344,21 @@ const Scene = (props) => {
         <Plane />
       </e.group>
 
-      {/* @TODO: figure out a way to use this in a less intrusive way. */}
-      {/* {addEffect && (
-        <EffectComposer>
-          <DepthOfField
-            focusDistance={0.0325} // where to focus
-            focalLength={0.065} // focal length
-            bokehScale={10} // bokeh size
-          />
-        </EffectComposer>
-      )} */}
-      {/* <TiltShiftEffects /> */}
+      {/* @TODO: animate this for the stops? */}
+      {/* {addEffect && ( */}
+
+      {/* <EffectComposer>
+        <DepthOfField
+          // focusDistance={0.0325} // where to focus
+          focusDistance={focusDistance}
+          // focalLength={0.065} // focal length
+          focalLength={focalLength}
+          // bokehScale={6} // bokeh size
+          bokehScale={bokehScale}
+        />
+      </EffectComposer> */}
+
+      {/* )} */}
     </>
   );
 };

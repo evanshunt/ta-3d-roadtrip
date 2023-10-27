@@ -39,7 +39,7 @@ const Experience = () => {
   const [attractionsOpen, setAttractionsOpen] = useState(false);
   // uncomment to use saved data
 
-  const animDuration = 8.8;
+  const animDuration = 6.3;
 
   const destinations = [
     {
@@ -116,7 +116,7 @@ const Experience = () => {
     },
     {
       name: "Banff",
-      position: 14.333,
+      position: 17,
       day: 1,
       // name: "Banff Upper Hot Springs",
       details: {
@@ -407,16 +407,17 @@ const Experience = () => {
         </button>
 
         <Canvas
-          dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+          // dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+          dpr={1.5}
           shadows={true}
           gl={{
-            antialias: true,
+            antialias: false,
             preserveDrawingBuffer: false,
+            powerPreference: "high-performance",
             // shadowMapType: THREE.PCFSoftShadowMap,
             // shadowMapEnabled: true,
           }}
-
-          // frameloop="demand"
+          frameloop="demand"
         >
           {/* <PerformanceMonitor
           onIncline={() => {

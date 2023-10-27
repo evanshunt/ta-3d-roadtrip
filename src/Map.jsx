@@ -134,7 +134,7 @@ export const Map = ({ start }) => {
         scale: 1,
         ease: "bounce.out",
         duration: duration * 1.25,
-        delay: duration * 0.5,
+        // delay: duration * 0.5,
       });
 
       tl.to(
@@ -145,7 +145,7 @@ export const Map = ({ start }) => {
           ease: "bounce.out",
           duration: duration * 1.25,
         },
-        "-=25%"
+        "+=70%"
       );
 
       tl.to(
@@ -156,7 +156,7 @@ export const Map = ({ start }) => {
           ease: "elastic.out",
           duration: duration * 1.25,
         },
-        "-=25%"
+        "+=175%"
       );
 
       gsap.set(".route", {
@@ -169,8 +169,9 @@ export const Map = ({ start }) => {
           drawSVG: "0% 100%",
           duration: duration * 4,
           ease: "linear",
+          delay: duration,
         },
-        "<"
+        duration * 0.5
       );
     };
 
@@ -188,9 +189,9 @@ export const Map = ({ start }) => {
           duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
-            if (tl._time >= duration * 10 && !startedOut) {
+            if (tl._time >= duration * 7.5 && !startedOut) {
               startedOut = true;
-              console.log({ startedOut });
+
               // onStart: () => {
 
               clouds.classList.remove("cloud-intro--play");

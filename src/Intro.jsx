@@ -18,10 +18,6 @@ const Intro = ({ hasStarted }) => {
     }, 500);
   };
 
-  if (hasStarted) {
-    // playIntro();
-  }
-
   const removeIntro = () => {
     setVisible(false);
   };
@@ -31,11 +27,9 @@ const Intro = ({ hasStarted }) => {
   return (
     <div className="intro">
       <Onboarding />
-      {/* @TODO: remove map after done playing */}
       <div className="intro__map">
         <Map removeIntro={removeIntro} start={hasPlayed} />
       </div>
-      {/* @TODO: remove clouds after done playing */}
       <IntroClouds playIntro={playIntro} />
     </div>
   );

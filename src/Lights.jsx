@@ -15,11 +15,11 @@ const Lights = ({ debug, index, positions }) => {
   };
 
   const sunPositions = {
-    sunrise: [-15, 10, 8],
-    morning: [-8.5, 11.5, 4],
-    noon: [-6.5, 10.5, 12.5],
-    afternoon: [1, 8, -12.5],
-    sunset: [7, 8, -14],
+    sunrise: [-15, 10, 13.5],
+    morning: [-8.5, 10, 13.5],
+    noon: [-6.5, 10, 13.5],
+    afternoon: [-3, 10, 13.5],
+    sunset: [1.5, 10, 13.5],
   };
 
   const animateSpotlight = (spotLight, tl, index) => {
@@ -142,7 +142,6 @@ const Lights = ({ debug, index, positions }) => {
     animateSpotlight(spotLight, tl, index);
   }, [index]);
 
-  // if (debug) {
   // const { positionX, positionY, positionZ, intensity } = useControls({
   //   positionX: {
   //     // value: 0,
@@ -172,7 +171,7 @@ const Lights = ({ debug, index, positions }) => {
   //     step: 0.025,
   //   },
   // });
-  // }
+
   // oldpos [-35.98, 3.2, 0.43]
 
   return (
@@ -181,14 +180,14 @@ const Lights = ({ debug, index, positions }) => {
 
       <directionalLight
         ref={spotLight}
-        position={debug ? [positionX, positionY, positionZ] : [-15, 10, 8]}
+        position={debug ? [positionX, positionY, positionZ] : [-15, 10, 13.5]}
         // intensity={0.5}
         intensity={debug ? intensity : 2.5}
         // intensity={intensity}
         lookAt={positions[0]}
         castShadow
-        shadow-mapSize-width={1024 * 6}
-        shadow-mapSize-height={1024 * 6}
+        shadow-mapSize-width={1024 * 5} // @TODO: test this on mobile, might have to use <SoftShadows />
+        shadow-mapSize-height={1024 * 5}
       />
     </>
   );

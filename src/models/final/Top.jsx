@@ -30,9 +30,9 @@ export function Top(props) {
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
-          map-anisotropy={16}
-          metalness={0}
-          roughness={1}
+          // map-anisotropy={16}
+          // metalness={0}
+          // roughness={1}
         />
       </mesh>
     </group>

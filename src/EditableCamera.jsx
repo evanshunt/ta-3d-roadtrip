@@ -5,7 +5,7 @@ import { editable as e } from "@theatre/r3f";
 const EditableCamera = ({ cameraRef }) => {
   return (
     <e.group theatreKey={"Camera"}>
-      <PerspectiveCamera makeDefault zoom={2.5} far={95.0} ref={cameraRef} />
+      <PerspectiveCamera makeDefault zoom={2.5} far={35.0} ref={cameraRef} />
     </e.group>
   );
 };

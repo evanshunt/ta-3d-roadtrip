@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Billboard, Image, useCursor } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import { gsap } from "gsap";
+import * as THREE from "three";
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
@@ -9,10 +10,12 @@ import shadowImage from "../images/shadow.svg";
 
 const ImagePin = ({
   active,
+  geometry,
   imageSrc,
   index,
-  position,
+  material,
   name,
+  position,
   scale,
   setIndex,
 }) => {
@@ -123,10 +126,10 @@ const ImagePin = ({
         ref={stemRef}
         theatreKey={`Pins / ${name} / Stem ${name}`}
         scale={[0.075, 0.2, 0.075]}
+        material={material}
       >
-        {/* <planeGeometry args={[0.05, 2]} position={[0, -3, -0.02]} /> */}
-        <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
         <meshBasicMaterial color={0x9c0f00} />
+        <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
       </e.mesh>
 
       <mesh position={[0, 0, -0.0305]} castShadow>
@@ -155,10 +158,10 @@ const ImagePin = ({
 
         theatreKey={`Pins / ${name} / Background ${name}`}
         scale={0.02}
-      >
-        <circleGeometry args={[0.8, 32]} />
-        <meshBasicMaterial color={0x9c0f00} metalness={0} roughness={1} />
-      </e.mesh>
+        material={material}
+        geometry={geometry}
+      />
+
       <e.mesh
         ref={backgroundHaloRef}
         castShadow
@@ -167,14 +170,15 @@ const ImagePin = ({
         // position-y={1.25}
         theatreKey={`Pins / ${name} / Background Halo ${name}`}
         scale={0.03}
+        geometry={geometry}
       >
-        <circleGeometry args={[0.8, 32]} />
         <meshStandardMaterial
           transparent={true}
           metalness={0}
           roughness={1}
           color={0x9c0f00}
           opacity={0.4}
+          // alphaTest={0.4}
         />
       </e.mesh>
     </Billboard>

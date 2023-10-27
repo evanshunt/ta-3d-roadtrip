@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
-function Road(props) {
+const Road = (props) => {
   const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
   const texture = useTexture("/textures/final/road-baked-test.jpg");
   // const { posX, posY, posZ } = useControls({
@@ -48,7 +48,7 @@ function Road(props) {
       </mesh>
     </group>
   );
-}
+};
 
 useGLTF.preload("/glb/road.glb");
 

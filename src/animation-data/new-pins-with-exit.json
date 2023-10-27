@@ -222,7 +222,7 @@
       },
       "sequence": {
         "subUnitsPerUnit": 30,
-        "length": 24.92,
+        "length": 25.53,
         "type": "PositionalSequence",
         "tracksByObject": {
           "Camera": {
@@ -277,24 +277,24 @@
                     "handles": [
                       0.5,
                       1,
-                      0.55,
-                      0.085
+                      0.645,
+                      0.045
                     ],
                     "type": "bezier",
                     "value": -4.778976705621499
                   },
                   {
-                    "id": "pIR_DBAWcV",
-                    "position": 24,
+                    "id": "WXbSgEiWmN",
+                    "position": 25,
                     "connectedRight": true,
                     "handles": [
-                      0.45,
-                      0.94,
+                      0.355,
+                      1,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": -5.708976705621486
+                    "value": -5.878976705621483
                   }
                 ]
               },
@@ -406,24 +406,24 @@
                     "handles": [
                       0.5,
                       1,
-                      0.55,
-                      0.085
+                      0.645,
+                      0.045
                     ],
                     "type": "bezier",
                     "value": 10.339999999999993
                   },
                   {
-                    "id": "9-ptyaQEnB",
-                    "position": 24,
+                    "id": "nweaaI44tW",
+                    "position": 25,
                     "connectedRight": true,
                     "handles": [
-                      0.45,
-                      0.94,
+                      0.355,
+                      1,
                       0.5,
                       0
                     ],
                     "type": "bezier",
-                    "value": 8.990336642975047
+                    "value": 9.420336642975037
                   }
                 ]
               },
@@ -472,7 +472,7 @@
                   },
                   {
                     "id": "Cinu3XazbU",
-                    "position": 23.333,
+                    "position": 22.5,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -535,19 +535,19 @@
                     "handles": [
                       0.5,
                       1,
-                      0.55,
-                      0.085
+                      0.645,
+                      0.045
                     ],
                     "type": "bezier",
                     "value": -0.2591345740922576
                   },
                   {
                     "id": "rURve26tcH",
-                    "position": 24,
+                    "position": 25,
                     "connectedRight": true,
                     "handles": [
-                      0.68,
-                      0.53,
+                      0.355,
+                      1,
                       0.5,
                       0
                     ],
@@ -606,19 +606,19 @@
                     "handles": [
                       0.5,
                       1,
-                      0.55,
-                      0.085
+                      0.645,
+                      0.045
                     ],
                     "type": "bezier",
                     "value": 0.014770579964701847
                   },
                   {
                     "id": "7gdeThDa3x",
-                    "position": 24,
+                    "position": 25,
                     "connectedRight": true,
                     "handles": [
-                      0.68,
-                      0.53,
+                      0.355,
+                      1,
                       0.5,
                       0
                     ],
@@ -8959,6 +8959,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "dEgTQINN5IfyGXMn",
     "46dkd8rblA2H9W0l",
     "GLdaQonuMhKgg7Uy",
     "lNKPXVCN5DTcR3PC",
@@ -9007,7 +9008,6 @@
     "oElAtrHo8WOlaoBf",
     "av7oHtpAzKyKTg4C",
     "q5h25tE8i-T4JMq9",
-    "g9ZPkgMhtClQh9PC",
-    "jez3cRPsBcUmuZhR"
+    "g9ZPkgMhtClQh9PC"
   ]
 }

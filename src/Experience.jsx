@@ -163,7 +163,7 @@ const Experience = () => {
     },
     {
       name: "Lake Louise",
-      position: 24,
+      position: 25,
       day: 2,
       // name: "Johnston Canyon",
       details: {

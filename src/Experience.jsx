@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins.json";
+import animation from "./animation-data/new-pins-with-exit.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -138,6 +138,16 @@ const Experience = () => {
         image: "/images/fairmont-banff-springs-hotel.jpg",
         description:
           'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
+      },
+    },
+    {
+      name: "start",
+      position: 21.39,
+      day: 2,
+      name: null,
+      hideFromItinerary: true,
+      details: {
+        blurb: "Day 2 begins",
       },
     },
     {
@@ -371,7 +381,7 @@ const Experience = () => {
     return day !== "0";
   });
 
-  const inBetweens = [0, 5];
+  const inBetweens = [0, 6];
 
   useEffect(() => {
     if (inBetweens.includes(index)) return;
@@ -396,6 +406,7 @@ const Experience = () => {
             days={days}
             grouped={daysParsed}
             handleIndex={handleIndex}
+            index={index}
             setIndex={setIndex}
             showInfo={showInfo}
           />

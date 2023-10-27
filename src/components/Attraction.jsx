@@ -44,9 +44,17 @@ const Attraction = ({
     preventDefaultTouchmoveEvent: true,
   });
 
+  const inBetweens = [6];
+
   useEffect(() => {
     setOpen(attractionsOpen);
   }, [attractionsOpen]);
+
+  useEffect(() => {
+    if (inBetweens.includes(index)) {
+      setOpen(false);
+    }
+  }, [index]);
 
   return (
     <div

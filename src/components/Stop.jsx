@@ -2,6 +2,7 @@ import React from "react";
 import caretImage from "../images/caret-right.svg";
 
 const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
+  if (stop.hideFromItinerary) return null;
   return (
     <li
       className={`${

@@ -290,7 +290,8 @@ const Scene = (props) => {
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}
-          visible={props.currDay === 0 || props.currDay === 1}
+          visible={true}
+          // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
         />

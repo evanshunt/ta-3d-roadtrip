@@ -100,87 +100,87 @@ const ImagePin = ({
       // position={[posX, posY, posZ]}
       // scale={scale}
     >
-      <e.group
-        ref={imageRef}
-        objRef={setTheatreObject}
-        theatreKey={`Pins / ${name} / Pin ${name}`}
-        scale={0}
-        additionalProps={{
-          opacity: types.number(0.5, { range: [0, 1.0] }),
-        }}
-      >
-        <Image
+      <e.group theatreKey={`Pins / ${name} / Group`}>
+        <e.group
           ref={imageRef}
-          position={[0, 0, 0.1]}
-          transparent
-          url={imageSrc}
-          opacity={opacity}
-          // opacity={0}
-          // scale={1.33}
+          objRef={setTheatreObject}
+          theatreKey={`Pins / ${name} / Pin ${name}`}
+          scale={0}
+          additionalProps={{
+            opacity: types.number(0.5, { range: [0, 1.0] }),
+          }}
+        >
+          <Image
+            ref={imageRef}
+            position={[0, 0, 0.1]}
+            transparent
+            url={imageSrc}
+            opacity={opacity}
+            // opacity={0}
+            // scale={1.33}
+          />
+        </e.group>
+
+        <e.mesh
+          castShadow={true}
+          position={[0, -1.15, -0.0305]}
+          ref={stemRef}
+          theatreKey={`Pins / ${name} / Stem ${name}`}
+          scale={[0.075, 0.2, 0.075]}
+          material={material}
+        >
+          <meshBasicMaterial color={0x9c0f00} />
+          <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
+        </e.mesh>
+
+        <mesh position={[0, 0, -0.0305]} castShadow>
+          <sphereGeometry args={[0.03, 16, 16]} />
+          <meshBasicMaterial colorWrite={false} depthWrite={false} />
+        </mesh>
+
+        <e.mesh
+          castShadow
+          ref={backgroundRef}
+          name={name}
+          onPointerEnter={() => {
+            animateHover();
+          }}
+          onPointerLeave={() => {
+            animateOut();
+          }}
+          onClick={(e) => {
+            setIndex(index);
+          }}
+          position-z={-0.02}
+          // position-y={position[1] + 0.05}
+          // position-y={1.25}
+
+          theatreKey={`Pins / ${name} / Background ${name}`}
+          scale={0.02}
+          material={material}
+          geometry={geometry}
         />
+
+        <e.mesh
+          ref={backgroundHaloRef}
+          castShadow
+          position-z={-0.03}
+          // position-y={position[1] + 0.05}
+          // position-y={1.25}
+          theatreKey={`Pins / ${name} / Background Halo ${name}`}
+          scale={0.03}
+          geometry={geometry}
+        >
+          <meshStandardMaterial
+            transparent={true}
+            metalness={0}
+            roughness={1}
+            color={0x9c0f00}
+            opacity={0.4}
+            // alphaTest={0.4}
+          />
+        </e.mesh>
       </e.group>
-
-      <e.mesh
-        castShadow={true}
-        position={[0, -1.15, -0.0305]}
-        ref={stemRef}
-        theatreKey={`Pins / ${name} / Stem ${name}`}
-        scale={[0.075, 0.2, 0.075]}
-        material={material}
-      >
-        <meshBasicMaterial color={0x9c0f00} />
-        <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
-      </e.mesh>
-
-      <mesh position={[0, 0, -0.0305]} castShadow>
-        <sphereGeometry args={[0.03, 16, 16]} transparent opacity={0} />
-        <meshBasicMaterial colorWrite={false} depthWrite={false} />
-        {/* <Image url={shadowImage} scale={0.02} /> */}
-        {/* <meshStandardMaterial color={0x9c0f00} roughness={1} metalness={0} /> */}
-      </mesh>
-
-      <e.mesh
-        castShadow
-        ref={backgroundRef}
-        name={name}
-        onPointerEnter={() => {
-          animateHover();
-        }}
-        onPointerLeave={() => {
-          animateOut();
-        }}
-        onClick={(e) => {
-          setIndex(index);
-        }}
-        position-z={-0.02}
-        // position-y={position[1] + 0.05}
-        // position-y={1.25}
-
-        theatreKey={`Pins / ${name} / Background ${name}`}
-        scale={0.02}
-        material={material}
-        geometry={geometry}
-      />
-
-      <e.mesh
-        ref={backgroundHaloRef}
-        castShadow
-        position-z={-0.03}
-        // position-y={position[1] + 0.05}
-        // position-y={1.25}
-        theatreKey={`Pins / ${name} / Background Halo ${name}`}
-        scale={0.03}
-        geometry={geometry}
-      >
-        <meshStandardMaterial
-          transparent={true}
-          metalness={0}
-          roughness={1}
-          color={0x9c0f00}
-          opacity={0.4}
-          // alphaTest={0.4}
-        />
-      </e.mesh>
     </Billboard>
   );
 };

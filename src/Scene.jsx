@@ -321,11 +321,11 @@ const Scene = (props) => {
         </e.group>
 
       */}
-        <e.group theatreKey="Lake Louise Cloud">
+        <group>
           <Cloud scale={0.05} position={[-3.1, 1.76, 2.07]} />
-        </e.group>
+        </group>
 
-        <group theatreKey="Banff Cloud 2">
+        <group>
           <Cloud
             // works scale = -0.03
             // works position = [-2.7, 0.85, 2.30]
@@ -333,7 +333,7 @@ const Scene = (props) => {
             scale={0.03}
             // scale={cloudScale}
             //  position={[-0.8, 1.5, 2.6]}
-            position={[-2.7, 0.85, 2.3]}
+            position={[-2.7, 0.85, 1.6]}
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
           />
         </group>
@@ -362,16 +362,16 @@ const Scene = (props) => {
       {/* @TODO: animate this for the stops? */}
       {/* {addEffect && ( */}
 
-      {/* <EffectComposer>
+      <EffectComposer>
         <DepthOfField
-          // focusDistance={0.0325} // where to focus
-          focusDistance={focusDistance}
-          // focalLength={0.065} // focal length
-          focalLength={focalLength}
-          // bokehScale={6} // bokeh size
-          bokehScale={bokehScale}
+          focusDistance={0.12} // where to focus
+          // focusDistance={focusDistance}
+          focalLength={0.09} // focal length
+          // focalLength={focalLength}
+          bokehScale={6} // bokeh size
+          // bokehScale={bokehScale}
         />
-      </EffectComposer> */}
+      </EffectComposer>
 
       {/* )} */}
     </>

@@ -69,11 +69,11 @@ function Cloud({
               scale: scale,
               rotation: [0, 0, 0],
             },
-            /*#__PURE__*/ React.createElement("meshStandardMaterial", {
+            /*#__PURE__*/ React.createElement("meshBasicMaterial", {
               map: cloudTexture,
               transparent: true,
               opacity: (scale / 6) * density * opacity,
-              depthTest: depthTest,
+              // depthTest: depthTest,
               color: color,
             })
           )

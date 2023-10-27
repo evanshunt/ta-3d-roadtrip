@@ -116,6 +116,7 @@ const ImagePin = ({
             transparent
             url={imageSrc}
             opacity={opacity}
+            alphaTest={1}
             // opacity={0}
             // scale={1.33}
           />
@@ -139,7 +140,6 @@ const ImagePin = ({
         </mesh>
 
         <e.mesh
-          castShadow
           ref={backgroundRef}
           name={name}
           onPointerEnter={() => {

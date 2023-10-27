@@ -141,7 +141,7 @@ const Experience = () => {
     },
     {
       name: "start",
-      position: 21.39,
+      position: 20.6,
       day: 2,
       name: null,
       hideFromItinerary: true,
@@ -151,7 +151,7 @@ const Experience = () => {
     },
     {
       name: "Lake Louise",
-      position: 19.45,
+      position: 22.09,
       day: 2,
       // name: "Carter-Ryan Gallery and Live Art Venue",
       details: {
@@ -163,7 +163,7 @@ const Experience = () => {
     },
     {
       name: "Lake Louise",
-      position: 19.45,
+      position: 24,
       day: 2,
       // name: "Johnston Canyon",
       details: {
@@ -389,6 +389,10 @@ const Experience = () => {
       setAttractionsOpen(true);
     }, 250);
   }, [index]);
+
+  // useEffect(() => {
+  //   setHasStarted(true);
+  // }, []);
 
   return (
     <div className="experience">

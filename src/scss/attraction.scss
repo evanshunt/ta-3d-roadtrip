@@ -263,12 +263,12 @@
 
 .fade-enter {
   opacity: 0;
-  transform: translate(0, 15%);
+  transform: translate(25%, 0);
 }
 
 .fade-enter-active {
-  opacity: 0.5;
-  transform: translate(0, 0%);
+  opacity: 1;
+  transform: translate(0%, 0%);
 }
 
 .fade-enter-done {
@@ -283,12 +283,12 @@
 
 .fade-exit-active {
   opacity: 0;
-  transform: translate(0, -5%);
+  transform: translate(-12.5%, 0);
 }
 
 .fade-exit-done {
   opacity: 0;
-  transform: translate(0, -15%);
+  transform: translate(-25%, 0);
 }
 
 // .fade-exit {

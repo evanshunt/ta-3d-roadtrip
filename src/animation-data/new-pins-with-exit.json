@@ -173,12 +173,56 @@
               "y": 0.3450000000000001,
               "z": -0.02
             }
+          },
+          "Pins / Carter Ryan Gallery / Group": {
+            "scale": {
+              "x": 0.25,
+              "y": 0.25,
+              "z": 0.25
+            },
+            "position": {
+              "y": -0.1
+            }
+          },
+          "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery": {
+            "opacity": 0,
+            "position": {
+              "y": 0.342,
+              "x": 0.002
+            }
+          },
+          "Pins / Carter Ryan Gallery / Stem Carter Ryan Gallery": {
+            "position": {
+              "y": -0.24999999999999967
+            }
+          },
+          "Pins / Johnston Canyon / Pin Johnston Canyon": {
+            "opacity": 0
+          },
+          "Pins / Johnston Canyon / Stem Johnston Canyon": {
+            "position": {
+              "y": -0.24999546149449625
+            }
+          },
+          "Pins / Johnston Canyon / Group": {
+            "position": {
+              "y": -0.07
+            }
+          },
+          "Pins / Lake Louise Gondola / Pin Lake Louise Gondola": {
+            "opacity": 0
+          },
+          "Pins / Fairmont Chateau Lake Louise / Pin Fairmont Chateau Lake Louise": {
+            "opacity": 0
+          },
+          "Pins / Fairview / Pin Fairview": {
+            "opacity": 0
           }
         }
       },
       "sequence": {
         "subUnitsPerUnit": 30,
-        "length": 24,
+        "length": 24.92,
         "type": "PositionalSequence",
         "tracksByObject": {
           "Camera": {
@@ -225,6 +269,45 @@
                     ],
                     "type": "bezier",
                     "value": -4.778976705621499
+                  },
+                  {
+                    "id": "0t8vGq2zji",
+                    "position": 22.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": -4.778976705621499
+                  },
+                  {
+                    "id": "ofgYZX9uLj",
+                    "position": 23.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": -4.988976705621495
+                  },
+                  {
+                    "id": "pIR_DBAWcV",
+                    "position": 24,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -5.708976705621486
                   }
                 ]
               },
@@ -261,6 +344,19 @@
                   {
                     "id": "tUeysChThp",
                     "position": 9.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 3.3846815523137272
+                  },
+                  {
+                    "id": "X-VWRTmlgN",
+                    "position": 22.5,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -315,6 +411,45 @@
                     ],
                     "type": "bezier",
                     "value": 10.339999999999993
+                  },
+                  {
+                    "id": "BYiHDxMeMg",
+                    "position": 22.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 10.339999999999993
+                  },
+                  {
+                    "id": "ocprJDcX_S",
+                    "position": 23.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 9.720000000000006
+                  },
+                  {
+                    "id": "9-ptyaQEnB",
+                    "position": 24,
+                    "connectedRight": true,
+                    "handles": [
+                      0.45,
+                      0.94,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 8.990336642975047
                   }
                 ]
               },
@@ -355,6 +490,19 @@
                     "handles": [
                       0.45,
                       0.94,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.5913387018423626
+                  },
+                  {
+                    "id": "Cinu3XazbU",
+                    "position": 23.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
                       0.5,
                       0
                     ],
@@ -405,6 +553,32 @@
                     ],
                     "type": "bezier",
                     "value": -0.2591345740922576
+                  },
+                  {
+                    "id": "UGJsZJ8epr",
+                    "position": 22.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": -0.2591345740922576
+                  },
+                  {
+                    "id": "rURve26tcH",
+                    "position": 24,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.6191345740922578
                   }
                 ]
               },
@@ -450,6 +624,32 @@
                     ],
                     "type": "bezier",
                     "value": 0.014770579964701847
+                  },
+                  {
+                    "id": "MOg26J3QPL",
+                    "position": 22.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.25,
+                      0.46
+                    ],
+                    "type": "bezier",
+                    "value": 0.014770579964701847
+                  },
+                  {
+                    "id": "7gdeThDa3x",
+                    "position": 24,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.2652294200352982
                   }
                 ]
               },
@@ -7663,6 +7863,1121 @@
               "[\"scale\",\"y\"]": "CS92210ZHk",
               "[\"scale\",\"z\"]": "rkPCM8gT2F"
             }
+          },
+          "Pins / Carter Ryan Gallery / Group": {
+            "trackData": {
+              "QE96kkSuWq": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "ZvCR07-YGZ",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "8zaLmW-9_6",
+                    "position": 20.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "pK6D4BSbwH",
+                    "position": 20.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "tTpr9Mp8aP": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "xyZmsU3pab",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "beeK6EiFdr",
+                    "position": 20.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "Nuv32B9sND",
+                    "position": 20.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "KrIdh50H2k": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "f7GL9P0RHA",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "UmaW5_xxMr",
+                    "position": 20.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "x_LbsWx6S9",
+                    "position": 20.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "yqr1AfvDOb": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "00yBQZRplz",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "_8Lrf07cQS",
+                    "position": 20.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "9CgYZ4waQ0": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "hD_asW9BQ9",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.1
+                  },
+                  {
+                    "id": "m1FGoUk9nK",
+                    "position": 20.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.1
+                  },
+                  {
+                    "id": "LdnbAdHYt_",
+                    "position": 20.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1.0408340855860843e-17
+                  }
+                ]
+              },
+              "qCb5aZnI1i": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Group:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "pDui2FB0SW",
+                    "position": 9.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.03
+                  },
+                  {
+                    "id": "bINN-1i-Ls",
+                    "position": 20.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.03
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "QE96kkSuWq",
+              "[\"scale\",\"y\"]": "tTpr9Mp8aP",
+              "[\"scale\",\"z\"]": "KrIdh50H2k",
+              "[\"position\",\"x\"]": "yqr1AfvDOb",
+              "[\"position\",\"y\"]": "9CgYZ4waQ0",
+              "[\"position\",\"z\"]": "qCb5aZnI1i"
+            }
+          },
+          "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery": {
+            "trackData": {
+              "pkB6VTmo2R": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "m5k_MJ2p40",
+                    "position": 20.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "rU7Ix2sl9H",
+                    "position": 20.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "4cI_bYIGHG",
+                    "position": 20.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "D85i5nfK9F": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "DT8pHznN-B",
+                    "position": 20.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "R96Uc6lKzq",
+                    "position": 20.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "JgBm5lliKs",
+                    "position": 20.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "SshyWLcF2x": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "yXmBsrjJlY",
+                    "position": 20.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "v9NTWwLtHm",
+                    "position": 20.7,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "CPt2AyHk7J",
+                    "position": 20.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "LmJa1pskWK": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "jXQP01clwG": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "oWHe3x55Tk",
+                    "position": 20.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "qO2QPQyGGh",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "sJusmR2bKl",
+                    "position": 22.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "nP6fiILOEV",
+                    "position": 22.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "yoqGesgMSo",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "bV6K2oihIq": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Halo Carter Ryan Gallery:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "pkB6VTmo2R",
+              "[\"scale\",\"y\"]": "D85i5nfK9F",
+              "[\"scale\",\"z\"]": "SshyWLcF2x",
+              "[\"position\",\"x\"]": "LmJa1pskWK",
+              "[\"position\",\"y\"]": "jXQP01clwG",
+              "[\"position\",\"z\"]": "bV6K2oihIq"
+            }
+          },
+          "Pins / Carter Ryan Gallery / Stem Carter Ryan Gallery": {
+            "trackData": {
+              "Ay_DeRn9sa": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Stem Carter Ryan Gallery:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "phzwdnwmMX": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Stem Carter Ryan Gallery:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "RZuKvyXQwL",
+                    "position": 20.933,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  },
+                  {
+                    "id": "WEel8t70pv",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.10999999999999999
+                  },
+                  {
+                    "id": "OwSowsXHFu",
+                    "position": 22.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.1
+                  },
+                  {
+                    "id": "EcZEOkgS0b",
+                    "position": 22.333,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.1
+                  },
+                  {
+                    "id": "wNqfHgHHwT",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  }
+                ]
+              },
+              "JvTINdCdrY": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Stem Carter Ryan Gallery:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "Ay_DeRn9sa",
+              "[\"position\",\"y\"]": "phzwdnwmMX",
+              "[\"position\",\"z\"]": "JvTINdCdrY"
+            }
+          },
+          "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery": {
+            "trackData": {
+              "VuLTRj5rYd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "yXWjJlUEN0": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "A7CvW-tp3w",
+                    "position": 20.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "bLDotS2WSf",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "jdX8f5z0mK",
+                    "position": 22.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "bFUlVhqOn2",
+                    "position": 22.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "8NzrgygNeu",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "T3nDIWS8is": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "ZEnBaO2Hko": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "bO3KFi6lyF",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "Lsvt2FY1b-",
+                    "position": 22.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "llOs6bpH7z",
+                    "position": 22.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "y3yOkCACRN",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "m2ItUuHD2j": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "gbbs6OxogD",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "XNXomNY_Ia",
+                    "position": 22.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "kMfFaVL66O",
+                    "position": 22.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "L1l4e3foIs",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "vAF0HST38g": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Background Carter Ryan Gallery:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "bor7K7TAnC",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "tbM7YbCULG",
+                    "position": 22.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "Ys84ovNY08",
+                    "position": 22.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "2kucWK8OfK",
+                    "position": 22.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "VuLTRj5rYd",
+              "[\"position\",\"y\"]": "yXWjJlUEN0",
+              "[\"position\",\"z\"]": "T3nDIWS8is",
+              "[\"scale\",\"x\"]": "ZEnBaO2Hko",
+              "[\"scale\",\"y\"]": "m2ItUuHD2j",
+              "[\"scale\",\"z\"]": "vAF0HST38g"
+            }
+          },
+          "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery": {
+            "trackData": {
+              "LtVC8Dc8rD": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery:[\"opacity\"]",
+                "keyframes": [
+                  {
+                    "id": "jtLpEG6-V7",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "dlDXqlMluQ",
+                    "position": 22.133,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "C8l-SxXFlq",
+                    "position": 22.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "kIS3sO7MHa": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "fksEn9O5ZO",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.00275
+                  },
+                  {
+                    "id": "ViSPGxE4Ur",
+                    "position": 22.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "4Re52a2Th0": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "t5j9RitONg",
+                    "position": 21.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.00275
+                  },
+                  {
+                    "id": "TaSsTiLBvR",
+                    "position": 22.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "ecRLdYJ1XO": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Carter Ryan Gallery / Pin Carter Ryan Gallery:[\"scale\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"opacity\"]": "LtVC8Dc8rD",
+              "[\"scale\",\"x\"]": "kIS3sO7MHa",
+              "[\"scale\",\"y\"]": "4Re52a2Th0",
+              "[\"scale\",\"z\"]": "ecRLdYJ1XO"
+            }
+          },
+          "Pins / Johnston Canyon / Group": {
+            "trackData": {
+              "grZrVOzAos": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "gH0aHF3YND": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "hO6J2O9ON7",
+                    "position": 20.467,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.17
+                  },
+                  {
+                    "id": "2I7oCmRI43",
+                    "position": 20.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.07000000000000003
+                  }
+                ]
+              },
+              "YFDmRj2Lww": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "nn1YucnhI_": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "VsR-_5eS-p",
+                    "position": 20.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "xiaP7glhtl",
+                    "position": 20.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "Ui42zt8uTc": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "9RIjBLgG2D",
+                    "position": 20.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "Bido88XgQ7",
+                    "position": 20.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "In9kI64KcQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Group:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "HZTHfUmmFi",
+                    "position": 20.5,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  },
+                  {
+                    "id": "9Lyu1E8ulB",
+                    "position": 20.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "grZrVOzAos",
+              "[\"position\",\"y\"]": "gH0aHF3YND",
+              "[\"position\",\"z\"]": "YFDmRj2Lww",
+              "[\"scale\",\"x\"]": "nn1YucnhI_",
+              "[\"scale\",\"y\"]": "Ui42zt8uTc",
+              "[\"scale\",\"z\"]": "In9kI64KcQ"
+            }
           }
         }
       }
@@ -7670,6 +8985,9 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "GLdaQonuMhKgg7Uy",
+    "lNKPXVCN5DTcR3PC",
+    "jSqSuENsZyb7GrDj",
     "QYNEp1zI_aaUkR7b",
     "QUHGvGCZeWEtIYWT",
     "jL9wlnytrzWPX5So",
@@ -7716,9 +9034,6 @@
     "q5h25tE8i-T4JMq9",
     "g9ZPkgMhtClQh9PC",
     "jez3cRPsBcUmuZhR",
-    "NrY4fDaVHchJDiNU",
-    "iTrX9ccuzRvOhxqW",
-    "RUdkFtZglLkDGBoa",
-    "SilFEX2K2NTmwgZJ"
+    "NrY4fDaVHchJDiNU"
   ]
 }

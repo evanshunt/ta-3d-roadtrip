@@ -70,7 +70,7 @@ const positions = {
   fairmontBanffSpringsHotel: [-4.58, 1.075, 2.83],
 
   // Day 2:
-  carterRyanGallery: [-4.3, 1.16, 2.88],
+  carterRyanGallery: [-4.55, 1.075, 2.83],
   johnstonCanyon: [-4.0, 1.16, 1.88],
   lakeLouiseGondola: [-2.9, 1.2, 0.73],
   fairmontChateauLakeLouise: [-3.1, 1.18, 0.57],
@@ -176,7 +176,7 @@ const Scene = (props) => {
 
   //-4.8, 1.6, 5.4]
 
-  // const { cloudPosX, cloudPosY, cloudPosZ } = useControls({
+  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls({
   //   cloudPosX: {
   //     value: -4.8,
   //     min: -10,
@@ -193,6 +193,12 @@ const Scene = (props) => {
   //     value: 5.4,
   //     min: -10,
   //     max: 10,
+  //     step: 0.01,
+  //   },
+  //   cloudScale: {
+  //     value: 0.1,
+  //     min: 0.01,
+  //     max: 0.3,
   //     step: 0.01,
   //   },
   // });
@@ -297,7 +303,15 @@ const Scene = (props) => {
         />
 
         {/* Day 2 */}
-        {/* <Day2 positions={positions} /> */}
+        <Day2
+          positions={positions}
+          sceneIndex={props.index}
+          setIndex={props.setIndex}
+          visible={true}
+          // visible={props.currDay === 0 || props.currDay === 1}
+          geometry={circleGeom}
+          material={redMaterial}
+        />
 
         {/* Day 3 */}
         {/* <Day3 positions={positions} /> */}
@@ -306,10 +320,10 @@ const Scene = (props) => {
           <Cloud scale={0.2} position={[-2, 3.1, 3]} />
         </e.group>
 
+      */}
         <e.group theatreKey="Lake Louise Cloud">
-          <Cloud scale={0.3} position={[2, 3, -4.75]} />
+          <Cloud scale={0.05} position={[-3.1, 1.76, 2.07]} />
         </e.group>
-        */}
 
         <group theatreKey="Banff Cloud 2">
           <Cloud

@@ -250,7 +250,7 @@ const Scene = (props) => {
           console.log(camera.rotation.toArray());
         }}
       /> */}
-      <EditableCamera ref={cameraRef} theatreKey={"Camera"} />
+      <EditableCamera theatreKey={"Camera"} />
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}

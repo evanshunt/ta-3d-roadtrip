@@ -10,6 +10,7 @@ import selfGuidedTour from "../images/types/self-guided-tour.svg";
 import clock from "../images/clock.svg";
 import price from "../images/price.svg";
 import external from "../images/external-link.svg";
+import caretImage from "../images/caret-right.svg";
 
 const Attraction = ({
   attractionsOpen,
@@ -17,6 +18,8 @@ const Attraction = ({
   handleIndex,
   index,
   maxLength,
+  nextDestination,
+  setIndex,
   showInfo,
 }) => {
   const [open, setOpen] = useState(false);
@@ -201,9 +204,9 @@ const Attraction = ({
             <ul className="attraction__links__links">
               {currDestination?.details?.links && (
                 <>
-                  {currDestination.details.links.map((link, index) => {
+                  {currDestination.details.links.map((link, i) => {
                     return (
-                      <li key={index}>
+                      <li key={i}>
                         <img src={link.image} alt={link.title} />
                         <div className="attraction__links__link-wrapper">
                           <strong>{link.text}</strong>
@@ -229,6 +232,35 @@ const Attraction = ({
                 </>
               )}
             </ul>
+            {nextDestination && (
+              <>
+                <h3>Next attraction</h3>
+
+                <li className="itinerary__stop">
+                  <div
+                    onClick={() => {
+                      setIndex(index + 1);
+                      showInfo();
+                    }}
+                    className="itinerary__stop__wrap"
+                  >
+                    <img
+                      className="itinerary__stop__image"
+                      src={
+                        nextDestination.details.image ||
+                        "https://via.placeholder.com/150"
+                      }
+                      alt=""
+                    />
+                    <strong className="itinerary__stop__name">
+                      {nextDestination.details.title}{" "}
+                    </strong>
+                  </div>
+
+                  <img src={caretImage} alt="" />
+                </li>
+              </>
+            )}
           </div>
         </CSSTransition>
       </SwitchTransition>

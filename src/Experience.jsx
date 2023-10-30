@@ -33,6 +33,7 @@ const Experience = () => {
   const [index, setIndex] = useState(0);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
+  const [nextDestination, setNextDestination] = useState(null);
   const [hasStarted, setHasStarted] = useState(false);
   const [lastIndex, setLastIndex] = useState(0);
   // the below is only really used on desktop
@@ -294,6 +295,8 @@ const Experience = () => {
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
 
+    setNextDestination(destinations[index + 1]);
+
     // handle visited attractions
     if (index > 0) {
       setVisited((oldVisited) => [...oldVisited, index - 1]);
@@ -417,6 +420,7 @@ const Experience = () => {
             grouped={daysParsed}
             handleIndex={handleIndex}
             index={index}
+            nextDestination={nextDestination}
             setIndex={setIndex}
             showInfo={showInfo}
             visited={visited}
@@ -474,6 +478,8 @@ const Experience = () => {
           handleIndex={handleIndex}
           index={index}
           maxLength={maxLength}
+          nextDestination={nextDestination}
+          setIndex={setIndex}
           showInfo={showInfo}
         />
 

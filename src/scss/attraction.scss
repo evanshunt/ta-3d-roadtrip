@@ -31,12 +31,12 @@
   @media screen and (min-width: 1024px) {
     border-radius: 0;
     height: 100vh;
+    padding-bottom: 7.25rem;
     right: 0;
     top: 0;
     top: 100px;
     transform: translate(0, 0);
     width: 23vw;
-    padding-bottom: 7.25rem;
     z-index: 2;
 
     &--open {
@@ -89,9 +89,9 @@
   width: 0;
 
   .attraction--open & {
+    height: 4.625rem;
     margin-right: 1rem;
     width: 4.625rem;
-    height: 4.625rem;
   }
 }
 
@@ -206,6 +206,7 @@
 }
 
 .attraction__links__links {
+  margin-bottom: 1.75rem;
   padding-left: 0;
 }
 

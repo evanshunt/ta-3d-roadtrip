@@ -429,8 +429,8 @@ const Experience = () => {
         </button>
 
         <Canvas
-          // dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
-          dpr={1.5}
+          dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+          // dpr={1.5}
           shadows={true}
           gl={{
             antialias: false,

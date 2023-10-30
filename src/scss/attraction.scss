@@ -217,6 +217,10 @@
     grid-column: 1;
     grid-row: 1;
     margin-right: 1.25rem;
+
+    @media screen and (min-width: 1024px) {
+      width: 33%;
+    }
   }
 }
 

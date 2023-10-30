@@ -6,11 +6,13 @@ import Stop from "./Stop";
 const Day = ({
   currDestination,
   description,
+  index,
   name,
   number,
   setIndex,
   showInfo,
   stops,
+  visited,
 }) => {
   return (
     <li className="itinerary__day" key={name}>
@@ -30,6 +32,7 @@ const Day = ({
               setIndex={setIndex}
               stop={stop}
               showInfo={showInfo}
+              visited={visited}
             />
           </>
         ))}

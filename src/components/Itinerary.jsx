@@ -11,6 +11,7 @@ const Itinerary = ({
   index,
   showInfo,
   setIndex,
+  visited,
 }) => {
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
@@ -68,6 +69,7 @@ const Itinerary = ({
                 setIndex={setIndex}
                 showInfo={showInfo}
                 stops={days[day]}
+                visited={visited}
               />
             );
           })}

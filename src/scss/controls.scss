@@ -10,23 +10,6 @@
   width: 100%;
   z-index: 3;
 
-  &::after {
-    // background: rgb(0, 0, 0);
-    // background: linear-gradient(
-    //   0deg,
-    //   rgba(0, 0, 0, 1) 0%,
-    //   rgba(0, 0, 0, 0) 100%
-    // );
-    // content: "";
-    // display: block;
-    // height: 33vh;
-    // left: 0;
-    // position: fixed;
-    // transform: translate(-25%, -10vh);controls__buttons
-    // width: 78vw;
-    // z-index: -2;
-  }
-
   @media screen and (min-width: 1024px) {
     bottom: 1.33rem;
     left: 38.5vw;

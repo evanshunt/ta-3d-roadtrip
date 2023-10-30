@@ -37,6 +37,7 @@ const Experience = () => {
   const [lastIndex, setLastIndex] = useState(0);
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
+  const [visited, setVisited] = useState([]);
   // uncomment to use saved data
 
   const animDuration = 6.3;
@@ -292,6 +293,11 @@ const Experience = () => {
 
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
+
+    // handle visited attractions
+    if (index > 0) {
+      setVisited((oldVisited) => [...oldVisited, index - 1]);
+    }
     return () => {};
   }, [index]);
 
@@ -337,6 +343,7 @@ const Experience = () => {
 
   const start = () => {
     setClicked(true);
+    ``;
   };
 
   const handlers = useSwipeable({
@@ -412,6 +419,7 @@ const Experience = () => {
             index={index}
             setIndex={setIndex}
             showInfo={showInfo}
+            visited={visited}
           />
         )}
 

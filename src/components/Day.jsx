@@ -6,6 +6,7 @@ import Stop from "./Stop";
 const Day = ({
   currDestination,
   description,
+  drivingInfo,
   index,
   name,
   number,
@@ -21,7 +22,7 @@ const Day = ({
       </strong>
 
       <p className="itinerary__day__description">{description}</p>
-      <DrivingInfo />
+      <DrivingInfo {...drivingInfo} />
       <ul className="itinerary__day__stops">
         {stops.map((stop, index) => (
           <>

@@ -26,35 +26,35 @@ import Day3 from "./days/Day3.jsx";
 // cam pos
 // [-4.95, 3.216, 10.292]
 
-const cloudTimeline = gsap.timeline({
-  repeat: -1,
-});
+// const cloudTimeline = gsap.timeline({
+//   repeat: -1,
+// });
 
-const animateCloud = (cloudRef, tl, cloudIndex) => {
-  const info = {
-    // Cloud 1
-    1: {
-      x: 1.7,
-      y: 0.85,
-      z: 1.3,
-      duration: 35,
-    },
-  };
+// const animateCloud = (cloudRef, tl, cloudIndex) => {
+//   const info = {
+//     // Cloud 1
+//     1: {
+//       x: 1.7,
+//       y: 0.85,
+//       z: 1.3,
+//       duration: 35,
+//     },
+//   };
 
-  tl.to(cloudRef.current.position, {
-    x: info[cloudIndex].x,
-    y: info[cloudIndex].y,
-    z: info[cloudIndex].z,
-    duration: info[cloudIndex].duration,
-    ease: "none",
-    // onStart: () => {
-    //   invalidate();
-    // },
-    // onComplete: () => {
-    //   invalidate();
-    // },
-  });
-};
+//   tl.to(cloudRef.current.position, {
+//     x: info[cloudIndex].x,
+//     y: info[cloudIndex].y,
+//     z: info[cloudIndex].z,
+//     duration: info[cloudIndex].duration,
+//     ease: "none",
+//     // onStart: () => {
+//     //   invalidate();
+//     // },
+//     // onComplete: () => {
+//     //   invalidate();
+//     // },
+//   });
+// };
 
 const positions = {
   // Day 1:
@@ -182,22 +182,22 @@ const Scene = (props) => {
   // });
 
   //-4.8, 1.6, 5.4]
-
+  // -3.1, 1.76, 2.07
   // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls({
   //   cloudPosX: {
-  //     value: -4.8,
+  //     value: -3.1,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
   //   },
   //   cloudPosY: {
-  //     value: 1.6,
+  //     value: 1.76,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
   //   },
   //   cloudPosZ: {
-  //     value: 5.4,
+  //     value: 2.07,
   //     min: -10,
   //     max: 10,
   //     step: 0.01,
@@ -300,7 +300,7 @@ const Scene = (props) => {
         positions={positions}
       />
 
-      <Perf position="bottom-left" />
+      {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
 
@@ -333,27 +333,27 @@ const Scene = (props) => {
         </e.group>
 
       */}
-        <group>
-          <Cloud scale={0.05} position={[-3.1, 1.76, 2.07]} />
-        </group>
+        <e.group
+          // position={[cloudPosX, cloudPosY, cloudPosZ]}
+          position={[-3.8, 1.75, 3.5]}
+          theatreKey="Cloud Banff"
+        >
+          <Cloud scale={0.05} />
+          <Cloud scale={0.1} />
+        </e.group>
 
-        <group>
+        <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
           <Cloud
             // works scale = -0.03
             // works position = [-2.7, 0.85, 2.30]
             //
-            scale={0.03}
+            scale={0.07}
             // scale={cloudScale}
             //  position={[-0.8, 1.5, 2.6]}
-            position={[-2.7, 0.85, 1.6]}
+
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
           />
-        </group>
-
-        <group>
-          <Cloud scale={0.08} position={[-4.8, 1.6, 5.66]} />
-          {/* <Cloud scale={0.08} position={[cloudPosX, cloudPosY, cloudPosZ]} /> */}
-        </group>
+        </e.group>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

@@ -1,14 +1,11 @@
 import React from "react";
 import car from "../images/car.svg";
 
-export const DrivingInfo = () => (
+export const DrivingInfo = ({ copy, time }) => (
   <div className="itinerary-days__day__info">
     {/* @TODO: switch to SVGR? */}
-    <p>
-      Head from Calgary to Banff, the birthplace of Canada’s national parks
-      system.
-    </p>
+    <p>{copy}</p>
     <img src={car} alt="" />
-    <span>1 hr 23 min drive from Calgary</span>
+    <span>{time}</span>
   </div>
 );

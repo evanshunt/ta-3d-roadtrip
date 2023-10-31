@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins-with-exit.json";
+import animation from "./animation-data/new-pins-with-exit-clouds.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -58,7 +58,10 @@ const Experience = () => {
       name: "Banff",
       position: 11.066,
       day: 1,
-
+      drivingInfo: {
+        copy: "Head from Calgary to Banff, the birthplace of Canada’s national parks system.",
+        time: "1 hr 23 min drive from Calgary",
+      },
       details: {
         title: "Cave and Basin National Historic Site",
         image: "/images/cave-and-basin-national-historic-site.jpg",
@@ -142,13 +145,17 @@ const Experience = () => {
       },
     },
     {
-      name: "start",
+      name: "Banff / Lake Louise",
       position: 20.6,
       day: 2,
-      name: null,
       hideFromItinerary: true,
+      drivingInfo: {
+        copy: "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
+        time: "0 hr 45 min drive from Banff",
+      },
       details: {
-        blurb: "Day 2 begins",
+        blurb:
+          "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
       },
     },
     {
@@ -392,13 +399,13 @@ const Experience = () => {
 
   const inBetweens = [0, 6];
 
-  // useEffect(() => {
-  //   if (inBetweens.includes(index)) return;
-  //   //@TODO: this will have to close it out as well
-  //   setTimeout(() => {
-  //     setAttractionsOpen(true);
-  //   }, 250);
-  // }, [index]);
+  useEffect(() => {
+    if (inBetweens.includes(index)) return;
+    //@TODO: this will have to close it out as well
+    setTimeout(() => {
+      setAttractionsOpen(true);
+    }, 250);
+  }, [index]);
 
   // useEffect(() => {
   //   setHasStarted(true);

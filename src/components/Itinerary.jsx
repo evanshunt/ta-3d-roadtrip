@@ -35,7 +35,7 @@ const Itinerary = ({
       `.itinerary__day:nth-child(2)`
     ).offsetTop;
     itineraryRef.current.scrollTo({
-      top: offset,
+      top: offset - 40,
       behavior: "smooth",
     });
   };
@@ -61,6 +61,10 @@ const Itinerary = ({
             return (
               <Day
                 currDestination={currDestination}
+                drivingInfo={{
+                  copy: days[day][0]?.drivingInfo?.copy,
+                  time: days[day][0]?.drivingInfo?.time,
+                }}
                 description={days[day][0].description}
                 index={index}
                 key={day}

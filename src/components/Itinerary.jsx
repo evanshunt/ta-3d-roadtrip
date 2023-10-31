@@ -16,10 +16,14 @@ const Itinerary = ({
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
 
+  // @TODO: this is just hacked in for demo
   useEffect(() => {
     if (index === 6) {
       // generalize this
       scrollItinerary(6);
+    }
+    if (index === 7) {
+      setOpen(false);
     }
   }, [index]);
 

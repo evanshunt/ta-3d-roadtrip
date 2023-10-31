@@ -429,8 +429,8 @@ export const Map = ({ start }) => {
                 <svg width="88" height="139" fill="none">
                   <path
                     stroke="#9C0F00"
-                    stroke-linecap="round"
-                    stroke-width="6"
+                    strokeLinecap="round"
+                    strokeWidth="6"
                     className="route"
                     d="m79.543 131.461-22.116-21.986.814-12.474C54.376 92.24 46.71 81.72 46.97 77.727c.26-3.992-4.758-8.995-7.3-10.998l-2.939-8.71-6.128-5.911-3.644-13.266-13.591-14.415.39-5.987-5.802-10.9"
                   />

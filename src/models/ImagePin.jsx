@@ -133,10 +133,14 @@ const ImagePin = ({
           <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
         </e.mesh>
 
-        <mesh position={[0, 0, -0.0305]} castShadow>
+        <e.mesh
+          position={[0, 0, -0.0305]}
+          castShadow
+          theatreKey={`Pins / ${name} / Shadow ${name}`}
+        >
           <sphereGeometry args={[0.03, 16, 16]} />
           <meshBasicMaterial colorWrite={false} depthWrite={false} />
-        </mesh>
+        </e.mesh>
 
         <e.mesh
           castShadow

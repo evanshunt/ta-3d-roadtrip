@@ -3,7 +3,7 @@ import React from "react";
 export const IntroClouds = ({ playIntro }) => (
   <div className="cloud-intro" onClick={playIntro}>
     <div className="cloud-intro__image">
-      <img src="/images/cloud-intro.webp" alt="" />
+      <img src="/images/cloud1.webp" alt="" />
     </div>
     <div className="cloud-intro__image">
       {/* <img src="/images/cloud1.webp" alt="" /> */}

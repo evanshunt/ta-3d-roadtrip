@@ -338,8 +338,7 @@ const Scene = (props) => {
           position={[-3.8, 1.75, 3.5]}
           theatreKey="Cloud Banff"
         >
-          <Cloud scale={0.05} />
-          <Cloud scale={0.1} />
+          <Cloud scale={0.075} />
         </e.group>
 
         <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
@@ -370,8 +369,8 @@ const Scene = (props) => {
         {altTop && <TopAlt />}
         {!altTop && <Top />}
 
-        <Sides />
-        <Plane />
+        {/* <Sides /> */}
+        {/* <Plane /> */}
       </e.group>
 
       {/* @TODO: animate this for the stops? */}

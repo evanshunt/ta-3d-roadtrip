@@ -164,6 +164,7 @@ const Experience = () => {
       day: 2,
       // name: "Carter-Ryan Gallery and Live Art Venue",
       details: {
+        blurb: "Carter-Ryan Gallery text",
         title: "Carter-Ryan Gallery and Live Art Venue",
         image: "/images/carter-ryan-gallery.png",
         description:
@@ -308,8 +309,17 @@ const Experience = () => {
     if (index > 0) {
       setVisited((oldVisited) => [...oldVisited, index - 1]);
     }
+    console.log({ index });
+    if (index >= 6) {
+      //@TODO: this is simply hacked for demo
+      setAttractionsOpen(true);
+    }
     return () => {};
   }, [index]);
+
+  useEffect(() => {
+    console.log({ attractionsOpen });
+  }, [attractionsOpen]);
 
   // useEffect(() => {
   //   if (index !== 0) return;
@@ -400,11 +410,14 @@ const Experience = () => {
   const inBetweens = [0, 6];
 
   useEffect(() => {
-    if (inBetweens.includes(index)) return;
-    //@TODO: this will have to close it out as well
-    setTimeout(() => {
-      setAttractionsOpen(true);
-    }, 250);
+    if (inBetweens.includes(index)) {
+      setAttractionsOpen(false);
+    } else {
+      //@TODO: this will have to close it out as well
+      setTimeout(() => {
+        setAttractionsOpen(true);
+      }, 250);
+    }
   }, [index]);
 
   // useEffect(() => {

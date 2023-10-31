@@ -65,7 +65,7 @@ const Experience = () => {
       details: {
         title: "Cave and Basin National Historic Site",
         image: "/images/cave-and-basin-national-historic-site.jpg",
-        blurb: "Your first stop? The birth of Banff National Park.",
+        blurb: "Your first stop? The birthplace of Canada’s national parks.",
         description:
           "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
         duration: "1 - 3 hr",
@@ -543,7 +543,8 @@ const Experience = () => {
           <ul className="controls__list">
             <progress
               className="controls__list__progress"
-              value={(index / (destinations.length - 1)) * 100 - 5}
+              value={(index / (destinations.length - 1)) * 100 - 4.25}
+              //@TODO: write a function to deal with edge cases
               max="100"
             />
 

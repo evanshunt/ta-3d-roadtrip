@@ -189,7 +189,7 @@ export const Map = ({ start }) => {
           duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
-            if (tl._time >= duration * 7.5 && !startedOut) {
+            if (tl._time >= duration * 7.25 && !startedOut) {
               startedOut = true;
 
               // onStart: () => {
@@ -204,7 +204,7 @@ export const Map = ({ start }) => {
                 // clouds.classList.remove("cloud-intro--play--back");
                 clouds.classList.add("cloud-intro--play");
                 props.removeIntro();
-              }, duration * 2000);
+              }, duration * 2150);
               setTimeout(() => {
                 intro.classList.add("intro--complete");
                 mapWrap.classList.add("map-wrap--complete");

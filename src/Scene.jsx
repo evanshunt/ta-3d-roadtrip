@@ -15,6 +15,7 @@ import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 
 import { Top } from "./models/final/Top.jsx";
+import TopAlt from "./models/final/TopAlt.jsx";
 import { Sides } from "./models/final/Sides.jsx";
 import { Plane } from "./models/final/Plane.jsx";
 
@@ -96,6 +97,12 @@ const Scene = (props) => {
   // const cloudRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
+
+  const { altTop } = useControls({
+    altTop: {
+      value: false,
+    },
+  });
 
   // const { focusDistance, focalLength, bokehScale } = useControls({
   //   focusDistance: {
@@ -286,7 +293,12 @@ const Scene = (props) => {
         rotation={[-0.59, 0.74, 0.41]}
       /> */}
 
-      <Lights index={props.index} debug={props.debug} positions={positions} />
+      <Lights
+        alt={altTop}
+        index={props.index}
+        debug={props.debug}
+        positions={positions}
+      />
 
       <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
@@ -354,7 +366,10 @@ const Scene = (props) => {
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
         <Road />
-        <Top />
+
+        {altTop && <TopAlt />}
+        {!altTop && <Top />}
+
         <Sides />
         <Plane />
       </e.group>

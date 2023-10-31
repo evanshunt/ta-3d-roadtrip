@@ -392,13 +392,13 @@ const Experience = () => {
 
   const inBetweens = [0, 6];
 
-  useEffect(() => {
-    if (inBetweens.includes(index)) return;
-    //@TODO: this will have to close it out as well
-    setTimeout(() => {
-      setAttractionsOpen(true);
-    }, 250);
-  }, [index]);
+  // useEffect(() => {
+  //   if (inBetweens.includes(index)) return;
+  //   //@TODO: this will have to close it out as well
+  //   setTimeout(() => {
+  //     setAttractionsOpen(true);
+  //   }, 250);
+  // }, [index]);
 
   // useEffect(() => {
   //   setHasStarted(true);

@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useControls } from "leva";
 
-const Lights = ({ debug, index, positions }) => {
+const Lights = ({ alt, debug, index, positions }) => {
   const spotLight = useRef();
   const tl = gsap.timeline({});
 
@@ -182,7 +182,7 @@ const Lights = ({ debug, index, positions }) => {
         ref={spotLight}
         position={debug ? [positionX, positionY, positionZ] : [-15, 10, 13.5]}
         // intensity={0.5}
-        intensity={debug ? intensity : 2.5}
+        intensity={alt ? 1.5 : 2.5}
         // intensity={intensity}
         lookAt={positions[0]}
         castShadow

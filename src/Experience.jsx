@@ -23,6 +23,8 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
 
+const beforeAnim = 1.53333;
+
 const destinations = [
   {
     name: "start",
@@ -347,18 +349,23 @@ const Experience = () => {
     }
   }, [clicked]);
 
-  const handleIndex = (dir) => {
-    if (dir === "up" || dir === "down") return;
-    setLastIndex(index);
+  const handleIndex = (dir, jumpTo = false) => {
+    if (!jumpTo) {
+      if (dir === "up" || dir === "down") return;
+      setLastIndex(index);
 
-    if (dir === "next") {
-      if (!hasStarted) {
-        setHasStarted(true);
-        // setClicked(true); // comment out when the intro is added back in
+      if (dir === "next") {
+        if (!hasStarted) {
+          setHasStarted(true);
+          // setClicked(true); // comment out when the intro is added back in
+        }
+        index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+      } else {
+        index <= 1 ? setIndex(1) : setIndex(index - 1);
       }
-      index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
     } else {
-      index <= 1 ? setIndex(1) : setIndex(index - 1);
+      console.log("jumping to", jumpTo);
+      setIndex(jumpTo);
     }
   };
 
@@ -421,17 +428,17 @@ const Experience = () => {
     }
   }, [index]);
 
-  // useEffect(() => {
-  //   setHasStarted(true);
-  // }, []);
+  useEffect(() => {
+    setHasStarted(true);
+  }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        <div onClick={start}>
+        {/* <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary
@@ -442,7 +449,6 @@ const Experience = () => {
             handleIndex={handleIndex}
             index={index}
             nextDestination={nextDestination}
-            setIndex={setIndex}
             showInfo={showInfo}
             stopCount={destinations.length - 1}
           />

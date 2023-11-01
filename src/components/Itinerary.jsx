@@ -8,6 +8,7 @@ const Itinerary = ({
   currDestination,
   days,
   grouped,
+  handleIndex,
   index,
   showInfo,
   setIndex,
@@ -69,6 +70,7 @@ const Itinerary = ({
                   time: days[day][0]?.drivingInfo?.time,
                 }}
                 description={days[day][0].description}
+                handleIndex={handleIndex}
                 index={index}
                 key={day}
                 name={days[day][0].name}

@@ -1,7 +1,7 @@
 import React from "react";
 import caretImage from "../images/caret-right.svg";
 
-const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
+const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
   if (stop.hideFromItinerary || !currDestination) return null;
 
   return (
@@ -14,7 +14,7 @@ const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
     >
       <div
         onClick={() => {
-          setIndex(index + 1);
+          handleIndex("next", index + 1);
           showInfo();
         }}
         className="itinerary__stop__wrap"

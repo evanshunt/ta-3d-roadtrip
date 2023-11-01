@@ -7,9 +7,9 @@ const Day = ({
   currDestination,
   description,
   drivingInfo,
+  handleIndex,
   name,
   number,
-  setIndex,
   showInfo,
   stops,
 }) => {
@@ -25,10 +25,10 @@ const Day = ({
         {stops.map((stop, index) => (
           <>
             <Stop
+              handleIndex={handleIndex}
               index={index}
               key={index}
               currDestination={currDestination}
-              setIndex={setIndex}
               stop={stop}
               showInfo={showInfo}
             />

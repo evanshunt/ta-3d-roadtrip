@@ -23,6 +23,245 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
 
+const destinations = [
+  {
+    name: "start",
+    position: 0,
+    day: 0,
+    name: null,
+    visited: false,
+    details: {
+      blurb: "Use left and right arrows to start and move between attractions",
+    },
+  },
+  {
+    name: "Banff",
+    position: 11.066,
+    day: 1,
+    drivingInfo: {
+      copy: "Head from Calgary to Banff, the birthplace of Canada’s national parks system.",
+      time: "1 hr 23 min drive from Calgary",
+    },
+    visited: false,
+    details: {
+      title: "Cave and Basin National Historic Site",
+      image: "/images/cave-and-basin-national-historic-site.jpg",
+      blurb: "Your first stop? The birthplace of Canada’s national parks.",
+      description:
+        "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
+      duration: "1 - 3 hr",
+      price: "Free - $8.50 CAD",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Cave and Basin National Historic Site",
+          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
+          linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
+          external: true,
+        },
+      ],
+    },
+  },
+  {
+    name: "Banff",
+    position: 13.033,
+    day: 1,
+    description:
+      "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
+    visited: false,
+    details: {
+      title: "Banff Gondola",
+      image: "/images/banff-gondola.jpg",
+      blurb: "An unbeatable view to end an unforgettable morning.",
+      description:
+        "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
+    },
+  },
+  {
+    name: "Banff",
+    position: 15.033,
+    day: 1,
+    visited: false,
+    details: {
+      title: "Lunch at Sky Bistro",
+      blurb: "Treat your tastebuds to a top-of-the-world lunch.",
+      image: "/images/lunch-at-sky-bistro.jpg",
+      description:
+        "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
+    },
+  },
+  {
+    name: "Banff",
+    position: 17,
+    day: 1,
+    visited: false,
+    details: {
+      title: "Banff Upper Hot Springs",
+      image: "/images/banff-upper-hot-springs.jpg",
+      blurb: "Elevate your afternoon with a mineral-rich dip.",
+      description:
+        "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
+    },
+  },
+  {
+    name: "Banff",
+    position: 18.933,
+    day: 1,
+    visited: false,
+    details: {
+      title: "Fairmont Banff Springs Hotel",
+      blurb: "Spend the night resting like Rocky Mountain royalty.",
+      image: "/images/fairmont-banff-springs-hotel.jpg",
+      description:
+        'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
+    },
+  },
+  {
+    name: "Banff / Lake Louise",
+    position: 20.6,
+    day: 2,
+    hideFromItinerary: true,
+    visited: false,
+    drivingInfo: {
+      copy: "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
+      time: "0 hr 45 min drive from Banff",
+    },
+    details: {
+      blurb:
+        "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
+    },
+  },
+  {
+    name: "Lake Louise",
+    position: 22.09,
+    day: 2,
+    visited: false,
+    details: {
+      blurb: "Carter-Ryan Gallery text",
+      title: "Carter-Ryan Gallery and Live Art Venue",
+      image: "/images/carter-ryan-gallery.png",
+      description:
+        "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
+    },
+  },
+  {
+    name: "Lake Louise",
+    position: 25,
+    day: 2,
+    visited: false,
+    details: {
+      title: "Johnston Canyon",
+      image: "/images/johnston-canyon.png",
+      description:
+        "Banff National Park's most popular hiking destination takes you into the depths of a canyon along catwalks and amongst spectacular waterfalls. See the impressive lower falls and walk through a tunnel to get an even closer look at the powerful effects of water. An early morning start may help you avoid the crowds.",
+    },
+  },
+  {
+    name: "Lake Louise",
+    position: 23.2,
+    day: 2,
+    visited: false,
+    details: {
+      title: "Lake Louise Gondola",
+      image: "/images/lake-louise-gondola.png",
+      description:
+        "Lake Louise Gondola. Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
+    },
+  },
+  {
+    name: "Lake Louise",
+    position: 23.2,
+    day: 2,
+    visited: false,
+    details: {
+      title: "Fairmont Chateau Lake Louise",
+      image: "/images/fairmont-chateau-lake-louise.png",
+      description:
+        "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
+    },
+  },
+  {
+    name: "Lake Louise",
+    position: 23.2,
+    day: 2,
+    visited: false,
+    details: {
+      title: "Fairview",
+      image: "/images/fairview.png",
+      description:
+        "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 23.2,
+    day: 3,
+    visited: false,
+    details: {
+      title: "Columbia Icefield Skywalk",
+      image: "/images/columbia-icefield-skywalk.png",
+      description:
+        "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 23.2,
+    day: 3,
+    visited: false,
+    details: {
+      title: "Maligne Canyon",
+      image: "/images/maligne-canyon.png",
+      description:
+        "Turquoise, glacial waters, and startling canyon walls grow ever more impressive along this short trail. Multiple bridges span the narrow gorge, crossing several times for spine-tingling views of the river below. Watch for fuchsia fireweed and mountain bluebirds in a landscape shaped by fire, erosion, and mountain building.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 23.2,
+    day: 3,
+    visited: false,
+    details: {
+      title: "Jasper SkyTram",
+      image: "/images/jasper-sky-tram.png",
+      description:
+        "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m, providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km hiking trail leads you to the summit of the mountain.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 23.2,
+    day: 3,
+    visited: false,
+    details: {
+      title: "Fairmont Jasper Park Lodge",
+      image: "/images/fairmont-jasper-park-lodge.png",
+      description:
+        "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 23.2,
+    day: 3,
+    visited: false,
+    details: {
+      title: "Jasper Planetarium",
+      image: "/images/jasper-planetarium.png",
+      description:
+        "Enter The Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
+    },
+  },
+];
+
 const Experience = () => {
   const project = getProject("TA Fly Through", { state: animation });
   // const project = getProject("TA Fly Through");
@@ -38,240 +277,9 @@ const Experience = () => {
   const [lastIndex, setLastIndex] = useState(0);
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
-  const [visited, setVisited] = useState([]);
   // uncomment to use saved data
 
   const animDuration = 6.3;
-
-  const destinations = [
-    {
-      name: "start",
-      position: 0,
-      day: 0,
-      name: null,
-      details: {
-        blurb:
-          "Use left and right arrows to start and move between attractions",
-      },
-    },
-    {
-      name: "Banff",
-      position: 11.066,
-      day: 1,
-      drivingInfo: {
-        copy: "Head from Calgary to Banff, the birthplace of Canada’s national parks system.",
-        time: "1 hr 23 min drive from Calgary",
-      },
-      details: {
-        title: "Cave and Basin National Historic Site",
-        image: "/images/cave-and-basin-national-historic-site.jpg",
-        blurb: "Your first stop? The birthplace of Canada’s national parks.",
-        description:
-          "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
-        duration: "1 - 3 hr",
-        price: "Free - $8.50 CAD",
-        type: "Self-guided tour",
-        links: [
-          {
-            text: "Cave and Basin National Historic Site",
-            image: "/images/info/cave-and-basin-national-historic-site.jpg",
-            url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
-            linkText: "View More Details",
-            external: false,
-          },
-          {
-            text: "View on Google Maps",
-            image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-            url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
-            linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
-            external: true,
-          },
-        ],
-      },
-    },
-    {
-      name: "Banff",
-      position: 13.033,
-      day: 1,
-      // name: "Banff",
-      description:
-        "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
-      details: {
-        title: "Banff Gondola",
-        image: "/images/banff-gondola.jpg",
-        blurb: "An unbeatable view to end an unforgettable morning.",
-        description:
-          "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
-      },
-    },
-    {
-      name: "Banff",
-      position: 15.033,
-      day: 1,
-      // name: "Sky Bistro",
-      description: "Description here",
-      details: {
-        title: "Lunch at Sky Bistro",
-        blurb: "Treat your tastebuds to a top-of-the-world lunch.",
-        image: "/images/lunch-at-sky-bistro.jpg",
-        description:
-          "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
-      },
-    },
-    {
-      name: "Banff",
-      position: 17,
-      day: 1,
-      // name: "Banff Upper Hot Springs",
-      details: {
-        title: "Banff Upper Hot Springs",
-        image: "/images/banff-upper-hot-springs.jpg",
-        blurb: "Elevate your afternoon with a mineral-rich dip.",
-        description:
-          "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
-      },
-    },
-    {
-      name: "Banff",
-      position: 18.933,
-      day: 1,
-      // name: "Fairmont Banff Springs Hotel",
-      details: {
-        title: "Fairmont Banff Springs Hotel",
-        blurb: "Spend the night resting like Rocky Mountain royalty.",
-        image: "/images/fairmont-banff-springs-hotel.jpg",
-        description:
-          'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
-      },
-    },
-    {
-      name: "Banff / Lake Louise",
-      position: 20.6,
-      day: 2,
-      hideFromItinerary: true,
-      drivingInfo: {
-        copy: "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
-        time: "0 hr 45 min drive from Banff",
-      },
-      details: {
-        blurb:
-          "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
-      },
-    },
-    {
-      name: "Lake Louise",
-      position: 22.09,
-      day: 2,
-      // name: "Carter-Ryan Gallery and Live Art Venue",
-      details: {
-        blurb: "Carter-Ryan Gallery text",
-        title: "Carter-Ryan Gallery and Live Art Venue",
-        image: "/images/carter-ryan-gallery.png",
-        description:
-          "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
-      },
-    },
-    {
-      name: "Lake Louise",
-      position: 25,
-      day: 2,
-      // name: "Johnston Canyon",
-      details: {
-        title: "Johnston Canyon",
-        image: "/images/johnston-canyon.png",
-        description:
-          "Banff National Park's most popular hiking destination takes you into the depths of a canyon along catwalks and amongst spectacular waterfalls. See the impressive lower falls and walk through a tunnel to get an even closer look at the powerful effects of water. An early morning start may help you avoid the crowds.",
-      },
-    },
-    {
-      name: "Lake Louise",
-      position: 23.2,
-      day: 2,
-      details: {
-        title: "Lake Louise Gondola",
-        image: "/images/lake-louise-gondola.png",
-        description:
-          "Lake Louise Gondola. Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
-      },
-    },
-    {
-      name: "Lake Louise",
-      position: 23.2,
-      day: 2,
-      details: {
-        title: "Fairmont Chateau Lake Louise",
-        image: "/images/fairmont-chateau-lake-louise.png",
-        description:
-          "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
-      },
-    },
-    {
-      name: "Lake Louise",
-      position: 23.2,
-      day: 2,
-      details: {
-        title: "Fairview",
-        image: "/images/fairview.png",
-        description:
-          "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
-      },
-    },
-    {
-      name: "Jasper",
-      position: 23.2,
-      day: 3,
-      details: {
-        title: "Columbia Icefield Skywalk",
-        image: "/images/columbia-icefield-skywalk.png",
-        description:
-          "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
-      },
-    },
-    {
-      name: "Jasper",
-      position: 23.2,
-      day: 3,
-      details: {
-        title: "Maligne Canyon",
-        image: "/images/maligne-canyon.png",
-        description:
-          "Turquoise, glacial waters, and startling canyon walls grow ever more impressive along this short trail. Multiple bridges span the narrow gorge, crossing several times for spine-tingling views of the river below. Watch for fuchsia fireweed and mountain bluebirds in a landscape shaped by fire, erosion, and mountain building.",
-      },
-    },
-    {
-      name: "Jasper",
-      position: 23.2,
-      day: 3,
-      details: {
-        title: "Jasper SkyTram",
-        image: "/images/jasper-sky-tram.png",
-        description:
-          "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m, providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km hiking trail leads you to the summit of the mountain.",
-      },
-    },
-    {
-      name: "Jasper",
-      position: 23.2,
-      day: 3,
-      details: {
-        title: "Fairmont Jasper Park Lodge",
-        image: "/images/fairmont-jasper-park-lodge.png",
-        description:
-          "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
-      },
-    },
-    {
-      name: "Jasper",
-      position: 23.2,
-      day: 3,
-      details: {
-        title: "Jasper Planetarium",
-        image: "/images/jasper-planetarium.png",
-        description:
-          "Enter The Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
-      },
-    },
-  ];
 
   const maxLength = destinations.length - 1; // don't include start
 
@@ -300,26 +308,19 @@ const Experience = () => {
       controlAnimation();
     });
 
+    destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-
     setNextDestination(destinations[index + 1]);
 
-    // handle visited attractions
-    if (index > 0) {
-      setVisited((oldVisited) => [...oldVisited, index - 1]);
-    }
-    console.log({ index });
+    // console.log(currDestination);
+
     if (index >= 6) {
       //@TODO: this is simply hacked for demo
       setAttractionsOpen(true);
     }
     return () => {};
   }, [index]);
-
-  useEffect(() => {
-    console.log({ attractionsOpen });
-  }, [attractionsOpen]);
 
   // useEffect(() => {
   //   if (index !== 0) return;
@@ -443,7 +444,7 @@ const Experience = () => {
             nextDestination={nextDestination}
             setIndex={setIndex}
             showInfo={showInfo}
-            visited={visited}
+            stopCount={destinations.length - 1}
           />
         )}
 

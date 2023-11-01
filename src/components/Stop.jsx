@@ -1,22 +1,16 @@
 import React from "react";
 import caretImage from "../images/caret-right.svg";
 
-const Stop = ({
-  currDestination,
-  index,
-  setIndex,
-  showInfo,
-  stop,
-  visited,
-}) => {
-  if (stop.hideFromItinerary) return null;
+const Stop = ({ currDestination, index, setIndex, showInfo, stop }) => {
+  if (stop.hideFromItinerary || !currDestination) return null;
+
   return (
     <li
       className={`${
         currDestination?.details?.title === stop.details.title
           ? "itinerary__stop itinerary__stop--active"
           : "itinerary__stop"
-      } ${visited.includes(index) ? "itinerary__stop--visited" : ""}`}
+      } ${stop.visited ? "itinerary__stop--visited" : ""}`}
     >
       <div
         onClick={() => {

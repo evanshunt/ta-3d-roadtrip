@@ -375,7 +375,7 @@ const Scene = (props) => {
 
       {/* @TODO: animate this for the stops? */}
       {/* {addEffect && ( */}
-      {/* 
+
       <EffectComposer>
         <DepthOfField
           focusDistance={0.12} // where to focus
@@ -385,7 +385,7 @@ const Scene = (props) => {
           bokehScale={6} // bokeh size
           // bokehScale={bokehScale}
         />
-      </EffectComposer> */}
+      </EffectComposer>
 
       {/* )} */}
     </>

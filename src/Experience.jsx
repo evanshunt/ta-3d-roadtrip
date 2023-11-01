@@ -425,29 +425,24 @@ const Experience = () => {
       }, 250);
     }
 
-    console.log("previous: " + previousIndexRef.current);
-    console.log("current: " + index);
-
     if (Math.abs(index - previousIndexRef.current) > 1) {
-      // sheet.sequence.pause();
       sheet.sequence.position = destinations[index].position - beforeAnim;
-      // sheet.sequence.play();
     }
 
     controlAnimation();
   }, [index]);
 
-  useEffect(() => {
-    setHasStarted(true);
-  }, []);
+  // useEffect(() => {
+  //   setHasStarted(true);
+  // }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        {/* <div onClick={start}>
+        <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         {days[1] && (
           <Itinerary

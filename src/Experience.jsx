@@ -276,9 +276,11 @@ const Experience = () => {
   const [currDestination, setCurrDestination] = useState(null);
   const [nextDestination, setNextDestination] = useState(null);
   const [hasStarted, setHasStarted] = useState(false);
-  const [lastIndex, setLastIndex] = useState(0);
+
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
+
+  const previousIndexRef = React.useRef(0);
   // uncomment to use saved data
 
   const animDuration = 6.3;
@@ -306,10 +308,6 @@ const Experience = () => {
   });
 
   useEffect(() => {
-    project.ready.then(() => {
-      controlAnimation();
-    });
-
     destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
@@ -350,9 +348,10 @@ const Experience = () => {
   }, [clicked]);
 
   const handleIndex = (dir, jumpTo = false) => {
+    previousIndexRef.current = index;
+
     if (!jumpTo) {
       if (dir === "up" || dir === "down") return;
-      setLastIndex(index);
 
       if (dir === "next") {
         if (!hasStarted) {
@@ -364,7 +363,6 @@ const Experience = () => {
         index <= 1 ? setIndex(1) : setIndex(index - 1);
       }
     } else {
-      console.log("jumping to", jumpTo);
       setIndex(jumpTo);
     }
   };
@@ -426,6 +424,17 @@ const Experience = () => {
         setAttractionsOpen(true);
       }, 250);
     }
+
+    console.log("previous: " + previousIndexRef.current);
+    console.log("current: " + index);
+
+    if (Math.abs(index - previousIndexRef.current) > 1) {
+      // sheet.sequence.pause();
+      sheet.sequence.position = destinations[index].position - beforeAnim;
+      // sheet.sequence.play();
+    }
+
+    controlAnimation();
   }, [index]);
 
   useEffect(() => {

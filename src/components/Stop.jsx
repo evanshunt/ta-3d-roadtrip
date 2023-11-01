@@ -19,11 +19,13 @@ const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
         }}
         className="itinerary__stop__wrap"
       >
-        <img
-          className="itinerary__stop__image"
-          src={stop.details.image || "https://via.placeholder.com/150"}
-          alt=""
-        />
+        {stop.details?.image && (
+          <img
+            className="itinerary__stop__image"
+            src={stop.details.image}
+            alt=""
+          />
+        )}
         <strong className="itinerary__stop__name">{stop.details.title} </strong>
       </div>
 

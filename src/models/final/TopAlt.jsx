@@ -8,7 +8,7 @@ import { useControls } from "leva";
 
 const TopAlt = (props) => {
   const { nodes } = useGLTF("/glb/final/top-oct-30.glb");
-  const texture = useTexture("/textures/final/baked-short-alt.jpg");
+  const texture = useTexture("/textures/final/baked-short-dark.jpg");
 
   return (
     <group {...props} dispose={null}>
@@ -16,8 +16,8 @@ const TopAlt = (props) => {
         castShadow
         receiveShadow
         geometry={nodes.top.geometry}
-        position={[0, -0.4, 0]}
-        scale={[0.25, 0.1, 0.25]}
+        position={[0, -0.05, 0]}
+        scale={[0.25, 0.075, 0.25]}
       >
         <meshStandardMaterial
           map={texture}

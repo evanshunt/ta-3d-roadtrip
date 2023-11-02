@@ -29,6 +29,7 @@ const destinations = [
   {
     name: "start",
     position: 0,
+    stop: 0,
     day: 0,
     name: null,
     visited: false,
@@ -37,9 +38,10 @@ const destinations = [
     },
   },
   {
+    day: 1,
     name: "Banff",
     position: 11.066,
-    day: 1,
+    stop: 1,
     drivingInfo: {
       copy: "Head from Calgary to Banff, the birthplace of Canada’s national parks system.",
       time: "1 hr 23 min drive from Calgary",
@@ -76,6 +78,7 @@ const destinations = [
     name: "Banff",
     position: 13.033,
     day: 1,
+    stop: 2,
     description:
       "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
     visited: false,
@@ -91,6 +94,7 @@ const destinations = [
     name: "Banff",
     position: 15.033,
     day: 1,
+    stop: 3,
     visited: false,
     details: {
       title: "Lunch at Sky Bistro",
@@ -104,6 +108,7 @@ const destinations = [
     name: "Banff",
     position: 17,
     day: 1,
+    stop: 4,
     visited: false,
     details: {
       title: "Banff Upper Hot Springs",
@@ -117,6 +122,7 @@ const destinations = [
     name: "Banff",
     position: 18.933,
     day: 1,
+    stop: 5,
     visited: false,
     details: {
       title: "Fairmont Banff Springs Hotel",
@@ -131,12 +137,14 @@ const destinations = [
     position: 20.6,
     day: 2,
     hideFromItinerary: true,
+    stop: 6,
     visited: false,
     drivingInfo: {
       copy: "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
       time: "0 hr 45 min drive from Banff",
     },
     details: {
+      title: null,
       blurb:
         "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
     },
@@ -145,6 +153,7 @@ const destinations = [
     name: "Lake Louise",
     position: 22.09,
     day: 2,
+    stop: 7,
     visited: false,
     details: {
       blurb: "Carter-Ryan Gallery text",
@@ -159,6 +168,7 @@ const destinations = [
     position: 25,
     day: 2,
     visited: false,
+    stop: 8,
     details: {
       title: "Johnston Canyon",
       image: "/images/johnston-canyon.png",
@@ -311,7 +321,11 @@ const Experience = () => {
     destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-    setNextDestination(destinations[index + 1]);
+    if (destinations[index].title) {
+      setNextDestination(destinations[index + 1]);
+    } else {
+      setNextDestination(destinations[index + 2]);
+    }
 
     // console.log(currDestination);
 
@@ -424,8 +438,9 @@ const Experience = () => {
         setAttractionsOpen(true);
       }, 250);
     }
-
+    console.log(Math.abs(index - previousIndexRef.current));
     if (Math.abs(index - previousIndexRef.current) > 1) {
+      console.log("im doing a jump to ", index);
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
 

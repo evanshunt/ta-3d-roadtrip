@@ -98,11 +98,11 @@ const Scene = (props) => {
   const sceneRef = useRef();
   const cameraRef = useRef();
 
-  const { altTop } = useControls({
-    altTop: {
-      value: false,
-    },
-  });
+  // const { altTop } = useControls({
+  //   altTop: {
+  //     value: false,
+  //   },
+  // });
 
   // const { focusDistance, focalLength, bokehScale } = useControls({
   //   focusDistance: {
@@ -294,7 +294,7 @@ const Scene = (props) => {
       /> */}
 
       <Lights
-        alt={altTop}
+        alt={false}
         index={props.index}
         debug={props.debug}
         positions={positions}
@@ -366,8 +366,9 @@ const Scene = (props) => {
         {/* <LocationPin index={index} /> */}
         <Road />
 
-        {altTop && <TopAlt />}
-        {!altTop && <Top />}
+        {/* {altTop && <TopAlt />} */}
+        {/* {!altTop && <Top />} */}
+        <Top />
 
         {/* <Sides /> */}
         {/* <Plane /> */}

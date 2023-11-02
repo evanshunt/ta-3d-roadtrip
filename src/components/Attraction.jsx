@@ -50,7 +50,9 @@ const Attraction = ({
   const inBetweens = [6];
 
   useEffect(() => {
-    setOpen(attractionsOpen);
+    setTimeout(() => {
+      setOpen(attractionsOpen);
+    }, 500);
   }, [attractionsOpen]);
 
   useEffect(() => {

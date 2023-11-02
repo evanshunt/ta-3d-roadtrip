@@ -161,6 +161,10 @@
   margin-right: 30.25%;
   text-align: center;
 
+  &:nth-child(2) {
+    transform: translate(50%, 0);
+  }
+
   &:last-child {
     margin-right: 0;
   }

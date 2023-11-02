@@ -14,7 +14,7 @@ const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
     >
       <div
         onClick={() => {
-          handleIndex("next", index + 1);
+          handleIndex("next", stop.stop);
           showInfo();
         }}
         className="itinerary__stop__wrap"
@@ -27,9 +27,9 @@ const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
           />
         )}
         <strong className="itinerary__stop__name">{stop.details.title} </strong>
-      </div>
 
-      <img src={caretImage} alt="" />
+        <img src={caretImage} alt="" />
+      </div>
     </li>
   );
 };

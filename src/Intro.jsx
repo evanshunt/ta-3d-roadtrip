@@ -1,7 +1,7 @@
 import { Map } from "./Map";
 import { IntroClouds } from "./IntroClouds";
 import Onboarding from "./components/OnBoarding";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./scss/intro.scss";
 
@@ -21,6 +21,11 @@ const Intro = ({ hasStarted }) => {
   const removeIntro = () => {
     setVisible(false);
   };
+
+  // test
+  // useEffect(() => {
+  //   playIntro();
+  // }, []);
 
   if (!visible) return null;
 

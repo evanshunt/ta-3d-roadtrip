@@ -8,7 +8,7 @@ import { useControls } from "leva";
 
 const Road = (props) => {
   const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
-  const texture = useTexture("/textures/final/road-baked-test.jpg");
+  const texture = useTexture("/textures/final/road-baked-test-compressed.jpg");
   // const { posX, posY, posZ } = useControls({
   //     posX: {
   //         min: -8,

@@ -34,7 +34,8 @@ const destinations = [
     name: null,
     visited: false,
     details: {
-      blurb: "Use left and right arrows to start and move between attractions",
+      blurb:
+        "Use the arrows to explore your trip, starting off with a day in Banff.",
     },
   },
   {
@@ -146,7 +147,7 @@ const destinations = [
     details: {
       title: null,
       blurb:
-        "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
+        "Begin day two in beautiful Banff and end it dining by Lake Louise.",
     },
   },
   {
@@ -156,7 +157,8 @@ const destinations = [
     stop: 7,
     visited: false,
     details: {
-      blurb: "Carter-Ryan Gallery text",
+      blurb:
+        "Get inspired on a morning stroll through contemporary Indigenous art.",
       title: "Carter-Ryan Gallery and Live Art Venue",
       image: "/images/carter-ryan-gallery.png",
       description:
@@ -170,6 +172,7 @@ const destinations = [
     visited: false,
     stop: 8,
     details: {
+      blurb: "Discover roaring falls with a midday canyon hike.",
       title: "Johnston Canyon",
       image: "/images/johnston-canyon.png",
       description:
@@ -444,7 +447,9 @@ const Experience = () => {
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
 
+    // project.ready.then(() => {
     controlAnimation();
+    // });
   }, [index]);
 
   // useEffect(() => {

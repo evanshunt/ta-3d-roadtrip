@@ -182,7 +182,7 @@ const Lights = ({ alt, debug, index, positions }) => {
         ref={spotLight}
         position={debug ? [positionX, positionY, positionZ] : [-15, 10, 13.5]}
         // intensity={0.5}
-        intensity={alt ? 1.75 : 2.5}
+        intensity={alt ? 1.75 : 1.5}
         // intensity={intensity}
         lookAt={positions[0]}
         castShadow

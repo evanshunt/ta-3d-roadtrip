@@ -422,7 +422,7 @@ export const Map = ({ start }) => {
               <image
                 transform="translate(275, 95)"
                 preserveAspectRatio="none"
-                href="/images/maps/alberta-topography.png"
+                href="/images/maps/alberta-topography.webp"
                 className="alberta-topography"
               />
               <g transform="translate(395, 465)">

@@ -2,7 +2,7 @@ import React from "react";
 import { Billboard, Image } from "@react-three/drei";
 import { useControls } from "leva";
 
-const InfoBox = ({ imageSrc, position }) => {
+const InfoBox = ({ imageSrc, position, width }) => {
   // const { posX, posY, posZ } = useControls({
   //   posX: {
   //     value: 0,
@@ -43,15 +43,15 @@ const InfoBox = ({ imageSrc, position }) => {
       <Image
         url={imageSrc}
         transparent={true}
-        scale={[1.88, 0.5, 0.42]}
+        scale={[width || 1.88, 0.5, 0.42]}
         castShadow={true}
       />
       <mesh castShadow={true}>
-        <boxGeometry args={[1.75, 0.25, 0.001]} position={[0, 0, 0]} />
+        <boxGeometry args={[width || 1.75, 0.25, 0.001]} position={[0, 0, 0]} />
         <meshBasicMaterial
           color={0x000000}
           // opacity={0.75}
-          alphaTest={0.75}
+          alphaTest={0.5}
           transparent={true}
           colorWrite={false}
           depthWrite={false}

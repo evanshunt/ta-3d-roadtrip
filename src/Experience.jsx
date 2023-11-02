@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins-with-exit-clouds.json";
+import animation from "./animation-data/new-pins-with-exit-clouds-johnston.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import React, { createRef, useEffect, useState } from "react";
@@ -167,7 +167,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 25,
+    position: 26.3,
     day: 2,
     visited: false,
     stop: 8,

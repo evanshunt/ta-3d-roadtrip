@@ -34,18 +34,21 @@ const Day1 = ({
   return (
     <>
       <InfoBox
-        position={[-5.2, 1.2, 2.4]}
         imageSrc={"/images/info-boxes/sunshine-village.png"}
+        position={[-5.2, 1.2, 2.4]}
+        width={1.86}
       />
       <InfoBox
-        position={[-4.3, 1.2, 2.7]}
-        name="Cascade Mountain"
         imageSrc={"/images/info-boxes/cascade-mountain.png"}
+        name="Cascade Mountain"
+        position={[-4.3, 1.2, 2.7]}
+        width={1.58}
       />
       <InfoBox
-        position={[-4.2, 1.15, 3]}
-        name="Lake Minnewanka"
         imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+        name="Lake Minnewanka"
+        position={[-4.2, 1.15, 3]}
+        width={1.8}
       />
 
       <ImagePin

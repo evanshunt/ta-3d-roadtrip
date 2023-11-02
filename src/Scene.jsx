@@ -374,10 +374,10 @@ const Scene = (props) => {
         {/* <Plane /> */}
       </e.group>
 
-      {/* @TODO: animate this for the stops? */}
+      {/* @TODO: animate this for the stops? this is causing issues with the translucent items */}
       {/* {addEffect && ( */}
 
-      <EffectComposer>
+      {/* <EffectComposer>
         <DepthOfField
           focusDistance={0.12} // where to focus
           // focusDistance={focusDistance}
@@ -386,7 +386,7 @@ const Scene = (props) => {
           bokehScale={6} // bokeh size
           // bokehScale={bokehScale}
         />
-      </EffectComposer>
+      </EffectComposer> */}
 
       {/* )} */}
     </>

@@ -385,6 +385,7 @@ const Experience = () => {
   };
 
   const start = () => {
+    setHasStarted(true);
     setClicked(true);
     ``;
   };

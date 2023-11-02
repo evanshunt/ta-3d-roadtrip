@@ -12,15 +12,15 @@ const Intro = ({ hasStarted }) => {
   const playIntro = () => {
     const intro = document.querySelector(".cloud-intro");
     intro.classList.add("cloud-intro--play");
-
-    setTimeout(() => {
-      setHasPlayed(true);
-    }, 500);
   };
 
   const removeIntro = () => {
     setVisible(false);
   };
+
+  // useEffect(() => {
+  //   console.log({ hasPlayed });
+  // }, [hasPlayed]);
 
   // test
   // useEffect(() => {
@@ -33,7 +33,7 @@ const Intro = ({ hasStarted }) => {
     <div className="intro">
       <Onboarding />
       <div className="intro__map">
-        <Map removeIntro={removeIntro} start={hasPlayed} />
+        <Map removeIntro={removeIntro} start={hasStarted} />
       </div>
       <IntroClouds playIntro={playIntro} />
     </div>

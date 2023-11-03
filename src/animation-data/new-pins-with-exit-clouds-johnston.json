@@ -11297,7 +11297,7 @@
                       0.03
                     ],
                     "type": "bezier",
-                    "value": -0.24999546149449625
+                    "value": 0.02000453850550385
                   },
                   {
                     "id": "rOA5iNOhAm",
@@ -11357,12 +11357,189 @@
                 "type": "BasicKeyframedTrack",
                 "__debugName": "Pins / Johnston Canyon / Shadow Johnston Canyon:[\"position\",\"z\"]",
                 "keyframes": []
+              },
+              "Wnx39Jou9U": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Shadow Johnston Canyon:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "ocuJQ4N7CX",
+                    "position": 25.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "6bo60HrMhL",
+                    "position": 26.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "GmRgSHFBxw",
+                    "position": 26.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "L5_MrK0-yP",
+                    "position": 26.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "FWEUXyOyKC": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Shadow Johnston Canyon:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "aThKKJWMhG",
+                    "position": 25.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "rVpu2NH9aC",
+                    "position": 26.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "Zs5BZel2NX",
+                    "position": 26.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "QltiyUABF9",
+                    "position": 26.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "0Hc_hVzmdL": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Johnston Canyon / Shadow Johnston Canyon:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "xfPOqRdmuH",
+                    "position": 25.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "3FrBAWlw-j",
+                    "position": 26.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "OZjpkA4Nhp",
+                    "position": 26.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "sHU4sMwHk1",
+                    "position": 26.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
               }
             },
             "trackIdByPropPath": {
               "[\"position\",\"x\"]": "9IJiXHC5Bf",
               "[\"position\",\"y\"]": "EfdzYl91cc",
-              "[\"position\",\"z\"]": "m4JgxSoN8-"
+              "[\"position\",\"z\"]": "m4JgxSoN8-",
+              "[\"scale\",\"x\"]": "Wnx39Jou9U",
+              "[\"scale\",\"y\"]": "FWEUXyOyKC",
+              "[\"scale\",\"z\"]": "0Hc_hVzmdL"
             }
           },
           "Pins / Johnston Canyon / Stem Johnston Canyon": {
@@ -11585,6 +11762,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "Lys9FFTj9bWL7_-c",
     "8cWx3KD0t5XNirnU",
     "GLVxnkrmxjYfoU5B",
     "pMG-iAnW8NBBwP5w",
@@ -11633,7 +11811,6 @@
     "d7NKzyax20JO0L9R",
     "2dFXtPRJZ1J8QIDQ",
     "bMbP6bqjuV6jTW83",
-    "9vdsB1pz1BCW5b83",
-    "JWKM_qOn331DMGVH"
+    "9vdsB1pz1BCW5b83"
   ]
 }

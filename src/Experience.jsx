@@ -324,7 +324,8 @@ const Experience = () => {
     destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-    if (destinations[index].title) {
+    console.log(destinations[index + 1]);
+    if (destinations[index + 1]?.details.title) {
       setNextDestination(destinations[index + 1]);
     } else {
       setNextDestination(destinations[index + 2]);

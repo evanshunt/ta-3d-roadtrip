@@ -448,9 +448,9 @@ const Experience = () => {
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
 
-    // project.ready.then(() => {
-    controlAnimation();
-    // });
+    project.ready.then(() => {
+      controlAnimation();
+    });
   }, [index]);
 
   // useEffect(() => {

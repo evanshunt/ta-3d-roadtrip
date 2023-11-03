@@ -13,6 +13,10 @@
   top: 0;
   transition: opacity 0.25s ease-out;
   z-index: 4;
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .onboarding__top,

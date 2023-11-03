@@ -6,24 +6,28 @@ import Stop from "./Stop";
 const Day = ({
   currDestination,
   description,
+  drivingInfo,
+  handleIndex,
   name,
   number,
   showInfo,
   stops,
 }) => {
   return (
-    <li className="itinerary__day">
-      <span>
-        <strong>
-          Day {number} <span>{name}</span>
-        </strong>
-      </span>
+    <li className="itinerary__day" key={name}>
+      <strong className="itinerary__day__text">
+        Day {number} <span>{name}</span>
+      </strong>
+
       <p className="itinerary__day__description">{description}</p>
-      <DrivingInfo />
+      <DrivingInfo {...drivingInfo} />
       <ul className="itinerary__day__stops">
-        {stops.map((stop) => (
+        {stops.map((stop, index) => (
           <>
             <Stop
+              handleIndex={handleIndex}
+              index={index}
+              key={index}
               currDestination={currDestination}
               stop={stop}
               showInfo={showInfo}
@@ -31,6 +35,7 @@ const Day = ({
           </>
         ))}
       </ul>
+      <hr className="itinerary__divider" />
     </li>
   );
 };

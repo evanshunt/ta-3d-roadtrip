@@ -8,7 +8,8 @@ import { useControls } from "leva";
 
 export function Top(props) {
   const { nodes } = useGLTF("/glb/final/top-new.glb");
-  const texture = useTexture("/textures/final/baked-combined-8k.jpg");
+  const texture = useTexture("/textures/final/baked-combined-8k-lakes.jpg");
+  // const texture = useTexture("/textures/final/baked-tall-alt.jpg");
   // const { scale } = useControls({
   //   scale: {
   //     value: 0.25,
@@ -21,16 +22,18 @@ export function Top(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        scale={[0.25, 0.15, 0.25]}
-        castShadow
-        receiveShadow
+        castShadow={false}
         geometry={nodes.top.geometry}
+        receiveShadow={true}
+        scale={[0.25, 0.15, 0.25]}
       >
         <meshStandardMaterial
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
-          map-anisotropy={16}
+          // map-anisotropy={16}
+          // metalness={0}
+          // roughness={1}
         />
       </mesh>
     </group>

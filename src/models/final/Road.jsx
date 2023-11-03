@@ -6,9 +6,9 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
-function Road(props) {
+const Road = (props) => {
   const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
-  const texture = useTexture("/textures/final/road-baked-test.jpg");
+  const texture = useTexture("/textures/final/road-baked-test-compressed.jpg");
   // const { posX, posY, posZ } = useControls({
   //     posX: {
   //         min: -8,
@@ -30,21 +30,25 @@ function Road(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
+        castShadow={true}
+        receiveShadow={false}
         scale={0.25}
         geometry={nodes.BezierCurve.geometry}
         position={[0, -1.025, 0]}
       >
         <meshStandardMaterial
-          map={texture}
-          map-flipY={false}
+          // map={texture}
+          color={0x9c0f00}
+          roughness={1}
+          metalness={0}
+          // map-flipY={false}
           // map-generateMipmaps={true}
-          map-anisotropy={32}
+          // map-anisotropy={8}
         />
       </mesh>
     </group>
   );
-}
+};
 
 useGLTF.preload("/glb/road.glb");
 

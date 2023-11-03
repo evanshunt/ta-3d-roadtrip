@@ -12,7 +12,7 @@ body {
   background-color: #b0b1b8;
   display: flex;
   flex-direction: column;
-  font-family: "Futura PT", Myriad Pro, sans-serif;
+  font-family: "Futura PT Multilingual W01", "Myriad Pro", sans-serif;
   height: 100dvh;
   justify-content: center;
   overflow: hidden;
@@ -26,6 +26,32 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
+
+  &::after {
+    // background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    content: "";
+    display: block;
+    height: 25vh;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.main-nav-image {
+  width: 100%;
+  // height: 100px;
+  aspect-ratio: 72/5;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 
 .loading {
@@ -39,6 +65,7 @@ body {
   --black: #000000;
   --blue: #073142;
   --grey: #787878;
+  --grey-light: #b6b6b6;
   --white: #ffffff;
   --red: #9c0f00;
   --turquoise: #00a79a;
@@ -75,53 +102,53 @@ body {
 }
 
 .day-info {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, calc(-100% - 1.4rem));
-  padding: 0.7rem 1.25rem;
-  color: var(--white);
+  align-items: center;
   background-color: var(--blue);
   border-radius: 1.6875rem;
-  width: auto;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem 1rem;
   text-align: center;
-  width: 100%;
   transition: all 0.25s ease-in-out;
+  width: auto;
 
   span {
     // display: inline-block;
     transition: all 0.25s linear;
   }
+
+  @media (min-width: 1024px) {
+    width: 465px;
+  }
 }
 
 .day-info-anim-enter {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+  transform: scale(0.66);
 
   span {
     opacity: 0;
-    transform: translate(0, -66%);
   }
 }
 
 .day-info-anim-enter-active {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 }
 
 .day-info-anim-enter-done {
   // opacity: 1;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 1;
-    transform: translate(0, 0);
   }
 }
 
 .day-info-anim-exit {
   // opacity: 1;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 1;
@@ -131,7 +158,7 @@ body {
 
 .day-info-anim-exit-active {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(1);
+  transform: scale(1);
 
   span {
     opacity: 0;
@@ -141,10 +168,37 @@ body {
 
 .day-info-anim-exit-done {
   // opacity: 0;
-  transform: translate(-50%, calc(-100% - 1.4rem)) scale(0.66);
+  transform: scale(0.66);
 
   span {
     opacity: 0;
-    transform: translate(0, 66%);
   }
+}
+
+.close-tour {
+  background: var(--blue);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.625rem 1rem;
+  position: fixed;
+  top: 7.25rem;
+  left: 1.875rem;
+  z-index: 3;
+
+  img {
+    padding-right: 0.625rem;
+  }
+}
+
+.experience {
+  padding-top: 6.5vw;
+}
+
+.loading {
+  position: fixed;
+  z-index: 1000;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
 }

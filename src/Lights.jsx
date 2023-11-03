@@ -176,7 +176,7 @@ const Lights = ({ alt, debug, index, positions }) => {
 
   return (
     <>
-      {/* <ambientLight intensity={0.2} color={0xffffff} /> */}
+      <ambientLight intensity={1.05} color={0xffffff} />
 
       <directionalLight
         ref={spotLight}

@@ -238,11 +238,11 @@ const Scene = (props) => {
 
   return (
     <>
-      <Environment
+      {/* <Environment
         background
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
-      />
+      /> */}
       {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}

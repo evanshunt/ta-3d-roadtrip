@@ -457,17 +457,17 @@ const Experience = () => {
     });
   }, [index]);
 
-  useEffect(() => {
-    setHasStarted(true);
-  }, []);
+  // useEffect(() => {
+  //   setHasStarted(true);
+  // }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        {/* <div onClick={start}>
+        <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         {days[1] && (
           <Itinerary

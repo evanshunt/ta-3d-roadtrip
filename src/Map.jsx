@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import topographyImg from "/images/maps/alberta-topography.webp";
+import topographyImgNew from "/images/maps/alberta-topography-new.webp";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 
@@ -421,9 +421,9 @@ export const Map = ({ start }) => {
               /> */}
 
               <image
-                transform="translate(275, 95)"
+                transform="translate(330, 80)"
                 preserveAspectRatio="none"
-                href={topographyImg}
+                href={topographyImgNew}
                 className="alberta-topography"
               />
               <g transform="translate(395, 465)">

@@ -72,8 +72,8 @@ const Attraction = ({
       <SwitchTransition>
         <CSSTransition classNames="fade" timeout={750} key={index}>
           <>
-            <div className="attraction__wrapper" {...handlers}>
-              <div className="attraction__header__mobile">
+            <div className="attraction__wrapper">
+              <div className="attraction__header__mobile" {...handlers}>
                 <img
                   hidden={currDestination?.details?.title ? false : true}
                   className={`${

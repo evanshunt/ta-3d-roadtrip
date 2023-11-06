@@ -62,11 +62,11 @@
 }
 
 .attraction__header__mobile {
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   margin-bottom: 1.5rem;
+  padding-top: 1rem;
 
   .attraction--open & {
     margin-bottom: 1rem;
@@ -92,9 +92,11 @@
 .attraction__back {
   background-color: transparent;
   border: none;
+  color: var(--black);
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  padding-left: 0;
 
   img {
     margin-right: 0.38rem;
@@ -115,8 +117,6 @@
   border: 3px solid var(--red);
   border-radius: 50%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-  transition: width 0.3s ease-in-out;
-  width: 0;
 
   .attraction--open & {
     height: 4.625rem;
@@ -132,9 +132,9 @@
   margin-bottom: 0.55rem;
 
   .controls__button--prev {
+    flex: 0.5;
     margin-left: auto;
     margin-right: -0.85rem;
-    flex: 0.5;
 
     @media screen and (min-width: 1024px) {
       flex: unset;
@@ -157,6 +157,10 @@
 .attraction__arrow {
   display: block;
   margin: 0.25rem auto;
+
+  .attraction--open & {
+    transform: rotateZ(180deg);
+  }
 
   @media screen and (min-width: 1024px) {
     display: none;

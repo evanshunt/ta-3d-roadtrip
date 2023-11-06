@@ -1,3 +1,4 @@
+import { isDesktop } from "react-device-detect";
 import React from "react";
 
 export const IntroClouds = ({ playIntro }) => (
@@ -12,21 +13,25 @@ export const IntroClouds = ({ playIntro }) => (
     <div className="cloud-intro__image">
       <img src="/images/cloud1.webp" alt="" />
     </div>
-    <div className="cloud-intro__image">
-      <img src="/images/cloud2.webp" alt="" />
-    </div>
-    <div className="cloud-intro__image">
-      <img src="/images/cloud1.webp" alt="" />
-    </div>
-    <div className="cloud-intro__image">
-      <img src="/images/cloud2.webp" alt="" />
-    </div>
-    <div className="cloud-intro__image">
-      <img src="/images/cloud1.webp" alt="" />
-    </div>
-    <div className="cloud-intro__image">
-      <img src="/images/cloud3.webp" alt="" />
-    </div>
+    {isDesktop && (
+      <>
+        <div className="cloud-intro__image">
+          <img src="/images/cloud2.webp" alt="" />
+        </div>
+        <div className="cloud-intro__image">
+          <img src="/images/cloud1.webp" alt="" />
+        </div>
+        <div className="cloud-intro__image">
+          <img src="/images/cloud2.webp" alt="" />
+        </div>
+        <div className="cloud-intro__image">
+          <img src="/images/cloud1.webp" alt="" />
+        </div>
+        <div className="cloud-intro__image">
+          <img src="/images/cloud3.webp" alt="" />
+        </div>
+      </>
+    )}
     <div className="cloud-intro__background"></div>
   </div>
 );

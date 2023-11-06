@@ -1,7 +1,9 @@
 import * as THREE from "three";
 import animation from "./animation-data/new-pins-with-exit-clouds-johnston.json";
+import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
+import { isMobile } from "react-device-detect";
 import React, { createRef, useEffect, useState } from "react";
 import "core-js/actual/object/group-by";
 import Scene from "./Scene";
@@ -278,7 +280,9 @@ const destinations = [
 ];
 
 const Experience = () => {
-  const project = getProject("TA Fly Through", { state: animation });
+  const project = getProject("TA Fly Through", {
+    state: isMobile ? animationMobile : animation,
+  });
   // const project = getProject("TA Fly Through");
   const [clicked, setClicked] = useState(false);
   const [debug, setDebug] = useState(false);
@@ -443,9 +447,8 @@ const Experience = () => {
         setAttractionsOpen(true);
       }, 250);
     }
-    console.log(Math.abs(index - previousIndexRef.current));
+
     if (Math.abs(index - previousIndexRef.current) > 1) {
-      console.log("im doing a jump to ", index);
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
 
@@ -497,6 +500,7 @@ const Experience = () => {
             // shadowMapEnabled: true,
           }}
           frameloop="demand"
+          {...handlers}
         >
           {/* <PerformanceMonitor
           onIncline={() => {

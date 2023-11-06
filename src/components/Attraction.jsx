@@ -138,6 +138,16 @@ const Attraction = ({
                     src={currDestination?.details?.image}
                     className="attraction__image"
                   />
+                  <span
+                    className={`${
+                      currDestination?.details?.title
+                        ? "attraction__name"
+                        : "attraction__name attraction__name--disabled"
+                    }`}
+                  >
+                    {currDestination?.details?.title ||
+                      "Swipe left to explore the attractions"}
+                  </span>
                 </div>
               </div>
 

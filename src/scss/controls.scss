@@ -22,21 +22,21 @@
 
 .controls__buttons {
   display: flex;
+  flex: 0.35;
   justify-content: space-between;
+
+  @media screen and (min-width: 1024px) {
+    flex: 1;
+  }
 }
 
 .controls__button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 29px;
+  height: 1.8125rem;
   padding: 0;
-  width: 29px;
-
-  @media screen and (min-width: 1024px) {
-    height: 1.8125rem;
-    width: 1.8125rem;
-  }
+  width: 1.8125rem;
 
   svg {
     width: 1.8125rem;
@@ -189,8 +189,8 @@
   }
 
   &:last-child {
-    transform: translate(-150%, 0);
     margin-right: 0;
+    transform: translate(-150%, 0);
   }
 
   @media screen and (min-width: 1024px) {

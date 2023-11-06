@@ -8,7 +8,7 @@
   position: fixed;
   right: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 2;
 
   @media screen and (min-width: 1024px) {
     bottom: 1.33rem;
@@ -16,6 +16,7 @@
     min-width: 700px;
     transform: translate(-50%, 0);
     width: 40vw;
+    z-index: 3;
   }
 }
 
@@ -28,9 +29,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  height: 1.8125rem;
+  height: 29px;
   padding: 0;
-  width: 1.8125rem;
+  width: 29px;
+
+  @media screen and (min-width: 1024px) {
+    height: 1.8125rem;
+    width: 1.8125rem;
+  }
 
   svg {
     width: 1.8125rem;
@@ -77,17 +83,22 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
+  margin-bottom: 0;
   margin-top: 0;
   padding: 0;
   position: relative;
   width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .controls__list__progress {
   -webkit-appearance: none;
   appearance: none;
   display: block;
-  height: 0.25rem;
+  height: 0.125rem;
   left: 0;
   position: absolute;
   top: 50%;
@@ -102,6 +113,10 @@
   &::-webkit-progress-value {
     background: var(--red);
     transition: all 0.25s linear;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 0.25rem;
   }
 }
 
@@ -119,11 +134,11 @@
   border-radius: 50%;
   color: transparent;
   cursor: pointer;
-  height: 0.6875rem;
+  height: 0.35rem;
   margin: 0 0.5rem;
   padding: 0;
   transition: all 0.2s linear;
-  width: 0.6875rem;
+  width: 0.35rem;
 
   &:hover {
     transform: scale(1.5);
@@ -142,19 +157,27 @@
     border-color: var(--red);
     transform: scale(1.25);
   }
+
+  @media screen and (min-width: 1024px) {
+    height: 0.6875rem;
+    width: 0.6875rem;
+  }
 }
 
 .controls__list__days {
   display: flex;
   padding-left: 0;
-  transform: translate(-1rem, 0);
   width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    transform: translate(-1rem, 0);
+  }
 }
 
 .controls__list__day {
   color: var(--white);
   font-family: "Futura PT Multilingual W01", "Myriad Pro", sans-serif;
-  font-size: 0.9375rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1.125rem; /* 120% */
@@ -162,10 +185,23 @@
   text-align: center;
 
   &:nth-child(2) {
-    transform: translate(50%, 0);
+    transform: translate(-50%, 0);
   }
 
   &:last-child {
+    transform: translate(-150%, 0);
     margin-right: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 0.9375rem;
+
+    &:nth-child(2) {
+      transform: translate(50%, 0);
+    }
+
+    &:last-child {
+      transform: translate(0, 0);
+    }
   }
 }

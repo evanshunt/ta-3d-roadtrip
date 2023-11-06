@@ -10,7 +10,7 @@
   height: calc(100dvh - 5rem);
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 1.4rem 1.75rem;
+  padding: 0 1.75rem;
   position: fixed;
   transform: translate(0, calc(var(--offset) - 5rem));
   transition: transform 0.25s ease-out;
@@ -32,6 +32,7 @@
     border-radius: 0;
     height: 100vh;
     min-width: 24.125rem;
+    padding: 1.4rem 1.75rem;
     padding-bottom: 7.25rem;
     right: 0;
     top: 0;
@@ -47,11 +48,33 @@
   }
 }
 
+.attraction__wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.375s linear;
+}
+
 .attraction__header {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.attraction__header__mobile {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+
+  .attraction--open & {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
 }
 
 .attraction__meta {
@@ -127,6 +150,9 @@
 }
 
 .attraction__arrow {
+  display: block;
+  margin: 0.25rem auto;
+
   @media screen and (min-width: 1024px) {
     display: none;
   }
@@ -137,9 +163,14 @@
   display: block;
   font-size: 1.3125rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4375rem; /* 109.524% */
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    font-weight: 700;
+    width: 50%;
+  }
 
   .attraction--open & {
     margin-left: 0;
@@ -301,8 +332,4 @@
 .fade-exit-done {
   opacity: 0;
   transform: translate(-25%, 0);
-}
-
-.attraction__wrapper {
-  transition: all 0.375s linear;
 }

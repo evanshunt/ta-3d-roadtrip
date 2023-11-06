@@ -324,7 +324,7 @@ const Experience = () => {
     destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
-    console.log(destinations[index + 1]);
+
     if (destinations[index + 1]?.details.title) {
       setNextDestination(destinations[index + 1]);
     } else {
@@ -454,17 +454,17 @@ const Experience = () => {
     });
   }, [index]);
 
-  // useEffect(() => {
-  //   setHasStarted(true);
-  // }, []);
+  useEffect(() => {
+    setHasStarted(true);
+  }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        <div onClick={start}>
+        {/* <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary

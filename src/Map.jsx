@@ -317,7 +317,7 @@ export const Map = ({ start }) => {
       );
     };
 
-    animateScene();
+    // animateScene();
   }, [start]);
 
   return (

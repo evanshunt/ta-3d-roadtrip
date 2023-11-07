@@ -73,8 +73,8 @@ const positions = {
   // Day 2:
   carterRyanGallery: [-4.55, 1.075, 2.83],
   johnstonCanyon: [-4.0, 1.16, 1.88],
-  lakeLouiseGondola: [-2.9, 1.2, 0.73],
-  fairmontChateauLakeLouise: [-3.1, 1.18, 0.57],
+  lakeLouiseGondola: [-3.05, 1.2, 0.73],
+  fairmontChateauLakeLouise: [-3.15, 1.18, 0.61],
   fairview: [-3.1, 1.18, 0.57],
 
   // Day 3:
@@ -304,7 +304,7 @@ const Scene = (props) => {
       <e.group theatreKey="Scene" ref={sceneRef}>
         {/* Day 1 */}
 
-        <Day1
+        {/* <Day1
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}
@@ -312,7 +312,7 @@ const Scene = (props) => {
           // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
-        />
+        /> */}
 
         {/* Day 2 */}
         <Day2

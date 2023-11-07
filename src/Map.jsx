@@ -324,7 +324,6 @@ export const Map = ({ start }) => {
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      // viewBox="0 0 1393 1060"
       viewBox="0 0 1393 1258"
       className="map-wrap"
     >

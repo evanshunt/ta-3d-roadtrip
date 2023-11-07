@@ -185,6 +185,7 @@ const destinations = [
     name: "Lake Louise",
     position: 31.566,
     day: 2,
+    stop: 9,
     visited: false,
     details: {
       title: "Lake Louise Gondola",
@@ -197,6 +198,7 @@ const destinations = [
     name: "Lake Louise",
     position: 33.6,
     day: 2,
+    stop: 10,
     visited: false,
     details: {
       title: "Fairmont Chateau Lake Louise",
@@ -209,6 +211,7 @@ const destinations = [
     name: "Lake Louise",
     position: 35.6,
     day: 2,
+    stop: 11,
     visited: false,
     details: {
       title: "Fairview",
@@ -322,7 +325,7 @@ const Experience = () => {
   useEffect(() => {
     const debug = window.location.search.includes("debug");
     setDebug(debug);
-  });
+  }, []);
 
   useEffect(() => {
     destinations[index].visited = true;
@@ -457,17 +460,17 @@ const Experience = () => {
     });
   }, [index]);
 
-  useEffect(() => {
-    setHasStarted(true);
-  }, []);
+  // useEffect(() => {
+  //   setHasStarted(true);
+  // }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        {/* <div onClick={start}>
+        <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         {days[1] && (
           <Itinerary

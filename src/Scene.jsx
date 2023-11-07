@@ -183,35 +183,35 @@ const Scene = (props) => {
 
   //-4.8, 1.6, 5.4]
   // -3.1, 1.76, 2.07
-  const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls(
-    "Cloud Lake Louise",
-    {
-      cloudPosX: {
-        value: -3.1,
-        min: -10,
-        max: 10,
-        step: 0.01,
-      },
-      cloudPosY: {
-        value: 1.76,
-        min: -10,
-        max: 10,
-        step: 0.01,
-      },
-      cloudPosZ: {
-        value: 2.07,
-        min: -10,
-        max: 10,
-        step: 0.01,
-      },
-      cloudScale: {
-        value: 0.1,
-        min: 0.01,
-        max: 0.3,
-        step: 0.01,
-      },
-    }
-  );
+  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls(
+  //   "Cloud Lake Louise",
+  //   {
+  //     cloudPosX: {
+  //       value: -3.1,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudPosY: {
+  //       value: 1.76,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudPosZ: {
+  //       value: 2.07,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudScale: {
+  //       value: 0.1,
+  //       min: 0.01,
+  //       max: 0.3,
+  //       step: 0.01,
+  //     },
+  //   }
+  // );
 
   // const { cloudScale } = useControls({
   //   cloudScale: {
@@ -305,9 +305,7 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* Day 1 */}
-
-        {/* <Day1
+        <Day1
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}
@@ -315,9 +313,8 @@ const Scene = (props) => {
           // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
-        /> */}
+        />
 
-        {/* Day 2 */}
         <Day2
           positions={positions}
           sceneIndex={props.index}
@@ -328,7 +325,6 @@ const Scene = (props) => {
           material={redMaterial}
         />
 
-        {/* Day 3 */}
         {/* <Day3 positions={positions} /> */}
 
         {/* <e.group theatreKey="Lake Louise Cloud 2">
@@ -346,7 +342,8 @@ const Scene = (props) => {
 
         <e.group
           theatreKey="Cloud Lake Louise 2"
-          position={[cloudPosX, cloudPosY, cloudPosZ]}
+          // position={[cloudPosX, cloudPosY, cloudPosZ]}
+          position={[-5.76, 1.76, 0.26]}
         >
           <Cloud scale={0.075} />
         </e.group>

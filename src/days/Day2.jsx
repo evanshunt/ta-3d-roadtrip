@@ -154,8 +154,8 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <InfoBox
         imageSrc={"/images/info-boxes/sunshine-village.png"}
-        name={"Castle Mountain"}
-        position={[-3.6, 1.2, 1.4]}
+        name={"Hector Lake"}
+        position={[-2.25, 1.2, 0.0]}
         width={1.86}
       />
       <InfoBox

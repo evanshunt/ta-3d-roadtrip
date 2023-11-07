@@ -583,7 +583,7 @@ const Experience = () => {
           <ul className="controls__list">
             <progress
               className="controls__list__progress"
-              value={(index / (destinations.length - 1)) * 100 - 4.25}
+              value={(index / (destinations.length - 1)) * 100 - 4.5}
               //@TODO: write a function to deal with edge cases
               max="100"
             />

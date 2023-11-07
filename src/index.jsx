@@ -1,15 +1,15 @@
 import { createRoot } from "react-dom/client";
 // import Experience from "./Experience.jsx";
 import React, { Suspense, useLayoutEffect } from "react";
-import studio from "@theatre/studio";
-import extension from "@theatre/r3f/dist/extension";
+// import studio from "@theatre/studio";
+// import extension from "@theatre/r3f/dist/extension";
 
 const root = createRoot(document.querySelector("#root"));
 
 const Experience = React.lazy(() => import("./Experience.jsx"));
 
-studio.extend(extension);
-studio.initialize();
+// studio.extend(extension);
+// studio.initialize();
 
 root.render(
   // <Suspense fallback={<div className="loading"></div>}>

@@ -161,7 +161,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       <InfoBox
         imageSrc={"/images/info-boxes/sunshine-village.png"}
         name={"Morant's Curve"}
-        position={[-3.3, 1.2, 0.8]}
+        position={[-3.3, 1.1, 0.8]}
         width={1.86}
       />
       <ImagePin

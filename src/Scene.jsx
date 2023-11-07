@@ -73,9 +73,9 @@ const positions = {
   // Day 2:
   carterRyanGallery: [-4.55, 1.075, 2.83],
   johnstonCanyon: [-4.0, 1.16, 1.88],
-  lakeLouiseGondola: [-3.05, 1.2, 0.73],
-  fairmontChateauLakeLouise: [-3.15, 1.18, 0.61],
-  fairview: [-3.1, 1.18, 0.57],
+  lakeLouiseGondola: [-3.05, 1.1, 0.73],
+  fairmontChateauLakeLouise: [-3.2, 1.1, 0.61],
+  fairview: [-3.2, 1.11, 0.57],
 
   // Day 3:
   columbiaIcefieldSkywalk: [1.63, 1.25, -2.9],
@@ -183,32 +183,35 @@ const Scene = (props) => {
 
   //-4.8, 1.6, 5.4]
   // -3.1, 1.76, 2.07
-  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls({
-  //   cloudPosX: {
-  //     value: -3.1,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudPosY: {
-  //     value: 1.76,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudPosZ: {
-  //     value: 2.07,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudScale: {
-  //     value: 0.1,
-  //     min: 0.01,
-  //     max: 0.3,
-  //     step: 0.01,
-  //   },
-  // });
+  const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls(
+    "Cloud Lake Louise",
+    {
+      cloudPosX: {
+        value: -3.1,
+        min: -10,
+        max: 10,
+        step: 0.01,
+      },
+      cloudPosY: {
+        value: 1.76,
+        min: -10,
+        max: 10,
+        step: 0.01,
+      },
+      cloudPosZ: {
+        value: 2.07,
+        min: -10,
+        max: 10,
+        step: 0.01,
+      },
+      cloudScale: {
+        value: 0.1,
+        min: 0.01,
+        max: 0.3,
+        step: 0.01,
+      },
+    }
+  );
 
   // const { cloudScale } = useControls({
   //   cloudScale: {
@@ -337,6 +340,13 @@ const Scene = (props) => {
           // position={[cloudPosX, cloudPosY, cloudPosZ]}
           position={[-3.8, 1.75, 3.5]}
           theatreKey="Cloud Banff"
+        >
+          <Cloud scale={0.075} />
+        </e.group>
+
+        <e.group
+          theatreKey="Cloud Lake Louise 2"
+          position={[cloudPosX, cloudPosY, cloudPosZ]}
         >
           <Cloud scale={0.075} />
         </e.group>

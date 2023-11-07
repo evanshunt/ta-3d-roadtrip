@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins-with-exit-clouds-johnston.json";
+import animation from "./animation-data/new-pins-days-1-2.json";
 import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
@@ -183,7 +183,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 23.2,
+    position: 31.566,
     day: 2,
     visited: false,
     details: {
@@ -195,7 +195,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 23.2,
+    position: 33.6,
     day: 2,
     visited: false,
     details: {
@@ -207,7 +207,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 23.2,
+    position: 35.6,
     day: 2,
     visited: false,
     details: {

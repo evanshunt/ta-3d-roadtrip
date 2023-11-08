@@ -11,7 +11,9 @@ export function Top(props) {
   const { nodes } = useGLTF("/glb/final/top-new.glb");
   // const { nodes } = useGLTF("/glb/final/top-oct-30.glb");
   const texture = isMobile
-    ? useTexture("/textures/final/baked-combined-8k-lakes.webp")
+    ? useTexture(
+        "/textures/final/baked-combined-8k-compressed-with-lake-mobile.webp"
+      )
     : useTexture("/textures/final/baked-combined-8k-lakes.webp");
 
   // const texture = useTexture("/textures/final/baked-short-dark-no-slope.jpg");

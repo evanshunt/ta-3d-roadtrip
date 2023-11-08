@@ -23,7 +23,7 @@ const Lights = ({ alt, debug, index, positions }) => {
   };
 
   const animateSpotlight = (spotLight, tl, index) => {
-    switch (index) {
+    switch (index % 6) {
       case 0:
         tl.to(spotLight.current.position, {
           x: sunPositions.sunrise[0],

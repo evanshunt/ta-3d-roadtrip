@@ -78,7 +78,7 @@ const positions = {
   fairview: [-3.2, 1.11, 0.57],
 
   // Day 3:
-  columbiaIcefieldSkywalk: [1.63, 1.25, -2.9],
+  columbiaIcefieldSkywalk: [2.9, 1.14, -4.2],
   maligneCanyon: [5.3, 1.14, -5.5],
   jasperSkyTram: [5.18, 1.13, -6.1],
   fairmontJasperParkLodge: [5.4, 1.15, -5.6],
@@ -325,7 +325,15 @@ const Scene = (props) => {
           material={redMaterial}
         />
 
-        {/* <Day3 positions={positions} /> */}
+        {/* <Day3
+          positions={positions}
+          sceneIndex={props.index}
+          setIndex={props.setIndex}
+          visible={true}
+          // visible={props.currDay === 0 || props.currDay === 1}
+          geometry={circleGeom}
+          material={redMaterial}
+        /> */}
 
         {/* <e.group theatreKey="Lake Louise Cloud 2">
           <Cloud scale={0.2} position={[-2, 3.1, 3]} />

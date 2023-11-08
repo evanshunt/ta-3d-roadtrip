@@ -79,10 +79,10 @@ const positions = {
 
   // Day 3:
   columbiaIcefieldSkywalk: [2.9, 1.14, -4.2],
-  maligneCanyon: [5.3, 1.14, -5.5],
-  jasperSkyTram: [5.18, 1.13, -6.1],
-  fairmontJasperParkLodge: [5.4, 1.15, -5.6],
-  jasperPlanetarium: [5.4, 1.15, -5.6],
+  maligneCanyon: [5.4, 1.14, -5.6],
+  jasperSkyTram: [5.0, 1.13, -6.0],
+  fairmontJasperParkLodge: [5.35, 1.15, -5.7],
+  jasperPlanetarium: [5.4, 1.15, -5.65],
 };
 
 const circleGeom = new THREE.CircleGeometry(0.8, 32);
@@ -246,7 +246,7 @@ const Scene = (props) => {
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
@@ -259,8 +259,8 @@ const Scene = (props) => {
           console.log(camera.position.toArray());
           console.log(camera.rotation.toArray());
         }}
-      /> */}
-      <EditableCamera theatreKey={"Camera"} />
+      />
+      {/* <EditableCamera theatreKey={"Camera"} /> */}
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -325,7 +325,7 @@ const Scene = (props) => {
           material={redMaterial}
         />
 
-        {/* <Day3
+        <Day3
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}
@@ -333,7 +333,7 @@ const Scene = (props) => {
           // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
-        /> */}
+        />
 
         {/* <e.group theatreKey="Lake Louise Cloud 2">
           <Cloud scale={0.2} position={[-2, 3.1, 3]} />

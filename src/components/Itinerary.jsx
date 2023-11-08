@@ -46,7 +46,7 @@ const Itinerary = ({
 
   return (
     <>
-      <button
+      {/* <button
         aria-label="Toggle itinerary days list"
         className="itinerary__toggle"
         // On desktop, this should be hidden
@@ -55,7 +55,7 @@ const Itinerary = ({
         {listText()}
         <span className="itinerary__icon"></span>
         <img src={arrowDown} alt="Open List" className="itinerary__icon" />
-      </button>
+      </button> */}
       <div
         ref={itineraryRef}
         className={`${open ? "itinerary itinerary--open" : "itinerary"}`}

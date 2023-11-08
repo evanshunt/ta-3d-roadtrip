@@ -232,12 +232,19 @@
               "y": 0.3375,
               "x": 0.004
             }
+          },
+          "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk": {
+            "opacity": 0,
+            "position": {
+              "y": 0.3425,
+              "x": 0.004
+            }
           }
         }
       },
       "sequence": {
         "subUnitsPerUnit": 30,
-        "length": 36.35,
+        "length": 44.22,
         "type": "PositionalSequence",
         "tracksByObject": {
           "Camera": {
@@ -336,6 +343,45 @@
                     ],
                     "type": "bezier",
                     "value": -4.098976705621525
+                  },
+                  {
+                    "id": "8DaZoj1U2K",
+                    "position": 36,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -4.098976705621525
+                  },
+                  {
+                    "id": "e2GZ5bXXXd",
+                    "position": 37.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": -4.257738543325889
+                  },
+                  {
+                    "id": "zoBIG-I5Na",
+                    "position": 40.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.2516048465892795
                   }
                 ]
               },
@@ -398,6 +444,19 @@
                   {
                     "id": "0JT_9auMhG",
                     "position": 26.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 3.3846815523137272
+                  },
+                  {
+                    "id": "X7WeXlBrXU",
+                    "position": 36,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -504,6 +563,45 @@
                     ],
                     "type": "bezier",
                     "value": 8.780336642975056
+                  },
+                  {
+                    "id": "aZMdMbrEww",
+                    "position": 36,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 8.780336642975056
+                  },
+                  {
+                    "id": "xUfWEl__Wv",
+                    "position": 37.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0.5
+                    ],
+                    "type": "bezier",
+                    "value": 7.788819574304925
+                  },
+                  {
+                    "id": "CP00Kt9Nwh",
+                    "position": 40.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 3.858819574304969
                   }
                 ]
               },
@@ -583,6 +681,32 @@
                     "handles": [
                       0.5,
                       0.5,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.5113387018423625
+                  },
+                  {
+                    "id": "FkpAI_mLq7",
+                    "position": 36,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.5113387018423625
+                  },
+                  {
+                    "id": "9EJ5AV-_Xo",
+                    "position": 38.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
                       0.5,
                       0
                     ],
@@ -685,6 +809,58 @@
                     ],
                     "type": "bezier",
                     "value": -0.4091345740922576
+                  },
+                  {
+                    "id": "yoCJqCUnWv",
+                    "position": 36,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": -0.4091345740922576
+                  },
+                  {
+                    "id": "fJZOHsynP2",
+                    "position": 37.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.799134574092258
+                  },
+                  {
+                    "id": "O_fOe2kVHb",
+                    "position": 38.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": -0.799134574092258
+                  },
+                  {
+                    "id": "pN3TjTqN8J",
+                    "position": 40.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.33913457409225733
                   }
                 ]
               },
@@ -782,6 +958,58 @@
                     ],
                     "type": "bezier",
                     "value": 0.004770579964701805
+                  },
+                  {
+                    "id": "tdJzm2BR31",
+                    "position": 36,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": 0.004770579964701805
+                  },
+                  {
+                    "id": "Xe-QKAN1GE",
+                    "position": 37.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.4552294200352984
+                  },
+                  {
+                    "id": "jI6gdJJzQk",
+                    "position": 38.1,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.55,
+                      0.085
+                    ],
+                    "type": "bezier",
+                    "value": -0.4552294200352984
+                  },
+                  {
+                    "id": "viovDa9ukY",
+                    "position": 40.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.68,
+                      0.53,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.10522942003529817
                   }
                 ]
               },
@@ -12418,8 +12646,8 @@
                 "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"position\",\"y\"]",
                 "keyframes": [
                   {
-                    "id": "6SVfzYC2qE",
-                    "position": 30.333,
+                    "id": "6ga2q3RhJV",
+                    "position": 30.367,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -12431,8 +12659,8 @@
                     "value": 0.02000453850550385
                   },
                   {
-                    "id": "yiaCyPTSYT",
-                    "position": 30.867,
+                    "id": "XLgjV8_ciQ",
+                    "position": 30.9,
                     "connectedRight": true,
                     "handles": [
                       0.515,
@@ -12441,10 +12669,73 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.10999999999999999
+                    "value": 0.34500000000000014
                   },
                   {
-                    "id": "AH40pHy1ar",
+                    "id": "wbxZBrjLDB",
+                    "position": 31.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "R_1yzlsjrI",
+                    "position": 31.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "hq4WuAdjo3",
+                    "position": 31.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  }
+                ]
+              },
+              "NxOxqKkfzg": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "pJTdkdhFOQ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "BXLN-Q4rJ7",
+                    "position": 30.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "q1DeYnOMO2",
                     "position": 31.533,
                     "connectedRight": true,
                     "handles": [
@@ -12454,10 +12745,10 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.1
+                    "value": 2.75
                   },
                   {
-                    "id": "_bv9Qn4ROZ",
+                    "id": "U85GWlEnIq",
                     "position": 31.733,
                     "connectedRight": true,
                     "handles": [
@@ -12467,11 +12758,11 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": 0.1
+                    "value": 2.75
                   },
                   {
-                    "id": "f1Yn4z--Y_",
-                    "position": 31.933,
+                    "id": "3MvGbiJIgZ",
+                    "position": 31.967,
                     "connectedRight": true,
                     "handles": [
                       0.5,
@@ -12480,20 +12771,134 @@
                       0
                     ],
                     "type": "bezier",
-                    "value": -0.24999546149449625
+                    "value": 1
                   }
                 ]
               },
-              "NxOxqKkfzg": {
+              "w2GZEfTEaW": {
                 "type": "BasicKeyframedTrack",
-                "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"position\",\"z\"]",
-                "keyframes": []
+                "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "7WPF1kpFVM",
+                    "position": 30.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "W9gGX_MCh2",
+                    "position": 31.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "hLkOW4M_te",
+                    "position": 31.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "EqUTqa-yqn",
+                    "position": 31.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "Z1darpBwv8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Lake Louise Gondola / Shadow Lake Louise Gondola:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "R6u1zqkkfX",
+                    "position": 30.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "qugMiWxJf0",
+                    "position": 31.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "HllwG5l1aC",
+                    "position": 31.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "ok1d4g4eAY",
+                    "position": 31.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
               }
             },
             "trackIdByPropPath": {
               "[\"position\",\"x\"]": "Bkrn8MTWFo",
               "[\"position\",\"y\"]": "YPO9JQ9rD_",
-              "[\"position\",\"z\"]": "NxOxqKkfzg"
+              "[\"position\",\"z\"]": "NxOxqKkfzg",
+              "[\"scale\",\"x\"]": "pJTdkdhFOQ",
+              "[\"scale\",\"y\"]": "w2GZEfTEaW",
+              "[\"scale\",\"z\"]": "Z1darpBwv8"
             }
           },
           "Pins / Lake Louise Gondola / Stem Lake Louise Gondola": {
@@ -14159,6 +14564,32 @@
                     ],
                     "type": "bezier",
                     "value": -1.720000000000062
+                  },
+                  {
+                    "id": "qIUmOP0WzO",
+                    "position": 36.3,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -1.3600000000000614
+                  },
+                  {
+                    "id": "j0OCewo-o_",
+                    "position": 38.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.38999999999993973
                   }
                 ]
               },
@@ -14219,6 +14650,1557 @@
               "[\"position\",\"y\"]": "lFIOls1wun",
               "[\"position\",\"z\"]": "OjakB-YT6a"
             }
+          },
+          "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk": {
+            "trackData": {
+              "em3BOBac2J": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "SdQ726chio",
+                    "position": 40.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "CZnervhhY6",
+                    "position": 40.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "bvWTPYoHyt",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "tsahguT419": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "HqCoF8hpcj",
+                    "position": 40.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "kQH7cvU-9K",
+                    "position": 40.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "VX1-t8PETE",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "dSHL6LPqzM": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "jhaMs_gC5T",
+                    "position": 40.067,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  },
+                  {
+                    "id": "WKbohuNi22",
+                    "position": 40.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.05
+                  },
+                  {
+                    "id": "20qWHwbH2L",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.03
+                  }
+                ]
+              },
+              "NjykYmTpyx": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "YPbFBxNwJm": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "2EDTiABx1w",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "WT3nurSvWd",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "BxzhfP0zLI",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "Z9jMguuTA0",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "loRC1HOQNw",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "48qlRAqbPR": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Halo Columbia Icefield Skywalk:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"scale\",\"x\"]": "em3BOBac2J",
+              "[\"scale\",\"y\"]": "tsahguT419",
+              "[\"scale\",\"z\"]": "dSHL6LPqzM",
+              "[\"position\",\"x\"]": "NjykYmTpyx",
+              "[\"position\",\"y\"]": "YPbFBxNwJm",
+              "[\"position\",\"z\"]": "48qlRAqbPR"
+            }
+          },
+          "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk": {
+            "trackData": {
+              "lhvaQ78OkW": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "F8tpbddyoy": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "njSceQJw8c",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "RvdOn_I_rc",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "u2BVg22kxg",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "TJgKm3DjE6",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "au_rT1-0_p",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "EAwOqFpOzS": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "RNqXyOuD8a": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "TAG0oZx14o",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "ZeAK6EYYGj",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "7pzDjRc1kA",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "WClcCjSOqM",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "JdwbrYLBmU": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "APlv7vhLAE",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "YJeowNihQk",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "n2JPH2dNPT",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "0zJ3vqk_Ax",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              },
+              "we3vVFn00r": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Background Columbia Icefield Skywalk:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "5FWfXZdT7_",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  },
+                  {
+                    "id": "GROesvGcyS",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "I7ZV2xyZp9",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.175
+                  },
+                  {
+                    "id": "pgTZn3s71D",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "lhvaQ78OkW",
+              "[\"position\",\"y\"]": "F8tpbddyoy",
+              "[\"position\",\"z\"]": "EAwOqFpOzS",
+              "[\"scale\",\"x\"]": "RNqXyOuD8a",
+              "[\"scale\",\"y\"]": "JdwbrYLBmU",
+              "[\"scale\",\"z\"]": "we3vVFn00r"
+            }
+          },
+          "Pins / Columbia Icefield Skywalk / Stem Columbia Icefield Skywalk": {
+            "trackData": {
+              "56QfxhmZpt": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Stem Columbia Icefield Skywalk:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "WNBhDuse3J": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Stem Columbia Icefield Skywalk:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "s4TH7GJQu8",
+                    "position": 40.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  },
+                  {
+                    "id": "K6RYf5ZWlu",
+                    "position": 40.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.10999999999999999
+                  },
+                  {
+                    "id": "8hHvGd7Tai",
+                    "position": 41.633,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.1
+                  },
+                  {
+                    "id": "Mox838FC8V",
+                    "position": 41.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.1
+                  },
+                  {
+                    "id": "nI8bBzD-8K",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  }
+                ]
+              },
+              "bYdrtYQgql": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Stem Columbia Icefield Skywalk:[\"position\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "56QfxhmZpt",
+              "[\"position\",\"y\"]": "WNBhDuse3J",
+              "[\"position\",\"z\"]": "bYdrtYQgql"
+            }
+          },
+          "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk": {
+            "trackData": {
+              "12XALshgxL": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "rVrPCsKDu1",
+                    "position": 25.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "1xR7IO8K5C": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "p5K6Bmf1r-",
+                    "position": 25.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "AM3XaoNWy5",
+                    "position": 40.4,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  },
+                  {
+                    "id": "eHaPUpgoYi",
+                    "position": 40.933,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "UNjXxJ6URT",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "qeQKOBLGeJ",
+                    "position": 41.8,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "X5LgLfx_bO",
+                    "position": 42,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  }
+                ]
+              },
+              "U8k5ikPivA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "6nRmFrRVDR",
+                    "position": 25.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.0305
+                  }
+                ]
+              },
+              "6lL7eomztI": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "BTuX59IYak",
+                    "position": 40.933,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "UTmfMx3ncL",
+                    "position": 41.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "AkeJPpFtLp",
+                    "position": 41.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "XSzQXR6AOT",
+                    "position": 42,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "6aIPi76za8": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "BSg1gTCgPD",
+                    "position": 40.933,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "LU0RhUxPvj",
+                    "position": 41.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "WIn6r5VVzh",
+                    "position": 41.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "wGOsnOmMk2",
+                    "position": 42,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "46Jmwdtdte": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Shadow Columbia Icefield Skywalk:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "I3pn71hZR1",
+                    "position": 40.933,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "34vblh9Tu-",
+                    "position": 41.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "N75R_VU5GA",
+                    "position": 41.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "vRsMkTpmRX",
+                    "position": 42,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "12XALshgxL",
+              "[\"position\",\"y\"]": "1xR7IO8K5C",
+              "[\"position\",\"z\"]": "U8k5ikPivA",
+              "[\"scale\",\"x\"]": "6lL7eomztI",
+              "[\"scale\",\"y\"]": "6aIPi76za8",
+              "[\"scale\",\"z\"]": "46Jmwdtdte"
+            }
+          },
+          "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk": {
+            "trackData": {
+              "FDVl14QiZl": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk:[\"opacity\"]",
+                "keyframes": [
+                  {
+                    "id": "4Kp-Eo3vnM",
+                    "position": 41,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  },
+                  {
+                    "id": "xQnh-H3HGu",
+                    "position": 41.667,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "H902NJ3B6T",
+                    "position": 42.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0
+                  }
+                ]
+              },
+              "yTx0k_ArLB": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "IOn1wGMkpr",
+                    "position": 41,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.00275
+                  },
+                  {
+                    "id": "v3QfdTwG5l",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "WIC3GKahwN": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "KpYSiYGjXw",
+                    "position": 41,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.00275
+                  },
+                  {
+                    "id": "AO5aph8oYV",
+                    "position": 41.6,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.25
+                  }
+                ]
+              },
+              "_779z97jmt": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Columbia Icefield Skywalk / Pin Columbia Icefield Skywalk:[\"scale\",\"z\"]",
+                "keyframes": []
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"opacity\"]": "FDVl14QiZl",
+              "[\"scale\",\"x\"]": "yTx0k_ArLB",
+              "[\"scale\",\"y\"]": "WIC3GKahwN",
+              "[\"scale\",\"z\"]": "_779z97jmt"
+            }
+          },
+          "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise": {
+            "trackData": {
+              "cHR6iNprlx": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "S-qnX5uVnd": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "OWGNeh8Icu",
+                    "position": 32.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  },
+                  {
+                    "id": "2QnxmeFt9c",
+                    "position": 32.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "W1fhP6kuFF",
+                    "position": 33.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "bknDxOIIi4",
+                    "position": 33.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "bIK31Aj7V0",
+                    "position": 33.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  }
+                ]
+              },
+              "gARwKTPe93": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "85GbfUR9cR": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "wQP4DuDaUL",
+                    "position": 32.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "DRLIin-IS1",
+                    "position": 33.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "VM6iimGbuW",
+                    "position": 33.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "h-MiD2k686",
+                    "position": 33.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "6wgYoKICcJ": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "3SwU45a8yz",
+                    "position": 32.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "ENFs-R1Ata",
+                    "position": 33.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "_V21AJL2_V",
+                    "position": 33.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "ei4_dh5NIS",
+                    "position": 33.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "l3VDZYQWJU": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Chateau Lake Louise / Shadow Fairmont Chateau Lake Louise:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "HC45x3NrAM",
+                    "position": 32.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "RWGo5fbqv3",
+                    "position": 33.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "cBUIczQ_L_",
+                    "position": 33.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "KlmFUfICKZ",
+                    "position": 33.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "cHR6iNprlx",
+              "[\"position\",\"y\"]": "S-qnX5uVnd",
+              "[\"position\",\"z\"]": "gARwKTPe93",
+              "[\"scale\",\"x\"]": "85GbfUR9cR",
+              "[\"scale\",\"y\"]": "6wgYoKICcJ",
+              "[\"scale\",\"z\"]": "l3VDZYQWJU"
+            }
+          },
+          "Pins / Fairview / Shadow Fairview": {
+            "trackData": {
+              "LcZCfqMeLm": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "KIGtlsnf3l": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "C7NOn4FGmr",
+                    "position": 34.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  },
+                  {
+                    "id": "psRadhKm9P",
+                    "position": 34.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "A79PyoxB03",
+                    "position": 35.567,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "KqzOuO0qp6",
+                    "position": 35.767,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "ZYVxd1sRNz",
+                    "position": 35.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  }
+                ]
+              },
+              "pNYRKlc6MH": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "Ysm8IQhpxz": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "_GOxTICkFs",
+                    "position": 34.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "mu5O1kCQ13",
+                    "position": 35.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "CS4xvkysSd",
+                    "position": 35.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "VzVp5TPao3",
+                    "position": 35.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "Zr_fjEC1WI": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "8B2difVatF",
+                    "position": 34.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "lGh7ABMkGY",
+                    "position": 35.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "QTY4pubdAJ",
+                    "position": 35.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "MIF4fpXd2R",
+                    "position": 35.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "ru9evdXrIr": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairview / Shadow Fairview:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "Y0xw-gsD8g",
+                    "position": 34.9,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "9Jc8F6jt7b",
+                    "position": 35.533,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "vYT-Vb6qrA",
+                    "position": 35.733,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "0hVo9EPzEg",
+                    "position": 35.967,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "LcZCfqMeLm",
+              "[\"position\",\"y\"]": "KIGtlsnf3l",
+              "[\"position\",\"z\"]": "pNYRKlc6MH",
+              "[\"scale\",\"x\"]": "Ysm8IQhpxz",
+              "[\"scale\",\"y\"]": "Zr_fjEC1WI",
+              "[\"scale\",\"z\"]": "ru9evdXrIr"
+            }
           }
         }
       }
@@ -14226,6 +16208,8 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "LmxAI5jfJAYlecwT",
+    "3fM_M1LPPh-BSm5t",
     "PSbaeFdZMx6AQhvx",
     "sG85pwmQZv9L9K-L",
     "P6dv5qCdDGQll3tq",
@@ -14273,8 +16257,6 @@
     "6q4sm9O1jLFMu_Ty",
     "-vyUzKtSH75JLjuq",
     "D8qw_8q1FteTlDYQ",
-    "ra2Qr9sSNYTEqi3f",
-    "VV2dhNSIsalB7XBL",
-    "nyDwJ3NJerP7JyMW"
+    "ra2Qr9sSNYTEqi3f"
   ]
 }

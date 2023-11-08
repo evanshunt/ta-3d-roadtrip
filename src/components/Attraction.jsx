@@ -90,8 +90,7 @@ const Attraction = ({
                       : "attraction__name attraction__name--disabled"
                   }`}
                 >
-                  {currDestination?.details?.title ||
-                    "Swipe left to explore the attractions"}
+                  {currDestination?.details?.blurb}
                 </span>
               </div>
 
@@ -100,7 +99,7 @@ const Attraction = ({
                   className="attraction__back"
                   label={"Back to itinerary"}
                   onClick={() => {
-                    showInfo();
+                    showInfo(false, true);
                     setOpen(false);
                   }}
                 >
@@ -109,7 +108,7 @@ const Attraction = ({
                 </button>
                 <button
                   disabled={index <= 1}
-                  className="controls__button controls__button--prev"
+                  className="controls__button controls__button--attraction controls__button--prev"
                   onClick={() => {
                     handleIndex("prev");
                   }}
@@ -118,7 +117,7 @@ const Attraction = ({
                 </button>
                 <button
                   disabled={index === maxLength}
-                  className="controls__button controls__button--next"
+                  className="controls__button controls__button--attraction controls__button--next"
                   onClick={() => {
                     handleIndex("next");
                   }}

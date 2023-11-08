@@ -15,11 +15,11 @@ const Lights = ({ alt, debug, index, positions }) => {
   };
 
   const sunPositions = {
-    sunrise: [-15, 10, 13.5],
-    morning: [-8.5, 10, 13.5],
+    sunrise: [1.5, 10, 13.5],
+    morning: [-3, 10, 13.5],
     noon: [-6.5, 10, 13.5],
-    afternoon: [-3, 10, 13.5],
-    sunset: [1.5, 10, 13.5],
+    afternoon: [-8.5, 10, 13.5],
+    sunset: [-15, 10, 13.5],
   };
 
   const animateSpotlight = (spotLight, tl, index) => {

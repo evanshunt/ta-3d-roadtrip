@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import animation from "./animation-data/new-pins-days-1-2.json";
-import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
+// import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
+import animationMobile from "./animation-data/new-pins-days-1-2.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { getProject } from "@theatre/core";
 import { isMobile } from "react-device-detect";
@@ -460,17 +461,17 @@ const Experience = () => {
     });
   }, [index]);
 
-  // useEffect(() => {
-  //   setHasStarted(true);
-  // }, []);
+  useEffect(() => {
+    setHasStarted(true);
+  }, []);
 
   return (
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        <div onClick={start}>
+        {/* <div onClick={start}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary
@@ -558,8 +559,48 @@ const Experience = () => {
               <Arrow dir={"prev"} active={index >= 1} />
             </button>
 
-            <div className="day-info">
-              <span>{destinations[index].details.blurb}</span>
+            <div className="controls__progress">
+              <ul className="controls__list__days">
+                {Object.keys(days).map((day, i) => {
+                  if (i === 0) return null;
+                  return <span className="controls__list__day">Day {i}</span>;
+                })}
+              </ul>
+
+              <ul className="controls__list">
+                <progress
+                  className="controls__list__progress"
+                  value={(index / (destinations.length - 1)) * 100 - 4.5}
+                  //@TODO: write a function to deal with edge cases
+                  max="100"
+                />
+
+                {Object.keys(days).map((day, i) => {
+                  if (day === "0") return;
+
+                  return (
+                    <>
+                      {destinations.map((destination, i) => {
+                        if (destination.day === parseInt(day)) {
+                          return (
+                            <li
+                              key={i}
+                              className={
+                                i <= index
+                                  ? "controls__pip controls__pip--active"
+                                  : "controls__pip"
+                              }
+                              onClick={() => {
+                                setIndex(i);
+                              }}
+                            ></li>
+                          );
+                        }
+                      })}
+                    </>
+                  );
+                })}
+              </ul>
             </div>
 
             <button
@@ -573,47 +614,9 @@ const Experience = () => {
             </button>
           </div>
 
-          <ul className="controls__list__days">
-            {Object.keys(days).map((day, i) => {
-              if (i === 0) return null;
-              return <span className="controls__list__day">Day {i}</span>;
-            })}
-          </ul>
-
-          <ul className="controls__list">
-            <progress
-              className="controls__list__progress"
-              value={(index / (destinations.length - 1)) * 100 - 4.5}
-              //@TODO: write a function to deal with edge cases
-              max="100"
-            />
-
-            {Object.keys(days).map((day, i) => {
-              if (day === "0") return;
-
-              return (
-                <>
-                  {destinations.map((destination, i) => {
-                    if (destination.day === parseInt(day)) {
-                      return (
-                        <li
-                          key={i}
-                          className={
-                            i <= index
-                              ? "controls__pip controls__pip--active"
-                              : "controls__pip"
-                          }
-                          onClick={() => {
-                            setIndex(i);
-                          }}
-                        ></li>
-                      );
-                    }
-                  })}
-                </>
-              );
-            })}
-          </ul>
+          <div className="day-info">
+            <span>{destinations[index].details.blurb}</span>
+          </div>
         </div>
       </div>
     </div>

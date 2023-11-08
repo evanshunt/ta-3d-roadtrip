@@ -4,7 +4,7 @@
 .attraction {
   --offset: 100%;
   // background-color: var(--white);
-  background-color: #f6f6f6;
+  background-color: var(--blue);
   border-radius: 1rem 1rem 0rem 0rem;
   bottom: 0;
   height: calc(100dvh - 5rem);
@@ -18,10 +18,11 @@
   z-index: 2;
 
   &--open {
+    background-color: var(--white);
     box-shadow: -20px 40px 80px rgba(0, 0, 0, 0.5);
     overflow: scroll;
     transform: translate(0, 0);
-    z-index: 3;
+    z-index: 4;
   }
 
   &--bounce {
@@ -29,6 +30,7 @@
   }
 
   @media screen and (min-width: 1024px) {
+    background-color: var(--white);
     border-radius: 0;
     height: 100vh;
     min-width: 24.125rem;
@@ -65,8 +67,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin-bottom: 1.5rem;
-  padding-top: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
 
   .attraction--open & {
     margin-bottom: 1rem;
@@ -86,6 +88,13 @@
   img {
     border-width: 4px;
     transition: none;
+  }
+
+  .attraction__name {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    text-align: left;
+    width: 50%;
   }
 }
 
@@ -119,7 +128,9 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
 
   .attraction--open & {
-    height: 4.625rem;
+    aspect-ratio: 1;
+    height: auto;
+    // height: 4.625rem;
     margin-right: 1rem;
     width: 4.625rem;
   }
@@ -135,10 +146,6 @@
     flex: 0.5;
     margin-left: auto;
     margin-right: -0.85rem;
-
-    @media screen and (min-width: 1024px) {
-      flex: unset;
-    }
   }
 
   .controls__button--next {
@@ -154,11 +161,19 @@
   }
 }
 
+.controls__button--attraction svg.arrow {
+  border-radius: 50%;
+  height: 2.625rem;
+  width: 2.625rem;
+}
+
 .attraction__arrow {
   display: block;
+  filter: grayscale(1) brightness(100);
   margin: 0.25rem auto;
 
   .attraction--open & {
+    filter: grayscale(1) brightness(0);
     transform: rotateZ(180deg);
   }
 
@@ -168,24 +183,27 @@
 }
 
 .attraction__name {
-  color: var(--black);
   display: block;
-  font-size: 1;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4375rem; /* 109.524% */
   text-align: center;
   width: 100%;
 
-  .attraction__meta & {
-    display: none;
+  .attraction__header__mobile & {
+    color: var(--white);
+  }
 
-    @media screen and (min-width: 1024px) {
-      display: block;
+  .attraction--open .attraction__header__mobile & {
+    color: var(--black);
+    @media screen and (max-width: 1024px) {
+      display: none;
     }
   }
 
   @media screen and (min-width: 1024px) {
+    color: var(--black);
     font-size: 1.3125rem;
     font-weight: 700;
     text-align: left;
@@ -198,7 +216,9 @@
   }
 
   &--disabled {
-    color: var(--grey);
+    @media (min-width: 1024px) {
+      color: var(--grey);
+    }
   }
 }
 

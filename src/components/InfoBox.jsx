@@ -66,6 +66,15 @@ const InfoBox = ({ imageSrc, position, width }) => {
         <cylinderGeometry args={[0.1, 0.1, 4.5, 6]} />
         <meshBasicMaterial color={0xffffff} />
       </mesh>
+      <mesh
+        castShadow={false}
+        scale={[0.075, 0.245, 0.075]}
+        position={[0.01, -0.8, 0]}
+      >
+        {/* <planeGeometry args={[0.05, 2]} position={[0, -3, -0.02]} /> */}
+        <cylinderGeometry args={[0.1, 0.1, 4.5, 6]} />
+        <meshBasicMaterial color={0x000000} />
+      </mesh>
     </Billboard>
   );
 };

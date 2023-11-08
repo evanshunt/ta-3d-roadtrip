@@ -15,7 +15,7 @@ const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
       <div
         onClick={() => {
           handleIndex("next", stop.stop);
-          showInfo();
+          showInfo(true, false);
         }}
         className="itinerary__stop__wrap"
       >

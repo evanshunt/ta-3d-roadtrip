@@ -15,7 +15,7 @@ export function Top(props) {
     ? useTexture(
         "/textures/final/baked-combined-8k-compressed-with-lake-mobile.jpg"
       )
-    : useTexture("/textures/final/baked-combined-8k-lakes.jpg");
+    : useTexture("/textures/final/baked-combined-8k-lakes.webp");
 
   // const texture = useTexture("/textures/final/baked-short-dark-no-slope.jpg");
   // const texture = useTexture("/textures/final/baked-tall-alt.jpg");

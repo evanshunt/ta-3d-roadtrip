@@ -246,7 +246,7 @@ const Scene = (props) => {
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         intensity={2}
       />
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
@@ -259,8 +259,8 @@ const Scene = (props) => {
           console.log(camera.position.toArray());
           console.log(camera.rotation.toArray());
         }}
-      />
-      {/* <EditableCamera theatreKey={"Camera"} /> */}
+      /> */}
+      <EditableCamera theatreKey={"Camera"} />
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}

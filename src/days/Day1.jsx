@@ -54,7 +54,7 @@ const Day1 = ({
       <ImagePin
         active={sceneIndex === 0}
         geometry={geometry}
-        imageSrc={"/images/cave-and-basin-national-historic-site.png"}
+        imageSrc={"/images/cave-and-basin-national-historic-site.webp"}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -66,7 +66,7 @@ const Day1 = ({
       <ImagePin
         active={sceneIndex === 1}
         geometry={geometry}
-        imageSrc={"/images/banff-gondola.png"}
+        imageSrc={"/images/banff-gondola.webp"}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -78,7 +78,7 @@ const Day1 = ({
       <ImagePin
         active={sceneIndex === 2}
         geometry={geometry}
-        imageSrc={"/images/sky-bistro.png"}
+        imageSrc={"/images/sky-bistro.webp"}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -90,7 +90,7 @@ const Day1 = ({
       <ImagePin
         active={sceneIndex === 3}
         geometry={geometry}
-        imageSrc={"/images/banff-upper-hot-springs.png"}
+        imageSrc={"/images/banff-upper-hot-springs.webp"}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -102,7 +102,7 @@ const Day1 = ({
       <ImagePin
         active={sceneIndex === 4}
         geometry={geometry}
-        imageSrc={"/images/fairmont-banff-springs-hotel.png"}
+        imageSrc={"/images/fairmont-banff-springs-hotel.webp"}
         material={material}
         scale={0.2}
         setIndex={setIndex}

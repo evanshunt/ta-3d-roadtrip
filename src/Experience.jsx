@@ -102,7 +102,7 @@ const destinations = [
     details: {
       title: "Lunch at Sky Bistro",
       blurb: "Treat your tastebuds to a top-of-the-world lunch.",
-      image: "/images/lunch-at-sky-bistro.jpg",
+      image: "/images/sky-bistro.webp",
       description:
         "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
     },
@@ -162,7 +162,7 @@ const destinations = [
       blurb:
         "Get inspired on a morning stroll through contemporary Indigenous art.",
       title: "Carter-Ryan Gallery and Live Art Venue",
-      image: "/images/carter-ryan-gallery.png",
+      image: "/images/carter-ryan-gallery.webp",
       description:
         "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
     },
@@ -176,7 +176,7 @@ const destinations = [
     details: {
       blurb: "Discover roaring falls with a midday canyon hike.",
       title: "Johnston Canyon",
-      image: "/images/johnston-canyon.png",
+      image: "/images/johnston-canyon.webp",
       description:
         "Banff National Park's most popular hiking destination takes you into the depths of a canyon along catwalks and amongst spectacular waterfalls. See the impressive lower falls and walk through a tunnel to get an even closer look at the powerful effects of water. An early morning start may help you avoid the crowds.",
     },
@@ -189,7 +189,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Lake Louise Gondola",
-      image: "/images/lake-louise-gondola.png",
+      image: "/images/lake-louise-gondola.webp",
       description:
         "Lake Louise Gondola. Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
     },
@@ -202,7 +202,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Fairmont Chateau Lake Louise",
-      image: "/images/fairmont-chateau-lake-louise.png",
+      image: "/images/fairmont-chateau-lake-louise.webp",
       description:
         "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
     },
@@ -215,7 +215,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Fairview",
-      image: "/images/fairview.png",
+      image: "/images/fairview.webp",
       description:
         "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
     },
@@ -227,7 +227,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Columbia Icefield Skywalk",
-      image: "/images/columbia-icefield-skywalk.png",
+      image: "/images/columbia-icefield-skywalk.webp",
       description:
         "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
     },
@@ -239,7 +239,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Maligne Canyon",
-      image: "/images/maligne-canyon.png",
+      image: "/images/maligne-canyon.webp",
       description:
         "Turquoise, glacial waters, and startling canyon walls grow ever more impressive along this short trail. Multiple bridges span the narrow gorge, crossing several times for spine-tingling views of the river below. Watch for fuchsia fireweed and mountain bluebirds in a landscape shaped by fire, erosion, and mountain building.",
     },
@@ -251,7 +251,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Jasper SkyTram",
-      image: "/images/jasper-sky-tram.png",
+      image: "/images/jasper-sky-tram.webp",
       description:
         "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m, providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km hiking trail leads you to the summit of the mountain.",
     },
@@ -263,7 +263,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Fairmont Jasper Park Lodge",
-      image: "/images/fairmont-jasper-park-lodge.png",
+      image: "/images/fairmont-jasper-park-lodge.webp",
       description:
         "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
     },
@@ -275,7 +275,7 @@ const destinations = [
     visited: false,
     details: {
       title: "Jasper Planetarium",
-      image: "/images/jasper-planetarium.png",
+      image: "/images/jasper-planetarium.webp",
       description:
         "Enter The Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
     },

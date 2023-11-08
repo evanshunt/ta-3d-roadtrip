@@ -125,7 +125,7 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
     <>
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/columbia-icefield-skywalk.png"}
+        imageSrc={"/images/columbia-icefield-skywalk.webp"}
         index={11}
         material={material}
         name={"Columbia Icefield Skywalk"}
@@ -135,7 +135,7 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/maligne-canyon.png"}
+        imageSrc={"/images/maligne-canyon.webp"}
         index={12}
         material={material}
         name={"Maligne Canyon"}
@@ -145,7 +145,7 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/jasper-sky-tram.png"}
+        imageSrc={"/images/jasper-sky-tram.webp"}
         index={13}
         material={material}
         name={"Jasper SkyTram"}
@@ -155,7 +155,7 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/fairmont-jasper-park-lodge.png"}
+        imageSrc={"/images/fairmont-jasper-park-lodge.webp"}
         index={14}
         material={material}
         name={"Fairmont Jasper Park Lodge"}
@@ -165,7 +165,7 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/jasper-planetarium.png"}
+        imageSrc={"/images/jasper-planetarium.webp"}
         index={15}
         material={material}
         name={"Jasper Planetarium"}

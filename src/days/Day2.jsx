@@ -166,7 +166,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/carter-ryan-gallery.png"}
+        imageSrc={"/images/carter-ryan-gallery.webp"}
         index={6}
         material={material}
         name={"Carter Ryan Gallery"}
@@ -176,7 +176,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/johnston-canyon.png"}
+        imageSrc={"/images/johnston-canyon.webp"}
         index={7}
         material={material}
         name={"Johnston Canyon"}
@@ -186,7 +186,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/lake-louise-gondola.png"}
+        imageSrc={"/images/lake-louise-gondola.webp"}
         index={8}
         material={material}
         scale={0.2}
@@ -196,7 +196,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/fairmont-chateau-lake-louise.png"}
+        imageSrc={"/images/fairmont-chateau-lake-louise.webp"}
         index={9}
         material={material}
         name={"Fairmont Chateau Lake Louise"}
@@ -206,7 +206,7 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
       />
       <ImagePin
         geometry={geometry}
-        imageSrc={"/images/fairview.png"}
+        imageSrc={"/images/fairview.webp"}
         index={10}
         material={material}
         name={"Fairview"}

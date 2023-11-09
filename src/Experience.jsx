@@ -293,6 +293,7 @@ const Experience = () => {
   const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
+  const [itineraryOpen, setItineraryOpen] = useState(false);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
   const [nextDestination, setNextDestination] = useState(null);
@@ -411,6 +412,22 @@ const Experience = () => {
     // ...config
   });
 
+  const showItinerary = () => {
+    setItineraryOpen(true);
+  };
+
+  const hideItinerary = () => {
+    setItineraryOpen(false);
+  };
+
+  const showAttraction = () => {
+    setAttractionsOpen(true);
+  };
+
+  const hideAttraction = () => {
+    setAttractionsOpen(false);
+  };
+
   const showInfo = () => {
     setAttractionsOpen(!attractionsOpen);
   };
@@ -443,13 +460,15 @@ const Experience = () => {
   const inBetweens = [0, 6];
 
   useEffect(() => {
-    if (inBetweens.includes(index)) {
-      setAttractionsOpen(false);
-    } else {
-      //@TODO: this will have to close it out as well
-      setTimeout(() => {
-        setAttractionsOpen(true);
-      }, 250);
+    if (!isMobile) {
+      if (inBetweens.includes(index)) {
+        setAttractionsOpen(false);
+      } else {
+        //@TODO: this will have to close it out as well
+        setTimeout(() => {
+          setAttractionsOpen(true);
+        }, 250);
+      }
     }
 
     if (Math.abs(index - previousIndexRef.current) > 1) {
@@ -481,8 +500,9 @@ const Experience = () => {
             grouped={daysParsed}
             handleIndex={handleIndex}
             index={index}
+            isOpen={itineraryOpen}
             nextDestination={nextDestination}
-            showInfo={showInfo}
+            showAttraction={showAttraction}
             stopCount={destinations.length - 1}
           />
         )}
@@ -537,11 +557,13 @@ const Experience = () => {
           attractionsOpen={attractionsOpen}
           currDestination={currDestination}
           handleIndex={handleIndex}
+          hideAttraction={hideAttraction}
           index={index}
           maxLength={maxLength}
           nextDestination={nextDestination}
           setIndex={setIndex}
           showInfo={showInfo}
+          showItinerary={showItinerary}
         />
 
         <div className="controls">

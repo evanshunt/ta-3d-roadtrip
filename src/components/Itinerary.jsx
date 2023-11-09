@@ -10,8 +10,9 @@ const Itinerary = ({
   grouped,
   handleIndex,
   index,
-  showInfo,
+  isOpen,
   setIndex,
+  showAttraction,
 }) => {
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
@@ -58,7 +59,9 @@ const Itinerary = ({
       </button> */}
       <div
         ref={itineraryRef}
-        className={`${open ? "itinerary itinerary--open" : "itinerary"}`}
+        className={`${
+          open || isOpen ? "itinerary itinerary--open" : "itinerary"
+        }`}
       >
         <ul className="itinerary__list">
           {grouped.map((day, index) => {
@@ -76,7 +79,7 @@ const Itinerary = ({
                 name={days[day][0].name}
                 number={days[day][0].day}
                 setIndex={setIndex}
-                showInfo={showInfo}
+                showAttraction={showAttraction}
                 stops={days[day]}
               />
             );

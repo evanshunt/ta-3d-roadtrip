@@ -8,9 +8,10 @@ const Day = ({
   description,
   drivingInfo,
   handleIndex,
+  hideAttraction,
   name,
   number,
-  showInfo,
+  showAttraction,
   stops,
 }) => {
   return (
@@ -29,8 +30,8 @@ const Day = ({
               index={index}
               key={index}
               currDestination={currDestination}
+              showAttraction={showAttraction}
               stop={stop}
-              showInfo={showInfo}
             />
           </>
         ))}

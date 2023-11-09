@@ -17,11 +17,12 @@ const Attraction = ({
   attractionsOpen,
   currDestination,
   handleIndex,
+  hideAttraction,
   index,
   maxLength,
   nextDestination,
   setIndex,
-  showInfo,
+  showItinerary,
 }) => {
   const [open, setOpen] = useState(false);
   const slug = slugify(currDestination?.details?.title);
@@ -51,10 +52,14 @@ const Attraction = ({
   const inBetweens = [6];
 
   useEffect(() => {
-    if (isMobile) return;
-    setTimeout(() => {
+    if (isMobile) {
       setOpen(attractionsOpen);
-    }, 500);
+    } else {
+      setTimeout(() => {
+        setOpen(attractionsOpen);
+      }, 500);
+    }
+    console.log({ attractionsOpen });
   }, [attractionsOpen]);
 
   useEffect(() => {
@@ -99,8 +104,10 @@ const Attraction = ({
                   className="attraction__back"
                   label={"Back to itinerary"}
                   onClick={() => {
-                    showInfo(false, true);
+                    // showInfo();
                     setOpen(false);
+                    hideAttraction();
+                    showItinerary(); // this only really does anything visual on mobile
                   }}
                 >
                   <img src={arrowBack} alt="" />
@@ -255,7 +262,7 @@ const Attraction = ({
                     <div
                       onClick={() => {
                         setIndex(index + 1);
-                        showInfo();
+                        // showInfo();
                       }}
                       className="itinerary__stop__wrap"
                     >

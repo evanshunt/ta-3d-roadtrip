@@ -1,7 +1,14 @@
 import React from "react";
 import caretImage from "../images/caret-right.svg";
+import { isMobile } from "react-device-detect";
 
-const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
+const Stop = ({
+  currDestination,
+  handleIndex,
+  index,
+  showAttraction,
+  stop,
+}) => {
   if (stop.hideFromItinerary || !currDestination) return null;
 
   return (
@@ -14,8 +21,8 @@ const Stop = ({ currDestination, handleIndex, index, showInfo, stop }) => {
     >
       <div
         onClick={() => {
+          showAttraction();
           handleIndex("next", stop.stop);
-          showInfo(true, false);
         }}
         className="itinerary__stop__wrap"
       >

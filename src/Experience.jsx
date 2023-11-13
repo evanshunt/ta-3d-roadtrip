@@ -1,11 +1,12 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins-days-1-2.json";
+import animation from "./animation-data/new-pins-days-1-2-3.json";
 // import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
 import animationMobile from "./animation-data/new-pins-days-1-2.json";
 import { Canvas, useFrame } from "@react-three/fiber";
+import compassImage from "./images/compass.png";
 import { getProject } from "@theatre/core";
 import { isMobile } from "react-device-detect";
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 import "core-js/actual/object/group-by";
 import Scene from "./Scene";
 import { SheetProvider } from "@theatre/r3f";
@@ -30,6 +31,7 @@ const beforeAnim = 1.53333;
 
 const destinations = [
   {
+    hideFromItinerary: true,
     name: "start",
     position: 0,
     stop: 0,
@@ -52,6 +54,28 @@ const destinations = [
     },
     visited: false,
     details: {
+      assets: [
+        {
+          type: "video",
+          url: "/images/cave-and-basin-national-historic-site/test-video.mp4",
+        },
+        {
+          type: "image",
+          url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-4.webp",
+        },
+      ],
       title: "Cave and Basin National Historic Site",
       image: "/images/cave-and-basin-national-historic-site.jpg",
       blurb: "Your first stop? The birthplace of Canada’s national parks.",
@@ -71,7 +95,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
+          url: "https://www.google.com/maps/place/311+Cave+Ave,+Banff,+AB+T1L+1K2/@51.1699163,-115.5950771,16z/data=!3m1!4b1!4m6!3m5!1s0x5370ca6b9ae405bf:0x987bb5e7c19d0a3d!8m2!3d51.1699091!4d-115.5891527!16s%2Fg%2F11bw40lcxk?entry=ttu",
           linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
           external: true,
         },
@@ -87,6 +111,24 @@ const destinations = [
       "Head to Banff, where you'll enjoy great food and the beatutiful Rocky Mountains.",
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/banff-gondola/banff-gondola-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-gondola/banff-gondola-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-gondola/banff-gondola-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-gondola/banff-gondola-4.webp",
+        },
+      ],
       title: "Banff Gondola",
       image: "/images/banff-gondola.jpg",
       blurb: "An unbeatable view to end an unforgettable morning.",
@@ -101,6 +143,24 @@ const destinations = [
     stop: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-4.webp",
+        },
+      ],
       title: "Lunch at Sky Bistro",
       blurb: "Treat your tastebuds to a top-of-the-world lunch.",
       image: "/images/sky-bistro.webp",
@@ -115,6 +175,24 @@ const destinations = [
     stop: 4,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/banff-upper-hot-springs/banff-upper-hot-springs-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-upper-hot-springs/banff-upper-hot-springs-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-upper-hot-springs/banff-upper-hot-springs-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/banff-upper-hot-springs/banff-upper-hot-springs-4.webp",
+        },
+      ],
       title: "Banff Upper Hot Springs",
       image: "/images/banff-upper-hot-springs.jpg",
       blurb: "Elevate your afternoon with a mineral-rich dip.",
@@ -129,6 +207,24 @@ const destinations = [
     stop: 5,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/fairmont-banff-springs-hotel/fairmont-banff-springs-hotel-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-banff-springs-hotel/fairmont-banff-springs-hotel-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-banff-springs-hotel/fairmont-banff-springs-hotel-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-banff-springs-hotel/fairmont-banff-springs-hotel-4.webp",
+        },
+      ],
       title: "Fairmont Banff Springs Hotel",
       blurb: "Spend the night resting like Rocky Mountain royalty.",
       image: "/images/fairmont-banff-springs-hotel.jpg",
@@ -160,6 +256,20 @@ const destinations = [
     stop: 7,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/carter-ryan-gallery/carter-ryan-gallery-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/carter-ryan-gallery/carter-ryan-gallery-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/carter-ryan-gallery/carter-ryan-gallery-3.webp",
+        },
+      ],
       blurb:
         "Get inspired on a morning stroll through contemporary Indigenous art.",
       title: "Carter-Ryan Gallery and Live Art Venue",
@@ -175,6 +285,24 @@ const destinations = [
     visited: false,
     stop: 8,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/johnston-canyon/johnston-canyon-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/johnston-canyon/johnston-canyon-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/johnston-canyon/johnston-canyon-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/johnston-canyon/johnston-canyon-4.webp",
+        },
+      ],
       blurb: "Discover roaring falls with a midday canyon hike.",
       title: "Johnston Canyon",
       image: "/images/johnston-canyon.webp",
@@ -184,11 +312,29 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 31.566,
+    position: 31.6,
     day: 2,
     stop: 9,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/lake-louise-gondola/lake-louise-gondola-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lake-louise-gondola/lake-louise-gondola-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lake-louise-gondola/lake-louise-gondola-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/lake-louise-gondola/lake-louise-gondola-4.webp",
+        },
+      ],
       title: "Lake Louise Gondola",
       image: "/images/lake-louise-gondola.webp",
       description:
@@ -197,11 +343,29 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 33.6,
+    position: 33.56,
     day: 2,
     stop: 10,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-4.webp",
+        },
+      ],
       title: "Fairmont Chateau Lake Louise",
       image: "/images/fairmont-chateau-lake-louise.webp",
       description:
@@ -210,11 +374,29 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 35.6,
+    position: 35.566,
     day: 2,
     stop: 11,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/fairview/fairview-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairview/fairview-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairview/fairview-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairview/fairview-4.webp",
+        },
+      ],
       title: "Fairview",
       image: "/images/fairview.webp",
       description:
@@ -223,10 +405,39 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 23.2,
+    position: 37.5,
+    day: 3,
+    hideFromItinerary: true,
+    stop: 12,
+    details: {
+      blurb:
+        "From Lake Louise, it’s a scenic drive to Jasper, where you’ll spend the next two nights.",
+    },
+  },
+  {
+    name: "Jasper",
+    position: 41.6,
     day: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/columbia-icefield-skywalk/columbia-icefield-skywalk-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/columbia-icefield-skywalk/columbia-icefield-skywalk-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/columbia-icefield-skywalk/columbia-icefield-skywalk-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/columbia-icefield-skywalk/columbia-icefield-skywalk-4.webp",
+        },
+      ],
       title: "Columbia Icefield Skywalk",
       image: "/images/columbia-icefield-skywalk.webp",
       description:
@@ -235,10 +446,28 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 23.2,
+    position: 46.2,
     day: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/maligne-canyon/maligne-canyon-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/maligne-canyon/maligne-canyon-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/maligne-canyon/maligne-canyon-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/maligne-canyon/maligne-canyon-4.webp",
+        },
+      ],
       title: "Maligne Canyon",
       image: "/images/maligne-canyon.webp",
       description:
@@ -247,10 +476,28 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 23.2,
+    position: 48.133,
     day: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/jasper-sky-tram/jasper-sky-tram-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-sky-tram/jasper-sky-tram-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-sky-tram/jasper-sky-tram-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-sky-tram/jasper-sky-tram-4.webp",
+        },
+      ],
       title: "Jasper SkyTram",
       image: "/images/jasper-sky-tram.webp",
       description:
@@ -259,10 +506,28 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 23.2,
+    position: 50.033,
     day: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/fairmont-jasper-park-lodge/fairmont-jasper-park-lodge-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-jasper-park-lodge/fairmont-jasper-park-lodge-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-jasper-park-lodge/fairmont-jasper-park-lodge-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/fairmont-jasper-park-lodge/fairmont-jasper-park-lodge-4.webp",
+        },
+      ],
       title: "Fairmont Jasper Park Lodge",
       image: "/images/fairmont-jasper-park-lodge.webp",
       description:
@@ -271,10 +536,28 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 23.2,
+    position: 51.966,
     day: 3,
     visited: false,
     details: {
+      assets: [
+        {
+          type: "image",
+          url: "/images/jasper-planetarium/jasper-planetarium-1.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-planetarium/jasper-planetarium-2.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-planetarium/jasper-planetarium-3.webp",
+        },
+        {
+          type: "image",
+          url: "/images/jasper-planetarium/jasper-planetarium-4.webp",
+        },
+      ],
       title: "Jasper Planetarium",
       image: "/images/jasper-planetarium.webp",
       description:
@@ -290,9 +573,9 @@ const Experience = () => {
   // const project = getProject("TA Fly Through");
   const [clicked, setClicked] = useState(false);
   const [debug, setDebug] = useState(false);
-  const [dpr, setDpr] = useState(1);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
+  const [isNight, setIsNight] = useState(false);
   const [itineraryOpen, setItineraryOpen] = useState(false);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
@@ -303,6 +586,7 @@ const Experience = () => {
   const [attractionsOpen, setAttractionsOpen] = useState(false);
 
   const previousIndexRef = React.useRef(0);
+  const compassRef = useRef();
   // uncomment to use saved data
 
   const animDuration = 6.3;
@@ -457,20 +741,25 @@ const Experience = () => {
     return day !== "0";
   });
 
-  const inBetweens = [0, 6];
-
   useEffect(() => {
     if (!isMobile) {
-      if (inBetweens.includes(index)) {
-        setAttractionsOpen(false);
+      // reenable the itinerary on day start
+      if (destinations[index].hideFromItinerary) {
+        hideAttraction();
       } else {
-        //@TODO: this will have to close it out as well
         setTimeout(() => {
-          setAttractionsOpen(true);
+          showAttraction();
         }, 250);
       }
     }
 
+    if (destinations[index].hideFromItinerary) {
+      setIsNight(true);
+    } else {
+      setIsNight(false);
+    }
+
+    // if jumping more than one stop, jump to the right spot in the sequence
     if (Math.abs(index - previousIndexRef.current) > 1) {
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
@@ -484,8 +773,31 @@ const Experience = () => {
     setHasStarted(true);
   }, []);
 
+  let dir = new THREE.Vector3(),
+    sph = new THREE.Spherical();
+
+  const getDirection = (ref) => {
+    ref.getWorldDirection(dir);
+    sph.setFromVector3(dir);
+    // console.log(THREE.MathUtils);
+    compassRef.current.style.transform = `rotate(${
+      THREE.MathUtils.radToDeg(sph.theta) + 90
+    }deg)`;
+  };
+
   return (
     <div className="experience">
+      <div
+        style={{
+          position: "fixed",
+          bottom: "0",
+          left: "0",
+          zIndex: "9999999999",
+          background: " white",
+        }}
+      >
+        <span>Night time?</span> <span>{isNight ? "Yes" : "No"}</span>
+      </div>
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
         {/* <div onClick={start}>
@@ -544,7 +856,9 @@ const Experience = () => {
               currDay={currDay}
               debug={debug}
               destinations={destinations}
+              getDirection={getDirection}
               index={index}
+              isNight={isNight}
               project={project}
               setIndex={setIndex}
               started={start}
@@ -640,6 +954,9 @@ const Experience = () => {
             <span>{destinations[index].details.blurb}</span>
           </div>
         </div>
+      </div>
+      <div className="compass-container">
+        <img src={compassImage} ref={compassRef} className="compass" />
       </div>
     </div>
   );

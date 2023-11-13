@@ -186,32 +186,29 @@ const Attraction = ({
                     </>
                   )}
                 </div>
-                {/* @TODO:  */}
-                {currDestination?.details?.title && (
+                {currDestination?.details?.assets?.length && (
                   <div className="attraction__info__images">
-                    <img
-                      src={`images/${slug}/${slug}-1.jpg`}
-                      alt=""
-                      className="attraction__info__image"
-                    />
-
-                    <img
-                      src={`images/${slug}/${slug}-2.jpg`}
-                      alt=""
-                      className="attraction__info__image"
-                    />
-
-                    <img
-                      src={`images/${slug}/${slug}-3.jpg`}
-                      alt=""
-                      className="attraction__info__image"
-                    />
-
-                    <img
-                      src={`images/${slug}/${slug}-4.jpg`}
-                      alt=""
-                      className="attraction__info__image"
-                    />
+                    {currDestination.details.assets.map((asset) => {
+                      if (asset.type === "image") {
+                        return (
+                          <img
+                            src={asset.url}
+                            alt=""
+                            className="attraction__info__media"
+                          />
+                        );
+                      } else if (asset.type === "video") {
+                        return (
+                          <video
+                            src={asset.url}
+                            muted
+                            autoPlay
+                            loop
+                            className="attraction__info__media"
+                          />
+                        );
+                      }
+                    })}
                   </div>
                 )}
               </div>

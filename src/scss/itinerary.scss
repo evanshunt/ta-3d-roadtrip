@@ -9,7 +9,7 @@
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
-  padding: 1.85rem 1.55rem;
+  padding: 0 1.55rem 1.85rem;
   padding-bottom: 5rem;
   position: fixed;
   top: 0;
@@ -25,9 +25,9 @@
   @media screen and (min-width: 1024px) {
     border-radius: 0;
     height: 100vh;
-    padding-bottom: 7.25rem;
-    right: 0;
     min-width: 24.125rem;
+    padding: 1.85rem 1.55rem 7.25rem 1.55rem;
+    right: 0;
     top: 6.5vw;
     transform: translate(0, 0);
     transition: transform 0.75s ease-in-out;
@@ -37,6 +37,20 @@
     &--open {
       z-index: 4;
     }
+  }
+}
+
+.itinerary__header__mobile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.75rem;
+}
+
+.itinerary__arrow {
+  filter: brightness(0);
+  .itinerary--open & {
+    transform: rotateZ(180deg);
   }
 }
 
@@ -128,15 +142,15 @@
 
   &--visited {
     &::before {
+      background: url("../images/checkmark.svg") 0 0 no-repeat;
+      bottom: 0;
       content: "";
       display: block;
-      width: 1.1875rem;
       height: 1.1875rem;
-      background: url("../images/checkmark.svg") 0 0 no-repeat;
-      z-index: 2;
-      position: absolute;
-      bottom: 0;
       left: 2.1875rem;
+      position: absolute;
+      width: 1.1875rem;
+      z-index: 2;
     }
   }
 

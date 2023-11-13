@@ -111,6 +111,7 @@ const ImagePin = ({
           }}
         >
           <Image
+            castShadow={false}
             ref={imageRef}
             position={[0, 0, 0.1]}
             transparent

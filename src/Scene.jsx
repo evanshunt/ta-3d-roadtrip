@@ -5,8 +5,13 @@ import { Cloud } from "./Clouds.jsx";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import { Environment, OrbitControls } from "@react-three/drei";
-import { gsap } from "gsap";
+import {
+  Billboard,
+  Environment,
+  Image,
+  OrbitControls,
+} from "@react-three/drei";
+
 import Lights from "./Lights.jsx";
 import { Perf } from "r3f-perf";
 import Road from "./models/final/Road.jsx";
@@ -16,12 +21,12 @@ import { useControls } from "leva";
 
 import { Top } from "./models/final/Top.jsx";
 import TopAlt from "./models/final/TopAlt.jsx";
-import { Sides } from "./models/final/Sides.jsx";
-import { Plane } from "./models/final/Plane.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
+
+import compassImage from "./images/compass.png";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
@@ -85,16 +90,24 @@ const positions = {
   jasperPlanetarium: [5.4, 1.15, -5.65],
 };
 
-const circleGeom = new THREE.CircleGeometry(0.8, 32);
-
+// Reused geometries and materials
 THREE.ColorManagement.legacyMode = false;
+const circleGeom = new THREE.CircleGeometry(0.8, 32);
 const redMaterial = new THREE.MeshBasicMaterial({
   color: 0x9c0f00,
+});
+const wispMaterial = new THREE.MeshStandardMaterial({
+  color: 0xf7ecbf,
+  transparent: true,
+  opacity: 0.85,
+  emissive: 0xf7ecbf,
+  emissiveIntensity: 0.8,
 });
 
 const Scene = (props) => {
   // const bokehRef = useRef();
   // const cloudRef = useRef();
+  const compassRef = useRef();
   const sceneRef = useRef();
   const cameraRef = useRef();
 
@@ -230,37 +243,29 @@ const Scene = (props) => {
   //   },
   // });
 
-  /*
-  camera stop 1
-  position: -4.76148947700402, 4.028310067018445, 9.902280289701652
-  rotation: -0.8278370080610934, -0.2551005789449138, -0.35099999999999976
-  -4.949944894060301, 3.2146815523137304, 10.292633697035237
-  -0.6078282406989428, -0.3810426971585241, 0.025860845931176678
-  
-  */
-
   return (
     <>
       <Environment
         background
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
-        intensity={2}
+        // preset={props.isNight ? "night" : "park"}
+        // intensity={props.isNight ? 0 : 2}
       />
-      {/* <OrbitControls
+      {/* 
+      <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
         // rotation={cameraRotation}
         rotation={[-1.5707963267948966, 0, 0]}
         makeDefault={true}
+        ref={cameraRef}
         onChange={(e) => {
           const camera = e.target?.object;
           if (!camera) return;
-          console.log(camera.position.toArray());
-          console.log(camera.rotation.toArray());
         }}
       /> */}
-      <EditableCamera theatreKey={"Camera"} />
+      <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -299,6 +304,7 @@ const Scene = (props) => {
       <Lights
         alt={false}
         index={props.index}
+        isNight={props.isNight}
         debug={props.debug}
         positions={positions}
       />
@@ -306,6 +312,7 @@ const Scene = (props) => {
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
         <Day1
+          isNight={props.isNight}
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}
@@ -313,6 +320,11 @@ const Scene = (props) => {
           // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
+          wisps={{
+            geometry: circleGeom,
+            material: wispMaterial,
+            count: 10,
+          }}
         />
 
         <Day2
@@ -383,8 +395,8 @@ const Scene = (props) => {
 
         {/* {altTop && <TopAlt />} */}
         {/* {!altTop && <Top />} */}
-        <Top />
-
+        <Top isNight={props.isNight} />
+        {/* <TopAlt /> */}
         {/* <Sides /> */}
         {/* <Plane /> */}
       </e.group>

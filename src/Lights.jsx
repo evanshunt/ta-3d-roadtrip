@@ -4,8 +4,9 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useControls } from "leva";
 
-const Lights = ({ alt, debug, index, positions }) => {
+const Lights = ({ alt, debug, index, isNight, positions }) => {
   const spotLight = useRef();
+  const hemisphereLightRef = useRef();
   const tl = gsap.timeline({});
 
   const colors = {
@@ -125,6 +126,36 @@ const Lights = ({ alt, debug, index, positions }) => {
     }
   };
 
+  const exitLight = (spotLight, tl) => {
+    tl.to(spotLight.current, {
+      intensity: 0,
+      duration: 2,
+    });
+    tl.to(
+      hemisphereLightRef.current,
+      {
+        intensity: 0.3,
+        duration: 2,
+      },
+      "<"
+    );
+  };
+
+  const enterLight = (spotLight, tl) => {
+    tl.to(spotLight.current, {
+      intensity: 2,
+      duration: 2,
+    });
+    tl.to(
+      hemisphereLightRef.current,
+      {
+        intensity: 0,
+        duration: 2,
+      },
+      "<"
+    );
+  };
+
   useEffect(() => {
     gsap.set(spotLight.current.color, {
       r: colors.orange.r,
@@ -141,6 +172,14 @@ const Lights = ({ alt, debug, index, positions }) => {
   useEffect(() => {
     animateSpotlight(spotLight, tl, index);
   }, [index]);
+
+  useEffect(() => {
+    if (isNight) {
+      exitLight(spotLight, tl);
+    } else {
+      enterLight(spotLight, tl);
+    }
+  }, [isNight]);
 
   // const { positionX, positionY, positionZ, intensity } = useControls({
   //   positionX: {
@@ -177,12 +216,18 @@ const Lights = ({ alt, debug, index, positions }) => {
   return (
     <>
       {/* <ambientLight intensity={1.05} color={0xffffff} /> */}
+      <hemisphereLight
+        color={0x252a3c}
+        intensity={0.3}
+        groundColor={0x2d474c}
+        ref={hemisphereLightRef}
+      />
 
       <directionalLight
         ref={spotLight}
         position={[-15, 10, 13.5]}
         // intensity={0.5}
-        intensity={alt ? 1.75 : 2.5}
+        // intensity={isNight ? 0.1 : 2}
         // intensity={intensity}
         lookAt={positions[0]}
         castShadow

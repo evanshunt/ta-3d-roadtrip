@@ -18,6 +18,7 @@
     "react-transition-group": "^4.4.5",
     "sass": "^1.63.6",
     "three": "0.149.0",
+    "three-noise": "1.1.2",
     "vite": "^4.4.1"
   }
 }

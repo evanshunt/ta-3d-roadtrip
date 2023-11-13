@@ -101,6 +101,19 @@ body {
   }
 }
 
+.compass-container {
+  transform-style: preserve-3d;
+  transform: rotateX(-40deg);
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.compass {
+  width: 10rem;
+  height: auto;
+}
+
 .close-tour {
   background: var(--blue);
   border: none;

@@ -1,6 +1,8 @@
 import arrowDown from "../images/arrow-down-small.svg";
-import React, { useEffect, useRef, useState } from "react";
+import arrowUp from "../images/arrow-up.svg";
 import Day from "./Day";
+import React, { useEffect, useRef, useState } from "react";
+import { useSwipeable } from "react-swipeable";
 import "../scss/itinerary.scss";
 
 const Itinerary = ({
@@ -45,6 +47,30 @@ const Itinerary = ({
     });
   };
 
+  const handlers = useSwipeable({
+    onSwiping: (eventData) => {
+      if (!currDestination.name) return;
+    },
+    onSwiped: (eventData) => {
+      if (!currDestination.name) return;
+
+      const { velocity, dir } = eventData;
+      console.log(velocity, dir);
+      if (velocity < 0.8) {
+        itineraryRef.current.classList.add("itinerary--bounce");
+        setTimeout(() => {
+          itineraryRef.current.classList.remove("itinerary--bounce");
+        }, 500);
+        return;
+      }
+      setOpen(dir === "Up" ? true : false);
+      console.log(open);
+    },
+
+    // ...config
+    preventDefaultTouchmoveEvent: true,
+  });
+
   return (
     <>
       {/* <button
@@ -60,9 +86,20 @@ const Itinerary = ({
       <div
         ref={itineraryRef}
         className={`${
-          open || isOpen ? "itinerary itinerary--open" : "itinerary"
+          isOpen ? "itinerary itinerary--open" : "itinerary" //@TODO: fix this
         }`}
       >
+        <div className="itinerary__header__mobile" {...handlers}>
+          <img
+            hidden={currDestination?.details?.title ? false : true}
+            className={`${
+              open
+                ? "itinerary__arrow itinerary__arrow--open"
+                : "itinerary__arrow"
+            }`}
+            src={arrowUp}
+          />
+        </div>
         <ul className="itinerary__list">
           {grouped.map((day, index) => {
             return (

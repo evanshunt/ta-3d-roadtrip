@@ -245,12 +245,12 @@ const Scene = (props) => {
 
   return (
     <>
-      <Environment
+      {/* <Environment
         background
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
         // preset={props.isNight ? "night" : "park"}
         // intensity={props.isNight ? 0 : 2}
-      />
+      /> */}
       {/* 
       <OrbitControls
         autoRotate={false}

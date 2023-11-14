@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Billboard, Image, useCursor } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import { gsap } from "gsap";
-import * as THREE from "three";
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";

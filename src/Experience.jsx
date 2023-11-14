@@ -316,6 +316,7 @@ const destinations = [
     day: 2,
     stop: 9,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -347,6 +348,7 @@ const destinations = [
     day: 2,
     stop: 10,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -378,6 +380,7 @@ const destinations = [
     day: 2,
     stop: 11,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -405,7 +408,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 37.5,
+    position: 36,
     day: 3,
     hideFromItinerary: true,
     stop: 12,
@@ -419,6 +422,7 @@ const destinations = [
     position: 41.6,
     day: 3,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -449,6 +453,7 @@ const destinations = [
     position: 46.2,
     day: 3,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -479,6 +484,7 @@ const destinations = [
     position: 48.133,
     day: 3,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -509,6 +515,7 @@ const destinations = [
     position: 50.033,
     day: 3,
     visited: false,
+    hideFromItinerary: false,
     details: {
       assets: [
         {
@@ -609,11 +616,6 @@ const Experience = () => {
   };
 
   useEffect(() => {
-    const debug = window.location.search.includes("debug");
-    setDebug(debug);
-  }, []);
-
-  useEffect(() => {
     destinations[index].visited = true;
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
@@ -633,24 +635,11 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
-  // useEffect(() => {
-  //   if (index !== 0) return;
-  //   if (index === 0 && clicked) {
-  //     setTimeout(() => {
-  //       sheet.sequence.play({
-  //         range: [0, 6.15],
-  //         direction: "normal",
-  //       });
-  //     }, animDuration * 1000);
-  //   }
-  // });
-
   useEffect(() => {
     // @TODO: determine how this gets wired up
     if (index === 0 && clicked) {
       setTimeout(() => {
         sheet.sequence.play({
-          // range: [3.36, 6.15],
           range: [5.8, 9.5],
           direction: "normal",
         });
@@ -770,6 +759,8 @@ const Experience = () => {
   }, [index]);
 
   useEffect(() => {
+    const debug = window.location.search.includes("debug");
+    setDebug(debug);
     setHasStarted(true);
   }, []);
 
@@ -921,11 +912,17 @@ const Experience = () => {
                           return (
                             <li
                               key={i}
-                              className={
+                              className={`${
                                 i <= index
                                   ? "controls__pip controls__pip--active"
                                   : "controls__pip"
                               }
+                                ${
+                                  destination.hideFromItinerary
+                                    ? "controls__pip--hidden"
+                                    : ""
+                                }
+                                  `}
                               onClick={() => {
                                 setIndex(i);
                               }}

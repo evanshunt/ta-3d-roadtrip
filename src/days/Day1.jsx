@@ -39,67 +39,67 @@ const Day1 = ({
 
   const perlin = new Perlin(Math.random());
 
-  const { lightScale, lightPosX, lightPosY, lightPosZ, lightIntensity } =
-    useControls("Sunlight", {
-      lightIntensity: {
-        value: 0.3,
-        min: 0,
-        max: 10,
-        step: 0.1,
-      },
-      lightScale: {
-        value: 0.2,
-        min: 0,
-        max: 1,
-        step: 0.01,
-      },
-      lightPosX: {
-        value: positions.fairmontBanffSpringsHotel[0],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-      lightPosY: {
-        value: positions.fairmontBanffSpringsHotel[1],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-      lightPosZ: {
-        value: positions.fairmontBanffSpringsHotel[2],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-    });
+  // const { lightScale, lightPosX, lightPosY, lightPosZ, lightIntensity } =
+  //   useControls("Sunlight", {
+  //     lightIntensity: {
+  //       value: 0.3,
+  //       min: 0,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //     lightScale: {
+  //       value: 0.2,
+  //       min: 0,
+  //       max: 1,
+  //       step: 0.01,
+  //     },
+  //     lightPosX: {
+  //       value: positions.fairmontBanffSpringsHotel[0],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //     lightPosY: {
+  //       value: positions.fairmontBanffSpringsHotel[1],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //     lightPosZ: {
+  //       value: positions.fairmontBanffSpringsHotel[2],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //   });
 
-  const { wispScale, wispPositionX, wispPositionY, wispPositionZ } =
-    useControls({
-      wispScale: {
-        value: 0.2,
-        min: 0,
-        max: 1,
-        step: 0.01,
-      },
-      wispPositionX: {
-        value: positions.fairmontBanffSpringsHotel[0],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-      wispPositionY: {
-        value: positions.fairmontBanffSpringsHotel[1],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-      wispPositionZ: {
-        value: positions.fairmontBanffSpringsHotel[2],
-        min: -10,
-        max: 10,
-        step: 0.1,
-      },
-    });
+  // const { wispScale, wispPositionX, wispPositionY, wispPositionZ } =
+  //   useControls({
+  //     wispScale: {
+  //       value: 0.2,
+  //       min: 0,
+  //       max: 1,
+  //       step: 0.01,
+  //     },
+  //     wispPositionX: {
+  //       value: positions.fairmontBanffSpringsHotel[0],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //     wispPositionY: {
+  //       value: positions.fairmontBanffSpringsHotel[1],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //     wispPositionZ: {
+  //       value: positions.fairmontBanffSpringsHotel[2],
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.1,
+  //     },
+  //   });
 
   const animateNightLights = () => {
     gsap.fromTo(
@@ -215,12 +215,7 @@ const Day1 = ({
             name="night-lights"
             position={positions.fairmontBanffSpringsHotel}
           >
-            <pointLight
-              ref={pointLightRef}
-              color={"0xffe6c9"}
-              scale={lightScale}
-              intensity={1}
-            />
+            <pointLight ref={pointLightRef} color={0xffe6c9} intensity={1} />
           </group>
           <group position={positions.fairmontBanffSpringsHotel}>
             {[...Array(wisps.count)].map((wisp, i) => {

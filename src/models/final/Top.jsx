@@ -14,7 +14,7 @@ export function Top(props) {
   // const { nodes } = useGLTF("/glb/final/top-oct-30.glb");
   const texture = isMobile
     ? useTexture(
-        "/textures/final/baked-combined-8k-compressed-with-lake-mobile.webp"
+        "/textures/final/baked-combined-8k-compressed-with-lake-mobile-with-banff.webp"
       )
     : useTexture("/textures/final/baked-combined-8k-lakes.webp");
 
@@ -57,7 +57,8 @@ export function Top(props) {
         castShadow={false}
         geometry={nodes.top.geometry}
         receiveShadow={true}
-        scale={[0.25, 0.15, 0.25]}
+        scale={[0.25, 0.1, 0.25]}
+        position={[0, 0.333, 0]}
       >
         <meshStandardMaterial
           ref={materialRef}

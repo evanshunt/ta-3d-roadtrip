@@ -20030,6 +20030,273 @@
               "[\"scale\",\"y\"]": "J-bJ70dxiH",
               "[\"scale\",\"z\"]": "6Ei9GnjfTl"
             }
+          },
+          "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge": {
+            "trackData": {
+              "-_N8b70YNF": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"position\",\"x\"]",
+                "keyframes": []
+              },
+              "1hPLvVkeDA": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "kh4Drk9Q8Y",
+                    "position": 48.833,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.455,
+                      0.03
+                    ],
+                    "type": "bezier",
+                    "value": 0.02000453850550385
+                  },
+                  {
+                    "id": "W_WkLk7bnn",
+                    "position": 49.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.515,
+                      0.955,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "qn-xTwQZs9",
+                    "position": 50.033,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "Y61PvGI0UL",
+                    "position": 50.233,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 0.34500000000000014
+                  },
+                  {
+                    "id": "AJKXsTua3H",
+                    "position": 50.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": -0.24999546149449625
+                  }
+                ]
+              },
+              "mS1NQtM-0i": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"position\",\"z\"]",
+                "keyframes": []
+              },
+              "dHDJpFl0bz": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"scale\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "kr9Gm-GKFw",
+                    "position": 49.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "awPvOh8uir",
+                    "position": 50,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "p4RnexRJcJ",
+                    "position": 50.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "WI9G4ccilR",
+                    "position": 50.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "0CnH7dWg6P": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"scale\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "sU6zgT4Yvf",
+                    "position": 49.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "yiplqycjtX",
+                    "position": 50,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "ytj5A4BWqX",
+                    "position": 50.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "nAHPu2X5YT",
+                    "position": 50.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              },
+              "obv73pnAnv": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Pins / Fairmont Jasper Park Lodge / Shadow Fairmont Jasper Park Lodge:[\"scale\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "gEjD2ixv6L",
+                    "position": 49.367,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  },
+                  {
+                    "id": "TeuDHJ1zq5",
+                    "position": 50,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "bkYqoP2t8B",
+                    "position": 50.2,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 2.75
+                  },
+                  {
+                    "id": "xWCmIiWeyi",
+                    "position": 50.433,
+                    "connectedRight": true,
+                    "handles": [
+                      0.5,
+                      1,
+                      0.5,
+                      0
+                    ],
+                    "type": "bezier",
+                    "value": 1
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "-_N8b70YNF",
+              "[\"position\",\"y\"]": "1hPLvVkeDA",
+              "[\"position\",\"z\"]": "mS1NQtM-0i",
+              "[\"scale\",\"x\"]": "dHDJpFl0bz",
+              "[\"scale\",\"y\"]": "0CnH7dWg6P",
+              "[\"scale\",\"z\"]": "obv73pnAnv"
+            }
           }
         }
       }
@@ -20037,6 +20304,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "2MzrlM-srBT48xNV",
     "zphEPqjfFeM3KLaI",
     "Syl2YvffphvnMf0m",
     "XaSdlpVH3NYDi5pi",
@@ -20085,7 +20353,6 @@
     "Tuz6i1f-DiF7lJb9",
     "l1zLgCSyM4hwIwZU",
     "4wnk0ohLz48U0kbb",
-    "cT3c-aGcRONDbC2D",
-    "vcsZL3IWvU99AjiD"
+    "cT3c-aGcRONDbC2D"
   ]
 }

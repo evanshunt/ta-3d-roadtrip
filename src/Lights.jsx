@@ -181,44 +181,11 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
     }
   }, [isNight]);
 
-  // const { positionX, positionY, positionZ, intensity } = useControls({
-  //   positionX: {
-  //     // value: 0,
-  //     value: sunPositions.sunrise[0],
-  //     min: -20,
-  //     max: 20,
-  //     step: 0.025,
-  //   },
-  //   positionY: {
-  //     // value: 15,
-  //     value: sunPositions.sunrise[1],
-  //     min: 0,
-  //     max: 25,
-  //     step: 0.025,
-  //   },
-  //   positionZ: {
-  //     value: sunPositions.sunrise[2],
-  //     min: -20,
-  //     max: 20,
-  //     step: 0.025,
-  //   },
-  //   intensity: {
-  //     // value: 0.3,
-  //     value: 8.6,
-  //     min: 0,
-  //     max: 10,
-  //     step: 0.025,
-  //   },
-  // });
-
-  // oldpos [-35.98, 3.2, 0.43]
-
   return (
     <>
-      {/* <ambientLight intensity={1.05} color={0xffffff} /> */}
       <hemisphereLight
         color={0x252a3c}
-        intensity={0.3}
+        intensity={0}
         groundColor={0x2d474c}
         ref={hemisphereLightRef}
       />
@@ -226,9 +193,6 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
       <directionalLight
         ref={spotLight}
         position={[-15, 10, 13.5]}
-        // intensity={0.5}
-        // intensity={isNight ? 0.1 : 2}
-        // intensity={intensity}
         lookAt={positions[0]}
         castShadow
         shadow-mapSize-width={1024 * 5} // @TODO: test this on mobile, might have to use <SoftShadows />

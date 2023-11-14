@@ -189,6 +189,10 @@
     transform: scale(1.25);
   }
 
+  &--hidden {
+    transform: scale(1.666);
+  }
+
   @media screen and (min-width: 1024px) {
     height: 0.6875rem;
     width: 0.6875rem;

@@ -13,6 +13,7 @@ const Experience = React.lazy(() => import("./Experience.jsx"));
 
 root.render(
   // <Suspense fallback={<div className="loading"></div>}>
+
   <div className="road-trip">
     <Experience />
   </div>

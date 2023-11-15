@@ -573,6 +573,12 @@ const destinations = [
   },
 ];
 
+const determineAmount = (index) => {
+  if (index < 1) return 0;
+
+  return (Math.abs(index - 1) / (destinations.length - 1)) * 100;
+};
+
 const Experience = () => {
   const project = getProject("TA Fly Through", {
     state: isMobile ? animationMobile : animation,
@@ -742,7 +748,7 @@ const Experience = () => {
       }
     }
 
-    if (destinations[index].hideFromItinerary) {
+    if (destinations[index].hideFromItinerary && index > 0) {
       setIsNight(true);
     } else {
       setIsNight(false);
@@ -778,7 +784,7 @@ const Experience = () => {
 
   return (
     <div className="experience">
-      <div
+      {/* <div
         style={{
           position: "fixed",
           bottom: "0",
@@ -788,7 +794,7 @@ const Experience = () => {
         }}
       >
         <span>Night time?</span> <span>{isNight ? "Yes" : "No"}</span>
-      </div>
+      </div> */}
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
         {/* <div onClick={start}>
@@ -897,9 +903,9 @@ const Experience = () => {
               <ul className="controls__list">
                 <progress
                   className="controls__list__progress"
-                  value={(index / (destinations.length - 1)) * 100 - 4.5}
+                  value={determineAmount(index)}
                   //@TODO: write a function to deal with edge cases
-                  max="100"
+                  max="95"
                 />
 
                 {Object.keys(days).map((day, i) => {

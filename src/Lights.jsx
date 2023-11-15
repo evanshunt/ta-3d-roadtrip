@@ -127,10 +127,6 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
   };
 
   const exitLight = (spotLight, tl) => {
-    tl.to(spotLight.current, {
-      intensity: 0,
-      duration: 2,
-    });
     tl.to(
       hemisphereLightRef.current,
       {
@@ -142,10 +138,6 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
   };
 
   const enterLight = (spotLight, tl) => {
-    tl.to(spotLight.current, {
-      intensity: 2,
-      duration: 2,
-    });
     tl.to(
       hemisphereLightRef.current,
       {
@@ -195,6 +187,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
         position={[-15, 10, 13.5]}
         lookAt={positions[0]}
         castShadow
+        intensity={1.5}
         shadow-mapSize-width={1024 * 5} // @TODO: test this on mobile, might have to use <SoftShadows />
         shadow-mapSize-height={1024 * 5}
       />

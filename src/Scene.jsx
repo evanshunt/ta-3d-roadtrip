@@ -2,31 +2,27 @@ import React, { useEffect, useRef, useState } from "react";
 
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+// import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import {
-  Billboard,
-  Environment,
-  Image,
-  OrbitControls,
-} from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+// import { Environment } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 import Road from "./models/final/Road.jsx";
-import { types } from "@theatre/core";
-import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
+// import { types } from "@theatre/core";
+// import { useFrame } from "@react-three/fiber";
+// import { useControls } from "leva";
 
-import { Top } from "./models/final/Top.jsx";
-import TopAlt from "./models/final/TopAlt.jsx";
+// import { Top } from "./models/final/Top.jsx";
+// import TopAlt from "./models/final/TopAlt.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 
-import compassImage from "./images/compass.png";
+import TopAltAgain from "./models/final/TopAltAgain.jsx";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
@@ -251,8 +247,7 @@ const Scene = (props) => {
         // preset={props.isNight ? "night" : "park"}
         // intensity={props.isNight ? 0 : 2}
       /> */}
-      {/* 
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
@@ -304,7 +299,7 @@ const Scene = (props) => {
       <Lights
         alt={false}
         index={props.index}
-        isNight={props.isNight}
+        // isNight={props.isNight}
         debug={props.debug}
         positions={positions}
       />
@@ -395,8 +390,9 @@ const Scene = (props) => {
 
         {/* {altTop && <TopAlt />} */}
         {/* {!altTop && <Top />} */}
-        <Top isNight={props.isNight} />
-        {/* <TopAlt /> */}
+
+        <TopAltAgain />
+
         {/* <Sides /> */}
         {/* <Plane /> */}
       </e.group>

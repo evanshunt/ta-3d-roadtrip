@@ -59,7 +59,6 @@ const Attraction = ({
         setOpen(attractionsOpen);
       }, 500);
     }
-    console.log({ attractionsOpen });
   }, [attractionsOpen]);
 
   useEffect(() => {

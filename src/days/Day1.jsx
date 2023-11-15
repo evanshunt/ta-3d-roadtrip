@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import { gsap } from "gsap/gsap-core";
+import { gsap } from "gsap/dist/gsap";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { Perlin } from "three-noise";
+
 import React, { useEffect, useRef } from "react";
 import { useControls } from "leva";
 
@@ -36,8 +36,6 @@ const Day1 = ({
   //     max: 10,
   //   },
   // });
-
-  const perlin = new Perlin(Math.random());
 
   // const { lightScale, lightPosX, lightPosY, lightPosZ, lightIntensity } =
   //   useControls("Sunlight", {
@@ -209,7 +207,7 @@ const Day1 = ({
         position={positions.fairmontBanffSpringsHotel}
       />
 
-      {isNight && (
+      {/* {isNight && (
         <>
           <group
             name="night-lights"
@@ -221,9 +219,9 @@ const Day1 = ({
             {[...Array(wisps.count)].map((wisp, i) => {
               const pos = new THREE.Vector3().fromBufferAttribute(sposition, i);
               pos.multiplyScalar(0.03);
-              const x = perlin.get3(pos) * Math.random() * 5;
-              const y = perlin.get3(pos) * Math.random() * 5;
-              const z = perlin.get3(pos) * Math.random() * 5;
+              const x = Math.random() * 5;
+              const y = Math.random() * 5;
+              const z = Math.random() * 5;
 
               return (
                 <mesh
@@ -238,7 +236,7 @@ const Day1 = ({
             })}
           </group>
         </>
-      )}
+      )} */}
     </>
   );
 };

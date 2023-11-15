@@ -9,11 +9,13 @@ const Day = ({
   drivingInfo,
   handleIndex,
   hideAttraction,
+  index,
   name,
   number,
   showAttraction,
   stops,
 }) => {
+  console.log({ name }, { number });
   return (
     <li className="itinerary__day" key={name}>
       <strong className="itinerary__day__text">

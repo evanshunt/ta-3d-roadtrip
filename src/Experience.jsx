@@ -1077,7 +1077,7 @@ const Experience = () => {
             antialias: false,
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
-            // shadowMapType: THREE.PCFSoftShadowMap,
+            shadowMapType: THREE.PCFSoftShadowMap,
             // shadowMapEnabled: true,
           }}
           frameloop="demand"

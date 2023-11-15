@@ -1,9 +1,9 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { useControls } from "leva";
+import { NightLights } from "./NightLights";
 
-const Day2 = ({ geometry, material, positions, setIndex }) => {
+const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
   // const { lakeLouiseGondolaX, lakeLouiseGondolaY, lakeLouiseGondolaZ } =
   //   useControls("Lake Louise Gondola", {
   //     lakeLouiseGondolaX: {
@@ -214,6 +214,8 @@ const Day2 = ({ geometry, material, positions, setIndex }) => {
         scale={0.2}
         setIndex={setIndex}
       />
+
+      <NightLights isNight={isNight} position={positions.fairview} />
     </>
   );
 };

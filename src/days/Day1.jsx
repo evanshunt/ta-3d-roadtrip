@@ -1,3 +1,4 @@
+import { NightLights } from "./NightLights";
 import * as THREE from "three";
 import { gsap } from "gsap/dist/gsap";
 import ImagePin from "../models/ImagePin";
@@ -16,9 +17,8 @@ const Day1 = ({
   visible,
   wisps,
 }) => {
-  const pointLightRef = useRef();
-  const wispsRefs = useRef([]);
-  const sposition = wisps.geometry.attributes.position.clone();
+  // const pointLightRef = useRef();
+
   // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
   //   sunshineVillageX: {
   //     value: 0,
@@ -119,11 +119,37 @@ const Day1 = ({
     );
   };
 
-  useEffect(() => {
-    if (isNight && visible) {
-      animateNightLights();
-    }
-  }, [isNight]);
+  // const {
+  //   pointLight1Intensity,
+  //   pointLight2Intensity,
+  //   pointLight3Intensity,
+  //   pointLight4Intensity,
+  // } = useControls({
+  //   pointLight1Intensity: {
+  //     value: 0.5,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   pointLight2Intensity: {
+  //     value: 0.4,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   pointLight3Intensity: {
+  //     value: 0.3,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   pointLight4Intensity: {
+  //     value: 0.6,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  // });
 
   // if (!visible) return null;
 
@@ -207,36 +233,10 @@ const Day1 = ({
         position={positions.fairmontBanffSpringsHotel}
       />
 
-      {/* {isNight && (
-        <>
-          <group
-            name="night-lights"
-            position={positions.fairmontBanffSpringsHotel}
-          >
-            <pointLight ref={pointLightRef} color={0xffe6c9} intensity={1} />
-          </group>
-          <group position={positions.fairmontBanffSpringsHotel}>
-            {[...Array(wisps.count)].map((wisp, i) => {
-              const pos = new THREE.Vector3().fromBufferAttribute(sposition, i);
-              pos.multiplyScalar(0.03);
-              const x = Math.random() * 5;
-              const y = Math.random() * 5;
-              const z = Math.random() * 5;
-
-              return (
-                <mesh
-                  ref={wispsRefs.current[i]}
-                  position={[x, y, z]}
-                  key={i}
-                  material={wisps.material}
-                  geometry={wisps.geometry}
-                  scale={0.00333}
-                />
-              );
-            })}
-          </group>
-        </>
-      )} */}
+      <NightLights
+        isNight={isNight}
+        position={positions.fairmontBanffSpringsHotel}
+      />
     </>
   );
 };

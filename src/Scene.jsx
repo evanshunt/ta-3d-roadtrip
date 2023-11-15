@@ -299,7 +299,7 @@ const Scene = (props) => {
       <Lights
         alt={false}
         index={props.index}
-        // isNight={props.isNight}
+        isNight={props.isNight}
         debug={props.debug}
         positions={positions}
       />
@@ -315,14 +315,10 @@ const Scene = (props) => {
           // visible={props.currDay === 0 || props.currDay === 1}
           geometry={circleGeom}
           material={redMaterial}
-          wisps={{
-            geometry: circleGeom,
-            material: wispMaterial,
-            count: 10,
-          }}
         />
 
         <Day2
+          isNight={props.isNight}
           positions={positions}
           sceneIndex={props.index}
           setIndex={props.setIndex}

@@ -9,7 +9,7 @@ import { useControls } from "leva";
 const TopAltAgain = (props) => {
   const { nodes } = useGLTF("/glb/final/NEW-FILE-remap-low-rez.glb");
   const texture = useTexture(
-    "/textures/final/baked-tall-high-rez-light-with-city.jpg"
+    "/textures/final/baked-tall-high-rez-light 2.webp"
   );
 
   // const {
@@ -95,6 +95,8 @@ const TopAltAgain = (props) => {
         // -0.03, 0.92, 0.58
       >
         <meshStandardMaterial
+          roughness={1}
+          metalness={0}
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}

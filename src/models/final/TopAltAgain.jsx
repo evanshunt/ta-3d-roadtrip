@@ -12,73 +12,73 @@ const TopAltAgain = (props) => {
     "/textures/final/baked-tall-high-rez-light-with-city.jpg"
   );
 
-  const {
-    posX,
-    posY,
-    posZ,
-    rotX,
-    rotY,
-    rotZ,
-    scaleX,
-    scaleY,
-    scaleZ,
-    textureImg,
-  } = useControls({
-    posX: {
-      value: -0.25,
-      min: -4,
-      max: 4,
-      step: 0.001,
-    },
-    posY: {
-      value: 0.93,
-      min: -2,
-      max: 2,
-      step: 0.001,
-    },
-    posZ: {
-      value: 0.68,
-      min: -1,
-      max: 6,
-      step: 0.001,
-    },
-    rotX: {
-      value: 0,
-      min: 0,
-      max: Math.PI * 2,
-      step: 0.1,
-    },
-    rotY: {
-      value: 4.71,
-      min: 0,
-      max: Math.PI * 3,
-      step: 0.001,
-    },
-    rotZ: {
-      value: 0,
-      min: 0,
-      max: Math.PI * 2,
-      step: 0.1,
-    },
-    scaleX: {
-      value: 0.63,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-    scaleY: {
-      value: 0.175,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-    scaleZ: {
-      value: 0.62,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-  });
+  // const {
+  //   posX,
+  //   posY,
+  //   posZ,
+  //   rotX,
+  //   rotY,
+  //   rotZ,
+  //   scaleX,
+  //   scaleY,
+  //   scaleZ,
+  //   textureImg,
+  // } = useControls({
+  //   posX: {
+  //     value: -0.25,
+  //     min: -4,
+  //     max: 4,
+  //     step: 0.001,
+  //   },
+  //   posY: {
+  //     value: 0.93,
+  //     min: -2,
+  //     max: 2,
+  //     step: 0.001,
+  //   },
+  //   posZ: {
+  //     value: 0.68,
+  //     min: -1,
+  //     max: 6,
+  //     step: 0.001,
+  //   },
+  //   rotX: {
+  //     value: 0,
+  //     min: 0,
+  //     max: Math.PI * 2,
+  //     step: 0.1,
+  //   },
+  //   rotY: {
+  //     value: 4.71,
+  //     min: 0,
+  //     max: Math.PI * 3,
+  //     step: 0.001,
+  //   },
+  //   rotZ: {
+  //     value: 0,
+  //     min: 0,
+  //     max: Math.PI * 2,
+  //     step: 0.1,
+  //   },
+  //   scaleX: {
+  //     value: 0.63,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   scaleY: {
+  //     value: 0.175,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   scaleZ: {
+  //     value: 0.62,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  // });
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -86,11 +86,11 @@ const TopAltAgain = (props) => {
         receiveShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         // position={[0.02, 0.925, 0.45]}
-        position={[posX, posY, posZ]}
+        position={[-0.25, 0.925, 0.675]}
         // position={[-0.28, 0.9275, 0.72]}
         // rotation={[0, Math.PI * 1.5, 0]}
-        rotation={[rotX, rotY, rotZ]}
-        scale={[scaleX, scaleY, scaleZ]}
+        rotation={[0, Math.PI * 1.5, 0]}
+        scale={[0.635, 0.175, 0.635]}
         // scale={[0.64, 0.2, 0.635]}
         // -0.03, 0.92, 0.58
       >

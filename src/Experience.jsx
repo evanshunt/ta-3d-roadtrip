@@ -166,6 +166,25 @@ const destinations = [
       image: "/images/sky-bistro.webp",
       description:
         "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
+      duration: "1 - 2 hr",
+      price: "Free - $8.50 CAD",
+      type: "Dining",
+      links: [
+        {
+          text: "Sky Bistro",
+          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          url: "https://www.travelalberta.com/listings/sky-bistro-6411/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/lunch-at-sky-bistro.jpg",
+          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
+          linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -198,6 +217,25 @@ const destinations = [
       blurb: "Elevate your afternoon with a mineral-rich dip.",
       description:
         "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
+      duration: "1 - 2 hr",
+      price: "Free - $8.50 CAD",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Banff Upper Hot Springs",
+          image: "/images/info/banff-upper-hot-springs.jpg",
+          url: "https://www.travelalberta.com/listings/banff-upper-hot-springs-2035/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
+          linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -230,6 +268,25 @@ const destinations = [
       image: "/images/fairmont-banff-springs-hotel.jpg",
       description:
         'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
+      duration: "1 - 2 hr",
+      price: "Free - $8.50 CAD",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Fairmont Banff Springs Hotel",
+          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          url: "https://www.travelalberta.com/listings/the-fairmont-banff-springs-hotel-2084/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/fairmont-banff-springs-hotel.jpg",
+          url: "https://maps.google.com/?api=0&q=405+Spray+Avenue+Banff+T1L+1J4&",
+          linkText: "405 Spray Avenue Banff, AB T1L 1J4",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -276,6 +333,25 @@ const destinations = [
       image: "/images/carter-ryan-gallery.webp",
       description:
         "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
+      duration: "30 min - 1 hr",
+      price: "Free",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Carter-Ryan Gallery and Live Art Venue",
+          image: "/images/info/carter-ryan-gallery-and-live-art-venue.jpg",
+          url: "https://www.travelalberta.com/listings/carter-ryan-gallery-and-live-art-venue-6091/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.google.com/?api=0&q=229+Bear+Street+Banff+T1L+1C3&",
+          linkText: "229 Bear Street Banff T1L 1C3",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -308,6 +384,25 @@ const destinations = [
       image: "/images/johnston-canyon.webp",
       description:
         "Banff National Park's most popular hiking destination takes you into the depths of a canyon along catwalks and amongst spectacular waterfalls. See the impressive lower falls and walk through a tunnel to get an even closer look at the powerful effects of water. An early morning start may help you avoid the crowds.",
+      duration: "1 - 3 hr",
+      price: "Free",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Johnston Canyon",
+          image: "/images/info/johnston-canyon.jpg",
+          url: "https://www.travelalberta.com/listings/johnston-canyon-1199/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/u1zVn5hnk2HXhNnZA",
+          linkText: "Bow Valley Pkwy, Improvement District No. 9, AB T1L 1K2",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -340,6 +435,25 @@ const destinations = [
       image: "/images/lake-louise-gondola.webp",
       description:
         "Lake Louise Gondola. Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
+      duration: "1 - 3 hr",
+      price: "Free - $1395",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Lake Louise Gondola",
+          image: "/images/info/lake-louise-gondola.jpg",
+          url: "https://www.travelalberta.com/listings/lake-louise-gondola-8558/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/DxpibBJYAUJ4vAwr9",
+          linkText: "1 Whitehorn Rd, Lake Louise, AB T0L 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -372,6 +486,25 @@ const destinations = [
       image: "/images/fairmont-chateau-lake-louise.webp",
       description:
         "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
+      duration: "Overnight",
+      price: "$425+",
+      type: "Accomodation",
+      links: [
+        {
+          text: "Fairmont Chateau Lake Louise",
+          image: "/images/info/fairmont-chateau-lake-louise.jpg",
+          url: "https://www.travelalberta.com/listings/the-fairmont-chateau-lake-louise-2085/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
+          linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -404,6 +537,25 @@ const destinations = [
       image: "/images/fairview.webp",
       description:
         "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
+      duration: "1 - 2 hr",
+      price: "$$$",
+      type: "Dining",
+      links: [
+        {
+          text: "Fairview",
+          image: "/images/info/fairview.jpg",
+          url: "https://www.travelalberta.com/listings/fairview-6368/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
+          linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -446,6 +598,26 @@ const destinations = [
       image: "/images/columbia-icefield-skywalk.webp",
       description:
         "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
+      duration: "1 - 2 hr",
+      price: "$26.65 - $41",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Columbia Icefield Skywalk",
+          image: "/images/info/columbia-icefield-skywalk.jpg",
+          url: "https://www.travelalberta.com/listings/columbia-icefield-skywalk-1074/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/2Kxf17C4Cbf5jrsp7",
+          linkText:
+            "Highway 93, Icefields Pkwy, Improvement District No. 12, AB T1L 1J3",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -477,6 +649,25 @@ const destinations = [
       image: "/images/maligne-canyon.webp",
       description:
         "Turquoise, glacial waters, and startling canyon walls grow ever more impressive along this short trail. Multiple bridges span the narrow gorge, crossing several times for spine-tingling views of the river below. Watch for fuchsia fireweed and mountain bluebirds in a landscape shaped by fire, erosion, and mountain building.",
+      duration: "15 min - 3 hr",
+      price: "Free",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Maligne Canyon",
+          image: "/images/info/maligne-canyon.jpg",
+          url: "https://www.travelalberta.com/listings/maligne-canyon-1206/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/biUzBE2gvjggayMZ7",
+          linkText: "Maligne Canyon, Jasper, AB T0E 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -508,6 +699,25 @@ const destinations = [
       image: "/images/jasper-sky-tram.webp",
       description:
         "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m, providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km hiking trail leads you to the summit of the mountain.",
+      duration: "1 - 2 hr",
+      price: "Free - $59.95",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Jasper SkyTram",
+          image: "/images/info/jasper-sky-tram.jpg",
+          url: "https://www.travelalberta.com/listings/jasper-skytram-1164/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/3oj8ncVKtT5HFmrD9",
+          linkText: "Whistlers Rd, Jasper, AB T0E 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -539,6 +749,25 @@ const destinations = [
       image: "/images/fairmont-jasper-park-lodge.webp",
       description:
         "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
+      duration: "Overnight",
+      price: "$479+",
+      type: "Accommodation",
+      links: [
+        {
+          text: "Fairmont Jasper Park Lodge",
+          image: "/images/info/fairmont-jasper-park-lodge.jpg",
+          url: "https://www.travelalberta.com/listings/fairmont-jasper-park-lodge-1153/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/6GFMdsGrhxsdF7a96",
+          linkText: "1 Old Lodge Road Jasper, AB T0E 1E0",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -569,6 +798,25 @@ const destinations = [
       image: "/images/jasper-planetarium.webp",
       description:
         "Enter The Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
+      duration: "45 min - 3 hr",
+      price: "$15 - $89",
+      type: "Self-guided tour (and Guided tour)",
+      links: [
+        {
+          text: "Jasper Planetarium",
+          image: "/images/info/jasper-planetarium.jpg",
+          url: "https://www.travelalberta.com/listings/jasper-planetarium-1184/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.app.goo.gl/VBssinqmJ1V2tpUD8",
+          linkText: "1 Old Lodge Road Jasper, AB T0E 1E0",
+          external: true,
+        },
+      ],
     },
   },
 ];

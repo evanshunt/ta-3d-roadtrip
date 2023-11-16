@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import animation from "./animation-data/new-pins-days-1-2-3.json";
 // import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
-import animationMobile from "./animation-data/new-pins-days-1-2.json";
+import animationMobile from "./animation-data/new-pins-days-1-2-3.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import compassImage from "./images/compass.png";
 import { getProject } from "@theatre/core";
@@ -10,11 +10,6 @@ import React, { createRef, useEffect, useRef, useState } from "react";
 import "core-js/actual/object/group-by";
 import Scene from "./Scene";
 import { SheetProvider } from "@theatre/r3f";
-import {
-  PerformanceMonitor,
-  // ScrollControls,
-  SoftShadows,
-} from "@react-three/drei";
 import { useSwipeable } from "react-swipeable";
 import "./scss/attraction.scss";
 import Attraction from "./components/Attraction";
@@ -23,7 +18,6 @@ import Onboarding from "./components/OnBoarding";
 import "./scss/controls.scss";
 import Arrow from "./components/Arrow";
 import Intro from "./Intro";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
 import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
 
@@ -130,10 +124,29 @@ const destinations = [
         },
       ],
       title: "Banff Gondola",
-      image: "/images/banff-gondola.jpg",
+      image: "/images/banff-gondola.webp",
       blurb: "An unbeatable view to end an unforgettable morning.",
       description:
         "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
+      duration: "1 - 3 hr",
+      price: "Free - $60 CAD",
+      type: "Self-guided tour",
+      links: [
+        {
+          text: "Banff Gondola",
+          image: "/images/info/banff-gondola.webp",
+          url: "https://www.travelalberta.com/listings/banff-gondola-1055/",
+          linkText: "View More Details",
+          external: false,
+        },
+        {
+          text: "View on Google Maps",
+          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
+          linkText: "1 Mountain Avenue Banff T1L 1B2",
+          external: true,
+        },
+      ],
     },
   },
   {
@@ -167,12 +180,12 @@ const destinations = [
       description:
         "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
       duration: "1 - 2 hr",
-      price: "Free - $8.50 CAD",
+      price: "$16 - $52+ CAD",
       type: "Dining",
       links: [
         {
           text: "Sky Bistro",
-          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          image: "/images/info/lunch-at-sky-bistro.webp",
           url: "https://www.travelalberta.com/listings/sky-bistro-6411/",
           linkText: "View More Details",
           external: false,
@@ -213,7 +226,7 @@ const destinations = [
         },
       ],
       title: "Banff Upper Hot Springs",
-      image: "/images/banff-upper-hot-springs.jpg",
+      image: "/images/banff-upper-hot-springs.webp",
       blurb: "Elevate your afternoon with a mineral-rich dip.",
       description:
         "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
@@ -223,7 +236,7 @@ const destinations = [
       links: [
         {
           text: "Banff Upper Hot Springs",
-          image: "/images/info/banff-upper-hot-springs.jpg",
+          image: "/images/info/banff-upper-hot-springs.webp",
           url: "https://www.travelalberta.com/listings/banff-upper-hot-springs-2035/",
           linkText: "View More Details",
           external: false,
@@ -268,13 +281,13 @@ const destinations = [
       image: "/images/fairmont-banff-springs-hotel.jpg",
       description:
         'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
-      duration: "1 - 2 hr",
-      price: "Free - $8.50 CAD",
-      type: "Self-guided tour",
+      duration: "Overnight",
+      price: "$500+ CAD",
+      type: "Accommodation",
       links: [
         {
           text: "Fairmont Banff Springs Hotel",
-          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          image: "/images/info/fairmont-banff-springs-hotel.webp",
           url: "https://www.travelalberta.com/listings/the-fairmont-banff-springs-hotel-2084/",
           linkText: "View More Details",
           external: false,
@@ -339,7 +352,7 @@ const destinations = [
       links: [
         {
           text: "Carter-Ryan Gallery and Live Art Venue",
-          image: "/images/info/carter-ryan-gallery-and-live-art-venue.jpg",
+          image: "/images/info/carter-ryan-gallery-and-live-art-venue.webp",
           url: "https://www.travelalberta.com/listings/carter-ryan-gallery-and-live-art-venue-6091/",
           linkText: "View More Details",
           external: false,
@@ -390,7 +403,7 @@ const destinations = [
       links: [
         {
           text: "Johnston Canyon",
-          image: "/images/info/johnston-canyon.jpg",
+          image: "/images/info/johnston-canyon.webp",
           url: "https://www.travelalberta.com/listings/johnston-canyon-1199/",
           linkText: "View More Details",
           external: false,
@@ -431,6 +444,7 @@ const destinations = [
           url: "/images/lake-louise-gondola/lake-louise-gondola-4.webp",
         },
       ],
+      blurb: "Keep an eye out for grizzlies on an afternoon ride.",
       title: "Lake Louise Gondola",
       image: "/images/lake-louise-gondola.webp",
       description:
@@ -441,7 +455,7 @@ const destinations = [
       links: [
         {
           text: "Lake Louise Gondola",
-          image: "/images/info/lake-louise-gondola.jpg",
+          image: "/images/info/lake-louise-gondola.webp",
           url: "https://www.travelalberta.com/listings/lake-louise-gondola-8558/",
           linkText: "View More Details",
           external: false,
@@ -482,6 +496,7 @@ const destinations = [
           url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-4.webp",
         },
       ],
+      blurb: "Sleep by the shore, nestled among mountains",
       title: "Fairmont Chateau Lake Louise",
       image: "/images/fairmont-chateau-lake-louise.webp",
       description:
@@ -533,6 +548,7 @@ const destinations = [
           url: "/images/fairview/fairview-4.webp",
         },
       ],
+      blurb: " Wine, dine, and take in the skyline.",
       title: "Fairview",
       image: "/images/fairview.webp",
       description:
@@ -543,7 +559,7 @@ const destinations = [
       links: [
         {
           text: "Fairview",
-          image: "/images/info/fairview.jpg",
+          image: "/images/info/fairview.webp",
           url: "https://www.travelalberta.com/listings/fairview-6368/",
           linkText: "View More Details",
           external: false,
@@ -560,13 +576,12 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 36,
+    position: 36.7,
     day: 3,
     hideFromItinerary: true,
     stop: 12,
     details: {
-      blurb:
-        "From Lake Louise, it’s a scenic drive to Jasper, where you’ll spend the next two nights.",
+      blurb: "Journey through Jasper for an exciting final day.",
     },
   },
   {
@@ -594,6 +609,7 @@ const destinations = [
           url: "/images/columbia-icefield-skywalk/columbia-icefield-skywalk-4.webp",
         },
       ],
+      blurb: "Defy the sky with a morning stroll over Sunwapta Valley.",
       title: "Columbia Icefield Skywalk",
       image: "/images/columbia-icefield-skywalk.webp",
       description:
@@ -604,7 +620,7 @@ const destinations = [
       links: [
         {
           text: "Columbia Icefield Skywalk",
-          image: "/images/info/columbia-icefield-skywalk.jpg",
+          image: "/images/info/columbia-icefield-skywalk.webp",
           url: "https://www.travelalberta.com/listings/columbia-icefield-skywalk-1074/",
           linkText: "View More Details",
           external: false,
@@ -645,6 +661,7 @@ const destinations = [
           url: "/images/maligne-canyon/maligne-canyon-4.webp",
         },
       ],
+      blurb: "Take a lunchtime trip through a towering gorge.",
       title: "Maligne Canyon",
       image: "/images/maligne-canyon.webp",
       description:
@@ -655,7 +672,7 @@ const destinations = [
       links: [
         {
           text: "Maligne Canyon",
-          image: "/images/info/maligne-canyon.jpg",
+          image: "/images/info/maligne-canyon.webp",
           url: "https://www.travelalberta.com/listings/maligne-canyon-1206/",
           linkText: "View More Details",
           external: false,
@@ -695,6 +712,7 @@ const destinations = [
           url: "/images/jasper-sky-tram/jasper-sky-tram-4.webp",
         },
       ],
+      blurb: "Soar up Whistlers Mountain for an afternoon hike.",
       title: "Jasper SkyTram",
       image: "/images/jasper-sky-tram.webp",
       description:
@@ -705,7 +723,7 @@ const destinations = [
       links: [
         {
           text: "Jasper SkyTram",
-          image: "/images/info/jasper-sky-tram.jpg",
+          image: "/images/info/jasper-sky-tram.webp",
           url: "https://www.travelalberta.com/listings/jasper-skytram-1164/",
           linkText: "View More Details",
           external: false,
@@ -745,6 +763,7 @@ const destinations = [
           url: "/images/fairmont-jasper-park-lodge/fairmont-jasper-park-lodge-4.webp",
         },
       ],
+      blurb: "Cuddle up in your choice of cozy log cabin.",
       title: "Fairmont Jasper Park Lodge",
       image: "/images/fairmont-jasper-park-lodge.webp",
       description:
@@ -755,7 +774,7 @@ const destinations = [
       links: [
         {
           text: "Fairmont Jasper Park Lodge",
-          image: "/images/info/fairmont-jasper-park-lodge.jpg",
+          image: "/images/info/fairmont-jasper-park-lodge.webp",
           url: "https://www.travelalberta.com/listings/fairmont-jasper-park-lodge-1153/",
           linkText: "View More Details",
           external: false,
@@ -794,6 +813,7 @@ const destinations = [
           url: "/images/jasper-planetarium/jasper-planetarium-4.webp",
         },
       ],
+      blurb: "Spend your last night exploring the stars.",
       title: "Jasper Planetarium",
       image: "/images/jasper-planetarium.webp",
       description:
@@ -804,7 +824,7 @@ const destinations = [
       links: [
         {
           text: "Jasper Planetarium",
-          image: "/images/info/jasper-planetarium.jpg",
+          image: "/images/info/jasper-planetarium.webp",
           url: "https://www.travelalberta.com/listings/jasper-planetarium-1184/",
           linkText: "View More Details",
           external: false,
@@ -882,7 +902,7 @@ const Experience = () => {
 
     // console.log(currDestination);
 
-    if (index >= 6) {
+    if (index >= 6 && !isMobile) {
       //@TODO: this is simply hacked for demo
       setAttractionsOpen(true);
     }
@@ -1077,7 +1097,9 @@ const Experience = () => {
             antialias: false,
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
-            shadowMapType: THREE.PCFSoftShadowMap,
+            shadowMapType: isMobile
+              ? THREE.BasicShadowMap
+              : THREE.PCFSoftShadowMap,
             // shadowMapEnabled: true,
           }}
           frameloop="demand"

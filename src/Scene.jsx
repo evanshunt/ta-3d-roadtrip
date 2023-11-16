@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-// import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
 import { OrbitControls } from "@react-three/drei";
@@ -79,7 +78,7 @@ const positions = {
   fairview: [-3.2, 1.11, 0.57],
 
   // Day 3:
-  columbiaIcefieldSkywalk: [2.9, 1.14, -4.2],
+  columbiaIcefieldSkywalk: [1.65, 1.14, -3.2],
   maligneCanyon: [5.4, 1.14, -5.6],
   jasperSkyTram: [5.0, 1.13, -6.0],
   fairmontJasperParkLodge: [5.35, 1.15, -5.7],

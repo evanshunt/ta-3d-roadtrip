@@ -59,6 +59,7 @@ const Attraction = ({
         setOpen(attractionsOpen);
       }, 500);
     }
+    
   }, [attractionsOpen]);
 
   useEffect(() => {

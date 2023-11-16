@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-import { useControls } from "leva";
 import React, { useEffect, useRef } from "react";
 
 export const NightLights = ({ position, isNight }) => {
@@ -54,20 +53,6 @@ export const NightLights = ({ position, isNight }) => {
     }
   }, [isNight]);
 
-  const { distance, decay } = useControls({
-    distance: {
-      value: 0.1,
-      min: 0,
-      max: 2,
-      step: 0.01,
-    },
-    decay: {
-      value: 0,
-      min: 0,
-      max: 2,
-      step: 0.01,
-    },
-  });
   return (
     <>
       <pointLight

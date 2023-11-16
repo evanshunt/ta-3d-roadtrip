@@ -1,4 +1,3 @@
-import arrowDown from "../images/arrow-down-small.svg";
 import arrowUp from "../images/arrow-up.svg";
 import Day from "./Day";
 import React, { useEffect, useRef, useState } from "react";
@@ -19,7 +18,7 @@ const Itinerary = ({
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
 
-  // @TODO: this is just hacked in for demo
+  // @TODO: this is just hacked in for demo USE INBETWEENS
   useEffect(() => {
     if (index === 6) {
       // generalize this

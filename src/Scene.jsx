@@ -4,7 +4,7 @@ import { Cloud } from "./Clouds.jsx";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import { OrbitControls } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 // import { Environment } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
@@ -16,12 +16,11 @@ import Road from "./models/final/Road.jsx";
 
 // import { Top } from "./models/final/Top.jsx";
 // import TopAlt from "./models/final/TopAlt.jsx";
+import TopAltAgain from "./models/final/TopAltAgain.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
-
-import TopAltAgain from "./models/final/TopAltAgain.jsx";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
@@ -91,20 +90,9 @@ const circleGeom = new THREE.CircleGeometry(0.8, 32);
 const redMaterial = new THREE.MeshBasicMaterial({
   color: 0x9c0f00,
 });
-const wispMaterial = new THREE.MeshStandardMaterial({
-  color: 0xf7ecbf,
-  transparent: true,
-  opacity: 0.85,
-  emissive: 0xf7ecbf,
-  emissiveIntensity: 0.8,
-});
 
 const Scene = (props) => {
-  // const bokehRef = useRef();
-  // const cloudRef = useRef();
-  const compassRef = useRef();
   const sceneRef = useRef();
-  const cameraRef = useRef();
 
   // const { altTop } = useControls({
   //   altTop: {
@@ -238,6 +226,10 @@ const Scene = (props) => {
   //   },
   // });
 
+  useEffect(() => {
+    console.log(props.isNight);
+  }, [props.isNight]);
+
   return (
     <>
       {/* <Environment
@@ -296,7 +288,6 @@ const Scene = (props) => {
       /> */}
 
       <Lights
-        alt={false}
         index={props.index}
         isNight={props.isNight}
         debug={props.debug}

@@ -54,7 +54,7 @@ const Itinerary = ({
       if (!currDestination.name) return;
 
       const { velocity, dir } = eventData;
-      console.log(velocity, dir);
+
       if (velocity < 0.8) {
         itineraryRef.current.classList.add("itinerary--bounce");
         setTimeout(() => {
@@ -63,7 +63,6 @@ const Itinerary = ({
         return;
       }
       setOpen(dir === "Up" ? true : false);
-      console.log(open);
     },
 
     // ...config

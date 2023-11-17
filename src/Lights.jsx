@@ -128,15 +128,19 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
   };
 
   const exitLight = (spotLight, tl) => {
-    tl.to(hemisphereLightRef.current, {
-      intensity: 4,
-      duration: 2,
-    });
+    tl.to(
+      hemisphereLightRef.current,
+      {
+        intensity: 4,
+        duration: 1,
+      },
+      "<"
+    );
     tl.to(
       spotLight.current,
       {
-        intensity: 0.01,
-        duration: 2,
+        intensity: 0.1,
+        duration: 1,
       },
       "<"
     );

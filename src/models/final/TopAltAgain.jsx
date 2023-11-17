@@ -85,7 +85,7 @@ const TopAltAgain = (props) => {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
+        // castShadow
         receiveShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         // position={[0.02, 0.925, 0.45]}
@@ -100,11 +100,12 @@ const TopAltAgain = (props) => {
         // -0.03, 0.92, 0.58
       >
         <meshStandardMaterial
-          roughness={1}
-          metalness={0}
+          // roughness={1}
+          // metalness={0}
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
+          map-anisotropy={16}
         />
       </mesh>
     </group>

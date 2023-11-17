@@ -1,5 +1,4 @@
 import { NightLights } from "./NightLights";
-import * as THREE from "three";
 import { gsap } from "gsap/dist/gsap";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
@@ -99,26 +98,6 @@ const Day1 = ({
   //       step: 0.1,
   //     },
   //   });
-
-  const animateNightLights = () => {
-    gsap.fromTo(
-      pointLightRef.current,
-      {
-        intensity: 0.75,
-        duration: 0.33,
-        ease: "power2.out",
-        repeat: -1,
-        yoyo: true,
-      },
-      {
-        intensity: 0.8,
-        duration: 0.33,
-        ease: "power2.in",
-        repeat: -1,
-        yoyo: true,
-      }
-    );
-  };
 
   // const {
   //   pointLight1Intensity,

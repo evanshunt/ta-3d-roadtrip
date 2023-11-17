@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import animation from "./animation-data/new-pins-days-1-2-3.json";
-// import animationMobile from "./animation-data/new-pins-with-exit-clouds-johnston-mobile.json";
-import animationMobile from "./animation-data/new-pins-days-1-2-3.json";
+import animationMobile from "./animation-data/new-pins-days-1-2-3-mobile.json";
 import { Canvas, useFrame } from "@react-three/fiber";
 import compassImage from "./images/compass.png";
 import { getProject } from "@theatre/core";

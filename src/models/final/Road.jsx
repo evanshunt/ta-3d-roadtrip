@@ -38,12 +38,12 @@ const Road = (props) => {
         position={[0, -1.025, 0]}
       >
         <meshStandardMaterial
-          // map={texture}
-          color={0x9c0f00}
-          roughness={1}
-          metalness={0}
-          // map-flipY={false}
-          // map-generateMipmaps={true}
+          map={texture}
+          // color={0x9c0f00}
+          // roughness={1}
+          // metalness={0}
+          map-flipY={false}
+          map-generateMipmaps={true}
           // map-anisotropy={8}
         />
       </mesh>

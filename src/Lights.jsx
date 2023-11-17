@@ -202,8 +202,8 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
         lookAt={positions[0]}
         castShadow
         intensity={1.5}
-        // shadow-mapSize-width={isMobile ? 128 : 1024 * 3.75} // @TODO: test this on mobile, might have to use <SoftShadows />
-        // shadow-mapSize-height={isMobile ? 128 : 1024 * 3.75}
+        shadow-mapSize-width={isMobile ? 512 : 1024 * 3.75} // @TODO: test this on mobile, might have to use <SoftShadows />
+        shadow-mapSize-height={isMobile ? 512 : 1024 * 3.75}
       />
     </>
   );

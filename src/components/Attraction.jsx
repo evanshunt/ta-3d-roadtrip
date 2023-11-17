@@ -18,6 +18,7 @@ const Attraction = ({
   currDestination,
   handleIndex,
   hideAttraction,
+  inBetweens,
   index,
   maxLength,
   nextDestination,
@@ -49,8 +50,6 @@ const Attraction = ({
     preventDefaultTouchmoveEvent: true,
   });
 
-  const inBetweens = [6];
-
   useEffect(() => {
     if (isMobile) {
       setOpen(attractionsOpen);
@@ -59,7 +58,6 @@ const Attraction = ({
         setOpen(attractionsOpen);
       }, 500);
     }
-    
   }, [attractionsOpen]);
 
   useEffect(() => {

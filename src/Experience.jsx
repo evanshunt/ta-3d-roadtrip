@@ -30,7 +30,6 @@ const destinations = [
     position: 0,
     stop: 0,
     day: 0,
-    name: null,
     visited: false,
     details: {
       blurb:
@@ -192,7 +191,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/lunch-at-sky-bistro.jpg",
+          image: "/images/maps/lunch-at-sky-bistro.webp",
           url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
           linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
           external: true,
@@ -868,7 +867,13 @@ const Experience = () => {
 
   const previousIndexRef = React.useRef(0);
   const compassRef = useRef();
+  const inBetweens = [];
   // uncomment to use saved data
+  destinations.forEach((destination) => {
+    if (destination.hideFromItinerary) {
+      inBetweens.push(destination.stop);
+    }
+  });
 
   const animDuration = 6.3;
 
@@ -900,11 +905,10 @@ const Experience = () => {
       setNextDestination(destinations[index + 2]);
     }
 
-    // console.log(currDestination);
-
-    if (index >= 6 && !isMobile) {
-      //@TODO: this is simply hacked for demo
-      setAttractionsOpen(true);
+    if (inBetweens.includes(index)) {
+      if (!isMobile) {
+        setAttractionsOpen(true);
+      }
     }
     return () => {};
   }, [index]);
@@ -1139,6 +1143,7 @@ const Experience = () => {
           currDestination={currDestination}
           handleIndex={handleIndex}
           hideAttraction={hideAttraction}
+          inBetweens={inBetweens}
           index={index}
           maxLength={maxLength}
           nextDestination={nextDestination}

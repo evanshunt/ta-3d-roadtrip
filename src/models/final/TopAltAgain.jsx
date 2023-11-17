@@ -8,11 +8,11 @@ import { useGLTF, useTexture } from "@react-three/drei";
 // import { useControls } from "leva";
 
 const TopAltAgain = (props) => {
-  const { nodes } = useGLTF("/glb/final/NEW-FILE-remap-low-rez.glb");
+  const { nodes } = useGLTF("/glb/final/NEW-FILE-remap-lower-rez.glb");
   // const texture = useTexture("/textures/final/baked-new-dark.webp");
   const texture = isMobile
-    ? useTexture("/textures/final/baked-new-dark-mobile.webp")
-    : useTexture("/textures/final/baked-new-dark.webp");
+    ? useTexture("/textures/final/baked-new-dark-mobile-copy.webp")
+    : useTexture("/textures/final/baked-new-dark (1) copy.webp");
   // const textureMobile = useTexture("/textures/final/baked-new-dark.webp");
 
   // const {

@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { isMobile } from "react-device-detect";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 
 const Lights = ({ alt, debug, index, isNight, positions }) => {
   const spotLight = useRef();
@@ -11,8 +11,8 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
   const tl = gsap.timeline({});
 
   const colors = {
-    blue: new THREE.Color().setHex(0xafd3f8),
-    orange: new THREE.Color().setHex(0xf5b170),
+    blue: new THREE.Color().setHex(0xc9dff7),
+    orange: new THREE.Color().setHex(0xf7e0c9),
     white: new THREE.Color().setHex(0xffffff),
   };
 
@@ -150,7 +150,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
     tl.to(
       spotLight.current,
       {
-        intensity: 1.5,
+        intensity: 1.75,
         duration: 2,
       },
       "<"
@@ -205,9 +205,9 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
         position={[-15, 10, 13.5]}
         lookAt={positions[0]}
         castShadow
-        intensity={1.5}
-        shadow-mapSize-width={isMobile ? 1024 : 1024 * 3.75} // @TODO: test this on mobile, might have to use <SoftShadows />
-        shadow-mapSize-height={isMobile ? 1024 : 1024 * 3.75}
+        intensity={1.75}
+        shadow-mapSize-width={isMobile ? 1024 * 2 : 1024 * 3.75}
+        shadow-mapSize-height={isMobile ? 1024 * 2 : 1024 * 3.75}
       />
     </>
   );

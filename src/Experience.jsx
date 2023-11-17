@@ -952,11 +952,10 @@ const Experience = () => {
 
   const startMobile = useSwipeable({
     onSwiped: (eventData) => {
-      console.log("test");
       const dir = eventData.dir.toLowerCase();
       if (dir === "left") {
         start();
-        // handleIndex("next");
+        handleIndex("next");
       }
     },
   });
@@ -1049,7 +1048,7 @@ const Experience = () => {
   useEffect(() => {
     const debug = window.location.search.includes("debug");
     setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
+    setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1068,9 +1067,9 @@ const Experience = () => {
     <div className="experience">
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        <div onClick={start} {...startMobile}>
+        {/* <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary
@@ -1079,6 +1078,7 @@ const Experience = () => {
             days={days}
             grouped={daysParsed}
             handleIndex={handleIndex}
+            inBetweens={inBetweens}
             index={index}
             isOpen={itineraryOpen}
             nextDestination={nextDestination}
@@ -1093,7 +1093,9 @@ const Experience = () => {
         </button>
 
         <Canvas
-          dpr={window.devicePixelRatio} // decreasing to 1.5 smooths things out a bit
+          dpr={
+            isMobile ? window.devicePixelRatio * 0.75 : window.devicePixelRatio
+          } // decreasing to 1.5 smooths things out a bit
           // dpr={1.5}
           shadows={true}
           gl={{
@@ -1178,7 +1180,6 @@ const Experience = () => {
                 <progress
                   className="controls__list__progress"
                   value={determineAmount(index)}
-                  //@TODO: write a function to deal with edge cases
                   max="95"
                 />
 

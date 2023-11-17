@@ -1,5 +1,6 @@
 import arrowUp from "../images/arrow-up.svg";
 import Day from "./Day";
+import { isMobile } from "react-device-detect";
 import React, { useEffect, useRef, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "../scss/itinerary.scss";
@@ -10,6 +11,7 @@ const Itinerary = ({
   days,
   grouped,
   handleIndex,
+  inBetweens,
   index,
   isOpen,
   setIndex,
@@ -20,11 +22,11 @@ const Itinerary = ({
 
   // @TODO: this is just hacked in for demo USE INBETWEENS
   useEffect(() => {
-    if (index === 6) {
+    if (isMobile) return;
+    if (inBetweens.includes(index)) {
       // generalize this
-      scrollItinerary(6);
-    }
-    if (index === 7) {
+      scrollItinerary(index);
+    } else {
       setOpen(false);
     }
   }, [index]);

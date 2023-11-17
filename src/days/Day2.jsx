@@ -2,6 +2,7 @@ import React from "react";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
+import { isMobile } from "react-device-detect";
 
 const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
   // const { lakeLouiseGondolaX, lakeLouiseGondolaY, lakeLouiseGondolaZ } =
@@ -146,24 +147,29 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
 
   return (
     <>
-      <InfoBox
-        imageSrc={"/images/info-boxes/sunshine-village.png"}
-        name={"Moraine Lake"}
-        position={[-3.7, 1.2, 0.6]}
-        width={1.86}
-      />
+      {!isMobile && (
+        <InfoBox
+          imageSrc={"/images/info-boxes/sunshine-village.png"}
+          name={"Moraine Lake"}
+          position={[-3.7, 1.2, 0.6]}
+          width={1.86}
+        />
+      )}
+
       <InfoBox
         imageSrc={"/images/info-boxes/sunshine-village.png"}
         name={"Hector Lake"}
         position={[-2.25, 1.2, 0.0]}
         width={1.86}
       />
-      <InfoBox
-        imageSrc={"/images/info-boxes/sunshine-village.png"}
-        name={"Morant's Curve"}
-        position={[-3.3, 1.1, 0.8]}
-        width={1.86}
-      />
+      {!isMobile && (
+        <InfoBox
+          imageSrc={"/images/info-boxes/sunshine-village.png"}
+          name={"Morant's Curve"}
+          position={[-3.3, 1.1, 0.8]}
+          width={1.86}
+        />
+      )}
       <ImagePin
         geometry={geometry}
         imageSrc={"/images/carter-ryan-gallery.webp"}

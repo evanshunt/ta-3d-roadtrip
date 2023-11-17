@@ -6,6 +6,7 @@ import InfoBox from "../components/InfoBox";
 
 import React, { useEffect, useRef } from "react";
 import { useControls } from "leva";
+import { isMobile } from "react-device-detect";
 
 const Day1 = ({
   isNight,
@@ -155,23 +156,27 @@ const Day1 = ({
 
   return (
     <>
-      <InfoBox
-        imageSrc={"/images/info-boxes/sunshine-village.png"}
-        position={[-5.2, 1.2, 2.4]}
-        width={1.86}
-      />
+      {!isMobile && (
+        <InfoBox
+          imageSrc={"/images/info-boxes/sunshine-village.png"}
+          position={[-5.2, 1.2, 2.4]}
+          width={1.86}
+        />
+      )}
       <InfoBox
         imageSrc={"/images/info-boxes/cascade-mountain.png"}
         name="Cascade Mountain"
         position={[-4.3, 1.2, 2.7]}
         width={1.58}
       />
-      <InfoBox
-        imageSrc={"/images/info-boxes/lake-minnewanka.png"}
-        name="Lake Minnewanka"
-        position={[-4.2, 1.15, 3]}
-        width={1.8}
-      />
+      {!isMobile && (
+        <InfoBox
+          imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+          name="Lake Minnewanka"
+          position={[-4.2, 1.15, 3]}
+          width={1.8}
+        />
+      )}
 
       <ImagePin
         active={sceneIndex === 0}

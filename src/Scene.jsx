@@ -392,7 +392,7 @@ const Scene = (props) => {
           // focusDistance={focusDistance}
           focalLength={0.09} // focal length
           // focalLength={focalLength}
-          bokehScale={6} // bokeh size
+          bokehScale={2.5} // bokeh size
           // bokehScale={bokehScale}
         />
       </EffectComposer> */}

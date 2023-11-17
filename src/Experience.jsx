@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import animation from "./animation-data/new-pins-days-1-2-3.json";
 import animationMobile from "./animation-data/new-pins-days-1-2-3-mobile.json";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import compassImage from "./images/compass.png";
 import { getProject } from "@theatre/core";
 import { isMobile } from "react-device-detect";
@@ -950,6 +950,17 @@ const Experience = () => {
     ``;
   };
 
+  const startMobile = useSwipeable({
+    onSwiped: (eventData) => {
+      console.log("test");
+      const dir = eventData.dir.toLowerCase();
+      if (dir === "left") {
+        start();
+        // handleIndex("next");
+      }
+    },
+  });
+
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
       const dir = eventData.dir.toLowerCase();
@@ -1038,7 +1049,7 @@ const Experience = () => {
   useEffect(() => {
     const debug = window.location.search.includes("debug");
     setDebug(debug);
-    setHasStarted(true);
+    // setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1055,22 +1066,11 @@ const Experience = () => {
 
   return (
     <div className="experience">
-      {/* <div
-        style={{
-          position: "fixed",
-          bottom: "0",
-          left: "0",
-          zIndex: "9999999999",
-          background: " white",
-        }}
-      >
-        <span>Night time?</span> <span>{isNight ? "Yes" : "No"}</span>
-      </div> */}
       <img src={mainNavImage} alt="" className="main-nav-image" />
       <div className="wrapper">
-        {/* <div onClick={start}>
+        <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         {days[1] && (
           <Itinerary

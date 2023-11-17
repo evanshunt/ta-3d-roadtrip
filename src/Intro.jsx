@@ -6,8 +6,9 @@ import React, { useEffect, useState } from "react";
 import "./scss/intro.scss";
 
 const Intro = ({ hasStarted }) => {
-  const [hasPlayed, setHasPlayed] = useState(false);
   const [visible, setVisible] = useState(true);
+
+  console.log(hasStarted);
 
   const playIntro = () => {
     const intro = document.querySelector(".cloud-intro");
@@ -31,7 +32,7 @@ const Intro = ({ hasStarted }) => {
 
   return (
     <div className="intro">
-      <Onboarding />
+      {/* <Onboarding /> */}
       <div className="intro__map">
         <Map removeIntro={removeIntro} start={hasStarted} />
       </div>

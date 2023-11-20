@@ -424,10 +424,6 @@ const Scene = (props) => {
           // bokehScale={bokehScale}
         /> 
       </EffectComposer> */}
-      {/* 
-      <EffectComposer disableNormalPass={false} multisampling={2}>
-        <TiltShift2 blur={1} />
-      </EffectComposer> */}
 
       {/* )} */}
     </>

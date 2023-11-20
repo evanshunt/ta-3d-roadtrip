@@ -12,7 +12,7 @@ import Lights from "./Lights.jsx";
 import Road from "./models/final/Road.jsx";
 // import { types } from "@theatre/core";
 // import { useFrame } from "@react-three/fiber";
-// import { useControls } from "leva";
+import { useControls } from "leva";
 
 // import { Top } from "./models/final/Top.jsx";
 // import TopAlt from "./models/final/TopAlt.jsx";
@@ -159,6 +159,27 @@ const Scene = (props) => {
   //   // }
   // });
 
+  // const { day1PosX, day1PosY, day1PosZ } = useControls({
+  //   day1PosX: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   day1PosY: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   day1PosZ: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  // });
+
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
   //   cameraPositionX: {
   //     value: 0,
@@ -226,10 +247,6 @@ const Scene = (props) => {
   //   },
   // });
 
-  useEffect(() => {
-    console.log(props.isNight);
-  }, [props.isNight]);
-
   return (
     <>
       {/* <Environment
@@ -296,37 +313,43 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        <Day1
-          isNight={props.isNight}
-          positions={positions}
-          sceneIndex={props.index}
-          setIndex={props.setIndex}
-          visible={true}
-          // visible={props.currDay === 0 || props.currDay === 1}
-          geometry={circleGeom}
-          material={redMaterial}
-        />
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day1
+            isNight={props.isNight}
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            visible={true}
+            // visible={props.currDay === 0 || props.currDay === 1}
+            geometry={circleGeom}
+            material={redMaterial}
+          />
+        </group>
 
-        <Day2
-          isNight={props.isNight}
-          positions={positions}
-          sceneIndex={props.index}
-          setIndex={props.setIndex}
-          visible={true}
-          // visible={props.currDay === 0 || props.currDay === 1}
-          geometry={circleGeom}
-          material={redMaterial}
-        />
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day2
+            isNight={props.isNight}
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            visible={true}
+            // visible={props.currDay === 0 || props.currDay === 1}
+            geometry={circleGeom}
+            material={redMaterial}
+          />
+        </group>
 
-        <Day3
-          positions={positions}
-          sceneIndex={props.index}
-          setIndex={props.setIndex}
-          visible={true}
-          // visible={props.currDay === 0 || props.currDay === 1}
-          geometry={circleGeom}
-          material={redMaterial}
-        />
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day3
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            visible={true}
+            // visible={props.currDay === 0 || props.currDay === 1}
+            geometry={circleGeom}
+            material={redMaterial}
+          />
+        </group>
 
         {/* <e.group theatreKey="Lake Louise Cloud 2">
           <Cloud scale={0.2} position={[-2, 3.1, 3]} />

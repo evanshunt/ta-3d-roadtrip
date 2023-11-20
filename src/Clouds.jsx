@@ -4,7 +4,7 @@ import { Billboard } from "@react-three/drei";
 import { Plane } from "@react-three/drei";
 import { useTexture } from "@react-three/drei";
 
-const CLOUD_URL = "/textures/cloud.png";
+const CLOUD_URL = "/textures/cloud.webp";
 function Cloud({
   opacity = 0.9,
   speed = 0.4,

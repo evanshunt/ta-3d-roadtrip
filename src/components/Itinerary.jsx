@@ -22,10 +22,10 @@ const Itinerary = ({
 
   // @TODO: this is just hacked in for demo USE INBETWEENS
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile || !currDestination) return;
     if (inBetweens.includes(index)) {
       // generalize this
-      scrollItinerary(index);
+      scrollItinerary(currDestination.day);
     } else {
       setOpen(false);
     }
@@ -40,10 +40,12 @@ const Itinerary = ({
 
   const scrollItinerary = (stop) => {
     const offset = document.querySelector(
-      `.itinerary__day:nth-child(2)`
-    ).offsetTop;
+      `.itinerary__day:nth-child(${stop + 1})`
+    );
+    if (!offset) return;
+
     itineraryRef.current.scrollTo({
-      top: offset - 40,
+      top: offset.offsetTop - 40,
       behavior: "smooth",
     });
   };

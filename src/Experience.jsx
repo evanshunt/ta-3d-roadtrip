@@ -578,7 +578,13 @@ const destinations = [
     day: 3,
     hideFromItinerary: true,
     stop: 12,
+    visited: false,
+    drivingInfo: {
+      copy: "Enjoy a scenic drive to Jasper, with destinations that will take you to new heights.",
+      time: "3 hr 19 min drive from Lake Louise.",
+    },
     details: {
+      title: null,
       blurb: "Journey through Jasper for an exciting final day.",
     },
   },
@@ -1029,7 +1035,12 @@ const Experience = () => {
       }
     }
 
-    if (destinations[index].hideFromItinerary && index > 0) {
+    // if (destinations[index].hideFromItinerary && index > 0) {
+    //   setIsNight(true);
+    // } else {
+    //   setIsNight(false);
+    // }
+    if (inBetweens.includes(index + 1) && index > 0) {
       setIsNight(true);
     } else {
       setIsNight(false);

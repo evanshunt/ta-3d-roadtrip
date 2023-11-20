@@ -30,6 +30,7 @@ const ImagePin = ({
 
   useFrame(({ state, delta }) => {
     theatreObject.onValuesChange((newValues) => {
+      if (!imageRef.current) return;
       imageRef.current.children[0].material.opacity = newValues.opacity;
     });
   });

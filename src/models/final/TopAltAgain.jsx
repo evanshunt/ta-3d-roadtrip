@@ -90,7 +90,7 @@ const TopAltAgain = (props) => {
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         // position={[0.02, 0.925, 0.45]}
         // position={[-0.25, 0.925, 0.675]}
-        position={[-0.21, 0.925, 0.77]}
+        position={[-0.21, 0.935, 0.77]}
         // -0.28, 0.93, 0.76
         // position={[-0.28, 0.9275, 0.72]}
         // rotation={[0, Math.PI * 1.5, 0]}
@@ -112,6 +112,6 @@ const TopAltAgain = (props) => {
   );
 };
 
-useGLTF.preload("/glb/final/NEW-FILE-remap-low-rez.glb");
+useGLTF.preload("/glb/final/NEW-FILE-remap-lower-rez.glb");
 
 export default TopAltAgain;

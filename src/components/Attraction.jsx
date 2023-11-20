@@ -270,7 +270,11 @@ const Attraction = ({
                   <li className="itinerary__stop">
                     <div
                       onClick={() => {
-                        setIndex(index + 1);
+                        if (inBetweens.includes(index + 1)) {
+                          setIndex(index + 2);
+                        } else {
+                          setIndex(index + 1);
+                        }
                         // showInfo();
                       }}
                       className="itinerary__stop__wrap"

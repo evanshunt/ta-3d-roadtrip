@@ -19,7 +19,7 @@ const Road = (props) => {
         rotation={[0, -Math.PI * 0.5, 0]}
         geometry={nodes.BezierCurve.geometry}
         // position={[0, -1.025, 0]}
-        position={[-4.58, 1.125, 3.24]}
+        position={[-4.58, 1.13, 3.24]}
       >
         <meshStandardMaterial
           // map={texture}

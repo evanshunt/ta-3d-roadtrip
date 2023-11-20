@@ -1,10 +1,14 @@
 import React, { useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+import {
+  DepthOfField,
+  EffectComposer,
+  TiltShift2,
+} from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
@@ -20,6 +24,7 @@ import TopAltAgain from "./models/final/TopAltAgain.jsx";
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
+import HTMLInfo from "./components/HTMLInfo.jsx";
 
 // cam pos
 // [-4.95, 3.216, 10.292]
@@ -312,6 +317,7 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
+        {/* <HTMLInfo position={positions.caveAndBasin} /> */}
         <group position={[0.03, 0.0, 0.07]}>
           <Day1
             isNight={props.isNight}
@@ -417,6 +423,10 @@ const Scene = (props) => {
           bokehScale={2.5} // bokeh size
           // bokehScale={bokehScale}
         /> 
+      </EffectComposer> */}
+      {/* 
+      <EffectComposer disableNormalPass={false} multisampling={2}>
+        <TiltShift2 blur={1} />
       </EffectComposer> */}
 
       {/* )} */}

@@ -4,7 +4,7 @@ import { Cloud } from "./Clouds.jsx";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 // import { Environment } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
@@ -238,20 +238,20 @@ const Scene = (props) => {
         // preset={props.isNight ? "night" : "park"}
         // intensity={props.isNight ? 0 : 2}
       /> */}
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
         // rotation={cameraRotation}
         rotation={[-1.5707963267948966, 0, 0]}
         makeDefault={true}
-        ref={cameraRef}
+        // ref={cameraRef}
         onChange={(e) => {
           const camera = e.target?.object;
           if (!camera) return;
         }}
-      /> */}
-      <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
+      />
+      {/* <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} /> */}
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -355,10 +355,10 @@ const Scene = (props) => {
             // works position = [-2.7, 0.85, 2.30]
             //
             scale={0.07}
-            // scale={cloudScale}
-            //  position={[-0.8, 1.5, 2.6]}
+          // scale={cloudScale}
+          //  position={[-0.8, 1.5, 2.6]}
 
-            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+          // position={[cloudPosX, cloudPosY, cloudPosZ]}
           />
         </e.group>
 

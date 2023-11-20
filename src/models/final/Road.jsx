@@ -7,9 +7,39 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
+
+
 const Road = (props) => {
-  const { nodes, materials } = useGLTF("/glb/final/road-y-up.glb");
-  const texture = useTexture("/textures/final/road-baked-test-compressed.jpg");
+  const { nodes, materials } = useGLTF("/glb/final/road-new.glb");
+  const { positionX, positionY, positionZ, rotationY, scale } = useControls({
+    positionX: {
+      min: 0,
+      max: 1,
+      value: 0.13,
+      step: 0.01
+    },
+    positionY: {
+      min: -8,
+      max: 8,
+      step: 0.01,
+      value: 1.05,
+    },
+    positionZ: {
+      min: -2,
+      max: 0,
+      value: -1.76,
+      step: 0.01
+    },
+    scale: {
+      value: 1,
+    },
+    rotationY: {
+      min: -2 * Math.PI,
+      max: 2 * Math.PI,
+      value: -Math.PI / 2,
+    }
+  });
+  // const texture = useTexture("/textures/final/road-baked-test-compressed.jpg");
   // const { posX, posY, posZ } = useControls({
   //     posX: {
   //         min: -8,
@@ -33,18 +63,21 @@ const Road = (props) => {
       <mesh
         castShadow={isMobile ? false : true}
         receiveShadow={false}
-        scale={0.25}
+        // scale={0.25}
+        scale={0.635}
+        rotation={[0, rotationY, 0]}
         geometry={nodes.BezierCurve.geometry}
-        position={[0, -1.025, 0]}
+        // position={[0, -1.025, 0]}
+        position={[positionX, positionY, positionZ]}
       >
         <meshStandardMaterial
-          map={texture}
-          // color={0x9c0f00}
-          // roughness={1}
-          // metalness={0}
-          map-flipY={false}
-          map-generateMipmaps={true}
-          // map-anisotropy={8}
+          // map={texture}
+          color={0x9c0f00}
+          roughness={1}
+          metalness={0}
+        // map-flipY={false}
+        // map-generateMipmaps={true}
+        // map-anisotropy={8}
         />
       </mesh>
     </group>

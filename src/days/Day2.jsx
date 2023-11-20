@@ -3,6 +3,7 @@ import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
 import { isMobile } from "react-device-detect";
+import { useControls } from "leva";
 
 const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
   // const { lakeLouiseGondolaX, lakeLouiseGondolaY, lakeLouiseGondolaZ } =
@@ -158,8 +159,8 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
 
       <InfoBox
         imageSrc={"/images/info-boxes/sunshine-village.png"}
-        name={"Hector Lake"}
-        position={[-2.25, 1.2, 0.0]}
+        name={"Bow Peak"}
+        position={[-2.0, 1.2, 0.0]}
         width={1.86}
       />
       {!isMobile && (

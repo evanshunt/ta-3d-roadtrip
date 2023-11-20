@@ -1,5 +1,6 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
+import InfoBox from "../components/InfoBox";
 import { useControls } from "leva";
 
 const Day3 = ({ geometry, material, positions, setIndex }) => {
@@ -121,8 +122,89 @@ const Day3 = ({ geometry, material, positions, setIndex }) => {
   //   },
   // });
 
+  // const { posXAthabasca, posYAthabasca, posZAthabasca } = useControls({
+  //   posXAthabasca: {
+  //     value: 1.1,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posYAthabasca: {
+  //     value: 1.2,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posZAthabasca: {
+  //     value: -3,
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  // });
+
+  // const { posXMarmotBasin, posYMarmotBasin, posZMarmotBasin } = useControls({
+  //   posXMarmotBasin: {
+  //     value: positions.maligneCanyon[0],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posYMarmotBasin: {
+  //     value: positions.maligneCanyon[1],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posZMarmotBasin: {
+  //     value: positions.maligneCanyon[2],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  // });
+
+  // const { posXPyramidLake, posYPyramidLake, posZPyramidLake } = useControls({
+  //   posXPyramidLake: {
+  //     value: positions.maligneCanyon[0],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posYPyramidLake: {
+  //     value: positions.maligneCanyon[1],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  //   posZPyramidLake: {
+  //     value: positions.maligneCanyon[2],
+  //     min: -10,
+  //     max: 10,
+  //     step: 0.1,
+  //   },
+  // });
+
   return (
     <>
+      <InfoBox
+        imageSrc={"/images/info-boxes/sunshine-village.png"}
+        name={"Mt. Athabasca"}
+        position={[1.1, 1.2, -3]}
+        width={1.86}
+      />
+      <InfoBox
+        imageSrc={"/images/info-boxes/sunshine-village.png"}
+        name={"Marmot Basin"}
+        position={[4.8, 1.2, -6.2]}
+        width={1.86}
+      />
+      <InfoBox
+        imageSrc={"/images/info-boxes/sunshine-village.png"}
+        name={"Pyramid Lake"}
+        position={[5.6, 1.1, -6.0]}
+        width={1.86}
+      />
       <ImagePin
         geometry={geometry}
         imageSrc={"/images/columbia-icefield-skywalk.webp"}

@@ -10,6 +10,8 @@ import { isMobile } from "react-device-detect";
 import price from "../images/price.svg";
 import React, { useState, useRef, useEffect } from "react";
 import selfGuidedTour from "../images/types/self-guided-tour.svg";
+import accommodation from "../images/types/accommodation.svg";
+import food from "../images/types/food.svg";
 import slugify from "../utils/slugify";
 import { useSwipeable } from "react-swipeable";
 
@@ -65,6 +67,16 @@ const Attraction = ({
       setOpen(false);
     }
   }, [index]);
+
+  const determineType = (type) => {
+    if (type === "Accommodation") {
+      return accommodation;
+    } else if (type === "Dining") {
+      return food;
+    } else {
+      return selfGuidedTour;
+    }
+  };
 
   return (
     <div
@@ -164,7 +176,9 @@ const Attraction = ({
                   {currDestination?.details?.type && (
                     <>
                       <span className="attraction__type">
-                        <img src={selfGuidedTour} />{" "}
+                        <img
+                          src={determineType(currDestination.details.type)}
+                        />{" "}
                         {currDestination.details.type}
                       </span>
                     </>

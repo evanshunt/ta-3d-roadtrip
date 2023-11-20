@@ -79,7 +79,7 @@ const destinations = [
       links: [
         {
           text: "Cave and Basin National Historic Site",
-          image: "/images/info/cave-and-basin-national-historic-site.jpg",
+          image: "/images/info/cave-and-basin-national-historic-site.webp",
           url: "https://www.travelalberta.com/listings/cave-and-basin-national-historic-site-1190/",
           linkText: "View More Details",
           external: false,
@@ -505,7 +505,7 @@ const destinations = [
       links: [
         {
           text: "Fairmont Chateau Lake Louise",
-          image: "/images/info/fairmont-chateau-lake-louise.jpg",
+          image: "/images/info/fairmont-chateau-lake-louise.webp",
           url: "https://www.travelalberta.com/listings/the-fairmont-chateau-lake-louise-2085/",
           linkText: "View More Details",
           external: false,

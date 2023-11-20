@@ -149,27 +149,28 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
   return (
     <>
       {!isMobile && (
-        <InfoBox
-          imageSrc={"/images/info-boxes/sunshine-village.png"}
-          name={"Moraine Lake"}
-          position={[-3.7, 1.2, 0.6]}
-          width={1.86}
-        />
-      )}
+        <>
+          <InfoBox
+            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            name={"Moraine Lake"}
+            position={[-3.7, 1.2, 0.6]}
+            width={1.86}
+          />
 
-      <InfoBox
-        imageSrc={"/images/info-boxes/sunshine-village.png"}
-        name={"Bow Peak"}
-        position={[-2.0, 1.2, 0.0]}
-        width={1.86}
-      />
-      {!isMobile && (
-        <InfoBox
-          imageSrc={"/images/info-boxes/sunshine-village.png"}
-          name={"Morant's Curve"}
-          position={[-3.3, 1.1, 0.8]}
-          width={1.86}
-        />
+          <InfoBox
+            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            name={"Bow Peak"}
+            position={[-2.0, 1.2, 0.0]}
+            width={1.86}
+          />
+
+          <InfoBox
+            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            name={"Morant's Curve"}
+            position={[-3.3, 1.1, 0.8]}
+            width={1.86}
+          />
+        </>
       )}
       <ImagePin
         geometry={geometry}

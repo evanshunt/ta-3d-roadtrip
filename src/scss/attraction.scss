@@ -10,7 +10,7 @@
   height: calc(100dvh - 5rem);
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 0 1.75rem;
+  padding: 0 1rem;
   position: fixed;
   transform: translate(0, calc(var(--offset) - 5rem));
   transition: transform 0.25s ease-out;

@@ -1,18 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
 import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import { OrbitControls } from "@react-three/drei";
-// import { Environment } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 import Road from "./models/final/Road.jsx";
 // import { types } from "@theatre/core";
 // import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 
 // import { Top } from "./models/final/Top.jsx";
 // import TopAlt from "./models/final/TopAlt.jsx";
@@ -410,14 +409,14 @@ const Scene = (props) => {
       {/* {addEffect && ( */}
 
       {/* <EffectComposer>
-        <DepthOfField
+      <DepthOfField 
           focusDistance={0.12} // where to focus
           // focusDistance={focusDistance}
           focalLength={0.09} // focal length
           // focalLength={focalLength}
           bokehScale={2.5} // bokeh size
           // bokehScale={bokehScale}
-        />
+        /> 
       </EffectComposer> */}
 
       {/* )} */}

@@ -57,8 +57,8 @@
 
   .arrow {
     background: var(--grey);
-    border-radius: 50%;
     border-bottom-right-radius: 0;
+    border-radius: 50%;
     border-top-right-radius: 0;
     break-before: 0;
     height: 2.8125rem;
@@ -161,7 +161,7 @@
 
 .controls__pip {
   background: var(--white);
-  border: 1px solid var(--white);
+  border: 2px solid var(--white);
   border-radius: 50%;
   color: transparent;
   cursor: pointer;
@@ -190,7 +190,13 @@
   }
 
   &--hidden {
+    background-color: var(--red);
+    border-color: var(--white);
     transform: scale(1.666);
+
+    &--active {
+      border-color: var(--red);
+    }
   }
 
   @media screen and (min-width: 1024px) {
@@ -221,7 +227,7 @@
   text-align: center;
 
   &:nth-child(2) {
-    transform: translate(-50%, 0);
+    transform: translate(-125%, 0);
   }
 
   &:last-child {

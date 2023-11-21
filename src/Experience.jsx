@@ -2,8 +2,9 @@ import * as THREE from "three";
 import animation from "./animation-data/new-pins-days-1-2-3.json";
 import animationMobile from "./animation-data/new-pins-days-1-2-3-mobile.json";
 import { Canvas } from "@react-three/fiber";
-import compassImage from "./images/compass.png";
+import compassImage from "./images/compass.svg";
 import { getProject } from "@theatre/core";
+import gsap from "gsap";
 import { isMobile } from "react-device-detect";
 import React, { createRef, useEffect, useRef, useState } from "react";
 import "core-js/actual/object/group-by";
@@ -19,6 +20,7 @@ import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
+import mainNavImageMobile from "/images/main-nav-mock-mobile.webp";
 
 const beforeAnim = 1.53333;
 
@@ -86,7 +88,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://www.google.com/maps/place/311+Cave+Ave,+Banff,+AB+T1L+1K2/@51.1699163,-115.5950771,16z/data=!3m1!4b1!4m6!3m5!1s0x5370ca6b9ae405bf:0x987bb5e7c19d0a3d!8m2!3d51.1699091!4d-115.5891527!16s%2Fg%2F11bw40lcxk?entry=ttu",
           linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
           external: true,
@@ -139,7 +141,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
           linkText: "1 Mountain Avenue Banff T1L 1B2",
           external: true,
@@ -190,7 +192,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/lunch-at-sky-bistro.webp",
+          // image: "/images/maps/lunch-at-sky-bistro.webp",
           url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
           linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
           external: true,
@@ -241,7 +243,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
           linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
           external: true,
@@ -292,7 +294,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/fairmont-banff-springs-hotel.jpg",
+          // image: "/images/maps/fairmont-banff-springs-hotel.jpg",
           url: "https://maps.google.com/?api=0&q=405+Spray+Avenue+Banff+T1L+1J4&",
           linkText: "405 Spray Avenue Banff, AB T1L 1J4",
           external: true,
@@ -350,14 +352,14 @@ const destinations = [
       links: [
         {
           text: "Carter-Ryan Gallery and Live Art Venue",
-          image: "/images/info/carter-ryan-gallery-and-live-art-venue.webp",
+          image: "/images/info/carter-ryan-gallery.webp",
           url: "https://www.travelalberta.com/listings/carter-ryan-gallery-and-live-art-venue-6091/",
           linkText: "View More Details",
           external: false,
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.google.com/?api=0&q=229+Bear+Street+Banff+T1L+1C3&",
           linkText: "229 Bear Street Banff T1L 1C3",
           external: true,
@@ -408,7 +410,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/u1zVn5hnk2HXhNnZA",
           linkText: "Bow Valley Pkwy, Improvement District No. 9, AB T1L 1K2",
           external: true,
@@ -460,7 +462,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/DxpibBJYAUJ4vAwr9",
           linkText: "1 Whitehorn Rd, Lake Louise, AB T0L 1E0",
           external: true,
@@ -501,7 +503,7 @@ const destinations = [
         "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
       duration: "Overnight",
       price: "$425+",
-      type: "Accomodation",
+      type: "Accommodation",
       links: [
         {
           text: "Fairmont Chateau Lake Louise",
@@ -512,7 +514,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
           linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
           external: true,
@@ -547,7 +549,7 @@ const destinations = [
         },
       ],
       blurb: " Wine, dine, and take in the skyline.",
-      title: "Fairview",
+      title: "Dine at Fairview",
       image: "/images/fairview.webp",
       description:
         "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
@@ -564,7 +566,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
           linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
           external: true,
@@ -594,6 +596,7 @@ const destinations = [
     day: 3,
     visited: false,
     hideFromItinerary: false,
+    stop: 13,
     details: {
       assets: [
         {
@@ -631,7 +634,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/2Kxf17C4Cbf5jrsp7",
           linkText:
             "Highway 93, Icefields Pkwy, Improvement District No. 12, AB T1L 1J3",
@@ -646,6 +649,7 @@ const destinations = [
     day: 3,
     visited: false,
     hideFromItinerary: false,
+    stop: 14,
     details: {
       assets: [
         {
@@ -683,7 +687,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/biUzBE2gvjggayMZ7",
           linkText: "Maligne Canyon, Jasper, AB T0E 1E0",
           external: true,
@@ -697,6 +701,7 @@ const destinations = [
     day: 3,
     visited: false,
     hideFromItinerary: false,
+    stop: 15,
     details: {
       assets: [
         {
@@ -734,7 +739,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/3oj8ncVKtT5HFmrD9",
           linkText: "Whistlers Rd, Jasper, AB T0E 1E0",
           external: true,
@@ -748,6 +753,7 @@ const destinations = [
     day: 3,
     visited: false,
     hideFromItinerary: false,
+    stop: 16,
     details: {
       assets: [
         {
@@ -785,7 +791,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/6GFMdsGrhxsdF7a96",
           linkText: "1 Old Lodge Road Jasper, AB T0E 1E0",
           external: true,
@@ -798,6 +804,7 @@ const destinations = [
     position: 51.966,
     day: 3,
     visited: false,
+    stop: 17,
     details: {
       assets: [
         {
@@ -835,7 +842,7 @@ const destinations = [
         },
         {
           text: "View on Google Maps",
-          image: "/images/maps/cave-and-basin-national-historic-site.jpg",
+          // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
           url: "https://maps.app.goo.gl/VBssinqmJ1V2tpUD8",
           linkText: "1 Old Lodge Road Jasper, AB T0E 1E0",
           external: true,
@@ -870,8 +877,9 @@ const Experience = () => {
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
 
-  const previousIndexRef = React.useRef(0);
+  const previousIndexRef = useRef(0);
   const compassRef = useRef();
+
   const inBetweens = [];
   // uncomment to use saved data
   destinations.forEach((destination) => {
@@ -1040,7 +1048,10 @@ const Experience = () => {
     // } else {
     //   setIsNight(false);
     // }
-    if (inBetweens.includes(index + 1) && index > 0) {
+    if (
+      (inBetweens.includes(index + 1) && index > 0) ||
+      index === destinations.length - 1
+    ) {
       setIsNight(true);
     } else {
       setIsNight(false);
@@ -1074,9 +1085,41 @@ const Experience = () => {
     }deg)`;
   };
 
+  // Testing pins
+  const animateHover = (el = null, index = 0) => {
+    // return; //@TODO: make this work from the itinerary
+    const item = index ? el.current.parent.children[index] : el;
+    // console.log();
+    gsap.to(item.current.scale, {
+      x: 0.04,
+      y: 0.04,
+      z: 0.04,
+      duration: 0.15,
+      ease: "power2.out",
+    });
+  };
+
+  const animateOut = (el = null, index = 0) => {
+    // return; //@TODO: make this work from the itinerary
+    const item = index ? el.current.parent.children[index] : el;
+
+    gsap.to(item.current.scale, {
+      x: 0.03,
+      y: 0.03,
+      z: 0.03,
+      duration: 0.15,
+      ease: "power2.in",
+    });
+  };
+
   return (
     <div className="experience">
-      <img src={mainNavImage} alt="" className="main-nav-image" />
+      <picture>
+        <source media="(max-width: 420px)" srcSet={mainNavImageMobile} />
+        <source media="(min-width: 420px)" src={mainNavImage} alt="" />
+        <img src={mainNavImage} alt="" className="main-nav-image" />
+      </picture>
+
       <div className="wrapper">
         <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
@@ -1084,6 +1127,8 @@ const Experience = () => {
 
         {days[1] && (
           <Itinerary
+            animateHover={animateHover}
+            animateOut={animateOut}
             currDestination={currDestination}
             currDay={currDay}
             days={days}
@@ -1118,7 +1163,7 @@ const Experience = () => {
               : THREE.PCFSoftShadowMap,
             // shadowMapEnabled: true,
           }}
-          frameloop="demand"
+          frameloop={isMobile ? "demand" : "always"}
           {...handlers}
         >
           {/* <PerformanceMonitor
@@ -1136,6 +1181,8 @@ const Experience = () => {
           <SheetProvider sheet={sheet}>
             <Scene
               animDuration={animDuration}
+              animateHover={animateHover}
+              animateOut={animateOut}
               currDay={currDay}
               debug={debug}
               destinations={destinations}

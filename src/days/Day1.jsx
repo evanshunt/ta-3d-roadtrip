@@ -2,22 +2,108 @@ import { NightLights } from "./NightLights";
 import { gsap } from "gsap/dist/gsap";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
-
+import { useTexture } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
-import { useControls } from "leva";
+// import { useControls } from "leva";
 import { isMobile } from "react-device-detect";
+// import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 const Day1 = ({
+  animateHover,
+  animateOut,
   isNight,
   geometry,
   material,
+
   positions,
   sceneIndex,
   setIndex,
   visible,
   wisps,
 }) => {
+  const nightTexture = useTexture("./textures/final/Banff_Lights.webp");
+  const nightLightsRef = useRef();
   // const pointLightRef = useRef();
+
+  // const { posX, posY, posZ, rotationX, rotationY, rotationZ, sizeX, sizeY } =
+  //   useControls("Night", {
+  //     posX: {
+  //       value: -4.6,
+  //       min: -6,
+  //       max: -4,
+  //       step: 0.01,
+  //     },
+  //     posY: {
+  //       value: 1.05,
+  //       min: -1,
+  //       max: 2,
+  //       step: 0.01,
+  //     },
+  //     posZ: {
+  //       value: 2.93,
+  //       min: 2,
+  //       max: 4,
+  //       step: 0.01,
+  //     },
+  //     rotationX: {
+  //       value: -1.6,
+  //       min: -Math.PI * 2,
+  //       max: Math.PI * 2,
+  //       step: 0.1,
+  //     },
+  //     rotationY: {
+  //       value: 0,
+  //       min: -Math.PI * 2,
+  //       max: Math.PI * 2,
+  //       step: 0.1,
+  //     },
+  //     rotationZ: {
+  //       value: -2.8,
+  //       min: -Math.PI,
+  //       max: Math.PI,
+  //       step: 0.1,
+  //     },
+  //     sizeX: {
+  //       value: 0.15,
+  //       min: 0,
+  //       max: 1,
+  //       step: 0.01,
+  //     },
+  //     sizeY: {
+  //       value: 0.15,
+  //       min: 0,
+  //       max: 1,
+  //       step: 0.01,
+  //     },
+  //   });
+
+  const animateLights = (direction) => {
+    const tl = gsap.timeline({});
+    switch (direction) {
+      case "in":
+        tl.to(
+          nightLightsRef.current.material,
+          {
+            opacity: 1,
+            duration: 1,
+          },
+          "<"
+        );
+
+        break;
+      case "out":
+        tl.to(
+          nightLightsRef.current.material,
+          {
+            opacity: 0,
+            duration: 1,
+          },
+          "<"
+        );
+
+        break;
+    }
+  };
 
   // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
   //   sunshineVillageX: {
@@ -133,6 +219,14 @@ const Day1 = ({
 
   // if (!visible) return null;
 
+  useEffect(() => {
+    if (isNight) {
+      animateLights("in");
+    } else {
+      animateLights("out");
+    }
+  }, [isNight]);
+
   return (
     <>
       {!isMobile && (
@@ -159,6 +253,8 @@ const Day1 = ({
 
       <ImagePin
         active={sceneIndex === 0}
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/cave-and-basin-national-historic-site.webp"}
         material={material}
@@ -171,6 +267,8 @@ const Day1 = ({
 
       <ImagePin
         active={sceneIndex === 1}
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/banff-gondola.webp"}
         material={material}
@@ -183,6 +281,8 @@ const Day1 = ({
 
       <ImagePin
         active={sceneIndex === 2}
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/sky-bistro.webp"}
         material={material}
@@ -195,6 +295,8 @@ const Day1 = ({
 
       <ImagePin
         active={sceneIndex === 3}
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/banff-upper-hot-springs.webp"}
         material={material}
@@ -207,6 +309,8 @@ const Day1 = ({
 
       <ImagePin
         active={sceneIndex === 4}
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/fairmont-banff-springs-hotel.webp"}
         material={material}
@@ -216,6 +320,25 @@ const Day1 = ({
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
       />
+
+      <mesh
+        ref={nightLightsRef}
+        position={[-4.6, 1.05, 2.93]}
+        // position={[posX, posY, posZ]}
+        rotation={[-1.6, 0, -1.7]}
+        // rotation={[rotationX, rotationY, rotationZ]}
+      >
+        <planeGeometry args={[0.15, 0.15]} />
+        <meshStandardMaterial
+          texture={nightTexture}
+          opacity={0}
+          map={nightTexture}
+          map-flipY={true}
+          map-generateMipmaps={true}
+          map-anisotropy={16}
+          transparent
+        />
+      </mesh>
 
       <NightLights
         isNight={isNight}

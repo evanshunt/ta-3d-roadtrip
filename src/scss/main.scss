@@ -48,10 +48,14 @@ body {
 .main-nav-image {
   width: 100%;
   // height: 100px;
-  aspect-ratio: 72/5;
+  aspect-ratio: 414/72;
   position: fixed;
   top: 0;
   z-index: 999;
+
+  @media screen and (min-width: 420px) {
+    aspect-ratio: 72/5;
+  }
 }
 
 .loading {
@@ -104,15 +108,12 @@ body {
 .compass-container {
   transform-style: preserve-3d;
   position: fixed;
-  top: 2rem;
+  top: 20vw;
   right: 1rem;
 
   @media screen and (min-width: 1024px) {
-    transform: rotateX(-40deg);
-    bottom: 2rem;
-    left: 2rem;
-    right: auto;
-    top: auto;
+    top: 7.5vw;
+    right: calc(24vw + 1rem);
   }
 }
 
@@ -121,7 +122,7 @@ body {
   height: auto;
 
   @media screen and (min-width: 1024px) {
-    width: 10rem;
+    width: 5rem;
   }
 }
 
@@ -133,11 +134,11 @@ body {
   left: 0;
   padding: 0.625rem 1rem;
   position: fixed;
-  top: 2.5rem;
+  top: 17.5vw;
 
   z-index: 3;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 420px) {
     top: 6.75vw;
   }
 
@@ -147,7 +148,11 @@ body {
 }
 
 .experience {
-  padding-top: 6.5vw;
+  padding-top: 17.5vw;
+
+  @media screen and (min-width: 420px) {
+    padding-top: 6.5vw;
+  }
 }
 
 .loading {

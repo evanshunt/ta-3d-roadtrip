@@ -320,6 +320,8 @@ const Scene = (props) => {
         {/* <HTMLInfo position={positions.caveAndBasin} /> */}
         <group position={[0.03, 0.0, 0.07]}>
           <Day1
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
             isNight={props.isNight}
             positions={positions}
             sceneIndex={props.index}
@@ -347,6 +349,7 @@ const Scene = (props) => {
         <group position={[0.03, 0.0, 0.07]}>
           <Day3
             positions={positions}
+            isNight={props.isNight}
             sceneIndex={props.index}
             setIndex={props.setIndex}
             visible={true}

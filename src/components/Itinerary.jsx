@@ -6,6 +6,8 @@ import { useSwipeable } from "react-swipeable";
 import "../scss/itinerary.scss";
 
 const Itinerary = ({
+  animateHover,
+  animateOut,
   currDay,
   currDestination,
   days,
@@ -20,7 +22,11 @@ const Itinerary = ({
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
 
-  // @TODO: this is just hacked in for demo USE INBETWEENS
+  const toggleDrawer = () => {
+    setOpen(!open);
+    console.log({ open });
+  };
+
   useEffect(() => {
     if (isMobile || !currDestination) return;
     if (inBetweens.includes(index)) {
@@ -75,23 +81,17 @@ const Itinerary = ({
 
   return (
     <>
-      {/* <button
-        aria-label="Toggle itinerary days list"
-        className="itinerary__toggle"
-        // On desktop, this should be hidden
-        onClick={() => setOpen(!open)}
-      >
-        {listText()}
-        <span className="itinerary__icon"></span>
-        <img src={arrowDown} alt="Open List" className="itinerary__icon" />
-      </button> */}
       <div
         ref={itineraryRef}
         className={`${
           isOpen ? "itinerary itinerary--open" : "itinerary" //@TODO: fix this
         }`}
       >
-        <div className="itinerary__header__mobile" {...handlers}>
+        <div
+          className="itinerary__header__mobile"
+          {...handlers}
+          onClick={toggleDrawer}
+        >
           <img
             hidden={currDestination?.details?.title ? false : true}
             className={`${
@@ -102,10 +102,13 @@ const Itinerary = ({
             src={arrowUp}
           />
         </div>
+
         <ul className="itinerary__list">
           {grouped.map((day, index) => {
             return (
               <Day
+                animateHover={animateHover}
+                animateOut={animateOut}
                 currDestination={currDestination}
                 drivingInfo={{
                   copy: days[day][0]?.drivingInfo?.copy,

@@ -3,6 +3,8 @@ import caretImage from "../images/caret-right.svg";
 import { isMobile } from "react-device-detect";
 
 const Stop = ({
+  animateHover,
+  animateOut,
   currDestination,
   handleIndex,
   index,
@@ -20,6 +22,12 @@ const Stop = ({
       } ${stop.visited ? "itinerary__stop--visited" : ""}`}
     >
       <div
+        onMouseEnter={() => {
+          animateHover(null, index);
+        }}
+        onMouseOut={() => {
+          animateOut(null, index);
+        }}
         onClick={() => {
           showAttraction();
           handleIndex("next", stop.stop);

@@ -12,7 +12,7 @@ const TopAltAgain = (props) => {
   // const texture = useTexture("/textures/final/baked-new-dark.webp");
   const texture = isMobile
     ? useTexture("/textures/final/baked-new-dark-mobile.webp")
-    : useTexture("/textures/final/baked-new-dark.webp");
+    : useTexture("/textures/final/terrain-with-banff.webp");
   // const textureMobile = useTexture("/textures/final/baked-new-dark.webp");
 
   // const {

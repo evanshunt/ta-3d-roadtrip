@@ -151,23 +151,16 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
       {!isMobile && (
         <>
           <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            imageSrc={"/images/info-boxes/moraine-lake.png"}
             name={"Moraine Lake"}
             position={[-3.7, 1.2, 0.6]}
-            width={1.86}
+            width={1.93}
           />
 
           <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            imageSrc={"/images/info-boxes/bow-peak.png"}
             name={"Bow Peak"}
             position={[-2.0, 1.2, 0.0]}
-            width={1.86}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
-            name={"Morant's Curve"}
-            position={[-3.3, 1.1, 0.8]}
             width={1.86}
           />
         </>

@@ -4,6 +4,8 @@ import { DrivingInfo } from "./DrivingInfo";
 import Stop from "./Stop";
 
 const Day = ({
+  animateHover,
+  animateOut,
   currDestination,
   description,
   drivingInfo,
@@ -27,6 +29,8 @@ const Day = ({
         {stops.map((stop, index) => (
           <>
             <Stop
+              animateHover={animateHover}
+              animateOut={animateOut}
               handleIndex={handleIndex}
               index={index}
               key={index}

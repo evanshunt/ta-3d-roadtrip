@@ -1,14 +1,15 @@
 import React, { useRef } from "react";
 import { Billboard, Image, useCursor } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
-import { gsap } from "gsap";
+
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
-import shadowImage from "../images/shadow.svg";
 
 const ImagePin = ({
   active,
+  animateHover,
+  animateOut,
   geometry,
   imageSrc,
   index,
@@ -26,7 +27,6 @@ const ImagePin = ({
   const backgroundRef = useRef();
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
   let opacity = 0;
-  const tl = gsap.timeline();
 
   useFrame(({ state, delta }) => {
     theatreObject.onValuesChange((newValues) => {
@@ -35,25 +35,25 @@ const ImagePin = ({
     });
   });
 
-  const animateHover = () => {
-    tl.to(backgroundHaloRef.current.scale, {
-      x: 0.04,
-      y: 0.04,
-      z: 0.04,
-      duration: 0.3,
-      ease: "power2.in",
-    });
-  };
+  // const animateHover = (el) => {
+  //   tl.to(backgroundHaloRef.current.scale, {
+  //     x: 0.04,
+  //     y: 0.04,
+  //     z: 0.04,
+  //     duration: 0.15,
+  //     ease: "power2.out",
+  //   });
+  // };
 
-  const animateOut = () => {
-    tl.to(backgroundHaloRef.current.scale, {
-      x: 0.03,
-      y: 0.03,
-      z: 0.03,
-      duration: 0.25,
-      ease: "power2.out",
-    });
-  };
+  // const animateOut = (el) => {
+  //   tl.to(backgroundHaloRef.current.scale, {
+  //     x: 0.03,
+  //     y: 0.03,
+  //     z: 0.03,
+  //     duration: 0.15,
+  //     ease: "power2.in",
+  //   });
+  // };
 
   // const { posX, posY, posZ } = useControls({
   //   posX: {
@@ -145,13 +145,13 @@ const ImagePin = ({
 
         <e.mesh
           castShadow
-          ref={backgroundRef}
+          // ref={backgroundRef}
           name={name}
           onPointerEnter={() => {
-            animateHover();
+            animateHover(backgroundHaloRef);
           }}
           onPointerLeave={() => {
-            animateOut();
+            animateOut(backgroundHaloRef);
           }}
           onClick={(e) => {
             setIndex(index);

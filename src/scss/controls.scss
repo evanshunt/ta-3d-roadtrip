@@ -56,9 +56,10 @@
   }
 
   .arrow {
+    border-radius: 50%;
+
     background: var(--grey);
     border-bottom-right-radius: 0;
-    border-radius: 50%;
     border-top-right-radius: 0;
     break-before: 0;
     height: 2.8125rem;
@@ -161,7 +162,7 @@
 
 .controls__pip {
   background: var(--white);
-  border: 2px solid var(--white);
+  border: 1px solid var(--white);
   border-radius: 50%;
   color: transparent;
   cursor: pointer;
@@ -200,6 +201,7 @@
   }
 
   @media screen and (min-width: 1024px) {
+    border: 2x solid var(--white);
     height: 0.6875rem;
     width: 0.6875rem;
   }

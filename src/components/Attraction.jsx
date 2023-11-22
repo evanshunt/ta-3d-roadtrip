@@ -95,7 +95,9 @@ const Attraction = ({
             <div className="attraction__wrapper">
               <div
                 className="attraction__header__mobile"
-                onClick={toggleDrawer}
+                onClick={
+                  currDestination?.hideFromItinerary ? null : toggleDrawer
+                }
                 {...handlers}
               >
                 {!currDestination?.hideFromItinerary && (

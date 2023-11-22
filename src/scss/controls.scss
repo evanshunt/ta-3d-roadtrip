@@ -161,12 +161,13 @@
 }
 
 .controls__pip {
+  aspect-ratio: 1;
   background: var(--white);
   border: 1px solid var(--white);
   border-radius: 50%;
+  box-sizing: content-box;
   color: transparent;
   cursor: pointer;
-  height: 0.35rem;
   margin: 0 0.5rem;
   padding: 0;
   transition: all 0.2s linear;
@@ -202,8 +203,7 @@
 
   @media screen and (min-width: 1024px) {
     border-width: 2px;
-    height: 0.6875rem;
-    width: 0.6875rem;
+    width: 0.44rem;
   }
 }
 

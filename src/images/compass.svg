@@ -1,21 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="66" height="74" fill="none">
-  <g filter="url(#a)">
-    <circle cx="33.0001" cy="31.0002" r="22.6937" fill="#000" fill-opacity=".7" shape-rendering="crispEdges" transform="rotate(30 33.0001 31.0002)"/>
+  <g>
+    <circle cx="33.0003" cy="31.0002" r="22.6937" fill="#000" fill-opacity=".7" shape-rendering="crispEdges" transform="rotate(30 33.0003 31.0002)"/>
   </g>
-  <path fill="#9C0F00" d="M42.4567 24.4161c1.0112-.3045 1.7427.9626.9734 1.686l-8.6219 8.108-3.6842-6.3812 11.3327-3.4128Z"/>
-  <path fill="#fff" d="M42.4567 24.4161c1.0112-.3045 1.7427.9626.9734 1.686l-8.6219 8.108-3.6842-6.3812 11.3327-3.4128Z"/>
-  <path stroke="#9C0F00" d="m22.2623 36.636 8.74-8.0168 1.5305 2.6508 1.5304 2.6508-11.3128 3.5607c-.5101.1605-.8822-.484-.4881-.8455Z"/>
-  <path stroke="#fff" d="m22.2623 36.636 8.74-8.0168 1.5305 2.6508 1.5304 2.6508-11.3128 3.5607c-.5101.1605-.8822-.484-.4881-.8455Z"/>
-  <defs>
-    <filter id="a" width="65.395" height="65.3945" x=".30249" y="8.30273" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dy="10"/>
-      <feGaussianBlur stdDeviation="5"/>
-      <feComposite in2="hardAlpha" operator="out"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
-      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2076_14910"/>
-      <feBlend in="SourceGraphic" in2="effect1_dropShadow_2076_14910" result="shape"/>
-    </filter>
-  </defs>
+  <path fill="#9C0F00" d="M42.4569 24.4161c1.0112-.3045 1.7428.9626.9735 1.686l-8.6219 8.108-3.6842-6.3812 11.3326-3.4128Z"/>
+  <path fill="#fff" d="M42.4569 24.4161c1.0112-.3045 1.7428.9626.9735 1.686l-8.6219 8.108-3.6842-6.3812 11.3326-3.4128Z"/>
+  <path stroke="#9C0F00" d="M22.7506 37.4815c-.5101.1605-.8822-.484-.4881-.8455l8.7401-8.0168L32.533 31.27l1.5305 2.6508-11.3129 3.5607Z"/>
+  <path stroke="#fff" d="M22.7506 37.4815c-.5101.1605-.8822-.484-.4881-.8455l8.7401-8.0168L32.533 31.27l1.5305 2.6508-11.3129 3.5607Z"/>
+
 </svg>

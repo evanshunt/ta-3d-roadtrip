@@ -1,21 +1,8 @@
-<svg width="66" height="74" viewBox="0 0 66 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_2060_14902)">
-<circle cx="33.0001" cy="30.9998" r="22.6937" transform="rotate(-30 33.0001 30.9998)" fill="black" fill-opacity="0.7" shape-rendering="crispEdges"/>
-</g>
-<path d="M32.0264 19.5179C32.2683 18.4899 33.7314 18.4899 33.9733 19.5179L36.684 31.0386H29.3157L32.0264 19.5179Z" fill="#9C0F00"/>
-<path d="M32.0264 19.5179C32.2683 18.4899 33.7314 18.4899 33.9733 19.5179L36.684 31.0386H29.3157L32.0264 19.5179Z" fill="white"/>
-<path d="M32.512 43.1169L29.9393 31.5393L33.0001 31.5393L36.061 31.5393L33.4882 43.1169C33.3722 43.6389 32.6281 43.6389 32.512 43.1169Z" stroke="#9C0F00"/>
-<path d="M32.512 43.1169L29.9393 31.5393L33.0001 31.5393L36.061 31.5393L33.4882 43.1169C33.3722 43.6389 32.6281 43.6389 32.512 43.1169Z" stroke="white"/>
-<defs>
-<filter id="filter0_d_2060_14902" x="0.302734" y="8.30273" width="65.3948" height="65.3945" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="10"/>
-<feGaussianBlur stdDeviation="5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2060_14902"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2060_14902" result="shape"/>
-</filter>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="74" fill="none">
+  <g filter="url(#a)">
+    <circle cx="33.0001" cy="31.0002" r="22.6937" fill="#000" fill-opacity=".7" shape-rendering="crispEdges" transform="rotate(30 33.0001 31.0002)"/>
+  </g>
+  <path fill="#fff" d="M42.4567 24.4161c1.0112-.3045 1.7427.9626.9734 1.686l-8.6219 8.108-3.6842-6.3812 11.3327-3.4128Z"/>
+  <path stroke="#fff" d="m22.2623 36.636 8.74-8.0168 1.5305 2.6508 1.5304 2.6508-11.3128 3.5607c-.5101.1605-.8822-.484-.4881-.8455Z"/>
+ 
 </svg>

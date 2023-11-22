@@ -229,23 +229,23 @@
   text-align: center;
 
   &:nth-child(2) {
-    transform: translate(-125%, 0);
+    transform: translate(-100%, 0);
   }
 
   &:last-child {
     margin-right: 0;
-    transform: translate(-150%, 0);
+    transform: translate(-125%, 0);
   }
 
   @media screen and (min-width: 1024px) {
     font-size: 0.9375rem;
 
     &:nth-child(2) {
-      transform: translate(-100%, 0);
+      transform: translate(-50%, 0);
     }
 
     &:last-child {
-      transform: translate(-125%, 0);
+      transform: translate(-100%, 0);
     }
   }
 }

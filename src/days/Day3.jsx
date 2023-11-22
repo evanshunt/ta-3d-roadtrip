@@ -1,7 +1,8 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { useControls } from "leva";
+import { isMobile } from "react-device-detect";
+// import { useControls } from "leva";
 import { NightLights } from "./NightLights";
 
 const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
@@ -188,24 +189,29 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
 
   return (
     <>
-      <InfoBox
-        imageSrc={"/images/info-boxes/athabasca-falls.png"}
-        name={"Mt. Athabasca"}
-        position={[1.1, 1.2, -3]}
-        width={1.86}
-      />
-      <InfoBox
-        imageSrc={"/images/info-boxes/marmot-basin.png"}
-        name={"Marmot Basin"}
-        position={[4.8, 1.2, -6.2]}
-        width={1.86}
-      />
-      <InfoBox
-        imageSrc={"/images/info-boxes/pyramid-lake.png"}
-        name={"Pyramid Lake"}
-        position={[5.6, 1.1, -6.0]}
-        width={1.86}
-      />
+      {!isMobile && (
+        <>
+          <InfoBox
+            imageSrc={"/images/info-boxes/athabasca-falls.png"}
+            name={"Mt. Athabasca"}
+            position={[1.1, 1.2, -3]}
+            width={1.86}
+          />
+          <InfoBox
+            imageSrc={"/images/info-boxes/marmot-basin.png"}
+            name={"Marmot Basin"}
+            position={[4.8, 1.2, -6.2]}
+            width={1.86}
+          />
+          <InfoBox
+            imageSrc={"/images/info-boxes/pyramid-lake.png"}
+            name={"Pyramid Lake"}
+            position={[5.6, 1.1, -6.0]}
+            width={1.86}
+          />
+        </>
+      )}
+
       <ImagePin
         geometry={geometry}
         imageSrc={"/images/columbia-icefield-skywalk.webp"}

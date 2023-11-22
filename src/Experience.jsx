@@ -855,7 +855,7 @@ const destinations = [
 const determineAmount = (index) => {
   if (index < 1) return 0;
 
-  return (Math.abs(index - 1) / (destinations.length - 1)) * 100;
+  return (Math.abs(index) / destinations.length) * 100;
 };
 
 const Experience = () => {
@@ -1242,7 +1242,7 @@ const Experience = () => {
                 />
 
                 {Object.keys(days).map((day, i) => {
-                  if (day === "0") return;
+                  // if (day === "0") return;
 
                   return (
                     <>

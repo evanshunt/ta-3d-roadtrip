@@ -21,6 +21,7 @@ import Intro from "./Intro";
 import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
 import mainNavImageMobile from "/images/main-nav-mock-mobile.webp";
+import { AdaptiveDpr, Loader } from "@react-three/drei";
 
 const beforeAnim = 1.53333;
 
@@ -1152,13 +1153,13 @@ const Experience = () => {
           <img src={closeImage} alt="" />
           Close the 3D Tour
         </button>
-
+        {/* <Loader /> */}
         <Canvas
-          dpr={isMobile ? 1.75 : window.devicePixelRatio * 0.75} // decreasing to 1.5 smooths things out a bit
+          dpr={isMobile ? 1.5 : window.devicePixelRatio * 0.75} // decreasing to 1.5 smooths things out a bit
           // dpr={1.5}
           shadows={true}
           gl={{
-            antialias: false,
+            antialias: true,
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
             shadowMapType: isMobile
@@ -1182,6 +1183,7 @@ const Experience = () => {
           {/* <SoftShadows size={1.3} focus={9} samples={6} /> */}
           {/* <ScrollControls pages={3}> */}
           <SheetProvider sheet={sheet}>
+            <AdaptiveDpr />
             <Scene
               animDuration={animDuration}
               animateHover={animateHover}

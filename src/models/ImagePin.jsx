@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Billboard, Image, useCursor } from "@react-three/drei";
+import { Billboard, Image, meshBounds } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 
 import { types } from "@theatre/core";
@@ -163,6 +163,7 @@ const ImagePin = ({
           theatreKey={`Pins / ${name} / Background ${name}`}
           scale={0.02}
           material={material}
+          raycast={meshBounds}
           geometry={geometry}
         />
 

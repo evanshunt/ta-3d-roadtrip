@@ -4,10 +4,8 @@ import { editable as e } from "@theatre/r3f";
 
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
 
 const ImagePin = ({
-  active,
   animateHover,
   animateOut,
   geometry,
@@ -16,7 +14,6 @@ const ImagePin = ({
   material,
   name,
   position,
-  scale,
   setIndex,
 }) => {
   // const [imageOpacity, setImageOpacity] = React.useState(0);
@@ -28,7 +25,7 @@ const ImagePin = ({
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
   let opacity = 0;
 
-  useFrame(({ state, delta }) => {
+  useFrame(({}) => {
     theatreObject.onValuesChange((newValues) => {
       if (!imageRef.current) return;
       imageRef.current.children[0].material.opacity = newValues.opacity;
@@ -93,13 +90,7 @@ const ImagePin = ({
   //   return () => ctx.revert(); // cleanup!
   // }, []);
   return (
-    // <Billboard position={position} scale={scale}>
-
-    <Billboard
-      position={[position[0], position[1], position[2]]}
-      // position={[posX, posY, posZ]}
-      // scale={scale}
-    >
+    <Billboard position={[position[0], position[1], position[2]]}>
       <e.group theatreKey={`Pins / ${name} / Group`}>
         <e.group
           ref={imageRef}
@@ -117,8 +108,7 @@ const ImagePin = ({
             transparent
             url={imageSrc}
             opacity={opacity}
-            // opacity={0}
-            // scale={1.33}
+            receiveShadow={false}
           />
         </e.group>
 
@@ -129,6 +119,7 @@ const ImagePin = ({
           theatreKey={`Pins / ${name} / Stem ${name}`}
           scale={[0.075, 0.2, 0.075]}
           material={material}
+          receiveShadow={false}
         >
           <meshBasicMaterial color={0x9c0f00} />
           <cylinderGeometry args={[0.03, 0.03, 2.5, 6]} />
@@ -137,6 +128,7 @@ const ImagePin = ({
         <e.mesh
           position={[0, 0, -0.0305]}
           castShadow
+          receiveShadow={false}
           theatreKey={`Pins / ${name} / Shadow ${name}`}
         >
           <sphereGeometry args={[0.03, 16, 16]} />
@@ -145,7 +137,6 @@ const ImagePin = ({
 
         <e.mesh
           castShadow
-          // ref={backgroundRef}
           name={name}
           onPointerEnter={() => {
             animateHover(backgroundHaloRef);
@@ -157,13 +148,11 @@ const ImagePin = ({
             setIndex(index);
           }}
           position-z={-0.02}
-          // position-y={position[1] + 0.05}
-          // position-y={1.25}
-
           theatreKey={`Pins / ${name} / Background ${name}`}
           scale={0.02}
           material={material}
           raycast={meshBounds}
+          receiveShadow={false}
           geometry={geometry}
         />
 
@@ -171,17 +160,15 @@ const ImagePin = ({
           ref={backgroundHaloRef}
           castShadow
           position-z={-0.03}
-          // position-y={position[1] + 0.05}
-          // position-y={1.25}
           theatreKey={`Pins / ${name} / Background Halo ${name}`}
           scale={0.03}
           geometry={geometry}
+          receiveShadow={false}
         >
           <meshStandardMaterial
             transparent={true}
             color={0x9c0f00}
             opacity={0.4}
-            // alphaTest={0.4}
           />
         </e.mesh>
       </e.group>

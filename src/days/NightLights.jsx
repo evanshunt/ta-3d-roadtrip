@@ -1,6 +1,7 @@
 import { Sparkles } from "@react-three/drei";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
+import { isMobile } from "react-device-detect";
 
 export const NightLights = ({ position, isNight }) => {
   const pointLightRef1 = useRef();
@@ -36,7 +37,26 @@ export const NightLights = ({ position, isNight }) => {
 
   return (
     <>
-      {isNight && <Sparkles color={0xf47d0f} position={position} speed={0.1} />}
+      {isNight && (
+        <>
+          <Sparkles
+            count={isMobile ? 50 : 125}
+            color={0xffffff}
+            position={position}
+            scale={0.4}
+            size={0.6}
+            speed={0.1}
+          />
+          <Sparkles
+            count={isMobile ? 50 : 125}
+            color={0xf47d0f}
+            position={position}
+            speed={0.1}
+            size={0.8}
+            scale={0.4}
+          />
+        </>
+      )}
       <pointLight
         ref={pointLightRef1}
         color={0xf47d0f}

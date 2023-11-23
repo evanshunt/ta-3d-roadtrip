@@ -13,7 +13,8 @@
   padding-bottom: 5rem;
   position: fixed;
   top: 0;
-  transform: translate(-100%, 5rem);
+  transition: transform 0.5s ease-in-out;
+  transform: translate(0, calc(100% + 5rem));
   width: 100%;
   z-index: 2;
 

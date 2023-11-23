@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-import {
-  DepthOfField,
-  EffectComposer,
-  TiltShift2,
-} from "@react-three/postprocessing";
+// import {
+//   DepthOfField,
+//   EffectComposer,
+//   TiltShift2,
+// } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import { OrbitControls } from "@react-three/drei";
+// import { Environment, Lightformer, OrbitControls } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
@@ -17,48 +17,15 @@ import Road from "./models/final/Road.jsx";
 // import { useFrame } from "@react-three/fiber";
 // import { useControls } from "leva";
 
-// import { Top } from "./models/final/Top.jsx";
-// import TopAlt from "./models/final/TopAlt.jsx";
 import TopAltAgain from "./models/final/TopAltAgain.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
-import HTMLInfo from "./components/HTMLInfo.jsx";
+import { Clouds } from "@react-three/drei";
+// import HTMLInfo from "./components/HTMLInfo.jsx";
 
-// cam pos
-// [-4.95, 3.216, 10.292]
-
-// const cloudTimeline = gsap.timeline({
-//   repeat: -1,
-// });
-
-// const animateCloud = (cloudRef, tl, cloudIndex) => {
-//   const info = {
-//     // Cloud 1
-//     1: {
-//       x: 1.7,
-//       y: 0.85,
-//       z: 1.3,
-//       duration: 35,
-//     },
-//   };
-
-//   tl.to(cloudRef.current.position, {
-//     x: info[cloudIndex].x,
-//     y: info[cloudIndex].y,
-//     z: info[cloudIndex].z,
-//     duration: info[cloudIndex].duration,
-//     ease: "none",
-//     // onStart: () => {
-//     //   invalidate();
-//     // },
-//     // onComplete: () => {
-//     //   invalidate();
-//     // },
-//   });
-// };
-
+// @TODO: move this into the data json from Experience.jsx
 const positions = {
   // Day 1:
   // caveAndBasin: [-4.4, 1.18, 2.75],
@@ -81,11 +48,11 @@ const positions = {
   fairview: [-3.2, 1.11, 0.57],
 
   // Day 3:
-  columbiaIcefieldSkywalk: [1.65, 1.14, -3.2],
-  maligneCanyon: [5.4, 1.14, -5.6],
-  jasperSkyTram: [5.0, 1.13, -6.0],
-  fairmontJasperParkLodge: [5.35, 1.15, -5.7],
-  jasperPlanetarium: [5.4, 1.15, -5.65],
+  columbiaIcefieldSkywalk: [1.65, 1.1, -3.2],
+  maligneCanyon: [5.4, 1.05, -5.6],
+  jasperSkyTram: [5.0, 1.05, -6.0],
+  fairmontJasperParkLodge: [5.35, 1.08, -5.7],
+  jasperPlanetarium: [5.4, 1.06, -5.65],
 };
 
 // Reused geometries and materials
@@ -335,6 +302,8 @@ const Scene = (props) => {
 
         <group position={[0.03, 0.0, 0.07]}>
           <Day2
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
             isNight={props.isNight}
             positions={positions}
             sceneIndex={props.index}
@@ -348,6 +317,8 @@ const Scene = (props) => {
 
         <group position={[0.03, 0.0, 0.07]}>
           <Day3
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
             positions={positions}
             isNight={props.isNight}
             sceneIndex={props.index}
@@ -364,34 +335,36 @@ const Scene = (props) => {
         </e.group>
 
       */}
-        <e.group
-          // position={[cloudPosX, cloudPosY, cloudPosZ]}
-          position={[-3.8, 1.75, 3.5]}
-          theatreKey="Cloud Banff"
-        >
-          <Cloud scale={0.075} />
-        </e.group>
-
-        <e.group
-          theatreKey="Cloud Lake Louise 2"
-          // position={[cloudPosX, cloudPosY, cloudPosZ]}
-          position={[-5.76, 1.76, 0.26]}
-        >
-          <Cloud scale={0.075} />
-        </e.group>
-
-        <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
-          <Cloud
-            // works scale = -0.03
-            // works position = [-2.7, 0.85, 2.30]
-            //
-            scale={0.07}
-            // scale={cloudScale}
-            //  position={[-0.8, 1.5, 2.6]}
-
+        <Clouds>
+          <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
-          />
-        </e.group>
+            position={[-3.8, 1.75, 3.5]}
+            theatreKey="Cloud Banff"
+          >
+            <Cloud scale={0.075} />
+          </e.group>
+
+          <e.group
+            theatreKey="Cloud Lake Louise 2"
+            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+            position={[-5.76, 1.76, 0.26]}
+          >
+            <Cloud scale={0.075} />
+          </e.group>
+
+          <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
+            <Cloud
+              // works scale = -0.03
+              // works position = [-2.7, 0.85, 2.30]
+              //
+              scale={0.07}
+              // scale={cloudScale}
+              //  position={[-0.8, 1.5, 2.6]}
+
+              // position={[cloudPosX, cloudPosY, cloudPosZ]}
+            />
+          </e.group>
+        </Clouds>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

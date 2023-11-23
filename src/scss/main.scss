@@ -113,7 +113,7 @@ body {
 
   @media screen and (min-width: 1024px) {
     top: 7.5vw;
-    right: calc(24vw + 1rem);
+    right: 27vw;
   }
 }
 
@@ -139,7 +139,8 @@ body {
   z-index: 3;
 
   @media screen and (min-width: 420px) {
-    top: 6.75vw;
+    left: 1.75rem;
+    top: calc(6.75vw + 1rem);
   }
 
   img {

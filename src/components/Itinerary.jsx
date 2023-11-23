@@ -18,14 +18,15 @@ const Itinerary = ({
   isOpen,
   setIndex,
   showAttraction,
+  toggleItinerary,
 }) => {
   const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
 
-  const toggleDrawer = () => {
-    setOpen(!open);
-    console.log({ open });
-  };
+  // const toggleDrawer = () => {
+  //   setOpen(!open);
+  //   console.log({ open });
+  // };
 
   useEffect(() => {
     if (isMobile || !currDestination) return;
@@ -83,14 +84,12 @@ const Itinerary = ({
     <>
       <div
         ref={itineraryRef}
-        className={`${
-          isOpen ? "itinerary itinerary--open" : "itinerary" //@TODO: fix this
-        }`}
+        className={`${isOpen ? "itinerary itinerary--open" : "itinerary"}`}
       >
         <div
           className="itinerary__header__mobile"
           {...handlers}
-          onClick={toggleDrawer}
+          onClick={toggleItinerary}
         >
           <img
             hidden={currDestination?.details?.title ? false : true}

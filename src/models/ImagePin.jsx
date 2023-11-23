@@ -24,7 +24,7 @@ const ImagePin = ({
   const imageRef = useRef();
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
-  const backgroundRef = useRef();
+
   // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
   let opacity = 0;
 
@@ -131,7 +131,7 @@ const ImagePin = ({
           material={material}
         >
           <meshBasicMaterial color={0x9c0f00} />
-          <cylinderGeometry args={[0.02, 0.02, 2.5, 6]} />
+          <cylinderGeometry args={[0.03, 0.03, 2.5, 6]} />
         </e.mesh>
 
         <e.mesh

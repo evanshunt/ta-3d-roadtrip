@@ -27,7 +27,7 @@ function Cloud({
           0.4 +
           Math.sin(((index + 1) / segments) * Math.PI) *
             ((0.2 + Math.random()) * 10),
-        density: Math.max(0.2, Math.random()),
+        density: 0.6,
         rotation: Math.max(0.002, 0.005 * Math.random()) * speed,
       })),
     [width, segments, speed]

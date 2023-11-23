@@ -986,6 +986,10 @@ const Experience = () => {
     // ...config
   });
 
+  const toggleItinerary = () => {
+    setItineraryOpen(!itineraryOpen);
+  };
+
   const showItinerary = () => {
     setItineraryOpen(true);
   };
@@ -1140,6 +1144,7 @@ const Experience = () => {
             nextDestination={nextDestination}
             showAttraction={showAttraction}
             stopCount={destinations.length - 1}
+            toggleItinerary={toggleItinerary}
           />
         )}
 
@@ -1161,7 +1166,7 @@ const Experience = () => {
               : THREE.PCFSoftShadowMap,
             // shadowMapEnabled: true,
           }}
-          frameloop={isMobile ? "demand" : "always"}
+          // frameloop={isMobile ? "demand" : "always"}
           {...handlers}
         >
           {/* <PerformanceMonitor
@@ -1261,7 +1266,7 @@ const Experience = () => {
                                 }
                                   `}
                               onClick={() => {
-                                setIndex(i);
+                                handleIndex("next", destination.stop);
                               }}
                             ></li>
                           );

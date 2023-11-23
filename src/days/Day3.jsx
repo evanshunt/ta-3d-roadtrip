@@ -5,7 +5,15 @@ import { isMobile } from "react-device-detect";
 // import { useControls } from "leva";
 import { NightLights } from "./NightLights";
 
-const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
+const Day3 = ({
+  animateHover,
+  animateOut,
+  geometry,
+  isNight,
+  material,
+  positions,
+  setIndex,
+}) => {
   // const { iceFieldPosX, iceFieldPosY, iceFieldPosZ } = useControls(
   //   "Icefield Skywalk",
   //   {
@@ -213,9 +221,11 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
       )}
 
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/columbia-icefield-skywalk.webp"}
-        index={11}
+        index={13}
         material={material}
         name={"Columbia Icefield Skywalk"}
         position={positions.columbiaIcefieldSkywalk}
@@ -223,9 +233,11 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/maligne-canyon.webp"}
-        index={12}
+        index={14}
         material={material}
         name={"Maligne Canyon"}
         position={positions.maligneCanyon}
@@ -233,9 +245,11 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/jasper-sky-tram.webp"}
-        index={13}
+        index={15}
         material={material}
         name={"Jasper SkyTram"}
         position={positions.jasperSkyTram}
@@ -243,9 +257,11 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/fairmont-jasper-park-lodge.webp"}
-        index={14}
+        index={16}
         material={material}
         name={"Fairmont Jasper Park Lodge"}
         position={positions.fairmontJasperParkLodge}
@@ -253,9 +269,11 @@ const Day3 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/jasper-planetarium.webp"}
-        index={15}
+        index={17}
         material={material}
         name={"Jasper Planetarium"}
         position={positions.jasperPlanetarium}

@@ -5,7 +5,15 @@ import { NightLights } from "./NightLights";
 import { isMobile } from "react-device-detect";
 import { useControls } from "leva";
 
-const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
+const Day2 = ({
+  animateHover,
+  animateOut,
+  geometry,
+  isNight,
+  material,
+  positions,
+  setIndex,
+}) => {
   // const { lakeLouiseGondolaX, lakeLouiseGondolaY, lakeLouiseGondolaZ } =
   //   useControls("Lake Louise Gondola", {
   //     lakeLouiseGondolaX: {
@@ -166,9 +174,11 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
         </>
       )}
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/carter-ryan-gallery.webp"}
-        index={6}
+        index={7}
         material={material}
         name={"Carter Ryan Gallery"}
         position={positions.carterRyanGallery}
@@ -176,9 +186,11 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/johnston-canyon.webp"}
-        index={7}
+        index={8}
         material={material}
         name={"Johnston Canyon"}
         position={positions.johnstonCanyon}
@@ -186,9 +198,11 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/lake-louise-gondola.webp"}
-        index={8}
+        index={9}
         material={material}
         scale={0.2}
         name={"Lake Louise Gondola"}
@@ -196,9 +210,11 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/fairmont-chateau-lake-louise.webp"}
-        index={9}
+        index={10}
         material={material}
         name={"Fairmont Chateau Lake Louise"}
         scale={0.2}
@@ -206,9 +222,11 @@ const Day2 = ({ geometry, isNight, material, positions, setIndex }) => {
         setIndex={setIndex}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
         imageSrc={"/images/fairview.webp"}
-        index={10}
+        index={11}
         material={material}
         name={"Fairview"}
         position={positions.fairview}

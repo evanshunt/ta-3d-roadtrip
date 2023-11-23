@@ -1,3 +1,4 @@
+import { Sparkles } from "@react-three/drei";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 
@@ -55,6 +56,7 @@ export const NightLights = ({ position, isNight }) => {
 
   return (
     <>
+      {isNight && <Sparkles color={0xf47d0f} position={position} speed={0.1} />}
       <pointLight
         ref={pointLightRef1}
         color={0xf47d0f}

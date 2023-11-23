@@ -2,8 +2,13 @@ import React from "react";
 import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { isMobile } from "react-device-detect";
-// import { useControls } from "leva";
 import { NightLights } from "./NightLights";
+
+import columbiaIcefieldSkywalkImageSrc from "/images/columbia-icefield-skywalk.webp";
+import maligneCanyonImageSrc from "/images/maligne-canyon.webp";
+import jasperSkyTramImageSrc from "/images/jasper-sky-tram.webp";
+import fairmontJasperParkLodgeImageSrc from "/images/fairmont-jasper-park-lodge.webp";
+import jasperPlanetariumImageSrc from "/images/jasper-planetarium.webp";
 
 const Day3 = ({
   animateHover,
@@ -14,187 +19,6 @@ const Day3 = ({
   positions,
   setIndex,
 }) => {
-  // const { iceFieldPosX, iceFieldPosY, iceFieldPosZ } = useControls(
-  //   "Icefield Skywalk",
-  //   {
-  //     iceFieldPosX: {
-  //       value: positions.columbiaIcefieldSkywalk[0],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     iceFieldPosY: {
-  //       value: positions.columbiaIcefieldSkywalk[1],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     iceFieldPosZ: {
-  //       value: positions.columbiaIcefieldSkywalk[2],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //   }
-  // );
-
-  // const { maligneCanyonPosX, maligneCanyonPosY, maligneCanyonPosZ } =
-  //   useControls("Maligne Canyon", {
-  //     maligneCanyonPosX: {
-  //       value: positions.maligneCanyon[0],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     maligneCanyonPosY: {
-  //       value: positions.maligneCanyon[1],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     maligneCanyonPosZ: {
-  //       value: positions.maligneCanyon[2],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //   });
-
-  // const { jasperSkyTramPosX, jasperSkyTramPosY, jasperSkyTramPosZ } =
-  //   useControls("Jasper SkyTram", {
-  //     jasperSkyTramPosX: {
-  //       value: positions.jasperSkyTram[0],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     jasperSkyTramPosY: {
-  //       value: positions.jasperSkyTram[1],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     jasperSkyTramPosZ: {
-  //       value: positions.jasperSkyTram[2],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //   });
-
-  // const {
-  //   fairmontJasperParkLodgePosX,
-  //   fairmontJasperParkLodgePosY,
-  //   fairmontJasperParkLodgePosZ,
-  // } = useControls("Fairmont Jasper Park Lodge", {
-  //   fairmontJasperParkLodgePosX: {
-  //     value: positions.fairmontJasperParkLodge[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairmontJasperParkLodgePosY: {
-  //     value: positions.fairmontJasperParkLodge[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairmontJasperParkLodgePosZ: {
-  //     value: positions.fairmontJasperParkLodge[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const {
-  //   jasperPlanetariumPosX,
-  //   jasperPlanetariumPosY,
-  //   jasperPlanetariumPosZ,
-  // } = useControls("Jasper Planetarium", {
-  //   jasperPlanetariumPosX: {
-  //     value: positions.jasperPlanetarium[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   jasperPlanetariumPosY: {
-  //     value: positions.jasperPlanetarium[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   jasperPlanetariumPosZ: {
-  //     value: positions.jasperPlanetarium[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const { posXAthabasca, posYAthabasca, posZAthabasca } = useControls({
-  //   posXAthabasca: {
-  //     value: 1.1,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posYAthabasca: {
-  //     value: 1.2,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posZAthabasca: {
-  //     value: -3,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const { posXMarmotBasin, posYMarmotBasin, posZMarmotBasin } = useControls({
-  //   posXMarmotBasin: {
-  //     value: positions.maligneCanyon[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posYMarmotBasin: {
-  //     value: positions.maligneCanyon[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posZMarmotBasin: {
-  //     value: positions.maligneCanyon[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const { posXPyramidLake, posYPyramidLake, posZPyramidLake } = useControls({
-  //   posXPyramidLake: {
-  //     value: positions.maligneCanyon[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posYPyramidLake: {
-  //     value: positions.maligneCanyon[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   posZPyramidLake: {
-  //     value: positions.maligneCanyon[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
   return (
     <>
       {!isMobile && (
@@ -224,7 +48,7 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/columbia-icefield-skywalk.webp"}
+        imageSrc={columbiaIcefieldSkywalkImageSrc}
         index={13}
         material={material}
         name={"Columbia Icefield Skywalk"}
@@ -236,7 +60,7 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/maligne-canyon.webp"}
+        imageSrc={maligneCanyonImageSrc}
         index={14}
         material={material}
         name={"Maligne Canyon"}
@@ -248,7 +72,7 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/jasper-sky-tram.webp"}
+        imageSrc={jasperSkyTramImageSrc}
         index={15}
         material={material}
         name={"Jasper SkyTram"}
@@ -260,7 +84,7 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/fairmont-jasper-park-lodge.webp"}
+        imageSrc={fairmontJasperParkLodgeImageSrc}
         index={16}
         material={material}
         name={"Fairmont Jasper Park Lodge"}
@@ -272,7 +96,7 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/jasper-planetarium.webp"}
+        imageSrc={jasperPlanetariumImageSrc}
         index={17}
         material={material}
         name={"Jasper Planetarium"}

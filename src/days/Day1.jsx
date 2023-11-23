@@ -8,21 +8,25 @@ import React, { useEffect, useRef } from "react";
 import { isMobile } from "react-device-detect";
 // import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
+import caveAndBasinImageSrc from "/images/cave-and-basin-national-historic-site.webp";
+import banffGondolaImageSrc from "/images/banff-gondola.webp";
+import skyBistroImageSrc from "/images/sky-bistro.webp";
+import banffUpperHotSpringsImageSrc from "/images/banff-upper-hot-springs.webp";
+import fairmontBanffSpringsHotelImageSrc from "/images/fairmont-banff-springs-hotel.webp";
+
 const Day1 = ({
   animateHover,
   animateOut,
   isNight,
   geometry,
   material,
-
   positions,
   sceneIndex,
   setIndex,
-  visible,
-  wisps,
 }) => {
   const nightTexture = useTexture("./textures/final/Banff_Lights.webp");
   const nightLightsRef = useRef();
+  const tl = gsap.timeline({});
   // const pointLightRef = useRef();
 
   // const { posX, posY, posZ, rotationX, rotationY, rotationZ, sizeX, sizeY } =
@@ -76,9 +80,7 @@ const Day1 = ({
   //       step: 0.01,
   //     },
   //   });
-
   const animateLights = (direction) => {
-    const tl = gsap.timeline({});
     switch (direction) {
       case "in":
         tl.to(
@@ -105,120 +107,6 @@ const Day1 = ({
     }
   };
 
-  // const { sunshineVillageX, sunshineVillageY, sunshineVillageZ } = useControls({
-  //   sunshineVillageX: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   sunshineVillageY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   sunshineVillageZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  // });
-
-  // const { lightScale, lightPosX, lightPosY, lightPosZ, lightIntensity } =
-  //   useControls("Sunlight", {
-  //     lightIntensity: {
-  //       value: 0.3,
-  //       min: 0,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     lightScale: {
-  //       value: 0.2,
-  //       min: 0,
-  //       max: 1,
-  //       step: 0.01,
-  //     },
-  //     lightPosX: {
-  //       value: positions.fairmontBanffSpringsHotel[0],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     lightPosY: {
-  //       value: positions.fairmontBanffSpringsHotel[1],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     lightPosZ: {
-  //       value: positions.fairmontBanffSpringsHotel[2],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //   });
-
-  // const { wispScale, wispPositionX, wispPositionY, wispPositionZ } =
-  //   useControls({
-  //     wispScale: {
-  //       value: 0.2,
-  //       min: 0,
-  //       max: 1,
-  //       step: 0.01,
-  //     },
-  //     wispPositionX: {
-  //       value: positions.fairmontBanffSpringsHotel[0],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     wispPositionY: {
-  //       value: positions.fairmontBanffSpringsHotel[1],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //     wispPositionZ: {
-  //       value: positions.fairmontBanffSpringsHotel[2],
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.1,
-  //     },
-  //   });
-
-  // const {
-  //   pointLight1Intensity,
-  //   pointLight2Intensity,
-  //   pointLight3Intensity,
-  //   pointLight4Intensity,
-  // } = useControls({
-  //   pointLight1Intensity: {
-  //     value: 0.5,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   pointLight2Intensity: {
-  //     value: 0.4,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   pointLight3Intensity: {
-  //     value: 0.3,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   pointLight4Intensity: {
-  //     value: 0.6,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  // });
-
-  // if (!visible) return null;
-
   useEffect(() => {
     if (isNight) {
       animateLights("in");
@@ -230,27 +118,25 @@ const Day1 = ({
   return (
     <>
       {!isMobile && (
-        <>
-          <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
-            position={[-5.2, 1.2, 2.4]}
-            width={1.86}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/cascade-mountain.png"}
-            name="Cascade Mountain"
-            position={[-4.3, 1.2, 2.7]}
-            width={1.58}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/lake-minnewanka.png"}
-            name="Lake Minnewanka"
-            position={[-4.2, 1.15, 3]}
-            width={1.8}
-          />
-        </>
+        <InfoBox
+          imageSrc={"/images/info-boxes/sunshine-village.png"}
+          position={[-5.2, 1.2, 2.4]}
+          width={1.86}
+        />
+      )}
+      <InfoBox
+        imageSrc={"/images/info-boxes/cascade-mountain.png"}
+        name="Cascade Mountain"
+        position={[-4.3, 1.2, 2.7]}
+        width={1.58}
+      />
+      {!isMobile && (
+        <InfoBox
+          imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+          name="Lake Minnewanka"
+          position={[-4.2, 1.15, 3]}
+          width={1.8}
+        />
       )}
 
       <ImagePin
@@ -258,7 +144,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/cave-and-basin-national-historic-site.webp"}
+        imageSrc={caveAndBasinImageSrc}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -272,7 +158,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/banff-gondola.webp"}
+        imageSrc={banffGondolaImageSrc}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -286,7 +172,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/sky-bistro.webp"}
+        imageSrc={skyBistroImageSrc}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -300,7 +186,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/banff-upper-hot-springs.webp"}
+        imageSrc={banffUpperHotSpringsImageSrc}
         material={material}
         scale={0.2}
         setIndex={setIndex}
@@ -314,7 +200,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/fairmont-banff-springs-hotel.webp"}
+        imageSrc={fairmontBanffSpringsHotelImageSrc}
         material={material}
         scale={0.2}
         setIndex={setIndex}

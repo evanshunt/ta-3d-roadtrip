@@ -6,7 +6,7 @@ import compassImage from "./images/compass.svg";
 import { getProject } from "@theatre/core";
 import gsap from "gsap";
 import { isMobile } from "react-device-detect";
-import React, { createRef, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "core-js/actual/object/group-by";
 import Scene from "./Scene";
 import { SheetProvider } from "@theatre/r3f";
@@ -95,6 +95,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.5575, 1.05, 2.63],
     },
   },
   {
@@ -148,6 +149,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.69, 1.085, 2.859],
     },
   },
   {
@@ -199,6 +201,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.69, 1.13, 2.759],
     },
   },
   {
@@ -250,6 +253,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.63, 1.075, 2.83],
     },
   },
   {
@@ -301,6 +305,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.58, 1.075, 2.83],
     },
   },
   {
@@ -366,6 +371,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.55, 1.075, 2.83],
     },
   },
   {
@@ -417,6 +423,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-4.0, 1.16, 1.88],
     },
   },
   {
@@ -469,6 +476,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-3.05, 1.1, 0.73],
     },
   },
   {
@@ -521,6 +529,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-3.2, 1.1, 0.61],
     },
   },
   {
@@ -573,6 +582,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [-3.2, 1.11, 0.57],
     },
   },
   {
@@ -642,6 +652,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [1.65, 1.1, -3.2],
     },
   },
   {
@@ -694,6 +705,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [5.4, 1.05, -5.6],
     },
   },
   {
@@ -746,6 +758,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [5.0, 1.05, -6.0],
     },
   },
   {
@@ -798,6 +811,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [5.35, 1.08, -5.7],
     },
   },
   {
@@ -849,6 +863,7 @@ const destinations = [
           external: true,
         },
       ],
+      position: [5.4, 1.06, -5.65],
     },
   },
 ];
@@ -1073,8 +1088,8 @@ const Experience = () => {
   }, [index]);
 
   useEffect(() => {
-    const debug = window.location.search.includes("debug");
-    setDebug(debug);
+    // const debug = window.location.search.includes("debug");
+    // setDebug(debug);
     // setHasStarted(true); // uncomment for testing
   }, []);
 
@@ -1153,10 +1168,9 @@ const Experience = () => {
           <img src={closeImage} alt="" />
           Close the 3D Tour
         </button>
-        {/* <Loader /> */}
+        <Loader />
         <Canvas
-          dpr={isMobile ? 1.5 : window.devicePixelRatio * 0.75} // decreasing to 1.5 smooths things out a bit
-          // dpr={1.5}
+          dpr={isMobile ? 1.5 : window.devicePixelRatio * 0.9}
           shadows={true}
           gl={{
             antialias: true,
@@ -1165,22 +1179,10 @@ const Experience = () => {
             shadowMapType: isMobile
               ? THREE.BasicShadowMap
               : THREE.PCFSoftShadowMap,
-            // shadowMapEnabled: true,
           }}
           // frameloop={isMobile ? "demand" : "always"}
           {...handlers}
         >
-          {/* <PerformanceMonitor
-          onIncline={() => {
-            setDpr(2);
-            console.log("perf increase");
-          }}
-          onDecline={() => {
-            setDpr(1);
-            console.log("perf decrease");
-          }}
-        /> */}
-          {/* <SoftShadows size={1.3} focus={9} samples={6} /> */}
           {/* <ScrollControls pages={3}> */}
           <SheetProvider sheet={sheet}>
             <AdaptiveDpr />

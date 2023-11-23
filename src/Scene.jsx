@@ -8,13 +8,11 @@ import { Cloud } from "./Clouds.jsx";
 // } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-// import { Environment, Lightformer, OrbitControls } from "@react-three/drei";
 
 import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 import Road from "./models/final/Road.jsx";
-// import { types } from "@theatre/core";
-// import { useFrame } from "@react-three/fiber";
+
 // import { useControls } from "leva";
 
 import TopAltAgain from "./models/final/TopAltAgain.jsx";
@@ -64,71 +62,6 @@ const redMaterial = new THREE.MeshBasicMaterial({
 
 const Scene = (props) => {
   const sceneRef = useRef();
-
-  // const { altTop } = useControls({
-  //   altTop: {
-  //     value: false,
-  //   },
-  // });
-
-  // const { focusDistance, focalLength, bokehScale } = useControls({
-  //   focusDistance: {
-  //     value: 0.12,
-  //     min: 0.08,
-  //     max: 0.15,
-  //     step: 0.001,
-  //   },
-  //   focalLength: {
-  //     value: 0.085,
-  //     min: 0,
-  //     max: 0.15,
-  //     step: 0.001,
-  //   },
-  //   bokehScale: {
-  //     value: 10,
-  //     min: 0,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // useFrame((e) => {
-  //   if (e.clock.elapsedTime > props.animDuration - 0.75) {
-  //     setAddEffect(true);
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (addEffect) return;
-
-  //   setTimeout(() => {
-  //     setAddEffect(true);
-  //     gsap.to(dofProps, {
-  //       bokehScale: 6,
-  //       duration: 6,
-  //     });
-  //     console.log("hickup here?");
-  //   }, props.animDuration + 4 * 1000);
-  // }, [hasStarted]);
-
-  // useFrame((e) => {
-  //   // if (e.clock.elapsedTime > props.animDuration) {
-  //   //   setAddEffect(true);
-  //   // }
-  //   if (hasStarted) return;
-
-  //   if (e.clock.elapsedTime > props.animDuration - 1) {
-  //     setHasStarted(true);
-  //     animateCloud(cloudRef, cloudTimeline, 1);
-  //   }
-  //   //@TODO: use e.clock.elapsedTime to start the animation
-  //   // if (props.index === 0 && props.started) {
-  //   //   setTimeout(() => {
-  //   //     console.log("im firing the cloud timeout");
-
-  //   //   }, props.animDuration + 4 * 1000);
-  //   // }
-  // });
 
   // const { day1PosX, day1PosY, day1PosZ } = useControls({
   //   day1PosX: {
@@ -293,7 +226,6 @@ const Scene = (props) => {
             positions={positions}
             sceneIndex={props.index}
             setIndex={props.setIndex}
-            visible={true}
             // visible={props.currDay === 0 || props.currDay === 1}
             geometry={circleGeom}
             material={redMaterial}
@@ -330,11 +262,6 @@ const Scene = (props) => {
           />
         </group>
 
-        {/* <e.group theatreKey="Lake Louise Cloud 2">
-          <Cloud scale={0.2} position={[-2, 3.1, 3]} />
-        </e.group>
-
-      */}
         <Clouds>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}

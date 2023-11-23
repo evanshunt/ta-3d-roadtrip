@@ -3,7 +3,12 @@ import ImagePin from "../models/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
 import { isMobile } from "react-device-detect";
-import { useControls } from "leva";
+
+import carterRyanGalleryImageSrc from "/images/carter-ryan-gallery.webp";
+import johnstonCanyonImageSrc from "/images/johnston-canyon.webp";
+import lakeLouiseGondolaImageSrc from "/images/lake-louise-gondola.webp";
+import fairmontChateauLakeLouiseImageSrc from "/images/fairmont-chateau-lake-louise.webp";
+import fairviewImageSrc from "/images/fairview.webp";
 
 const Day2 = ({
   animateHover,
@@ -14,145 +19,7 @@ const Day2 = ({
   positions,
   setIndex,
 }) => {
-  // const { lakeLouiseGondolaX, lakeLouiseGondolaY, lakeLouiseGondolaZ } =
-  //   useControls("Lake Louise Gondola", {
-  //     lakeLouiseGondolaX: {
-  //       value: positions.lakeLouiseGondola[0],
-  //       min: -5,
-  //       max: 0,
-  //       step: 0.1,
-  //     },
-  //     lakeLouiseGondolaY: {
-  //       value: positions.lakeLouiseGondola[1],
-  //       min: 0,
-  //       max: 2,
-  //       step: 0.1,
-  //     },
-  //     lakeLouiseGondolaZ: {
-  //       value: positions.lakeLouiseGondola[2],
-  //       min: -2,
-  //       max: 5,
-  //       step: 0.1,
-  //     },
-  //   });
-
-  // const {
-  //   fairmontChateauLakeLouiseX,
-  //   fairmontChateauLakeLouiseY,
-  //   fairmontChateauLakeLouiseZ,
-  // } = useControls("Fairmont Chateau Lake Louise", {
-  //   fairmontChateauLakeLouiseX: {
-  //     value: positions.fairmontChateauLakeLouise[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairmontChateauLakeLouiseY: {
-  //     value: positions.fairmontChateauLakeLouise[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairmontChateauLakeLouiseZ: {
-  //     value: positions.fairmontChateauLakeLouise[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const { fairviewX, fairviewY, fairviewZ } = useControls("Fairview", {
-  //   fairviewX: {
-  //     value: positions.fairview[0],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairviewY: {
-  //     value: positions.fairview[1],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  //   fairviewZ: {
-  //     value: positions.fairview[2],
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // const { moraineLakeX, moraineLakeY, moraineLakeZ } = useControls(
-  //   "Moraine Lake",
-  //   {
-  //     moraineLakeX: {
-  //       value: positions.lakeLouiseGondola[0],
-  //       min: -5,
-  //       max: 0,
-  //       step: 0.1,
-  //     },
-  //     moraineLakeY: {
-  //       value: positions.lakeLouiseGondola[1],
-  //       min: 0,
-  //       max: 2,
-  //       step: 0.1,
-  //     },
-  //     moraineLakeZ: {
-  //       value: positions.lakeLouiseGondola[2],
-  //       min: -2,
-  //       max: 5,
-  //       step: 0.1,
-  //     },
-  //   }
-  // );
-
-  // const { castleMountainX, castleMountainY, castleMountainZ } = useControls(
-  //   "Castle Mountain",
-  //   {
-  //     castleMountainX: {
-  //       value: positions.lakeLouiseGondola[0],
-  //       min: -5,
-  //       max: 0,
-  //       step: 0.1,
-  //     },
-  //     castleMountainY: {
-  //       value: positions.lakeLouiseGondola[1],
-  //       min: 0,
-  //       max: 2,
-  //       step: 0.1,
-  //     },
-  //     castleMountainZ: {
-  //       value: positions.lakeLouiseGondola[2],
-  //       min: -2,
-  //       max: 5,
-  //       step: 0.1,
-  //     },
-  //   }
-  // );
-
-  // const { morantsCurveX, morantsCurveY, morantsCurveZ } = useControls(
-  //   "Morant's Curve",
-  //   {
-  //     morantsCurveX: {
-  //       value: positions.lakeLouiseGondola[0],
-  //       min: -5,
-  //       max: 0,
-  //       step: 0.1,
-  //     },
-  //     morantsCurveY: {
-  //       value: positions.lakeLouiseGondola[1],
-  //       min: 0,
-  //       max: 2,
-  //       step: 0.1,
-  //     },
-  //     morantsCurveZ: {
-  //       value: positions.lakeLouiseGondola[2],
-  //       min: -2,
-  //       max: 5,
-  //       step: 0.1,
-  //     },
-  //   }
-  // );
+  // const tl = gsap.timeline({});
 
   return (
     <>
@@ -177,7 +44,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/carter-ryan-gallery.webp"}
+        imageSrc={carterRyanGalleryImageSrc}
         index={7}
         material={material}
         name={"Carter Ryan Gallery"}
@@ -189,7 +56,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/johnston-canyon.webp"}
+        imageSrc={johnstonCanyonImageSrc}
         index={8}
         material={material}
         name={"Johnston Canyon"}
@@ -201,7 +68,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/lake-louise-gondola.webp"}
+        imageSrc={lakeLouiseGondolaImageSrc}
         index={9}
         material={material}
         scale={0.2}
@@ -213,7 +80,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/fairmont-chateau-lake-louise.webp"}
+        imageSrc={fairmontChateauLakeLouiseImageSrc}
         index={10}
         material={material}
         name={"Fairmont Chateau Lake Louise"}
@@ -225,7 +92,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/fairview.webp"}
+        imageSrc={fairviewImageSrc}
         index={11}
         material={material}
         name={"Fairview"}

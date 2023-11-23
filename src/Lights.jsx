@@ -203,7 +203,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
       <directionalLight
         ref={spotLight}
         position={[-15, 10, 13.5]}
-        lookAt={positions[0]}
+        lookAt={[0, 0, 0]}
         castShadow
         intensity={1.75}
         shadow-mapSize-width={isMobile ? 1024 * 2 : 1024 * 3.75}

@@ -5,13 +5,10 @@ import React, { useEffect, useRef } from "react";
 export const NightLights = ({ position, isNight }) => {
   const pointLightRef1 = useRef();
   const pointLightRef2 = useRef();
-  const pointLightRef3 = useRef();
-  const pointLightRef4 = useRef();
+  const tl = gsap.timeline({});
 
   const animateLights = (dir) => {
-    // pointLightRefs.current.forEach((light, i) => {
-
-    gsap.to(
+    tl.to(
       pointLightRef1.current,
 
       {
@@ -19,31 +16,14 @@ export const NightLights = ({ position, isNight }) => {
         duration: 2,
       }
     );
-    gsap.to(
+    tl.to(
       pointLightRef2.current,
 
       {
-        intensity: dir === "in" ? 0.3 : 0,
+        intensity: dir === "in" ? 0.5 : 0,
         duration: 2,
       }
     );
-    gsap.to(
-      pointLightRef3.current,
-
-      {
-        intensity: dir === "in" ? 0.25 : 0,
-        duration: 2,
-      }
-    );
-    gsap.to(
-      pointLightRef4.current,
-
-      {
-        intensity: dir === "in" ? 0.85 : 0,
-        duration: 2,
-      }
-    );
-    // });
   };
 
   useEffect(() => {
@@ -73,30 +53,6 @@ export const NightLights = ({ position, isNight }) => {
           position[0] + 0.0002,
           position[1] + 0.01,
           position[2] + 0.0002,
-        ]}
-        decay={0.85}
-        distance={0.4}
-      />
-      <pointLight
-        ref={pointLightRef3}
-        color={0xfff7e2}
-        intensity={0}
-        position={[
-          position[0] - 0.0002,
-          position[1] + 0.01,
-          position[2] - 0.0002,
-        ]}
-        decay={0.85}
-        distance={0.4}
-      />
-      <pointLight
-        ref={pointLightRef4}
-        color={0xe1730b}
-        intensity={0}
-        position={[
-          position[0] - 0.0001,
-          position[1] + 0.01,
-          position[2] + 0.0003,
         ]}
         decay={0.85}
         distance={0.4}

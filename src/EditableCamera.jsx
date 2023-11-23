@@ -5,21 +5,12 @@ import { useFrame } from "@react-three/fiber";
 
 const EditableCamera = ({ getDirection }) => {
   const cameraRef = useRef();
-  useFrame(({ state, delta }) => {
-    // console.log({ state });
-    // console.log(cameraRef?.current.rotation);
+  useFrame(() => {
     getDirection(cameraRef?.current);
   });
   return (
     <e.group theatreKey={"Camera"} ref={cameraRef}>
-      <PerspectiveCamera
-        makeDefault
-        zoom={2.5}
-        far={35.0}
-        getWorldDirection={(e) => {
-          console.log(e);
-        }}
-      />
+      <PerspectiveCamera makeDefault zoom={2.5} far={35.0} />
     </e.group>
   );
 };

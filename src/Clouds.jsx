@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Billboard } from "@react-three/drei";
 import { Plane } from "@react-three/drei";
 import { useTexture } from "@react-three/drei";
+import { isMobile } from "react-device-detect";
 
 const CLOUD_URL = "/textures/cloud.webp";
 function Cloud({
@@ -10,10 +11,10 @@ function Cloud({
   speed = 0.4,
   width = 10,
   depth = 1.5,
-  segments = 20,
+  segments = isMobile ? 12 : 20,
   texture = CLOUD_URL,
   color = "#ffffff",
-  depthTest = true,
+  depthTest = isMobile ? false : true,
   ...props
 }) {
   const group = React.useRef();
@@ -41,8 +42,7 @@ function Cloud({
           cloud.children[0].rotation.z += clouds[index].rotation;
           cloud.children[0].scale.setScalar(
             clouds[index].scale +
-              (((1 + Math.sin(state.clock.getElapsedTime() / 10)) / 2) *
-                index) /
+              (((1 + Math.sin(state.clock.getElapsedTime() / 5)) / 2) * index) /
                 10
           );
         });
@@ -73,7 +73,7 @@ function Cloud({
               map: cloudTexture,
               transparent: true,
               opacity: (scale / 6) * density * opacity,
-              // depthTest: depthTest,
+              depthTest: depthTest,
               color: color,
             })
           )

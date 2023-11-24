@@ -238,6 +238,7 @@ const Attraction = ({
                             src={asset.url}
                             muted
                             autoPlay
+                            playsInline
                             loop
                             className="attraction__info__media"
                           />

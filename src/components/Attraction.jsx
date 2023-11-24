@@ -26,6 +26,7 @@ const Attraction = ({
   nextDestination,
   setIndex,
   showItinerary,
+  toggleItinerary,
 }) => {
   const [open, setOpen] = useState(false);
   const slug = slugify(currDestination?.details?.title);
@@ -96,21 +97,21 @@ const Attraction = ({
               <div
                 className="attraction__header__mobile"
                 onClick={
-                  currDestination?.hideFromItinerary ? null : toggleDrawer
+                  currDestination?.hideFromItinerary
+                    ? toggleItinerary
+                    : toggleDrawer
                 }
                 {...handlers}
               >
-                {!currDestination?.hideFromItinerary && (
-                  <img
-                    hidden={currDestination?.details?.title ? false : true}
-                    className={`${
-                      open
-                        ? "attraction__arrow attraction__arrow--open"
-                        : "attraction__arrow"
-                    }`}
-                    src={arrowUp}
-                  />
-                )}
+                <img
+                  hidden={currDestination?.details?.title ? false : true}
+                  className={`${
+                    open
+                      ? "attraction__arrow attraction__arrow--open"
+                      : "attraction__arrow"
+                  }`}
+                  src={arrowUp}
+                />
 
                 <span
                   className={`${

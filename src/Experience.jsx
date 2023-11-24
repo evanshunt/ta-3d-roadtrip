@@ -1154,6 +1154,7 @@ const Experience = () => {
             days={days}
             grouped={daysParsed}
             handleIndex={handleIndex}
+            hideItinerary={hideItinerary}
             inBetweens={inBetweens}
             index={index}
             isOpen={itineraryOpen}
@@ -1216,6 +1217,7 @@ const Experience = () => {
           setIndex={setIndex}
           showInfo={showInfo}
           showItinerary={showItinerary}
+          toggleItinerary={toggleItinerary}
         />
 
         <div className="controls">

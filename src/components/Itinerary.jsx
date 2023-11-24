@@ -13,6 +13,7 @@ const Itinerary = ({
   days,
   grouped,
   handleIndex,
+  hideItinerary,
   inBetweens,
   index,
   isOpen,
@@ -74,6 +75,10 @@ const Itinerary = ({
         return;
       }
       setOpen(dir === "Up" ? true : false);
+
+      if (dir === "Down") {
+        hideItinerary();
+      }
     },
 
     // ...config
@@ -92,7 +97,6 @@ const Itinerary = ({
           onClick={toggleItinerary}
         >
           <img
-            hidden={currDestination?.details?.title ? false : true}
             className={`${
               open
                 ? "itinerary__arrow itinerary__arrow--open"

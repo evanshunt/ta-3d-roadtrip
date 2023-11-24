@@ -118,25 +118,27 @@ const Day1 = ({
   return (
     <>
       {!isMobile && (
-        <InfoBox
-          imageSrc={"/images/info-boxes/sunshine-village.png"}
-          position={[-5.2, 1.2, 2.4]}
-          width={1.86}
-        />
-      )}
-      <InfoBox
-        imageSrc={"/images/info-boxes/cascade-mountain.png"}
-        name="Cascade Mountain"
-        position={[-4.3, 1.2, 2.7]}
-        width={1.58}
-      />
-      {!isMobile && (
-        <InfoBox
-          imageSrc={"/images/info-boxes/lake-minnewanka.png"}
-          name="Lake Minnewanka"
-          position={[-4.2, 1.15, 3]}
-          width={1.8}
-        />
+        <>
+          <InfoBox
+            imageSrc={"/images/info-boxes/sunshine-village.png"}
+            position={[-5.2, 1.2, 2.4]}
+            width={1.86}
+          />
+
+          <InfoBox
+            imageSrc={"/images/info-boxes/cascade-mountain.png"}
+            name="Cascade Mountain"
+            position={[-4.3, 1.2, 2.7]}
+            width={1.58}
+          />
+
+          <InfoBox
+            imageSrc={"/images/info-boxes/lake-minnewanka.png"}
+            name="Lake Minnewanka"
+            position={[-4.2, 1.15, 3]}
+            width={1.8}
+          />
+        </>
       )}
 
       <ImagePin

@@ -16,13 +16,11 @@ const ImagePin = ({
   position,
   setIndex,
 }) => {
-  // const [imageOpacity, setImageOpacity] = React.useState(0);
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
 
-  // const tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true });
   let opacity = 0;
 
   useFrame(({}) => {
@@ -32,63 +30,6 @@ const ImagePin = ({
     });
   });
 
-  // const animateHover = (el) => {
-  //   tl.to(backgroundHaloRef.current.scale, {
-  //     x: 0.04,
-  //     y: 0.04,
-  //     z: 0.04,
-  //     duration: 0.15,
-  //     ease: "power2.out",
-  //   });
-  // };
-
-  // const animateOut = (el) => {
-  //   tl.to(backgroundHaloRef.current.scale, {
-  //     x: 0.03,
-  //     y: 0.03,
-  //     z: 0.03,
-  //     duration: 0.15,
-  //     ease: "power2.in",
-  //   });
-  // };
-
-  // const { posX, posY, posZ } = useControls({
-  //   posX: {
-  //     value: position[0],
-  //     min: -5,
-  //     max: 0,
-  //     step: 0.05,
-  //   },
-  //   posY: {
-  //     value: position[1],
-  //     min: -2,
-  //     max: 2,
-  //     step: 0.005,
-  //   },
-  //   posZ: {
-  //     value: position[2],
-  //     min: 0,
-  //     max: 4,
-  //     step: 0.05,
-  //   },
-  // });
-
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     tl.to(imageRef.current.rotation, {
-  //       y: Math.PI / 2,
-  //       duration: 1,
-  //       ease: "none",
-  //       onUpdate: () => {
-  //         // console.log(imageRef.current.rotation.y);
-  //       },
-  //       // repeatRefresh: true,
-  //     });
-  //     tl.play();
-  //   }, imageRef); // <- scopes all selector text inside the context to this component (optional, default is document)
-
-  //   return () => ctx.revert(); // cleanup!
-  // }, []);
   return (
     <Billboard position={[position[0], position[1], position[2]]}>
       <e.group theatreKey={`Pins / ${name} / Group`}>
@@ -151,7 +92,7 @@ const ImagePin = ({
           theatreKey={`Pins / ${name} / Background ${name}`}
           scale={0.02}
           material={material}
-          raycast={meshBounds}
+          // raycast={meshBounds}
           receiveShadow={false}
           geometry={geometry}
         />

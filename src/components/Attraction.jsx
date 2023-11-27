@@ -18,6 +18,7 @@ import { useSwipeable } from "react-swipeable";
 const Attraction = ({
   attractionsOpen,
   currDestination,
+  direction,
   handleIndex,
   hideAttraction,
   inBetweens,
@@ -84,6 +85,12 @@ const Attraction = ({
     }
   };
 
+  useEffect(() => {
+    console.log({ direction }, "from attraction");
+  }, [direction]);
+
+  const links = currDestination?.details?.links;
+
   return (
     <div
       ref={attractionRef}
@@ -91,9 +98,13 @@ const Attraction = ({
 `}
     >
       <SwitchTransition>
-        <CSSTransition classNames="fade" timeout={750} key={index}>
+        <CSSTransition
+          classNames={`fade-${direction}`}
+          timeout={500}
+          key={index}
+        >
           <>
-            <div className="attraction__wrapper">
+            <div className={`fade attraction__wrapper`}>
               <div
                 className="attraction__header__mobile"
                 onClick={
@@ -251,42 +262,63 @@ const Attraction = ({
               </div>
 
               <div className="attraction__links">
-                {currDestination?.details?.links && (
+                {links && (
                   <strong className="attraction__links__title">
                     Learn more about this attraction
                   </strong>
                 )}
               </div>
               <ul className="attraction__links__links">
-                {currDestination?.details?.links && (
+                {links && (
                   <>
-                    {currDestination.details.links.map((link, i) => {
-                      return (
-                        <li key={i}>
-                          {link.image && (
-                            <img src={link.image} alt={link.title} />
-                          )}
-                          <div className="attraction__links__link-wrapper">
-                            <strong>{link.text}</strong>
-                            <a
-                              href={link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`attraction__links__link ${
-                                link.external
-                                  ? "attraction__links__link--external"
-                                  : ""
-                              }`}
-                            >
-                              {link.linkText}
-                              {/* {link.external && (
+                    <li>
+                      {links[0].image && (
+                        <img src={links[0].image} alt={links[0].title} />
+                      )}
+                      <div className="attraction__links__link-wrapper">
+                        <strong>{links[0].text}</strong>
+                        <a
+                          href={links[0].url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`attraction__links__link ${
+                            links[0].external
+                              ? "attraction__links__link--external"
+                              : ""
+                          }`}
+                        >
+                          {links[0].linkText}
+                          {/* {link.external && (
                                 <img src={external} alt="External link" />
                               )} */}
-                            </a>
-                          </div>
-                        </li>
-                      );
-                    })}
+                        </a>
+                      </div>
+                    </li>
+                    {links[1] && (
+                      <li className="column">
+                        {links[1].image && (
+                          <img src={links[1].image} alt={links[1].title} />
+                        )}
+                        <div className="attraction__links__link-wrapper">
+                          <p>{links[1].linkText}</p>
+                          <a
+                            href={links[1].url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`attraction__links__link ${
+                              links[1].external
+                                ? "attraction__links__link--external"
+                                : ""
+                            }`}
+                          >
+                            {links[1].text}
+                            {links[1].external && (
+                              <img src={external} alt="External link" />
+                            )}
+                          </a>
+                        </div>
+                      </li>
+                    )}
                   </>
                 )}
               </ul>
@@ -302,6 +334,9 @@ const Attraction = ({
                         } else {
                           setIndex(index + 1);
                         }
+                        setTimeout(() => {
+                          attractionRef.current.scrollTop = 0;
+                        }, 600); // slightly longer than animout
                         // showInfo();
                       }}
                       className="itinerary__stop__wrap"

@@ -881,6 +881,7 @@ const Experience = () => {
   // const project = getProject("TA Fly Through");
   const [clicked, setClicked] = useState(false);
   const [debug, setDebug] = useState(false);
+  const [direction, setDirection] = useState("forward");
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
   const [isNight, setIsNight] = useState(false);
@@ -922,6 +923,10 @@ const Experience = () => {
       });
     }
   };
+
+  useEffect(() => {
+    console.log({ direction });
+  }, [direction]);
 
   useEffect(() => {
     destinations[index].visited = true;
@@ -994,8 +999,10 @@ const Experience = () => {
     onSwiped: (eventData) => {
       const dir = eventData.dir.toLowerCase();
       if (dir === "left") {
+        setDirection("forward");
         handleIndex("next");
       } else {
+        setDirection("backward");
         handleIndex("prev");
       }
     },
@@ -1090,7 +1097,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
+    setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1141,9 +1148,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        <div onClick={start} {...startMobile}>
+        {/* <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary
@@ -1152,6 +1159,7 @@ const Experience = () => {
             currDestination={currDestination}
             currDay={currDay}
             days={days}
+            direction={direction}
             grouped={daysParsed}
             handleIndex={handleIndex}
             hideItinerary={hideItinerary}
@@ -1169,7 +1177,25 @@ const Experience = () => {
           <img src={closeImage} alt="" />
           Close the 3D Tour
         </button>
-        <Loader />
+        <Loader
+          containerStyles={{
+            backgroundColor: "#ffffff",
+          }}
+          innerStyles={{
+            backgroundColor: "#ffffff",
+            border: "2px solid #9C0F00",
+            height: "1rem",
+            border: "2px solid #9C0F00",
+          }}
+          barStyles={{
+            backgroundColor: "#9C0F00",
+            height: "0.8rem",
+          }} // Loading-bar styles
+          dataStyles={{
+            color: "#9C0F00",
+            marginTop: "1rem",
+          }} // Text styles
+        />
         <Canvas
           dpr={isMobile ? 1.5 : window.devicePixelRatio * 0.9}
           shadows={true}
@@ -1208,6 +1234,7 @@ const Experience = () => {
         <Attraction
           attractionsOpen={attractionsOpen}
           currDestination={currDestination}
+          direction={direction}
           handleIndex={handleIndex}
           hideAttraction={hideAttraction}
           inBetweens={inBetweens}
@@ -1224,75 +1251,73 @@ const Experience = () => {
           {/* {index > 0 && ( */}
 
           {/* )} */}
-          <div className="controls__buttons">
-            <button
-              disabled={index <= 1}
-              className="controls__button controls__button--prev"
-              onClick={() => {
-                handleIndex("prev");
-              }}
-            >
-              <Arrow dir={"prev"} active={index >= 1} />
-            </button>
+          <button
+            disabled={index <= 1}
+            className="controls__button controls__button--prev"
+            onClick={() => {
+              handleIndex("prev");
+            }}
+          >
+            <Arrow dir={"prev"} active={index >= 1} />
+          </button>
 
-            <div className="controls__progress">
-              <ul className="controls__list__days">
-                {Object.keys(days).map((day, i) => {
-                  if (i === 0) return null;
-                  return <span className="controls__list__day">Day {i}</span>;
-                })}
-              </ul>
+          <button
+            disabled={index === maxLength}
+            className="controls__button controls__button--next"
+            onClick={() => {
+              handleIndex("next");
+            }}
+          >
+            <Arrow dir={"next"} active={index !== maxLength} />
+          </button>
 
-              <ul className="controls__list">
-                <progress
-                  className="controls__list__progress"
-                  value={determineAmount(index)}
-                  max="95"
-                />
+          <div className="controls__progress">
+            <ul className="controls__list__days">
+              {Object.keys(days).map((day, i) => {
+                if (i === 0) return null;
+                return <span className="controls__list__day">Day {i}</span>;
+              })}
+            </ul>
 
-                {Object.keys(days).map((day, i) => {
-                  // if (day === "0") return;
+            <ul className="controls__list">
+              <progress
+                className="controls__list__progress"
+                value={determineAmount(index)}
+                max="95"
+              />
 
-                  return (
-                    <>
-                      {destinations.map((destination, i) => {
-                        if (destination.day === parseInt(day)) {
-                          return (
-                            <li
-                              key={i}
-                              className={`${
-                                i <= index
-                                  ? "controls__pip controls__pip--active"
-                                  : "controls__pip"
-                              }
+              {Object.keys(days).map((day, i) => {
+                // if (day === "0") return;
+
+                return (
+                  <>
+                    {destinations.map((destination, i) => {
+                      if (destination.day === parseInt(day)) {
+                        return (
+                          <li
+                            key={i}
+                            className={`${
+                              i <= index
+                                ? "controls__pip controls__pip--active"
+                                : "controls__pip"
+                            }
                                 ${
                                   destination.hideFromItinerary
                                     ? "controls__pip--hidden"
                                     : ""
                                 }
                                   `}
-                              onClick={() => {
-                                handleIndex("next", destination.stop);
-                              }}
-                            ></li>
-                          );
-                        }
-                      })}
-                    </>
-                  );
-                })}
-              </ul>
-            </div>
-
-            <button
-              disabled={index === maxLength}
-              className="controls__button controls__button--next"
-              onClick={() => {
-                handleIndex("next");
-              }}
-            >
-              <Arrow dir={"next"} active={index !== maxLength} />
-            </button>
+                            onClick={() => {
+                              handleIndex("next", destination.stop);
+                            }}
+                          ></li>
+                        );
+                      }
+                    })}
+                  </>
+                );
+              })}
+            </ul>
           </div>
 
           <div className="day-info">

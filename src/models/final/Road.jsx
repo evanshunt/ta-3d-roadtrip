@@ -7,7 +7,7 @@ import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 const Road = (props) => {
-  const { nodes } = useGLTF("/glb/final/road-new.glb");
+  const { nodes } = useGLTF("/glb/final/road-thicker.glb");
 
   return (
     <group {...props} dispose={null}>

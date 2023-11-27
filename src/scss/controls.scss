@@ -1,5 +1,5 @@
 .controls {
-  bottom: 6.5rem;
+  bottom: 5.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +25,7 @@
 .controls__buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   // flex: 0.35;
 
   margin-bottom: 0.1875rem;
@@ -53,6 +53,31 @@
 
   svg {
     width: 1.8125rem;
+  }
+
+  .controls & {
+    position: absolute;
+    top: -3rem;
+
+    @media screen and (min-width: 1024px) {
+      top: 0;
+    }
+
+    &--prev {
+      left: 0;
+
+      @media screen and (min-width: 1024px) {
+        left: 1.25rem;
+      }
+    }
+
+    &--next {
+      right: 0;
+
+      @media screen and (min-width: 1024px) {
+        right: 1.25rem;
+      }
+    }
   }
 
   .arrow {
@@ -107,7 +132,6 @@
   align-items: center;
   grid-column: 1 / 5;
   // width: 75%;
-  grid-row: 2;
   padding: 0 0.75rem;
 }
 

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import animation from "./animation-data/new-pins-days-1-2-3.json";
+import animation from "./animation-data/final.json";
 import animationMobile from "./animation-data/new-pins-days-1-2-3-mobile.json";
 import { Canvas } from "@react-three/fiber";
 import compassImage from "./images/compass.svg";
@@ -327,7 +327,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 22.09,
+    position: 22.16,
     day: 2,
     stop: 7,
     visited: false,
@@ -481,7 +481,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 33.56,
+    position: 33.63,
     day: 2,
     stop: 10,
     visited: false,
@@ -534,7 +534,7 @@ const destinations = [
   },
   {
     name: "Lake Louise",
-    position: 35.566,
+    position: 35.6,
     day: 2,
     stop: 11,
     visited: false,
@@ -587,7 +587,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 36.7,
+    position: 36.54,
     day: 3,
     hideFromItinerary: true,
     stop: 12,
@@ -603,7 +603,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 41.6,
+    position: 43.3,
     day: 3,
     visited: false,
     hideFromItinerary: false,
@@ -657,7 +657,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 46.2,
+    position: 47.833,
     day: 3,
     visited: false,
     hideFromItinerary: false,
@@ -710,7 +710,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 48.133,
+    position: 49.76,
     day: 3,
     visited: false,
     hideFromItinerary: false,
@@ -763,7 +763,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 50.033,
+    position: 51.633,
     day: 3,
     visited: false,
     hideFromItinerary: false,
@@ -816,7 +816,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 51.966,
+    position: 53.5,
     day: 3,
     visited: false,
     stop: 17,

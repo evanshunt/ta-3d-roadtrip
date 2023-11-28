@@ -1,25 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import topographyImgNew from "/images/maps/alberta-topography-new.webp";
 import gsap from "gsap/dist/gsap";
 import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 
 gsap.registerPlugin(DrawSVGPlugin);
+const tl = new gsap.timeline();
 
-export const Map = ({ start }) => {
+export const Map = ({ removeIntro, start }) => {
+  const [hasStarted, setHasStarted] = useState(false);
   const duration = 0.66;
 
   useEffect(() => {
+    if (hasStarted) return;
+
     let startedOut = false;
 
     const animateScene = () => {
-      const tl = new gsap.timeline();
-
       tl.pause();
       animatePins(tl);
       animateMaps(tl);
 
       if (start) {
         tl.play();
+        setHasStarted(true);
       }
     };
 
@@ -90,26 +93,26 @@ export const Map = ({ start }) => {
           duration: duration * 10,
           ease: "power1.in",
           onUpdate: (e) => {
-            if (tl._time >= duration * 7.25 && !startedOut) {
+            if (tl._time > duration * 7.25 && !startedOut) {
               startedOut = true;
 
-              // onStart: () => {
-
               clouds.classList.remove("cloud-intro--play");
-              // setTimeout(() => {
               clouds.classList.add("cloud-intro--play--back");
               clouds.classList.add("cloud-intro--play--in");
-              // }, 4000);
+
               setTimeout(() => {
                 clouds.classList.remove("cloud-intro--play--in");
-                // clouds.classList.remove("cloud-intro--play--back");
                 clouds.classList.add("cloud-intro--play");
-                props.removeIntro();
               }, duration * 2150);
+
               setTimeout(() => {
+                removeIntro();
                 intro.classList.add("intro--complete");
-                mapWrap.classList.add("map-wrap--complete");
-              }, duration * 1333);
+              }, duration * 2150);
+
+              // setTimeout(() => {
+              //   mapWrap.classList.add("map-wrap--complete");
+              // }, duration * 2150 + 1900);
 
               // },
             }

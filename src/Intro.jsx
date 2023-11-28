@@ -7,6 +7,7 @@ import "./scss/intro.scss";
 
 const Intro = ({ hasStarted }) => {
   const [visible, setVisible] = useState(true);
+  const [cloudsGone, setCloudsGone] = useState(false);
 
   const playIntro = () => {
     const intro = document.querySelector(".cloud-intro");
@@ -14,10 +15,21 @@ const Intro = ({ hasStarted }) => {
   };
 
   const removeIntro = () => {
+    console.log("im removing the itrno");
     setVisible(false);
   };
 
-  if (!visible) return null;
+  useEffect(() => {
+    if (!visible && !cloudsGone) {
+      setTimeout(() => {
+        setCloudsGone(true);
+      }, 2500 * 0.66);
+    }
+  }, [visible]);
+
+  useEffect(() => {
+    console.log({ cloudsGone });
+  }, [cloudsGone]);
 
   return (
     <div className="intro">

@@ -1097,7 +1097,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
+    setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1116,7 +1116,8 @@ const Experience = () => {
   const animateHover = (el = null, index = 0) => {
     // return; //@TODO: make this work from the itinerary
     const item = index ? el.current.parent.children[index] : el;
-    // console.log();
+    if (!item) return;
+
     gsap.to(item.current.scale, {
       x: 0.04,
       y: 0.04,
@@ -1148,9 +1149,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        <div onClick={start} {...startMobile}>
+        {/* <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         {days[1] && (
           <Itinerary

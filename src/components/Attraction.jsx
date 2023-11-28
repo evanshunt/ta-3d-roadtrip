@@ -277,6 +277,27 @@ const Attraction = ({
                       )}
                       <div className="attraction__links__link-wrapper">
                         <strong>{links[0].text}</strong>
+                        {links[1] && <p>{links[1].linkText}</p>}
+                        {links[1] && (
+                          <>
+                            <a
+                              href={links[1].url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`attraction__links__link ${
+                                links[1].external
+                                  ? "attraction__links__link--external"
+                                  : ""
+                              }`}
+                            >
+                              {links[1].text}
+                              {links[1].external && (
+                                <img src={external} alt="External link" />
+                              )}
+                            </a>
+                            <br />
+                          </>
+                        )}
                         <a
                           href={links[0].url}
                           target="_blank"
@@ -288,13 +309,14 @@ const Attraction = ({
                           }`}
                         >
                           {links[0].linkText}
+                          <img alt="" className="arrow-right" src={arrowLeft} />
                           {/* {link.external && (
                                 <img src={external} alt="External link" />
                               )} */}
                         </a>
                       </div>
                     </li>
-                    {links[1] && (
+                    {/* {links[1] && (
                       <li className="column">
                         {links[1].image && (
                           <img src={links[1].image} alt={links[1].title} />
@@ -318,7 +340,7 @@ const Attraction = ({
                           </a>
                         </div>
                       </li>
-                    )}
+                    )} */}
                   </>
                 )}
               </ul>

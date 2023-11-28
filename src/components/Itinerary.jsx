@@ -8,6 +8,7 @@ import "../scss/itinerary.scss";
 const Itinerary = ({
   animateHover,
   animateOut,
+  backgroundRefs,
   currDay,
   currDestination,
   days,
@@ -17,6 +18,8 @@ const Itinerary = ({
   inBetweens,
   index,
   isOpen,
+  setHoverIndex,
+  setPinRefs,
   setIndex,
   showAttraction,
   toggleItinerary,
@@ -124,6 +127,8 @@ const Itinerary = ({
                 name={days[day][0].name}
                 number={days[day][0].day}
                 setIndex={setIndex}
+                setPinRefs={setPinRefs}
+                setHoverIndex={setHoverIndex}
                 showAttraction={showAttraction}
                 stops={days[day]}
               />

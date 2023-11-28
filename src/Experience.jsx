@@ -884,7 +884,9 @@ const Experience = () => {
   const [direction, setDirection] = useState("forward");
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState(null);
   const [isNight, setIsNight] = useState(false);
+  const [pinRefs, setPinRefs] = useState([]);
   const [itineraryOpen, setItineraryOpen] = useState(false);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
@@ -925,8 +927,14 @@ const Experience = () => {
   };
 
   useEffect(() => {
-    console.log({ direction });
-  }, [direction]);
+    if (hoverIndex !== null) {
+      animateHover(pinRefs[hoverIndex], hoverIndex, true);
+
+      setTimeout(() => {
+        animateOut(pinRefs[hoverIndex], hoverIndex, true);
+      }, 250);
+    }
+  }, [hoverIndex]);
 
   useEffect(() => {
     destinations[index].visited = true;
@@ -1112,10 +1120,12 @@ const Experience = () => {
     }deg)`;
   };
 
-  // Testing pins
-  const animateHover = (el = null, index = 0) => {
-    // return; //@TODO: make this work from the itinerary
-    const item = index ? el.current.parent.children[index] : el;
+  const animateHover = (el = null, index = 0, override = false) => {
+    let item = index !== false ? el.current.parent.children[index] : el;
+    if (override) {
+      item = el;
+    }
+
     if (!item) return;
 
     gsap.to(item.current.scale, {
@@ -1127,9 +1137,14 @@ const Experience = () => {
     });
   };
 
-  const animateOut = (el = null, index = 0) => {
+  const animateOut = (el = null, index = false, override = false) => {
     // return; //@TODO: make this work from the itinerary
-    const item = index ? el.current.parent.children[index] : el;
+    let item = index !== false ? el.current.parent.children[index] : el;
+    if (override) {
+      item = el;
+    }
+
+    if (!item) return;
 
     gsap.to(item.current.scale, {
       x: 0.03,
@@ -1168,6 +1183,8 @@ const Experience = () => {
             index={index}
             isOpen={itineraryOpen}
             nextDestination={nextDestination}
+            setHoverIndex={setHoverIndex}
+            setPinRefs={setPinRefs}
             showAttraction={showAttraction}
             stopCount={destinations.length - 1}
             toggleItinerary={toggleItinerary}
@@ -1226,6 +1243,7 @@ const Experience = () => {
               isNight={isNight}
               project={project}
               setIndex={setIndex}
+              setPinRefs={setPinRefs}
               started={start}
             />
           </SheetProvider>

@@ -85,10 +85,6 @@ const Attraction = ({
     }
   };
 
-  useEffect(() => {
-    console.log({ direction }, "from attraction");
-  }, [direction]);
-
   const links = currDestination?.details?.links;
 
   return (

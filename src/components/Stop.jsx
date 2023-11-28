@@ -8,6 +8,7 @@ const Stop = ({
   currDestination,
   handleIndex,
   index,
+  setHoverIndex,
   showAttraction,
   stop,
 }) => {
@@ -23,9 +24,10 @@ const Stop = ({
     >
       <div
         onMouseEnter={() => {
-          animateHover(null, index);
+          setHoverIndex(index);
         }}
         onMouseOut={() => {
+          setHoverIndex(null);
           animateOut(null, index);
         }}
         onClick={() => {

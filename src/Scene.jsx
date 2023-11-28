@@ -222,13 +222,14 @@ const Scene = (props) => {
           <Day1
             animateHover={props.animateHover}
             animateOut={props.animateOut}
+            geometry={circleGeom}
             isNight={props.isNight}
+            material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
             setIndex={props.setIndex}
+            setPinRefs={props.setPinRefs}
             // visible={props.currDay === 0 || props.currDay === 1}
-            geometry={circleGeom}
-            material={redMaterial}
           />
         </group>
 
@@ -236,14 +237,13 @@ const Scene = (props) => {
           <Day2
             animateHover={props.animateHover}
             animateOut={props.animateOut}
+            geometry={circleGeom}
             isNight={props.isNight}
+            material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
             setIndex={props.setIndex}
-            visible={true}
-            // visible={props.currDay === 0 || props.currDay === 1}
-            geometry={circleGeom}
-            material={redMaterial}
+            setPinRefs={props.setPinRefs}
           />
         </group>
 
@@ -251,14 +251,13 @@ const Scene = (props) => {
           <Day3
             animateHover={props.animateHover}
             animateOut={props.animateOut}
-            positions={positions}
+            geometry={circleGeom}
             isNight={props.isNight}
+            material={redMaterial}
+            positions={positions}
             sceneIndex={props.index}
             setIndex={props.setIndex}
-            visible={true}
-            // visible={props.currDay === 0 || props.currDay === 1}
-            geometry={circleGeom}
-            material={redMaterial}
+            setPinRefs={props.setPinRefs}
           />
         </group>
 

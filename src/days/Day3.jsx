@@ -18,6 +18,7 @@ const Day3 = ({
   material,
   positions,
   setIndex,
+  setPinRefs,
 }) => {
   return (
     <>
@@ -55,6 +56,7 @@ const Day3 = ({
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -67,6 +69,7 @@ const Day3 = ({
         position={positions.maligneCanyon}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -79,6 +82,7 @@ const Day3 = ({
         position={positions.jasperSkyTram}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -91,6 +95,7 @@ const Day3 = ({
         position={positions.fairmontJasperParkLodge}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -103,6 +108,7 @@ const Day3 = ({
         position={positions.jasperPlanetarium}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
 
       <NightLights

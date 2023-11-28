@@ -18,6 +18,7 @@ const Day2 = ({
   material,
   positions,
   setIndex,
+  setPinRefs,
 }) => {
   // const tl = gsap.timeline({});
 
@@ -51,6 +52,7 @@ const Day2 = ({
         position={positions.carterRyanGallery}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -63,6 +65,7 @@ const Day2 = ({
         position={positions.johnstonCanyon}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -75,6 +78,7 @@ const Day2 = ({
         name={"Lake Louise Gondola"}
         position={positions.lakeLouiseGondola}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -87,6 +91,7 @@ const Day2 = ({
         scale={0.2}
         position={positions.fairmontChateauLakeLouise}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
@@ -99,8 +104,8 @@ const Day2 = ({
         position={positions.fairview}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
-
       <NightLights isNight={isNight} position={positions.fairview} />
     </>
   );

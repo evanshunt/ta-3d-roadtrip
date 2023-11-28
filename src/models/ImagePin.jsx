@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
-import { Billboard, Image, meshBounds } from "@react-three/drei";
+import React, { useEffect, useRef } from "react";
+import { Billboard, Image } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
-
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 
@@ -15,6 +14,7 @@ const ImagePin = ({
   name,
   position,
   setIndex,
+  setPinRefs,
 }) => {
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
@@ -23,12 +23,20 @@ const ImagePin = ({
 
   let opacity = 0;
 
-  useFrame(({}) => {
+  useFrame(() => {
     theatreObject.onValuesChange((newValues) => {
       if (!imageRef.current) return;
       imageRef.current.children[0].material.opacity = newValues.opacity;
     });
   });
+
+  useEffect(() => {
+    setPinRefs((prevRefs) => [...prevRefs, backgroundHaloRef]);
+
+    return () => {
+      setPinRefs((prevRefs) => prevRefs.filter((ref) => ref !== componentRef));
+    };
+  }, []);
 
   return (
     <Billboard position={[position[0], position[1], position[2]]}>
@@ -80,19 +88,18 @@ const ImagePin = ({
           castShadow
           name={name}
           onPointerEnter={() => {
-            animateHover(backgroundHaloRef);
+            animateHover(backgroundHaloRef, false);
           }}
           onPointerLeave={() => {
-            animateOut(backgroundHaloRef);
+            animateOut(backgroundHaloRef, false);
           }}
-          onClick={(e) => {
+          onClick={() => {
             setIndex(index);
           }}
           position-z={-0.02}
           theatreKey={`Pins / ${name} / Background ${name}`}
           scale={0.02}
           material={material}
-          // raycast={meshBounds}
           receiveShadow={false}
           geometry={geometry}
         />

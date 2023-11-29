@@ -308,20 +308,21 @@
     align-items: center;
     display: flex;
     font-weight: 600;
-
-    justify-content: flex-start;
+    float: left;
+    margin-bottom: 0.25rem;
     text-decoration: none;
   }
 
   & > img {
     display: inline-block;
     margin-right: 1.25rem;
-    width: 50%;
+    width: 35%;
   }
 
   .arrow-right {
     transform: rotateZ(180deg);
     width: 0.75rem;
+    margin-left: 0.25rem;
   }
 
   &.column {
@@ -331,7 +332,7 @@
 
 .attraction__links__link-wrapper {
   display: inline-block;
-  width: 50%;
+  width: 60%;
 
   p {
     margin: 0 0 0.5rem 0;

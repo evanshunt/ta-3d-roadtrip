@@ -1109,7 +1109,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    setHasStarted(true); // uncomment for testing
+    // setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1168,9 +1168,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        {/* <div onClick={start} {...startMobile}>
+        <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         <button className="close-tour">
           <img src={closeImage} alt="" />

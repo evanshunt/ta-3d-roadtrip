@@ -332,6 +332,10 @@
 .attraction__links__link-wrapper {
   display: inline-block;
   width: 50%;
+
+  p {
+    margin: 0 0 0.5rem 0;
+  }
 }
 
 .attraction__links__link-wrapper strong {

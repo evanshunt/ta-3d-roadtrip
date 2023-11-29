@@ -12,7 +12,6 @@ import React, { useState, useRef, useEffect } from "react";
 import selfGuidedTour from "../images/types/self-guided-tour.svg";
 import accommodation from "../images/types/accommodation.svg";
 import food from "../images/types/food.svg";
-import slugify from "../utils/slugify";
 import { useSwipeable } from "react-swipeable";
 
 const Attraction = ({
@@ -30,7 +29,6 @@ const Attraction = ({
   toggleItinerary,
 }) => {
   const [open, setOpen] = useState(false);
-  const slug = slugify(currDestination?.details?.title);
   const attractionRef = useRef();
 
   const toggleDrawer = () => {
@@ -42,6 +40,7 @@ const Attraction = ({
       if (!currDestination.name) return;
     },
     onSwiped: (eventData) => {
+      if (!isMobile) return;
       if (!currDestination.name) return;
 
       const { velocity, dir } = eventData;
@@ -52,7 +51,12 @@ const Attraction = ({
         }, 500);
         return;
       }
-      setOpen(dir === "Up" ? true : false);
+      // @TODO: on mobile if inbetween, show itinerary
+      if (inBetweens.includes(index)) {
+        showItinerary();
+      } else {
+        setOpen(dir === "Up" ? true : false);
+      }
     },
 
     // ...config
@@ -90,7 +94,9 @@ const Attraction = ({
   return (
     <div
       ref={attractionRef}
-      className={`${open ? "attraction attraction--open" : "attraction"}
+      className={`${
+        open ? "attraction attraction--open" : "attraction attraction--closed"
+      }
 `}
     >
       <SwitchTransition>
@@ -136,7 +142,6 @@ const Attraction = ({
                   className="attraction__back"
                   label={"Back to itinerary"}
                   onClick={() => {
-                    // showInfo();
                     setOpen(false);
                     hideAttraction();
                     showItinerary(); // this only really does anything visual on mobile
@@ -306,37 +311,9 @@ const Attraction = ({
                         >
                           {links[0].linkText}
                           <img alt="" className="arrow-right" src={arrowLeft} />
-                          {/* {link.external && (
-                                <img src={external} alt="External link" />
-                              )} */}
                         </a>
                       </div>
                     </li>
-                    {/* {links[1] && (
-                      <li className="column">
-                        {links[1].image && (
-                          <img src={links[1].image} alt={links[1].title} />
-                        )}
-                        <div className="attraction__links__link-wrapper">
-                          <p>{links[1].linkText}</p>
-                          <a
-                            href={links[1].url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`attraction__links__link ${
-                              links[1].external
-                                ? "attraction__links__link--external"
-                                : ""
-                            }`}
-                          >
-                            {links[1].text}
-                            {links[1].external && (
-                              <img src={external} alt="External link" />
-                            )}
-                          </a>
-                        </div>
-                      </li>
-                    )} */}
                   </>
                 )}
               </ul>
@@ -355,7 +332,6 @@ const Attraction = ({
                         setTimeout(() => {
                           attractionRef.current.scrollTop = 0;
                         }, 600); // slightly longer than animout
-                        // showInfo();
                       }}
                       className="itinerary__stop__wrap"
                     >

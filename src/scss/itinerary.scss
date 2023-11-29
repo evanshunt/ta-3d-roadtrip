@@ -38,6 +38,10 @@
     &--open {
       z-index: 4;
     }
+
+    &--closed {
+      transform: translate(100%, 0);
+    }
   }
 }
 

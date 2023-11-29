@@ -22,6 +22,7 @@ import closeImage from "./images/close.svg";
 import mainNavImage from "/images/main-nav-mock.jpg";
 import mainNavImageMobile from "/images/main-nav-mock-mobile.webp";
 import { AdaptiveDpr, Loader } from "@react-three/drei";
+import CloseDrawer from "./CloseDrawer";
 
 const beforeAnim = 1.53333;
 
@@ -882,12 +883,13 @@ const Experience = () => {
   const [clicked, setClicked] = useState(false);
   const [debug, setDebug] = useState(false);
   const [direction, setDirection] = useState("forward");
+  const [drawerOpen, setDrawerOpen] = useState(isMobile ? false : true);
   const sheet = project.sheet("Scene");
   const [index, setIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState(null);
   const [isNight, setIsNight] = useState(false);
   const [pinRefs, setPinRefs] = useState([]);
-  const [itineraryOpen, setItineraryOpen] = useState(false);
+  const [itineraryOpen, setItineraryOpen] = useState(isMobile ? false : true);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
   const [nextDestination, setNextDestination] = useState(null);
@@ -1017,6 +1019,8 @@ const Experience = () => {
     // ...config
   });
 
+  const toggleDrawer = () => {};
+
   const toggleItinerary = () => {
     setItineraryOpen(!itineraryOpen);
   };
@@ -1037,10 +1041,6 @@ const Experience = () => {
     setAttractionsOpen(false);
   };
 
-  const showInfo = () => {
-    setAttractionsOpen(!attractionsOpen);
-  };
-
   const determineDay = (index) => {
     // get the length of the stops in each day and if beyond that, update the day
     const days = Object.groupBy(destinations, (destination) => destination.day);
@@ -1059,6 +1059,10 @@ const Experience = () => {
 
     return currentDay;
   };
+
+  const drawerClass = drawerOpen
+    ? "drawer-wrapper drawer-wrapper--open"
+    : "drawer-wrapper drawer-wrapper--closed";
 
   const days = Object.groupBy(destinations, (destination) => destination.day);
   const dayKeys = Object.keys(days);
@@ -1105,7 +1109,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
+    setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -1139,7 +1143,7 @@ const Experience = () => {
 
   const animateOut = (el = null, index = false, override = false) => {
     // return; //@TODO: make this work from the itinerary
-    let item = index !== false ? el.current.parent.children[index] : el;
+    let item = index !== false ? el?.current.parent.children[index] : el;
     if (override) {
       item = el;
     }
@@ -1164,32 +1168,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        <div onClick={start} {...startMobile}>
+        {/* <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div>
-
-        {days[1] && (
-          <Itinerary
-            animateHover={animateHover}
-            animateOut={animateOut}
-            currDestination={currDestination}
-            currDay={currDay}
-            days={days}
-            direction={direction}
-            grouped={daysParsed}
-            handleIndex={handleIndex}
-            hideItinerary={hideItinerary}
-            inBetweens={inBetweens}
-            index={index}
-            isOpen={itineraryOpen}
-            nextDestination={nextDestination}
-            setHoverIndex={setHoverIndex}
-            setPinRefs={setPinRefs}
-            showAttraction={showAttraction}
-            stopCount={destinations.length - 1}
-            toggleItinerary={toggleItinerary}
-          />
-        )}
+        </div> */}
 
         <button className="close-tour">
           <img src={closeImage} alt="" />
@@ -1250,21 +1231,89 @@ const Experience = () => {
           {/* </ScrollControls> */}
         </Canvas>
 
-        <Attraction
-          attractionsOpen={attractionsOpen}
-          currDestination={currDestination}
-          direction={direction}
-          handleIndex={handleIndex}
-          hideAttraction={hideAttraction}
-          inBetweens={inBetweens}
-          index={index}
-          maxLength={maxLength}
-          nextDestination={nextDestination}
-          setIndex={setIndex}
-          showInfo={showInfo}
-          showItinerary={showItinerary}
-          toggleItinerary={toggleItinerary}
-        />
+        {isMobile ? (
+          <>
+            <Attraction
+              attractionsOpen={attractionsOpen}
+              currDestination={currDestination}
+              direction={direction}
+              handleIndex={handleIndex}
+              hideAttraction={hideAttraction}
+              inBetweens={inBetweens}
+              index={index}
+              maxLength={maxLength}
+              nextDestination={nextDestination}
+              setIndex={setIndex}
+              showItinerary={showItinerary}
+              toggleItinerary={toggleItinerary}
+            />
+            {days[1] && (
+              <Itinerary
+                animateHover={animateHover}
+                animateOut={animateOut}
+                currDestination={currDestination}
+                currDay={currDay}
+                days={days}
+                direction={direction}
+                grouped={daysParsed}
+                handleIndex={handleIndex}
+                hideItinerary={hideItinerary}
+                inBetweens={inBetweens}
+                index={index}
+                isOpen={itineraryOpen}
+                nextDestination={nextDestination}
+                setHoverIndex={setHoverIndex}
+                setPinRefs={setPinRefs}
+                showAttraction={showAttraction}
+                stopCount={destinations.length - 1}
+                toggleItinerary={toggleItinerary}
+              />
+            )}
+          </>
+        ) : (
+          <div className={drawerClass}>
+            <CloseDrawer
+              drawerOpen={drawerOpen}
+              setDrawerOpen={setDrawerOpen}
+            />
+            <Attraction
+              attractionsOpen={attractionsOpen}
+              currDestination={currDestination}
+              direction={direction}
+              handleIndex={handleIndex}
+              hideAttraction={hideAttraction}
+              inBetweens={inBetweens}
+              index={index}
+              maxLength={maxLength}
+              nextDestination={nextDestination}
+              setIndex={setIndex}
+              showItinerary={showItinerary}
+              toggleItinerary={toggleItinerary}
+            />
+            {days[1] && (
+              <Itinerary
+                animateHover={animateHover}
+                animateOut={animateOut}
+                currDestination={currDestination}
+                currDay={currDay}
+                days={days}
+                direction={direction}
+                grouped={daysParsed}
+                handleIndex={handleIndex}
+                hideItinerary={hideItinerary}
+                inBetweens={inBetweens}
+                index={index}
+                isOpen={itineraryOpen}
+                nextDestination={nextDestination}
+                setHoverIndex={setHoverIndex}
+                setPinRefs={setPinRefs}
+                showAttraction={showAttraction}
+                stopCount={destinations.length - 1}
+                toggleItinerary={toggleItinerary}
+              />
+            )}
+          </div>
+        )}
 
         <div className="controls">
           {/* {index > 0 && ( */}

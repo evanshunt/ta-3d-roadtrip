@@ -1,0 +1,50 @@
+.close-drawer {
+  align-items: center;
+  background-color: var(--white);
+  border: none;
+  bottom: 15vh;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  padding: 0.5rem 0.25rem;
+  position: fixed;
+  right: 24.125rem;
+  transition: all 0.5s ease-in-out;
+  z-index: 6;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
+}
+
+.drawer-wrapper {
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+
+  @media screen and (max-width: 1024px) {
+    top: auto;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 1024px) {
+    left: auto;
+    width: 24.125rem;
+
+    &--closed {
+      transform: translate(100%, 0);
+
+      img {
+        transform: rotateZ(180deg);
+      }
+    }
+
+    &--open {
+      transform: translate(0, 0);
+    }
+  }
+}

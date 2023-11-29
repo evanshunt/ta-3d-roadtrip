@@ -92,7 +92,9 @@ const Itinerary = ({
     <>
       <div
         ref={itineraryRef}
-        className={`${isOpen ? "itinerary itinerary--open" : "itinerary"}`}
+        className={`${
+          isOpen ? "itinerary itinerary--open" : "itinerary itinerary--closed"
+        }`}
       >
         <div
           className="itinerary__header__mobile"

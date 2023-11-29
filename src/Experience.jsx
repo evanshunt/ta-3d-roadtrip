@@ -1241,6 +1241,7 @@ const Experience = () => {
               hideAttraction={hideAttraction}
               inBetweens={inBetweens}
               index={index}
+              key={index}
               maxLength={maxLength}
               nextDestination={nextDestination}
               setIndex={setIndex}
@@ -1343,7 +1344,11 @@ const Experience = () => {
             <ul className="controls__list__days">
               {Object.keys(days).map((day, i) => {
                 if (i === 0) return null;
-                return <span className="controls__list__day">Day {i}</span>;
+                return (
+                  <span key={`${day}-i`} className="controls__list__day">
+                    Day {i}
+                  </span>
+                );
               })}
             </ul>
 
@@ -1358,7 +1363,7 @@ const Experience = () => {
                 // if (day === "0") return;
 
                 return (
-                  <>
+                  <React.Fragment key={i}>
                     {destinations.map((destination, i) => {
                       if (destination.day === parseInt(day)) {
                         return (
@@ -1382,7 +1387,7 @@ const Experience = () => {
                         );
                       }
                     })}
-                  </>
+                  </React.Fragment>
                 );
               })}
             </ul>

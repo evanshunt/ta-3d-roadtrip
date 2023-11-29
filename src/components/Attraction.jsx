@@ -94,6 +94,7 @@ const Attraction = ({
   return (
     <div
       ref={attractionRef}
+      key={index}
       className={`${
         open ? "attraction attraction--open" : "attraction attraction--closed"
       }
@@ -236,10 +237,11 @@ const Attraction = ({
                 </div>
                 {currDestination?.details?.assets?.length && (
                   <div className="attraction__info__images">
-                    {currDestination.details.assets.map((asset) => {
+                    {currDestination.details.assets.map((asset, i) => {
                       if (asset.type === "image") {
                         return (
                           <img
+                            key={i}
                             src={asset.url}
                             alt=""
                             className="attraction__info__media"

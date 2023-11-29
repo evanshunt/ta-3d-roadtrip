@@ -9,6 +9,7 @@ const Day = ({
   description,
   drivingInfo,
   handleIndex,
+  index,
   name,
   number,
   setHoverIndex,
@@ -23,7 +24,7 @@ const Day = ({
         animateOut={animateOut}
         handleIndex={handleIndex}
         index={index}
-        key={index}
+        key={`${name}-${index}`}
         currDestination={currDestination}
         setPinRefs={setPinRefs}
         setHoverIndex={setHoverIndex}
@@ -34,7 +35,7 @@ const Day = ({
   };
 
   return (
-    <li className="itinerary__day" key={name}>
+    <li className="itinerary__day" key={stops[index].stop}>
       <strong className="itinerary__day__text">
         Day {number} <span>{name}</span>
       </strong>

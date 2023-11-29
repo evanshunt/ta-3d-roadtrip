@@ -12,11 +12,14 @@
     "leva": "^0.9.35",
     "r3f-perf": "^7.1.2",
     "react": "^18.2.0",
+    "react-device-detect": "2.2.3",
     "react-dom": "^18.2.0",
     "react-swipeable": "^7.0.1",
+    "react-three-fiber": "6.0.13",
     "react-transition-group": "^4.4.5",
     "sass": "^1.63.6",
     "three": "0.149.0",
+    "three-noise": "1.1.2",
     "vite": "^4.4.1"
   }
 }

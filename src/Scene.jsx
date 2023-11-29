@@ -1,61 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+// import {
+//   DepthOfField,
+//   EffectComposer,
+//   TiltShift2,
+// } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
-import { Environment, OrbitControls } from "@react-three/drei";
-import { gsap } from "gsap";
-import Lights from "./Lights.jsx";
-import { Perf } from "r3f-perf";
-import Road from "./models/final/Road.jsx";
-import { types } from "@theatre/core";
-import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
 
-import { Top } from "./models/final/Top.jsx";
-import TopAlt from "./models/final/TopAlt.jsx";
-import { Sides } from "./models/final/Sides.jsx";
-import { Plane } from "./models/final/Plane.jsx";
+import Lights from "./Lights.jsx";
+// import { Perf } from "r3f-perf";
+import Road from "./models/final/Road.jsx";
+
+// import { useControls } from "leva";
+
+import TopAltAgain from "./models/final/TopAltAgain.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
+import { Clouds } from "@react-three/drei";
+// import HTMLInfo from "./components/HTMLInfo.jsx";
 
-// cam pos
-// [-4.95, 3.216, 10.292]
-
-// const cloudTimeline = gsap.timeline({
-//   repeat: -1,
-// });
-
-// const animateCloud = (cloudRef, tl, cloudIndex) => {
-//   const info = {
-//     // Cloud 1
-//     1: {
-//       x: 1.7,
-//       y: 0.85,
-//       z: 1.3,
-//       duration: 35,
-//     },
-//   };
-
-//   tl.to(cloudRef.current.position, {
-//     x: info[cloudIndex].x,
-//     y: info[cloudIndex].y,
-//     z: info[cloudIndex].z,
-//     duration: info[cloudIndex].duration,
-//     ease: "none",
-//     // onStart: () => {
-//     //   invalidate();
-//     // },
-//     // onComplete: () => {
-//     //   invalidate();
-//     // },
-//   });
-// };
-
+// @TODO: move this into the data json from Experience.jsx
 const positions = {
   // Day 1:
   // caveAndBasin: [-4.4, 1.18, 2.75],
@@ -73,94 +41,47 @@ const positions = {
   // Day 2:
   carterRyanGallery: [-4.55, 1.075, 2.83],
   johnstonCanyon: [-4.0, 1.16, 1.88],
-  lakeLouiseGondola: [-2.9, 1.2, 0.73],
-  fairmontChateauLakeLouise: [-3.1, 1.18, 0.57],
-  fairview: [-3.1, 1.18, 0.57],
+  lakeLouiseGondola: [-3.05, 1.1, 0.73],
+  fairmontChateauLakeLouise: [-3.2, 1.1, 0.61],
+  fairview: [-3.2, 1.11, 0.57],
 
   // Day 3:
-  columbiaIcefieldSkywalk: [1.63, 1.25, -2.9],
-  maligneCanyon: [5.3, 1.14, -5.5],
-  jasperSkyTram: [5.18, 1.13, -6.1],
-  fairmontJasperParkLodge: [5.4, 1.15, -5.6],
-  jasperPlanetarium: [5.4, 1.15, -5.6],
+  columbiaIcefieldSkywalk: [1.65, 1.1, -3.2],
+  maligneCanyon: [5.4, 1.05, -5.6],
+  jasperSkyTram: [5.0, 1.05, -6.0],
+  fairmontJasperParkLodge: [5.35, 1.08, -5.7],
+  jasperPlanetarium: [5.4, 1.06, -5.65],
 };
 
-const circleGeom = new THREE.CircleGeometry(0.8, 32);
-
+// Reused geometries and materials
 THREE.ColorManagement.legacyMode = false;
+const circleGeom = new THREE.CircleGeometry(0.8, 32);
 const redMaterial = new THREE.MeshBasicMaterial({
   color: 0x9c0f00,
 });
 
 const Scene = (props) => {
-  // const bokehRef = useRef();
-  // const cloudRef = useRef();
   const sceneRef = useRef();
-  const cameraRef = useRef();
 
-  // const { altTop } = useControls({
-  //   altTop: {
-  //     value: false,
+  // const { day1PosX, day1PosY, day1PosZ } = useControls({
+  //   day1PosX: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
   //   },
-  // });
-
-  // const { focusDistance, focalLength, bokehScale } = useControls({
-  //   focusDistance: {
-  //     value: 0.12,
-  //     min: 0.08,
-  //     max: 0.15,
-  //     step: 0.001,
+  //   day1PosY: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
   //   },
-  //   focalLength: {
-  //     value: 0.085,
-  //     min: 0,
-  //     max: 0.15,
-  //     step: 0.001,
+  //   day1PosZ: {
+  //     value: 0,
+  //     min: -1,
+  //     max: 1,
+  //     step: 0.01,
   //   },
-  //   bokehScale: {
-  //     value: 10,
-  //     min: 0,
-  //     max: 10,
-  //     step: 0.1,
-  //   },
-  // });
-
-  // useFrame((e) => {
-  //   if (e.clock.elapsedTime > props.animDuration - 0.75) {
-  //     setAddEffect(true);
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (addEffect) return;
-
-  //   setTimeout(() => {
-  //     setAddEffect(true);
-  //     gsap.to(dofProps, {
-  //       bokehScale: 6,
-  //       duration: 6,
-  //     });
-  //     console.log("hickup here?");
-  //   }, props.animDuration + 4 * 1000);
-  // }, [hasStarted]);
-
-  // useFrame((e) => {
-  //   // if (e.clock.elapsedTime > props.animDuration) {
-  //   //   setAddEffect(true);
-  //   // }
-  //   if (hasStarted) return;
-
-  //   if (e.clock.elapsedTime > props.animDuration - 1) {
-  //     setHasStarted(true);
-  //     animateCloud(cloudRef, cloudTimeline, 1);
-  //   }
-  //   //@TODO: use e.clock.elapsedTime to start the animation
-  //   // if (props.index === 0 && props.started) {
-  //   //   setTimeout(() => {
-  //   //     console.log("im firing the cloud timeout");
-
-  //   //   }, props.animDuration + 4 * 1000);
-  //   // }
   // });
 
   // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
@@ -183,32 +104,35 @@ const Scene = (props) => {
 
   //-4.8, 1.6, 5.4]
   // -3.1, 1.76, 2.07
-  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls({
-  //   cloudPosX: {
-  //     value: -3.1,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudPosY: {
-  //     value: 1.76,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudPosZ: {
-  //     value: 2.07,
-  //     min: -10,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  //   cloudScale: {
-  //     value: 0.1,
-  //     min: 0.01,
-  //     max: 0.3,
-  //     step: 0.01,
-  //   },
-  // });
+  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls(
+  //   "Cloud Lake Louise",
+  //   {
+  //     cloudPosX: {
+  //       value: -3.1,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudPosY: {
+  //       value: 1.76,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudPosZ: {
+  //       value: 2.07,
+  //       min: -10,
+  //       max: 10,
+  //       step: 0.01,
+  //     },
+  //     cloudScale: {
+  //       value: 0.1,
+  //       min: 0.01,
+  //       max: 0.3,
+  //       step: 0.01,
+  //     },
+  //   }
+  // );
 
   // const { cloudScale } = useControls({
   //   cloudScale: {
@@ -227,22 +151,14 @@ const Scene = (props) => {
   //   },
   // });
 
-  /*
-  camera stop 1
-  position: -4.76148947700402, 4.028310067018445, 9.902280289701652
-  rotation: -0.8278370080610934, -0.2551005789449138, -0.35099999999999976
-  -4.949944894060301, 3.2146815523137304, 10.292633697035237
-  -0.6078282406989428, -0.3810426971585241, 0.025860845931176678
-  
-  */
-
   return (
     <>
-      <Environment
+      {/* <Environment
         background
         files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
-        intensity={2}
-      />
+        // preset={props.isNight ? "night" : "park"}
+        // intensity={props.isNight ? 0 : 2}
+      /> */}
       {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
@@ -250,14 +166,13 @@ const Scene = (props) => {
         // rotation={cameraRotation}
         rotation={[-1.5707963267948966, 0, 0]}
         makeDefault={true}
+        // ref={cameraRef}
         onChange={(e) => {
           const camera = e.target?.object;
           if (!camera) return;
-          console.log(camera.position.toArray());
-          console.log(camera.rotation.toArray());
         }}
       /> */}
-      <EditableCamera theatreKey={"Camera"} />
+      <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
       {/* <PerspectiveCamera
         makeDefault
         ref={cameraRef}
@@ -294,65 +209,88 @@ const Scene = (props) => {
       /> */}
 
       <Lights
-        alt={false}
         index={props.index}
+        isNight={props.isNight}
         debug={props.debug}
         positions={positions}
       />
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* Day 1 */}
-
-        <Day1
-          positions={positions}
-          sceneIndex={props.index}
-          setIndex={props.setIndex}
-          visible={true}
-          // visible={props.currDay === 0 || props.currDay === 1}
-          geometry={circleGeom}
-          material={redMaterial}
-        />
-
-        {/* Day 2 */}
-        <Day2
-          positions={positions}
-          sceneIndex={props.index}
-          setIndex={props.setIndex}
-          visible={true}
-          // visible={props.currDay === 0 || props.currDay === 1}
-          geometry={circleGeom}
-          material={redMaterial}
-        />
-
-        {/* Day 3 */}
-        {/* <Day3 positions={positions} /> */}
-
-        {/* <e.group theatreKey="Lake Louise Cloud 2">
-          <Cloud scale={0.2} position={[-2, 3.1, 3]} />
-        </e.group>
-
-      */}
-        <e.group
-          // position={[cloudPosX, cloudPosY, cloudPosZ]}
-          position={[-3.8, 1.75, 3.5]}
-          theatreKey="Cloud Banff"
-        >
-          <Cloud scale={0.075} />
-        </e.group>
-
-        <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
-          <Cloud
-            // works scale = -0.03
-            // works position = [-2.7, 0.85, 2.30]
-            //
-            scale={0.07}
-            // scale={cloudScale}
-            //  position={[-0.8, 1.5, 2.6]}
-
-            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+        {/* <HTMLInfo position={positions.caveAndBasin} /> */}
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day1
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
+            geometry={circleGeom}
+            isNight={props.isNight}
+            material={redMaterial}
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            setPinRefs={props.setPinRefs}
+            // visible={props.currDay === 0 || props.currDay === 1}
           />
-        </e.group>
+        </group>
+
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day2
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
+            geometry={circleGeom}
+            isNight={props.isNight}
+            material={redMaterial}
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            setPinRefs={props.setPinRefs}
+          />
+        </group>
+
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day3
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
+            geometry={circleGeom}
+            isNight={props.isNight}
+            material={redMaterial}
+            positions={positions}
+            sceneIndex={props.index}
+            setIndex={props.setIndex}
+            setPinRefs={props.setPinRefs}
+          />
+        </group>
+
+        <Clouds>
+          <e.group
+            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+            position={[-3.8, 1.75, 3.5]}
+            theatreKey="Cloud Banff"
+          >
+            <Cloud scale={0.075} />
+          </e.group>
+
+          <e.group
+            theatreKey="Cloud Lake Louise 2"
+            // position={[cloudPosX, cloudPosY, cloudPosZ]}
+            position={[-5.76, 1.76, 0.26]}
+          >
+            <Cloud scale={0.075} />
+          </e.group>
+
+          <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
+            <Cloud
+              // works scale = -0.03
+              // works position = [-2.7, 0.85, 2.30]
+              //
+              scale={0.07}
+              // scale={cloudScale}
+              //  position={[-0.8, 1.5, 2.6]}
+
+              // position={[cloudPosX, cloudPosY, cloudPosZ]}
+            />
+          </e.group>
+        </Clouds>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road
@@ -368,7 +306,8 @@ const Scene = (props) => {
 
         {/* {altTop && <TopAlt />} */}
         {/* {!altTop && <Top />} */}
-        <Top />
+
+        <TopAltAgain />
 
         {/* <Sides /> */}
         {/* <Plane /> */}
@@ -378,14 +317,14 @@ const Scene = (props) => {
       {/* {addEffect && ( */}
 
       {/* <EffectComposer>
-        <DepthOfField
+      <DepthOfField 
           focusDistance={0.12} // where to focus
           // focusDistance={focusDistance}
           focalLength={0.09} // focal length
           // focalLength={focalLength}
-          bokehScale={6} // bokeh size
+          bokehScale={2.5} // bokeh size
           // bokehScale={bokehScale}
-        />
+        /> 
       </EffectComposer> */}
 
       {/* )} */}

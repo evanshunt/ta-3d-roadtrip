@@ -1,12 +1,25 @@
 .map-wrap {
   background: #ffffff;
+  object-fit: cover;
   pointer-events: none;
   position: fixed;
   transition: opacity 1s linear;
   z-index: 3;
 
   &--complete {
+    transition-duration: 0.25s;
     opacity: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: auto;
+    object-fit: none;
+    transform: none;
+  }
+
+  @media screen and (orientation: portrait) {
+    height: 220vh;
+    transform: translate(10%, 0);
   }
 }
 

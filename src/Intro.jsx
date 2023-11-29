@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import "./scss/intro.scss";
 
 const Intro = ({ hasStarted }) => {
-  const [hasPlayed, setHasPlayed] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [cloudsGone, setCloudsGone] = useState(false);
 
   const playIntro = () => {
     const intro = document.querySelector(".cloud-intro");
@@ -18,24 +18,23 @@ const Intro = ({ hasStarted }) => {
     setVisible(false);
   };
 
-  // useEffect(() => {
-  //   console.log({ hasPlayed });
-  // }, [hasPlayed]);
-
-  // test
-  // useEffect(() => {
-  //   playIntro();
-  // }, []);
-
-  if (!visible) return null;
+  useEffect(() => {
+    if (!visible && !cloudsGone) {
+      setTimeout(() => {
+        setCloudsGone(true);
+      }, 2500 * 0.66);
+    }
+  }, [visible]);
 
   return (
     <div className="intro">
       <Onboarding />
-      <div className="intro__map">
-        <Map removeIntro={removeIntro} start={hasStarted} />
-      </div>
-      <IntroClouds playIntro={playIntro} />
+      {visible && (
+        <div className="intro__map">
+          <Map removeIntro={removeIntro} start={hasStarted} />
+        </div>
+      )}
+      {!cloudsGone && <IntroClouds playIntro={playIntro} />}
     </div>
   );
 };

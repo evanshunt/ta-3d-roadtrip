@@ -1,66 +1,112 @@
 import React from "react";
 import ImagePin from "../models/ImagePin";
-import { useControls } from "leva";
+import InfoBox from "../components/InfoBox";
+import { NightLights } from "./NightLights";
+import { isMobile } from "react-device-detect";
 
-const Day2 = ({ geometry, material, positions, setIndex }) => {
-  // const { carterRyanGalleryX, carterRyanGalleryY, carterRyanGalleryZ } =
-  //   useControls({
-  //     carterRyanGalleryX: {
-  //       value: positions.carterRyanGallery[0],
-  //       min: -10,
-  //       max: 10,
-  //     },
-  //     carterRyanGalleryY: {
-  //       value: positions.carterRyanGallery[1],
-  //       min: -10,
-  //       max: 10,
-  //     },
-  //     carterRyanGalleryZ: {
-  //       value: positions.carterRyanGallery[2],
-  //       min: -10,
-  //       max: 10,
-  //     },
-  //   });
+import carterRyanGalleryImageSrc from "/images/carter-ryan-gallery.webp";
+import johnstonCanyonImageSrc from "/images/johnston-canyon.webp";
+import lakeLouiseGondolaImageSrc from "/images/lake-louise-gondola.webp";
+import fairmontChateauLakeLouiseImageSrc from "/images/fairmont-chateau-lake-louise.webp";
+import fairviewImageSrc from "/images/fairview.webp";
+
+const Day2 = ({
+  animateHover,
+  animateOut,
+  geometry,
+  isNight,
+  material,
+  positions,
+  setIndex,
+  setPinRefs,
+}) => {
+  // const tl = gsap.timeline({});
+
   return (
     <>
+      {!isMobile && (
+        <>
+          <InfoBox
+            imageSrc={"/images/info-boxes/moraine-lake.png"}
+            name={"Moraine Lake"}
+            position={[-3.7, 1.2, 0.6]}
+            width={1.93}
+          />
+
+          <InfoBox
+            imageSrc={"/images/info-boxes/bow-peak.png"}
+            name={"Bow Peak"}
+            position={[-2.0, 1.2, 0.0]}
+            width={1.86}
+          />
+        </>
+      )}
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/carter-ryan-gallery.png"}
-        index={6}
+        imageSrc={carterRyanGalleryImageSrc}
+        index={7}
         material={material}
         name={"Carter Ryan Gallery"}
         position={positions.carterRyanGallery}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
         geometry={geometry}
-        imageSrc={"/images/johnston-canyon.png"}
-        index={7}
+        imageSrc={johnstonCanyonImageSrc}
+        index={8}
         material={material}
         name={"Johnston Canyon"}
         position={positions.johnstonCanyon}
         scale={0.2}
         setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
-        imageSrc={"/images/lake-louise-gondola.png"}
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
+        imageSrc={lakeLouiseGondolaImageSrc}
+        index={9}
+        material={material}
         scale={0.2}
         name={"Lake Louise Gondola"}
         position={positions.lakeLouiseGondola}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
-        imageSrc={"/images/fairmont-chateau-lake-louise.png"}
-        scale={0.2}
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
+        imageSrc={fairmontChateauLakeLouiseImageSrc}
+        index={10}
+        material={material}
         name={"Fairmont Chateau Lake Louise"}
+        scale={0.2}
         position={positions.fairmontChateauLakeLouise}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
       <ImagePin
-        imageSrc={"/images/fairview.png"}
-        scale={0.2}
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
+        imageSrc={fairviewImageSrc}
+        index={11}
+        material={material}
         name={"Fairview"}
         position={positions.fairview}
+        scale={0.2}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
       />
+      <NightLights isNight={isNight} position={positions.fairview} />
     </>
   );
 };

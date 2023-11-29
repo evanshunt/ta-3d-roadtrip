@@ -114,11 +114,11 @@ const TiltShift = wrapEffect(TiltShiftEffect);
 function TiltShiftEffects() {
   const effectRef = React.createRef();
   const sheet = useCurrentSheet();
-  const [blur, setBlur] = React.useState(0.5);
-  const [direction, setDirection] = React.useState([0.96, 0.03]);
-  const [taper, setTaper] = React.useState(0.525);
-  const [start, setStart] = React.useState([0.0, 0.4]);
-  const [end, setEnd] = React.useState([0.47, 0.45]);
+  // const [blur, setBlur] = React.useState(0.5);
+  // const [direction, setDirection] = React.useState([0.96, 0.03]);
+  // const [taper, setTaper] = React.useState(0.525);
+  // const [start, setStart] = React.useState([0.0, 0.4]);
+  // const [end, setEnd] = React.useState([0.47, 0.45]);
 
   const [
     // The Theatre.js object that represents our THREE.js object. It'll be initially `null`.
@@ -153,51 +153,51 @@ function TiltShiftEffects() {
   //   end = [0.62, 0.63], // [0,1] percentage x,y of screenspace
   //   sampleCount = 30.0, // number of blur samples
   // direction = [0.37, 0.03]; // direction of blur
-  // const { blur } = useControls({
-  //   blur: {
-  //     value: 1,
-  //     min: 0.0,
-  //     max: 2.0,
-  //     label: "Blur",
-  //   },
-  // });
+  const { blur } = useControls({
+    blur: {
+      value: 1,
+      min: 0.0,
+      max: 2.0,
+      label: "Blur",
+    },
+  });
 
-  // const { taper } = useControls({
-  //   taper: {
-  //     value: 0.5,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     label: "Taper",
-  //   },
-  // });
+  const { taper } = useControls({
+    taper: {
+      value: 0.5,
+      min: 0.0,
+      max: 1.0,
+      label: "Taper",
+    },
+  });
 
-  // const { start } = useControls({
-  //   start: {
-  //     value: {
-  //       x: 0.0,
-  //       y: 0.0,
-  //     },
-  //     step: 0.01,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "Start Point",
-  //   },
-  // });
+  const { start } = useControls({
+    start: {
+      value: {
+        x: 0.0,
+        y: 0.0,
+      },
+      step: 0.01,
+      min: 0.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "Start Point",
+    },
+  });
 
-  // const { end } = useControls({
-  //   end: {
-  //     value: {
-  //       x: 0.71,
-  //       y: 0.66,
-  //     },
-  //     step: 0.01,
-  //     min: 0.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "End Point",
-  //   },
-  // });
+  const { end } = useControls({
+    end: {
+      value: {
+        x: 0.71,
+        y: 0.66,
+      },
+      step: 0.01,
+      min: 0.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "End Point",
+    },
+  });
 
   // const { sampleCount } = useControls({
   //   sampleCount: {
@@ -208,19 +208,19 @@ function TiltShiftEffects() {
   //   },
   // });
 
-  // const { direction } = useControls({
-  //   direction: {
-  //     value: {
-  //       x: 1.0,
-  //       y: 0.07,
-  //     },
-  //     step: 0.01,
-  //     min: -1.0,
-  //     max: 1.0,
-  //     joystick: "invertY",
-  //     label: "Direction",
-  //   },
-  // });
+  const { direction } = useControls({
+    direction: {
+      value: {
+        x: 1.0,
+        y: 0.07,
+      },
+      step: 0.01,
+      min: -1.0,
+      max: 1.0,
+      joystick: "invertY",
+      label: "Direction",
+    },
+  });
 
   // attempt to animate the tilt shift
   // useEffect(() => {

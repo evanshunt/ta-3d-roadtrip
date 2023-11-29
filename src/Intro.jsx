@@ -15,7 +15,6 @@ const Intro = ({ hasStarted }) => {
   };
 
   const removeIntro = () => {
-    console.log("im removing the itrno");
     setVisible(false);
   };
 
@@ -27,17 +26,15 @@ const Intro = ({ hasStarted }) => {
     }
   }, [visible]);
 
-  useEffect(() => {
-    console.log({ cloudsGone });
-  }, [cloudsGone]);
-
   return (
     <div className="intro">
       <Onboarding />
-      <div className="intro__map">
-        <Map removeIntro={removeIntro} start={hasStarted} />
-      </div>
-      <IntroClouds playIntro={playIntro} />
+      {visible && (
+        <div className="intro__map">
+          <Map removeIntro={removeIntro} start={hasStarted} />
+        </div>
+      )}
+      {!cloudsGone && <IntroClouds playIntro={playIntro} />}
     </div>
   );
 };

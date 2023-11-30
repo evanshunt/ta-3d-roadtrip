@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import caretImage from "../images/caret-right.svg";
-import { isMobile } from "react-device-detect";
 
 const Stop = ({
-  animateHover,
-  animateOut,
   currDestination,
   handleIndex,
+  hoverIndex,
   index,
   setHoverIndex,
   showAttraction,
@@ -17,24 +15,24 @@ const Stop = ({
   return (
     <li
       className={`${
-        currDestination?.details?.title === stop.details.title
+        currDestination?.details?.title === stop.details.title ||
+        hoverIndex === index
           ? "itinerary__stop itinerary__stop--active"
           : "itinerary__stop"
       } ${stop.visited ? "itinerary__stop--visited" : ""}`}
     >
       <div
-        onMouseEnter={() => {
-          setHoverIndex(index);
-        }}
-        onMouseOut={() => {
-          setHoverIndex(null);
-          animateOut(null, index);
-        }}
         onClick={() => {
           showAttraction();
           handleIndex("next", stop.stop);
         }}
         className="itinerary__stop__wrap"
+        onMouseOver={() => {
+          if (hoverIndex !== index) setHoverIndex(index);
+        }}
+        onMouseLeave={() => {
+          setHoverIndex(null);
+        }}
       >
         {stop.details?.image && (
           <img

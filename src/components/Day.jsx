@@ -9,6 +9,7 @@ const Day = ({
   description,
   drivingInfo,
   handleIndex,
+  hoverIndex,
   index,
   name,
   number,
@@ -23,6 +24,7 @@ const Day = ({
         animateHover={animateHover}
         animateOut={animateOut}
         handleIndex={handleIndex}
+        hoverIndex={hoverIndex}
         index={index}
         key={`${name}-${index}`}
         currDestination={currDestination}

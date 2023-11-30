@@ -5,17 +5,19 @@ import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
-  animateHover,
-  animateOut,
   geometry,
+
   imageSrc,
   index,
   material,
   name,
   position,
+  setHoverIndex,
   setIndex,
   setPinRefs,
 }) => {
+  if (!index) return null;
+
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();
   const stemRef = useRef();
@@ -34,7 +36,9 @@ const ImagePin = ({
     setPinRefs((prevRefs) => [...prevRefs, backgroundHaloRef]);
 
     return () => {
-      setPinRefs((prevRefs) => prevRefs.filter((ref) => ref !== componentRef));
+      setPinRefs((prevRefs) =>
+        prevRefs.filter((ref) => ref !== backgroundHaloRef)
+      );
     };
   }, []);
 
@@ -87,12 +91,6 @@ const ImagePin = ({
         <e.mesh
           castShadow
           name={name}
-          onPointerEnter={() => {
-            animateHover(backgroundHaloRef, false);
-          }}
-          onPointerLeave={() => {
-            animateOut(backgroundHaloRef, false);
-          }}
           onClick={() => {
             setIndex(index);
           }}
@@ -105,6 +103,12 @@ const ImagePin = ({
         />
 
         <e.mesh
+          onPointerEnter={() => {
+            setHoverIndex(index - 1); // sort this out
+          }}
+          onPointerLeave={(e) => {
+            setHoverIndex(null);
+          }}
           ref={backgroundHaloRef}
           castShadow
           position-z={-0.03}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
 // import {
@@ -223,10 +223,12 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             geometry={circleGeom}
+            hoverIndex={props.hoverIndex}
             isNight={props.isNight}
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
             // visible={props.currDay === 0 || props.currDay === 1}

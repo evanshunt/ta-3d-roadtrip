@@ -16,9 +16,11 @@ const Day1 = ({
   animateHover,
   animateOut,
   geometry,
+  hoverIndex,
   isNight,
   material,
   positions,
+  setHoverIndex,
   sceneIndex,
   setIndex,
   setPinRefs,
@@ -91,12 +93,14 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        hoverIndex={hoverIndex}
         imageSrc={caveAndBasinImageSrc}
         index={1}
         material={material}
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -112,6 +116,7 @@ const Day1 = ({
         name={"Banff Gondola"}
         position={positions.gondola}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -127,6 +132,7 @@ const Day1 = ({
         name={"Sky Bistro"}
         position={positions.skyBistro}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -142,6 +148,7 @@ const Day1 = ({
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -157,6 +164,7 @@ const Day1 = ({
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />

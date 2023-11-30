@@ -94,11 +94,9 @@ const Attraction = ({
   return (
     <div
       ref={attractionRef}
-      key={index}
       className={`${
         open ? "attraction attraction--open" : "attraction attraction--closed"
-      }
-`}
+      }`}
     >
       <SwitchTransition>
         <CSSTransition
@@ -250,6 +248,7 @@ const Attraction = ({
                       } else if (asset.type === "video") {
                         return (
                           <video
+                            key={i}
                             src={asset.url}
                             muted
                             autoPlay

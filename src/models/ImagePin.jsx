@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
   geometry,
-
+  hidden,
   imageSrc,
   index,
   material,
@@ -25,13 +25,6 @@ const ImagePin = ({
 
   let opacity = 0;
 
-  useFrame(() => {
-    theatreObject.onValuesChange((newValues) => {
-      if (!imageRef.current) return;
-      imageRef.current.children[0].material.opacity = newValues.opacity;
-    });
-  });
-
   useEffect(() => {
     setPinRefs((prevRefs) => [...prevRefs, backgroundHaloRef]);
 
@@ -41,6 +34,18 @@ const ImagePin = ({
       );
     };
   }, []);
+
+  // log the index and pin name
+  console.log(index, name);
+
+  if (hidden) return null;
+
+  useFrame(() => {
+    theatreObject.onValuesChange((newValues) => {
+      if (!imageRef.current) return;
+      imageRef.current.children[0].material.opacity = newValues.opacity;
+    });
+  });
 
   return (
     <Billboard position={[position[0], position[1], position[2]]}>
@@ -104,7 +109,7 @@ const ImagePin = ({
 
         <e.mesh
           onPointerEnter={() => {
-            setHoverIndex(index - 1); // sort this out
+            setHoverIndex(index);
           }}
           onPointerLeave={(e) => {
             setHoverIndex(null);

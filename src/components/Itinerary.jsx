@@ -7,7 +7,6 @@ import "../scss/itinerary.scss";
 const Itinerary = ({
   animateHover,
   animateOut,
-  backgroundRefs,
   currDay,
   currDestination,
   days,
@@ -24,8 +23,8 @@ const Itinerary = ({
   showAttraction,
   toggleItinerary,
 }) => {
-  const [open, setOpen] = useState(false);
   const itineraryRef = useRef();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (currDay === 0) return;

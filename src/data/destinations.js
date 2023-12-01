@@ -30,6 +30,7 @@ const destinations = [
         {
           type: "image",
           url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-1.webp",
+          altText: "Cave and Basin National Historic Site ALT",
         },
         {
           type: "image",
@@ -525,10 +526,6 @@ const destinations = [
         {
           type: "image",
           url: "/images/fairview/fairview-3.webp",
-        },
-        {
-          type: "image",
-          url: "/images/fairview/fairview-4.webp",
         },
       ],
       blurb: " Wine, dine, and take in the skyline.",

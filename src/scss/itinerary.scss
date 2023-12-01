@@ -43,6 +43,13 @@
       transform: translate(100%, 0);
     }
   }
+
+  // if both are open on mobile, attraction info should be on top
+  @media screen and (max-width: 1024px) {
+    .attraction--open + &--open {
+      z-index: 3;
+    }
+  }
 }
 
 .itinerary__header__mobile {
@@ -165,6 +172,12 @@
 
   &--active::before {
     left: 2.66rem;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    text-align: left;
   }
 }
 

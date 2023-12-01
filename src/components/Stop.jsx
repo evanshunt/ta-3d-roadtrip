@@ -5,7 +5,6 @@ const Stop = ({
   currDestination,
   handleIndex,
   hoverIndex,
-  index,
   setHoverIndex,
   showAttraction,
   stop,
@@ -16,19 +15,21 @@ const Stop = ({
     <li
       className={`${
         currDestination?.details?.title === stop.details.title ||
-        hoverIndex === index
+        hoverIndex === stop.stop
           ? "itinerary__stop itinerary__stop--active"
           : "itinerary__stop"
       } ${stop.visited ? "itinerary__stop--visited" : ""}`}
+      key={stop.stop}
     >
-      <div
+      <button
+        aria-label={`View ${stop.details.title} on map`}
         onClick={() => {
           showAttraction();
           handleIndex("next", stop.stop);
         }}
         className="itinerary__stop__wrap"
         onMouseOver={() => {
-          if (hoverIndex !== index) setHoverIndex(index);
+          if (hoverIndex !== stop.stop) setHoverIndex(stop.stop);
         }}
         onMouseLeave={() => {
           setHoverIndex(null);
@@ -44,7 +45,7 @@ const Stop = ({
         <strong className="itinerary__stop__name">{stop.details.title} </strong>
 
         <img src={caretImage} alt="" />
-      </div>
+      </button>
     </li>
   );
 };

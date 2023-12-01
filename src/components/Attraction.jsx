@@ -1,6 +1,4 @@
 import Arrow from "./Arrow";
-import arrowBack from "../images/arrow-back.svg";
-import arrowLeft from "../images/arrow-left.svg";
 import arrowUp from "../images/arrow-up.svg";
 import caretImage from "../images/caret-right.svg";
 import clock from "../images/clock.svg";
@@ -69,6 +67,9 @@ const Attraction = ({
     } else {
       setTimeout(() => {
         setOpen(attractionsOpen);
+        if (attractionsOpen) {
+          attractionRef.current.focus();
+        }
       }, 500);
     }
   }, [attractionsOpen]);
@@ -139,11 +140,11 @@ const Attraction = ({
               <div className="attraction__buttons">
                 <button
                   className="attraction__back"
-                  label={"Back to itinerary"}
+                  label="Back to Itinerary"
                   onClick={() => {
                     setOpen(false);
                     hideAttraction();
-                    showItinerary(); // this only really does anything visual on mobile
+                    showItinerary();
                   }}
                 >
                   <svg
@@ -156,16 +157,16 @@ const Attraction = ({
                       fill="#000"
                     />
                   </svg>
-                  Back to itinerary
+                  Back to Itinerary
                 </button>
                 <button
-                  disabled={index <= 1}
+                  disabled={index < 2}
                   className="controls__button controls__button--attraction controls__button--prev"
                   onClick={() => {
                     handleIndex("prev");
                   }}
                 >
-                  <Arrow dir={"prev"} active={index >= 1} />
+                  <Arrow dir="prev" active={index > 1} />
                 </button>
                 <button
                   disabled={index === maxLength}
@@ -174,7 +175,7 @@ const Attraction = ({
                     handleIndex("next");
                   }}
                 >
-                  <Arrow dir={"next"} active={index !== maxLength} />
+                  <Arrow dir="next" active={index !== maxLength} />
                 </button>
               </div>
               <div className="attraction__header">
@@ -241,7 +242,7 @@ const Attraction = ({
                           <img
                             key={i}
                             src={asset.url}
-                            alt=""
+                            alt={asset.altText || ""}
                             className="attraction__info__media"
                           />
                         );
@@ -331,23 +332,24 @@ const Attraction = ({
                 )}
               </ul>
               {nextDestination && (
-                <>
+                <button
+                  aria-label={`View ${nextDestination?.details.title} on map`}
+                  className="attraction__next"
+                  onClick={() => {
+                    if (inBetweens.includes(index + 1)) {
+                      setIndex(index + 2);
+                    } else {
+                      setIndex(index + 1);
+                    }
+                    setTimeout(() => {
+                      attractionRef.current.scrollTop = 0;
+                    }, 600); // slightly longer than animout
+                  }}
+                >
                   <h3>Next attraction</h3>
 
                   <li className="itinerary__stop">
-                    <div
-                      onClick={() => {
-                        if (inBetweens.includes(index + 1)) {
-                          setIndex(index + 2);
-                        } else {
-                          setIndex(index + 1);
-                        }
-                        setTimeout(() => {
-                          attractionRef.current.scrollTop = 0;
-                        }, 600); // slightly longer than animout
-                      }}
-                      className="itinerary__stop__wrap"
-                    >
+                    <div className="itinerary__stop__wrap">
                       <img
                         className="itinerary__stop__image"
                         src={
@@ -363,7 +365,7 @@ const Attraction = ({
 
                     <img src={caretImage} alt="" />
                   </li>
-                </>
+                </button>
               )}
             </div>
           </>

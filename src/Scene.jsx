@@ -244,6 +244,7 @@ const Scene = (props) => {
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
           />
@@ -258,6 +259,7 @@ const Scene = (props) => {
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
           />

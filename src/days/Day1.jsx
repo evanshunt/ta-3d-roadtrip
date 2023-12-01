@@ -88,8 +88,26 @@ const Day1 = ({
         </>
       )}
 
+      {/* This is just to keep the index aligned with the actual amount of stops */}
       <ImagePin
         active={sceneIndex === 0}
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
+        hidden={true}
+        imageSrc={fairmontBanffSpringsHotelImageSrc}
+        index={6}
+        material={material}
+        name={"Spacer"}
+        position={positions.fairmontBanffSpringsHotel}
+        scale={0.2}
+        setHoverIndex={setHoverIndex}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
+      />
+
+      <ImagePin
+        active={sceneIndex === 1}
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
@@ -106,7 +124,7 @@ const Day1 = ({
       />
 
       <ImagePin
-        active={sceneIndex === 1}
+        active={sceneIndex === 2}
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
@@ -122,7 +140,7 @@ const Day1 = ({
       />
 
       <ImagePin
-        active={sceneIndex === 2}
+        active={sceneIndex === 3}
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
@@ -138,7 +156,7 @@ const Day1 = ({
       />
 
       <ImagePin
-        active={sceneIndex === 3}
+        active={sceneIndex === 4}
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
@@ -154,7 +172,7 @@ const Day1 = ({
       />
 
       <ImagePin
-        active={sceneIndex === 4}
+        active={sceneIndex === 5}
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
@@ -162,6 +180,24 @@ const Day1 = ({
         index={5}
         material={material}
         name={"Fairmont Banff Springs Hotel"}
+        position={positions.fairmontBanffSpringsHotel}
+        scale={0.2}
+        setHoverIndex={setHoverIndex}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
+      />
+
+      {/* This is just to keep the index aligned with the actual amount of stops */}
+      <ImagePin
+        active={sceneIndex === 6}
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
+        hidden={true}
+        imageSrc={fairmontBanffSpringsHotelImageSrc}
+        index={6}
+        material={material}
+        name={"Spacer"}
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setHoverIndex={setHoverIndex}

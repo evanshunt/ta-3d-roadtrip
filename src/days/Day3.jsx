@@ -17,6 +17,7 @@ const Day3 = ({
   isNight,
   material,
   positions,
+  setHoverIndex,
   setIndex,
   setPinRefs,
 }) => {
@@ -49,12 +50,29 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        hidden={true}
+        imageSrc={columbiaIcefieldSkywalkImageSrc}
+        index={12}
+        material={material}
+        name={"Spacer"}
+        position={positions.columbiaIcefieldSkywalk}
+        scale={0.2}
+        setHoverIndex={setHoverIndex}
+        setIndex={setIndex}
+        setPinRefs={setPinRefs}
+      />
+
+      <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
+        geometry={geometry}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
         index={13}
         material={material}
         name={"Columbia Icefield Skywalk"}
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -68,6 +86,7 @@ const Day3 = ({
         name={"Maligne Canyon"}
         position={positions.maligneCanyon}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -81,6 +100,7 @@ const Day3 = ({
         name={"Jasper SkyTram"}
         position={positions.jasperSkyTram}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -94,6 +114,7 @@ const Day3 = ({
         name={"Fairmont Jasper Park Lodge"}
         position={positions.fairmontJasperParkLodge}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -107,6 +128,7 @@ const Day3 = ({
         name={"Jasper Planetarium"}
         position={positions.jasperPlanetarium}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />

@@ -94,7 +94,7 @@ const Experience = () => {
   };
 
   useEffect(() => {
-    if (hoverIndex !== null) {
+    if (hoverIndex !== null && pinRefs[hoverIndex]) {
       animateHover(pinRefs[hoverIndex], hoverIndex, true);
       setLastRef(pinRefs[hoverIndex]);
     }
@@ -276,6 +276,10 @@ const Experience = () => {
     // setDebug(debug);
     setHasStarted(true); // uncomment for testing
   }, []);
+
+  useEffect(() => {
+    console.log(pinRefs);
+  }, [pinRefs]);
 
   let dir = new THREE.Vector3(),
     sph = new THREE.Spherical();
@@ -474,20 +478,19 @@ const Experience = () => {
         )}
 
         <div className="controls">
-          {/* {index > 0 && ( */}
-
-          {/* )} */}
           <button
-            disabled={index <= 1}
+            aria-label={"Previous destination"}
+            disabled={index < 2}
             className="controls__button controls__button--prev"
             onClick={() => {
               handleIndex("prev");
             }}
           >
-            <Arrow dir={"prev"} active={index >= 1} />
+            <Arrow dir={"prev"} active={index > 1} />
           </button>
 
           <button
+            aria-label={"Next destination"}
             disabled={index === maxLength}
             className="controls__button controls__button--next"
             onClick={() => {
@@ -524,23 +527,27 @@ const Experience = () => {
                     {destinations.map((destination, i) => {
                       if (destination.day === parseInt(day)) {
                         return (
-                          <li
-                            key={i}
-                            className={`${
-                              i <= index
-                                ? "controls__pip controls__pip--active"
-                                : "controls__pip"
-                            }
+                          <li key={i}>
+                            <button
+                              className={`${
+                                i <= index
+                                  ? "controls__pip controls__pip--active"
+                                  : "controls__pip"
+                              }
                                 ${
                                   destination.hideFromItinerary
                                     ? "controls__pip--hidden"
                                     : ""
                                 }
                                   `}
-                            onClick={() => {
-                              handleIndex("next", destination.stop);
-                            }}
-                          ></li>
+                              onClick={() => {
+                                if (i !== 0) {
+                                  handleIndex("next", destination.stop);
+                                }
+                              }}
+                              aria-label={`Navigate to ${destination?.details.title}`}
+                            ></button>
+                          </li>
                         );
                       }
                     })}

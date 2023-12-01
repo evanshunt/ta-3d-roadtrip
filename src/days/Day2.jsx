@@ -17,6 +17,7 @@ const Day2 = ({
   isNight,
   material,
   positions,
+  setHoverIndex,
   setIndex,
   setPinRefs,
 }) => {
@@ -51,6 +52,7 @@ const Day2 = ({
         name={"Carter Ryan Gallery"}
         position={positions.carterRyanGallery}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -64,6 +66,7 @@ const Day2 = ({
         name={"Johnston Canyon"}
         position={positions.johnstonCanyon}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -74,9 +77,10 @@ const Day2 = ({
         imageSrc={lakeLouiseGondolaImageSrc}
         index={9}
         material={material}
-        scale={0.2}
         name={"Lake Louise Gondola"}
         position={positions.lakeLouiseGondola}
+        scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -88,8 +92,9 @@ const Day2 = ({
         index={10}
         material={material}
         name={"Fairmont Chateau Lake Louise"}
-        scale={0.2}
         position={positions.fairmontChateauLakeLouise}
+        scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
@@ -103,9 +108,13 @@ const Day2 = ({
         name={"Fairview"}
         position={positions.fairview}
         scale={0.2}
+        setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
+
+      {/* This is just to keep the index aligned with the actual amount of stops */}
+
       <NightLights isNight={isNight} position={positions.fairview} />
     </>
   );

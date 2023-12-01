@@ -365,6 +365,13 @@
   }
 }
 
+.attraction__next {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
 @keyframes bounce {
   0% {
     transform: translate(0, calc(var(--offset) - 3.5rem));

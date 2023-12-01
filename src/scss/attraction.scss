@@ -12,7 +12,7 @@
   -webkit-overflow-scrolling: touch;
   padding: 0 1rem;
   position: fixed;
-  transform: translate(0, calc(var(--offset) - 3.5rem));
+  transform: translate(0, calc(var(--offset) - 4.5rem));
   transition: transform 0.25s ease-out;
   width: 100%;
   z-index: 2;
@@ -202,6 +202,7 @@
 
   .attraction__header__mobile & {
     color: var(--white);
+    font-size: 0.85rem;
   }
 
   .attraction--open .attraction__header__mobile & {
@@ -282,6 +283,10 @@
   &:nth-child(2),
   &:nth-child(3) {
     width: calc(50% - 1px); // half gap
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
   }
 }
 

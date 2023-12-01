@@ -124,6 +124,7 @@ const Attraction = ({
                       : "attraction__arrow"
                   }`}
                   src={arrowUp}
+                  alt=""
                 />
 
                 <span
@@ -188,6 +189,7 @@ const Attraction = ({
                     width="105"
                     height="105"
                     src={currDestination?.details?.image}
+                    alt={currDestination?.details?.altText}
                     className="attraction__image"
                   />
                   <span
@@ -214,6 +216,7 @@ const Attraction = ({
                       <span className="attraction__type">
                         <img
                           src={determineType(currDestination.details.type)}
+                          alt=""
                         />{" "}
                         {currDestination.details.type}
                       </span>
@@ -222,14 +225,16 @@ const Attraction = ({
                   {currDestination?.details?.price && (
                     <>
                       <span className="attraction__price">
-                        <img src={price} /> {currDestination.details.price}
+                        <img src={price} alt="" />{" "}
+                        {currDestination.details.price}
                       </span>
                     </>
                   )}
                   {currDestination?.details?.duration && (
                     <>
                       <span className="attraction__duration">
-                        <img src={clock} /> {currDestination.details.duration}
+                        <img src={clock} alt="" />{" "}
+                        {currDestination.details.duration}
                       </span>
                     </>
                   )}
@@ -276,7 +281,7 @@ const Attraction = ({
                   <>
                     <li>
                       {links[0].image && (
-                        <img src={links[0].image} alt={links[0].title} />
+                        <img src={links[0].image} alt={links[0]?.altText} />
                       )}
                       <div className="attraction__links__link-wrapper">
                         <strong>{links[0].text}</strong>
@@ -356,7 +361,7 @@ const Attraction = ({
                           nextDestination.details.image ||
                           "https://via.placeholder.com/150"
                         }
-                        alt=""
+                        alt={nextDestination.details.altText}
                       />
                       <strong className="itinerary__stop__name">
                         {nextDestination.details.title}{" "}

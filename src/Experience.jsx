@@ -277,10 +277,6 @@ const Experience = () => {
     setHasStarted(true); // uncomment for testing
   }, []);
 
-  useEffect(() => {
-    console.log(pinRefs);
-  }, [pinRefs]);
-
   let dir = new THREE.Vector3(),
     sph = new THREE.Spherical();
 

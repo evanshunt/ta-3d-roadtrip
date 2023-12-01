@@ -39,7 +39,7 @@ const Stop = ({
           <img
             className="itinerary__stop__image"
             src={stop.details.image}
-            alt=""
+            alt={stop.details?.altText}
           />
         )}
         <strong className="itinerary__stop__name">{stop.details.title} </strong>

@@ -35,9 +35,6 @@ const ImagePin = ({
     };
   }, []);
 
-  // log the index and pin name
-  console.log(index, name);
-
   if (hidden) return null;
 
   useFrame(() => {

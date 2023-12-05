@@ -223,12 +223,14 @@ const Scene = (props) => {
           <Day1
             animateHover={props.animateHover}
             animateOut={props.animateOut}
+            attractionsOpen={props.attractionsOpen}
             geometry={circleGeom}
             hoverIndex={props.hoverIndex}
             isNight={props.isNight}
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}

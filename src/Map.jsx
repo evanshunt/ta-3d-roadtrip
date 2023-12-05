@@ -103,12 +103,12 @@ export const Map = ({ removeIntro, start }) => {
               setTimeout(() => {
                 clouds.classList.remove("cloud-intro--play--in");
                 clouds.classList.add("cloud-intro--play");
-              }, duration * 2150);
+              }, duration * 2350);
 
               setTimeout(() => {
                 removeIntro();
                 intro.classList.add("intro--complete");
-              }, duration * 2150);
+              }, duration * 2350);
 
               // setTimeout(() => {
               //   mapWrap.classList.add("map-wrap--complete");

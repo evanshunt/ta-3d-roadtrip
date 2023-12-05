@@ -22,15 +22,26 @@ const Attraction = ({
   index,
   maxLength,
   nextDestination,
+  setAttractionsOpen,
   setIndex,
   showItinerary,
   toggleItinerary,
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(attractionsOpen);
   const attractionRef = useRef();
 
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleAttractionHeaderClick = () => {
+    if (isMobile) {
+      currDestination?.hideFromItinerary
+        ? toggleItinerary()
+        : setAttractionsOpen(!attractionsOpen);
+    } else {
+      currDestination?.hideFromItinerary ? toggleItinerary() : toggleDrawer();
+    }
   };
 
   const handlers = useSwipeable({
@@ -109,11 +120,7 @@ const Attraction = ({
             <div className={`fade attraction__wrapper`}>
               <div
                 className="attraction__header__mobile"
-                onClick={
-                  currDestination?.hideFromItinerary
-                    ? toggleItinerary
-                    : toggleDrawer
-                }
+                onClick={handleAttractionHeaderClick}
                 {...handlers}
               >
                 <img

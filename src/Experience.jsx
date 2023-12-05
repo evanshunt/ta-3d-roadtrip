@@ -274,7 +274,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
+    setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -321,9 +321,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        <div onClick={start} {...startMobile}>
+        {/* <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div>
+        </div> */}
 
         <button className="close-tour">
           <img src={closeImage} alt="" />
@@ -369,6 +369,7 @@ const Experience = () => {
               animDuration={animDuration}
               animateHover={animateHover}
               animateOut={animateOut}
+              attractionsOpen={attractionsOpen}
               currDay={currDay}
               debug={debug}
               destinations={destinations}
@@ -377,6 +378,7 @@ const Experience = () => {
               index={index}
               isNight={isNight}
               project={project}
+              setAttractionsOpen={setAttractionsOpen}
               setHoverIndex={setHoverIndex}
               setIndex={setIndex}
               setPinRefs={setPinRefs}
@@ -399,6 +401,7 @@ const Experience = () => {
               key={index}
               maxLength={maxLength}
               nextDestination={nextDestination}
+              setAttractionsOpen={setAttractionsOpen}
               setIndex={setIndex}
               showItinerary={showItinerary}
               toggleItinerary={toggleItinerary}

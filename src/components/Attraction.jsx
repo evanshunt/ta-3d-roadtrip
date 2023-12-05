@@ -4,7 +4,6 @@ import caretImage from "../images/caret-right.svg";
 import clock from "../images/clock.svg";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import external from "../images/external-link.svg";
-import { isMobile } from "react-device-detect";
 import price from "../images/price.svg";
 import React, { useState, useRef, useEffect } from "react";
 import selfGuidedTour from "../images/types/self-guided-tour.svg";
@@ -20,6 +19,7 @@ const Attraction = ({
   hideAttraction,
   inBetweens,
   index,
+  isMobile,
   maxLength,
   nextDestination,
   setIndex,

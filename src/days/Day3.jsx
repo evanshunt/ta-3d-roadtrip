@@ -1,7 +1,6 @@
 import React from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { isMobile } from "react-device-detect";
 import { NightLights } from "./NightLights";
 
 import columbiaIcefieldSkywalkImageSrc from "/images/columbia-icefield-skywalk.webp";
@@ -14,9 +13,11 @@ const Day3 = ({
   animateHover,
   animateOut,
   geometry,
+  isMobile,
   isNight,
   material,
   positions,
+  setAttractionsOpen,
   setHoverIndex,
   setIndex,
   setPinRefs,
@@ -53,6 +54,7 @@ const Day3 = ({
         hidden={true}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
         index={12}
+        isMobile={isMobile}
         material={material}
         name={"Spacer"}
         position={positions.columbiaIcefieldSkywalk}
@@ -68,6 +70,7 @@ const Day3 = ({
         geometry={geometry}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
         index={13}
+        isMobile={isMobile}
         material={material}
         name={"Columbia Icefield Skywalk"}
         position={positions.columbiaIcefieldSkywalk}
@@ -82,6 +85,7 @@ const Day3 = ({
         geometry={geometry}
         imageSrc={maligneCanyonImageSrc}
         index={14}
+        isMobile={isMobile}
         material={material}
         name={"Maligne Canyon"}
         position={positions.maligneCanyon}
@@ -96,10 +100,12 @@ const Day3 = ({
         geometry={geometry}
         imageSrc={jasperSkyTramImageSrc}
         index={15}
+        isMobile={isMobile}
         material={material}
         name={"Jasper SkyTram"}
         position={positions.jasperSkyTram}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -110,10 +116,12 @@ const Day3 = ({
         geometry={geometry}
         imageSrc={fairmontJasperParkLodgeImageSrc}
         index={16}
+        isMobile={isMobile}
         material={material}
         name={"Fairmont Jasper Park Lodge"}
         position={positions.fairmontJasperParkLodge}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -124,16 +132,19 @@ const Day3 = ({
         geometry={geometry}
         imageSrc={jasperPlanetariumImageSrc}
         index={17}
+        isMobile={isMobile}
         material={material}
         name={"Jasper Planetarium"}
         position={positions.jasperPlanetarium}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
       <NightLights
+        isMobile={isMobile}
         isNight={isNight}
         position={positions.fairmontJasperParkLodge}
       />

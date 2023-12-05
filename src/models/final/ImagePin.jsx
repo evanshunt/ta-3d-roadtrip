@@ -3,7 +3,6 @@ import { Billboard, Image } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
-import { isMobile } from "react-device-detect";
 
 const ImagePin = ({
   attractionsOpen,
@@ -11,6 +10,7 @@ const ImagePin = ({
   hidden,
   imageSrc,
   index,
+  isMobile,
   material,
   name,
   position,

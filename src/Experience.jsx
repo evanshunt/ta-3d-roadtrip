@@ -7,7 +7,6 @@ import { Loader } from "@react-three/drei";
 
 import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
-import { isMobile } from "react-device-detect";
 import "core-js/actual/object/group-by";
 
 import animation from "./animation-data/final.json";
@@ -31,6 +30,10 @@ import "./scss/controls.scss";
 
 import CloseDrawer from "./CloseDrawer";
 
+let project = getProject("TA Fly Through", {
+  state: window.innerWidth < 1024 ? animationMobile : animation,
+});
+
 const beforeAnim = 1.53333;
 
 const determineAmount = (index) => {
@@ -40,31 +43,31 @@ const determineAmount = (index) => {
 };
 
 const Experience = () => {
-  const project = getProject("TA Fly Through", {
-    state: isMobile ? animationMobile : animation,
-  });
-
   const [clicked, setClicked] = useState(false);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(null);
   const [debug, setDebug] = useState(false);
   const [direction, setDirection] = useState("forward");
-  const [drawerOpen, setDrawerOpen] = useState(isMobile ? false : true);
+  const [drawerOpen, setDrawerOpen] = useState(
+    window.innerWidth < 1024 ? false : true
+  );
   const [hasStarted, setHasStarted] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [isNight, setIsNight] = useState(false);
   const [itineraryOpen, setItineraryOpen] = useState(isMobile ? false : true);
   const [lastRef, setLastRef] = useState(null);
   const [nextDestination, setNextDestination] = useState(null);
   const [pinRefs, setPinRefs] = useState([]);
-  const sheet = project.sheet("Scene");
 
   // the below is only really used on desktop
   const [attractionsOpen, setAttractionsOpen] = useState(false);
 
   const previousIndexRef = useRef(0);
   const compassRef = useRef();
+
+  const sheet = project.sheet("Scene");
 
   const inBetweens = [];
   // uncomment to use saved data
@@ -159,6 +162,24 @@ const Experience = () => {
     setClicked(true);
     ``;
   };
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setIsMobile(window.innerWidth < 1024);
+      }, 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const startMobile = useSwipeable({
     onSwiped: (eventData) => {
@@ -376,6 +397,7 @@ const Experience = () => {
               getDirection={getDirection}
               hoverIndex={hoverIndex}
               index={index}
+              isMobile={isMobile}
               isNight={isNight}
               project={project}
               setAttractionsOpen={setAttractionsOpen}
@@ -398,6 +420,7 @@ const Experience = () => {
               hideAttraction={hideAttraction}
               inBetweens={inBetweens}
               index={index}
+              isMobile={isMobile}
               maxLength={maxLength}
               nextDestination={nextDestination}
               setIndex={setIndex}
@@ -442,6 +465,7 @@ const Experience = () => {
               hideAttraction={hideAttraction}
               inBetweens={inBetweens}
               index={index}
+              isMobile={isMobile}
               maxLength={maxLength}
               nextDestination={nextDestination}
               setIndex={setIndex}

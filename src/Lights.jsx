@@ -1,11 +1,10 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
-import { isMobile } from "react-device-detect";
 import React, { useEffect } from "react";
 import { useRef } from "react";
 // import { useControls } from "leva";
 
-const Lights = ({ alt, debug, index, isNight, positions }) => {
+const Lights = ({ index, isMobile, isNight }) => {
   const spotLight = useRef();
   const hemisphereLightRef = useRef();
   const tl = gsap.timeline({});

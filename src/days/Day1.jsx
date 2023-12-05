@@ -3,7 +3,7 @@ import { useTexture } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { isMobile } from "react-device-detect";
+
 import { NightLights } from "./NightLights";
 
 import banffGondolaImageSrc from "/images/banff-gondola.webp";
@@ -17,9 +17,11 @@ const Day1 = ({
   animateOut,
   geometry,
   hoverIndex,
+  isMobile,
   isNight,
   material,
   positions,
+  setAttractionsOpen,
   setHoverIndex,
   sceneIndex,
   setIndex,
@@ -97,6 +99,7 @@ const Day1 = ({
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={6}
+        isMobile={isMobile}
         material={material}
         name={"Spacer"}
         position={positions.fairmontBanffSpringsHotel}
@@ -114,10 +117,12 @@ const Day1 = ({
         hoverIndex={hoverIndex}
         imageSrc={caveAndBasinImageSrc}
         index={1}
+        isMobile={isMobile}
         material={material}
         name={"Cave and Basin National Historic Site"}
         position={positions.caveAndBasin}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -130,10 +135,12 @@ const Day1 = ({
         geometry={geometry}
         imageSrc={banffGondolaImageSrc}
         index={2}
+        isMobile={isMobile}
         material={material}
         name={"Banff Gondola"}
         position={positions.gondola}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -146,10 +153,12 @@ const Day1 = ({
         geometry={geometry}
         imageSrc={skyBistroImageSrc}
         index={3}
+        isMobile={isMobile}
         material={material}
         name={"Sky Bistro"}
         position={positions.skyBistro}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -162,10 +171,12 @@ const Day1 = ({
         geometry={geometry}
         imageSrc={banffUpperHotSpringsImageSrc}
         index={4}
+        isMobile={isMobile}
         material={material}
         name={"Banff Upper Hot Springs"}
         position={positions.banffUpperHotSprings}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -178,10 +189,12 @@ const Day1 = ({
         geometry={geometry}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={5}
+        isMobile={isMobile}
         material={material}
         name={"Fairmont Banff Springs Hotel"}
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
@@ -196,6 +209,7 @@ const Day1 = ({
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={6}
+        isMobile={isMobile}
         material={material}
         name={"Spacer"}
         position={positions.fairmontBanffSpringsHotel}
@@ -223,6 +237,7 @@ const Day1 = ({
       </mesh>
 
       <NightLights
+        isMobile={isMobile}
         isNight={isNight}
         position={positions.fairmontBanffSpringsHotel}
       />

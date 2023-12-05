@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-// import {
-//   DepthOfField,
-//   EffectComposer,
-//   TiltShift2,
-// } from "@react-three/postprocessing";
+import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
 
@@ -64,102 +60,35 @@ const redMaterial = new THREE.MeshBasicMaterial({
 const Scene = (props) => {
   const sceneRef = useRef();
 
-  // const { day1PosX, day1PosY, day1PosZ } = useControls({
-  //   day1PosX: {
-  //     value: 0,
-  //     min: -1,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   day1PosY: {
-  //     value: 0,
-  //     min: -1,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   day1PosZ: {
-  //     value: 0,
-  //     min: -1,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  // });
-
-  // const { cameraPositionX, cameraPositionY, cameraPositionZ } = useControls({
-  //   cameraPositionX: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   cameraPositionY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   cameraPositionZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  // });
-
-  //-4.8, 1.6, 5.4]
-  // -3.1, 1.76, 2.07
-  // const { cloudPosX, cloudPosY, cloudPosZ, cloudScale } = useControls(
-  //   "Cloud Lake Louise",
-  //   {
-  //     cloudPosX: {
-  //       value: -3.1,
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.01,
-  //     },
-  //     cloudPosY: {
-  //       value: 1.76,
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.01,
-  //     },
-  //     cloudPosZ: {
-  //       value: 2.07,
-  //       min: -10,
-  //       max: 10,
-  //       step: 0.01,
-  //     },
-  //     cloudScale: {
-  //       value: 0.1,
-  //       min: 0.01,
-  //       max: 0.3,
-  //       step: 0.01,
-  //     },
-  //   }
-  // );
-
-  // const { cloudScale } = useControls({
-  //   cloudScale: {
-  //     value: 0.1,
+  // const { depth, focusDistance, focalLength, bokehScale } = useControls({
+  //   depth: {
+  //     value: 0.12,
   //     min: 0,
   //     max: 1,
   //     step: 0.01,
   //   },
-  // });
-
-  // const { fov } = useControls({
-  //   fov: {
-  //     value: 55,
+  //   focusDistance: {
+  //     value: 0.12,
   //     min: 0,
-  //     max: 100,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   focalLength: {
+  //     value: 0.09,
+  //     min: 0,
+  //     max: 1,
+  //     step: 0.01,
+  //   },
+  //   bokehScale: {
+  //     value: 2.5,
+  //     min: 0,
+  //     max: 10,
+  //     step: 0.01,
   //   },
   // });
 
   return (
     <>
-      {/* <Environment
-        background
-        files={"/textures/industrial_sunset_02_puresky_4k.hdr"}
-        // preset={props.isNight ? "night" : "park"}
-        // intensity={props.isNight ? 0 : 2}
-      /> */}
       {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
@@ -174,43 +103,10 @@ const Scene = (props) => {
         }}
       /> */}
       <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
-      {/* <PerspectiveCamera
-        makeDefault
-        ref={cameraRef}
-        theatreKey={"Camera"}
-        // position={cameraPosition}
-        // position={[-5.556886117263388, 2.2545368113625175, 4.006921809660271]}
-
-        // position={[-5.163108645819346, 1.8345992465293988, 3.97]}
-        // rotation={[
-        //   -0.7210839965680563, -0.5792947129698445, -0.448484711027097,
-        // ]}
-        // rotation={[
-        //   -0.9008592132041057, -0.7267918559588127, -0.6979696508548812,
-        // ]}
-        // position={[cameraPositionX, cameraPositionY, cameraPositionZ]}
-        // rotation={cameraRotation}
-        // lookAt={lookAtRef}
-
-        zoom={1}
-      /> */}
-
-      {/* <OrthographicCamera
-        makeDefault
-        // theatreKey={"Camera"}
-        near={-100}
-        zoom={162}
-        ref={cameraRef}
-        // position={[1.25, 0.35, 0.23]}
-        // position={[0.9344612217659182, 0.3561940392504276, 0.8589575259686614]}
-        position={[0.95, -2, 0.85]}
-        // rotation={[-0.3, 1, 0.23]}
-        // rotation={[-0.3930986676881526, 0.7878538812997019, 0.285891145681874]}
-        rotation={[-0.59, 0.74, 0.41]}
-      /> */}
 
       <Lights
         index={props.index}
+        isMobile={props.isMobile}
         isNight={props.isNight}
         debug={props.debug}
         positions={positions}
@@ -218,7 +114,6 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        {/* <HTMLInfo position={positions.caveAndBasin} /> */}
         <group position={[0.03, 0.0, 0.07]}>
           <Day1
             animateHover={props.animateHover}
@@ -226,6 +121,7 @@ const Scene = (props) => {
             attractionsOpen={props.attractionsOpen}
             geometry={circleGeom}
             hoverIndex={props.hoverIndex}
+            isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
             positions={positions}
@@ -243,10 +139,12 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             geometry={circleGeom}
+            isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
@@ -258,17 +156,19 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             geometry={circleGeom}
+            isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
+            setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
           />
         </group>
 
-        <Clouds>
+        <Clouds isMobile={props.isMobile}>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
             position={[-3.8, 1.75, 3.5]}
@@ -310,33 +210,32 @@ const Scene = (props) => {
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
         {/* <Road /> */}
-        <RoadFinal />
+        <RoadFinal isMobile={props.isMobile} />
 
         {/* {altTop && <TopAlt />} */}
         {/* {!altTop && <Top />} */}
 
         {/* <TopAltAgain /> */}
-        <TopAltFinal />
+        <TopAltFinal isMobile={props.isMobile} />
 
         {/* <Sides /> */}
         {/* <Plane /> */}
       </e.group>
 
       {/* @TODO: animate this for the stops? this is causing issues with the translucent items */}
-      {/* {addEffect && ( */}
 
-      {/* <EffectComposer>
-      <DepthOfField 
-          focusDistance={0.12} // where to focus
-          // focusDistance={focusDistance}
-          focalLength={0.09} // focal length
-          // focalLength={focalLength}
-          bokehScale={2.5} // bokeh size
-          // bokehScale={bokehScale}
-        /> 
-      </EffectComposer> */}
-
-      {/* )} */}
+      {/* {!isMobile && (
+        <EffectComposer>
+          <DepthOfField
+            focusDistance={0.1} // where to focus
+            // focusDistance={focusDistance}
+            focalLength={0.1} // focal length
+            // focalLength={focalLength}
+            bokehScale={5} // bokeh size
+            // bokehScale={bokehScale}
+          />
+        </EffectComposer>
+      )} */}
     </>
   );
 };

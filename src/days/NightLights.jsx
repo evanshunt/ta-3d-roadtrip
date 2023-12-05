@@ -1,9 +1,8 @@
 import { Sparkles } from "@react-three/drei";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
-import { isMobile } from "react-device-detect";
 
-export const NightLights = ({ position, isNight }) => {
+export const NightLights = ({ position, isMobile, isNight }) => {
   const pointLightRef1 = useRef();
   const pointLightRef2 = useRef();
   const tl = gsap.timeline({});

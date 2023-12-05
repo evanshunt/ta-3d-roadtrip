@@ -314,12 +314,6 @@ const Experience = () => {
 
   return (
     <div className="experience">
-      <picture>
-        <source media="(max-width: 420px)" srcSet={mainNavImageMobile} />
-        <source media="(min-width: 420px)" src={mainNavImage} alt="" />
-        <img src={mainNavImage} alt="" className="main-nav-image" />
-      </picture>
-
       <div className="wrapper">
         <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />

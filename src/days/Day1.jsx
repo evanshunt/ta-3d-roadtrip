@@ -1,7 +1,7 @@
 import { gsap } from "gsap/dist/gsap";
 import { useTexture } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
-import ImagePin from "../models/ImagePin";
+import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { isMobile } from "react-device-detect";
 import { NightLights } from "./NightLights";

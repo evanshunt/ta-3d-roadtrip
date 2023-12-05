@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import * as THREE from "three";
-import { AdaptiveDpr, Loader } from "@react-three/drei";
+import { Loader } from "@react-three/drei";
 
 import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
@@ -11,7 +11,7 @@ import { isMobile } from "react-device-detect";
 import "core-js/actual/object/group-by";
 
 import animation from "./animation-data/final.json";
-import animationMobile from "./animation-data/new-pins-days-1-2-3-mobile.json";
+import animationMobile from "./animation-data/final-mobile.json";
 import compassImage from "./images/compass.svg";
 import destinations from "./data/destinations.js";
 
@@ -93,6 +93,26 @@ const Experience = () => {
     }
   };
 
+  const handleIndex = (dir, jumpTo = false) => {
+    previousIndexRef.current = index;
+
+    if (!jumpTo) {
+      if (dir === "up" || dir === "down") return;
+
+      if (dir === "next") {
+        if (!hasStarted) {
+          setHasStarted(true);
+          // setClicked(true); // comment out when the intro is added back in
+        }
+        index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
+      } else {
+        index <= 1 ? setIndex(1) : setIndex(index - 1);
+      }
+    } else {
+      setIndex(jumpTo);
+    }
+  };
+
   useEffect(() => {
     if (hoverIndex !== null && pinRefs[hoverIndex]) {
       animateHover(pinRefs[hoverIndex], hoverIndex, true);
@@ -133,26 +153,6 @@ const Experience = () => {
       }, animDuration * 1000);
     }
   }, [clicked]);
-
-  const handleIndex = (dir, jumpTo = false) => {
-    previousIndexRef.current = index;
-
-    if (!jumpTo) {
-      if (dir === "up" || dir === "down") return;
-
-      if (dir === "next") {
-        if (!hasStarted) {
-          setHasStarted(true);
-          // setClicked(true); // comment out when the intro is added back in
-        }
-        index === maxLength ? setIndex(maxLength) : setIndex(index + 1);
-      } else {
-        index <= 1 ? setIndex(1) : setIndex(index - 1);
-      }
-    } else {
-      setIndex(jumpTo);
-    }
-  };
 
   const start = () => {
     setHasStarted(true);
@@ -274,7 +274,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    setHasStarted(true); // uncomment for testing
+    // setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -284,9 +284,9 @@ const Experience = () => {
     ref.getWorldDirection(dir);
     sph.setFromVector3(dir);
     // console.log(THREE.MathUtils);
-    compassRef.current.style.transform = `rotate(${
-      THREE.MathUtils.radToDeg(sph.theta) + 90
-    }deg)`;
+    compassRef.current.style.transform = `rotate(${THREE.MathUtils.radToDeg(
+      sph.theta
+    )}deg)`;
   }, []);
 
   const animateHover = useCallback((el = null, index = 0, override = false) => {
@@ -321,9 +321,9 @@ const Experience = () => {
       </picture>
 
       <div className="wrapper">
-        {/* <div onClick={start} {...startMobile}>
+        <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-        </div> */}
+        </div>
 
         <button className="close-tour">
           <img src={closeImage} alt="" />
@@ -349,7 +349,7 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
-          dpr={isMobile ? 1.5 : window.devicePixelRatio * 0.9}
+          dpr={isMobile ? 1.25 : window.devicePixelRatio * 0.9}
           shadows={true}
           gl={{
             antialias: true,
@@ -364,7 +364,7 @@ const Experience = () => {
         >
           {/* <ScrollControls pages={3}> */}
           <SheetProvider sheet={sheet}>
-            <AdaptiveDpr />
+            {/* <AdaptiveDpr /> */}
             <Scene
               animDuration={animDuration}
               animateHover={animateHover}

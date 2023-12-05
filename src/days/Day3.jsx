@@ -1,5 +1,5 @@
 import React from "react";
-import ImagePin from "../models/ImagePin";
+import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { isMobile } from "react-device-detect";
 import { NightLights } from "./NightLights";

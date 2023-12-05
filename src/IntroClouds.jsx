@@ -11,31 +11,31 @@ export const IntroClouds = ({ playIntro }) => {
   return (
     <div className="cloud-intro" onClick={playIntro} {...handlers}>
       <div className="cloud-intro__image">
-        <img src="/images/cloud1.webp" alt="" />
+        <img src="/images/cloud1.webp" alt="" pointer-events="none" />
       </div>
       <div className="cloud-intro__image">
-        {/* <img src="/images/cloud1.webp" alt="" /> */}
-        <img src="/images/cloud3.webp" alt="" />
+        {/* <img src="/images/cloud1.webp" alt="" pointer-events="none" /> */}
+        <img src="/images/cloud3.webp" alt="" pointer-events="none" />
       </div>
       <div className="cloud-intro__image">
-        <img src="/images/cloud1.webp" alt="" />
+        <img src="/images/cloud1.webp" alt="" pointer-events="none" />
       </div>
       {isDesktop && (
         <>
           <div className="cloud-intro__image">
-            <img src="/images/cloud2.webp" alt="" />
+            <img src="/images/cloud2.webp" alt="" pointer-events="none" />
           </div>
           <div className="cloud-intro__image">
-            <img src="/images/cloud1.webp" alt="" />
+            <img src="/images/cloud1.webp" alt="" pointer-events="none" />
           </div>
           <div className="cloud-intro__image">
-            <img src="/images/cloud2.webp" alt="" />
+            <img src="/images/cloud2.webp" alt="" pointer-events="none" />
           </div>
           <div className="cloud-intro__image">
-            <img src="/images/cloud1.webp" alt="" />
+            <img src="/images/cloud1.webp" alt="" pointer-events="none" />
           </div>
           <div className="cloud-intro__image">
-            <img src="/images/cloud3.webp" alt="" />
+            <img src="/images/cloud3.webp" alt="" pointer-events="none" />
           </div>
         </>
       )}

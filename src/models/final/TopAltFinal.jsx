@@ -7,88 +7,43 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useControls } from "leva";
 
-const TopAltAgain = (props) => {
-  const { nodes } = useGLTF("/glb/final/massive-map.glb");
+const TopAltFinal = (props) => {
+  const { nodes } = useGLTF("/glb/final/top.glb");
   // const texture = useTexture("/textures/final/baked-new-dark.webp");
   const texture = isMobile
-    ? useTexture("/textures/final/terrain-with-banff-mobile.webp")
-    : useTexture("/textures/final/baked-nov28-darker.webp");
+    ? useTexture("/textures/final/baked-brit-mobile.webp")
+    : useTexture("/textures/final/baked-brit.webp");
   // const textureMobile = useTexture("/textures/final/baked-new-dark.webp");
 
-  const {
-    posX,
-    posY,
-    posZ,
-    rotX,
-    rotY,
-    rotZ,
-    scaleX,
-    scaleY,
-    scaleZ,
-    textureImg,
-  } = useControls({
-    posX: {
-      value: 0.4,
-      min: -1,
-      max: 2,
-      step: 0.001,
-    },
-    posY: {
-      value: 0.9,
-      min: 0,
-      max: 2,
-      step: 0.001,
-    },
-    posZ: {
-      value: 1.17,
-      min: 0,
-      max: 3,
-      step: 0.001,
-    },
-    rotX: {
-      value: 0,
-      min: 0,
-      max: Math.PI * 2,
-      step: 0.1,
-    },
-    rotY: {
-      value: 4.71,
-      min: 0,
-      max: Math.PI * 3,
-      step: 0.001,
-    },
-    rotZ: {
-      value: 0,
-      min: 0,
-      max: Math.PI * 2,
-      step: 0.1,
-    },
-    scaleX: {
-      value: 0.63,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-    scaleY: {
-      value: 0.175,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-    scaleZ: {
-      value: 0.62,
-      min: 0,
-      max: 1,
-      step: 0.01,
-    },
-  });
+  // const { posX, posY, posZ, scale } = useControls({
+  //   posX: {
+  //     value: 0.46,
+  //     min: -7,
+  //     max: 7,
+  //     step: 0.01,
+  //   },
+  //   posY: {
+  //     value: 0.85,
+  //     min: 0.5,
+  //     max: 1.5,
+  //     step: 0.01,
+  //   },
+  //   posZ: {
+  //     value: 1.18,
+  //     min: -7,
+  //     max: 7,
+  //     step: 0.01,
+  //   },
+  // });
+
   return (
     <group {...props} dispose={null}>
       <mesh
         // castShadow
         receiveShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
-        position={[posX, posY, posZ]}
+        position={[0.46, 0.9, 1.195]}
+        // position={[posX, posY, posZ]}
         // position={[-0.21, 0.935, 0.77]}
         // -0.28, 0.93, 0.76
 
@@ -104,13 +59,13 @@ const TopAltAgain = (props) => {
           map={texture}
           map-flipY={false}
           map-generateMipmaps={true}
-          map-anisotropy={16}
+          map-anisotropy={isMobile ? 1 : 8}
         />
       </mesh>
     </group>
   );
 };
 
-useGLTF.preload("/glb/final/NEW-FILE-remap-lower-rez.glb");
+useGLTF.preload("/glb/final/top.glb");
 
-export default TopAltAgain;
+export default TopAltFinal;

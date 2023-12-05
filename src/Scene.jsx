@@ -11,11 +11,12 @@ import EditableCamera from "./EditableCamera.jsx";
 
 import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
-import Road from "./models/final/Road.jsx";
-
+// import Road from "./models/final/Road.jsx";
+import RoadFinal from "./models/final/RoadFinal.jsx";
+// import { OrbitControls } from "@react-three/drei";
 // import { useControls } from "leva";
 
-import TopAltAgain from "./models/final/TopAltAgain.jsx";
+import TopAltFinal from "./models/final/TopAltFinal.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
@@ -306,12 +307,14 @@ const Scene = (props) => {
         /> */}
         {/* </e.group> */}
         {/* <LocationPin index={index} /> */}
-        <Road />
+        {/* <Road /> */}
+        <RoadFinal />
 
         {/* {altTop && <TopAlt />} */}
         {/* {!altTop && <Top />} */}
 
-        <TopAltAgain />
+        {/* <TopAltAgain /> */}
+        <TopAltFinal />
 
         {/* <Sides /> */}
         {/* <Plane /> */}

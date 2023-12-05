@@ -15,6 +15,10 @@
   @media screen and (min-width: 1024px) {
     display: flex;
   }
+
+  @media screen and (min-width: 1675px) {
+    right: 23vw;
+  }
 }
 
 .drawer-wrapper {
@@ -38,7 +42,7 @@
     &--closed {
       transform: translate(100%, 0);
 
-      img {
+      .close-drawer img {
         transform: rotateZ(180deg);
       }
     }
@@ -46,5 +50,9 @@
     &--open {
       transform: translate(0, 0);
     }
+  }
+
+  @media screen and (min-width: 1675px) {
+    width: 23vw;
   }
 }

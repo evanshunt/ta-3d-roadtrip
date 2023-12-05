@@ -150,7 +150,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
     tl.to(
       spotLight.current,
       {
-        intensity: 1.75,
+        intensity: 1.25,
         duration: 2,
       },
       "<"
@@ -205,9 +205,9 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
         position={[-15, 10, 13.5]}
         lookAt={[0, 0, 0]}
         castShadow
-        intensity={1.75}
-        shadow-mapSize-width={isMobile ? 1024 * 2 : 1024 * 3.75}
-        shadow-mapSize-height={isMobile ? 1024 * 2 : 1024 * 3.75}
+        intensity={1.25}
+        shadow-mapSize-width={isMobile ? 1024 * 1.75 : 1024 * 3.75}
+        shadow-mapSize-height={isMobile ? 1024 * 1.75 : 1024 * 3.75}
       />
     </>
   );

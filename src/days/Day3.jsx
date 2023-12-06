@@ -5,8 +5,6 @@ import { NightImage } from "./NightImage";
 import { NightLights } from "./NightLights";
 import { useTexture } from "@react-three/drei";
 
-import { useControls } from "leva";
-
 import columbiaIcefieldSkywalkImageSrc from "/images/columbia-icefield-skywalk.webp";
 import maligneCanyonImageSrc from "/images/maligne-canyon.webp";
 import jasperSkyTramImageSrc from "/images/jasper-sky-tram.webp";
@@ -28,27 +26,6 @@ const Day3 = ({
 }) => {
   const nightLightsRef3 = useRef();
   const nightTexture = useTexture("./textures/final/Jasper_Lights2.webp");
-
-  const { posX, posY, posZ } = useControls({
-    posX: {
-      value: 5.35,
-      min: 4,
-      max: 7,
-      step: 0.01,
-    },
-    posY: {
-      value: 1.08,
-      min: 0,
-      max: 2,
-      step: 0.01,
-    },
-    posZ: {
-      value: -5.7,
-      min: -6,
-      max: -4,
-      step: 0.01,
-    },
-  });
 
   return (
     <>

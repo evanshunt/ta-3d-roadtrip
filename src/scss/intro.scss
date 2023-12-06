@@ -29,6 +29,18 @@ $duration: 2.25s;
   }
 }
 
+.map__path {
+  transform: translate(405px, 684px);
+}
+
+.map__edmonton {
+  transform: translate(0, 200px);
+}
+
+.map__calgary {
+  transform: translate(0, 200px);
+}
+
 .cloud-intro {
   align-items: center;
   display: flex;

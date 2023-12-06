@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
+import { NightImage } from "./NightImage";
 import { NightLights } from "./NightLights";
+import { useTexture } from "@react-three/drei";
 
 import carterRyanGalleryImageSrc from "/images/carter-ryan-gallery.webp";
 import johnstonCanyonImageSrc from "/images/johnston-canyon.webp";
@@ -22,7 +24,8 @@ const Day2 = ({
   setIndex,
   setPinRefs,
 }) => {
-  // const tl = gsap.timeline({});
+  const nightTexture = useTexture("./textures/final/LL_Lights2.webp");
+  const nightLightsRef2 = useRef();
 
   return (
     <>
@@ -125,6 +128,19 @@ const Day2 = ({
       />
 
       {/* This is just to keep the index aligned with the actual amount of stops */}
+
+      <NightImage
+        dims={0.3}
+        isNight={isNight}
+        nightLightsRef={nightLightsRef2}
+        nLPosX={3.17}
+        nLPosY={1.11}
+        nLPosZ={0.77}
+        nLRotX={1.35}
+        nLRotY={3.41}
+        nLRotZ={1.63}
+        nightTexture={nightTexture}
+      />
 
       <NightLights
         isMobile={isMobile}

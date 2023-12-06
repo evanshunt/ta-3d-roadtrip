@@ -9,7 +9,7 @@ import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 // import { useControls } from "leva";
 
 import TopAltFinal from "./models/final/TopAltFinal.jsx";

@@ -1,9 +1,8 @@
-import { gsap } from "gsap/dist/gsap";
+import { NightImage } from "./NightImage";
 import { useTexture } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
-
 import { NightLights } from "./NightLights";
 
 import banffGondolaImageSrc from "/images/banff-gondola.webp";
@@ -28,41 +27,8 @@ const Day1 = ({
   setPinRefs,
 }) => {
   const nightLightsRef = useRef();
-  const tl = gsap.timeline({});
-  const nightTexture = useTexture("./textures/final/Banff_Lights.webp");
 
-  const animateLights = (direction) => {
-    switch (direction) {
-      case "in":
-        tl.to(
-          nightLightsRef.current.material,
-          {
-            opacity: 1,
-            duration: 1,
-          },
-          "<"
-        );
-        break;
-      case "out":
-        tl.to(
-          nightLightsRef.current.material,
-          {
-            opacity: 0,
-            duration: 1,
-          },
-          "<"
-        );
-        break;
-    }
-  };
-
-  useEffect(() => {
-    if (isNight) {
-      animateLights("in");
-    } else {
-      animateLights("out");
-    }
-  }, [isNight]);
+  const nightTexture = useTexture("./textures/final/Banff_Lights3.webp");
 
   return (
     <>
@@ -219,27 +185,23 @@ const Day1 = ({
         setPinRefs={setPinRefs}
       />
 
-      <mesh
-        ref={nightLightsRef}
-        position={[-4.6, 1.05, 2.93]}
-        rotation={[-1.6, 0, -1.7]}
-      >
-        <planeGeometry args={[0.15, 0.15]} />
-        <meshStandardMaterial
-          texture={nightTexture}
-          opacity={0}
-          map={nightTexture}
-          map-flipY={true}
-          map-generateMipmaps={true}
-          map-anisotropy={16}
-          transparent
-        />
-      </mesh>
+      <NightImage
+        dims={0.15}
+        isNight={isNight}
+        nightLightsRef={nightLightsRef}
+        nLPosX={-4.48}
+        nLPosY={1.04}
+        nLPosZ={2.96}
+        nLRotX={-1.2}
+        nLRotY={0}
+        nLRotZ={4.5}
+        nightTexture={nightTexture}
+      />
 
       <NightLights
         isMobile={isMobile}
         isNight={isNight}
-        position={positions.fairmontBanffSpringsHotel}
+        position={[-4.48, 1.04, 2.96]}
       />
     </>
   );

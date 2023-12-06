@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
+import { NightImage } from "./NightImage";
 import { NightLights } from "./NightLights";
+import { useTexture } from "@react-three/drei";
 
 import columbiaIcefieldSkywalkImageSrc from "/images/columbia-icefield-skywalk.webp";
 import maligneCanyonImageSrc from "/images/maligne-canyon.webp";
@@ -22,6 +24,9 @@ const Day3 = ({
   setIndex,
   setPinRefs,
 }) => {
+  const nightLightsRef3 = useRef();
+  const nightTexture = useTexture("./textures/final/Jasper_Lights2.webp");
+
   return (
     <>
       {!isMobile && (
@@ -141,6 +146,19 @@ const Day3 = ({
         setHoverIndex={setHoverIndex}
         setIndex={setIndex}
         setPinRefs={setPinRefs}
+      />
+
+      <NightImage
+        dims={0.3}
+        isNight={isNight}
+        nightLightsRef={nightLightsRef3}
+        nLPosX={5.31}
+        nLPosY={0.99}
+        nLPosZ={-6.02}
+        nLRotX={5.46}
+        nLRotY={-0.07}
+        nLRotZ={-1.55}
+        nightTexture={nightTexture}
       />
 
       <NightLights

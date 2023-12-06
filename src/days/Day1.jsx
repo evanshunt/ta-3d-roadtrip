@@ -201,7 +201,7 @@ const Day1 = ({
       <NightLights
         isMobile={isMobile}
         isNight={isNight}
-        position={[-4.48, 1.04, 2.96]}
+        position={[-4.46, 1.09, 2.96]}
       />
     </>
   );

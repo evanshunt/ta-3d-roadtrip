@@ -42,7 +42,7 @@ export const NightLights = ({ position, isMobile, isNight }) => {
             count={isMobile ? 50 : 125}
             color={0xffffff}
             position={position}
-            scale={0.4}
+            scale={0.2}
             size={0.6}
             speed={0.1}
           />
@@ -52,7 +52,7 @@ export const NightLights = ({ position, isMobile, isNight }) => {
             position={position}
             speed={0.1}
             size={0.8}
-            scale={0.4}
+            scale={0.2}
           />
         </>
       )}

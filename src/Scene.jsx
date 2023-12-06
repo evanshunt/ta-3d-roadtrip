@@ -46,8 +46,8 @@ const positions = {
   columbiaIcefieldSkywalk: [1.65, 1.1, -3.2],
   maligneCanyon: [5.4, 1.05, -5.6],
   jasperSkyTram: [5.0, 1.05, -6.0],
-  fairmontJasperParkLodge: [5.35, 1.08, -5.7],
-  jasperPlanetarium: [5.4, 1.06, -5.65],
+  fairmontJasperParkLodge: [5.28, 1.08, -5.9],
+  jasperPlanetarium: [5.31, 1.05, -5.86],
 };
 
 // Reused geometries and materials

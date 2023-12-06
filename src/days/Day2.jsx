@@ -130,15 +130,21 @@ const Day2 = ({
       {/* This is just to keep the index aligned with the actual amount of stops */}
 
       <NightImage
-        dims={0.3}
+        dims={0.2}
         isNight={isNight}
         nightLightsRef={nightLightsRef2}
-        nLPosX={3.17}
-        nLPosY={1.11}
-        nLPosZ={0.77}
-        nLRotX={1.35}
+        // nLPosX={3.17}
+        // nLPosY={1.11}
+        // nLPosZ={0.77}
+        // nLRotX={1.35}
+        // nLRotY={3.41}
+        // nLRotZ={1.63}
+        nLPosX={-3.14}
+        nLPosY={1.04}
+        nLPosZ={0.7}
+        nLRotX={1.53}
         nLRotY={3.41}
-        nLRotZ={1.63}
+        nLRotZ={0.88}
         nightTexture={nightTexture}
       />
 

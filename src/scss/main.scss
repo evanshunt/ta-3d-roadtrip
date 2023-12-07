@@ -146,13 +146,14 @@ body {
   left: 0;
   padding: 0.625rem 1rem;
   position: fixed;
-  top: 17.5vw;
+  // top: 17.5vw;
 
   z-index: 3;
 
   @media screen and (min-width: 420px) {
     left: 1.75rem;
-    top: calc(6.75vw + 1rem);
+    // top: calc(6.75vw + 1rem);
+    top: 1rem;
   }
 
   img {
@@ -167,6 +168,7 @@ body {
 //     padding-top: 6.5vw;
 //   }
 // }
+
 
 .loading {
   position: fixed;

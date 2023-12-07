@@ -19,7 +19,7 @@ export const Map = ({ removeIntro, start }) => {
 
     const animateScene = () => {
       tl.pause();
-      animatePins(tl);
+      // animatePins(tl);
       animateMaps(tl);
 
       if (start) {
@@ -325,7 +325,7 @@ export const Map = ({ removeIntro, start }) => {
         </defs>
       </g>
 
-      <g transform="translate(358, 400)">
+      <g transform="translate(425, 375)">
         <image
           preserveAspectRatio="none"
           className="map__clouds"

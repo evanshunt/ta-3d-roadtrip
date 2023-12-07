@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import * as THREE from "three";
 import { Cloud } from "./Clouds.jsx";
-import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
+// import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
 
@@ -9,7 +9,7 @@ import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-import { OrbitControls } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 // import { useControls } from "leva";
 
 import TopAltFinal from "./models/final/TopAltFinal.jsx";

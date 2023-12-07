@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import * as THREE from "three";
-import { Loader } from "@react-three/drei";
+import { AdaptiveDpr, Loader } from "@react-three/drei";
 
 import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
@@ -344,13 +344,15 @@ const Experience = () => {
       <div className="wrapper">
         <div onClick={start} {...startMobile}>
           <Intro hasStarted={hasStarted} />
-          {/* @TODO: reset this to hasStarted */}
         </div>
 
-        <button className="close-tour">
-          <img src={closeImage} alt="" />
+        <a className="close-tour" href="">
+          <img
+            src={closeImage}
+            alt="/trip-ideas/road-trips-itineraries/badlands-road-trip"
+          />
           Close the 3D Tour
-        </button>
+        </a>
         <Loader
           containerStyles={{
             backgroundColor: "#ffffff",
@@ -371,7 +373,7 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
-          dpr={isMobile ? 1.25 : window.devicePixelRatio}
+          dpr={isMobile ? 1.25 : window.devicePixelRatio * 0.9}
           shadows={true}
           gl={{
             antialias: true,
@@ -381,12 +383,12 @@ const Experience = () => {
               ? THREE.BasicShadowMap
               : THREE.PCFSoftShadowMap,
           }}
-          // frameloop={isMobile ? "demand" : "always"}
+          frameloop={inBetweens.includes(index - 1) ? "always" : "demand"}
           {...handlers}
         >
+          <AdaptiveDpr />
           {/* <ScrollControls pages={3}> */}
           <SheetProvider sheet={sheet}>
-            {/* <AdaptiveDpr /> */}
             <Scene
               animDuration={animDuration}
               animateHover={animateHover}

@@ -335,15 +335,16 @@ const Experience = () => {
 
   return (
     <div className="experience">
-      <picture>
+      {/* <picture>
         <source media="(max-width: 420px)" srcSet={mainNavImageMobile} />
         <source media="(min-width: 420px)" src={mainNavImage} alt="" />
         <img src={mainNavImage} alt="" className="main-nav-image" />
-      </picture>
+      </picture> */}
 
       <div className="wrapper">
         <div onClick={start} {...startMobile}>
-          <Intro hasStarted={hasStarted} />
+          <Intro hasStarted={false} />
+          {/* @TODO: reset this to hasStarted */}
         </div>
 
         <button className="close-tour">

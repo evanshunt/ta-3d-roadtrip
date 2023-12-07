@@ -32,12 +32,12 @@ const MapBackground = () => {
       />
       <path
         stroke="#9C0F00"
-        stroke-width="2"
+        strokeWidth="2"
         d="m400 735-18 128.5m60.5-120-2 74.5c.667 12.333 5.2 39.6 18 50"
       />
       <path
         stroke="#fff"
-        stroke-width="2"
+        strokeWidth="2"
         d="m400 735-18 128.5m60.5-120-2 74.5c.667 12.333 5.2 39.6 18 50"
       />
       <path

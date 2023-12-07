@@ -187,7 +187,7 @@ export const Map = ({ removeIntro, start }) => {
             />
           </svg>
         </g>
-        <g class="map__edmonton">
+        <g className="map__edmonton">
           <ellipse
             cx="590"
             cy="497"

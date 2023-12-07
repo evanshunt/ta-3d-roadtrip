@@ -33,6 +33,10 @@ $duration: 2.25s;
   transform: translate(405px, 684px);
 }
 
+.map__clouds {
+  transform: scale(0.4) translate(-200px, 0px);
+}
+
 .map__edmonton {
   transform: translate(0, 200px);
 }

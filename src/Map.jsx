@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import topographyImgNew from "/images/maps/alberta-topography-new.webp";
-import topographyImgNew from "/images/maps/Alberta Topography.webp";
+
+import mapCloudsImg from "/images/maps/Map Clouds.webp";
 import gsap from "gsap/dist/gsap";
 import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 import MapBackground from "./components/MapBackground";
@@ -121,6 +121,19 @@ export const Map = ({ removeIntro, start }) => {
           },
         },
         "<"
+      );
+      gsap.set(".map__clouds", {
+        transformOrigin: "35% 55%",
+      });
+      tl.to(
+        ".map__clouds",
+        {
+          scale: 1.333,
+          opacity: 0,
+          duration: duration * 9,
+          ease: "power1.in",
+        },
+        "<-2%"
       );
     };
 
@@ -310,6 +323,14 @@ export const Map = ({ removeIntro, start }) => {
             <path fill="#fff" d="M0 0h1392.77v859.456H0z" />
           </clipPath>
         </defs>
+      </g>
+
+      <g transform="translate(358, 400)">
+        <image
+          preserveAspectRatio="none"
+          className="map__clouds"
+          href={mapCloudsImg}
+        />
       </g>
     </svg>
   );

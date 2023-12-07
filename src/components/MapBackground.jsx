@@ -1,5 +1,6 @@
 import React from "react";
 import topographyImgNew from "/images/maps/Alberta Topography.webp";
+
 const MapBackground = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1393 860">

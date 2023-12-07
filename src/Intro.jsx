@@ -34,7 +34,7 @@ const Intro = ({ hasStarted }) => {
           <Map removeIntro={removeIntro} start={hasStarted} />
         </div>
       )}
-      {/* {!cloudsGone && <IntroClouds playIntro={playIntro} />} */}
+      {!cloudsGone && <IntroClouds playIntro={playIntro} />}
     </div>
   );
 };

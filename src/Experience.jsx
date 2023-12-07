@@ -343,7 +343,7 @@ const Experience = () => {
 
       <div className="wrapper">
         <div onClick={start} {...startMobile}>
-          <Intro hasStarted={false} />
+          <Intro hasStarted={hasStarted} />
           {/* @TODO: reset this to hasStarted */}
         </div>
 

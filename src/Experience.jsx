@@ -373,7 +373,6 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
-          alpha={false}
           dpr={isMobile ? 1.25 : window.devicePixelRatio * 0.9}
           shadows={isMobile ? "soft" : true}
           gl={{

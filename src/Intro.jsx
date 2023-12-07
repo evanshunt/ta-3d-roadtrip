@@ -28,7 +28,7 @@ const Intro = ({ hasStarted }) => {
 
   return (
     <div className="intro">
-      <Onboarding />
+      {/* <Onboarding /> */}
       {visible && (
         <div className="intro__map">
           <Map removeIntro={removeIntro} start={hasStarted} />

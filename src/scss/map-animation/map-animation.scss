@@ -17,10 +17,25 @@
     transform: none;
   }
 
-  @media screen and (orientation: portrait) {
-    height: 220vh;
-    transform: translate(10%, 0);
+  //1170
+
+  @media screen and (orientation: landscape) and (min-width: 1000px) and (max-width: 1170px) {
+    transform: scale(1.5);
   }
+
+  @media screen and (orientation: portrait) {
+    height: 150vh;
+    transform: translate(5%, 0);
+
+    @media screen and (max-width: 420px) {
+      height: 125vh;
+      transform: translate(6%, 0);
+    }
+  }
+
+  // @media screen and (orientation: portrait) and (max-width: 660px) {
+  //   transform: translate(0, 0)
+  // }
 }
 
 .bubble,

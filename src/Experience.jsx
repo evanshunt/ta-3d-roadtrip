@@ -283,8 +283,16 @@ const Experience = () => {
     }
 
     // if jumping more than one stop, jump to the right spot in the sequence
-    if (Math.abs(index - previousIndexRef.current) > 1) {
+    if (
+      Math.abs(index - previousIndexRef.current) > 1 &&
+      !inBetweens.includes(index)
+    ) {
       sheet.sequence.position = destinations[index].position - beforeAnim;
+    } else if (
+      Math.abs(index - previousIndexRef.current) > 1 &&
+      inBetweens.includes(index)
+    ) {
+      sheet.sequence.position = destinations[index].position;
     }
 
     project.ready.then(() => {
@@ -340,11 +348,11 @@ const Experience = () => {
           <Intro hasStarted={hasStarted} />
         </div>
 
-        <a className="close-tour" href="">
-          <img
-            src={closeImage}
-            alt="/trip-ideas/road-trips-itineraries/badlands-road-trip"
-          />
+        <a
+          className="close-tour"
+          href="/trip-ideas/road-trips-itineraries/badlands-road-trip"
+        >
+          <img src={closeImage} alt="" />
           Close the 3D Tour
         </a>
         <Loader

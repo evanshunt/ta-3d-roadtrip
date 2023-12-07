@@ -183,6 +183,13 @@ button[disabled] .arrow--prev {
   }
 }
 
+@-moz-document url-prefix() {
+  .controls__list__progress {
+    transform: translate(0, 0);
+    top: 0.575rem;
+  }
+}
+
 .controls__list__list {
   display: flex;
   justify-content: space-around;

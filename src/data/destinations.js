@@ -638,7 +638,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 36.54,
+    position: 36.55,
     day: 3,
     hideFromItinerary: true,
     stop: 12,

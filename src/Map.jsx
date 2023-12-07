@@ -19,7 +19,7 @@ export const Map = ({ removeIntro, start }) => {
 
     const animateScene = () => {
       tl.pause();
-      // animatePins(tl);
+      animatePins(tl);
       animateMaps(tl);
 
       if (start) {

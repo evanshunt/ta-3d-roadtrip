@@ -373,15 +373,13 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
+          alpha={false}
           dpr={isMobile ? 1.25 : window.devicePixelRatio * 0.9}
-          shadows={true}
+          shadows={isMobile ? "soft" : true}
           gl={{
             antialias: true,
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
-            shadowMapType: isMobile
-              ? THREE.BasicShadowMap
-              : THREE.PCFSoftShadowMap,
           }}
           frameloop={inBetweens.includes(index - 1) ? "always" : "demand"}
           {...handlers}
@@ -456,10 +454,6 @@ const Experience = () => {
           </>
         ) : (
           <div className={drawerClass}>
-            <CloseDrawer
-              drawerOpen={drawerOpen}
-              setDrawerOpen={setDrawerOpen}
-            />
             <Attraction
               attractionsOpen={attractionsOpen}
               currDestination={currDestination}

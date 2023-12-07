@@ -38,7 +38,7 @@ const TopAltFinal = (props) => {
   return (
     <group {...props} dispose={null}>
       <mesh
-        // castShadow
+        castShadow={false}
         receiveShadow
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         position={[0.46, 0.9, 1.195]}

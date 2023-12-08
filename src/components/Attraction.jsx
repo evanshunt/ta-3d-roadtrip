@@ -115,7 +115,8 @@ const Attraction = ({
         >
           <>
             <div className={`fade attraction__wrapper`}>
-              <div
+              <button
+                aria-label="Open itinerary"
                 className="attraction__header__mobile"
                 onClick={handleAttractionHeaderClick}
                 {...handlers}
@@ -140,7 +141,7 @@ const Attraction = ({
                 >
                   {currDestination?.details?.blurb}
                 </span>
-              </div>
+              </button>
 
               <div className="attraction__buttons">
                 <button
@@ -165,6 +166,7 @@ const Attraction = ({
                   Back to Itinerary
                 </button>
                 <button
+                  aria-label="Previous attraction"
                   disabled={index < 2}
                   className="controls__button controls__button--attraction controls__button--prev"
                   onClick={() => {
@@ -174,6 +176,7 @@ const Attraction = ({
                   <Arrow dir="prev" active={index > 1} />
                 </button>
                 <button
+                  aria-label="Next attraction"
                   disabled={index === maxLength}
                   className="controls__button controls__button--attraction controls__button--next"
                   onClick={() => {

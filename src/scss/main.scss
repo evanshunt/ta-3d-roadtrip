@@ -100,7 +100,7 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 2;
+    z-index: 1;
   }
 }
 
@@ -109,6 +109,7 @@ body {
   position: fixed;
   top: 20vw;
   right: 1rem;
+  z-index: 2;
 
   @media screen and (min-width: 1024px) {
     top: 1vw;

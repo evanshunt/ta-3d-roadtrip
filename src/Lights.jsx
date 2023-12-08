@@ -205,8 +205,8 @@ const Lights = ({ index, isMobile, isNight }) => {
         lookAt={[0, 0, 0]}
         castShadow
         intensity={1.25}
-        shadow-mapSize-width={isMobile ? 1024 * 2 : 1024 * 4}
-        shadow-mapSize-height={isMobile ? 1024 * 2 : 1024 * 4}
+        shadow-mapSize-width={isMobile ? 1024 * 1.5 : 1024 * 4}
+        shadow-mapSize-height={isMobile ? 1024 * 1.5 : 1024 * 4}
       />
     </>
   );

@@ -45,7 +45,7 @@ const determineAmount = (index) => {
 const Experience = () => {
   const [clicked, setClicked] = useState(false);
   const [currDay, setCurrDay] = useState(0);
-  const [currDestination, setCurrDestination] = useState(null);
+  const [currDestination, setCurrDestination] = useState(destinations[0]);
   const [debug, setDebug] = useState(false);
   const [direction, setDirection] = useState("forward");
   const [drawerOpen, setDrawerOpen] = useState(
@@ -96,10 +96,10 @@ const Experience = () => {
     }
   };
 
-  const handleIndex = (dir, jumpTo = false) => {
+  const handleIndex = (dir, jumpTo = false, reset = false) => {
     previousIndexRef.current = index;
 
-    if (!jumpTo) {
+    if (!jumpTo && !reset) {
       if (dir === "up" || dir === "down") return;
 
       if (dir === "next") {
@@ -164,7 +164,7 @@ const Experience = () => {
   };
 
   useEffect(() => {
-    let timeoutId;
+    let startTimeout, timeoutId;
 
     const handleResize = () => {
       clearTimeout(timeoutId);
@@ -175,21 +175,16 @@ const Experience = () => {
 
     window.addEventListener("resize", handleResize);
 
+    startTimeout = setTimeout(() => {
+      start();
+    }, 250);
+
     return () => {
       clearTimeout(timeoutId);
+      clearTimeout(startTimeout);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const startMobile = useSwipeable({
-    onSwiped: (eventData) => {
-      const dir = eventData.dir.toLowerCase();
-      if (dir === "left") {
-        start();
-        handleIndex("next");
-      }
-    },
-  });
 
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
@@ -204,8 +199,6 @@ const Experience = () => {
     },
     // ...config
   });
-
-  const toggleDrawer = () => {};
 
   const toggleItinerary = () => {
     setItineraryOpen(!itineraryOpen);
@@ -283,17 +276,8 @@ const Experience = () => {
     }
 
     // if jumping more than one stop, jump to the right spot in the sequence
-    if (
-      Math.abs(index - previousIndexRef.current) > 1 &&
-      !inBetweens.includes(index)
-    ) {
-      sheet.sequence.position = destinations[index].position - beforeAnim;
-    } else if (
-      Math.abs(index - previousIndexRef.current) > 1 &&
-      inBetweens.includes(index)
-    ) {
-      sheet.sequence.position = destinations[index].position;
-    }
+
+    sheet.sequence.position = destinations[index].position - beforeAnim;
 
     project.ready.then(() => {
       controlAnimation();
@@ -303,7 +287,7 @@ const Experience = () => {
   useEffect(() => {
     // const debug = window.location.search.includes("debug");
     // setDebug(debug);
-    setHasStarted(true); // uncomment for testing
+    // setHasStarted(true); // uncomment for testing
   }, []);
 
   let dir = new THREE.Vector3(),
@@ -344,7 +328,7 @@ const Experience = () => {
   return (
     <div className="experience">
       <div className="wrapper">
-        {/* <div onClick={start} {...startMobile}>
+        {/* <div>
           <Intro hasStarted={hasStarted} />
         </div> */}
 
@@ -375,7 +359,7 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
-          dpr={isMobile ? 1.25 : window.devicePixelRatio * 0.9}
+          dpr={isMobile ? 1.25 : window.devicePixelRatio}
           shadows={isMobile ? "soft" : true}
           gl={{
             antialias: true,
@@ -539,8 +523,6 @@ const Experience = () => {
               />
 
               {Object.keys(days).map((day, i) => {
-                // if (day === "0") return;
-
                 return (
                   <React.Fragment key={i}>
                     {destinations.map((destination, i) => {
@@ -560,9 +542,13 @@ const Experience = () => {
                                 }
                                   `}
                               onClick={() => {
-                                if (i !== 0) {
-                                  handleIndex("next", destination.stop);
-                                }
+                                // if (i !== 0) {
+
+                                handleIndex(
+                                  "next",
+                                  destination.stop,
+                                  i === 0 ? true : false
+                                );
                               }}
                               aria-label={`Navigate to ${destination?.details.title}`}
                             ></button>
@@ -577,7 +563,7 @@ const Experience = () => {
           </div>
 
           <div className="day-info">
-            <span>{destinations[index].details.blurb}</span>
+            <span>{destinations[index]?.details.blurb}</span>
           </div>
         </div>
       </div>

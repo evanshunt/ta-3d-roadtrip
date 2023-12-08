@@ -1,10 +1,14 @@
 const destinations = [
   {
     hideFromItinerary: true,
-    name: "start",
-    position: 0,
+    name: "Banff",
+    position: 9.4,
     stop: 0,
-    day: 0,
+    drivingInfo: {
+      copy: "Head from Calgary to Banff, the birthplace of Canada’s national parks system.",
+      time: "1 hr 23 min drive from Calgary",
+    },
+    day: 1,
     visited: false,
     details: {
       blurb:
@@ -638,9 +642,9 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 36.55,
+    position: 41.799,
     day: 3,
-    hideFromItinerary: true,
+    hideFromItinerary: true, //@TODO: add a bit of a pause before this
     stop: 12,
     visited: false,
     drivingInfo: {

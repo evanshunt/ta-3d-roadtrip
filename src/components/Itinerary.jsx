@@ -27,13 +27,15 @@ const Itinerary = ({
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (currDay === 0) return;
+    // if (currDay === 0) return;
+    // if (!currDestination) return;
+
     if (inBetweens.includes(index)) {
       scrollItinerary(currDestination.day);
     } else {
       setOpen(false);
     }
-  }, [index]);
+  }, [currDestination]);
 
   const listText = () => {
     if (currDay === 0) return "List";
@@ -42,10 +44,14 @@ const Itinerary = ({
   };
 
   const scrollItinerary = (stop) => {
-    const offset = document.querySelector(
-      `.itinerary__day:nth-child(${stop + 1})`
-    );
+    // @TODO: this is pulling the last index not the cyrrent one
+    let offset = document.querySelector(`.itinerary__day:first-child`);
+    if (stop > 1) {
+      offset = document.querySelector(`.itinerary__day:nth-child(${stop})`);
+    }
+
     if (!offset) return;
+
     itineraryRef.current.scrollTo({
       top: offset.offsetTop - 40,
       behavior: "smooth",
@@ -90,26 +96,28 @@ const Itinerary = ({
         />
       </div>
       <ul className="itinerary__list">
-        {grouped.map((day, index) => (
-          <Day
-            animateHover={animateHover}
-            animateOut={animateOut}
-            currDestination={currDestination}
-            drivingInfo={days[day][0]?.drivingInfo}
-            description={days[day][0].description}
-            handleIndex={handleIndex}
-            hoverIndex={hoverIndex}
-            index={index}
-            key={`${day}-${index}`}
-            name={days[day][0].name}
-            number={days[day][0].day}
-            setIndex={setIndex}
-            setPinRefs={setPinRefs}
-            setHoverIndex={setHoverIndex}
-            showAttraction={showAttraction}
-            stops={days[day]}
-          />
-        ))}
+        {grouped.map((day, index) => {
+          console.log({ day });
+          return (
+            <Day
+              animateHover={animateHover}
+              animateOut={animateOut}
+              currDestination={currDestination}
+              drivingInfo={days[day][0]?.drivingInfo}
+              description={days[day][0].description}
+              handleIndex={handleIndex}
+              hoverIndex={hoverIndex}
+              index={index}
+              key={`${day}-${index}`}
+              name={days[day][0].name}
+              number={days[day][0].day}
+              setPinRefs={setPinRefs}
+              setHoverIndex={setHoverIndex}
+              showAttraction={showAttraction}
+              stops={days[day]}
+            />
+          );
+        })}
       </ul>
     </div>
   );

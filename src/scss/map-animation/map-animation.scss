@@ -11,16 +11,8 @@
     opacity: 0;
   }
 
-  @media screen and (min-width: 1024px) {
-    height: auto;
-    object-fit: none;
-    transform: none;
-  }
-
-  //1170
-
-  @media screen and (orientation: landscape) and (min-width: 1000px) and (max-width: 1170px) {
-    transform: scale(1.5);
+  @media screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1170px) {
+    transform: translate(0, 0);
   }
 
   @media screen and (orientation: portrait) {

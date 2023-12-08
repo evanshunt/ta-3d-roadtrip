@@ -10,14 +10,15 @@ import Lights from "./Lights.jsx";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
 import { OrbitControls } from "@react-three/drei";
-// import { useControls } from "leva";
 
+import Backdrop from "./models/final/Backdrop.jsx";
 import TopAltFinal from "./models/final/TopAltFinal.jsx";
 
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 import { Clouds } from "@react-three/drei";
+
 // import HTMLInfo from "./components/HTMLInfo.jsx";
 
 // @TODO: move this into the data json from Experience.jsx
@@ -60,33 +61,6 @@ const redMaterial = new THREE.MeshBasicMaterial({
 const Scene = (props) => {
   const sceneRef = useRef();
 
-  // const { depth, focusDistance, focalLength, bokehScale } = useControls({
-  //   depth: {
-  //     value: 0.12,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   focusDistance: {
-  //     value: 0.12,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   focalLength: {
-  //     value: 0.09,
-  //     min: 0,
-  //     max: 1,
-  //     step: 0.01,
-  //   },
-  //   bokehScale: {
-  //     value: 2.5,
-  //     min: 0,
-  //     max: 10,
-  //     step: 0.01,
-  //   },
-  // });
-
   return (
     <>
       {/* <OrbitControls
@@ -103,6 +77,17 @@ const Scene = (props) => {
         }}
       /> */}
       <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
+      {/* 
+      <Backdrop
+        scale={[scaleX, scaleY, scaleZ]}
+        position={[posX, posY, posZ]}
+        floor={0.25} // Stretches the floor segment, 0.25 by default
+        segments={20} // Mesh-resolution, 20 by default
+      >
+        <meshStandardMaterial color="#073142" />
+      </Backdrop> */}
+
+      <Backdrop />
 
       <Lights
         index={props.index}

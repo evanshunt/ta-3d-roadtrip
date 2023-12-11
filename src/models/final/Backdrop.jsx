@@ -1,12 +1,10 @@
 import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { useControls } from "leva";
 
 const Backdrop = (props) => {
   const { nodes } = useGLTF("/glb/final/backdrop.glb");
-  const texture = useTexture("/textures/final/backdrop-texture.jpg");
+  const texture = useTexture("/textures/final/backdrop-texture-small.webp");
 
-  // const { posX, posY, posZ, scale } = useControls({
   //   posX: {
   //     value: 1.3,
   //     min: -24,

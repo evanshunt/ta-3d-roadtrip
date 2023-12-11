@@ -188,7 +188,7 @@ const Experience = () => {
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
       const dir = eventData.dir.toLowerCase();
-      console.log(dir);
+      if (dir !== "left" && dir !== "right") return;
       if (dir === "left") {
         setDirection("forward");
         handleIndex("next");
@@ -276,7 +276,7 @@ const Experience = () => {
     }
 
     // if jumping more than one stop, jump to the right spot in the sequence
-    if (index !== 0) {
+    if (index !== 0 && Math.abs(index - previousIndexRef.current) > 1) {
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
 
@@ -361,7 +361,7 @@ const Experience = () => {
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
           }}
-          frameloop={inBetweens.includes(index - 1) ? "always" : "demand"}
+          frameloop={"always"}
           {...handlers}
         >
           <AdaptiveDpr />
@@ -502,10 +502,9 @@ const Experience = () => {
           <div className="controls__progress">
             <ul className="controls__list__days">
               {Object.keys(days).map((day, i) => {
-                if (i === 0) return null;
                 return (
                   <span key={`${day}-i`} className="controls__list__day">
-                    Day {i}
+                    Day {i + 1}
                   </span>
                 );
               })}

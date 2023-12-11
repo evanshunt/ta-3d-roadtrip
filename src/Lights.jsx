@@ -10,7 +10,8 @@ const Lights = ({ index, isMobile, isNight }) => {
   const tl = gsap.timeline({});
 
   const colors = {
-    blue: new THREE.Color().setHex(0xc9dff7),
+    blue: new THREE.Color().setHex(0xcf7efc9),
+    yellow: new THREE.Color().setHex(0xf7efc9),
     orange: new THREE.Color().setHex(0xf7e0c9),
     white: new THREE.Color().setHex(0xffffff),
   };
@@ -43,9 +44,9 @@ const Lights = ({ index, isMobile, isNight }) => {
         tl.to(
           spotLight.current.color,
           {
-            r: colors.blue.r,
-            g: colors.blue.g,
-            b: colors.blue.b,
+            r: colors.yellow.r,
+            g: colors.yellow.g,
+            b: colors.yellow.b,
             duration: 4,
           },
           "<"

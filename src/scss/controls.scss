@@ -47,6 +47,10 @@
   padding: 0;
   width: 2.8125rem;
 
+  &[disabled] {
+    cursor: unset;
+  }
+
   &--prev {
     grid-column: 1;
   }

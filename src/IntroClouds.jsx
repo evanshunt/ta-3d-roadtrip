@@ -1,7 +1,6 @@
-import { isDesktop } from "react-device-detect";
 import React, { useEffect } from "react";
 
-export const IntroClouds = ({ playIntro }) => {
+export const IntroClouds = ({ isMobile, playIntro }) => {
   useEffect(() => {
     setTimeout(() => {
       playIntro();
@@ -19,7 +18,7 @@ export const IntroClouds = ({ playIntro }) => {
       <div className="cloud-intro__image">
         <img src="/images/cloud1.webp" alt="" pointerEvents="none" />
       </div>
-      {isDesktop && (
+      {!isMobile && (
         <>
           <div className="cloud-intro__image">
             <img src="/images/cloud2.webp" alt="" pointerEvents="none" />

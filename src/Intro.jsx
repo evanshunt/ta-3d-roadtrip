@@ -1,11 +1,10 @@
 import { Map } from "./Map";
 import { IntroClouds } from "./IntroClouds";
-import Onboarding from "./components/OnBoarding";
 import React, { useEffect, useState } from "react";
 
 import "./scss/intro.scss";
 
-const Intro = ({ hasStarted, setIntroComplete }) => {
+const Intro = ({ hasStarted, isMobile, setIntroComplete }) => {
   const [visible, setVisible] = useState(true);
   const [cloudsGone, setCloudsGone] = useState(false);
 
@@ -38,7 +37,7 @@ const Intro = ({ hasStarted, setIntroComplete }) => {
           />
         </div>
       )}
-      {!cloudsGone && <IntroClouds playIntro={playIntro} />}
+      {!cloudsGone && <IntroClouds isMobile={isMobile} playIntro={playIntro} />}
     </div>
   );
 };

@@ -324,7 +324,11 @@ const Experience = () => {
     <div className="experience">
       <div className="wrapper">
         <div>
-          <Intro hasStarted={hasStarted} setIntroComplete={setIntroComplete} />
+          <Intro
+            hasStarted={hasStarted}
+            isMobile={isMobile}
+            setIntroComplete={setIntroComplete}
+          />
         </div>
 
         <a
@@ -361,7 +365,7 @@ const Experience = () => {
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
           }}
-          frameloop={"always"}
+          frameloop={inBetweens.includes(index + 1) ? "always" : "demand"}
           {...handlers}
         >
           <AdaptiveDpr />

@@ -69,7 +69,6 @@ const ImagePin = ({
             receiveShadow={false}
             onClick={() => {
               if (isMobile) {
-                // @TODO: this only works once. something is overriding this
                 setAttractionsOpen(true);
               }
             }}

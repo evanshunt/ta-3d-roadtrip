@@ -22,6 +22,7 @@ const Attraction = ({
   isMobile,
   maxLength,
   nextDestination,
+  setAttractionsOpen,
   setIndex,
   showItinerary,
   toggleItinerary,
@@ -35,7 +36,12 @@ const Attraction = ({
 
   const handleAttractionHeaderClick = () => {
     if (isMobile) {
-      currDestination?.hideFromItinerary ? toggleItinerary() : setOpen(!open);
+      if (currDestination && currDestination.hideFromItinerary) {
+        toggleItinerary();
+      } else {
+        setAttractionsOpen(!attractionsOpen);
+        setOpen(!open);
+      }
     } else {
       currDestination?.hideFromItinerary ? toggleItinerary() : toggleDrawer();
     }

@@ -111,6 +111,30 @@ const Experience = () => {
   };
 
   useEffect(() => {
+    let startTimeout, timeoutId;
+
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setIsMobile(window.innerWidth < 1024);
+      }, 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    startTimeout = setTimeout(() => {
+      // auto start
+      start();
+    }, 250);
+
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(startTimeout);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     if (hoverIndex !== null && pinRefs[hoverIndex]) {
       animateHover(pinRefs[hoverIndex], hoverIndex, true);
       setLastRef(pinRefs[hoverIndex]);
@@ -139,6 +163,15 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
+  useEffect(() => {
+    if (introComplete) {
+      setTimeout(() => {
+        beginCameraAnimation();
+      }, 1500); //  cloud animate out time - 0.25
+    }
+    return () => {};
+  }, [introComplete]);
+
   const beginCameraAnimation = () => {
     if (index === 0) {
       sheet.sequence.play({
@@ -152,42 +185,10 @@ const Experience = () => {
     setHasStarted(true);
   };
 
-  useEffect(() => {
-    if (introComplete) {
-      setTimeout(() => {
-        beginCameraAnimation();
-      }, 1500); //  cloud animate out time - 0.25
-    }
-    return () => {};
-  }, [introComplete]);
-
-  useEffect(() => {
-    let startTimeout, timeoutId;
-
-    const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        setIsMobile(window.innerWidth < 1024);
-      }, 500);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    startTimeout = setTimeout(() => {
-      // auto start
-      start();
-    }, 250);
-
-    return () => {
-      clearTimeout(timeoutId);
-      clearTimeout(startTimeout);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const handlers = useSwipeable({
     onSwiped: (eventData) => {
       const dir = eventData.dir.toLowerCase();
+      console.log(dir);
       if (dir === "left") {
         setDirection("forward");
         handleIndex("next");
@@ -403,6 +404,7 @@ const Experience = () => {
               isMobile={isMobile}
               maxLength={maxLength}
               nextDestination={nextDestination}
+              setAttractionsOpen={setAttractionsOpen}
               setIndex={setIndex}
               showItinerary={showItinerary}
               toggleItinerary={toggleItinerary}

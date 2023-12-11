@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-// import { useControls } from "leva";
+import { useControls } from "leva";
 
 const Lights = ({ index, isMobile, isNight }) => {
   const spotLight = useRef();
@@ -206,8 +206,8 @@ const Lights = ({ index, isMobile, isNight }) => {
         lookAt={[0, 0, 0]}
         castShadow
         intensity={1.25}
-        shadow-mapSize-width={isMobile ? 1024 * 1.5 : 1024 * 4}
-        shadow-mapSize-height={isMobile ? 1024 * 1.5 : 1024 * 4}
+        shadow-mapSize-width={isMobile ? 1024 * 4 : 1024 * 6}
+        shadow-mapSize-height={isMobile ? 1024 * 4 : 1024 * 6}
       />
     </>
   );

@@ -365,7 +365,7 @@ const Experience = () => {
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
           }}
-          frameloop={inBetweens.includes(index + 1) ? "always" : "demand"}
+          frameloop={"always"}
           {...handlers}
         >
           <AdaptiveDpr />

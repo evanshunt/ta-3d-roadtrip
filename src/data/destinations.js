@@ -642,7 +642,7 @@ const destinations = [
   },
   {
     name: "Jasper",
-    position: 41.799,
+    position: 36.533,
     day: 3,
     hideFromItinerary: true, //@TODO: add a bit of a pause before this
     stop: 12,

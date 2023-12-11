@@ -3,7 +3,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 
 const Backdrop = (props) => {
   const { nodes } = useGLTF("/glb/final/backdrop.glb");
-  const texture = useTexture("/textures/final/backdrop.jpg");
+  const texture = useTexture("/textures/final/backdrop.webp");
 
   return (
     <group {...props} dispose={null}>

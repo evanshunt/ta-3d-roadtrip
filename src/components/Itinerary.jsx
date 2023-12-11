@@ -97,7 +97,6 @@ const Itinerary = ({
       </div>
       <ul className="itinerary__list">
         {grouped.map((day, index) => {
-          console.log({ day });
           return (
             <Day
               animateHover={animateHover}

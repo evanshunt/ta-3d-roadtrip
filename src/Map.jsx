@@ -8,7 +8,7 @@ import MapBackground from "./components/MapBackground";
 gsap.registerPlugin(DrawSVGPlugin);
 const tl = new gsap.timeline();
 
-export const Map = ({ removeIntro, start }) => {
+export const Map = ({ removeIntro, setIntroComplete, start }) => {
   const [hasStarted, setHasStarted] = useState(false);
   const duration = 0.66;
 
@@ -102,14 +102,13 @@ export const Map = ({ removeIntro, start }) => {
               clouds.classList.add("cloud-intro--play--back");
               clouds.classList.add("cloud-intro--play--in");
 
+              setIntroComplete(true);
+
               setTimeout(() => {
                 clouds.classList.remove("cloud-intro--play--in");
                 clouds.classList.add("cloud-intro--play");
-              }, duration * 2350);
-
-              setTimeout(() => {
-                removeIntro();
                 intro.classList.add("intro--complete");
+                removeIntro();
               }, duration * 2350);
 
               // setTimeout(() => {

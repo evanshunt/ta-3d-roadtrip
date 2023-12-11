@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 import "./scss/intro.scss";
 
-const Intro = ({ hasStarted }) => {
+const Intro = ({ hasStarted, setIntroComplete }) => {
   const [visible, setVisible] = useState(true);
   const [cloudsGone, setCloudsGone] = useState(false);
 
@@ -31,7 +31,11 @@ const Intro = ({ hasStarted }) => {
       {/* <Onboarding /> */}
       {visible && (
         <div className="intro__map">
-          <Map removeIntro={removeIntro} start={hasStarted} />
+          <Map
+            removeIntro={removeIntro}
+            start={hasStarted}
+            setIntroComplete={setIntroComplete}
+          />
         </div>
       )}
       {!cloudsGone && <IntroClouds playIntro={playIntro} />}

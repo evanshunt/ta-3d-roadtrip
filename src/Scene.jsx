@@ -87,7 +87,7 @@ const Scene = (props) => {
         <meshStandardMaterial color="#073142" />
       </Backdrop> */}
 
-      <Backdrop />
+      {!props.isMobile && <Backdrop />}
 
       <Lights
         index={props.index}

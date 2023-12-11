@@ -22,13 +22,9 @@ import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 
 import closeImage from "./images/close.svg";
-import mainNavImage from "/images/main-nav-mock.jpg";
-import mainNavImageMobile from "/images/main-nav-mock-mobile.webp";
 
 import "./scss/attraction.scss";
 import "./scss/controls.scss";
-
-import CloseDrawer from "./CloseDrawer";
 
 let project = getProject("TA Fly Through", {
   state: window.innerWidth < 1024 ? animationMobile : animation,
@@ -43,17 +39,15 @@ const determineAmount = (index) => {
 };
 
 const Experience = () => {
-  const [clicked, setClicked] = useState(false);
   const [currDay, setCurrDay] = useState(0);
   const [currDestination, setCurrDestination] = useState(destinations[0]);
   const [debug, setDebug] = useState(false);
   const [direction, setDirection] = useState("forward");
-  const [drawerOpen, setDrawerOpen] = useState(
-    window.innerWidth < 1024 ? false : true
-  );
+  const [drawerOpen] = useState(window.innerWidth < 1024 ? false : true);
   const [hasStarted, setHasStarted] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const [index, setIndex] = useState(0);
+  const [introComplete, setIntroComplete] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const [isNight, setIsNight] = useState(false);
   const [itineraryOpen, setItineraryOpen] = useState(isMobile ? false : true);
@@ -145,23 +139,27 @@ const Experience = () => {
     return () => {};
   }, [index]);
 
-  useEffect(() => {
-    // @TODO: determine how this gets wired up
-    if (index === 0 && clicked) {
-      setTimeout(() => {
-        sheet.sequence.play({
-          range: [5.8, 9.5],
-          direction: "normal",
-        });
-      }, animDuration * 1000);
+  const beginCameraAnimation = () => {
+    if (index === 0) {
+      sheet.sequence.play({
+        range: [6, 9.5],
+        direction: "normal",
+      });
     }
-  }, [clicked]);
+  };
 
   const start = () => {
     setHasStarted(true);
-    setClicked(true);
-    ``;
   };
+
+  useEffect(() => {
+    if (introComplete) {
+      setTimeout(() => {
+        beginCameraAnimation();
+      }, 1500); //  cloud animate out time - 0.25
+    }
+    return () => {};
+  }, [introComplete]);
 
   useEffect(() => {
     let startTimeout, timeoutId;
@@ -176,6 +174,7 @@ const Experience = () => {
     window.addEventListener("resize", handleResize);
 
     startTimeout = setTimeout(() => {
+      // auto start
       start();
     }, 250);
 
@@ -276,19 +275,14 @@ const Experience = () => {
     }
 
     // if jumping more than one stop, jump to the right spot in the sequence
-
-    sheet.sequence.position = destinations[index].position - beforeAnim;
+    if (index !== 0) {
+      sheet.sequence.position = destinations[index].position - beforeAnim;
+    }
 
     project.ready.then(() => {
       controlAnimation();
     });
   }, [index]);
-
-  useEffect(() => {
-    // const debug = window.location.search.includes("debug");
-    // setDebug(debug);
-    // setHasStarted(true); // uncomment for testing
-  }, []);
 
   let dir = new THREE.Vector3(),
     sph = new THREE.Spherical();
@@ -328,9 +322,9 @@ const Experience = () => {
   return (
     <div className="experience">
       <div className="wrapper">
-        {/* <div>
-          <Intro hasStarted={hasStarted} />
-        </div> */}
+        <div>
+          <Intro hasStarted={hasStarted} setIntroComplete={setIntroComplete} />
+        </div>
 
         <a
           className="close-tour"

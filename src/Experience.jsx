@@ -333,8 +333,9 @@ const Experience = () => {
 
         <a
           className="close-tour"
-          href="/trip-ideas/road-trips-itineraries/badlands-road-trip"
+          href="https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip"
         >
+          {/* @TODO: this needs to change for prod */}
           <img src={closeImage} alt="" />
           Close the 3D Tour
         </a>

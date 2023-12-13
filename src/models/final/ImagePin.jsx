@@ -5,7 +5,6 @@ import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
-  attractionsOpen,
   geometry,
   hidden,
   imageSrc,

@@ -54,7 +54,8 @@ const Attraction = ({
 
       const { velocity, dir } = eventData;
       if (velocity > 2.5 && dir === "Down") {
-        setOpen(false);
+        setAttractionsOpen(false);
+
         attractionRef.current.scrollTop = 0;
       }
     },
@@ -80,7 +81,7 @@ const Attraction = ({
       if (inBetweens.includes(index)) {
         showItinerary();
       } else {
-        setOpen(dir === "Up" ? true : false);
+        setAttractionsOpen(dir === "Up" ? true : false);
       }
     },
 

@@ -48,7 +48,8 @@ const InfoBox = ({ imageSrc, position, width }) => {
       />
 
       <mesh
-        castShadow={true}
+        castShadow={false}
+        receiveShadow={false}
         scale={[0.075, 0.2, 0.075]}
         position={[0, -0.8, 0]}
       >
@@ -58,6 +59,7 @@ const InfoBox = ({ imageSrc, position, width }) => {
       </mesh>
       <mesh
         castShadow={false}
+        receiveShadow={false}
         scale={[0.075, 0.245, 0.075]}
         position={[0.01, -0.9, 0]}
       >

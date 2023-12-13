@@ -14,6 +14,7 @@ import skyBistroImageSrc from "/images/sky-bistro.webp";
 const Day1 = ({
   animateHover,
   animateOut,
+  attractionsOpen,
   geometry,
   hoverIndex,
   isMobile,
@@ -61,6 +62,7 @@ const Day1 = ({
         active={sceneIndex === 0}
         animateHover={animateHover}
         animateOut={animateOut}
+        attractionsOpen={attractionsOpen}
         geometry={geometry}
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}

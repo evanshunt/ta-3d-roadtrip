@@ -53,8 +53,9 @@ const Attraction = ({
       if (!currDestination.name) return;
 
       const { velocity, dir } = eventData;
-      if (velocity > 4 && dir === "Down") {
+      if (velocity > 2.5 && dir === "Down") {
         setOpen(false);
+        attractionRef.current.scrollTop = 0;
       }
     },
   });

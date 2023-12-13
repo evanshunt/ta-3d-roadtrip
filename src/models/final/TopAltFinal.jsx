@@ -39,7 +39,7 @@ const TopAltFinal = (props) => {
     <group {...props} dispose={null}>
       <mesh
         castShadow={false}
-        receiveShadow
+        receiveShadow={true}
         geometry={nodes.EXPORT_GOOGLE_SAT_WM.geometry}
         position={[0.46, 0.9, 1.195]}
         // position={[posX, posY, posZ]}
@@ -57,6 +57,7 @@ const TopAltFinal = (props) => {
           // metalness={0}
           map={texture}
           map-flipY={false}
+          map-doubleSide={false}
           map-generateMipmaps={true}
           map-anisotropy={props.isMobile ? 1 : 8}
         />

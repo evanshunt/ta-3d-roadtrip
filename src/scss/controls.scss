@@ -11,6 +11,12 @@
   z-index: 2;
 
   @media screen and (min-width: 420px) {
+    width: 66vw;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: 660px) {
     width: 50vw;
     left: 48.5vw;
     transform: translate(-50%, 0);

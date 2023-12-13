@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-// import { useControls } from "leva";
+import { useControls } from "leva";
 
 const Lights = ({ index, isMobile, isNight }) => {
   const spotLight = useRef();
@@ -20,7 +20,7 @@ const Lights = ({ index, isMobile, isNight }) => {
     sunrise: [1.5, 10, 13.5],
     morning: [-3, 10, 13.5],
     noon: [-6.5, 10, 13.5],
-    afternoon: [-8.5, 10, 13.5],
+    afternoon: [-8.75, 10, 13.5],
     sunset: [-15, 10, 13.5],
   };
 

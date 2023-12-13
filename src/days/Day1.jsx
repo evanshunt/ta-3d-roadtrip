@@ -16,6 +16,7 @@ const Day1 = ({
   animateOut,
   attractionsOpen,
   geometry,
+  handleIndex,
   hoverIndex,
   isMobile,
   isNight,
@@ -64,6 +65,7 @@ const Day1 = ({
         animateOut={animateOut}
         attractionsOpen={attractionsOpen}
         geometry={geometry}
+        handleIndex={handleIndex}
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={6}
@@ -73,7 +75,6 @@ const Day1 = ({
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -82,6 +83,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         hoverIndex={hoverIndex}
         imageSrc={caveAndBasinImageSrc}
         index={1}
@@ -92,7 +94,6 @@ const Day1 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -101,6 +102,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={banffGondolaImageSrc}
         index={2}
         isMobile={isMobile}
@@ -110,7 +112,6 @@ const Day1 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -119,6 +120,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={skyBistroImageSrc}
         index={3}
         isMobile={isMobile}
@@ -128,7 +130,6 @@ const Day1 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -137,6 +138,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={banffUpperHotSpringsImageSrc}
         index={4}
         isMobile={isMobile}
@@ -146,7 +148,6 @@ const Day1 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -155,6 +156,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={5}
         isMobile={isMobile}
@@ -164,7 +166,6 @@ const Day1 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -174,6 +175,7 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
         index={6}
@@ -183,7 +185,6 @@ const Day1 = ({
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 

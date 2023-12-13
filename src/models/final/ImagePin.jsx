@@ -6,6 +6,7 @@ import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
   geometry,
+  handleIndex,
   hidden,
   imageSrc,
   index,
@@ -15,7 +16,6 @@ const ImagePin = ({
   position,
   setAttractionsOpen,
   setHoverIndex,
-  setIndex,
   setPinRefs,
 }) => {
   if (!index) return null;
@@ -101,7 +101,7 @@ const ImagePin = ({
           castShadow
           name={name}
           onClick={() => {
-            setIndex(index);
+            handleIndex("next", index, false);
           }}
           position-z={-0.02}
           theatreKey={`Pins / ${name} / Background ${name}`}

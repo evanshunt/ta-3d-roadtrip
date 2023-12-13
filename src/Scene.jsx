@@ -105,6 +105,7 @@ const Scene = (props) => {
             animateOut={props.animateOut}
             attractionsOpen={props.attractionsOpen}
             geometry={circleGeom}
+            handleIndex={props.handleIndex}
             hoverIndex={props.hoverIndex}
             isMobile={props.isMobile}
             isNight={props.isNight}
@@ -124,6 +125,7 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             geometry={circleGeom}
+            handleIndex={props.handleIndex}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
@@ -141,6 +143,7 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             geometry={circleGeom}
+            handleIndex={props.handleIndex}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}

@@ -15,13 +15,13 @@ const Day2 = ({
   animateHover,
   animateOut,
   geometry,
+  handleIndex,
   isMobile,
   isNight,
   material,
   positions,
   setAttractionsOpen,
   setHoverIndex,
-  setIndex,
   setPinRefs,
 }) => {
   const nightTexture = useTexture("./textures/final/LL_Lights2.webp");
@@ -50,6 +50,7 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={carterRyanGalleryImageSrc}
         index={7}
         isMobile={isMobile}
@@ -59,13 +60,13 @@ const Day2 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={johnstonCanyonImageSrc}
         index={8}
         isMobile={isMobile}
@@ -75,13 +76,13 @@ const Day2 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={lakeLouiseGondolaImageSrc}
         index={9}
         isMobile={isMobile}
@@ -91,13 +92,13 @@ const Day2 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={fairmontChateauLakeLouiseImageSrc}
         index={10}
         isMobile={isMobile}
@@ -107,13 +108,13 @@ const Day2 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         imageSrc={fairviewImageSrc}
         index={11}
         isMobile={isMobile}
@@ -123,7 +124,6 @@ const Day2 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
         setPinRefs={setPinRefs}
       />
 

@@ -276,6 +276,7 @@ const Experience = () => {
     }
 
     // if jumping more than one stop, jump to the right spot in the sequence
+
     if (index !== 0 && Math.abs(index - previousIndexRef.current) > 1) {
       sheet.sequence.position = destinations[index].position - beforeAnim;
     }
@@ -390,6 +391,7 @@ const Experience = () => {
               debug={debug}
               destinations={destinations}
               getDirection={getDirection}
+              handleIndex={handleIndex}
               hoverIndex={hoverIndex}
               index={index}
               isMobile={isMobile}

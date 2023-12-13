@@ -21,7 +21,7 @@ const Day3 = ({
   positions,
   setAttractionsOpen,
   setHoverIndex,
-  setIndex,
+  handleIndex,
   setPinRefs,
 }) => {
   const nightLightsRef3 = useRef();
@@ -65,7 +65,7 @@ const Day3 = ({
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -81,7 +81,7 @@ const Day3 = ({
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
@@ -96,7 +96,7 @@ const Day3 = ({
         position={positions.maligneCanyon}
         scale={0.2}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
@@ -112,7 +112,7 @@ const Day3 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
@@ -128,7 +128,7 @@ const Day3 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
@@ -144,7 +144,7 @@ const Day3 = ({
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        setIndex={setIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
 

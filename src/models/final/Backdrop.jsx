@@ -35,7 +35,7 @@ const Backdrop = (props) => {
       <mesh
         geometry={nodes.Plane.geometry}
         material={nodes.Plane.material}
-        position={[1.3, -0.1, 17.7]}
+        position={[1.25, -0.1, 17.7]}
         rotation={[0, -Math.PI * 1.5, 0]}
         scale={27}
       >

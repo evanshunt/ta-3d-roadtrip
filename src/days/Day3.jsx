@@ -46,7 +46,7 @@ const Day3 = ({
           <InfoBox
             imageSrc={"/images/info-boxes/pyramid-lake.png"}
             name={"Pyramid Lake"}
-            position={[5.33, 1.13, -6.27]}
+            position={[5.45, 1.13, -6.2]}
             width={1.86}
           />
         </>

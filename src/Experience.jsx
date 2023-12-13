@@ -331,14 +331,19 @@ const Experience = () => {
           />
         </div>
 
-        <a
+        <button
           className="close-tour"
-          href="https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip"
+          // href="https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip"
+          aria-label="Close the 3D Tour"
+          onClick={() => {
+            window.parent.location.href =
+              "https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip";
+          }}
         >
           {/* @TODO: this needs to change for prod */}
           <img src={closeImage} alt="" />
           Close the 3D Tour
-        </a>
+        </button>
         <Loader
           containerStyles={{
             backgroundColor: "#ffffff",

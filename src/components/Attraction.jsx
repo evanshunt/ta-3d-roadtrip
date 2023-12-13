@@ -47,6 +47,18 @@ const Attraction = ({
     }
   };
 
+  const innerSwipeHanders = useSwipeable({
+    onSwiped: (eventData) => {
+      if (!isMobile) return;
+      if (!currDestination.name) return;
+
+      const { velocity, dir } = eventData;
+      if (velocity > 4 && dir === "Down") {
+        setOpen(false);
+      }
+    },
+  });
+
   const handlers = useSwipeable({
     onSwiping: (eventData) => {
       if (!currDestination.name) return;
@@ -63,7 +75,7 @@ const Attraction = ({
         }, 500);
         return;
       }
-      // @TODO: on mobile if inbetween, show itinerary
+
       if (inBetweens.includes(index)) {
         showItinerary();
       } else {
@@ -218,7 +230,7 @@ const Attraction = ({
                 </div>
               </div>
 
-              <div className="attraction__info">
+              <div className="attraction__info" {...innerSwipeHanders}>
                 <p className="attraction__description">
                   {currDestination?.details?.description}
                 </p>

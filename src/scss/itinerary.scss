@@ -36,9 +36,6 @@
     width: 23vw;
     z-index: 3;
 
-    // nav offset
-    // padding-top: 8.0625rem;
-
     &--open {
       z-index: 4;
     }
@@ -104,6 +101,10 @@
   margin: 0;
   padding: 0;
   width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 6.2125rem;
+  }
 }
 
 .itinerary__day__text {

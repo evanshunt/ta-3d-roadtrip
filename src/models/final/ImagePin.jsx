@@ -38,6 +38,10 @@ const ImagePin = ({
     };
   }, []);
 
+  useEffect(() => {
+    console.log("index has changed");
+  }, [index]);
+
   if (hidden) return null;
 
   useFrame(() => {

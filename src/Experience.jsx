@@ -330,13 +330,13 @@ const Experience = () => {
   return (
     <div className="experience">
       <div className="wrapper">
-        <div>
+        {/* <div>
           <Intro
             hasStarted={hasStarted}
             isMobile={isMobile}
             setIntroComplete={setIntroComplete}
           />
-        </div>
+        </div> */}
 
         <button
           className="close-tour"

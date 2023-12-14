@@ -343,8 +343,7 @@ const Experience = () => {
           // href="https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip"
           aria-label="Close the 3D Tour"
           onClick={() => {
-            window.parent.location.href =
-              "https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/rocky-mountain-bucket-list";
+            window.parent.history.back();
           }}
         >
           {/* @TODO: this needs to change for prod */}

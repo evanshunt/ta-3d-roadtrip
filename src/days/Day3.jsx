@@ -15,13 +15,14 @@ const Day3 = ({
   animateHover,
   animateOut,
   geometry,
+  handleIndex,
+  inBetweens,
   isMobile,
   isNight,
   material,
   positions,
   setAttractionsOpen,
   setHoverIndex,
-  handleIndex,
   setPinRefs,
 }) => {
   const nightLightsRef3 = useRef();
@@ -56,16 +57,18 @@ const Day3 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        handleIndex={handleIndex}
         hidden={true}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
+        inBetweens={inBetweens}
         index={12}
         isMobile={isMobile}
         material={material}
         name={"Spacer"}
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
-        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
 
@@ -74,12 +77,14 @@ const Day3 = ({
         animateOut={animateOut}
         geometry={geometry}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
+        inBetweens={inBetweens}
         index={13}
         isMobile={isMobile}
         material={material}
         name={"Columbia Icefield Skywalk"}
         position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         handleIndex={handleIndex}
         setPinRefs={setPinRefs}
@@ -89,12 +94,14 @@ const Day3 = ({
         animateOut={animateOut}
         geometry={geometry}
         imageSrc={maligneCanyonImageSrc}
+        inBetweens={inBetweens}
         index={14}
         isMobile={isMobile}
         material={material}
         name={"Maligne Canyon"}
         position={positions.maligneCanyon}
         scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         handleIndex={handleIndex}
         setPinRefs={setPinRefs}
@@ -104,6 +111,7 @@ const Day3 = ({
         animateOut={animateOut}
         geometry={geometry}
         imageSrc={jasperSkyTramImageSrc}
+        inBetweens={inBetweens}
         index={15}
         isMobile={isMobile}
         material={material}
@@ -122,6 +130,7 @@ const Day3 = ({
         imageSrc={fairmontJasperParkLodgeImageSrc}
         index={16}
         isMobile={isMobile}
+        inBetweens={inBetweens}
         material={material}
         name={"Fairmont Jasper Park Lodge"}
         position={positions.fairmontJasperParkLodge}
@@ -138,6 +147,7 @@ const Day3 = ({
         imageSrc={jasperPlanetariumImageSrc}
         index={17}
         isMobile={isMobile}
+        inBetweens={inBetweens}
         material={material}
         name={"Jasper Planetarium"}
         position={positions.jasperPlanetarium}

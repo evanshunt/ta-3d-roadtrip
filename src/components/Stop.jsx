@@ -29,7 +29,6 @@ const Stop = ({
         }}
         className="itinerary__stop__wrap"
         onMouseOver={() => {
-          console.log("hovering", stop.stop);
           if (hoverIndex !== stop.stop) setHoverIndex(stop.stop);
         }}
         onMouseLeave={() => {

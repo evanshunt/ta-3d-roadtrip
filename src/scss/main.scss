@@ -114,7 +114,7 @@ body {
 
   @media screen and (min-width: 1024px) {
     right: 27vw;
-    top: 0.25vw;
+    top: 7.0625rem; // nav offset + 1rem
   }
 }
 
@@ -145,6 +145,10 @@ body {
 
   @media screen and (min-width: 420px) {
     left: 1.75rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 8.0625rem;
   }
 
   img {

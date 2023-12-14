@@ -43,6 +43,9 @@
     width: 23vw;
     z-index: 2;
 
+    // nav offset
+    padding-top: 8.0625rem;
+
     &--open {
       transform: translate(0, 0);
       z-index: 5;

@@ -18,6 +18,7 @@ const Day1 = ({
   geometry,
   handleIndex,
   hoverIndex,
+  inBetweens,
   isMobile,
   isNight,
   material,
@@ -68,6 +69,7 @@ const Day1 = ({
         handleIndex={handleIndex}
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
+        inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}
         material={material}
@@ -86,6 +88,7 @@ const Day1 = ({
         handleIndex={handleIndex}
         hoverIndex={hoverIndex}
         imageSrc={caveAndBasinImageSrc}
+        inBetweens={inBetweens}
         index={1}
         isMobile={isMobile}
         material={material}
@@ -104,6 +107,7 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={banffGondolaImageSrc}
+        inBetweens={inBetweens}
         index={2}
         isMobile={isMobile}
         material={material}
@@ -122,6 +126,7 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={skyBistroImageSrc}
+        inBetweens={inBetweens}
         index={3}
         isMobile={isMobile}
         material={material}
@@ -140,6 +145,7 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={banffUpperHotSpringsImageSrc}
+        inBetweens={inBetweens}
         index={4}
         isMobile={isMobile}
         material={material}
@@ -158,6 +164,7 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
+        inBetweens={inBetweens}
         index={5}
         isMobile={isMobile}
         material={material}
@@ -178,6 +185,7 @@ const Day1 = ({
         handleIndex={handleIndex}
         hidden={true}
         imageSrc={fairmontBanffSpringsHotelImageSrc}
+        inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}
         material={material}

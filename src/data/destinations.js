@@ -52,11 +52,11 @@ const destinations = [
       title: "Cave and Basin National Historic Site",
       image: "/images/cave-and-basin-national-historic-site.jpg",
       altText: "Visitor taking a photo in the Cave at the Cave and Basin",
-      blurb: "Your first stop? The birthplace of Canada’s national parks.",
+      blurb: "Your first stop? Canada’s first national park.",
       description:
-        "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation.",
+        "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation. *The Thermal Waters Pass is available for discounted combined entry at Cave and Basin and Banff Upper Hot Springs.",
       duration: "1 - 3 hr",
-      price: "Free - $8.50 CAD",
+      price: "$ *Combo pass available",
       type: "Self-guided tour",
       links: [
         {
@@ -113,7 +113,7 @@ const destinations = [
       title: "Banff Gondola",
       image: "/images/banff-gondola.webp",
       altText: "Banff Gondola",
-      blurb: "An unbeatable view to end an unforgettable morning.",
+      blurb: "An unbeatable view to cap off an unforgettable morning.",
       description:
         "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
       duration: "1 - 3 hr",
@@ -234,7 +234,7 @@ const destinations = [
         "A female visitor is enjoying the pool at the Upper Banff Hot Springs",
       blurb: "Elevate your afternoon with a mineral-rich dip.",
       description:
-        "Visit Banff Upper Hot Springs on your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Banff Upper Hot Springs offers a splendid historic bathhouse in Banff National Park.",
+        "Visit Banff Upper Hot Springs during your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Soak in the historic bathhouse, originally built in 1886, while you take in incredible mountain views. *The Thermal Waters Pass is available for discounted combined entry at Banff Upper Hot Springs and Cave and Basin.",
       duration: "1 - 2 hr",
       price: "Free - $8.50 CAD",
       type: "Self-guided tour",
@@ -297,7 +297,7 @@ const destinations = [
       altText:
         "Vertical shot of the Fairmont Banff Springs in Banff; surrounded by trees; the Bow River in front and Sulphur Mountain behind",
       description:
-        'Located in the heart of Banff National Park, a UNESCO World Heritage Site, the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff, Alberta. Canada\'s "Castle in the Rockies", has been providing legendary hospitality to our guests for more than 130 years.',
+        'Located in the heart of Banff National Park the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff. Canada\'s "Castle in the Rockies" has been providing legendary hospitality to guests for more than 130 years.',
       duration: "Overnight",
       price: "$500+ CAD",
       type: "Accommodation",
@@ -330,7 +330,7 @@ const destinations = [
     visited: false,
     drivingInfo: {
       copy: "The scenery at these world-famous turquoise lakes is picture-perfect, and there’s plenty to see and do.",
-      time: "0 hr 45 min drive from Banff",
+      time: "45 min drive from Banff",
     },
     details: {
       title: null,
@@ -363,7 +363,7 @@ const destinations = [
         },
       ],
       blurb:
-        "Get inspired on a morning stroll through contemporary Indigenous art.",
+        "Get inspired with a morning stroll through contemporary Indigenous art.",
       title: "Carter-Ryan Gallery and Live Art Venue",
       image: "/images/carter-ryan-gallery.webp",
       altText: "Jason Carter, Indigenous History Month Profile",
@@ -488,13 +488,13 @@ const destinations = [
             "Couple looking at the view of the glacier above Lake Louise in Banff National Park",
         },
       ],
-      blurb: "Keep an eye out for grizzlies on an afternoon ride.",
+      blurb: "See if you can spot any grizzlies on an afternoon ride.",
       title: "Lake Louise Gondola",
       image: "/images/lake-louise-gondola.webp",
       altText:
         "People riding a chairlift in the summer with views of the lodge building at Lake Louise in Banff National Park",
       description:
-        "Lake Louise Gondola. Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
+        "Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
       duration: "1 - 3 hr",
       price: "Free - $1395",
       type: "Self-guided tour",
@@ -532,7 +532,7 @@ const destinations = [
           type: "image",
           url: "/images/fairmont-chateau-lake-louise/fairmont-chateau-lake-louise-1.webp",
           altText:
-            "Fairmont Chateau Lake Louise in Banff National Park, Alberta",
+            "Fairmont Château Lake Louise in Banff National Park, Alberta",
         },
         {
           type: "image",
@@ -554,18 +554,18 @@ const destinations = [
         },
       ],
       blurb: "Sleep by the shore, nestled among mountains",
-      title: "Fairmont Chateau Lake Louise",
+      title: "Fairmont Château Lake Louise",
       image: "/images/fairmont-chateau-lake-louise.webp",
       altText:
-        "Aerial view of the Fairmont Chateau Lake Louise surrounded by mountains in Banff National Park",
+        "Aerial view of the Fairmont Château Lake Louise surrounded by mountains in Banff National Park",
       description:
-        "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Chateau Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
+        "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Château Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
       duration: "Overnight",
       price: "$425+",
       type: "Accommodation",
       links: [
         {
-          text: "Fairmont Chateau Lake Louise",
+          text: "Fairmont Château Lake Louise",
           image: "/images/info/fairmont-chateau-lake-louise.webp",
           altText: "",
           url: "https://www.travelalberta.com/listings/the-fairmont-chateau-lake-louise-2085/",
@@ -616,7 +616,7 @@ const destinations = [
       altText:
         "Couple enjoying drinks and food at the Fairview Lounge at the Fairmont Château Lake Louise",
       description:
-        "Savor the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Wine Spectator has awarded their master wine list with its “Award of Excellence”.",
+        "Savour the very best in contemporary Canadian cuisine at Fairview, where their talented culinary team’s deft touch allows the food to shine. Stylish décor, spectacular views, and attentive service create the perfect ambiance for a memorable dining experience at Fairview. Their master wine list has even been awarded with Wine Spectator's “Award of Excellence”.",
       duration: "1 - 2 hr",
       price: "$$$",
       type: "Dining",
@@ -820,7 +820,7 @@ const destinations = [
       image: "/images/jasper-sky-tram.webp",
       altText: "Young girl looking at the view on top of the Jasper Skytram",
       description:
-        "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m, providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km hiking trail leads you to the summit of the mountain.",
+        "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m (7,425 ft), providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km (0.9 mi) hiking trail leads you to the summit of the mountain.",
       duration: "1 - 2 hr",
       price: "Free - $59.95",
       type: "Self-guided tour",
@@ -882,7 +882,7 @@ const destinations = [
       image: "/images/fairmont-jasper-park-lodge.webp",
       altText: "People golfing at The Fairmont Jasper Park Lodge Golf Club",
       description:
-        "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
+        "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and is Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
       duration: "Overnight",
       price: "$479+",
       type: "Accommodation",
@@ -944,7 +944,7 @@ const destinations = [
       altText:
         "Visitors at the Jasper Planetarium, displaying the constellations and Aurora",
       description:
-        "Enter The Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
+        "Enter the Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
       duration: "45 min - 3 hr",
       price: "$15 - $89",
       type: "Self-guided tour (and Guided tour)",

@@ -138,6 +138,11 @@ body {
   top: 1vw;
   z-index: 3;
 
+  &:hover {
+    background: #00a79a;
+    text-decoration: underline;
+  }
+
   @media screen and (min-width: 420px) {
     left: 1.75rem;
   }

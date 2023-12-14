@@ -1,29 +1,35 @@
 import Arrow from "./Arrow";
 import arrowUp from "../images/arrow-up.svg";
-import caretImage from "../images/caret-right.svg";
 import clock from "../images/clock.svg";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import external from "../images/external-link.svg";
 import price from "../images/price.svg";
 import React, { useState, useRef, useEffect } from "react";
 import selfGuidedTour from "../images/types/self-guided-tour.svg";
+import Stop from "./Stop";
 import accommodation from "../images/types/accommodation.svg";
 import food from "../images/types/food.svg";
 import { useSwipeable } from "react-swipeable";
 
 const Attraction = ({
+  animateHover,
+  animateOut,
   attractionsOpen,
   currDestination,
   direction,
   handleIndex,
   hideAttraction,
+  hoverIndex,
   inBetweens,
   index,
   isMobile,
   maxLength,
   nextDestination,
   setAttractionsOpen,
+  setHoverIndex,
   setIndex,
+  setPinRefs,
+  showAttraction,
   showItinerary,
   toggleItinerary,
 }) => {
@@ -55,7 +61,6 @@ const Attraction = ({
       const { velocity, dir } = eventData;
       if (velocity > 2.5 && dir === "Down") {
         setAttractionsOpen(false);
-
         attractionRef.current.scrollTop = 0;
       }
     },
@@ -364,7 +369,7 @@ const Attraction = ({
                 )}
               </ul>
               {nextDestination && (
-                <button
+                <a
                   aria-label={`View ${nextDestination?.details.title} on map`}
                   className="attraction__next"
                   onClick={() => {
@@ -380,24 +385,20 @@ const Attraction = ({
                 >
                   <h3>Next attraction</h3>
 
-                  <li className="itinerary__stop">
-                    <div className="itinerary__stop__wrap">
-                      <img
-                        className="itinerary__stop__image"
-                        src={
-                          nextDestination.details.image ||
-                          "https://via.placeholder.com/150"
-                        }
-                        alt={nextDestination.details.altText}
-                      />
-                      <strong className="itinerary__stop__name">
-                        {nextDestination.details.title}{" "}
-                      </strong>
-                    </div>
-
-                    <img src={caretImage} alt="" />
-                  </li>
-                </button>
+                  <Stop
+                    animateHover={animateHover}
+                    animateOut={animateOut}
+                    handleIndex={handleIndex}
+                    hoverIndex={hoverIndex}
+                    index={stop.stop}
+                    key={`${name}-${index}`}
+                    currDestination={currDestination}
+                    setPinRefs={setPinRefs}
+                    setHoverIndex={setHoverIndex}
+                    showAttraction={showAttraction}
+                    stop={nextDestination}
+                  />
+                </a>
               )}
             </div>
           </>

@@ -9,6 +9,7 @@ const ImagePin = ({
   handleIndex,
   hidden,
   imageSrc,
+  inBetweens,
   index,
   isMobile,
   material,
@@ -67,7 +68,8 @@ const ImagePin = ({
             opacity={opacity}
             receiveShadow={false}
             onClick={() => {
-              if (isMobile) {
+              if (!inBetweens) return;
+              if (isMobile && !inBetweens.includes(index + 1)) {
                 setAttractionsOpen(true);
               }
             }}

@@ -109,6 +109,7 @@ const Scene = (props) => {
             hoverIndex={props.hoverIndex}
             isMobile={props.isMobile}
             isNight={props.isNight}
+            inBetweens={props.inBetweens}
             material={redMaterial}
             positions={positions}
             sceneIndex={props.index}
@@ -126,6 +127,7 @@ const Scene = (props) => {
             animateOut={props.animateOut}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
+            inBetweens={props.inBetweens}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}

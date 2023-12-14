@@ -25,10 +25,11 @@ const Stop = ({
         aria-label={`View ${stop.details.title} on map`}
         onClick={() => {
           showAttraction();
-          handleIndex("next", stop.stop);
+          handleIndex("next", stop.stop, false);
         }}
         className="itinerary__stop__wrap"
         onMouseOver={() => {
+          console.log("hovering", stop.stop);
           if (hoverIndex !== stop.stop) setHoverIndex(stop.stop);
         }}
         onMouseLeave={() => {

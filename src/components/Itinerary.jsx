@@ -44,7 +44,6 @@ const Itinerary = ({
   };
 
   const scrollItinerary = (stop) => {
-    // @TODO: this is pulling the last index not the cyrrent one
     let offset = document.querySelector(`.itinerary__day:first-child`);
     if (stop > 1) {
       offset = document.querySelector(`.itinerary__day:nth-child(${stop})`);

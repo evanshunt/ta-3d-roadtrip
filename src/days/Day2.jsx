@@ -16,6 +16,7 @@ const Day2 = ({
   animateOut,
   geometry,
   handleIndex,
+  inBetweens,
   isMobile,
   isNight,
   material,
@@ -52,6 +53,7 @@ const Day2 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={carterRyanGalleryImageSrc}
+        inBetweens={inBetweens}
         index={7}
         isMobile={isMobile}
         material={material}
@@ -68,6 +70,7 @@ const Day2 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={johnstonCanyonImageSrc}
+        inBetweens={inBetweens}
         index={8}
         isMobile={isMobile}
         material={material}
@@ -84,6 +87,7 @@ const Day2 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={lakeLouiseGondolaImageSrc}
+        inBetweens={inBetweens}
         index={9}
         isMobile={isMobile}
         material={material}
@@ -100,6 +104,7 @@ const Day2 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={fairmontChateauLakeLouiseImageSrc}
+        inBetweens={inBetweens}
         index={10}
         isMobile={isMobile}
         material={material}
@@ -116,6 +121,7 @@ const Day2 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={fairviewImageSrc}
+        inBetweens={inBetweens}
         index={11}
         isMobile={isMobile}
         material={material}

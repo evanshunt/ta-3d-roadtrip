@@ -149,6 +149,10 @@ const Experience = () => {
     setCurrDay(determineDay(index));
     setCurrDestination(destinations[index]);
 
+    if (index === 0 && hasStarted) {
+      beginCameraAnimation();
+    }
+
     if (destinations[index + 1]?.details.title) {
       setNextDestination(destinations[index + 1]);
     } else {
@@ -324,13 +328,13 @@ const Experience = () => {
   return (
     <div className="experience">
       <div className="wrapper">
-        <div>
+        {/* <div>
           <Intro
             hasStarted={hasStarted}
             isMobile={isMobile}
             setIntroComplete={setIntroComplete}
           />
-        </div>
+        </div> */}
 
         <button
           className="close-tour"
@@ -393,6 +397,7 @@ const Experience = () => {
               getDirection={getDirection}
               handleIndex={handleIndex}
               hoverIndex={hoverIndex}
+              inBetweens={inBetweens}
               index={index}
               isMobile={isMobile}
               isNight={isNight}
@@ -410,18 +415,24 @@ const Experience = () => {
         {isMobile ? (
           <>
             <Attraction
+              animateHover={animateHover}
+              animateOut={animateOut}
               attractionsOpen={attractionsOpen}
               currDestination={currDestination}
               direction={direction}
               handleIndex={handleIndex}
               hideAttraction={hideAttraction}
+              hoverIndex={hoverIndex}
               inBetweens={inBetweens}
               index={index}
               isMobile={isMobile}
               maxLength={maxLength}
               nextDestination={nextDestination}
               setAttractionsOpen={setAttractionsOpen}
+              setHoverIndex={setHoverIndex}
               setIndex={setIndex}
+              setPinRefs={setPinRefs}
+              showAttraction={showAttraction}
               showItinerary={showItinerary}
               toggleItinerary={toggleItinerary}
             />
@@ -452,17 +463,24 @@ const Experience = () => {
         ) : (
           <div className={drawerClass}>
             <Attraction
+              animateHover={animateHover}
+              animateOut={animateOut}
               attractionsOpen={attractionsOpen}
               currDestination={currDestination}
               direction={direction}
               handleIndex={handleIndex}
               hideAttraction={hideAttraction}
+              hoverIndex={hoverIndex}
               inBetweens={inBetweens}
               index={index}
               isMobile={isMobile}
               maxLength={maxLength}
               nextDestination={nextDestination}
+              setAttractionsOpen={setAttractionsOpen}
+              setHoverIndex={setHoverIndex}
               setIndex={setIndex}
+              setPinRefs={setPinRefs}
+              showAttraction={showAttraction}
               showItinerary={showItinerary}
               toggleItinerary={toggleItinerary}
             />

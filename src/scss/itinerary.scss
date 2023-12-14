@@ -36,6 +36,9 @@
     width: 23vw;
     z-index: 3;
 
+    // nav offset
+    padding-top: 7.0625rem;
+
     &--open {
       z-index: 4;
     }

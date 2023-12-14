@@ -30,14 +30,11 @@
     padding: 1.85rem 1.55rem 7.25rem 1.55rem;
     right: 0;
     // top: 6.5vw;
-    top: 0;
+    top: 6rem;
     transform: translate(0, 0);
     transition: transform 0.75s ease-in-out;
     width: 23vw;
     z-index: 3;
-
-    // nav offset
-    padding-top: 7.0625rem;
 
     &--open {
       z-index: 4;
@@ -104,10 +101,6 @@
   margin: 0;
   padding: 0;
   width: 100%;
-
-  @media screen and (min-width: 1024px) {
-    padding-top: 6.2125rem;
-  }
 }
 
 .itinerary__day__text {

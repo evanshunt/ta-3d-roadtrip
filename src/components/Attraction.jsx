@@ -211,66 +211,69 @@ const Attraction = ({
                   <Arrow dir="next" active={index !== maxLength} />
                 </button>
               </div>
-              <div className="attraction__header">
-                <strong className="attraction__day">
-                  Day {currDestination?.day} - {currDestination?.name}
-                </strong>
 
-                <div className="attraction__meta">
-                  <img
-                    width="105"
-                    height="105"
-                    src={currDestination?.details?.image}
-                    alt={currDestination?.details?.altText}
-                    className="attraction__image"
-                  />
-                  <span
-                    className={`${
-                      currDestination?.details?.title
-                        ? "attraction__name"
-                        : "attraction__name attraction__name--disabled"
-                    }`}
-                  >
-                    {currDestination?.details?.title ||
-                      "Swipe left to explore the attractions"}
-                  </span>
+              {!currDestination?.hideFromItinerary && (
+                <div className="attraction__header">
+                  <strong className="attraction__day">
+                    Day {currDestination?.day} - {currDestination?.name}
+                  </strong>
+                  <div className="attraction__meta">
+                    <img
+                      width="105"
+                      height="105"
+                      src={currDestination?.details?.image}
+                      alt={currDestination?.details?.altText}
+                      className="attraction__image"
+                    />
+                    <span
+                      className={`${
+                        currDestination?.details?.title
+                          ? "attraction__name"
+                          : "attraction__name attraction__name--disabled"
+                      }`}
+                    >
+                      {currDestination?.details?.title ||
+                        "Swipe left to explore the attractions"}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="attraction__info" {...innerSwipeHanders}>
                 <p className="attraction__description">
                   {currDestination?.details?.description}
                 </p>
-
-                <div className="attraction__info__details">
-                  {currDestination?.details?.type && (
-                    <>
-                      <span className="attraction__type">
-                        <img
-                          src={determineType(currDestination.details.type)}
-                          alt=""
-                        />{" "}
-                        {currDestination.details.type}
-                      </span>
-                    </>
-                  )}
-                  {currDestination?.details?.price && (
-                    <>
-                      <span className="attraction__price">
-                        <img src={price} alt="" />{" "}
-                        {currDestination.details.price}
-                      </span>
-                    </>
-                  )}
-                  {currDestination?.details?.duration && (
-                    <>
-                      <span className="attraction__duration">
-                        <img src={clock} alt="" />{" "}
-                        {currDestination.details.duration}
-                      </span>
-                    </>
-                  )}
-                </div>
+                {!currDestination?.hideFromItinerary && (
+                  <div className="attraction__info__details">
+                    {currDestination?.details?.type && (
+                      <>
+                        <span className="attraction__type">
+                          <img
+                            src={determineType(currDestination.details.type)}
+                            alt=""
+                          />{" "}
+                          {currDestination.details.type}
+                        </span>
+                      </>
+                    )}
+                    {currDestination?.details?.price && (
+                      <>
+                        <span className="attraction__price">
+                          <img src={price} alt="" />{" "}
+                          {currDestination.details.price}
+                        </span>
+                      </>
+                    )}
+                    {currDestination?.details?.duration && (
+                      <>
+                        <span className="attraction__duration">
+                          <img src={clock} alt="" />{" "}
+                          {currDestination.details.duration}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                )}
                 {currDestination?.details?.assets?.length && (
                   <div className="attraction__info__images">
                     {currDestination.details.assets.map((asset, i) => {

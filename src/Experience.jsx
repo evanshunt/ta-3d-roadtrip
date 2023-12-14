@@ -162,6 +162,8 @@ const Experience = () => {
     if (inBetweens.includes(index)) {
       if (!isMobile) {
         setAttractionsOpen(true);
+      } else {
+        setAttractionsOpen(false);
       }
     }
     return () => {};
@@ -342,7 +344,7 @@ const Experience = () => {
           aria-label="Close the 3D Tour"
           onClick={() => {
             window.parent.location.href =
-              "https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip";
+              "https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/rocky-mountain-bucket-list";
           }}
         >
           {/* @TODO: this needs to change for prod */}

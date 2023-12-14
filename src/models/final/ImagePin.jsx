@@ -113,6 +113,20 @@ const ImagePin = ({
           geometry={geometry}
         />
 
+        {/* This is to help with the touch area on mobile */}
+        {isMobile && (
+          <mesh
+            position-z={-0.02}
+            onPointerUp={() => {
+              handleIndex("next", index, false);
+            }}
+          >
+            <circleGeometry args={[0.05, 16]} />
+
+            <meshBasicMaterial depthWrite={false} colorWrite={false} />
+          </mesh>
+        )}
+
         <e.mesh
           onPointerEnter={() => {
             setHoverIndex(index);

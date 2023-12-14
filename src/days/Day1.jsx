@@ -22,6 +22,7 @@ const Day1 = ({
   isMobile,
   isNight,
   material,
+  pinRefs,
   positions,
   setAttractionsOpen,
   setHoverIndex,
@@ -74,8 +75,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Spacer"}
+        pinRefs={pinRefs}
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
       />
@@ -93,8 +96,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Cave and Basin National Historic Site"}
+        pinRefs={pinRefs}
         position={positions.caveAndBasin}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
@@ -112,8 +117,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Banff Gondola"}
+        pinRefs={pinRefs}
         position={positions.gondola}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
@@ -131,8 +138,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Sky Bistro"}
+        pinRefs={pinRefs}
         position={positions.skyBistro}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
@@ -150,8 +159,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Banff Upper Hot Springs"}
+        pinRefs={pinRefs}
         position={positions.banffUpperHotSprings}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
@@ -169,8 +180,10 @@ const Day1 = ({
         isMobile={isMobile}
         material={material}
         name={"Fairmont Banff Springs Hotel"}
+        pinRefs={pinRefs}
         position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
+        sceneIndex={sceneIndex}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}

@@ -1,3 +1,4 @@
+import { gsap } from "gsap/gsap-core";
 import React, { useEffect, useRef } from "react";
 import { Billboard, Image } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
@@ -14,7 +15,9 @@ const ImagePin = ({
   isMobile,
   material,
   name,
+  pinRefs,
   position,
+  sceneIndex,
   setAttractionsOpen,
   setHoverIndex,
   setPinRefs,
@@ -26,7 +29,36 @@ const ImagePin = ({
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
 
+  const tl = gsap.timeline();
+
   let opacity = 0;
+
+  const animatePin = (pinRef, dir) => {
+    if (!pinRef.current) return;
+    // this is working in theory, pin refs only contain halos tho
+    console.log(pinRef.current);
+    // determine parts
+
+    const image = pinRef.current.children[0];
+    const stem = pinRef.current.children[1];
+    const shadow = pinRef.current.children[2];
+    const background = pinRef.current.children[3];
+    const backgroundHalo = pinRef.current.children[4];
+
+    // animate parts
+    tl.to(stem.position, {
+      duration: 0.5,
+      y: 0.11,
+    });
+    tl.to(
+      [shadow.position, background.position],
+      {
+        duration: 0.5,
+        y: 0.11,
+      },
+      "<"
+    );
+  };
 
   useEffect(() => {
     setPinRefs((prevRefs) => [...prevRefs, backgroundHaloRef]);
@@ -39,8 +71,11 @@ const ImagePin = ({
   }, []);
 
   useEffect(() => {
-    console.log("index has changed");
-  }, [index]);
+    console.log("sceneIndex", sceneIndex);
+    if (!sceneIndex) return;
+
+    animatePin(pinRefs[sceneIndex], "next");
+  }, [sceneIndex]);
 
   if (hidden) return null;
 
@@ -57,6 +92,7 @@ const ImagePin = ({
         <e.group
           ref={imageRef}
           objRef={setTheatreObject}
+          name={`Pin ${name}`}
           theatreKey={`Pins / ${name} / Pin ${name}`}
           scale={0}
           additionalProps={{
@@ -87,6 +123,7 @@ const ImagePin = ({
           theatreKey={`Pins / ${name} / Stem ${name}`}
           scale={[0.075, 0.2, 0.075]}
           material={material}
+          name={`Stem ${name}`}
           receiveShadow={false}
         >
           <meshBasicMaterial color={0x9c0f00} />
@@ -98,6 +135,7 @@ const ImagePin = ({
           castShadow
           receiveShadow={false}
           theatreKey={`Pins / ${name} / Shadow ${name}`}
+          name={`Shadow ${name}`}
         >
           <sphereGeometry args={[0.03, 16, 16]} />
           <meshBasicMaterial colorWrite={false} depthWrite={false} />
@@ -113,6 +151,7 @@ const ImagePin = ({
           theatreKey={`Pins / ${name} / Background ${name}`}
           scale={0.02}
           material={material}
+          name={`Background ${name}`}
           receiveShadow={false}
           geometry={geometry}
         />
@@ -140,6 +179,7 @@ const ImagePin = ({
           }}
           ref={backgroundHaloRef}
           castShadow
+          name={`Background Halo ${name}`}
           position-z={-0.03}
           theatreKey={`Pins / ${name} / Background Halo ${name}`}
           scale={0.03}

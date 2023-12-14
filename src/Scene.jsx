@@ -111,6 +111,7 @@ const Scene = (props) => {
             isNight={props.isNight}
             inBetweens={props.inBetweens}
             material={redMaterial}
+            pinRefs={props.pinRefs}
             positions={positions}
             sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}

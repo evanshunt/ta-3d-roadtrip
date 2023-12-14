@@ -9,7 +9,7 @@ import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
 import "core-js/actual/object/group-by";
 
-import animation from "./animation-data/final.json";
+// import animation from "./animation-data/final.json";
 import animationMobile from "./animation-data/final-mobile.json";
 import compassImage from "./images/compass.svg";
 import destinations from "./data/destinations.js";
@@ -26,9 +26,7 @@ import closeImage from "./images/close.svg";
 import "./scss/attraction.scss";
 import "./scss/controls.scss";
 
-let project = getProject("TA Fly Through", {
-  state: window.innerWidth < 1024 ? animationMobile : animation,
-});
+let project = getProject("TA Fly Through");
 
 const beforeAnim = 1.53333;
 
@@ -403,6 +401,7 @@ const Experience = () => {
               index={index}
               isMobile={isMobile}
               isNight={isNight}
+              pinRefs={pinRefs}
               project={project}
               setAttractionsOpen={setAttractionsOpen}
               setHoverIndex={setHoverIndex}

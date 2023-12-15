@@ -429,6 +429,7 @@ const Experience = () => {
               direction={direction}
               handleIndex={handleIndex}
               hideAttraction={hideAttraction}
+              hideItinerary={hideItinerary}
               hoverIndex={hoverIndex}
               inBetweens={inBetweens}
               index={index}

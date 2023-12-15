@@ -19,6 +19,7 @@ const Attraction = ({
   direction,
   handleIndex,
   hideAttraction,
+  hideItinerary,
   hoverIndex,
   inBetweens,
   index,
@@ -61,6 +62,7 @@ const Attraction = ({
       const { velocity, dir } = eventData;
       if (velocity > 2.5 && dir === "Down") {
         setAttractionsOpen(false);
+        hideItinerary();
         attractionRef.current.scrollTop = 0;
       }
     },
@@ -87,6 +89,9 @@ const Attraction = ({
         showItinerary();
       } else {
         setAttractionsOpen(dir === "Up" ? true : false);
+        if (dir === "Down") {
+          hideItinerary();
+        }
       }
     },
 

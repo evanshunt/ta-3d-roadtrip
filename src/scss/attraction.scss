@@ -13,7 +13,7 @@
   padding: 0 1rem;
   position: fixed;
   transform: translate(0, calc(var(--offset) - 4.5rem));
-  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-in-out;
   width: 100%;
   z-index: 3;
 

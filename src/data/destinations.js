@@ -131,8 +131,8 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
-          linkText: "1 Mountain Avenue Banff T1L 1B2",
+          url: "https://www.google.com/maps/place/Banff+Gondola/@51.1408201,-115.5549655,14.97z/data=!4m15!1m8!3m7!1s0x5370ca38cd54b6a5:0xe40aa6ce46d51883!2s1+Mountain+Ave,+Banff,+AB+T1L+1J3!3b1!8m2!3d51.1688717!4d-115.5706386!16s%2Fg%2F11dzsz2rdy!3m5!1s0x5370c963099d72a1:0xe9917d30f3e6f489!8m2!3d51.1479059!4d-115.555579!16s%2Fg%2F11hzn6jzwh?entry=ttu",
+          linkText: "100 Mountain Ave, Banff, AB T1L 1B2",
           external: true,
         },
       ],
@@ -190,8 +190,8 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/lunch-at-sky-bistro.webp",
-          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
-          linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
+          url: "https://www.google.com/maps/place/Sky+Bistro/@51.1445519,-115.5775384,17z/data=!3m2!4b1!5s0x5370c9f9d504cd1b:0x74aac6d98d2a6177!4m6!3m5!1s0x5370c9f9d0c42df5:0x7b42526d69fcd9f1!8m2!3d51.1445519!4d-115.5749635!16s%2Fg%2F11c5b78txb?entry=ttu",
+          linkText: "100 Mountain Ave, Banff, AB T1L 1J3",
           external: true,
         },
       ],
@@ -251,8 +251,8 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.google.com/?api=0&q=1+Mountain+Avenue+Banff+T1L+1B2&",
-          linkText: "1 Mountain Avenue Banff, AB T1L 1B2",
+          url: "https://www.google.com/maps/place/Banff+Upper+Hot+Springs/@51.1509462,-115.5622378,18z/data=!3m2!4b1!5s0x5370c98aa87180d5:0x84e8900d5d56f47e!4m6!3m5!1s0x5370ca1fff7ffd63:0xfbbe22e3b370c766!8m2!3d51.1507689!4d-115.5609915!16zL20vMGY5aDZk?entry=ttu",
+          linkText: "1 Mountain Avenue Banff, AB T1L 1K2",
           external: true,
         },
       ],
@@ -313,7 +313,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/fairmont-banff-springs-hotel.jpg",
-          url: "https://maps.google.com/?api=0&q=405+Spray+Avenue+Banff+T1L+1J4&",
+          url: "https://www.google.com/maps/place/Fairmont+Banff+Springs/@51.16308,-115.5645871,17z/data=!4m18!1m8!3m7!1s0x5370ca3be85edf71:0xecf6ed3d099b8bff!2s405+Spray+Ave,+Banff,+AB+J4Y+0K7!3b1!8m2!3d51.16308!4d-115.5620122!16s%2Fg%2F11h4psdm1w!3m8!1s0x5370ca3b2e2fb8bf:0x99e9a92cf4f6ce!5m2!4m1!1i2!8m2!3d51.164332!4d-115.56183!16zL20vMDUydHZy?entry=ttu",
           linkText: "405 Spray Avenue Banff, AB T1L 1J4",
           external: true,
         },
@@ -384,7 +384,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.google.com/?api=0&q=229+Bear+Street+Banff+T1L+1C3&",
+          url: "https://www.google.com/maps/place/Carter-Ryan+Gallery/@51.1780877,-115.5727968,20.16z/data=!3m1!5s0x5370ca458534f629:0x5c587f815d70c00!4m6!3m5!1s0x5370ca4598514bf3:0x302e8f2828682b64!8m2!3d51.1783864!4d-115.5724604!16s%2Fg%2F11gcqfx3zp?entry=ttu",
           linkText: "229 Bear Street Banff T1L 1C3",
           external: true,
         },
@@ -511,7 +511,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.app.goo.gl/DxpibBJYAUJ4vAwr9",
+          url: "https://www.google.com/maps/place/Lake+Louise+Ski+Resort+%26+Summer+Gondola/@51.4419206,-116.1647466,17z/data=!3m1!4b1!4m6!3m5!1s0x537742ba3fc116e9:0x23d47edc29c5f7fd!8m2!3d51.4419206!4d-116.1621717!16zL20vMGRyeXB2?entry=ttu",
           linkText: "1 Whitehorn Rd, Lake Louise, AB T0L 1E0",
           external: true,
         },
@@ -575,7 +575,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
+          url: "https://www.google.com/maps/place/Fairmont+Ch%C3%A2teau+Lake+Louise/@51.417719,-116.2194569,17z/data=!3m1!4b1!4m9!3m8!1s0x53775d1209af9a35:0x4420b9e935bb1404!5m2!4m1!1i2!8m2!3d51.417719!4d-116.216882!16zL20vMDJ3d2M5?entry=ttu",
           linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
           external: true,
         },
@@ -632,7 +632,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.google.com/?api=0&q=111+Lake+Louise+Drive+Lake+Louise+T0L+1E0&",
+          url: "https://www.google.com/maps/place/FAIRVIEW+BAR+AND+RESTAURANT/@51.4176367,-116.2195821,17z/data=!3m2!4b1!5s0x53775d0df6a73d33:0xe4b1ceb007d12b5b!4m6!3m5!1s0x53775d1209af9a35:0xf053b05889acd571!8m2!3d51.4176367!4d-116.2170072!16s%2Fg%2F1td1pk8m?entry=ttu",
           linkText: "111 Lake Louise Drive Lake Louise T0L 1E0",
           external: true,
         },
@@ -709,7 +709,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.app.goo.gl/2Kxf17C4Cbf5jrsp7",
+          url: "https://www.google.com/maps/place/Columbia+Icefield+Skywalk/@52.2587145,-117.2794996,17z/data=!3m1!4b1!4m6!3m5!1s0x5377ffc8bef8baf3:0x6275384c55d05d50!8m2!3d52.2587145!4d-117.2769247!16s%2Fg%2F11hz0792xf?entry=ttu",
           linkText:
             "Highway 93, Icefields Pkwy, Improvement District No. 12, AB T1L 1J3",
           external: true,
@@ -899,7 +899,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.app.goo.gl/6GFMdsGrhxsdF7a96",
+          url: "https://www.google.com/maps/place/Fairmont+Jasper+Park+Lodge/@52.8863806,-118.059762,17z/data=!4m18!1m8!3m7!1s0x53832b3e4912f1f9:0xe74bc19128388021!2s1+Old+Lodge+Rd,+Jasper,+AB+T0E+1E0!3b1!8m2!3d52.8864338!4d-118.0573627!16s%2Fg%2F11c3q438c7!3m8!1s0x53832b3c85c0bc61:0xcfc3214cc8831ff2!5m2!4m1!1i2!8m2!3d52.8861603!4d-118.0571162!16zL20vMDhteXNx?entry=ttu",
           linkText: "1 Old Lodge Road Jasper, AB T0E 1E0",
           external: true,
         },

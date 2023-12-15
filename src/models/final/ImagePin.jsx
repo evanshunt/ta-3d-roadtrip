@@ -100,7 +100,7 @@ const ImagePin = ({
         </e.mesh>
 
         <e.mesh
-          castShadow
+          castShadow={false}
           name={name}
           onClick={() => {
             handleIndex("next", index, false);

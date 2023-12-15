@@ -8,9 +8,10 @@ import { useGLTF, useTexture } from "@react-three/drei";
 const TopAltFinal = (props) => {
   const { nodes } = useGLTF("/glb/final/top.glb");
 
-  const texture = props.isMobile
-    ? useTexture("/textures/final/baked-brit-mobile.webp")
-    : useTexture("/textures/final/baked-brit.webp");
+  const texture =
+    window.innerWidth < 1023
+      ? useTexture("/textures/final/baked-brit-mobile.webp")
+      : useTexture("/textures/final/baked-brit.webp");
 
   return (
     <group {...props} dispose={null}>

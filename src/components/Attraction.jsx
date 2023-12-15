@@ -105,10 +105,17 @@ const Attraction = ({
     } else {
       setTimeout(() => {
         setOpen(attractionsOpen);
-        if (attractionsOpen) {
-          attractionRef.current.focus();
-        }
+        attractionRef.current
+          .querySelectorAll(".attraction__buttons")[0]
+          .setAttribute("tabindex", "0");
       }, 500);
+      setTimeout(() => {
+        if (attractionsOpen) {
+          attractionRef.current
+            .querySelectorAll(".attraction__buttons")[0]
+            .focus();
+        }
+      }, 550);
     }
   }, [attractionsOpen]);
 

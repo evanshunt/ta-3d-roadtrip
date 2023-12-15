@@ -83,40 +83,40 @@ const Itinerary = ({
         isOpen ? "itinerary--open" : "itinerary--closed"
       }`}
     >
-      <div
-        className="itinerary__header__mobile"
-        {...handlers}
-        onClick={toggleItinerary}
-      >
-        <img
-          className={`itinerary__arrow ${open ? "itinerary__arrow--open" : ""}`}
-          src={arrowUp}
-          alt="Arrow"
-        />
+      <div {...handlers}>
+        <div className="itinerary__header__mobile" onClick={toggleItinerary}>
+          <img
+            className={`itinerary__arrow ${
+              open ? "itinerary__arrow--open" : ""
+            }`}
+            src={arrowUp}
+            alt="Arrow"
+          />
+        </div>
+        <ul className="itinerary__list">
+          {grouped.map((day, index) => {
+            return (
+              <Day
+                animateHover={animateHover}
+                animateOut={animateOut}
+                currDestination={currDestination}
+                drivingInfo={days[day][0]?.drivingInfo}
+                description={days[day][0].description}
+                handleIndex={handleIndex}
+                hoverIndex={hoverIndex}
+                index={index}
+                key={`${day}-${index}`}
+                name={days[day][0].name}
+                number={days[day][0].day}
+                setPinRefs={setPinRefs}
+                setHoverIndex={setHoverIndex}
+                showAttraction={showAttraction}
+                stops={days[day]}
+              />
+            );
+          })}
+        </ul>
       </div>
-      <ul className="itinerary__list">
-        {grouped.map((day, index) => {
-          return (
-            <Day
-              animateHover={animateHover}
-              animateOut={animateOut}
-              currDestination={currDestination}
-              drivingInfo={days[day][0]?.drivingInfo}
-              description={days[day][0].description}
-              handleIndex={handleIndex}
-              hoverIndex={hoverIndex}
-              index={index}
-              key={`${day}-${index}`}
-              name={days[day][0].name}
-              number={days[day][0].day}
-              setPinRefs={setPinRefs}
-              setHoverIndex={setHoverIndex}
-              showAttraction={showAttraction}
-              stops={days[day]}
-            />
-          );
-        })}
-      </ul>
     </div>
   );
 };

@@ -60,10 +60,12 @@ const Attraction = ({
       if (!currDestination.name) return;
 
       const { velocity, dir } = eventData;
-      if (velocity > 2.5 && dir === "Down") {
+      if (velocity > 1.5 && dir === "Down") {
         setAttractionsOpen(false);
         hideItinerary();
-        attractionRef.current.scrollTop = 0;
+        setTimeout(() => {
+          attractionRef.current.scrollTop = 0;
+        }, 50);
       }
     },
   });
@@ -77,7 +79,7 @@ const Attraction = ({
       if (!currDestination.name) return;
 
       const { velocity, dir } = eventData;
-      if (velocity < 0.2) {
+      if (velocity < 0.66) {
         attractionRef.current.classList.add("attraction--bounce");
         setTimeout(() => {
           attractionRef.current.classList.remove("attraction--bounce");

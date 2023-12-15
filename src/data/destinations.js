@@ -54,9 +54,9 @@ const destinations = [
       altText: "Visitor taking a photo in the Cave at the Cave and Basin",
       blurb: "Your first stop? Canada’s first national park.",
       description:
-        "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation. *The Thermal Waters Pass is available for discounted combined entry at Cave and Basin and Banff Upper Hot Springs.",
+        "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation. The Thermal Waters Pass is available for discounted combined entry at Cave and Basin and Banff Upper Hot Springs.",
       duration: "1 - 3 hr",
-      price: "$ *Combo pass available",
+      price: "Free - $8.50 CAD (combo pass available)",
       type: "Self-guided tour",
       links: [
         {
@@ -69,7 +69,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://www.google.com/maps/place/311+Cave+Ave,+Banff,+AB+T1L+1K2/@51.1699163,-115.5950771,16z/data=!3m1!4b1!4m6!3m5!1s0x5370ca6b9ae405bf:0x987bb5e7c19d0a3d!8m2!3d51.1699091!4d-115.5891527!16s%2Fg%2F11bw40lcxk?entry=ttu",
+          url: "https://www.google.com/maps/place/Cave+and+Basin+National+Historic+Site/@51.1699164,-115.5899272,17z/data=!4m15!1m8!3m7!1s0x5370ca6b9ae405bf:0x987bb5e7c19d0a3d!2s311+Cave+Ave,+Banff,+AB+T1L+1K2!3b1!8m2!3d51.1699091!4d-115.5891527!16s%2Fg%2F11bw40lcxk!3m5!1s0x5370ca6b9ae405bf:0xa9b292141d3c34d2!8m2!3d51.1690712!4d-115.5915223!16zL20vMGZ6MTBo?entry=ttu",
           linkText: "311 Cave Avenue, Banff, AB T1L 1K2",
           external: true,
         },
@@ -447,7 +447,7 @@ const destinations = [
         {
           text: "View on Google Maps",
           // image: "/images/maps/cave-and-basin-national-historic-site.jpg",
-          url: "https://maps.app.goo.gl/u1zVn5hnk2HXhNnZA",
+          url: "https://www.google.com/maps/place/Johnston+Canyon/@51.2617849,-115.8918077,13.4z/data=!4m15!1m8!3m7!1s0x53774f241f4c5f6d:0xf66c3b76e586840b!2sBow+Valley+Pkwy,+Improvement+District+No.+9,+AB!3b1!8m2!3d51.279782!4d-115.938088!16s%2Fg%2F1hhwktx80!3m5!1s0x53774c0a78b99e5f:0xcdf7b71e1c62a13!8m2!3d51.2455293!4d-115.8398977!16s%2Fg%2F11clh0h6vl?entry=ttu",
           linkText: "Bow Valley Pkwy, Improvement District No. 9, AB T1L 1K2",
           external: true,
         },

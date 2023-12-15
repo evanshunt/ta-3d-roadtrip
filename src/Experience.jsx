@@ -377,7 +377,7 @@ const Experience = () => {
         />
         <Canvas
           dpr={isMobile ? 1.25 : window.devicePixelRatio}
-          shadows={isMobile ? "soft" : true}
+          // shadows={isMobile ? "soft" : true}
           gl={{
             antialias: true,
             preserveDrawingBuffer: false,

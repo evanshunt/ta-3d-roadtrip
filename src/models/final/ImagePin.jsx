@@ -77,7 +77,7 @@ const ImagePin = ({
         </e.group>
 
         <e.mesh
-          castShadow={true}
+          castShadow={false}
           position={[0, -1.15, -0.0305]}
           ref={stemRef}
           theatreKey={`Pins / ${name} / Stem ${name}`}
@@ -87,16 +87,6 @@ const ImagePin = ({
         >
           <meshBasicMaterial color={0x9c0f00} />
           <cylinderGeometry args={[0.03, 0.03, 2.5, 6]} />
-        </e.mesh>
-
-        <e.mesh
-          position={[0, 0, -0.0305]}
-          castShadow
-          receiveShadow={false}
-          theatreKey={`Pins / ${name} / Shadow ${name}`}
-        >
-          <sphereGeometry args={[0.03, 16, 16]} />
-          <meshBasicMaterial colorWrite={false} depthWrite={false} />
         </e.mesh>
 
         <e.mesh
@@ -135,7 +125,7 @@ const ImagePin = ({
             setHoverIndex(null);
           }}
           ref={backgroundHaloRef}
-          castShadow
+          castShadow={false}
           position-z={-0.03}
           theatreKey={`Pins / ${name} / Background Halo ${name}`}
           scale={0.03}

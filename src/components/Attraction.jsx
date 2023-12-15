@@ -47,6 +47,7 @@ const Attraction = ({
         toggleItinerary();
       } else {
         setAttractionsOpen(!attractionsOpen);
+        hideItinerary();
         setOpen(!open);
       }
     } else {

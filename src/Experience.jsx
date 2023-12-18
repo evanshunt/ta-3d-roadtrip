@@ -376,7 +376,9 @@ const Experience = () => {
           }} // Text styles
         />
         <Canvas
-          dpr={window.devicePixelRatio}
+          dpr={
+            isMobile ? window.devicePixelRatio * 0.66 : window.devicePixelRatio
+          }
           // shadows={isMobile ? "soft" : true}
           gl={{
             antialias: true,

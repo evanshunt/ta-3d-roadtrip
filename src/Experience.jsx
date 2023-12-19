@@ -364,7 +364,6 @@ const Experience = () => {
             backgroundColor: "#ffffff",
             border: "2px solid #9C0F00",
             height: "1rem",
-            border: "2px solid #9C0F00",
           }}
           barStyles={{
             backgroundColor: "#9C0F00",

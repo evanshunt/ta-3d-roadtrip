@@ -18,6 +18,7 @@ import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 import { Clouds } from "@react-three/drei";
+// import { useControls } from "leva";
 
 // import HTMLInfo from "./components/HTMLInfo.jsx";
 
@@ -162,10 +163,10 @@ const Scene = (props) => {
         <Clouds isMobile={props.isMobile}>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
-            position={[-3.8, 1.75, 3.5]}
+            position={[-3.8, 2, 3.5]}
             theatreKey="Cloud Banff"
           >
-            <Cloud scale={0.075} />
+            <Cloud scale={0.055} />
           </e.group>
 
           <e.group
@@ -177,16 +178,7 @@ const Scene = (props) => {
           </e.group>
 
           <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
-            <Cloud
-              // works scale = -0.03
-              // works position = [-2.7, 0.85, 2.30]
-              //
-              scale={0.07}
-              // scale={cloudScale}
-              //  position={[-0.8, 1.5, 2.6]}
-
-              // position={[cloudPosX, cloudPosY, cloudPosZ]}
-            />
+            <Cloud scale={0.07} />
           </e.group>
         </Clouds>
 

@@ -10,18 +10,18 @@ const Lights = ({ index, isMobile, isNight }) => {
   const tl = gsap.timeline({});
 
   const colors = {
-    blue: new THREE.Color().setHex(0xcf7efc9),
+    blue: new THREE.Color().setHex(0xc7d3e3),
     yellow: new THREE.Color().setHex(0xf7efc9),
     orange: new THREE.Color().setHex(0xf7e0c9),
     white: new THREE.Color().setHex(0xffffff),
   };
 
   const sunPositions = {
-    sunrise: [1.5, 10, 13.5],
-    morning: [-3, 10, 13.5],
-    noon: [-6.5, 10, 13.5],
-    afternoon: [-8.75, 10, 13.5],
-    sunset: [-15, 10, 13.5],
+    sunrise: [1.5, 4, 13.5],
+    morning: [-3, 7, 9.5],
+    noon: [-6.5, 10, 6.5],
+    afternoon: [-8.75, 7, 9.5],
+    sunset: [-15, 4, 13.5],
   };
 
   const animateSpotlight = (spotLight, tl, index) => {
@@ -39,15 +39,23 @@ const Lights = ({ index, isMobile, isNight }) => {
           x: sunPositions.morning[0],
           y: sunPositions.morning[1],
           z: sunPositions.morning[2],
-          duration: 4,
+          duration: 2,
         });
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 1.5,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         tl.to(
           spotLight.current.color,
           {
             r: colors.yellow.r,
             g: colors.yellow.g,
             b: colors.yellow.b,
-            duration: 4,
+            duration: 2,
           },
           "<"
         );
@@ -57,18 +65,34 @@ const Lights = ({ index, isMobile, isNight }) => {
           x: sunPositions.noon[0],
           y: sunPositions.noon[1],
           z: sunPositions.noon[2],
-          duration: 4,
+          duration: 2,
         });
         tl.to(
-          spotLight.current.color,
+          spotLight.current,
           {
-            r: colors.white.r,
-            g: colors.white.g,
-            b: colors.white.b,
-            duration: 4,
+            intensity: 1.75,
+            duration: 2,
           },
           "<"
         );
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 1.75,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
+        // tl.to(
+        //   spotLight.current.color,
+        //   {
+        //     r: colors.blue.r,
+        //     g: colors.blue.g,
+        //     b: colors.blue.b,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         break;
       case 3:
         tl.to(spotLight.current.position, {
@@ -77,16 +101,25 @@ const Lights = ({ index, isMobile, isNight }) => {
           z: sunPositions.noon[2],
           duration: 4,
         });
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 2,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         tl.to(
           spotLight.current.color,
           {
-            r: colors.white.r,
-            g: colors.white.g,
-            b: colors.white.b,
-            duration: 4,
+            r: colors.blue.r,
+            g: colors.blue.g,
+            b: colors.blue.b,
+            duration: 2,
           },
           "<"
         );
+
         break;
       case 4:
         tl.to(spotLight.current.position, {
@@ -96,11 +129,19 @@ const Lights = ({ index, isMobile, isNight }) => {
           duration: 4,
         });
         tl.to(
+          spotLight.current,
+          {
+            intensity: 1,
+            duration: 2,
+          },
+          "<"
+        );
+        tl.to(
           spotLight.current.color,
           {
-            r: colors.blue.r,
-            g: colors.blue.g,
-            b: colors.blue.b,
+            r: colors.orange.r,
+            g: colors.orange.g,
+            b: colors.orange.b,
             duration: 4,
           },
           "<"

@@ -52,14 +52,14 @@ export const NightLights = ({ position, isMobile, isNight }) => {
             noise={0.5}
           />
           <Sparkles
-            count={isMobile ? 250 : 500}
+            count={isMobile ? 250 : 750}
             color={0xf47d0f}
             position={[
               position[0],
               position[1] - (isMobile ? 0.2 : 0.25),
               position[2],
             ]}
-            speed={isMobile ? 0.015 : 0.003}
+            speed={isMobile ? 0.015 : 0.03}
             size={isMobile ? 0.75 : 0.5}
             noise={0.3}
             rotateY={Math.PI}

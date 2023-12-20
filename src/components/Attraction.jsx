@@ -10,6 +10,7 @@ import Stop from "./Stop";
 import accommodation from "../images/types/accommodation.svg";
 import food from "../images/types/food.svg";
 import { useSwipeable } from "react-swipeable";
+import destinations from "../data/destinations";
 
 const Attraction = ({
   animateHover,
@@ -385,6 +386,14 @@ const Attraction = ({
                   </>
                 )}
               </ul>
+              {index === destinations.length - 1 && (
+                <a
+                  href="https://www.travelalberta.com/trip-ideas/road-trips-and-itineraries"
+                  className="attraction__next"
+                >
+                  <h3>Check out your next road trip</h3>
+                </a>
+              )}
               {nextDestination && (
                 <a
                   aria-label={`View ${nextDestination?.details.title} on map`}

@@ -315,8 +315,9 @@ button[disabled] .arrow--prev {
 .day-info {
   align-items: center;
   background-color: var(--blue);
+  background-color: var(--white);
   border-radius: 1.6875rem;
-  color: var(--white);
+  color: var(--black);
   display: flex;
   display: none;
   font-size: 0.75rem;

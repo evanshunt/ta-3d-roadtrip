@@ -128,7 +128,7 @@ body {
 }
 
 .close-tour {
-  background: var(--blue);
+  background: var(--red);
   border: none;
   color: var(--white);
   cursor: pointer;
@@ -139,7 +139,7 @@ body {
   z-index: 3;
 
   &:hover {
-    background: #00a79a;
+    background: var(--black);
     text-decoration: underline;
   }
 

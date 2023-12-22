@@ -19,6 +19,34 @@ body {
   width: 100%;
 }
 
+@font-face {
+  font-display: block;
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/icomoon.eot?ubiyih");
+  src: url("../fonts/icomoon.eot?ubiyih#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?ubiyih") format("truetype"),
+    url("../fonts/icomoon.woff?ubiyih") format("woff"),
+    url("../fonts/icomoon.svg?ubiyih#icomoon") format("svg");
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+}
+
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -153,6 +181,51 @@ body {
 
   img {
     padding-right: 0.625rem;
+  }
+}
+
+.primary-link {
+  color: var(--black);
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 1.33rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--red);
+  }
+
+  &::before {
+    background-color: var(--red);
+    border-radius: 0.094rem;
+    bottom: -10px;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  &::after {
+    color: inherit;
+    content: "\e901";
+
+    display: inline-block;
+    font-family: icomoon, sans-serif !important;
+    font-size: 1.625rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: 0.75rem;
+    speak: none;
+    text-transform: none;
+    vertical-align: sub;
   }
 }
 

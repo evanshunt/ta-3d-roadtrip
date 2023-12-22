@@ -389,9 +389,9 @@ const Attraction = ({
               {index === destinations.length - 1 && (
                 <a
                   href="https://www.travelalberta.com/trip-ideas/road-trips-and-itineraries"
-                  className="attraction__next"
+                  className="icon attraction__next primary-link"
                 >
-                  <h3>Check out your next road trip</h3>
+                  Check out your next road trip
                 </a>
               )}
               {nextDestination && (

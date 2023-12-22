@@ -368,7 +368,8 @@ const destinations = [
       image: "/images/carter-ryan-gallery.webp",
       altText: "Jason Carter, Indigenous History Month Profile",
       description:
-        "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
+        "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and as well as bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
+
       duration: "30 min - 1 hr",
       price: "Free",
       type: "Self-guided tour",
@@ -494,7 +495,7 @@ const destinations = [
       altText:
         "People riding a chairlift in the summer with views of the lodge building at Lake Louise in Banff National Park",
       description:
-        "Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088m (6,850ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
+        "Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088 m (6,850 ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
       duration: "1 - 3 hr",
       price: "Free - $1395",
       type: "Self-guided tour",
@@ -553,7 +554,7 @@ const destinations = [
             "One person pulling another while skating on Lake Louise with Fairmont Château Lake Louise in the background in Banff National Park",
         },
       ],
-      blurb: "Sleep by the shore, nestled among mountains",
+      blurb: "Sleep by the shore, nestled among mountains.",
       title: "Fairmont Château Lake Louise",
       image: "/images/fairmont-chateau-lake-louise.webp",
       altText:
@@ -944,7 +945,7 @@ const destinations = [
       altText:
         "Visitors at the Jasper Planetarium, displaying the constellations and Aurora",
       description:
-        "Enter the Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
+        "Enter the Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour, which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
       duration: "45 min - 3 hr",
       price: "$15 - $89",
       type: "Self-guided tour (and Guided tour)",

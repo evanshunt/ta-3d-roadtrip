@@ -4,13 +4,14 @@
 .attraction {
   --offset: 100%;
   // background-color: var(--white);
-  background-color: var(--blue);
+  background-color: var(--turquoise);
   border-radius: 1rem 1rem 0rem 0rem;
   bottom: 0;
+
   height: calc(100dvh - 5rem);
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 0 1rem;
+  padding: 0 0.25rem;
   position: fixed;
   transform: translate(0, calc(var(--offset) - 4.5rem));
   transition: transform 0.25s ease-in-out;
@@ -217,7 +218,8 @@
 
   .attraction__header__mobile & {
     color: var(--white);
-    font-size: 0.85rem;
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .attraction--open .attraction__header__mobile & {

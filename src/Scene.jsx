@@ -9,7 +9,7 @@ import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 import Backdrop from "./models/final/Backdrop.jsx";
 import TopAltFinal from "./models/final/TopAltFinal.jsx";
@@ -18,6 +18,7 @@ import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 import { Clouds } from "@react-three/drei";
+import { Banff } from "./models/final/Banff.jsx";
 // import { useControls } from "leva";
 
 // import HTMLInfo from "./components/HTMLInfo.jsx";
@@ -199,6 +200,7 @@ const Scene = (props) => {
         {/* {!altTop && <Top />} */}
 
         {/* <TopAltAgain /> */}
+        {/* <Banff /> */}
         <TopAltFinal isMobile={props.isMobile} />
 
         {/* <Sides /> */}

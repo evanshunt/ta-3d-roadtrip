@@ -16,13 +16,9 @@ const canvas = document.createElement("canvas");
 let gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 
 if (!gl) {
-  const errorContainer = document.createElement("div");
-  errorContainer.classList.add("error-container");
-  document.querySelector("body").appendChild(errorContainer);
   displayError(
     "Please ensure hardware acceleration is enabled in your browser preferences.",
-    "If that doesn't work please make sure your browser is up to date.",
-    errorContainer
+    "If that doesn't work please make sure your browser is up to date."
   );
 }
 root.render(

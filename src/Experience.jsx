@@ -343,13 +343,14 @@ const Experience = () => {
           // href="https://dev-consumer.tadevnet.com/trip-ideas/road-trips-itineraries/badlands-road-trip"
           aria-label="Close the 3D Tour"
           onClick={() => {
-            const returnUrl = new URLSearchParams(
-              window.parent.location.search
-            ).get("return");
+            const returnUrl = new URLSearchParams(document.location.search).get(
+              "return"
+            );
 
             if (returnUrl) {
               console.log(returnUrl);
-              console.log(window.parent.location.href);
+              console.log(document.location.search);
+              // console.log(window.parent.location.href);
               // window.parent.location.href = returnUrl;
             }
           }}

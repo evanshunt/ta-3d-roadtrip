@@ -19,23 +19,14 @@ import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
 import { Clouds } from "@react-three/drei";
 import { Banff } from "./models/final/Banff.jsx";
-// import { useControls } from "leva";
-
-// import HTMLInfo from "./components/HTMLInfo.jsx";
 
 // @TODO: move this into the data json from Experience.jsx
 const positions = {
   // Day 1:
-  // caveAndBasin: [-4.4, 1.18, 2.75],
   caveAndBasin: [-4.5575, 1.05, 2.63],
-  // gondola: [-4.7, 1.2, 2.88],
   gondola: [-4.69, 1.085, 2.859],
-  // skyBistro: [-4.69, 1.13, 2.88],
   skyBistro: [-4.69, 1.13, 2.759],
-  // banffUpperHotSprings: [-4.6, 1.2, 2.98],
-  // banffUpperHotSprings: [-4.69, 1.08, 2.859],
   banffUpperHotSprings: [-4.63, 1.075, 2.83],
-  // fairmontBanffSpringsHotel: [-4.5, 1.18, 2.8],
   fairmontBanffSpringsHotel: [-4.58, 1.075, 2.83],
 
   // Day 2:

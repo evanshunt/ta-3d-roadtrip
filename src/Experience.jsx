@@ -4,7 +4,6 @@ import { useSwipeable } from "react-swipeable";
 import gsap from "gsap";
 import * as THREE from "three";
 import { AdaptiveDpr, Loader } from "@react-three/drei";
-
 import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
 import "core-js/actual/object/group-by";
@@ -17,7 +16,6 @@ import destinations from "./data/destinations.js";
 import Scene from "./Scene";
 import Attraction from "./components/Attraction";
 import Itinerary from "./components/Itinerary";
-import Onboarding from "./components/OnBoarding";
 import Arrow from "./components/Arrow";
 import Intro from "./Intro";
 

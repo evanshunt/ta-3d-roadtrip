@@ -14,6 +14,7 @@ import fairviewImageSrc from "/images/fairview.webp";
 const Day2 = ({
   animateHover,
   animateOut,
+  destinations,
   geometry,
   handleIndex,
   inBetweens,
@@ -51,14 +52,15 @@ const Day2 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        destinations={destinations}
         handleIndex={handleIndex}
         imageSrc={carterRyanGalleryImageSrc}
         inBetweens={inBetweens}
         index={7}
         isMobile={isMobile}
         material={material}
-        name={"Carter Ryan Gallery"}
-        position={positions.carterRyanGallery}
+        // name={"Carter Ryan Gallery"}
+        // position={positions.carterRyanGallery}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -67,6 +69,7 @@ const Day2 = ({
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={johnstonCanyonImageSrc}
@@ -74,8 +77,8 @@ const Day2 = ({
         index={8}
         isMobile={isMobile}
         material={material}
-        name={"Johnston Canyon"}
-        position={positions.johnstonCanyon}
+        // name={"Johnston Canyon"}
+        // position={positions.johnstonCanyon}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -84,6 +87,7 @@ const Day2 = ({
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={lakeLouiseGondolaImageSrc}
@@ -91,8 +95,8 @@ const Day2 = ({
         index={9}
         isMobile={isMobile}
         material={material}
-        name={"Lake Louise Gondola"}
-        position={positions.lakeLouiseGondola}
+        // name={"Lake Louise Gondola"}
+        // position={positions.lakeLouiseGondola}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -101,6 +105,7 @@ const Day2 = ({
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={fairmontChateauLakeLouiseImageSrc}
@@ -108,8 +113,8 @@ const Day2 = ({
         index={10}
         isMobile={isMobile}
         material={material}
-        name={"Fairmont Chateau Lake Louise"}
-        position={positions.fairmontChateauLakeLouise}
+        // name={"Fairmont Château Lake Louise"}
+        // position={positions.fairmontChateauLakeLouise}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -118,6 +123,7 @@ const Day2 = ({
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         imageSrc={fairviewImageSrc}
@@ -125,8 +131,8 @@ const Day2 = ({
         index={11}
         isMobile={isMobile}
         material={material}
-        name={"Fairview"}
-        position={positions.fairview}
+        // name={"Fairview"}
+        // position={positions.fairview}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}

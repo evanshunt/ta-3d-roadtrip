@@ -5,6 +5,7 @@ import { types } from "@theatre/core";
 import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
+  destinations,
   geometry,
   handleIndex,
   hidden,
@@ -13,13 +14,17 @@ const ImagePin = ({
   index,
   isMobile,
   material,
-  name,
-  position,
+  // name,
+  // position,
   setAttractionsOpen,
   setHoverIndex,
   setPinRefs,
 }) => {
-  if (!index) return null;
+  if (!index || !destinations) return null;
+  console.log(destinations);
+
+  const position = destinations[index].details.position;
+  const name = destinations[index].details.title;
 
   const [theatreObject, setTheatreObject] = React.useState(null);
   const imageRef = useRef();

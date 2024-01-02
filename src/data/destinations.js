@@ -151,7 +151,7 @@ const destinations = [
           type: "image",
           url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-1.webp",
           altText:
-            "Guests dining at the Sky Bistro at the top of the Banff Gondola in Banff National Park",
+            "Guests dining at the Lunch at Sky Bistro at the top of the Banff Gondola in Banff National Park",
         },
         {
           type: "image",
@@ -166,21 +166,22 @@ const destinations = [
         {
           type: "image",
           url: "/images/lunch-at-sky-bistro/lunch-at-sky-bistro-4.webp",
-          altText: "Dining in Sky Bistro at the top of Banff Gondola",
+          altText: "Dining in Lunch at Sky Bistro at the top of Banff Gondola",
         },
       ],
       title: "Lunch at Sky Bistro",
+      titleOverride: "Lunch at Lunch at Sky Bistro",
       blurb: "Treat your tastebuds to a top-of-the-world lunch.",
       image: "/images/sky-bistro.webp",
-      altText: "Dining in Sky Bistro at the top of Banff Gondola",
+      altText: "Dining in Lunch at Sky Bistro at the top of Banff Gondola",
       description:
-        "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
+        "Overlooking Banff on the summit of Sulphur Mountain, Lunch at Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
       duration: "1 - 2 hr",
       price: "$$",
       type: "Dining",
       links: [
         {
-          text: "Sky Bistro",
+          text: "Lunch at Sky Bistro",
           image: "/images/info/lunch-at-sky-bistro.webp",
           altText: "Close-up of a cocktail drink at the Banff Gondola",
           url: "https://www.travelalberta.com/listings/sky-bistro-6411/",

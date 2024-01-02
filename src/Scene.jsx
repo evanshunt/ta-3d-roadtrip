@@ -1,48 +1,17 @@
 import React, { useRef } from "react";
 import * as THREE from "three";
-import { Cloud } from "./Clouds.jsx";
-// import { DepthOfField, EffectComposer } from "@react-three/postprocessing";
 import { editable as e } from "@theatre/r3f";
+import { Clouds } from "@react-three/drei";
+
+import { Cloud } from "./Clouds.jsx";
 import EditableCamera from "./EditableCamera.jsx";
-
 import Lights from "./Lights.jsx";
-// import { Perf } from "r3f-perf";
-// import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-import { OrbitControls } from "@react-three/drei";
-
 import Backdrop from "./models/final/Backdrop.jsx";
 import TopAltFinal from "./models/final/TopAltFinal.jsx";
-
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
-import { Clouds } from "@react-three/drei";
-import { Banff } from "./models/final/Banff.jsx";
-
-// @TODO: move this into the data json from Experience.jsx
-const positions = {
-  // Day 1:
-  caveAndBasin: [-4.5575, 1.05, 2.63],
-  gondola: [-4.69, 1.085, 2.859],
-  skyBistro: [-4.69, 1.13, 2.759],
-  banffUpperHotSprings: [-4.63, 1.075, 2.83],
-  fairmontBanffSpringsHotel: [-4.58, 1.075, 2.83],
-
-  // Day 2:
-  carterRyanGallery: [-4.55, 1.075, 2.83],
-  johnstonCanyon: [-4.0, 1.16, 1.88],
-  lakeLouiseGondola: [-3.05, 1.1, 0.73],
-  fairmontChateauLakeLouise: [-3.2, 1.1, 0.61],
-  fairview: [-3.2, 1.11, 0.57],
-
-  // Day 3:
-  columbiaIcefieldSkywalk: [1.65, 1.1, -3.2],
-  maligneCanyon: [5.4, 1.05, -5.6],
-  jasperSkyTram: [5.0, 1.05, -6.0],
-  fairmontJasperParkLodge: [5.28, 1.08, -5.9],
-  jasperPlanetarium: [5.31, 1.05, -5.86],
-};
 
 // Reused geometries and materials
 THREE.ColorManagement.legacyMode = false;
@@ -53,6 +22,8 @@ const redMaterial = new THREE.MeshBasicMaterial({
 
 const Scene = (props) => {
   const sceneRef = useRef();
+
+  if (!props.destinations) return null;
 
   return (
     <>
@@ -87,7 +58,6 @@ const Scene = (props) => {
         isMobile={props.isMobile}
         isNight={props.isNight}
         debug={props.debug}
-        positions={positions}
       />
 
       {/* <Perf position="bottom-left" /> */}
@@ -97,6 +67,7 @@ const Scene = (props) => {
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             attractionsOpen={props.attractionsOpen}
+            destinations={props.destinations}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
             hoverIndex={props.hoverIndex}
@@ -104,7 +75,6 @@ const Scene = (props) => {
             isNight={props.isNight}
             inBetweens={props.inBetweens}
             material={redMaterial}
-            positions={positions}
             sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
@@ -118,13 +88,13 @@ const Scene = (props) => {
           <Day2
             animateHover={props.animateHover}
             animateOut={props.animateOut}
+            destinations={props.destinations}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
             inBetweens={props.inBetweens}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
-            positions={positions}
             sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
@@ -137,13 +107,13 @@ const Scene = (props) => {
           <Day3
             animateHover={props.animateHover}
             animateOut={props.animateOut}
+            destinations={props.destinations}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
             inBetweens={props.inBetweens}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
-            positions={positions}
             sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}

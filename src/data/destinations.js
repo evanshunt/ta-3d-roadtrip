@@ -56,7 +56,7 @@ const destinations = [
       description:
         "This site has held significance for Indigenous Peoples since time immemorial. Three railway workers stumbled upon it in 1883, and the events that followed resulted in Canada’s first national park. It’s now a gathering place to connect visitors to the land and share stories of conservation. The Thermal Waters Pass is available for discounted combined entry at Cave and Basin and Banff Upper Hot Springs.",
       duration: "1 - 3 hr",
-      price: "Free - $8.50 CAD (combo pass available)",
+      price: "$ (combo pass available)",
       type: "Self-guided tour",
       links: [
         {
@@ -117,7 +117,7 @@ const destinations = [
       description:
         "Experience a world of adventure and beauty at the summit of Banff’s Sulphur Mountain. Exploration abounds at the gondola, from a theatre and interpretive centre inside to epic snowy views from the rooftop deck and mountain boardwalk outside.",
       duration: "1 - 3 hr",
-      price: "Free - $60 CAD",
+      price: "$$",
       type: "Self-guided tour",
       links: [
         {
@@ -176,7 +176,7 @@ const destinations = [
       description:
         "Overlooking Banff on the summit of Sulphur Mountain, Sky Bistro serves locally inspired cuisine paired with panoramic views of six Rocky Mountain ranges. Ride to the top aboard the Banff Gondola before enjoying dishes inspired by Canadian culinary traditions, made from fresh regional ingredients.",
       duration: "1 - 2 hr",
-      price: "$16 - $52+ CAD",
+      price: "$$",
       type: "Dining",
       links: [
         {
@@ -236,7 +236,7 @@ const destinations = [
       description:
         "Visit Banff Upper Hot Springs during your trip to the UNESCO World Heritage Site of Banff National Park. The natural hot mineral springs are among the top attractions in the Canadian Rockies. Soak in the historic bathhouse, originally built in 1886, while you take in incredible mountain views. *The Thermal Waters Pass is available for discounted combined entry at Banff Upper Hot Springs and Cave and Basin.",
       duration: "1 - 2 hr",
-      price: "Free - $8.50 CAD",
+      price: "$",
       type: "Self-guided tour",
       links: [
         {
@@ -299,7 +299,7 @@ const destinations = [
       description:
         'Located in the heart of Banff National Park the world-famous Fairmont Banff Springs hotel stands as a landmark in the picturesque alpine town of Banff. Canada\'s "Castle in the Rockies" has been providing legendary hospitality to guests for more than 130 years.',
       duration: "Overnight",
-      price: "$500+ CAD",
+      price: "$$$",
       type: "Accommodation",
       links: [
         {
@@ -368,7 +368,7 @@ const destinations = [
       image: "/images/carter-ryan-gallery.webp",
       altText: "Jason Carter, Indigenous History Month Profile",
       description:
-        "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, and as well as bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
+        "With another location in Canmore, Carter-Ryan Gallery bills itself as a place where visual art and theatre coexist under one roof. Both locations are co-owned by Indigenous visual artist Jason Carter. Here you’ll find vibrant, modern paintings of animals and nature scenes, as well as bold soapstone carvings by day, and theatrical performances by local directors and actors by night.",
 
       duration: "30 min - 1 hr",
       price: "Free",
@@ -497,7 +497,7 @@ const destinations = [
       description:
         "Ascend to one of Banff National Park’s most incredible views where grizzly bears and other local wildlife are seen almost daily. From the top, at 2,088 m (6,850 ft) the gondola ride is only the start of your adventure. Make your way to the viewing platform for a panoramic view that will take your breath away.",
       duration: "1 - 3 hr",
-      price: "Free - $1395",
+      price: "Free - $$",
       type: "Self-guided tour",
       links: [
         {
@@ -562,7 +562,7 @@ const destinations = [
       description:
         "On the shore of Lake Louise, surrounded by soaring mountain peaks and the majestic Victoria Glacier, sits the Fairmont Château Lake Louise. This spectacular mountain resort in the heart of Banff National Park and the Canadian Rockies offers elegant guest rooms, world-class dining, an award-winning spa, and an endless array of outdoor recreational activities.",
       duration: "Overnight",
-      price: "$425+",
+      price: "$$$",
       type: "Accommodation",
       links: [
         {
@@ -695,7 +695,7 @@ const destinations = [
       description:
         "Go beyond nature's edge and immerse yourself in an awe-inspiring interpretive experience in one of the most unique ecosystems in the world. Explore the immense powers of glaciology from a fully accessible, cliff-edge walkway that leads to a glass-floored observation platform 280 m (918 ft) above the Sunwapta Valley.",
       duration: "1 - 2 hr",
-      price: "$26.65 - $41",
+      price: "$$",
       type: "Self-guided tour",
       links: [
         {
@@ -823,7 +823,7 @@ const destinations = [
       description:
         "The Jasper SkyTram whisks you up Whistlers Mountain to an elevation of 2,263 m (7,425 ft), providing stunning vistas of mountain ranges. On a clear day, you can even see the white pyramid of Mount Robson in nearby British Columbia. Interpretive panels explain the alpine environment, and a 1.4 km (0.9 mi) hiking trail leads you to the summit of the mountain.",
       duration: "1 - 2 hr",
-      price: "Free - $59.95",
+      price: "$$",
       type: "Self-guided tour",
       links: [
         {
@@ -885,7 +885,7 @@ const destinations = [
       description:
         "Spread out over 700 acres, this year-round luxury mountain resort wraps around the shores of pristine Lac Beauvert and is Canada's #1 Golf Resort. Choose from private Signature Cabins (featuring your own kitchen, living space, patio, and more) or one of their many quaint cabin-style rooms throughout the expansive property.",
       duration: "Overnight",
-      price: "$479+",
+      price: "$$$",
       type: "Accommodation",
       links: [
         {
@@ -947,7 +947,7 @@ const destinations = [
       description:
         "Enter the Jasper Planetarium's 40-seat domed planetarium theatre and tour the world's largest accessible dark sky preserve with a live guide during this interactive, world-exclusive, indoor Planetarium Experience. Or sign up for the full tour, which starts in the planetarium, then head outside for the chance to tour the largest telescope in the Rockies.",
       duration: "45 min - 3 hr",
-      price: "$15 - $89",
+      price: "$$",
       type: "Self-guided tour (and Guided tour)",
       links: [
         {

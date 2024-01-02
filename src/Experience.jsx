@@ -348,7 +348,9 @@ const Experience = () => {
             );
 
             if (returnUrl) {
-              window.parent.location.href = returnUrl;
+              console.log(returnUrl);
+              console.log(window.parent.location.href);
+              // window.parent.location.href = returnUrl;
             }
           }}
         >

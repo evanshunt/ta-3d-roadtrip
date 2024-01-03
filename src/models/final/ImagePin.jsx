@@ -30,14 +30,9 @@ const ImagePin = ({
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
 
-  const tl = gsap.timeline();
-
-  let opacity = 0;
-
   const setupPositions = (pinRef) => {
-    console.log("setting up pin refs");
     if (!pinRef.current) return;
-    const image = pinRef.current.children[0];
+    const image = pinRef.current.children[0].children[0];
     const stem = pinRef.current.children[1];
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
@@ -46,11 +41,11 @@ const ImagePin = ({
     //   y: 1,
     // });
 
-    if (stem) {
-      gsap.set(stem.position, {
-        y: -1.15,
-      });
-    }
+    // if (stem) {
+    //   gsap.set(stem.position, {
+    //     y: -1.15,
+    //   });
+    // }
 
     // if (image) {
     //   gsap.set(image.material, {
@@ -63,6 +58,14 @@ const ImagePin = ({
         y: -1,
       });
     }
+    // gsap.set(imageRef.position, {
+    //   y: -1,
+    // });
+    gsap.set(imageRef.scale, {
+      x: 0.03,
+      y: 0.03,
+      z: 0.03,
+    });
     if (backgroundHalo) {
       // gsap.set(backgroundHalo.position, {
       //   y: 0,
@@ -70,20 +73,36 @@ const ImagePin = ({
     }
   };
 
+  const animateGroup = (pinRef, dir = "next") => {
+    if (inBetweens && !inBetweens.includes(index)) return;
+
+    const inTL = gsap.timeline();
+    const outTL = gsap.timeline();
+
+    // determine parts
+    if (dir === "next") {
+      inTL.to(pinRef.position, {
+        y: -2,
+      });
+    }
+  };
+
   const animatePin = (pinRef, dir = "next") => {
     // this is causing issues with the hover state
     if (!pinRef.current) return;
+
+    const inTL = gsap.timeline();
+    const outTL = gsap.timeline();
 
     // this is working in theory, pin refs only contain halos tho
 
     // determine parts
 
-    const image = pinRef.current.children[0];
+    const image = pinRef.current.children[0].children[0];
     const stem = pinRef.current.children[1];
     const shadow = pinRef.current.children[2];
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
-    console.log(background);
 
     // image:
     // - opacity: all: 0 -> 1
@@ -98,12 +117,37 @@ const ImagePin = ({
 
     // console.log(pinRef.current);
     // console.log(stem.position);
+
     if (stem && dir === "next") {
-      tl.to(stem.position, {
+      inTL.to(
+        backgroundHalo.scale,
+        {
+          x: 0.05,
+          y: 0.05,
+          z: 0.05,
+          duration: 0.2,
+        },
+        "blip"
+      );
+      inTL.to(backgroundHalo.scale, {
+        x: 0.02,
+        y: 0.02,
+        z: 0.02,
+        duration: 0.2,
+      });
+      inTL.to(stem.position, {
         y: -1,
         duration: 0.5,
       });
-      tl.to(
+      inTL.to(
+        backgroundHalo.position,
+        {
+          y: -0.745,
+          duration: 0.5,
+        },
+        "<"
+      );
+      inTL.to(
         background.position,
         {
           duration: 0.5,
@@ -111,33 +155,117 @@ const ImagePin = ({
         },
         "<"
       );
-      tl.to(background.scale, {
-        x: 0.25,
-        y: 0.25,
-        z: 0.25,
-        duration: 0.5,
-      });
+      inTL.to(
+        shadow.position,
+        {
+          duration: 0.5,
+          y: -0.745,
+        },
+        "<"
+      );
+      inTL.to(
+        image.position,
+        {
+          y: -0.745,
+        },
+        "<"
+      );
+      inTL.to(
+        background.scale,
+        {
+          x: 0.25,
+          y: 0.25,
+          z: 0.25,
+          duration: 0.5,
+        },
+        "bg"
+      );
+      inTL.to(
+        shadow.scale,
+        {
+          x: 0.25,
+          y: 0.25,
+          z: 0.25,
+          duration: 0.5,
+        },
+        "bg"
+      );
+      inTL.to(
+        image.material,
+        {
+          opacity: 1,
+          duration: 0.75,
+        },
+        "bg"
+      );
+      inTL.to(
+        image.scale,
+        {
+          x: 0.25,
+          y: 0.25,
+          z: 0.25,
+          duration: 0.5,
+        },
+        "bg"
+      );
     } else if (stem && dir === "prev") {
-      tl.to(background.scale, {
-        x: 0.02,
-        y: 0.02,
-        z: 0.02,
-      });
-      tl.to(
+      outTL.to(
+        background.scale,
+        {
+          x: 0.02,
+          y: 0.02,
+          z: 0.02,
+        },
+        "scale"
+      );
+      outTL.to(
+        shadow.scale,
+        {
+          x: 0.03,
+          y: 0.03,
+          z: 0.03,
+        },
+        "scale"
+      );
+      outTL.to(
+        image.scale,
+        {
+          x: 0.03,
+          y: 0.03,
+          z: 0.03,
+        },
+        "scale"
+      );
+      outTL.to(
+        image.material,
+        {
+          opacity: 0,
+        },
+        "scale"
+      );
+      outTL.to(
         stem.position,
         {
           duration: 0.5,
           y: -1.15,
         },
-        "<"
+        "down"
       );
-      tl.to(
+      outTL.to(
+        backgroundHalo.position,
+        {
+          duration: 0.5,
+          y: -1.15,
+        },
+        "down"
+      );
+      outTL.to(
         [shadow.position, background.position],
         {
           duration: 0.5,
           y: -1,
         },
-        "<"
+        "down"
       );
     }
   };
@@ -159,6 +287,10 @@ const ImagePin = ({
 
     animatePin(pinRefs[sceneIndex], "next");
     animatePin(pinRefs[sceneIndex - 1], "prev");
+
+    if (inBetweens.includes(sceneIndex)) {
+      animateGroup(pinRefs[sceneIndex - 1], "next");
+    }
   }, [sceneIndex]);
 
   if (hidden) return null;
@@ -186,11 +318,13 @@ const ImagePin = ({
           <Image
             castShadow={false}
             ref={imageRef}
-            position={[0, 0, 0.1]}
+            // position={[0, 0, 0.1]}
             transparent
             url={imageSrc}
             // opacity={opacity}
             opacity={0}
+            scale={0.03}
+            position={[0, -1, 0.1]}
             receiveShadow={false}
             onClick={() => {
               if (!inBetweens) return;
@@ -203,7 +337,7 @@ const ImagePin = ({
 
         <e.mesh
           castShadow={true}
-          position={[0, -1.15, -0.0305]}
+          position={[0, -1.25, -0.0305]}
           ref={stemRef}
           theatreKey={`Pins / ${name} / Stem ${name}`}
           scale={[0.075, 0.2, 0.075]}
@@ -228,7 +362,6 @@ const ImagePin = ({
 
         <e.mesh
           castShadow
-          name={name}
           onClick={() => {
             handleIndex("next", index, false);
           }}

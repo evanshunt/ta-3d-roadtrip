@@ -34,6 +34,31 @@ const ImagePin = ({
 
   let opacity = 0;
 
+  const setupPositions = (pinRef) => {
+    if (!pinRef.current) return;
+    const image = pinRef.current.children[0];
+    const background = pinRef.current.children[3];
+    const backgroundHalo = pinRef.current.children[4];
+
+    // if (image) {
+    //   gsap.set(image.material, {
+    //     opacity: 0,
+    //     scale: 0.03,
+    //   });
+    // }
+    if (background) {
+      console.log(background);
+      gsap.set([background.position, backgroundHalo.position], {
+        y: -1,
+      });
+    }
+    if (backgroundHalo) {
+      // gsap.set(backgroundHalo.position, {
+      //   y: 0,
+      // });
+    }
+  };
+
   const animatePin = (pinRef, dir = "next") => {
     if (!pinRef.current) return;
 
@@ -47,30 +72,48 @@ const ImagePin = ({
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
 
+    // image:
+    // - opacity: all: 0 -> 1
+    // - scale: all: 0.03 -> 0.25 roughly 0.5s
+    // - stem: y: -0.25 -> 0.11
+    // - shadow: y: 0 -> 0.345, scale: 1 -> 2.75
+    // - background: y: 0 -> 0.345, scale: 0.02 -> 0.175
+    // - halo: y: 0 -> 0.345, scale blip: 0.03 -> 0.05 -> 0.03
+    // - group: whatever, it just needs to hide
+
     // animate parts
+
+    console.log(background);
 
     // console.log(pinRef.current);
     // console.log(stem.position);
     if (stem && dir === "next") {
-      gsap.to(stem.position, {
+      tl.to(stem.position, {
         duration: 0.5,
         y: 0.11,
       });
-      gsap.to(
+      tl.to(
         [shadow.position, background.position],
         {
           duration: 0.5,
-          y: 0.11,
+          y: 0.345,
         },
         "<"
       );
-    } else if (stem && dir === "prev") {
-      console.log(stem);
-      gsap.to(stem.position, {
+      tl.to([shadow, background], {
+        scale: 0.25,
         duration: 0.5,
-        y: -1.15,
       });
-      gsap.to(
+    } else if (stem && dir === "prev") {
+      tl.to(
+        stem.position,
+        {
+          duration: 0.5,
+          y: -1.15,
+        },
+        "<"
+      );
+      tl.to(
         [shadow.position, background.position],
         {
           duration: 0.5,
@@ -82,6 +125,10 @@ const ImagePin = ({
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setupPositions(groupRef);
+      // this will run during the intro animation
+    }, 500);
     setPinRefs((prevRefs) => [...prevRefs, groupRef]);
 
     return () => {
@@ -98,12 +145,12 @@ const ImagePin = ({
 
   if (hidden) return null;
 
-  useFrame(() => {
-    theatreObject.onValuesChange((newValues) => {
-      if (!imageRef.current) return;
-      imageRef.current.children[0].material.opacity = newValues.opacity;
-    });
-  });
+  // useFrame(() => {
+  //   theatreObject.onValuesChange((newValues) => {
+  //     if (!imageRef.current) return;
+  //     imageRef.current.children[0].material.opacity = newValues.opacity;
+  //   });
+  // });
 
   return (
     <Billboard position={[position[0], position[1], position[2]]}>

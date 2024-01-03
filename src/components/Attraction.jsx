@@ -391,7 +391,7 @@ const Attraction = ({
                   href="https://www.travelalberta.com/trip-ideas/road-trips-and-itineraries"
                   className="icon attraction__next primary-link"
                 >
-                  Check out your next road trip
+                  Find your next trip
                 </a>
               )}
               {nextDestination && (

@@ -376,11 +376,11 @@ const Experience = () => {
             preserveDrawingBuffer: false,
             powerPreference: "high-performance",
           }}
-          frameloop={
-            inBetweens.includes(index + 1) || index === destinations.length - 1
-              ? "always"
-              : "demand"
-          }
+          // frameloop={
+          //   inBetweens.includes(index + 1) || index === destinations.length - 1
+          //     ? "always"
+          //     : "demand"
+          // }
           {...handlers}
         >
           <AdaptiveDpr />

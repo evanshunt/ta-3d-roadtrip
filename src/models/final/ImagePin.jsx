@@ -42,13 +42,15 @@ const ImagePin = ({
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
 
-    gsap.set(pinRef.current.position, {
-      y: 1,
-    });
+    // gsap.set(pinRef.current.position, {
+    //   y: 1,
+    // });
 
-    gsap.set(stem.position, {
-      y: -1.25,
-    });
+    if (stem) {
+      gsap.set(stem.position, {
+        y: -1.15,
+      });
+    }
 
     // if (image) {
     //   gsap.set(image.material, {
@@ -57,7 +59,6 @@ const ImagePin = ({
     //   });
     // }
     if (background) {
-      console.log(background);
       gsap.set([background.position, backgroundHalo.position], {
         y: -1,
       });
@@ -70,6 +71,7 @@ const ImagePin = ({
   };
 
   const animatePin = (pinRef, dir = "next") => {
+    // this is causing issues with the hover state
     if (!pinRef.current) return;
 
     // this is working in theory, pin refs only contain halos tho
@@ -81,6 +83,7 @@ const ImagePin = ({
     const shadow = pinRef.current.children[2];
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
+    console.log(background);
 
     // image:
     // - opacity: all: 0 -> 1
@@ -97,8 +100,8 @@ const ImagePin = ({
     // console.log(stem.position);
     if (stem && dir === "next") {
       tl.to(stem.position, {
-        duration: 0.5,
         y: -1,
+        duration: 0.5,
       });
       tl.to(
         background.position,
@@ -108,29 +111,35 @@ const ImagePin = ({
         },
         "<"
       );
-      // tl.to([shadow, background], {
-      //   scale: 0.25,
-      //   duration: 0.5,
-      // });
+      tl.to(background.scale, {
+        x: 0.25,
+        y: 0.25,
+        z: 0.25,
+        duration: 0.5,
+      });
+    } else if (stem && dir === "prev") {
+      tl.to(background.scale, {
+        x: 0.02,
+        y: 0.02,
+        z: 0.02,
+      });
+      tl.to(
+        stem.position,
+        {
+          duration: 0.5,
+          y: -1.15,
+        },
+        "<"
+      );
+      tl.to(
+        [shadow.position, background.position],
+        {
+          duration: 0.5,
+          y: -1,
+        },
+        "<"
+      );
     }
-    // else if (stem && dir === "prev") {
-    //   tl.to(
-    //     stem.position,
-    //     {
-    //       duration: 0.5,
-    //       y: -1.15,
-    //     },
-    //     "<"
-    //   );
-    //   tl.to(
-    //     [shadow.position, background.position],
-    //     {
-    //       duration: 0.5,
-    //       y: 0.345,
-    //     },
-    //     "<"
-    //   );
-    // }
   };
 
   useEffect(() => {

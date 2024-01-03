@@ -28,10 +28,6 @@ const destinations = [
     details: {
       assets: [
         {
-          type: "video",
-          url: "/images/cave-and-basin-national-historic-site/test-video.mp4",
-        },
-        {
           type: "image",
           url: "/images/cave-and-basin-national-historic-site/cave-and-basin-national-historic-site-1.webp",
           altText: "Cave and Basin National Historic Site ALT",

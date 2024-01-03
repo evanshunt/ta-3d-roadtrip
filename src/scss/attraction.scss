@@ -194,11 +194,11 @@
 
 .attraction__arrow {
   display: block;
-  filter: grayscale(1) brightness(100);
+  filter: brightness(0);
   margin: 0.25rem auto;
 
   .attraction--open & {
-    filter: grayscale(1) brightness(0);
+    filter: brightness(0);
     transform: rotateZ(180deg);
   }
 
@@ -217,7 +217,7 @@
   width: 100%;
 
   .attraction__header__mobile & {
-    color: var(--white);
+    color: var(--black);
     font-size: 1rem;
     line-height: 1;
   }

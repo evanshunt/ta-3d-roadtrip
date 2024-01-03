@@ -11,7 +11,7 @@ const TopAltFinal = (props) => {
   const texture =
     window.innerWidth < 1023
       ? useTexture("/textures/final/baked-brit-mobile.webp")
-      : useTexture("/textures/final/baked-brit.webp");
+      : useTexture("/textures/final/test-1-baked.jpg");
 
   return (
     <group {...props} dispose={null}>

@@ -36,7 +36,7 @@ const ImagePin = ({
   const animatePin = (pinRef, dir) => {
     if (!pinRef.current) return;
     // this is working in theory, pin refs only contain halos tho
-    console.log(pinRef.current);
+
     // determine parts
 
     const image = pinRef.current.children[0];
@@ -46,18 +46,30 @@ const ImagePin = ({
     const backgroundHalo = pinRef.current.children[4];
 
     // animate parts
-    tl.to(stem.position, {
-      duration: 0.5,
-      y: 0.11,
-    });
-    tl.to(
-      [shadow.position, background.position],
-      {
+
+    console.log(pinRef.current);
+
+    if (stem) {
+      gsap.to(stem.position, {
         duration: 0.5,
         y: 0.11,
-      },
-      "<"
-    );
+        onStart: () => {
+          console.log("starting");
+        },
+        onUpdate: () => {
+          console.log("updatring");
+          stem.position.y = stem.position.y;
+        },
+      });
+      tl.to(
+        [shadow.position, background.position],
+        {
+          duration: 0.5,
+          y: 0.11,
+        },
+        "<"
+      );
+    }
   };
 
   useEffect(() => {
@@ -71,7 +83,6 @@ const ImagePin = ({
   }, []);
 
   useEffect(() => {
-    console.log("sceneIndex", sceneIndex);
     if (!sceneIndex) return;
 
     animatePin(pinRefs[sceneIndex], "next");

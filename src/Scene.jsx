@@ -9,7 +9,7 @@ import Lights from "./Lights.jsx";
 // import { Perf } from "r3f-perf";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 import Backdrop from "./models/final/Backdrop.jsx";
 import TopAltFinal from "./models/final/TopAltFinal.jsx";
@@ -63,7 +63,7 @@ const Scene = (props) => {
 
   return (
     <>
-      {/* <OrbitControls
+      <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
@@ -75,8 +75,8 @@ const Scene = (props) => {
           const camera = e.target?.object;
           if (!camera) return;
         }}
-      /> */}
-      <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
+      />
+      {/* <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} /> */}
       {/* 
       <Backdrop
         scale={[scaleX, scaleY, scaleZ]}
@@ -160,7 +160,7 @@ const Scene = (props) => {
           />
         </group>
 
-        <Clouds isMobile={props.isMobile}>
+        {/* <Clouds isMobile={props.isMobile}>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
             position={[-3.8, 1.75, 3.5]}
@@ -189,7 +189,7 @@ const Scene = (props) => {
               // position={[cloudPosX, cloudPosY, cloudPosZ]}
             />
           </e.group>
-        </Clouds>
+        </Clouds> */}
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

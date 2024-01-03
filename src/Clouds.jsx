@@ -68,7 +68,7 @@ function Cloud({
           /*#__PURE__*/ React.createElement(
             Plane,
             {
-              scale: scale,
+              scale: scale * 0.15,
               rotation: [0, 0, 0],
             },
             /*#__PURE__*/ React.createElement("meshBasicMaterial", {

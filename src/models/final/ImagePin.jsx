@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import { Billboard, Image } from "@react-three/drei";
 import { editable as e } from "@theatre/r3f";
 import { types } from "@theatre/core";
-import { useFrame } from "@react-three/fiber";
 
 const ImagePin = ({
   geometry,
@@ -54,7 +53,10 @@ const ImagePin = ({
     //   });
     // }
     if (background) {
-      gsap.set([background.position, backgroundHalo.position], {
+      gsap.set(background.position, {
+        y: -1,
+      });
+      gsap.set(backgroundHalo.position, {
         y: -1,
       });
     }
@@ -88,15 +90,10 @@ const ImagePin = ({
   };
 
   const animatePin = (pinRef, dir = "next") => {
-    // this is causing issues with the hover state
     if (!pinRef.current) return;
 
     const inTL = gsap.timeline();
     const outTL = gsap.timeline();
-
-    // this is working in theory, pin refs only contain halos tho
-
-    // determine parts
 
     const image = pinRef.current.children[0].children[0];
     const stem = pinRef.current.children[1];
@@ -114,10 +111,6 @@ const ImagePin = ({
     // - group: whatever, it just needs to hide
 
     // animate parts
-
-    // console.log(pinRef.current);
-    // console.log(stem.position);
-
     if (stem && dir === "next") {
       inTL.to(
         backgroundHalo.scale,
@@ -346,7 +339,7 @@ const ImagePin = ({
           receiveShadow={false}
         >
           <meshBasicMaterial color={0x9c0f00} />
-          <cylinderGeometry args={[0.03, 0.03, 2.5, 6]} />
+          <cylinderGeometry args={[0.03, 0.03, 2.5, 2]} />
         </e.mesh>
 
         <e.mesh

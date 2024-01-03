@@ -63,7 +63,7 @@ const Scene = (props) => {
 
   return (
     <>
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={false}
         // position={cameraPosition}
         position={[0, 93, 5]}
@@ -75,8 +75,8 @@ const Scene = (props) => {
           const camera = e.target?.object;
           if (!camera) return;
         }}
-      />
-      {/* <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} /> */}
+      /> */}
+      <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
       {/* 
       <Backdrop
         scale={[scaleX, scaleY, scaleZ]}
@@ -160,13 +160,13 @@ const Scene = (props) => {
           />
         </group>
 
-        {/* <Clouds isMobile={props.isMobile}>
+        <Clouds isMobile={props.isMobile}>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
-            position={[-3.8, 1.75, 3.5]}
+            position={[-3.8, 2, 3.5]}
             theatreKey="Cloud Banff"
           >
-            <Cloud scale={0.075} />
+            <Cloud scale={0.055} />
           </e.group>
 
           <e.group
@@ -178,18 +178,9 @@ const Scene = (props) => {
           </e.group>
 
           <e.group theatreKey="Cloud Lake Louise" position={[-2.7, 0.85, 1.6]}>
-            <Cloud
-              // works scale = -0.03
-              // works position = [-2.7, 0.85, 2.30]
-              //
-              scale={0.07}
-              // scale={cloudScale}
-              //  position={[-0.8, 1.5, 2.6]}
-
-              // position={[cloudPosX, cloudPosY, cloudPosZ]}
-            />
+            <Cloud scale={0.07} />
           </e.group>
-        </Clouds> */}
+        </Clouds>
 
         {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
         {/* <Road

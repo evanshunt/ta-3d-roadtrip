@@ -34,8 +34,9 @@ const ImagePin = ({
 
   let opacity = 0;
 
-  const animatePin = (pinRef, dir) => {
+  const animatePin = (pinRef, dir = "next") => {
     if (!pinRef.current) return;
+
     // this is working in theory, pin refs only contain halos tho
 
     // determine parts
@@ -48,25 +49,32 @@ const ImagePin = ({
 
     // animate parts
 
-    console.log(pinRef.current);
-
-    if (stem) {
+    // console.log(pinRef.current);
+    // console.log(stem.position);
+    if (stem && dir === "next") {
       gsap.to(stem.position, {
         duration: 0.5,
         y: 0.11,
-        onStart: () => {
-          console.log("starting");
-        },
-        onUpdate: () => {
-          console.log("updatring");
-          stem.position.y = stem.position.y;
-        },
       });
-      tl.to(
+      gsap.to(
         [shadow.position, background.position],
         {
           duration: 0.5,
           y: 0.11,
+        },
+        "<"
+      );
+    } else if (stem && dir === "prev") {
+      console.log(stem);
+      gsap.to(stem.position, {
+        duration: 0.5,
+        y: -1.15,
+      });
+      gsap.to(
+        [shadow.position, background.position],
+        {
+          duration: 0.5,
+          y: -1.15,
         },
         "<"
       );
@@ -85,6 +93,7 @@ const ImagePin = ({
     if (!sceneIndex) return;
 
     animatePin(pinRefs[sceneIndex], "next");
+    animatePin(pinRefs[sceneIndex - 1], "prev");
   }, [sceneIndex]);
 
   if (hidden) return null;
@@ -115,7 +124,8 @@ const ImagePin = ({
             position={[0, 0, 0.1]}
             transparent
             url={imageSrc}
-            opacity={opacity}
+            // opacity={opacity}
+            opacity={0}
             receiveShadow={false}
             onClick={() => {
               if (!inBetweens) return;

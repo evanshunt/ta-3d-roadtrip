@@ -1,9 +1,10 @@
 import { NightImage } from "./NightImage";
 import { useTexture } from "@react-three/drei";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
+import gsap from "gsap";
 
 import banffGondolaImageSrc from "/images/banff-gondola.webp";
 import banffUpperHotSpringsImageSrc from "/images/banff-upper-hot-springs.webp";
@@ -30,9 +31,28 @@ const Day1 = ({
   setIndex,
   setPinRefs,
 }) => {
+  const groupRef = useRef();
   const nightLightsRef = useRef();
 
   const nightTexture = useTexture("./textures/final/Banff_Lights3.webp");
+
+  const animateGroupOut = () => {
+    const tl = gsap.timeline({});
+
+    tl.to(groupRef.current.position, {
+      y: -0.33,
+      z: 0.06,
+      x: 0.03,
+      duration: 0.5,
+      ease: "power3.in",
+    });
+  };
+
+  useEffect(() => {
+    if (inBetweens.includes(sceneIndex) && sceneIndex > 0) {
+      animateGroupOut();
+    }
+  }, [sceneIndex]);
 
   return (
     <>
@@ -61,153 +81,155 @@ const Day1 = ({
       )}
 
       {/* This is just to keep the index aligned with the actual amount of stops */}
-      <ImagePin
-        active={sceneIndex === 0}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        attractionsOpen={attractionsOpen}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
-        inBetweens={inBetweens}
-        index={6}
-        isMobile={isMobile}
-        material={material}
-        name={"Spacer"}
-        pinRefs={pinRefs}
-        position={positions.fairmontBanffSpringsHotel}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+      <group ref={groupRef} scale={1} position={[0, 0.01, 0]}>
+        <ImagePin
+          active={sceneIndex === 0}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          attractionsOpen={attractionsOpen}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          hidden={true}
+          imageSrc={fairmontBanffSpringsHotelImageSrc}
+          inBetweens={inBetweens}
+          index={6}
+          isMobile={isMobile}
+          material={material}
+          name={"Spacer"}
+          pinRefs={pinRefs}
+          position={positions.fairmontBanffSpringsHotel}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      <ImagePin
-        active={sceneIndex === 1}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        hoverIndex={hoverIndex}
-        imageSrc={caveAndBasinImageSrc}
-        inBetweens={inBetweens}
-        index={1}
-        isMobile={isMobile}
-        material={material}
-        name={"Cave and Basin National Historic Site"}
-        pinRefs={pinRefs}
-        position={positions.caveAndBasin}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setAttractionsOpen={setAttractionsOpen}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        <ImagePin
+          active={sceneIndex === 1}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          hoverIndex={hoverIndex}
+          imageSrc={caveAndBasinImageSrc}
+          inBetweens={inBetweens}
+          index={1}
+          isMobile={isMobile}
+          material={material}
+          name={"Cave and Basin National Historic Site"}
+          pinRefs={pinRefs}
+          position={positions.caveAndBasin}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setAttractionsOpen={setAttractionsOpen}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      <ImagePin
-        active={sceneIndex === 2}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        imageSrc={banffGondolaImageSrc}
-        inBetweens={inBetweens}
-        index={2}
-        isMobile={isMobile}
-        material={material}
-        name={"Banff Gondola"}
-        pinRefs={pinRefs}
-        position={positions.gondola}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setAttractionsOpen={setAttractionsOpen}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        <ImagePin
+          active={sceneIndex === 2}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          imageSrc={banffGondolaImageSrc}
+          inBetweens={inBetweens}
+          index={2}
+          isMobile={isMobile}
+          material={material}
+          name={"Banff Gondola"}
+          pinRefs={pinRefs}
+          position={positions.gondola}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setAttractionsOpen={setAttractionsOpen}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      <ImagePin
-        active={sceneIndex === 3}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        imageSrc={skyBistroImageSrc}
-        inBetweens={inBetweens}
-        index={3}
-        isMobile={isMobile}
-        material={material}
-        name={"Sky Bistro"}
-        pinRefs={pinRefs}
-        position={positions.skyBistro}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setAttractionsOpen={setAttractionsOpen}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        <ImagePin
+          active={sceneIndex === 3}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          imageSrc={skyBistroImageSrc}
+          inBetweens={inBetweens}
+          index={3}
+          isMobile={isMobile}
+          material={material}
+          name={"Sky Bistro"}
+          pinRefs={pinRefs}
+          position={positions.skyBistro}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setAttractionsOpen={setAttractionsOpen}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      <ImagePin
-        active={sceneIndex === 4}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        imageSrc={banffUpperHotSpringsImageSrc}
-        inBetweens={inBetweens}
-        index={4}
-        isMobile={isMobile}
-        material={material}
-        name={"Banff Upper Hot Springs"}
-        pinRefs={pinRefs}
-        position={positions.banffUpperHotSprings}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setAttractionsOpen={setAttractionsOpen}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        <ImagePin
+          active={sceneIndex === 4}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          imageSrc={banffUpperHotSpringsImageSrc}
+          inBetweens={inBetweens}
+          index={4}
+          isMobile={isMobile}
+          material={material}
+          name={"Banff Upper Hot Springs"}
+          pinRefs={pinRefs}
+          position={positions.banffUpperHotSprings}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setAttractionsOpen={setAttractionsOpen}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      <ImagePin
-        active={sceneIndex === 5}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
-        inBetweens={inBetweens}
-        index={5}
-        isMobile={isMobile}
-        material={material}
-        name={"Fairmont Banff Springs Hotel"}
-        pinRefs={pinRefs}
-        position={positions.fairmontBanffSpringsHotel}
-        scale={0.2}
-        sceneIndex={sceneIndex}
-        setAttractionsOpen={setAttractionsOpen}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        <ImagePin
+          active={sceneIndex === 5}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          imageSrc={fairmontBanffSpringsHotelImageSrc}
+          inBetweens={inBetweens}
+          index={5}
+          isMobile={isMobile}
+          material={material}
+          name={"Fairmont Banff Springs Hotel"}
+          pinRefs={pinRefs}
+          position={positions.fairmontBanffSpringsHotel}
+          scale={0.2}
+          sceneIndex={sceneIndex}
+          setAttractionsOpen={setAttractionsOpen}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
 
-      {/* This is just to keep the index aligned with the actual amount of stops */}
-      <ImagePin
-        active={sceneIndex === 6}
-        animateHover={animateHover}
-        animateOut={animateOut}
-        geometry={geometry}
-        handleIndex={handleIndex}
-        hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
-        inBetweens={inBetweens}
-        index={6}
-        isMobile={isMobile}
-        material={material}
-        name={"Spacer"}
-        position={positions.fairmontBanffSpringsHotel}
-        scale={0.2}
-        setHoverIndex={setHoverIndex}
-        setPinRefs={setPinRefs}
-      />
+        {/* This is just to keep the index aligned with the actual amount of stops */}
+        <ImagePin
+          active={sceneIndex === 6}
+          animateHover={animateHover}
+          animateOut={animateOut}
+          geometry={geometry}
+          handleIndex={handleIndex}
+          hidden={true}
+          imageSrc={fairmontBanffSpringsHotelImageSrc}
+          inBetweens={inBetweens}
+          index={6}
+          isMobile={isMobile}
+          material={material}
+          name={"Spacer"}
+          position={positions.fairmontBanffSpringsHotel}
+          scale={0.2}
+          setHoverIndex={setHoverIndex}
+          setPinRefs={setPinRefs}
+        />
+      </group>
 
       <NightImage
         dims={0.15}

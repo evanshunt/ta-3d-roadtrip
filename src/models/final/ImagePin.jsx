@@ -34,9 +34,9 @@ const ImagePin = ({
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
 
-    // gsap.set(pinRef.current.position, {
-    //   y: 1,
-    // });
+    gsap.set(pinRef.current.position, {
+      y: 1,
+    });
 
     // if (stem) {
     //   gsap.set(stem.position, {
@@ -278,10 +278,6 @@ const ImagePin = ({
 
     animatePin(pinRefs[sceneIndex], "next");
     animatePin(pinRefs[sceneIndex - 1], "prev");
-
-    if (inBetweens.includes(sceneIndex)) {
-      animateGroup(pinRefs[sceneIndex - 1], "next");
-    }
   }, [sceneIndex]);
 
   if (hidden) return null;
@@ -327,7 +323,7 @@ const ImagePin = ({
           receiveShadow={false}
         >
           <meshBasicMaterial color={0x9c0f00} />
-          <cylinderGeometry args={[0.03, 0.03, 2.5, 2]} />
+          <cylinderGeometry args={[0.03, 0.03, 2, 6]} />
         </mesh>
 
         <mesh

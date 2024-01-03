@@ -6,7 +6,7 @@ import { editable as e } from "@theatre/r3f";
 import EditableCamera from "./EditableCamera.jsx";
 
 import Lights from "./Lights.jsx";
-// import { Perf } from "r3f-perf";
+import { Perf } from "r3f-perf";
 // import Road from "./models/final/Road.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
 import { OrbitControls } from "@react-three/drei";
@@ -97,7 +97,7 @@ const Scene = (props) => {
         positions={positions}
       />
 
-      {/* <Perf position="bottom-left" /> */}
+      <Perf position="bottom-left" />
       <e.group theatreKey="Scene" ref={sceneRef}>
         <group position={[0.03, 0.0, 0.07]}>
           <Day1

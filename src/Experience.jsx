@@ -9,7 +9,7 @@ import { SheetProvider } from "@theatre/r3f";
 import { getProject } from "@theatre/core";
 import "core-js/actual/object/group-by";
 
-import animation from "./animation-data/final.json";
+import animation from "./animation-data/no-pins.json";
 import animationMobile from "./animation-data/final-mobile.json";
 import compassImage from "./images/compass.svg";
 import destinations from "./data/destinations.js";

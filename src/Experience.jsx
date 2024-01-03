@@ -346,10 +346,7 @@ const Experience = () => {
             );
 
             if (returnUrl) {
-              console.log(returnUrl);
-              console.log(document.location.search);
-              // console.log(window.parent.location.href);
-              // window.parent.location.href = returnUrl;
+              window.parent.location.href = returnUrl;
             }
           }}
         >

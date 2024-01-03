@@ -25,6 +25,7 @@ const ImagePin = ({
   if (!index) return null;
 
   const [theatreObject, setTheatreObject] = React.useState(null);
+  const groupRef = useRef();
   const imageRef = useRef();
   const stemRef = useRef();
   const backgroundHaloRef = useRef();
@@ -73,12 +74,10 @@ const ImagePin = ({
   };
 
   useEffect(() => {
-    setPinRefs((prevRefs) => [...prevRefs, backgroundHaloRef]);
+    setPinRefs((prevRefs) => [...prevRefs, groupRef]);
 
     return () => {
-      setPinRefs((prevRefs) =>
-        prevRefs.filter((ref) => ref !== backgroundHaloRef)
-      );
+      setPinRefs((prevRefs) => prevRefs.filter((ref) => ref !== groupRef));
     };
   }, []);
 
@@ -99,7 +98,7 @@ const ImagePin = ({
 
   return (
     <Billboard position={[position[0], position[1], position[2]]}>
-      <e.group theatreKey={`Pins / ${name} / Group`}>
+      <e.group theatreKey={`Pins / ${name} / Group`} ref={groupRef}>
         <e.group
           ref={imageRef}
           objRef={setTheatreObject}

@@ -50,7 +50,8 @@ const destinations = [
         },
       ],
       title: "Cave and Basin National Historic Site",
-      image: "/images/cave-and-basin-national-historic-site.jpg",
+      image: "/images/cave-and-basin-national-historic-site.webp",
+
       altText: "Visitor taking a photo in the Cave at the Cave and Basin",
       blurb: "Your first stop? Canada’s first national park.",
       description:

@@ -21,7 +21,6 @@ const ImagePin = ({
   setPinRefs,
 }) => {
   if (!index || !destinations) return null;
-  console.log(destinations);
 
   const position = destinations[index].details.position;
   const name = destinations[index].details.title;
@@ -69,7 +68,7 @@ const ImagePin = ({
             ref={imageRef}
             position={[0, 0, 0.1]}
             transparent
-            url={imageSrc}
+            url={destinations[index].details.image}
             opacity={opacity}
             receiveShadow={false}
             onClick={() => {

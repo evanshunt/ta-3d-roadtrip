@@ -25,6 +25,9 @@ const Scene = (props) => {
 
   if (!props.destinations) return null;
 
+  const dayCount = props.destinations[props.destinations.length - 1].day;
+  const groupOffset = [0.03, 0.0, 0.07];
+
   return (
     <>
       {/* <OrbitControls

@@ -1,8 +1,8 @@
+import { Day1InfoBoxes } from "./Day1InfoBoxes";
 import { NightImage } from "./NightImage";
 import { useTexture } from "@react-three/drei";
 import React, { useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
-import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
 
 import banffGondolaImageSrc from "/images/banff-gondola.webp";
@@ -34,30 +34,8 @@ const Day1 = ({
 
   return (
     <>
-      {!isMobile && (
-        <>
-          <InfoBox
-            imageSrc={"/images/info-boxes/cascade-mountain.png"}
-            name="Cascade Mountain"
-            position={[-4.2, 1.18, 2.77]}
-            width={1.58}
-          />
+      {!isMobile && <Day1InfoBoxes />}
 
-          <InfoBox
-            imageSrc={"/images/info-boxes/lake-minnewanka.png"}
-            name="Lake Minnewanka"
-            position={[-4.1, 1.15, 3.06]}
-            width={1.8}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
-            position={[-5.3, 1.15, 2.42]}
-            width={1.86}
-          />
-        </>
-      )}
-      {console.log()}
       {/* This is just to keep the index aligned with the actual amount of stops */}
       <ImagePin
         active={sceneIndex === 0}
@@ -68,7 +46,6 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}
@@ -87,7 +64,6 @@ const Day1 = ({
         geometry={geometry}
         handleIndex={handleIndex}
         hoverIndex={hoverIndex}
-        imageSrc={caveAndBasinImageSrc}
         inBetweens={inBetweens}
         index={1}
         isMobile={isMobile}
@@ -105,7 +81,6 @@ const Day1 = ({
         destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={banffGondolaImageSrc}
         inBetweens={inBetweens}
         index={2}
         isMobile={isMobile}
@@ -123,7 +98,6 @@ const Day1 = ({
         destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={skyBistroImageSrc}
         inBetweens={inBetweens}
         index={3}
         isMobile={isMobile}
@@ -141,7 +115,6 @@ const Day1 = ({
         destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={banffUpperHotSpringsImageSrc}
         inBetweens={inBetweens}
         index={4}
         isMobile={isMobile}
@@ -159,7 +132,6 @@ const Day1 = ({
         destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={5}
         isMobile={isMobile}
@@ -179,7 +151,6 @@ const Day1 = ({
         destinations={destinations}
         handleIndex={handleIndex}
         hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}

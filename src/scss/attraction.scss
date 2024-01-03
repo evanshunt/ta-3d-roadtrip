@@ -66,6 +66,7 @@
 }
 
 .attraction__wrapper {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   transition: all 0.375s linear;

@@ -35,6 +35,7 @@ const ImagePin = ({
   let opacity = 0;
 
   const setupPositions = (pinRef) => {
+    console.log("setting up pin refs");
     if (!pinRef.current) return;
     const image = pinRef.current.children[0];
     const stem = pinRef.current.children[1];
@@ -92,45 +93,44 @@ const ImagePin = ({
 
     // animate parts
 
-    console.log(background);
-
     // console.log(pinRef.current);
     // console.log(stem.position);
     if (stem && dir === "next") {
       tl.to(stem.position, {
         duration: 0.5,
-        y: -1.25,
+        y: -1,
       });
       tl.to(
-        [shadow.position, background.position],
+        background.position,
         {
           duration: 0.5,
-          y: -0.655,
+          y: -0.745,
         },
         "<"
       );
-      tl.to([shadow, background], {
-        scale: 0.25,
-        duration: 0.5,
-      });
-    } else if (stem && dir === "prev") {
-      tl.to(
-        stem.position,
-        {
-          duration: 0.5,
-          y: -1.15,
-        },
-        "<"
-      );
-      tl.to(
-        [shadow.position, background.position],
-        {
-          duration: 0.5,
-          y: -1.15,
-        },
-        "<"
-      );
+      // tl.to([shadow, background], {
+      //   scale: 0.25,
+      //   duration: 0.5,
+      // });
     }
+    // else if (stem && dir === "prev") {
+    //   tl.to(
+    //     stem.position,
+    //     {
+    //       duration: 0.5,
+    //       y: -1.15,
+    //     },
+    //     "<"
+    //   );
+    //   tl.to(
+    //     [shadow.position, background.position],
+    //     {
+    //       duration: 0.5,
+    //       y: 0.345,
+    //     },
+    //     "<"
+    //   );
+    // }
   };
 
   useEffect(() => {

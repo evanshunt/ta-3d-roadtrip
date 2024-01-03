@@ -37,8 +37,17 @@ const ImagePin = ({
   const setupPositions = (pinRef) => {
     if (!pinRef.current) return;
     const image = pinRef.current.children[0];
+    const stem = pinRef.current.children[1];
     const background = pinRef.current.children[3];
     const backgroundHalo = pinRef.current.children[4];
+
+    gsap.set(pinRef.current.position, {
+      y: 1,
+    });
+
+    gsap.set(stem.position, {
+      y: -1.25,
+    });
 
     // if (image) {
     //   gsap.set(image.material, {
@@ -90,13 +99,13 @@ const ImagePin = ({
     if (stem && dir === "next") {
       tl.to(stem.position, {
         duration: 0.5,
-        y: 0.11,
+        y: -1.25,
       });
       tl.to(
         [shadow.position, background.position],
         {
           duration: 0.5,
-          y: 0.345,
+          y: -0.655,
         },
         "<"
       );

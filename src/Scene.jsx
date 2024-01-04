@@ -152,7 +152,7 @@ const Scene = (props) => {
           />
         </group>
 
-        <Clouds isMobile={props.isMobile} position={[0, 0.42, 0]}>
+        <Clouds isMobile={props.isMobile} position={[0, 0.2, 0]}>
           <e.group
             // position={[cloudPosX, cloudPosY, cloudPosZ]}
             position={[-3.8, 2, 3.5]}

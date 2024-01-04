@@ -48,9 +48,26 @@ const Day1 = ({
     });
   };
 
+  //
+  const animateGroupIn = () => {
+    const tl = gsap.timeline({});
+    tl.to(groupRef.current.position, {
+      y: 0.01,
+      z: 0.0,
+      x: 0.0,
+      duration: 0.5,
+      ease: "power3.out",
+    });
+  };
+
   useEffect(() => {
     if (inBetweens.includes(sceneIndex) && sceneIndex > 0) {
       animateGroupOut();
+    }
+    console.log(sceneIndex);
+    if (inBetweens.includes(sceneIndex + 1) && sceneIndex < 6) {
+      console.log("animate group in");
+      animateGroupIn();
     }
   }, [sceneIndex]);
 

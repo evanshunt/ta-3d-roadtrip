@@ -50,27 +50,16 @@ const ImagePin = ({
     //     scale: 0.03,
     //   });
     // }
-    if (background) {
-      gsap.set(background.position, {
-        y: -1,
-      });
-      gsap.set(backgroundHalo.position, {
-        y: -1,
-      });
-    }
-    // gsap.set(imageRef.position, {
-    //   y: -1,
-    // });
-    gsap.set(imageRef.scale, {
+
+    gsap.set(background.position, {
+      y: -1,
+    });
+
+    gsap.set(image.scale, {
       x: 0.03,
       y: 0.03,
       z: 0.03,
     });
-    if (backgroundHalo) {
-      // gsap.set(backgroundHalo.position, {
-      //   y: 0,
-      // });
-    }
   };
 
   const animateGroup = (pinRef, dir = "next") => {
@@ -192,9 +181,9 @@ const ImagePin = ({
       inTL.to(
         image.scale,
         {
-          x: 0.25,
-          y: 0.25,
-          z: 0.25,
+          x: 0.35,
+          y: 0.35,
+          z: 0.35,
           duration: 0.5,
         },
         "bg"
@@ -238,7 +227,7 @@ const ImagePin = ({
         stem.position,
         {
           duration: 0.5,
-          y: -1.15,
+          y: -1.2,
         },
         "down"
       );
@@ -246,12 +235,20 @@ const ImagePin = ({
         backgroundHalo.position,
         {
           duration: 0.5,
-          y: -1.15,
+          y: -1,
         },
         "down"
       );
       outTL.to(
-        [shadow.position, background.position],
+        background.position,
+        {
+          duration: 0.5,
+          y: -1,
+        },
+        "down"
+      );
+      outTL.to(
+        shadow.position,
         {
           duration: 0.5,
           y: -1,
@@ -278,21 +275,15 @@ const ImagePin = ({
 
     animatePin(pinRefs[sceneIndex], "next");
     animatePin(pinRefs[sceneIndex - 1], "prev");
+    animatePin(pinRefs[sceneIndex + 1], "prev");
   }, [sceneIndex]);
 
   if (hidden) return null;
 
-  // useFrame(() => {
-  //   theatreObject.onValuesChange((newValues) => {
-  //     if (!imageRef.current) return;
-  //     imageRef.current.children[0].material.opacity = newValues.opacity;
-  //   });
-  // });
-
   return (
     <Billboard position={[position[0], position[1], position[2]]}>
       <group ref={groupRef}>
-        <group ref={imageRef} name={`Pin ${name}`} scale={0}>
+        <group ref={imageRef} name={`Pin ${name}`}>
           <Image
             castShadow={false}
             ref={imageRef}
@@ -302,7 +293,7 @@ const ImagePin = ({
             // opacity={opacity}
             opacity={0}
             scale={0.03}
-            position={[0, -1, 0.1]}
+            position={[0, -1, 0.005]}
             receiveShadow={false}
             onClick={() => {
               if (!inBetweens) return;
@@ -315,7 +306,7 @@ const ImagePin = ({
 
         <mesh
           castShadow={true}
-          position={[0, -1.25, -0.0305]}
+          position={[0, -1.2, -0.0305]}
           ref={stemRef}
           scale={[0.075, 0.2, 0.075]}
           material={material}
@@ -327,7 +318,7 @@ const ImagePin = ({
         </mesh>
 
         <mesh
-          position={[0, 0, -0.0305]}
+          position={[0, -1, -0.0305]}
           castShadow
           receiveShadow={false}
           name={`Shadow ${name}`}
@@ -373,7 +364,7 @@ const ImagePin = ({
           ref={backgroundHaloRef}
           castShadow
           name={`Background Halo ${name}`}
-          position-z={-0.03}
+          position={[0, -1, -0.03]}
           scale={0.03}
           geometry={geometry}
           receiveShadow={false}

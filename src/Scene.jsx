@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import * as THREE from "three";
 import { editable as e } from "@theatre/r3f";
-import { Clouds, useTexture } from "@react-three/drei";
+import { Clouds } from "@react-three/drei";
 
 import { Cloud } from "./Clouds.jsx";
 import EditableCamera from "./EditableCamera.jsx";
@@ -12,7 +12,6 @@ import TopAltFinal from "./models/final/TopAltFinal.jsx";
 import Day1 from "./days/Day1.jsx";
 import Day2 from "./days/Day2.jsx";
 import Day3 from "./days/Day3.jsx";
-import Day from "./days/Day.jsx";
 
 // Reused geometries and materials
 THREE.ColorManagement.legacyMode = false;
@@ -23,14 +22,11 @@ const redMaterial = new THREE.MeshBasicMaterial({
 
 const Scene = (props) => {
   const sceneRef = useRef();
-  const nightTextures = [
-    useTexture("./textures/final/Banff_Lights3.webp"),
-    useTexture("./textures/final/LL_Lights2.webp"),
-    useTexture("./textures/final/Jasper_Lights2.webp"),
-  ];
-  const groupOffset = [0.03, 0.0, 0.07];
 
   if (!props.destinations) return null;
+
+  const dayCount = props.destinations[props.destinations.length - 1].day;
+  const groupOffset = [0.03, 0.0, 0.07];
 
   return (
     <>
@@ -69,69 +65,65 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        <group key={`day-1`} position={groupOffset}>
-          <Day
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day1
             animateHover={props.animateHover}
             animateOut={props.animateOut}
             attractionsOpen={props.attractionsOpen}
-            day={1}
             destinations={props.destinations}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
             hoverIndex={props.hoverIndex}
+            isMobile={props.isMobile}
+            isNight={props.isNight}
+            inBetweens={props.inBetweens}
+            material={redMaterial}
+            sceneIndex={props.index}
+            setAttractionsOpen={props.setAttractionsOpen}
+            setHoverIndex={props.setHoverIndex}
+            setIndex={props.setIndex}
+            setPinRefs={props.setPinRefs}
+            // visible={props.currDay === 0 || props.currDay === 1}
+          />
+        </group>
+
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day2
+            animateHover={props.animateHover}
+            animateOut={props.animateOut}
+            destinations={props.destinations}
+            geometry={circleGeom}
+            handleIndex={props.handleIndex}
             inBetweens={props.inBetweens}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
-            nightTextures={nightTextures}
+            sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
-            sceneIndex={props.index}
+            setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
           />
         </group>
-        {/* <group key={`day-2`} position={groupOffset}>
-          <Day
+
+        <group position={[0.03, 0.0, 0.07]}>
+          <Day3
             animateHover={props.animateHover}
             animateOut={props.animateOut}
-            attractionsOpen={props.attractionsOpen}
-            day={2}
             destinations={props.destinations}
             geometry={circleGeom}
             handleIndex={props.handleIndex}
-            hoverIndex={props.hoverIndex}
             inBetweens={props.inBetweens}
             isMobile={props.isMobile}
             isNight={props.isNight}
             material={redMaterial}
-            nightTextures={nightTextures}
+            sceneIndex={props.index}
             setAttractionsOpen={props.setAttractionsOpen}
             setHoverIndex={props.setHoverIndex}
-            sceneIndex={props.index}
+            setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
           />
         </group>
-        <group key={`day-3`} position={groupOffset}>
-          <Day
-            animateHover={props.animateHover}
-            animateOut={props.animateOut}
-            attractionsOpen={props.attractionsOpen}
-            day={3}
-            destinations={props.destinations}
-            geometry={circleGeom}
-            handleIndex={props.handleIndex}
-            hoverIndex={props.hoverIndex}
-            inBetweens={props.inBetweens}
-            isMobile={props.isMobile}
-            isNight={props.isNight}
-            material={redMaterial}
-            nightTextures={nightTextures}
-            setAttractionsOpen={props.setAttractionsOpen}
-            setHoverIndex={props.setHoverIndex}
-            sceneIndex={props.index}
-            setPinRefs={props.setPinRefs}
-          />
-        </group> */}
 
         <Clouds isMobile={props.isMobile}>
           <e.group

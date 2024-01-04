@@ -30,26 +30,12 @@ const ImagePin = ({
   const setupPositions = (pinRef) => {
     if (!pinRef.current) return;
     const image = pinRef.current.children[0].children[0];
-    const stem = pinRef.current.children[1];
-    const background = pinRef.current.children[3];
-    const backgroundHalo = pinRef.current.children[4];
+
+    const background = pinRef.current.children[2];
 
     gsap.set(pinRef.current.position, {
       y: 1,
     });
-
-    // if (stem) {
-    //   gsap.set(stem.position, {
-    //     y: -1.15,
-    //   });
-    // }
-
-    // if (image) {
-    //   gsap.set(image.material, {
-    //     opacity: 0,
-    //     scale: 0.03,
-    //   });
-    // }
 
     gsap.set(background.position, {
       y: -1,
@@ -62,20 +48,6 @@ const ImagePin = ({
     });
   };
 
-  const animateGroup = (pinRef, dir = "next") => {
-    if (inBetweens && !inBetweens.includes(index)) return;
-
-    const inTL = gsap.timeline();
-    const outTL = gsap.timeline();
-
-    // determine parts
-    if (dir === "next") {
-      inTL.to(pinRef.position, {
-        y: -2,
-      });
-    }
-  };
-
   const animatePin = (pinRef, dir = "next") => {
     if (!pinRef.current) return;
 
@@ -84,9 +56,8 @@ const ImagePin = ({
 
     const image = pinRef.current.children[0].children[0];
     const stem = pinRef.current.children[1];
-    const shadow = pinRef.current.children[2];
-    const background = pinRef.current.children[3];
-    const backgroundHalo = pinRef.current.children[4];
+    const background = pinRef.current.children[2];
+    const backgroundHalo = pinRef.current.children[3];
 
     // image:
     // - opacity: all: 0 -> 1
@@ -105,7 +76,8 @@ const ImagePin = ({
           x: 0.05,
           y: 0.05,
           z: 0.05,
-          duration: 0.2,
+          duration: 0.3,
+          ease: "power3.in",
         },
         "blip"
       );
@@ -113,17 +85,20 @@ const ImagePin = ({
         x: 0.02,
         y: 0.02,
         z: 0.02,
-        duration: 0.2,
+        ease: "power3.out",
+        duration: 0.4,
       });
       inTL.to(stem.position, {
-        y: -1,
+        y: -0.95,
         duration: 0.5,
+        ease: "power3.in",
       });
       inTL.to(
         backgroundHalo.position,
         {
           y: -0.745,
           duration: 0.5,
+          ease: "power3.in",
         },
         "<"
       );
@@ -132,21 +107,17 @@ const ImagePin = ({
         {
           duration: 0.5,
           y: -0.745,
+          ease: "power3.in",
         },
         "<"
       );
-      inTL.to(
-        shadow.position,
-        {
-          duration: 0.5,
-          y: -0.745,
-        },
-        "<"
-      );
+
       inTL.to(
         image.position,
         {
           y: -0.745,
+          duration: 0.5,
+          ease: "power3.in",
         },
         "<"
       );
@@ -157,24 +128,17 @@ const ImagePin = ({
           y: 0.25,
           z: 0.25,
           duration: 0.5,
+          ease: "power3.in",
         },
         "bg"
       );
-      inTL.to(
-        shadow.scale,
-        {
-          x: 0.25,
-          y: 0.25,
-          z: 0.25,
-          duration: 0.5,
-        },
-        "bg"
-      );
+
       inTL.to(
         image.material,
         {
           opacity: 1,
           duration: 0.75,
+          ease: "power3.in",
         },
         "bg"
       );
@@ -185,6 +149,7 @@ const ImagePin = ({
           y: 0.35,
           z: 0.35,
           duration: 0.5,
+          ease: "power3.in",
         },
         "bg"
       );
@@ -195,24 +160,20 @@ const ImagePin = ({
           x: 0.02,
           y: 0.02,
           z: 0.02,
+          duration: 0.5,
+          ease: "power3.out",
         },
         "scale"
       );
-      outTL.to(
-        shadow.scale,
-        {
-          x: 0.03,
-          y: 0.03,
-          z: 0.03,
-        },
-        "scale"
-      );
+
       outTL.to(
         image.scale,
         {
           x: 0.03,
           y: 0.03,
           z: 0.03,
+          duration: 0.5,
+          ease: "power3.out",
         },
         "scale"
       );
@@ -220,6 +181,8 @@ const ImagePin = ({
         image.material,
         {
           opacity: 0,
+          duration: 0.5,
+          ease: "power3.out",
         },
         "scale"
       );
@@ -228,6 +191,7 @@ const ImagePin = ({
         {
           duration: 0.5,
           y: -1.2,
+          ease: "power3.out",
         },
         "down"
       );
@@ -236,6 +200,7 @@ const ImagePin = ({
         {
           duration: 0.5,
           y: -1,
+          ease: "power3.out",
         },
         "down"
       );
@@ -244,14 +209,7 @@ const ImagePin = ({
         {
           duration: 0.5,
           y: -1,
-        },
-        "down"
-      );
-      outTL.to(
-        shadow.position,
-        {
-          duration: 0.5,
-          y: -1,
+          ease: "power3.out",
         },
         "down"
       );
@@ -287,10 +245,8 @@ const ImagePin = ({
           <Image
             castShadow={false}
             ref={imageRef}
-            // position={[0, 0, 0.1]}
             transparent
             url={imageSrc}
-            // opacity={opacity}
             opacity={0}
             scale={0.03}
             position={[0, -1, 0.005]}
@@ -315,16 +271,6 @@ const ImagePin = ({
         >
           <meshBasicMaterial color={0x9c0f00} />
           <cylinderGeometry args={[0.03, 0.03, 2, 6]} />
-        </mesh>
-
-        <mesh
-          position={[0, -1, -0.0305]}
-          castShadow
-          receiveShadow={false}
-          name={`Shadow ${name}`}
-        >
-          <sphereGeometry args={[0.03, 16, 16]} />
-          <meshBasicMaterial colorWrite={false} depthWrite={false} />
         </mesh>
 
         <mesh

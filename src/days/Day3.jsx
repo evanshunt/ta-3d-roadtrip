@@ -48,7 +48,8 @@ const Day3 = ({
             imageSrc={"/images/info-boxes/pyramid-lake.png"}
             name={"Pyramid Lake"}
             position={[5.45, 1.13, -6.2]}
-            width={1.86}
+            width={1.66}
+            height={1.25}
           />
         </>
       )}

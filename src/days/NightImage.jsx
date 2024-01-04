@@ -46,6 +46,8 @@ export const NightImage = ({
       animateLights("out");
     }
   }, [isNight]);
+
+  if (!nightTexture) return null;
   return (
     <mesh
       ref={nightLightsRef}

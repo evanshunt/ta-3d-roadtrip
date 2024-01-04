@@ -233,7 +233,7 @@ const Lights = ({ index, isMobile, isNight }) => {
   return (
     <>
       <hemisphereLight
-        color={0x252a3c}
+        color={0x3c3425}
         intensity={0}
         groundColor={0x2d474c}
         position={[0, 10, 0]}

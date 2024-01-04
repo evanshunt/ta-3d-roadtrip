@@ -107,9 +107,12 @@ export const Map = ({ removeIntro, setIntroComplete, start }) => {
               setTimeout(() => {
                 clouds.classList.remove("cloud-intro--play--in");
                 clouds.classList.add("cloud-intro--play");
-                intro.classList.add("intro--complete");
                 removeIntro();
               }, duration * 2350);
+
+              setTimeout(() => {
+                intro.classList.add("intro--complete");
+              }, duration * 2750);
 
               // setTimeout(() => {
               //   mapWrap.classList.add("map-wrap--complete");

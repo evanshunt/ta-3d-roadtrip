@@ -77,7 +77,7 @@ const ImagePin = ({
           y: 0.05,
           z: 0.05,
           duration: 0.3,
-          ease: "power3.in",
+          ease: "power2.in",
         },
         "blip"
       );
@@ -85,8 +85,8 @@ const ImagePin = ({
         x: 0.02,
         y: 0.02,
         z: 0.02,
-        ease: "power3.out",
-        duration: 0.4,
+        ease: "power2.out",
+        duration: 0.3,
       });
       inTL.to(stem.position, {
         y: -0.95,

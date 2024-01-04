@@ -1,6 +1,6 @@
 import { NightImage } from "./NightImage";
 import { useTexture } from "@react-three/drei";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
@@ -31,6 +31,7 @@ const Day1 = ({
   setIndex,
   setPinRefs,
 }) => {
+  const [isOpen, setIsOpen] = useState(true);
   const groupRef = useRef();
   const nightLightsRef = useRef();
 
@@ -45,6 +46,9 @@ const Day1 = ({
       x: 0.03,
       duration: 0.5,
       ease: "power3.in",
+      onComplete: () => {
+        setIsOpen(false);
+      },
     });
   };
 
@@ -57,16 +61,18 @@ const Day1 = ({
       x: 0.0,
       duration: 0.5,
       ease: "power3.out",
+      onComplete: () => {
+        setIsOpen(true);
+      },
     });
   };
 
   useEffect(() => {
-    if (inBetweens.includes(sceneIndex) && sceneIndex > 0) {
+    if (isOpen && sceneIndex > 5) {
       animateGroupOut();
     }
-    console.log(sceneIndex);
-    if (inBetweens.includes(sceneIndex + 1) && sceneIndex < 6) {
-      console.log("animate group in");
+
+    if (!isOpen && sceneIndex < 6) {
       animateGroupIn();
     }
   }, [sceneIndex]);

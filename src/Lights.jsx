@@ -16,7 +16,7 @@ const Lights = ({ index, isMobile, isNight }) => {
   };
 
   const sunPositions = {
-    sunrise: [1.5, 6, 13.5],
+    sunrise: [1.5, 6, 9.5],
     morning: [-3, 7, 9.5],
     noon: [-6.5, 10, 6.5],
     afternoon: [-8.75, 7, 9.5],
@@ -233,7 +233,7 @@ const Lights = ({ index, isMobile, isNight }) => {
   return (
     <>
       <hemisphereLight
-        color={0x252a3c}
+        color={0x3c3425}
         intensity={0}
         groundColor={0x2d474c}
         position={[0, 10, 0]}

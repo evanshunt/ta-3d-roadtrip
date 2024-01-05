@@ -1,8 +1,8 @@
+import { Day1InfoBoxes } from "./Day1InfoBoxes";
 import { NightImage } from "./NightImage";
 import { useTexture } from "@react-three/drei";
 import React, { useRef } from "react";
 import ImagePin from "../models/final/ImagePin";
-import InfoBox from "../components/InfoBox";
 import { NightLights } from "./NightLights";
 
 import banffGondolaImageSrc from "/images/banff-gondola.webp";
@@ -15,6 +15,7 @@ const Day1 = ({
   animateHover,
   animateOut,
   attractionsOpen,
+  destinations,
   geometry,
   handleIndex,
   hoverIndex,
@@ -22,11 +23,9 @@ const Day1 = ({
   isMobile,
   isNight,
   material,
-  positions,
   setAttractionsOpen,
   setHoverIndex,
   sceneIndex,
-  setIndex,
   setPinRefs,
 }) => {
   const nightLightsRef = useRef();
@@ -35,29 +34,7 @@ const Day1 = ({
 
   return (
     <>
-      {!isMobile && (
-        <>
-          <InfoBox
-            imageSrc={"/images/info-boxes/cascade-mountain.png"}
-            name="Cascade Mountain"
-            position={[-4.2, 1.18, 2.77]}
-            width={1.58}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/lake-minnewanka.png"}
-            name="Lake Minnewanka"
-            position={[-4.1, 1.15, 3.06]}
-            width={1.8}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/sunshine-village.png"}
-            position={[-5.3, 1.15, 2.42]}
-            width={1.86}
-          />
-        </>
-      )}
+      {!isMobile && <Day1InfoBoxes />}
 
       {/* This is just to keep the index aligned with the actual amount of stops */}
       <ImagePin
@@ -65,16 +42,15 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         attractionsOpen={attractionsOpen}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}
         material={material}
         name={"Spacer"}
-        position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}
@@ -84,16 +60,14 @@ const Day1 = ({
         active={sceneIndex === 1}
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
         hoverIndex={hoverIndex}
-        imageSrc={caveAndBasinImageSrc}
         inBetweens={inBetweens}
         index={1}
         isMobile={isMobile}
         material={material}
-        name={"Cave and Basin National Historic Site"}
-        position={positions.caveAndBasin}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -104,15 +78,13 @@ const Day1 = ({
         active={sceneIndex === 2}
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={banffGondolaImageSrc}
         inBetweens={inBetweens}
         index={2}
         isMobile={isMobile}
         material={material}
-        name={"Banff Gondola"}
-        position={positions.gondola}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -123,15 +95,13 @@ const Day1 = ({
         active={sceneIndex === 3}
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={skyBistroImageSrc}
         inBetweens={inBetweens}
         index={3}
         isMobile={isMobile}
         material={material}
-        name={"Sky Bistro"}
-        position={positions.skyBistro}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -142,15 +112,13 @@ const Day1 = ({
         active={sceneIndex === 4}
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={banffUpperHotSpringsImageSrc}
         inBetweens={inBetweens}
         index={4}
         isMobile={isMobile}
         material={material}
-        name={"Banff Upper Hot Springs"}
-        position={positions.banffUpperHotSprings}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -161,15 +129,13 @@ const Day1 = ({
         active={sceneIndex === 5}
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         handleIndex={handleIndex}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={5}
         isMobile={isMobile}
         material={material}
-        name={"Fairmont Banff Springs Hotel"}
-        position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setAttractionsOpen={setAttractionsOpen}
         setHoverIndex={setHoverIndex}
@@ -182,15 +148,14 @@ const Day1 = ({
         animateHover={animateHover}
         animateOut={animateOut}
         geometry={geometry}
+        destinations={destinations}
         handleIndex={handleIndex}
         hidden={true}
-        imageSrc={fairmontBanffSpringsHotelImageSrc}
         inBetweens={inBetweens}
         index={6}
         isMobile={isMobile}
         material={material}
         name={"Spacer"}
-        position={positions.fairmontBanffSpringsHotel}
         scale={0.2}
         setHoverIndex={setHoverIndex}
         setPinRefs={setPinRefs}

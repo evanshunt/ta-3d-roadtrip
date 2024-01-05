@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import caretImage from "../images/caret-right.svg";
-import { isMobile } from "react-device-detect";
 
 const Stop = ({
-  animateHover,
-  animateOut,
   currDestination,
   handleIndex,
-  index,
+  hoverIndex,
   setHoverIndex,
   showAttraction,
   stop,
@@ -17,36 +14,38 @@ const Stop = ({
   return (
     <li
       className={`${
-        currDestination?.details?.title === stop.details.title
+        currDestination?.details?.title === stop.details.title ||
+        hoverIndex === stop.stop
           ? "itinerary__stop itinerary__stop--active"
           : "itinerary__stop"
       } ${stop.visited ? "itinerary__stop--visited" : ""}`}
+      key={stop.stop}
     >
-      <div
-        onMouseEnter={() => {
-          setHoverIndex(index);
-        }}
-        onMouseOut={() => {
-          setHoverIndex(null);
-          animateOut(null, index);
-        }}
+      <button
+        aria-label={`View ${stop.details.title} on map`}
         onClick={() => {
           showAttraction();
-          handleIndex("next", stop.stop);
+          handleIndex("next", stop.stop, false);
         }}
         className="itinerary__stop__wrap"
+        onMouseOver={() => {
+          if (hoverIndex !== stop.stop) setHoverIndex(stop.stop);
+        }}
+        onMouseLeave={() => {
+          setHoverIndex(null);
+        }}
       >
         {stop.details?.image && (
           <img
             className="itinerary__stop__image"
             src={stop.details.image}
-            alt=""
+            alt={stop.details?.altText}
           />
         )}
         <strong className="itinerary__stop__name">{stop.details.title} </strong>
 
         <img src={caretImage} alt="" />
-      </div>
+      </button>
     </li>
   );
 };

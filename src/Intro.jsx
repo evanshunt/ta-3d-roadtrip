@@ -1,11 +1,10 @@
 import { Map } from "./Map";
 import { IntroClouds } from "./IntroClouds";
-import Onboarding from "./components/OnBoarding";
 import React, { useEffect, useState } from "react";
 
 import "./scss/intro.scss";
 
-const Intro = ({ hasStarted }) => {
+const Intro = ({ hasStarted, isMobile, setIntroComplete }) => {
   const [visible, setVisible] = useState(true);
   const [cloudsGone, setCloudsGone] = useState(false);
 
@@ -28,13 +27,17 @@ const Intro = ({ hasStarted }) => {
 
   return (
     <div className="intro">
-      <Onboarding />
+      {/* <Onboarding /> */}
       {visible && (
         <div className="intro__map">
-          <Map removeIntro={removeIntro} start={hasStarted} />
+          <Map
+            removeIntro={removeIntro}
+            start={hasStarted}
+            setIntroComplete={setIntroComplete}
+          />
         </div>
       )}
-      {!cloudsGone && <IntroClouds playIntro={playIntro} />}
+      {!cloudsGone && <IntroClouds isMobile={isMobile} playIntro={playIntro} />}
     </div>
   );
 };

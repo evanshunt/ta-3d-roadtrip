@@ -1,9 +1,8 @@
 import { Sparkles } from "@react-three/drei";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
-import { isMobile } from "react-device-detect";
 
-export const NightLights = ({ position, isNight }) => {
+export const NightLights = ({ position, isMobile, isNight }) => {
   const pointLightRef1 = useRef();
   const pointLightRef2 = useRef();
   const tl = gsap.timeline({});
@@ -40,20 +39,31 @@ export const NightLights = ({ position, isNight }) => {
       {isNight && (
         <>
           <Sparkles
-            count={isMobile ? 50 : 125}
+            count={isMobile ? 250 : 750}
             color={0xffffff}
-            position={position}
-            scale={0.4}
+            position={[
+              position[0],
+              position[1] - (isMobile ? 0.2 : 0.25),
+              position[2],
+            ]}
+            scale={0.3}
             size={0.6}
-            speed={0.1}
+            speed={isMobile ? 0.01 : 0.005}
+            noise={0.5}
           />
           <Sparkles
-            count={isMobile ? 50 : 125}
+            count={isMobile ? 250 : 750}
             color={0xf47d0f}
-            position={position}
-            speed={0.1}
-            size={0.8}
-            scale={0.4}
+            position={[
+              position[0],
+              position[1] - (isMobile ? 0.2 : 0.25),
+              position[2],
+            ]}
+            speed={isMobile ? 0.015 : 0.03}
+            size={isMobile ? 0.75 : 0.65}
+            noise={0.6}
+            rotateY={Math.PI}
+            scale={0.25}
           />
         </>
       )}

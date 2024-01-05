@@ -13,7 +13,7 @@
   padding-bottom: 5rem;
   position: fixed;
   top: 0;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.25s ease-in-out;
   transform: translate(0, calc(100% + 5rem));
   width: 100%;
   z-index: 2;
@@ -23,13 +23,20 @@
     z-index: 4;
   }
 
+  @media screen and (min-width: 768px) {
+    &--open {
+      transform: translate(0, 9rem);
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     border-radius: 0;
     height: 100vh;
     min-width: 24.125rem;
     padding: 1.85rem 1.55rem 7.25rem 1.55rem;
     right: 0;
-    top: 6.5vw;
+    // top: 6.5vw;
+    top: 6rem;
     transform: translate(0, 0);
     transition: transform 0.75s ease-in-out;
     width: 23vw;
@@ -43,12 +50,20 @@
       transform: translate(100%, 0);
     }
   }
+
+  // if both are open on mobile, attraction info should be on top
+  @media screen and (max-width: 1024px) {
+    .attraction--open + &--open {
+      z-index: 3;
+    }
+  }
 }
 
 .itinerary__header__mobile {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin: 0.25rem auto 2rem auto;
   padding-top: 0.75rem;
 
   @media screen and (min-width: 1024px) {
@@ -136,7 +151,7 @@
 }
 
 .itinerary__day__stops {
-  background: transparent url("../images/line.svg") 1.66rem 2.25rem no-repeat;
+  background: transparent url("../images/line.svg") 1.5rem 0 no-repeat;
   background-size: auto 100%;
   list-style: none;
   padding-left: 0;
@@ -165,6 +180,14 @@
 
   &--active::before {
     left: 2.66rem;
+  }
+
+  button {
+    border: none;
+    color: var(--black);
+    background-color: transparent;
+    padding: 0;
+    text-align: left;
   }
 }
 

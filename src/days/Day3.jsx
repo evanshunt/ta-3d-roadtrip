@@ -1,8 +1,10 @@
-import React from "react";
-import ImagePin from "../models/ImagePin";
+import { Day3InfoBoxes } from "./Day3InfoBoxes";
+import React, { useRef } from "react";
+import ImagePin from "../models/final/ImagePin";
 import InfoBox from "../components/InfoBox";
-import { isMobile } from "react-device-detect";
+import { NightImage } from "./NightImage";
 import { NightLights } from "./NightLights";
+import { useTexture } from "@react-three/drei";
 
 import columbiaIcefieldSkywalkImageSrc from "/images/columbia-icefield-skywalk.webp";
 import maligneCanyonImageSrc from "/images/maligne-canyon.webp";
@@ -13,107 +15,140 @@ import jasperPlanetariumImageSrc from "/images/jasper-planetarium.webp";
 const Day3 = ({
   animateHover,
   animateOut,
+  destinations,
   geometry,
+  handleIndex,
+  inBetweens,
+  isMobile,
   isNight,
   material,
-  positions,
-  setIndex,
+  setAttractionsOpen,
+  setHoverIndex,
   setPinRefs,
 }) => {
+  const nightLightsRef3 = useRef();
+  const nightTexture = useTexture("./textures/final/Jasper_Lights2.webp");
+
   return (
     <>
-      {!isMobile && (
-        <>
-          <InfoBox
-            imageSrc={"/images/info-boxes/athabasca-falls.png"}
-            name={"Mt. Athabasca"}
-            position={[1.1, 1.2, -3]}
-            width={1.86}
-          />
-          <InfoBox
-            imageSrc={"/images/info-boxes/marmot-basin.png"}
-            name={"Marmot Basin"}
-            position={[4.8, 1.2, -6.2]}
-            width={1.86}
-          />
-          <InfoBox
-            imageSrc={"/images/info-boxes/pyramid-lake.png"}
-            name={"Pyramid Lake"}
-            position={[5.6, 1.1, -6.0]}
-            width={1.86}
-          />
-        </>
-      )}
+      {!isMobile && <Day3InfoBoxes />}
 
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
+        geometry={geometry}
+        handleIndex={handleIndex}
+        hidden={true}
+        imageSrc={columbiaIcefieldSkywalkImageSrc}
+        inBetweens={inBetweens}
+        index={12}
+        isMobile={isMobile}
+        material={material}
+        scale={0.2}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        setPinRefs={setPinRefs}
+      />
+
+      <ImagePin
+        animateHover={animateHover}
+        animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         imageSrc={columbiaIcefieldSkywalkImageSrc}
+        inBetweens={inBetweens}
         index={13}
+        isMobile={isMobile}
         material={material}
-        name={"Columbia Icefield Skywalk"}
-        position={positions.columbiaIcefieldSkywalk}
         scale={0.2}
-        setIndex={setIndex}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         imageSrc={maligneCanyonImageSrc}
+        inBetweens={inBetweens}
         index={14}
+        isMobile={isMobile}
         material={material}
-        name={"Maligne Canyon"}
-        position={positions.maligneCanyon}
         scale={0.2}
-        setIndex={setIndex}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         imageSrc={jasperSkyTramImageSrc}
+        inBetweens={inBetweens}
         index={15}
+        isMobile={isMobile}
         material={material}
-        name={"Jasper SkyTram"}
-        position={positions.jasperSkyTram}
         scale={0.2}
-        setIndex={setIndex}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         imageSrc={fairmontJasperParkLodgeImageSrc}
         index={16}
+        isMobile={isMobile}
+        inBetweens={inBetweens}
         material={material}
-        name={"Fairmont Jasper Park Lodge"}
-        position={positions.fairmontJasperParkLodge}
         scale={0.2}
-        setIndex={setIndex}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}
+        destinations={destinations}
         geometry={geometry}
         imageSrc={jasperPlanetariumImageSrc}
         index={17}
+        isMobile={isMobile}
+        inBetweens={inBetweens}
         material={material}
-        name={"Jasper Planetarium"}
-        position={positions.jasperPlanetarium}
         scale={0.2}
-        setIndex={setIndex}
+        setAttractionsOpen={setAttractionsOpen}
+        setHoverIndex={setHoverIndex}
+        handleIndex={handleIndex}
         setPinRefs={setPinRefs}
       />
 
-      <NightLights
+      <NightImage
+        dims={0.3}
         isNight={isNight}
-        position={positions.fairmontJasperParkLodge}
+        nightLightsRef={nightLightsRef3}
+        nLPosX={5.31}
+        nLPosY={0.99}
+        nLPosZ={-6.02}
+        nLRotX={5.46}
+        nLRotY={-0.07}
+        nLRotZ={-1.55}
+        nightTexture={nightTexture}
+      />
+
+      <NightLights
+        isMobile={isMobile}
+        isNight={isNight}
+        position={destinations[17].details.position}
       />
     </>
   );

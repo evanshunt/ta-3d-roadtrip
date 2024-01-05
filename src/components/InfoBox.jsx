@@ -46,19 +46,10 @@ const InfoBox = ({ imageSrc, position, width }) => {
         scale={[width || 1.88, 0.5, 0.42]}
         castShadow={true}
       />
-      <mesh castShadow={true}>
-        <boxGeometry args={[width || 1.75, 0.25, 0.001]} position={[0, 0, 0]} />
-        <meshBasicMaterial
-          color={0x000000}
-          // opacity={0.75}
-          alphaTest={0.5}
-          transparent={true}
-          colorWrite={false}
-          depthWrite={false}
-        />
-      </mesh>
+
       <mesh
-        castShadow={true}
+        castShadow={false}
+        receiveShadow={false}
         scale={[0.075, 0.2, 0.075]}
         position={[0, -0.8, 0]}
       >
@@ -68,6 +59,7 @@ const InfoBox = ({ imageSrc, position, width }) => {
       </mesh>
       <mesh
         castShadow={false}
+        receiveShadow={false}
         scale={[0.075, 0.245, 0.075]}
         position={[0.01, -0.9, 0]}
       >

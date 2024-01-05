@@ -29,6 +29,33 @@ $duration: 2.25s;
   }
 }
 
+.map__path {
+  transform: translate(455px, 705px);
+}
+
+.map__clouds {
+  transform: scale(0.4) translate(-200px, 0px);
+}
+
+.map__alberta {
+  z-index: 3;
+  position: absolute;
+}
+
+.alberta-topography {
+  transform: translate(457px, 314px);
+
+  image {
+    // height: 89vh;
+    transform: scale(0.75);
+  }
+}
+
+.map__edmonton,
+.map__calgary {
+  transform: translate(50px, 220px);
+}
+
 .cloud-intro {
   align-items: center;
   display: flex;
@@ -264,7 +291,7 @@ $duration: 2.25s;
 
   100% {
     opacity: 0;
-    transform: translateX(-100%) scale(1.4);
+    transform: translateX(-66%) scale(1.4);
   }
 }
 
@@ -288,7 +315,7 @@ $duration: 2.25s;
 
   100% {
     opacity: 0;
-    transform: translateX(100%) scale(1.3);
+    transform: translateX(66%) scale(1.3);
   }
 }
 

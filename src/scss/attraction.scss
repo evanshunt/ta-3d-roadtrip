@@ -4,18 +4,19 @@
 .attraction {
   --offset: 100%;
   // background-color: var(--white);
-  background-color: var(--blue);
+  background-color: var(--turquoise);
   border-radius: 1rem 1rem 0rem 0rem;
   bottom: 0;
+
   height: calc(100dvh - 5rem);
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 0 1rem;
+  padding: 0 0.25rem;
   position: fixed;
-  transform: translate(0, calc(var(--offset) - 3.5rem));
-  transition: transform 0.25s ease-out;
+  transform: translate(0, calc(var(--offset) - 4.5rem));
+  transition: transform 0.25s ease-in-out;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 
   &--open {
     background-color: var(--white);
@@ -29,6 +30,12 @@
     animation: bounce 0.25s ease-in-out;
   }
 
+  @media screen and (min-width: 768px) {
+    &--open {
+      transform: translate(0, 4rem);
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     background-color: var(--white);
     border-radius: 0;
@@ -38,10 +45,13 @@
     padding-bottom: 7.25rem;
     right: 0;
     top: 0;
-    top: 6.5vw;
+    // top: 6.5vw;
     transition: transform 0.25s ease-out;
     width: 23vw;
     z-index: 2;
+
+    // nav offset
+    padding-top: 8.0625rem;
 
     &--open {
       transform: translate(0, 0);
@@ -56,6 +66,7 @@
 }
 
 .attraction__wrapper {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   transition: all 0.375s linear;
@@ -69,14 +80,20 @@
 }
 
 .attraction__header__mobile {
+  background: transparent;
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin-bottom: 2rem;
+  margin: 0.25rem auto 4rem auto;
   padding-top: 0.5rem;
 
   .attraction--open & {
     margin-bottom: 1rem;
+  }
+
+  .attraction--closed & {
+    margin-top: -0.1125rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -178,11 +195,11 @@
 
 .attraction__arrow {
   display: block;
-  filter: grayscale(1) brightness(100);
+  filter: brightness(0);
   margin: 0.25rem auto;
 
   .attraction--open & {
-    filter: grayscale(1) brightness(0);
+    filter: brightness(0);
     transform: rotateZ(180deg);
   }
 
@@ -201,7 +218,9 @@
   width: 100%;
 
   .attraction__header__mobile & {
-    color: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .attraction--open .attraction__header__mobile & {
@@ -283,6 +302,10 @@
   &:nth-child(3) {
     width: calc(50% - 1px); // half gap
   }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .attraction__links__title {
@@ -311,6 +334,7 @@
     float: left;
     margin-bottom: 0.25rem;
     text-decoration: none;
+    width: 100%;
   }
 
   & > img {
@@ -363,6 +387,14 @@
   &--external img {
     margin-left: 0.5rem;
   }
+}
+
+.attraction__next {
+  border: none;
+  background: none;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
 }
 
 @keyframes bounce {

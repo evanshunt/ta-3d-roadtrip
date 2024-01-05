@@ -1,27 +1,26 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
-import { isMobile } from "react-device-detect";
 import React, { useEffect } from "react";
 import { useRef } from "react";
-// import { useControls } from "leva";
 
-const Lights = ({ alt, debug, index, isNight, positions }) => {
+const Lights = ({ index, isMobile, isNight }) => {
   const spotLight = useRef();
   const hemisphereLightRef = useRef();
   const tl = gsap.timeline({});
 
   const colors = {
-    blue: new THREE.Color().setHex(0xc9dff7),
+    blue: new THREE.Color().setHex(0xc7d3e3),
+    yellow: new THREE.Color().setHex(0xf7efc9),
     orange: new THREE.Color().setHex(0xf7e0c9),
     white: new THREE.Color().setHex(0xffffff),
   };
 
   const sunPositions = {
-    sunrise: [1.5, 10, 13.5],
-    morning: [-3, 10, 13.5],
-    noon: [-6.5, 10, 13.5],
-    afternoon: [-8.5, 10, 13.5],
-    sunset: [-15, 10, 13.5],
+    sunrise: [1.5, 6, 9.5],
+    morning: [-3, 7, 9.5],
+    noon: [-6.5, 10, 6.5],
+    afternoon: [-8.75, 7, 9.5],
+    sunset: [-15, 4, 13.5],
   };
 
   const animateSpotlight = (spotLight, tl, index) => {
@@ -39,15 +38,23 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
           x: sunPositions.morning[0],
           y: sunPositions.morning[1],
           z: sunPositions.morning[2],
-          duration: 4,
+          duration: 2,
         });
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 1.5,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         tl.to(
           spotLight.current.color,
           {
-            r: colors.blue.r,
-            g: colors.blue.g,
-            b: colors.blue.b,
-            duration: 4,
+            r: colors.yellow.r,
+            g: colors.yellow.g,
+            b: colors.yellow.b,
+            duration: 2,
           },
           "<"
         );
@@ -57,18 +64,34 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
           x: sunPositions.noon[0],
           y: sunPositions.noon[1],
           z: sunPositions.noon[2],
-          duration: 4,
+          duration: 2,
         });
         tl.to(
-          spotLight.current.color,
+          spotLight.current,
           {
-            r: colors.white.r,
-            g: colors.white.g,
-            b: colors.white.b,
-            duration: 4,
+            intensity: 1.75,
+            duration: 2,
           },
           "<"
         );
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 1.75,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
+        // tl.to(
+        //   spotLight.current.color,
+        //   {
+        //     r: colors.blue.r,
+        //     g: colors.blue.g,
+        //     b: colors.blue.b,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         break;
       case 3:
         tl.to(spotLight.current.position, {
@@ -77,16 +100,25 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
           z: sunPositions.noon[2],
           duration: 4,
         });
+        // tl.to(
+        //   spotLight.current,
+        //   {
+        //     intensity: 2,
+        //     duration: 2,
+        //   },
+        //   "<"
+        // );
         tl.to(
           spotLight.current.color,
           {
-            r: colors.white.r,
-            g: colors.white.g,
-            b: colors.white.b,
-            duration: 4,
+            r: colors.blue.r,
+            g: colors.blue.g,
+            b: colors.blue.b,
+            duration: 2,
           },
           "<"
         );
+
         break;
       case 4:
         tl.to(spotLight.current.position, {
@@ -96,11 +128,19 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
           duration: 4,
         });
         tl.to(
+          spotLight.current,
+          {
+            intensity: 1,
+            duration: 2,
+          },
+          "<"
+        );
+        tl.to(
           spotLight.current.color,
           {
-            r: colors.blue.r,
-            g: colors.blue.g,
-            b: colors.blue.b,
+            r: colors.orange.r,
+            g: colors.orange.g,
+            b: colors.orange.b,
             duration: 4,
           },
           "<"
@@ -150,7 +190,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
     tl.to(
       spotLight.current,
       {
-        intensity: 1.75,
+        intensity: 1.25,
         duration: 2,
       },
       "<"
@@ -193,7 +233,7 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
   return (
     <>
       <hemisphereLight
-        color={0x252a3c}
+        color={0x3c3425}
         intensity={0}
         groundColor={0x2d474c}
         position={[0, 10, 0]}
@@ -205,9 +245,9 @@ const Lights = ({ alt, debug, index, isNight, positions }) => {
         position={[-15, 10, 13.5]}
         lookAt={[0, 0, 0]}
         castShadow
-        intensity={1.75}
-        shadow-mapSize-width={isMobile ? 1024 * 2 : 1024 * 3.75}
-        shadow-mapSize-height={isMobile ? 1024 * 2 : 1024 * 3.75}
+        intensity={1.25}
+        shadow-mapSize-width={isMobile ? 1024 * 1.5 : 1024 * 4}
+        shadow-mapSize-height={isMobile ? 1024 * 1.5 : 1024 * 4}
       />
     </>
   );

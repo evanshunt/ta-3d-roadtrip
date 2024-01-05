@@ -11,16 +11,23 @@
     opacity: 0;
   }
 
-  @media screen and (min-width: 1024px) {
-    height: auto;
-    object-fit: none;
-    transform: none;
+  @media screen and (orientation: landscape) and (min-width: 1024px) and (max-width: 1170px) {
+    transform: translate(0, 0);
   }
 
   @media screen and (orientation: portrait) {
-    height: 220vh;
-    transform: translate(10%, 0);
+    height: 150vh;
+    transform: translate(5%, 0);
+
+    @media screen and (max-width: 420px) {
+      height: 125vh;
+      transform: translate(6%, 0);
+    }
   }
+
+  // @media screen and (orientation: portrait) and (max-width: 660px) {
+  //   transform: translate(0, 0)
+  // }
 }
 
 .bubble,

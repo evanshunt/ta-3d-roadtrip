@@ -3,7 +3,6 @@ import { useFrame } from "@react-three/fiber";
 import { Billboard } from "@react-three/drei";
 import { Plane } from "@react-three/drei";
 import { useTexture } from "@react-three/drei";
-import { isMobile } from "react-device-detect";
 
 const CLOUD_URL = "/textures/cloud.webp";
 function Cloud({
@@ -11,12 +10,15 @@ function Cloud({
   speed = 0.4,
   width = 10,
   depth = 1.5,
-  segments = isMobile ? 12 : 20,
+  segments = 20,
   texture = CLOUD_URL,
   color = "#ffffff",
-  depthTest = isMobile ? false : true,
+  depthTest,
   ...props
 }) {
+  if (props.isMobile) {
+    segments = 10;
+  }
   const group = React.useRef();
   const cloudTexture = useTexture(texture);
   const clouds = React.useMemo(
@@ -66,7 +68,7 @@ function Cloud({
           /*#__PURE__*/ React.createElement(
             Plane,
             {
-              scale: scale,
+              scale: scale * 0.15,
               rotation: [0, 0, 0],
             },
             /*#__PURE__*/ React.createElement("meshBasicMaterial", {

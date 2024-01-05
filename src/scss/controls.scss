@@ -10,6 +10,18 @@
   width: 100%;
   z-index: 2;
 
+  @media screen and (min-width: 420px) {
+    width: 66vw;
+    left: 50vw;
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: 660px) {
+    width: 50vw;
+    left: 48.5vw;
+    transform: translate(-50%, 0);
+  }
+
   @media screen and (min-width: 1024px) {
     align-items: center;
     bottom: 1.33rem;
@@ -47,6 +59,10 @@
   padding: 0;
   width: 2.8125rem;
 
+  &[disabled] {
+    cursor: unset;
+  }
+
   &--prev {
     grid-column: 1;
   }
@@ -81,10 +97,10 @@
   }
 
   .arrow {
-    border-radius: 50%;
-
     background: var(--grey);
+    border-bottom-left-radius: 50%;
     border-bottom-right-radius: 0;
+    border-top-left-radius: 50%;
     border-top-right-radius: 0;
     break-before: 0;
     height: 2.8125rem;
@@ -114,17 +130,24 @@
     &--prev {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
-
       transform: rotate(180deg);
+
       &:active,
-      &:hover {
+      &:hover:not([disabled]) {
         transform: rotate(180deg) scale(1.1);
       }
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 420px) {
       border-radius: 50%;
     }
+  }
+}
+
+button[disabled] .arrow--prev {
+  &:hover {
+    cursor: default;
+    transform: rotateZ(180deg) scale(1) !important;
   }
 }
 
@@ -176,12 +199,35 @@
   }
 }
 
+@-moz-document url-prefix() {
+  .controls__list__progress {
+    transform: translate(0, 0);
+    top: 0.575rem;
+  }
+}
+
 .controls__list__list {
   display: flex;
   justify-content: space-around;
   list-style: none;
   // margin-left: 0.89rem;
   padding: 0;
+}
+
+.controls__list li {
+  margin: -0.25rem 0.25rem 0 0.25rem;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: -0.1875rem 0.5rem 0 0.5rem;
+  }
 }
 
 .controls__pip {
@@ -192,21 +238,13 @@
   box-sizing: content-box;
   color: transparent;
   cursor: pointer;
-  margin: 0 0.5rem;
+  display: inline-block;
   padding: 0;
   transition: all 0.2s linear;
   width: 0.35rem;
 
   &:hover {
     transform: scale(1.5);
-  }
-
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
   }
 
   &--active {
@@ -226,7 +264,7 @@
   }
 
   @media screen and (min-width: 1024px) {
-    border-width: 2px;
+    border-width: 1.5px;
     width: 0.44rem;
   }
 }
@@ -276,14 +314,18 @@
 
 .day-info {
   align-items: center;
-  background-color: var(--blue);
+  background-color: var(--turquoise);
+  // background-color: var(--white);
   border-radius: 1.6875rem;
-  color: var(--white);
+  // border: 2px solid var(--white);
+  // color: var(--black);
+  color: var(--black);
   display: flex;
   display: none;
   font-size: 0.75rem;
   justify-content: center;
   padding: 0.7rem 1rem;
+
   text-align: center;
   transition: all 0.25s ease-in-out;
   width: auto;

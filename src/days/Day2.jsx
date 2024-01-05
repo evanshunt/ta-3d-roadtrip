@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
+import { Day2InfoBoxes } from "./Day2InfoBoxes";
 import ImagePin from "../models/final/ImagePin";
-import InfoBox from "../components/InfoBox";
 import { NightImage } from "./NightImage";
 import { NightLights } from "./NightLights";
 import { useTexture } from "@react-three/drei";
@@ -21,7 +21,6 @@ const Day2 = ({
   isMobile,
   isNight,
   material,
-  positions,
   setAttractionsOpen,
   setHoverIndex,
   setPinRefs,
@@ -31,23 +30,7 @@ const Day2 = ({
 
   return (
     <>
-      {!isMobile && (
-        <>
-          <InfoBox
-            imageSrc={"/images/info-boxes/moraine-lake.png"}
-            name={"Moraine Lake"}
-            position={[-3.79, 1.2, 0.42]}
-            width={1.93}
-          />
-
-          <InfoBox
-            imageSrc={"/images/info-boxes/bow-peak.png"}
-            name={"Bow Peak"}
-            position={[-1.99, 1.2, -0.13]}
-            width={1.86}
-          />
-        </>
-      )}
+      {!isMobile && <Day2InfoBoxes />}
       <ImagePin
         animateHover={animateHover}
         animateOut={animateOut}

@@ -6,7 +6,6 @@ import { Cloud } from "./Clouds.jsx";
 import EditableCamera from "./EditableCamera.jsx";
 import Lights from "./Lights.jsx";
 import RoadFinal from "./models/final/RoadFinal.jsx";
-// import { OrbitControls } from "@react-three/drei";
 
 import Backdrop from "./models/final/Backdrop.jsx";
 import TopAltFinal from "./models/final/TopAltFinal.jsx";
@@ -27,34 +26,12 @@ const Scene = (props) => {
 
   if (!props.destinations) return null;
 
-  const dayCount = props.destinations[props.destinations.length - 1].day;
+  // const dayCount = props.destinations[props.destinations.length - 1].day; // not yet used, causing issues with theatrejs
   const groupOffset = [0.03, 0.0, 0.07];
 
   return (
     <>
-      {/* <OrbitControls
-        autoRotate={false}
-        // position={cameraPosition}
-        position={[0, 93, 5]}
-        // rotation={cameraRotation}
-        rotation={[-1.5707963267948966, 0, 0]}
-        makeDefault={true}
-        // ref={cameraRef}
-        onChange={(e) => {
-          const camera = e.target?.object;
-          if (!camera) return;
-        }}
-      /> */}
       <EditableCamera theatreKey={"Camera"} getDirection={props.getDirection} />
-      {/* 
-      <Backdrop
-        scale={[scaleX, scaleY, scaleZ]}
-        position={[posX, posY, posZ]}
-        floor={0.25} // Stretches the floor segment, 0.25 by default
-        segments={20} // Mesh-resolution, 20 by default
-      >
-        <meshStandardMaterial color="#073142" />
-      </Backdrop> */}
 
       {!props.isMobile && <Backdrop />}
 
@@ -67,7 +44,7 @@ const Scene = (props) => {
 
       {/* <Perf position="bottom-left" /> */}
       <e.group theatreKey="Scene" ref={sceneRef}>
-        <group position={[0.03, 0.0, 0.07]}>
+        <group position={groupOffset}>
           <Day1
             animateHover={props.animateHover}
             animateOut={props.animateOut}
@@ -85,11 +62,10 @@ const Scene = (props) => {
             setHoverIndex={props.setHoverIndex}
             setIndex={props.setIndex}
             setPinRefs={props.setPinRefs}
-            // visible={props.currDay === 0 || props.currDay === 1}
           />
         </group>
 
-        <group position={[0.03, 0.0, 0.07]}>
+        <group position={groupOffset}>
           <Day2
             animateHover={props.animateHover}
             animateOut={props.animateOut}
@@ -108,7 +84,7 @@ const Scene = (props) => {
           />
         </group>
 
-        <group position={[0.03, 0.0, 0.07]}>
+        <group position={groupOffset}>
           <Day3
             animateHover={props.animateHover}
             animateOut={props.animateOut}
@@ -128,17 +104,12 @@ const Scene = (props) => {
         </group>
 
         <Clouds isMobile={props.isMobile} position={[0, 0.125, 0]}>
-          <e.group
-            // position={[cloudPosX, cloudPosY, cloudPosZ]}
-            position={[-3.8, 2, 3.5]}
-            theatreKey="Cloud Banff"
-          >
+          <e.group position={[-3.8, 2, 3.5]} theatreKey="Cloud Banff">
             <Cloud scale={0.055} />
           </e.group>
 
           <e.group
             theatreKey="Cloud Lake Louise 2"
-            // position={[cloudPosX, cloudPosY, cloudPosZ]}
             position={[-5.76, 1.76, 0.26]}
           >
             <Cloud scale={0.075} />
@@ -149,28 +120,9 @@ const Scene = (props) => {
           </e.group>
         </Clouds>
 
-        {/* <e.group time={0} ref={roadRef} theatreKey="MIKE TEST"> */}
-        {/* <Road
-          currDay={props.currDay}
-          // pauses={props.pauses}
-          // pauseDuration={props.pauseDuration}
-          // destinations={props.destinations}
-          project={props.project}
-        /> */}
-        {/* </e.group> */}
-        {/* <LocationPin index={index} /> */}
-        {/* <Road /> */}
         <RoadFinal isMobile={props.isMobile} />
 
-        {/* {altTop && <TopAlt />} */}
-        {/* {!altTop && <Top />} */}
-
-        {/* <TopAltAgain /> */}
-        {/* <Banff /> */}
         <TopAltFinal isMobile={props.isMobile} />
-
-        {/* <Sides /> */}
-        {/* <Plane /> */}
       </e.group>
 
       {/* @TODO: animate this for the stops? this is causing issues with the translucent items */}
